@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Application Theme -->
+    <string-array name="sofbusTheme">
+        <item name="sofbusThemeLight">Светла</item>
+        <item name="sofbusThemeDark">Тъмна (сива)</item>
+    </string-array>
+    <string-array name="sofbusThemeValues" translatable="false">
+        <item name="sofbusThemeLight">sofbusThemeLight</item>
+        <item name="sofbusThemeDark">sofbusThemeDark</item>
+    </string-array>
+
+    <!-- Language -->
+    <string-array name="languagenChoice" translatable="false">
+        <item name="bg">Български</item>
+        <item name="en">English</item>
+    </string-array>
+    <string-array name="languagenChoiceValues" translatable="false">
+        <item name="bg">bg</item>
+        <item name="en">en</item>
+    </string-array>
+
+    <!-- Home Screen Tabs -->
+    <string-array name="tabsType">
+        <item name="tabsTypeIcon">Изображение</item>
+        <item name="tabsTypeTtitle">Текст</item>
+        <item name="tabsTypeIconTitle">Изображение и текст</item>
+    </string-array>
+    <string-array name="tabsTypeValues" translatable="false">
+        <item name="tabsTypeIcon">tabsTypeIcon</item>
+        <item name="tabsTypeTitle">tabsTypeTitle</item>
+        <item name="tabsTypeIconTitle">tabsTypeIconTitle</item>
+    </string-array>
+
+    <!-- Virtual Boards -->
+    <string-array name="timeType">
+        <item name="timeRemaining">Оставащо време</item>
+        <item name="timeArrival">Времена на пристигане</item>
+        <item name="timeBoth">Двете времена</item>
+    </string-array>
+    <string-array name="timeTypeValues" translatable="false">
+        <item name="timeRemaining">timeRemaining</item>
+        <item name="timeArrival">timeArrival</item>
+        <item name="timeBoth">timeBoth</item>
+    </string-array>
+    <string-array name="timeSource">
+        <item name="timeSkgt">От сайта на СКГТ</item>
+        <item name="timeSystem">Системно време</item>
+    </string-array>
+    <string-array name="timeSourceValues" translatable="false">
+        <item name="timeSkgt">timeSkgt</item>
+        <item name="timeSystem">timeSystem</item>
+    </string-array>
+
+    <!-- Local schedule -->
+    <string-array name="numberOfDays">
+        <item name="10">10 дни</item>
+        <item name="15">15 дни</item>
+        <item name="20">20 дни</item>
+        <item name="30">30 дни</item>
+        <item name="45">45 дни</item>
+        <item name="60">60 дни</item>
+    </string-array>
+    <string-array name="numberOfDaysValues" translatable="false">
+        <item name="10">10</item>
+        <item name="15">15</item>
+        <item name="20">20</item>
+        <item name="30">30</item>
+        <item name="45">45</item>
+        <item name="60">60</item>
+    </string-array>
+
+    <!-- Closest stations -->
+    <string-array name="markerType">
+        <item name="markerStandard">Стандартен</item>
+        <item name="markerSkgtCars">Коли на СКГТ</item>
+    </string-array>
+    <string-array name="markerTypeValues" translatable="false">
+        <item name="markerStandard">markerStandard</item>
+        <item name="markerSkgtCars">markerSkgtCars</item>
+    </string-array>
+    <string-array name="markerOptions">
+        <item name="markerInfo">Балонче с информация</item>
+        <item name="markerSchedule">Времена на пристигане (показване на снипет с информация)</item>
+        <item name="markerScheduleNoSnippet">Времена на пристигане (без показване на снипет с информация)</item>
+    </string-array>
+    <string-array name="markerOptionsValues" translatable="false">
+        <item name="markerInfo">markerInfo</item>
+        <item name="markerSchedule">markerSchedule</item>
+        <item name="markerScheduleNoSnippet">markerScheduleNoSnippet</item>
+    </string-array>
+    <string-array name="stationsRadius">
+        <item name="400">400 метра</item>
+        <item name="600">600 метра</item>
+        <item name="1000">1000 метра</item>
+        <item name="1400">1400 метра</item>
+        <item name="2000">2000 метра</item>
+        <item name="2600">2600 метра</item>
+    </string-array>
+    <string-array name="stationsRadiusValues" translatable="false">
+        <item name="400">400</item>
+        <item name="600">600</item>
+        <item name="1000">1000</item>
+        <item name="1400">1400</item>
+        <item name="2000">2000</item>
+        <item name="2600">2600</item>
+    </string-array>
+
+</resources>

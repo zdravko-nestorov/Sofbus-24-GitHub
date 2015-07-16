@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <!-- Background image -->
+
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_img_empty_content_description"
+        android:scaleType="centerCrop" android:src="@drawable/bkg_home_screen_select" />
+
+    <!-- View responsible for the dim effect -->
+
+    <View android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="#99000000" />
+
+    <!-- Main LinearLayout -->
+
+    <LinearLayout android:id="@+id/sofbus24_home_screen_box_view"
+        android:layout_width="@dimen/home_screen_layout_width" android:layout_height="wrap_content"
+        android:layout_centerInParent="true" android:layout_margin="8dp"
+        android:background="@drawable/home_screen_loading_round_corners"
+        android:orientation="vertical" android:paddingBottom="17dp" android:paddingLeft="14dp"
+        android:paddingRight="14dp" android:paddingTop="17dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" android:text="@string/app_sofbus24"
+            android:textColor="@android:color/black" android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- Home screen select layout -->
+
+        <LinearLayout android:id="@+id/sofbus24_home_screen" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" android:paddingBottom="4dp"
+                android:paddingTop="7dp" android:text="@string/home_screen_choice"
+                android:textColor="#888888"
+                android:textSize="@dimen/home_screen_subtitle_txt_size" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioGroup android:id="@+id/sofbus24_home_screen_select"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton android:id="@+id/sofbus24_home_screen_standard"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/navigation_drawer_home_standard"
+                        android:textColor="#888888" />
+
+                    <RadioButton android:id="@+id/sofbus24_home_screen_map"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/navigation_drawer_home_map"
+                        android:textColor="#888888" />
+
+                    <RadioButton android:id="@+id/sofbus24_home_screen_droidtrans"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/navigation_drawer_home_cars"
+                        android:textColor="#888888" />
+                </RadioGroup>
+
+                <View android:layout_width="0dp" android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton android:id="@+id/sofbus24_home_screen_select_btn"
+                    android:layout_width="30dp" android:layout_height="30dp"
+                    android:layout_gravity="bottom" android:layout_marginRight="5dp"
+                    android:background="@drawable/btn_home_screen_confirm_selector"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Loading layout -->
+
+        <LinearLayout android:id="@+id/sofbus24_loading" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" android:paddingTop="7dp"
+                android:text="@string/home_screen_summary" android:textColor="#888888"
+                android:textSize="@dimen/home_screen_subtitle_txt_size" />
+
+            <ProgressBar android:layout_width="40dp" android:layout_height="40dp"
+                android:layout_gravity="center_horizontal" android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp" android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/home_screen_loading" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Copyrihgt -->
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" android:layout_centerInParent="true"
+        android:padding="@dimen/home_screen_copyright_txt_padding"
+        android:text="@string/home_screen_copyright" android:textColor="#989898"
+        android:textSize="@dimen/home_screen_copyright_txt_size" />
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_home_screen_select.xml -->

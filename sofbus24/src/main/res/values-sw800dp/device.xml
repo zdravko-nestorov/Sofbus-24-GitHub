@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="isPhone" format="boolean" type="bool">false</item>
+    <item name="isLargeTablet" format="boolean" type="bool">true</item>
+
+</resources>

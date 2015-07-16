@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Reset position -->
+    <item android:id="@+id/action_droidtrans_reset" android:icon="@drawable/ic_menu_mylocation"
+        android:showAsAction="always" android:title="@string/action_droidtrans_reset" />
+
+    <!-- Favourites -->
+    <item android:id="@+id/action_favourites" android:icon="@drawable/ic_menu_star"
+        android:showAsAction="always" android:title="@string/action_droidtrans_favourites" />
+
+    <!-- Closest stations Map -->
+    <item android:id="@+id/action_closest_stations_map" android:icon="@drawable/ic_menu_mapmode"
+        android:showAsAction="always" android:title="@string/action_closest_stations_map" />
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_droidtrans_actions.xml -->

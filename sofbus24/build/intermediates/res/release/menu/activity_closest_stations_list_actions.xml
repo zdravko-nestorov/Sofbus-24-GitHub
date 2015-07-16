@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Refresh -->
+    <item android:id="@+id/action_cs_list_refresh" android:icon="@drawable/ic_action_ms_refresh"
+        android:showAsAction="always" android:title="@string/action_cs_list_refresh" />
+
+    <!-- Map -->
+    <item android:id="@+id/action_cs_list_map" android:icon="@drawable/ic_action_ms_map"
+        android:showAsAction="always" android:title="@string/action_cs_list_map" />
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_closest_stations_list_actions.xml -->

@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_drawer_list_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingBottom="8dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/navigation_drawer_list_img"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:contentDescription="@string/app_img_empty_content_description"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/navigation_drawer_list_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/navigation_drawer_list_home_img"
+        android:layout_toRightOf="@id/navigation_drawer_list_img"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@id/navigation_drawer_list_home_img"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_img_empty_content_description"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+</RelativeLayout>

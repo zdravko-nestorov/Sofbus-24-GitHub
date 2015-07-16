@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:padding="5sp"
+    android:paddingRight="?android:attr/scrollbarSize">
+
+    <LinearLayout android:id="@+id/schedule_item_image_layout" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="2sp"
+        android:layout_marginRight="12sp"
+        android:minHeight="@dimen/schedule_image_vehicle_type_height"
+        android:minWidth="@dimen/schedule_image_vehicle_type_width">
+
+        <ImageView android:id="@+id/schedule_item_vehicle_type" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_img_empty_content_description" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/schedule_item_vehicle_caption" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/schedule_item_image_layout" android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/schedule_item_vehicle_direction" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schedule_item_vehicle_caption"
+        android:layout_toRightOf="@+id/schedule_item_image_layout" android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary" android:textSize="12sp" />
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_schedule_vehicle_list_item.xml -->

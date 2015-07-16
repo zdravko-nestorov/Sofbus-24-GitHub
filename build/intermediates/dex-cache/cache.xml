@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-72e25d9554b0b31755499890ac5bfc752bf52257.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-88831c841fb5647193beae3aef87886a3eba7a65.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-de3b6c94ad1901ce9980290fb2351cff5e51fdcc.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-9fc710738ec35e47aa214551b273516bf63b2d9e.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e55cf326d10e11dc43496ee7e5d45db3022b0157">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-5d8ee714e3bad90327aee52d861f7d95d4c3155c.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-ede0148855e25b3b13e0346cedf59892bb3b97a2.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\dragSortListView\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6e83845a6f890bf7c8a4184fdba7e3cd1750afca">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-62386e1f33e2aec00dbd41903bcad44aa0553e1d.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-73173fd03b0c61e1be01171a72872e6a544ffd66.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-3e702967240e5ace28812016aa23d6aed144b690.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-6e45760ed81837b42f818c983915c5fa6ace2cda.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-26afbfe14a5978b8813dccf30d89d1e57b91226d.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-7fac33e69c4f248b77d8a787c822cd7506587639.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\gson-2.2.4-638dc86c58a101b5f4182ac80140d1d0cec9f422.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-a8b24480d38499cdd20ea68b45cbb301dfadae93.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-8b6aaca271b2039eff37f573015d98dd30d42613.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\actionBarSherlock\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cd9bc8b43f3ffae534e6492726d020474914c6bf">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-05934685b60eaa679b6e86ae9b24219c027fefe3.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-3c42c956e7209eb0c421c7a5904ce3fdce48d6ce.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-88b963d5fb5a52e931f44c65d9eaf747c62b6b7b.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\libs\universal-image-loader-1.9.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="296dfb44fbf31397c0306e60cb62e06ca40df07f">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.1-f51b86a4066253719fc7ba6996a96bbd9cb9afba.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-1b9047bb6fb17c16a48535ac93074e16c6fe38ed.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-ec29ec466b06ee96a50eff04cb276519b0f917c2.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-8c820441c10309bd648a271c070f597782dafcb7.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-fff888b418f9861ab9e4911d7ec3bc02c0e8e518.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-0295a3ff8a6311ffee9d336743d0eaa444d28fa7.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-bfb93203e25d4d6da2163ce3b42eb3043120b65a.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-08ea20abf5d514f886e745753bfcd8306306591d.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="387e53c879e4c6fedb41b87d2b08c2b410c4a34f">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-fd3d821381e0acbd622abcb60ce93a2611377cc9.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-dae2543aa7bb5969ba6ed031f46883d3f3f15f04.jar" />
+    </item>
+    <item
+        jar="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\pre-dexed\debug\classes-33d5ca61a7328532b5b05d5d2f3c80694e6801c8.jar" />
+    </item>
+
+</items>

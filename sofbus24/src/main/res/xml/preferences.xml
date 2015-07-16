@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="sofbusCommonCategory"
+        android:title="@string/pref_category_common">
+        <ListPreference
+            android:defaultValue="bg"
+            android:entries="@array/languagenChoice"
+            android:entryValues="@array/languagenChoiceValues"
+            android:key="appLanguage"
+            android:summary="@string/pref_category_common_language_summary"
+            android:title="@string/pref_category_common_language_title" />
+        <ListPreference
+            android:defaultValue="sofbusThemeLight"
+            android:entries="@array/sofbusTheme"
+            android:entryValues="@array/sofbusThemeValues"
+            android:key="sofbusTheme"
+            android:summary="@string/pref_category_common_theme_summary"
+            android:title="@string/pref_category_common_theme_title" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="sofbusVisualCategory"
+        android:title="@string/pref_category_visual">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="favouritesExpanded"
+            android:summary="@string/pref_category_visual_fav_summary"
+            android:title="@string/pref_category_visual_fav_title" />
+
+        <ListPreference
+            android:defaultValue="tabsTypeIcon"
+            android:entries="@array/tabsType"
+            android:entryValues="@array/tabsTypeValues"
+            android:key="tabsType"
+            android:summary="@string/pref_category_visual_hs_tabs_summary"
+            android:title="@string/pref_category_visual_hs_tabs_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_stations">
+        <ListPreference
+            android:defaultValue="timeRemaining"
+            android:entries="@array/timeType"
+            android:entryValues="@array/timeTypeValues"
+            android:key="timeType"
+            android:summary="@string/pref_category_stations_timeType_summary"
+            android:title="@string/pref_category_stations_timeType_title" />
+        <ListPreference
+            android:defaultValue="timeSkgt"
+            android:entries="@array/timeSource"
+            android:entryValues="@array/timeSourceValues"
+            android:key="timeSource"
+            android:summary="@string/pref_category_stations_timeSource_summary"
+            android:title="@string/pref_category_stations_timeSource_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_schedule_cache">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="cacheState"
+            android:summary="@string/pref_category_schedule_cache_cacheState_summary"
+            android:title="@string/pref_category_schedule_cache_cacheState_title" />
+
+        <ListPreference
+            android:defaultValue="20"
+            android:entries="@array/numberOfDays"
+            android:entryValues="@array/numberOfDaysValues"
+            android:key="numberOfDays"
+            android:summary="@string/pref_category_schedule_cache_numberOfDays_summary"
+            android:title="@string/pref_category_schedule_cache_numberOfDays_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="showCacheToast"
+            android:summary="@string/pref_category_schedule_cache_showCacheToast_summary"
+            android:title="@string/pref_category_schedule_cache_showCacheToast_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_map">
+        <ListPreference
+            android:defaultValue="markerSkgtCars"
+            android:entries="@array/markerType"
+            android:entryValues="@array/markerTypeValues"
+            android:key="markerType"
+            android:summary="@string/pref_category_map_marker_type_summary"
+            android:title="@string/pref_category_map_marker_type_title" />
+        <ListPreference
+            android:defaultValue="markerInfo"
+            android:entries="@array/markerOptions"
+            android:entryValues="@array/markerOptionsValues"
+            android:key="markerOptions"
+            android:summary="@string/pref_category_map_marker_summary"
+            android:title="@string/pref_category_map_marker_title" />
+        <ListPreference
+            android:defaultValue="600"
+            android:entries="@array/stationsRadius"
+            android:entryValues="@array/stationsRadiusValues"
+            android:key="stationsRadius"
+            android:summary="@string/pref_category_map_radius_summary"
+            android:title="@string/pref_category_map_radius_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="positionFocus"
+            android:summary="@string/pref_category_map_position_summary"
+            android:title="@string/pref_category_map_position_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_more">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="automaticUpdate"
+            android:summary="@string/pref_category_more_automatic_update_summary"
+            android:title="@string/pref_category_more_automatic_update_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="googleAnalytics"
+            android:summary="@string/pref_category_more_google_analytics_summary"
+            android:title="@string/pref_category_more_google_analytics_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

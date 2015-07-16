@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values-sw600dp/values-sw600dp.xml -->
+    <eat-comment />
+    <bool name="abs__action_bar_expanded_action_views_exclusive">false</bool>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-sw600dp/device.xml -->
+    <eat-comment />
+    <item name="isLargeTablet" format="boolean" type="bool">false</item>
+    <item name="isPhone" format="boolean" type="bool">false</item>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values-sw600dp/values-sw600dp.xml -->
+    <eat-comment />
+    <dimen name="abs__action_bar_default_height">56dip</dimen>
+    <dimen name="abs__action_bar_icon_vertical_padding">4dip</dimen>
+    <dimen name="abs__action_bar_subtitle_bottom_margin">9dip</dimen>
+    <dimen name="abs__action_bar_subtitle_text_size">14dp</dimen>
+    <dimen name="abs__action_bar_subtitle_top_margin">-3dp</dimen>
+    <dimen name="abs__action_bar_title_text_size">18dp</dimen>
+    <dimen name="abs__action_button_min_width">64dip</dimen>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-sw600dp/dimens.xml -->
+    <eat-comment />
+    <dimen name="cs_list_image_street_view_height">135sp</dimen>
+    <dimen name="favourites_item_height">185sp</dimen>
+    <dimen name="favourites_item_height_dialog">140sp</dimen>
+    <dimen name="home_screen_copyright_txt_padding">6sp</dimen>
+    <dimen name="home_screen_copyright_txt_size">14sp</dimen>
+    <dimen name="home_screen_layout_width">360sp</dimen>
+    <dimen name="home_screen_subtitle_txt_size">16sp</dimen>
+    <dimen name="metro_schedule_legend_size">10sp</dimen>
+    <dimen name="vb_time_image_street_view_height">135sp</dimen>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values-sw600dp/values-sw600dp.xml -->
+    <eat-comment />
+    <integer name="abs__max_action_buttons">5</integer>
+</resources>

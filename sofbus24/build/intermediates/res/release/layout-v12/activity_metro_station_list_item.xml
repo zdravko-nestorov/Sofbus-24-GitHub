@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants" android:orientation="horizontal"
+    android:padding="5sp" android:paddingRight="?android:attr/scrollbarSize">
+
+    <LinearLayout android:id="@+id/metro_item_image_layout" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="2sp"
+        android:layout_marginRight="12sp" android:minHeight="40sp" android:minWidth="40sp">
+
+        <ImageView android:id="@+id/metro_item_station_icon" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_img_empty_content_description" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/metro_item_station_name" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/metro_item_settings_layout"
+        android:layout_toRightOf="@+id/metro_item_image_layout" android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView android:id="@+id/metro_item_station_number" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_below="@+id/metro_item_station_name"
+        android:layout_toLeftOf="@+id/metro_item_settings_layout"
+        android:layout_toRightOf="@+id/metro_item_image_layout" android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary" android:textSize="12sp" />
+
+    <LinearLayout android:id="@+id/metro_item_settings_layout" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" android:layout_marginLeft="12sp"
+        android:layout_marginRight="2sp">
+
+        <ImageButton android:id="@+id/metro_item_settings_icon" style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent" android:layout_height="20sp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:scaleType="fitXY" android:src="@drawable/context_menu_metro" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout-v12/activity_metro_station_list_item.xml -->

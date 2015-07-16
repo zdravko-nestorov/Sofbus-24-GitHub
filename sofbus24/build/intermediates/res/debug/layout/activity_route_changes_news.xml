@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/route_changes_news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3sp"
+            android:paddingRight="3sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2sp"
+            android:layout_marginLeft="3sp"
+            android:layout_marginRight="3sp"
+            android:layout_marginTop="3sp"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="7dp"
+                android:contentDescription="@string/app_img_empty_content_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_route_changes_valid_from" />
+
+            <TextView
+                android:id="@+id/route_changes_news_valid_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FF7000"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3sp"
+            android:layout_marginRight="3sp"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="7dp"
+                android:contentDescription="@string/app_img_empty_content_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_route_changes_creation_date" />
+
+            <TextView
+                android:id="@+id/route_changes_news_creation_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#848484"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginBottom="8sp"
+            android:layout_marginTop="6sp"
+            android:background="#2E90A9"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/route_changes_news_article_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="7sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</ScrollView><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_route_changes_news.xml -->

@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:id="@+id/cs_list_street_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/cs_list_image_street_view_height">
+
+        <ImageView
+            android:id="@+id/cs_list_street_view_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cs_list_image_street_view_height"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop" />
+
+        <ProgressBar
+            android:id="@+id/cs_list_street_view_progress"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/cs_list_street_view_button"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/cs_list_street_view_image"
+            android:layout_alignRight="@+id/cs_list_street_view_image"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:src="@drawable/ic_google_street_view" />
+    </RelativeLayout>
+
+    <bg.znestorov.sofbus24.utils.activity.SearchEditText
+        android:id="@+id/cs_list_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cs_list_street_view"
+        android:layout_marginTop="2sp"
+        android:drawableLeft="@drawable/ic_menu_search"
+        android:drawablePadding="5sp"
+        android:drawableRight="@drawable/ic_menu_close_clear_cancel"
+        android:hint="@string/cs_list_search_hint"
+        android:maxLines="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cs_list_search">
+
+        <FrameLayout
+            android:id="@+id/cs_list_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/cs_list_loading"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

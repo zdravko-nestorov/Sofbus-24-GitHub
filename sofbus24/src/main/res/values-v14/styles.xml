@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Moving the "styles.xml" file into the "values-14" folder as it seems that there are errors (sometimes or always - not sure). -->
+    <!-- It seems that they occur when the application is run on devices with Android version between v11 and v13 (included). When we -->
+    <!-- move them to a folder "values-v14", the target changes to Android 4.0+, which prevent the error (see the links below) -->
+
+    <!-- GooglePlay market error: java.lang.IllegalStateException: You must use Theme.Sherlock, Theme.Sherlock.Light, Theme.Sherlock.Light.DarkActionBar, or a derivative. -->
+    <!-- Theme.Sherlock problem: http://stackoverflow.com/questions/12030039/android-actionbarsherlock-gone-wrong-on-honeycomb-galaxy-tab -->
+    <!-- Android folders with versions (values-xx): http://stackoverflow.com/questions/16624317/styles-and-themes-on-values-values-v11-and-values-v14-folders -->
+
+    <!-- ANDROID LIGHT THEME -->
+    <style name="AppBaseThemeLight" parent="android:Theme.Holo.Light" />
+
+    <style name="AppThemeLight" parent="AppBaseThemeLight">
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- ANDROID DARK THEME -->
+    <style name="AppBaseThemeDark" parent="android:Theme.Holo.Light" />
+
+    <style name="AppThemeDark" parent="AppBaseThemeDark">
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyleDark</item>
+        <item name="android:windowBackground">@color/app_dark_theme_background</item>
+    </style>
+
+    <style name="MyTheme.ActionBarStyleDark" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/app_dark_theme_action_bar</item>
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <!-- ANDROID DIALOG THEME -->
+    <style name="PopupTheme" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- ANDROID TRANSPERANT THEME -->
+    <style name="TransperantTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+</resources>

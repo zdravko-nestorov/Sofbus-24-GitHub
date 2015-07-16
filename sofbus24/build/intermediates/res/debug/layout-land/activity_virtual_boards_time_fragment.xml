@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/list_divider"
+        android:dividerHeight="1sp"
+        android:fastScrollEnabled="true"
+        android:focusable="true"></ListView>
+
+    <RelativeLayout
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/sofbus24_empty_list_view_margin"
+        android:layout_marginRight="@dimen/sofbus24_empty_list_view_margin"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/vb_list_empty_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:src="@drawable/ic_empty_virtual_boards_time_list" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/vb_list_empty_image">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vb_list_empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sofbus24_empty_text_view_margin"
+                    android:layout_marginRight="@dimen/sofbus24_empty_text_view_margin"
+                    android:gravity="center"
+                    android:textColor="#080808"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout-land/activity_virtual_boards_time_fragment.xml -->

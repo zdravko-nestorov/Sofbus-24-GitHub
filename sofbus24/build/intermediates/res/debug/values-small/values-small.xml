@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-small/dimens.xml -->
+    <eat-comment/>
+    <dimen name="about_image_height">90sp</dimen>
+    <dimen name="about_image_land_padding">15sp</dimen>
+    <dimen name="about_image_width">90sp</dimen>
+    <dimen name="cs_list_image_street_view_height">95sp</dimen>
+    <dimen name="sofbus24_empty_list_view_margin">10sp</dimen>
+    <dimen name="sofbus24_empty_text_view_margin">0sp</dimen>
+    <dimen name="vb_time_image_street_view_height">95sp</dimen>
+    <integer name="google_map_route_line_width">4</integer>
+</resources>

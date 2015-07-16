@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines -->
+    <dimen name="activity_horizontal_margin">16sp</dimen>
+    <dimen name="activity_vertical_margin">16sp</dimen>
+
+    <!-- Sofbus 24 -->
+    <dimen name="sofbus24_image_retry_height">50sp</dimen>
+    <dimen name="sofbus24_image_retry_width">50sp</dimen>
+    <dimen name="sofbus24_empty_list_view_margin">35sp</dimen>
+    <dimen name="sofbus24_empty_text_view_margin">15sp</dimen>
+
+    <!-- Tabs (ScheduleVehicle and MetroStation) -->
+    <dimen name="tab_border_radius">12sp</dimen>
+
+    <!-- Edit Tbas -->
+    <dimen name="edit_tabs_item_height">60sp</dimen>
+    <dimen name="edit_tabs_image_arrange_height">40sp</dimen>
+    <dimen name="edit_tabs_image_arrange_width">40sp</dimen>
+
+    <!-- Closest Stations List -->
+    <dimen name="cs_list_image_street_view_height">115sp</dimen>
+    <dimen name="cs_list_image_favourite_height">40sp</dimen>
+    <dimen name="cs_list_image_favourite_width">40sp</dimen>
+
+    <!-- About -->
+    <dimen name="about_image_height">175sp</dimen>
+    <dimen name="about_image_width">175sp</dimen>
+    <dimen name="about_image_land_padding">35sp</dimen>
+
+    <!-- Favourites -->
+    <dimen name="favourites_item_height">130sp</dimen>
+    <dimen name="favourites_item_height_dialog">130sp</dimen>
+
+    <!-- Virtual Boards -->
+    <dimen name="vb_image_height">40sp</dimen>
+    <dimen name="vb_image_width">40sp</dimen>
+
+    <!-- Virtual Boards Time -->
+    <dimen name="vb_time_image_street_view_height">115sp</dimen>
+    <dimen name="vb_time_image_vehicle_height">40sp</dimen>
+    <dimen name="vb_time_image_vehicle_width">40sp</dimen>
+
+    <!-- Schedule -->
+    <dimen name="schedule_image_vehicle_type_height">40sp</dimen>
+    <dimen name="schedule_image_vehicle_type_width">40sp</dimen>
+
+    <!-- Metro Schedule -->
+    <dimen name="metro_schedule_legend_size">9sp</dimen>
+
+    <!-- Home Screen -->
+    <dimen name="home_screen_loading_border_radius">15sp</dimen>
+    <dimen name="home_screen_layout_width">320sp</dimen>
+    <dimen name="home_screen_copyright_txt_padding">3sp</dimen>
+    <dimen name="home_screen_copyright_txt_size">12sp</dimen>
+    <dimen name="home_screen_subtitle_txt_size">14sp</dimen>
+
+    <!-- GoogleMapsRoute -->
+    <integer name="google_map_route_line_width">5</integer>
+
+</resources>

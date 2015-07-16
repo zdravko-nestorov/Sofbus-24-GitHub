@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/home_screen_load" android:duration="1600" android:fromDegrees="0"
+    android:pivotX="50%" android:pivotY="50%" android:repeatCount="infinite"
+    android:toDegrees="360" /><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/drawable/home_screen_loading.xml -->

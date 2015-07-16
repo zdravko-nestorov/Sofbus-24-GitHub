@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Clear Cache -->
+    <item
+        android:id="@+id/action_pt_clear_schedule_cache"
+        android:icon="@drawable/ic_menu_clear_schedule_cache"
+        android:showAsAction="always"
+        android:title="@string/action_clear_schedule_cache" />
+
+    <!-- SUMC Site -->
+    <item
+        android:id="@+id/action_pt_site"
+        android:icon="@drawable/ic_menu_webpage"
+        android:showAsAction="always"
+        android:title="@string/action_pt_site" />
+
+    <!-- Map Route -->
+    <item
+        android:id="@+id/action_pt_route_map"
+        android:icon="@drawable/ic_menu_mapmode"
+        android:showAsAction="always"
+        android:title="@string/action_pt_route_map" />
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_public_transport_actions.xml -->

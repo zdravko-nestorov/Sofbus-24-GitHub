@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Rename -->
+    <item android:id="@+id/menu_favourites_rename" android:icon="@drawable/ic_menu_edit"
+        android:showAsAction="always" android:title="@string/menu_fav_rename" />
+
+    <!-- Remove -->
+    <item android:id="@+id/menu_favourites_remove" android:icon="@drawable/ic_menu_delete"
+        android:showAsAction="always" android:title="@string/menu_fav_remove" />
+
+    <!-- Show on GoogleMaps -->
+    <item android:id="@+id/menu_favourites_google_maps" android:icon="@drawable/ic_menu_mapmode"
+        android:showAsAction="always" android:title="@string/menu_fav_google_maps" />
+
+    <!-- Show on GoogleMaps StreetView -->
+    <item android:id="@+id/menu_favourites_google_street_view"
+        android:icon="@drawable/ic_menu_map_street_view" android:showAsAction="always"
+        android:title="@string/menu_fav_google_street_view" />
+
+    <!-- Show on GoogleMaps StreetView -->
+    <item android:id="@+id/menu_favourites_information"
+        android:icon="@drawable/ic_menu_info_details" android:showAsAction="always"
+        android:title="@string/menu_fav_information" />
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_favourites_context_menu.xml -->
