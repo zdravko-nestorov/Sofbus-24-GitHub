@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="7sp"
+    android:paddingLeft="10sp"
+    android:paddingRight="7sp"
+    android:paddingTop="5sp">
+
+    <TextView
+        android:id="@+id/route_changes_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3sp"
+        android:ellipsize="end"
+        android:fadingEdge="horizontal"
+        android:lines="2"
+        android:maxLines="2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2sp"
+        android:layout_marginTop="3sp"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="7dp"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_route_changes_valid_from" />
+
+        <TextView
+            android:id="@+id/route_changes_item_valid_from_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2sp"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FF7000"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="7dp"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_route_changes_creation_date" />
+
+        <TextView
+            android:id="@+id/route_changes_item_creation_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2sp"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#848484"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_route_changes_list_item.xml -->

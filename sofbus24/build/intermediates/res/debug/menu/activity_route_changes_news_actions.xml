@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- More -->
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_menu_more"
+        android:showAsAction="always"
+        android:title="@string/action_more">
+        <menu>
+            <item
+                android:id="@+id/action_route_changes_copy_link"
+                android:icon="@drawable/ic_menu_copy"
+                android:showAsAction="never"
+                android:title="@string/action_route_changes_copy_link" />
+            <item
+                android:id="@+id/action_route_changes_open_browser"
+                android:icon="@drawable/ic_menu_open_browser"
+                android:showAsAction="never"
+                android:title="@string/action_route_changes_open_browser" />
+        </menu>
+    </item>
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_route_changes_news_actions.xml -->

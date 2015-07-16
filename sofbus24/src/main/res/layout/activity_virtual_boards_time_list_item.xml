@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5sp"
+    android:paddingRight="?android:attr/scrollbarSize">
+
+    <LinearLayout
+        android:id="@+id/vb_time_item_image_vehicle_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3sp"
+        android:layout_marginRight="12sp"
+        android:minHeight="@dimen/vb_time_image_vehicle_height"
+        android:minWidth="@dimen/vb_time_image_vehicle_width">
+
+        <ImageView
+            android:id="@+id/vb_time_item_image_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_img_empty_content_description" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/vb_time_item_vehicle_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/vb_time_item_image_vehicle_layout"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/vb_time_item_vehicle_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vb_time_item_vehicle_caption"
+        android:layout_toRightOf="@+id/vb_time_item_image_vehicle_layout"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/cs_list_item_vehicle_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/vb_time_item_image_vehicle_layout"
+        android:layout_below="@+id/vb_time_item_image_vehicle_layout"
+        android:singleLine="false"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

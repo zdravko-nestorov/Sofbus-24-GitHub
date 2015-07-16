@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+    compileOptions.encoding = 'UTF-8'
+
+    defaultConfig {
+        applicationId "bg.znestorov.sofbus24.main"
+        minSdkVersion 9
+        targetSdkVersion 16
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':dragSortListView')
+    compile project(':pagerSlidingTabStrip')
+    compile project(':rollWheelPicker')
+    compile project(':actionBarSherlock')
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile('com.google.android.gms:play-services:+') {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'mediarouter-v7'
+    }
+    compile files('libs/universal-image-loader-1.9.1.jar')
+}

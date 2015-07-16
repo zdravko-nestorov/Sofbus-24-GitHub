@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment android:id="@+id/station_route_map" class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout android:id="@+id/station_route_lines" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_margin="9sp"
+        android:background="@drawable/metro_lines_round_corners" android:orientation="vertical"
+        android:padding="7sp">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:paddingBottom="8sp">
+
+            <View android:layout_width="50sp" android:layout_height="5sp"
+                android:layout_gravity="center_vertical" android:background="#FF0000"
+                tools:ignore="SmallSp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" android:paddingLeft="8sp"
+                android:text="@string/metro_search_tab_line1" android:textColor="#FF0000"
+                android:textSize="11sp" tools:ignore="SmallSp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View android:layout_width="50sp" android:layout_height="5sp"
+                android:layout_gravity="center_vertical" android:background="#0000FF"
+                tools:ignore="SmallSp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" android:paddingLeft="8sp"
+                android:text="@string/metro_search_tab_line2" android:textColor="#0000FF"
+                android:textSize="11sp" tools:ignore="SmallSp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_map_station_route.xml -->

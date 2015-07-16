@@ -1,0 +1,6 @@
+<resources>
+
+    <!-- Home Screen -->
+    <dimen name="home_screen_layout_width">360sp</dimen>
+
+</resources>

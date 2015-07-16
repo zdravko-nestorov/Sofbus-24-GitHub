@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bg.znestorov.sofbus24.main"
+    android:installLocation="auto"
+    android:versionCode="28"
+    android:versionName="2.5.2" >
+ <!-- Specify the correct minSDK and targetSDK versions. -->
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="16" />
+
+    <!-- Google Maps related permissions -->
+    <permission
+        android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE" />
+
+    <!-- Prevent other Android applications from registering and receiving the Android application's messages -->
+    <permission
+        android:name="bg.znestorov.sofbus24.main.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="bg.znestorov.sofbus24.main.permission.C2D_MESSAGE" />
+
+    <!-- Maps API needs OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!-- Network connectivity permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Access Google based webservices -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- External storage for caching. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- GOOGLE CLOUD MESSAGING PERMISSIONS -->
+    <!-- Android application can register and receive messages -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Allows using PowerManager WakeLocks to keep processor from sleeping or screen from dimming -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Allows access to the list of accounts in the Accounts Service -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Allows the APP to be installed (also visible in GooglePlay) on tablets without ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION -->
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <application
+        android:name="bg.znestorov.sofbus24.entity.GlobalEntity"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppThemeLight" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_api_2_map_release_home" />
+
+        <!-- HomeScreen Select -->
+        <activity
+            android:name="bg.znestorov.sofbus24.main.HomeScreenSelect"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sherlock.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Sofbus 24 -->
+        <activity android:name="bg.znestorov.sofbus24.main.Sofbus24" />
+
+        <!-- History -->
+        <activity android:name="bg.znestorov.sofbus24.main.History" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.HistoryDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Closest Stations List -->
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsListDialog"
+            android:theme="@style/PopupTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- Closest Stations Map -->
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsMap"
+            android:uiOptions="splitActionBarWhenNarrow" />
+
+        <!-- Preferences -->
+        <activity android:name="bg.znestorov.sofbus24.main.Preferences" />
+        <activity android:name="bg.znestorov.sofbus24.main.PreferencesPreHoneycomb" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesDialog"
+            android:theme="@style/PopupTheme" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog"
+            android:theme="@style/PopupTheme" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesHidden"
+            android:theme="@style/TransperantTheme" />
+
+        <!-- Edit Tabs -->
+        <activity android:name="bg.znestorov.sofbus24.main.EditTabs" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.EditTabsDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- About -->
+        <activity android:name="bg.znestorov.sofbus24.main.About" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.AboutDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Station Route Map -->
+        <activity android:name="bg.znestorov.sofbus24.main.StationRouteMap" />
+
+        <!-- Virtual Boards Time -->
+        <activity android:name="bg.znestorov.sofbus24.main.VirtualBoardsTime" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Public Transport -->
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransport"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransportDialog"
+            android:theme="@style/PopupTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- Public Transport Schedule -->
+        <activity android:name="bg.znestorov.sofbus24.main.PublicTransportSchedule" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransportScheduleDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Station Map -->
+        <activity android:name="bg.znestorov.sofbus24.main.StationMap" />
+
+        <!-- Metro Schedule -->
+        <activity android:name="bg.znestorov.sofbus24.main.MetroSchedule" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.MetroScheduleDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- DroidTrans -->
+        <activity android:name="bg.znestorov.sofbus24.main.DroidTrans" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.DroidTransDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Favourites -->
+        <activity android:name="bg.znestorov.sofbus24.main.Favourites" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.FavouritesDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- WebPage -->
+        <activity android:name="bg.znestorov.sofbus24.main.WebPage" />
+
+        <!-- RouteChanges -->
+        <activity android:name="bg.znestorov.sofbus24.main.RouteChanges" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.RouteChangesDialog"
+            android:theme="@style/PopupTheme" />
+
+        <!-- RouteChangesNews -->
+        <activity
+            android:name="bg.znestorov.sofbus24.main.RouteChangesNews"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- Google Cloud Messaging -->
+        <receiver
+            android:name="bg.znestorov.sofbus24.main.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="bg.znestorov.sofbus24.main" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="bg.znestorov.sofbus24.main.GcmMessageHandler" />
+        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+            android:theme="@style/Theme.IAPTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <receiver
+            android:name="com.google.android.gms.wallet.EnableWalletOptimizationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wallet.ENABLE_WALLET_OPTIMIZATION" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

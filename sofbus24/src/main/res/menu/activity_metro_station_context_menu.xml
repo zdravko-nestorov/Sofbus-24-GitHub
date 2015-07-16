@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Add to Favorites -->
+    <item
+        android:id="@+id/menu_metro_station_add"
+        android:showAsAction="always"
+        android:title="@string/menu_metro_station_add" />
+
+    <!-- Remove from Favorites -->
+    <item
+        android:id="@+id/menu_metro_station_remove"
+        android:showAsAction="always"
+        android:title="@string/menu_metro_station_remove" />
+
+    <!-- See on the map -->
+    <item
+        android:id="@+id/menu_metro_station_map"
+        android:showAsAction="always"
+        android:title="@string/menu_metro_station_map" />
+
+</menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3">
+    <dataSet config="debug">
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\debug\res">
+            <file name="wheel_bg"
+                path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\debug\res\drawable\wheel_bg.xml"
+                qualifiers="" type="drawable" />
+            <file name="wheel_val"
+                path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\debug\res\drawable\wheel_val.xml"
+                qualifiers="" type="drawable" />
+        </source>
+    </dataSet>
+    <dataSet config="main">
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\androidTest\res" />
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\rs\androidTest\debug" />
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\generated\androidTest\debug" />
+    </dataSet>
+    <mergedItems />
+</merger>

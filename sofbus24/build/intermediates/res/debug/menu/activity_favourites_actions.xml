@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_favourites_sort"
+        android:icon="@drawable/ic_menu_sort_alphabetically"
+        android:showAsAction="always"
+        android:title="@string/action_favourites_sort" />
+    <item
+        android:id="@+id/action_favourites_remove_all"
+        android:icon="@drawable/ic_menu_clear_list"
+        android:showAsAction="always"
+        android:title="@string/action_favourites_remove_all" />
+
+</menu><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/menu/activity_favourites_actions.xml -->

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- DroidTrans -->
+    <item
+        android:id="@+id/action_droidtrans"
+        android:icon="@drawable/ic_menu_droidtrans"
+        android:showAsAction="always"
+        android:title="@string/action_droidtrans" />
+
+    <!-- Closest stations Map -->
+    <item
+        android:id="@+id/action_closest_stations_map"
+        android:icon="@drawable/ic_menu_mapmode"
+        android:showAsAction="always"
+        android:title="@string/action_closest_stations_map" />
+
+    <!-- More -->
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_menu_more"
+        android:showAsAction="always"
+        android:title="@string/action_more">
+        <menu>
+            <item
+                android:id="@+id/action_favourites_sort"
+                android:icon="@drawable/ic_menu_sort_alphabetically"
+                android:showAsAction="never"
+                android:title="@string/action_favourites_sort" />
+            <item
+                android:id="@+id/action_favourites_remove_all"
+                android:icon="@drawable/ic_menu_clear_list"
+                android:showAsAction="never"
+                android:title="@string/action_favourites_remove_all" />
+            <item
+                android:id="@+id/action_metro_map_route"
+                android:icon="@drawable/ic_menu_mapmode"
+                android:showAsAction="never"
+                android:title="@string/action_metro_map_route" />
+            <item
+                android:id="@+id/action_metro_schedule_site"
+                android:icon="@drawable/ic_menu_webpage"
+                android:showAsAction="never"
+                android:title="@string/action_metro_schedule_site" />
+            <item
+                android:id="@+id/action_clear_schedule_cache"
+                android:icon="@drawable/ic_menu_clear_schedule_cache"
+                android:showAsAction="never"
+                android:title="@string/action_clear_schedule_cache" />
+            <item
+                android:id="@+id/action_edit_tabs"
+                android:icon="@drawable/ic_menu_edit"
+                android:showAsAction="never"
+                android:title="@string/action_edit_tabs" />
+        </menu>
+    </item>
+
+</menu>

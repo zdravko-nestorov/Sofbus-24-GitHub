@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Reset to default -->
+    <item
+        android:id="@+id/action_edit_tabs_reset"
+        android:icon="@drawable/ic_action_ms_reset"
+        android:showAsAction="always"
+        android:title="@string/action_edit_tabs_reset" />
+
+</menu>

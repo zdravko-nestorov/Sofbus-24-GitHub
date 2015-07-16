@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <bg.znestorov.sofbus24.utils.activity.SearchEditText
+        android:id="@+id/favourites_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2sp"
+        android:drawableLeft="@drawable/ic_menu_search"
+        android:drawablePadding="5sp"
+        android:drawableRight="@drawable/ic_menu_close_clear_cancel"
+        android:hint="@string/fav_search_hint"
+        android:maxLines="1" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/favourites_search"
+        android:layout_centerHorizontal="true"
+        android:divider="@drawable/list_divider"
+        android:dividerHeight="1sp"
+        android:fastScrollEnabled="true"
+        android:focusable="true"></ListView>
+
+    <RelativeLayout
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/favourites_search"
+        android:layout_marginLeft="@dimen/sofbus24_empty_list_view_margin"
+        android:layout_marginRight="@dimen/sofbus24_empty_list_view_margin"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/favourites_list_empty_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:src="@drawable/ic_empty_fav_list" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/favourites_list_empty_image">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/favourites_list_empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sofbus24_empty_text_view_margin"
+                    android:layout_marginRight="@dimen/sofbus24_empty_text_view_margin"
+                    android:gravity="center"
+                    android:textColor="#080808"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout-land/activity_favourites_fragment_dialog.xml -->

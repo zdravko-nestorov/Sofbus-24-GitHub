@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+
+    <solid android:color="@color/inner_tab_grey" />
+
+    <stroke android:width="1sp" android:color="@color/inner_tab_grey" />
+
+    <corners android:bottomRightRadius="0sp" android:radius="@dimen/tab_border_radius"
+        android:topRightRadius="0sp" />
+
+</shape><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/drawable-v12/tab_left_selected.xml -->

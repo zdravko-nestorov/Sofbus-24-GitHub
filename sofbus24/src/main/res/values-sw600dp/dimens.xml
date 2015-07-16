@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Favourites -->
+    <dimen name="favourites_item_height">185sp</dimen>
+    <dimen name="favourites_item_height_dialog">140sp</dimen>
+
+    <!-- Closest Stations List -->
+    <dimen name="cs_list_image_street_view_height">135sp</dimen>
+
+    <!-- Virtual Boards Time -->
+    <dimen name="vb_time_image_street_view_height">135sp</dimen>
+
+    <!-- Home Screen -->
+    <dimen name="home_screen_layout_width">360sp</dimen>
+    <dimen name="home_screen_copyright_txt_padding">6sp</dimen>
+    <dimen name="home_screen_copyright_txt_size">14sp</dimen>
+    <dimen name="home_screen_subtitle_txt_size">16sp</dimen>
+
+    <!-- Metro Schedule -->
+    <dimen name="metro_schedule_legend_size">10sp</dimen>
+
+</resources>

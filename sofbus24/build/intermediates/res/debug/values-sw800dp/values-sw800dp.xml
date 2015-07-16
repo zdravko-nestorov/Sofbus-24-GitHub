@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-sw800dp/device.xml -->
+    <eat-comment/>
+    <item format="boolean" name="isLargeTablet" type="bool">true</item>
+    <item format="boolean" name="isPhone" type="bool">false</item>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-sw800dp/dimens.xml -->
+    <eat-comment/>
+    <dimen name="metro_schedule_legend_size">11sp</dimen>
+</resources>

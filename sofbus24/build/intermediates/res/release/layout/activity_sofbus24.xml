@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation_drawer_layout" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout android:id="@+id/sofbus24_fragment" android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ListView android:id="@+id/navigation_drawer_listview" android:layout_width="240dp"
+        android:layout_height="match_parent" android:layout_gravity="start"
+        android:background="#ECECEC" android:choiceMode="singleChoice"
+        android:divider="@drawable/list_divider" android:dividerHeight="1dp" />
+
+</android.support.v4.widget.DrawerLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_sofbus24.xml -->
