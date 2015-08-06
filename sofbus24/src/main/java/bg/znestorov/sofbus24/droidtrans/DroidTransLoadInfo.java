@@ -41,14 +41,37 @@ public class DroidTransLoadInfo {
 
     public static DroidTransLoadInfo getInstance(Activity context) {
         if (instance == null) {
-            instance = new DroidTransLoadInfo(context);
+            instance = newInstance(context);
         }
 
         return instance;
     }
 
     public static void resetInstance(Activity context) {
-        instance = new DroidTransLoadInfo(context);
+        instance = newInstance(context);
+    }
+
+    /**
+     * This method is created because of a problem, reported by a user in the
+     * GooglePlay developer console<br/>
+     * <p/>
+     * Exception: android.database.sqlite.SQLiteDatabaseCorruptException<br/>
+     * Last reported: 15 Jul 18:46
+     *
+     * @param context the current activity context
+     * @return an instance of the current class (if successfully created,
+     * otherwise - null)
+     */
+    private static DroidTransLoadInfo newInstance(Activity context) {
+
+        DroidTransLoadInfo instance;
+        try {
+            instance = new DroidTransLoadInfo(context);
+        } catch (Exception e) {
+            instance = null;
+        }
+
+        return instance;
     }
 
     /**

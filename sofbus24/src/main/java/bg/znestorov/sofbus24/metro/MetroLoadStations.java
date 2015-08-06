@@ -66,28 +66,37 @@ public class MetroLoadStations {
 
     public static MetroLoadStations getInstance(Activity context) {
         if (instance == null) {
-            instance = new MetroLoadStations(context);
+            instance = newInstance(context);
         }
 
         return instance;
     }
 
     public static void resetInstance(Activity context) {
-        instance = new MetroLoadStations(context);
+        instance = newInstance(context);
     }
 
     /**
-     * Check if the instance is already created
+     * This method is created because of a problem, reported by a user in the
+     * GooglePlay developer console<br/>
+     * <p/>
+     * Exception: android.database.sqlite.SQLiteDatabaseCorruptException<br/>
+     * Last reported: 15 Jul 18:46
      *
-     * @return if the instance is already created
+     * @param context the current activity context
+     * @return an instance of the current class (if successfully created,
+     * otherwise - null)
      */
-    public static boolean isInstanceCreated() {
+    private static MetroLoadStations newInstance(Activity context) {
 
-        if (instance != null) {
-            return true;
+        MetroLoadStations instance;
+        try {
+            instance = new MetroLoadStations(context);
+        } catch (Exception e) {
+            instance = null;
         }
 
-        return false;
+        return instance;
     }
 
     public ArrayList<String> getMetroDirectionsNames() {
@@ -239,6 +248,20 @@ public class MetroLoadStations {
         }
 
         return getDirectionList(currentDirection);
+    }
+
+    /**
+     * Check if the instance is already created
+     *
+     * @return if the instance is already created
+     */
+    public static boolean isInstanceCreated() {
+
+        if (instance != null) {
+            return true;
+        }
+
+        return false;
     }
 
     @Override

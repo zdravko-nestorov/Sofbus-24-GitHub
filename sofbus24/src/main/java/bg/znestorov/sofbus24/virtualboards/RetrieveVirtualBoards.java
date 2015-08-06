@@ -762,7 +762,7 @@ public class RetrieveVirtualBoards {
         revertSpecialCaseFixes(station);
 
 		/*
-		 * If it is not a special case, but the searched text matches some of
+         * If it is not a special case, but the searched text matches some of
 		 * the special stations ([1137, 1138 - НДК-тунел], [1139 - НДК-Графити])
 		 * and there was no problem with the request, we should add them to the
 		 * result (just change the htmlResultCode to MULTIPLE_RESULTS and after
@@ -933,7 +933,6 @@ public class RetrieveVirtualBoards {
      * Form the error message. It is not Spanned type as it can't be added as
      * Bundle object.
      *
-     * @param msg the unformatted message from strings
      * @return the formatted message
      */
     private String getErrorMsg() {
@@ -1311,16 +1310,26 @@ public class RetrieveVirtualBoards {
         private void createLoadingView() {
             ActivityUtils.lockScreenOrientation(context);
 
-            if (progressDialog != null) {
-                progressDialog.setIndeterminate(true);
-                progressDialog.setCancelable(true);
-                progressDialog
-                        .setOnCancelListener(new DialogInterface.OnCancelListener() {
-                            public void onCancel(DialogInterface dialog) {
-                                cancel(true);
-                            }
-                        });
-                progressDialog.show();
+            try {
+                if (progressDialog != null) {
+                    progressDialog.setIndeterminate(true);
+                    progressDialog.setCancelable(true);
+                    progressDialog
+                            .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                                public void onCancel(DialogInterface dialog) {
+                                    cancel(true);
+                                }
+                            });
+                    progressDialog.show();
+                }
+            } catch (Exception e) {
+                /**
+                 * Fixing a strange error that is happening sometimes when the
+                 * dialog is created. I guess sometimes activity gets finished
+                 * before the dialog successfully shows.
+                 *
+                 * android.view.WindowManager$BadTokenException: Unable to add window -- token android.os.BinderProxy@433e17f8 is not valid; is your activity running?
+                 */
             }
         }
 
@@ -1416,16 +1425,26 @@ public class RetrieveVirtualBoards {
         private void createLoadingView() {
             ActivityUtils.lockScreenOrientation(context);
 
-            if (progressDialog != null) {
-                progressDialog.setIndeterminate(true);
-                progressDialog.setCancelable(true);
-                progressDialog
-                        .setOnCancelListener(new DialogInterface.OnCancelListener() {
-                            public void onCancel(DialogInterface dialog) {
-                                cancel(true);
-                            }
-                        });
-                progressDialog.show();
+            try {
+                if (progressDialog != null) {
+                    progressDialog.setIndeterminate(true);
+                    progressDialog.setCancelable(true);
+                    progressDialog
+                            .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                                public void onCancel(DialogInterface dialog) {
+                                    cancel(true);
+                                }
+                            });
+                    progressDialog.show();
+                }
+            } catch (Exception e) {
+                /**
+                 * Fixing a strange error that is happening sometimes when the
+                 * dialog is created. I guess sometimes activity gets finished
+                 * before the dialog successfully shows.
+                 *
+                 * android.view.WindowManager$BadTokenException: Unable to add window -- token android.os.BinderProxy@433e17f8 is not valid; is your activity running?
+                 */
             }
         }
 

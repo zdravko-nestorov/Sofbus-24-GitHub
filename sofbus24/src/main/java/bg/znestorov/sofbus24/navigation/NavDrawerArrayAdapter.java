@@ -129,11 +129,23 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
             }
 
             // Initialize each row of the NavigationDrawer
-            initSubTagsBackground(position, viewHolder);
-            viewHolder.navDrawerImg.setImageResource(navigationItemsImgs
-                    .get(position));
-            viewHolder.navDrawerText.setText(navigationItems.get(position));
-            initCheckedImage(position, viewHolder);
+            try {
+                initSubTagsBackground(position, viewHolder);
+                viewHolder.navDrawerImg.setImageResource(navigationItemsImgs
+                        .get(position));
+                viewHolder.navDrawerText.setText(navigationItems.get(position));
+                initCheckedImage(position, viewHolder);
+            } catch (Exception e) {
+                /**
+                 * There is an error with the method initSubTagsBackground(...),
+                 * because the current navDrawerLayout is null. This is just a
+                 * workaround to hide the error from the user - it is happening
+                 * rarely and only on tablet devices.
+                 *
+                 * Exception: java.lang.NullPointerException
+                 * Last reported: 27 Jul 11:28
+                 */
+            }
 
             return rowView;
         }
