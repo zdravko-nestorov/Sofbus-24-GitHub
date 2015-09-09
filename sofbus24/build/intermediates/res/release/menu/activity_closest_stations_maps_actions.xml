@@ -2,48 +2,77 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Favourites -->
-    <item android:id="@+id/action_gm_map_favorites" android:icon="@drawable/ic_menu_star"
-        android:showAsAction="never" android:title="@string/action_gm_map_favorites" />
+    <item
+        android:id="@+id/action_gm_map_favorites"
+        android:icon="@drawable/ic_menu_star"
+        android:showAsAction="never"
+        android:title="@string/action_gm_map_favorites" />
 
     <!-- Droidtrans -->
-    <item android:id="@+id/action_gm_map_droidtrans" android:icon="@drawable/ic_menu_droidtrans"
-        android:showAsAction="never" android:title="@string/action_gm_map_droidtrans" />
+    <item
+        android:id="@+id/action_gm_map_droidtrans"
+        android:icon="@drawable/ic_menu_droidtrans"
+        android:showAsAction="never"
+        android:title="@string/action_gm_map_droidtrans" />
 
     <!-- Clear map -->
-    <item android:id="@+id/action_gm_map_clear" android:icon="@drawable/ic_menu_map_clear"
-        android:showAsAction="always" android:title="@string/action_gm_map_clear" />
+    <item
+        android:id="@+id/action_gm_map_clear"
+        android:icon="@drawable/ic_menu_map_clear"
+        android:showAsAction="always"
+        android:title="@string/action_gm_map_clear" />
 
     <!-- Draw route -->
-    <item android:id="@+id/action_gm_map_route" android:icon="@drawable/ic_menu_directions"
-        android:showAsAction="always" android:title="@string/action_gm_map_route" />
+    <item
+        android:id="@+id/action_gm_map_route"
+        android:icon="@drawable/ic_menu_directions"
+        android:showAsAction="always"
+        android:title="@string/action_gm_map_route" />
 
     <!-- Google Street View -->
-    <item android:id="@+id/action_gm_map_gsv" android:icon="@drawable/ic_menu_map_street_view"
-        android:showAsAction="always" android:title="@string/action_gm_map_gsv" />
+    <item
+        android:id="@+id/action_gm_map_gsv"
+        android:icon="@drawable/ic_menu_map_street_view"
+        android:showAsAction="always"
+        android:title="@string/action_gm_map_gsv" />
 
     <!-- Enable Traffic -->
-    <item android:id="@+id/action_gm_map_traffic" android:icon="@drawable/ic_menu_map_traffic"
-        android:showAsAction="always" android:title="@string/action_gm_map_traffic" />
+    <item
+        android:id="@+id/action_gm_map_traffic"
+        android:icon="@drawable/ic_menu_map_traffic"
+        android:showAsAction="always"
+        android:title="@string/action_gm_map_traffic" />
 
     <!-- Map mode -->
-    <item android:id="@+id/action_gm_map_mode" android:icon="@drawable/ic_menu_map_layers"
-        android:showAsAction="always" android:title="@string/action_gm_map_mode">
+    <item
+        android:id="@+id/action_gm_map_mode"
+        android:icon="@drawable/ic_menu_map_layers"
+        android:showAsAction="always"
+        android:title="@string/action_gm_map_mode">
         <menu>
 
             <!-- Normal map mode -->
-            <item android:id="@+id/action_gm_map_mode_normal" android:showAsAction="never"
+            <item
+                android:id="@+id/action_gm_map_mode_normal"
+                android:showAsAction="never"
                 android:title="@string/action_gm_map_mode_normal" />
 
             <!-- Terrain map mode -->
-            <item android:id="@+id/action_gm_map_mode_terrain" android:showAsAction="never"
+            <item
+                android:id="@+id/action_gm_map_mode_terrain"
+                android:showAsAction="never"
                 android:title="@string/action_gm_map_mode_terrain" />
 
             <!-- Satellite map mode -->
-            <item android:id="@+id/action_gm_map_mode_satellite" android:showAsAction="never"
+            <item
+                android:id="@+id/action_gm_map_mode_satellite"
+                android:showAsAction="never"
                 android:title="@string/action_gm_map_mode_satellite" />
 
             <!-- Hybrid map mode -->
-            <item android:id="@+id/action_gm_map_mode_hybrid" android:showAsAction="never"
+            <item
+                android:id="@+id/action_gm_map_mode_hybrid"
+                android:showAsAction="never"
                 android:title="@string/action_gm_map_mode_hybrid" />
         </menu>
     </item>

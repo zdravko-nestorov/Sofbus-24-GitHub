@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-xlarge/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="about_image_height">175sp</dimen>
     <dimen name="about_image_land_padding">35sp</dimen>
     <dimen name="about_image_width">175sp</dimen>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values-xlarge/values-xlarge.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="abs__action_bar_default_height">56dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">4dip</dimen>
     <dimen name="abs__action_bar_subtitle_bottom_margin">9dip</dimen>
@@ -17,7 +17,7 @@
     <item name="abs__dialog_min_width_major" type="dimen">45%</item>
     <item name="abs__dialog_min_width_minor" type="dimen">72%</item>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-xlarge/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="activity_horizontal_margin">16sp</dimen>
     <dimen name="activity_vertical_margin">16sp</dimen>
     <dimen name="cs_list_image_favourite_height">40sp</dimen>

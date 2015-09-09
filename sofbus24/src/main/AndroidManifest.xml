@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="28"
-    android:versionName="2.5.2">
+    android:versionCode="29"
+    android:versionName="3.0">
 
     <!-- Specify the correct minSDK and targetSDK versions. -->
     <uses-sdk
@@ -84,6 +84,7 @@
         <activity
             android:name="bg.znestorov.sofbus24.main.HomeScreenSelect"
             android:label="@string/app_name"
+            android:screenOrientation="locked"
             android:theme="@style/Theme.Sherlock.Light.NoActionBar"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

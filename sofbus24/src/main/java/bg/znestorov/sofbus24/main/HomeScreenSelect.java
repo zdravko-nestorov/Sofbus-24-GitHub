@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
@@ -58,18 +59,24 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 public class HomeScreenSelect extends SherlockFragmentActivity implements
         OnRecreateDatabaseListener {
 
+    private FragmentActivity context;
+    private GlobalEntity globalContext;
+
+    private int userChoice = -1;
+    private static final String BUNDLE_USER_CHOICE = "USER CHOICE";
+
+    private ImageView homeScreenBkg;
+    private View homeScreenBoxView;
+
+    private boolean isHomeScreenBoxViewVisible;
+    private static final String BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE = "IS HOME SCREEN BOX VIEW VISIBLE";
+
+    private static final Integer MAX_STARTUP_COUNT = 2;
+
     public static final int REQUEST_CODE_HOME_SCREEN_SELECT = 0;
     public static final int RESULT_CODE_ACTIVITY_NEW = 1;
     public static final int RESULT_CODE_ACTIVITY_FINISH = 2;
     public static final int RESULT_CODE_ACTIVITY_RESTART = 3;
-    private static final String BUNDLE_USER_CHOICE = "USER CHOICE";
-    private static final String BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE = "IS HOME SCREEN BOX VIEW VISIBLE";
-    private static final Integer MAX_STARTUP_COUNT = 2;
-    private FragmentActivity context;
-    private GlobalEntity globalContext;
-    private int userChoice = -1;
-    private View homeScreenBoxView;
-    private boolean isHomeScreenBoxViewVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +150,14 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
      */
     private void initLayoutFields(Bundle savedInstanceState,
                                   boolean isFirstTimeStart) {
+
+        // Set the background of the screen according to the orientation
+        homeScreenBkg = (ImageView) findViewById(R.id.sofbus24_home_screen_bkg);
+        if (Utils.isInLandscapeMode(context)) {
+            homeScreenBkg.setImageResource(R.drawable.bkg_home_screen_select);
+        } else {
+            homeScreenBkg.setImageResource(R.drawable.bkg_home_screen_select);
+        }
 
         // Check if the home screen box view should be visible or not
         homeScreenBoxView = findViewById(R.id.sofbus24_home_screen_box_view);

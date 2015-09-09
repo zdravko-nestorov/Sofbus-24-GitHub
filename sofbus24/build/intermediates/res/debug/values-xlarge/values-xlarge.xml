@@ -28,11 +28,12 @@
     <dimen name="edit_tabs_item_height">60sp</dimen>
     <dimen name="favourites_item_height">130sp</dimen>
     <dimen name="favourites_item_height_dialog">130sp</dimen>
+    <dimen name="home_screen_choice_image_height">115dp</dimen>
+    <dimen name="home_screen_choice_image_width">145dp</dimen>
+    <dimen name="home_screen_confirm_image_height">105dp</dimen>
+    <dimen name="home_screen_confirm_image_width">105dp</dimen>
     <dimen name="home_screen_copyright_txt_padding">3sp</dimen>
     <dimen name="home_screen_copyright_txt_size">12sp</dimen>
-    <dimen name="home_screen_layout_width">320sp</dimen>
-    <dimen name="home_screen_loading_border_radius">15sp</dimen>
-    <dimen name="home_screen_subtitle_txt_size">14sp</dimen>
     <dimen name="schedule_image_vehicle_type_height">40sp</dimen>
     <dimen name="schedule_image_vehicle_type_width">40sp</dimen>
     <dimen name="sofbus24_empty_list_view_margin">35sp</dimen>

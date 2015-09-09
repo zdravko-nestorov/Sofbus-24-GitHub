@@ -13,11 +13,16 @@
      limitations under the License.
 -->
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/abs__icon"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical" android:layout_marginBottom="8dip"
-    android:layout_marginLeft="8dip" android:layout_marginRight="-8dip"
-    android:layout_marginTop="8dip" android:duplicateParentState="true"
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abs__icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginBottom="8dip"
+    android:layout_marginLeft="8dip"
+    android:layout_marginRight="-8dip"
+    android:layout_marginTop="8dip"
+    android:duplicateParentState="true"
     android:scaleType="centerInside" />
 
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__list_menu_item_icon.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__list_menu_item_icon.xml -->
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__list_menu_item_icon.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__list_menu_item_icon.xml -->

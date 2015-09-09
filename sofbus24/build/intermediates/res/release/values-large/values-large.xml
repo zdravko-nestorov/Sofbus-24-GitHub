@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-large/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="about_image_height">175sp</dimen>
     <dimen name="about_image_land_padding">35sp</dimen>
     <dimen name="about_image_width">175sp</dimen>

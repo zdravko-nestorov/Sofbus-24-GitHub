@@ -26,8 +26,8 @@
     <string name="app_dialog_title_rate">Rate this app</string>
     <string name="app_database_error" formatted="false"><![CDATA[<b><i>Sofbus 24</i></b> experienced an unexpected error on startup. Please <b><i>restart</i></b> the application and if the problem still persists, contact me with the <b><i>email button</i></b> below.]]></string>
     <string name="app_internet_error">An error occurred while retrieving the information. Please check your Internet connection and try again.</string>
-    <string name="app_info_error" formatted="false"><![CDATA[Currently, the SKGT site does not provide any information about </b>%s<b>. Please try again later.]]></string>
-    <string name="app_captcha_error" formatted="false"><![CDATA[You have to enter the characters from the image (</b>captcha code<b>) to pass the <b>SKGT</b> site security test and retrieve the needed information.]]></string>
+    <string name="app_info_error" formatted="false"><![CDATA[Currently, the SUMC site does not provide any information about </b>%s<b>. Please try again later.]]></string>
+    <string name="app_captcha_error" formatted="false"><![CDATA[You have to enter the characters from the image (</b>captcha code<b>) to pass the <b>SUMC</b> site security test and retrieve the needed information.]]></string>
     <string name="app_internet_or_info_error">No information is found at the moment. Please check your Internet connection or try again later.</string>
     <string name="app_loading_current_location" formatted="false"><![CDATA[Localize the current location...]]></string>
     <string name="app_loading_closest_station" formatted="false"><![CDATA[Finding the nearest station...]]></string>
@@ -61,7 +61,7 @@
 
     <!-- Action Bar -->
     <!-- Sofbus24 -->
-    <string name="action_droidtrans">SKGT Cars</string>
+    <string name="action_droidtrans">SUMC Cars</string>
     <string name="action_recent_history">History</string>
     <string name="action_closest_stations">Closest Stations</string>
     <string name="action_closest_stations_map">Google Maps</string>
@@ -70,12 +70,12 @@
     <string name="action_favourites_sort">Sort</string>
     <string name="action_favourites_remove_all">Delete All</string>
     <string name="action_metro_map_route">Route</string>
-    <string name="action_metro_schedule_site">SKGT Schedule</string>
+    <string name="action_metro_schedule_site">SUMC Schedule</string>
     <string name="action_edit_tabs">Home Screen</string>
     <string name="action_clear_schedule_cache">Clear cache</string>
     <!-- Google Maps -->
     <string name="action_gm_map_favorites">Favourites</string>
-    <string name="action_gm_map_droidtrans">SKGT Cars</string>
+    <string name="action_gm_map_droidtrans">SUMC Cars</string>
     <string name="action_gm_map_clear">Clear</string>
     <string name="action_gm_map_route">Route</string>
     <string name="action_gm_map_gsv">Street View</string>
@@ -113,7 +113,7 @@
     <string name="action_vb_time_map">Google Maps</string>
     <!-- Public Transport -->
     <string name="action_pt_route_map">Route</string>
-    <string name="action_pt_site">SKGT Schedule</string>
+    <string name="action_pt_site">SUMC Schedule</string>
     <string name="action_pt_reset">Reset</string>
     <string name="action_pt_refresh">Refresh</string>
     <string name="action_pt_map">Google Maps</string>
@@ -213,7 +213,7 @@
     <string name="pref_category_map_position_summary">Focus Google Map when the current location change</string>
     <string name="pref_category_more">OTHER</string>
     <string name="pref_category_more_automatic_update_title">Automatic station update</string>
-    <string name="pref_category_more_automatic_update_summary">Automatic update when new stations or SKGT cars are available (twice monthly - only if available)</string>
+    <string name="pref_category_more_automatic_update_summary">Automatic update when new stations or SUMC cars are available (twice monthly - only if available)</string>
     <string name="pref_category_more_google_analytics_title">Help developing Sofbus 24</string>
     <string name="pref_category_more_google_analytics_summary">Sharing anonymous information about the use of the application</string>
 
@@ -330,10 +330,10 @@
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Are you sure that you want to remove the local schedule for the Public Transport vehicles?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_settings" formatted="false"><![CDATA[You have disabled the local schedule for the Public Transport vehicles. Do you want to remove the previously stored information?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_toast" formatted="false"><![CDATA[The local schedule for the Public Transport vehicles was successfully deleted from the cache.]]></string>
-    <string name="pt_menu_clear_all_schedule_cache_empty_toast" formatted="false"><![CDATA[There is no available local schedule for the Public Transport vehicles. If you want to use the offline schedule you should load it from the website of SKGT at least once.]]></string>
+    <string name="pt_menu_clear_all_schedule_cache_empty_toast" formatted="false"><![CDATA[There is no available local schedule for the Public Transport vehicles. If you want to use the offline schedule you should load it from the website of SUMC at least once.]]></string>
     <string name="pt_menu_clear_schedule_cache" formatted="false"><![CDATA[Are you sure that you want to remove the local schedule for <b>%s</b>?]]></string>
     <string name="pt_menu_clear_schedule_cache_toast" formatted="false"><![CDATA[The local schedule for <b>%s</b> was successfully deleted from the cache.]]></string>
-    <string name="pt_menu_clear_schedule_cache_empty_toast" formatted="false"><![CDATA[There is no available local schedule for <b>%s</b>. If you want to use the offline schedule you should load it from the website of SKGT at least once.]]></string>
+    <string name="pt_menu_clear_schedule_cache_empty_toast" formatted="false"><![CDATA[There is no available local schedule for <b>%s</b>. If you want to use the offline schedule you should load it from the website of SUMC at least once.]]></string>
     <string name="pt_schedule_cache_loaded" formatted="false"><![CDATA[An error occurred while retrieving the information for <b>%s</b>. The local schedule from <b>%s</b> was used.]]></string>
 
     <!-- Public Transport Schedule -->
@@ -389,7 +389,7 @@
     <string name="history_item_search_date" formatted="false"><![CDATA[<i><font color="#FF4747">[%s] Search from %s</font></i>]]></string>
 
     <!-- DroidTrans -->
-    <string name="droid_trans_title">SKGT cars</string>
+    <string name="droid_trans_title">SUMC cars</string>
     <string name="droid_trans_type_bus">Bus</string>
     <string name="droid_trans_type_trolley">Trolley</string>
     <string name="droid_trans_type_tram">Tram</string>
@@ -401,8 +401,8 @@
     <!-- Navigation Drawer -->
     <string name="navigation_drawer_home">Home screen</string>
     <string name="navigation_drawer_home_standard">Standard</string>
-    <string name="navigation_drawer_home_map">Google Map</string>
-    <string name="navigation_drawer_home_cars">SKGT vehicles</string>
+    <string name="navigation_drawer_home_map">Google Maps</string>
+    <string name="navigation_drawer_home_cars">SUMC vehicles</string>
     <string name="navigation_drawer_cs">Closest stations</string>
     <string name="navigation_drawer_route_changes">Route changes</string>
     <string name="navigation_drawer_history">History</string>
@@ -415,12 +415,19 @@
     <string name="navigation_drawer_home_screen_changed" formatted="false"><![CDATA[The home screen has been changed to <b><i>%s</i></b>. It will be visualized on every application startup until it is changed again.]]></string>
 
     <!-- Home Screen Select -->
+    <string name="home_screen_motto">do not miss the bus</string>
+    <string name="home_screen_choice_title">CHOOSE А HOME SCREEN</string>
+    <string name="home_screen_choice_subtitle">(can be changed at anytime from the navigation menu)</string>
+    <string name="home_screen_choice_standard_title">STANDARD</string>
+    <string name="home_screen_choice_standard_subtitle">Quick access to the favourite stations</string>
+    <string name="home_screen_choice_map_title">GOOGLE MAPS</string>
+    <string name="home_screen_choice_map_subtitle">Map with the nearest stations</string>
+    <string name="home_screen_choice_droidtrans_title">SUMC VEHICLES</string>
+    <string name="home_screen_choice_droidtrans_subtitle">Quick overview of the SUMC vehicles</string>
     <string name="home_screen_copyright">Copyright © Sofbus 24 2012. All rights reserved</string>
-    <string name="home_screen_choice">Please choose а start screen (it can be cnaged anytime from the left menu):</string>
-    <string name="home_screen_summary">Find your easiest way around Sofia.</string>
 
     <!-- Web Page -->
-    <string name="web_page_title">SKGT - Schedules</string>
+    <string name="web_page_title">SUMC - Schedules</string>
     <string name="web_page_error" formatted="false"><![CDATA[The Web page you tried to access might be temporarily down or it may have moved permanently to a new web address. Please <b><i>check to make sure your device has a signal and data connection</i></b> and/or <b><i>reload this web page later.</i></b>]]></string>
 
     <!-- Route Changes -->

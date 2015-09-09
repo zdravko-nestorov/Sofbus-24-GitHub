@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/favourites_info_list" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:divider="@drawable/list_divider"
+    android:id="@+id/favourites_info_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/list_divider"
     android:dividerHeight="1dp"
     android:fastScrollEnabled="true" /><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_favourites_info_fragment.xml -->

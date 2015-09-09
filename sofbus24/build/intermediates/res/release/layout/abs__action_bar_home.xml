@@ -15,16 +15,28 @@
 
 <view xmlns:android="http://schemas.android.com/apk/res/android"
     class="com.actionbarsherlock.internal.widget.ActionBarView$HomeView"
-    android:layout_width="wrap_content" android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
     android:background="?attr/actionBarItemBackground">
-    <ImageView android:id="@id/abs__up" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="center_vertical|left"
-        android:layout_marginRight="-8dip" android:src="?attr/homeAsUpIndicator"
+
+    <ImageView
+        android:id="@id/abs__up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|left"
+        android:layout_marginRight="-8dip"
+        android:src="?attr/homeAsUpIndicator"
         android:visibility="gone" />
-    <ImageView android:id="@id/abs__home" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:layout_gravity="center"
+
+    <ImageView
+        android:id="@id/abs__home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="@dimen/abs__action_bar_icon_vertical_padding"
         android:layout_marginRight="8dip"
-        android:layout_marginTop="@dimen/abs__action_bar_icon_vertical_padding" android:adjustViewBounds="true"
+        android:layout_marginTop="@dimen/abs__action_bar_icon_vertical_padding"
+        android:adjustViewBounds="true"
         android:scaleType="fitCenter" />
-</view><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_bar_home.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_bar_home.xml -->
+</view>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_bar_home.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_bar_home.xml -->

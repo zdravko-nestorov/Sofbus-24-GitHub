@@ -14,10 +14,8 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/abs__btn_cab_done_pressed_holo_dark"
-        android:state_pressed="true" />
-    <item android:drawable="@drawable/abs__btn_cab_done_focused_holo_dark" android:state_enabled="true"
-        android:state_focused="true" />
-    <item android:drawable="@drawable/abs__btn_cab_done_default_holo_dark"
-        android:state_enabled="true" />
-</selector><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__btn_cab_done_holo_dark.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable/abs__btn_cab_done_holo_dark.xml -->
+    <item android:drawable="@drawable/abs__btn_cab_done_pressed_holo_dark" android:state_pressed="true" />
+    <item android:drawable="@drawable/abs__btn_cab_done_focused_holo_dark" android:state_enabled="true" android:state_focused="true" />
+    <item android:drawable="@drawable/abs__btn_cab_done_default_holo_dark" android:state_enabled="true" />
+</selector>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__btn_cab_done_holo_dark.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable/abs__btn_cab_done_holo_dark.xml -->

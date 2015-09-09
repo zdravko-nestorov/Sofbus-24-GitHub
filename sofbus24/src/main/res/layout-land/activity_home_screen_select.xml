@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3FAAE5">
+
+    <!-- Background image -->
+
+    <RelativeLayout
+        android:id="@+id/sofbus24_home_screen_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bkg_home_screen_select" />
+
+        <!-- Copyrihgt -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/home_screen_copyright_txt_padding"
+            android:text="@string/home_screen_copyright"
+            android:textColor="#989898"
+            android:textSize="@dimen/home_screen_copyright_txt_size" />
+
+        <!-- View responsible for the dim effect -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4A000000" />
+    </RelativeLayout>
+
+    <!-- Choose home screen -->
+
+    <LinearLayout
+        android:id="@+id/sofbus24_home_screen_choice_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bkg_home_screen_top"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Top Part of the Screen -->
+
+        <RelativeLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="14sp"
+            android:layout_marginTop="14sp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Sofbus 24 Motto -->
+
+            <TextView
+                android:id="@+id/sofbus24_home_screen_top_motto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10sp"
+                android:layout_marginLeft="6sp"
+                android:layout_marginRight="6sp"
+                android:text="@string/home_screen_motto"
+                android:textColor="@color/white"
+                android:textSize="@dimen/home_screen_title_txt_size"
+                android:textStyle="bold" />
+
+            <!-- Sofbus 24 Image Text -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/sofbus24_home_screen_top_labels"
+                android:layout_below="@+id/sofbus24_home_screen_top_motto"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bkg_home_screen_logo" />
+
+            </LinearLayout>
+
+            <!-- Home Screen Choice labels -->
+
+            <LinearLayout
+                android:id="@+id/sofbus24_home_screen_top_labels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="6sp"
+                android:layout_marginRight="6sp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25sp"
+                    android:gravity="center"
+                    android:text="@string/home_screen_choice_title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_screen_title_txt_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30sp"
+                    android:layout_marginRight="30sp"
+                    android:gravity="center"
+                    android:text="@string/home_screen_choice_subtitle"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_screen_subtitle_txt_size" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Bottom Part of the Screen -->
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!-- Standard home screen -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_screen_choice_image_width"
+                    android:layout_height="@dimen/home_screen_choice_image_height"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_home_screen_standard" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_standard_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_title_txt_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_standard_subtitle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- GoogleMaps home screen -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_screen_choice_image_width"
+                    android:layout_height="@dimen/home_screen_choice_image_height"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_home_screen_map" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_map_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_title_txt_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_map_subtitle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Droidtrans home screen -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/home_screen_choice_image_width"
+                    android:layout_height="@dimen/home_screen_choice_image_height"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_home_screen_droidtrans" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_droidtrans_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_title_txt_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_droidtrans_subtitle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Confirm home screen button -->
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center_horizontal|bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/home_screen_confirm_image_width"
+                android:layout_height="@dimen/home_screen_confirm_image_height"
+                android:layout_margin="15sp"
+                android:contentDescription="@string/app_img_empty_content_description"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_home_screen_confirm_selector" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

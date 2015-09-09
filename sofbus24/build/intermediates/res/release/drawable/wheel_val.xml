@@ -20,9 +20,14 @@
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <gradient android:angle="90" android:centerColor="#4469C7E9" android:endColor="#5569C7E9"
+    <gradient
+        android:angle="90"
+        android:centerColor="#4469C7E9"
+        android:endColor="#5569C7E9"
         android:startColor="#5569C7E9" />
 
-    <stroke android:width="1.5dp" android:color="#9933B5E5" />
+    <stroke
+        android:width="1.5dp"
+        android:color="#9933B5E5" />
 
 </shape><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/rollWheelPicker/src/main/res/drawable/wheel_val.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/rollWheelPicker/unspecified/res/drawable/wheel_val.xml -->

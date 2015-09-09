@@ -18,27 +18,46 @@ This is an optimized layout for a screen with the Action Bar enabled.
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:fitsSystemWindows="true" android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:splitMotionEvents="false">
+
     <com.actionbarsherlock.internal.widget.ActionBarContainer
-        android:id="@+id/abs__action_bar_container" style="?attr/actionBarStyle"
-        android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.actionbarsherlock.internal.widget.ActionBarView android:id="@+id/abs__action_bar"
-            style="?attr/actionBarStyle" android:layout_width="fill_parent"
+        android:id="@+id/abs__action_bar_container"
+        style="?attr/actionBarStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.actionbarsherlock.internal.widget.ActionBarView
+            android:id="@+id/abs__action_bar"
+            style="?attr/actionBarStyle"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
+
         <com.actionbarsherlock.internal.widget.ActionBarContextView
-            android:id="@+id/abs__action_context_bar" style="?attr/actionModeStyle"
-            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:id="@+id/abs__action_context_bar"
+            style="?attr/actionModeStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:visibility="gone" />
     </com.actionbarsherlock.internal.widget.ActionBarContainer>
+
     <com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout
-        android:id="@+id/abs__content" android:layout_width="fill_parent"
-        android:layout_height="0dip" android:layout_weight="1"
+        android:id="@+id/abs__content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
         android:foreground="?attr/windowContentOverlay"
         android:foregroundGravity="fill_horizontal|top" />
+
     <com.actionbarsherlock.internal.widget.ActionBarContainer
-        android:id="@+id/abs__split_action_bar" style="?attr/actionBarSplitStyle"
-        android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center"
+        android:id="@+id/abs__split_action_bar"
+        style="?attr/actionBarSplitStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:visibility="gone" />
-</LinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__screen_action_bar.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__screen_action_bar.xml -->
+</LinearLayout>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__screen_action_bar.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__screen_action_bar.xml -->

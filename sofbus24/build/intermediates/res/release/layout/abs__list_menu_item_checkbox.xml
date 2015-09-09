@@ -13,10 +13,14 @@
      limitations under the License.
 -->
 
-<CheckBox xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/abs__checkbox"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical" android:clickable="false" android:duplicateParentState="true"
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abs__checkbox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:clickable="false"
+    android:duplicateParentState="true"
     android:focusable="false" />
 
 
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__list_menu_item_checkbox.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__list_menu_item_checkbox.xml -->
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__list_menu_item_checkbox.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__list_menu_item_checkbox.xml -->

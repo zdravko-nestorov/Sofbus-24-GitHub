@@ -15,6 +15,13 @@
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#F0FFFFFF" />
-    <stroke color="#A00080FF" android:width="1dp" />
-    <padding android:bottom="1dp" android:left="5dp" android:right="5dp" android:top="0dp" />
-</shape><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__search_dropdown_light.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable/abs__search_dropdown_light.xml -->
+    <stroke
+        color="#A00080FF"
+        android:width="1dp" />
+    <padding
+        android:bottom="1dp"
+        android:left="5dp"
+        android:right="5dp"
+        android:top="0dp" />
+</shape>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__search_dropdown_light.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable/abs__search_dropdown_light.xml -->

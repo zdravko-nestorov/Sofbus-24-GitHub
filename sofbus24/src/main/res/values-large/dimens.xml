@@ -47,10 +47,15 @@
 
     <!-- Home Screen -->
     <dimen name="home_screen_loading_border_radius">15sp</dimen>
-    <dimen name="home_screen_layout_width">320sp</dimen>
+    <dimen name="home_screen_choice_image_height">100sp</dimen>
+    <dimen name="home_screen_choice_image_width">130sp</dimen>
+    <dimen name="home_screen_confirm_image_height">90sp</dimen>
+    <dimen name="home_screen_confirm_image_width">90sp</dimen>
     <dimen name="home_screen_copyright_txt_padding">3sp</dimen>
     <dimen name="home_screen_copyright_txt_size">12sp</dimen>
-    <dimen name="home_screen_subtitle_txt_size">14sp</dimen>
+    <dimen name="home_screen_motto_image_margin">85sp</dimen>
+    <dimen name="home_screen_title_txt_size">25sp</dimen>
+    <dimen name="home_screen_subtitle_txt_size">18sp</dimen>
 
     <!-- GoogleMapsRoute -->
     <integer name="google_map_route_line_width">6</integer>

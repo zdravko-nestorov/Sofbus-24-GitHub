@@ -13,33 +13,48 @@
      limitations under the License.
 -->
 
-<com.actionbarsherlock.internal.view.menu.ListMenuItemView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
-    android:layout_height="?attr/dropdownListPreferredItemHeight" android:minWidth="196dip"
+<com.actionbarsherlock.internal.view.menu.ListMenuItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?attr/dropdownListPreferredItemHeight"
+    android:minWidth="196dip"
     android:paddingRight="16dip">
 
     <!-- Icon will be inserted here. -->
 
     <!-- The title and summary have some gap between them, and this 'group' should be centered vertically. -->
-    <RelativeLayout android:layout_width="0dip" android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical" android:layout_marginLeft="16dip"
-        android:layout_weight="1" android:duplicateParentState="true">
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dip"
+        android:layout_weight="1"
+        android:duplicateParentState="true">
 
-        <TextView android:id="@+id/abs__title" android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+        <TextView
+            android:id="@+id/abs__title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:duplicateParentState="true" android:ellipsize="marquee"
-            android:fadingEdge="horizontal" android:singleLine="true"
+            android:duplicateParentState="true"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
             android:textAppearance="?attr/textAppearanceLargePopupMenu" />
 
-        <TextView android:id="@+id/abs__shortcut" android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+        <TextView
+            android:id="@+id/abs__shortcut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_below="@id/abs__title"
-            android:duplicateParentState="true" android:singleLine="true"
+            android:duplicateParentState="true"
+            android:singleLine="true"
             android:textAppearance="?attr/textAppearanceSmallPopupMenu" />
 
     </RelativeLayout>
 
     <!-- Checkbox, and/or radio button will be inserted here. -->
 
-</com.actionbarsherlock.internal.view.menu.ListMenuItemView><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__popup_menu_item_layout.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__popup_menu_item_layout.xml -->
+</com.actionbarsherlock.internal.view.menu.ListMenuItemView>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__popup_menu_item_layout.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__popup_menu_item_layout.xml -->

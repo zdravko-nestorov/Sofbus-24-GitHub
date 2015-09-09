@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values-w600dp/values-w600dp.xml -->
-    <eat-comment />
+    <eat-comment/>
     <integer name="abs__max_action_buttons">5</integer>
 </resources>

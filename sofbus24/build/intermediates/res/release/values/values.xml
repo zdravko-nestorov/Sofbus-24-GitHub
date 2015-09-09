@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/arrays.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string-array name="languagenChoice" translatable="false">
         <item name="bg">Български</item>
         <item name="en">English</item>
@@ -13,9 +13,7 @@
     <string-array name="markerOptions">
         <item name="markerInfo">Балонче с информация</item>
         <item name="markerSchedule">Времена на пристигане (показване на снипет с информация)</item>
-        <item name="markerScheduleNoSnippet">Времена на пристигане (без показване на снипет с
-            информация)
-        </item>
+        <item name="markerScheduleNoSnippet">Времена на пристигане (без показване на снипет с информация)</item>
     </string-array>
     <string-array name="markerOptionsValues" translatable="false">
         <item name="markerInfo">markerInfo</item>
@@ -99,13 +97,13 @@
         <item name="timeBoth">timeBoth</item>
     </string-array>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
-    <attr name="background" format="reference|color" />
-    <attr name="backgroundSplit" format="reference|color" />
-    <attr name="divider" format="reference" />
-    <attr name="height" format="dimension" />
-    <attr name="subtitleTextStyle" format="reference" />
-    <attr name="titleTextStyle" format="reference" />
+    <eat-comment/>
+    <attr format="reference|color" name="background"/>
+    <attr format="reference|color" name="backgroundSplit"/>
+    <attr format="reference" name="divider"/>
+    <attr format="dimension" name="height"/>
+    <attr format="reference" name="subtitleTextStyle"/>
+    <attr format="reference" name="titleTextStyle"/>
     <bool name="abs__action_bar_embed_tabs">false</bool>
     <bool name="abs__action_bar_expanded_action_views_exclusive">true</bool>
     <bool name="abs__config_actionMenuItemAllCaps">true</bool>
@@ -113,11 +111,11 @@
     <bool name="abs__config_showMenuShortcutsWhenKeyboardPresent">false</bool>
     <bool name="abs__split_action_bar_is_narrow">true</bool>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/device.xml -->
-    <eat-comment />
-    <item name="isLargeTablet" format="boolean" type="bool">false</item>
-    <item name="isPhone" format="boolean" type="bool">true</item>
+    <eat-comment/>
+    <item format="boolean" name="isLargeTablet" type="bool">false</item>
+    <item format="boolean" name="isPhone" type="bool">true</item>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="abs__background_holo_dark">#ff000000</color>
     <color name="abs__background_holo_light">#fff3f3f3</color>
     <color name="abs__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
@@ -125,7 +123,7 @@
     <color name="abs__bright_foreground_holo_dark">@color/abs__background_holo_light</color>
     <color name="abs__bright_foreground_holo_light">@color/abs__background_holo_dark</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/color.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="app_dark_theme_action_bar">#00000000</color>
     <color name="app_dark_theme_background">#CACACA</color>
     <color name="app_dark_theme_schedule_even">#DEDEDE</color>
@@ -136,10 +134,10 @@
     <color name="app_light_theme_schedule_odd">#F1F1F1</color>
     <color name="app_light_theme_schedule_station">#EEEEEE</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/pagerSlidingTabStrip/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="background_tab_pressed">#6633B5E5</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values/common_colors.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_signin_btn_dark_text_default">@android:color/white</color>
     <color name="common_signin_btn_dark_text_disabled">#FFAAAAAA</color>
@@ -151,10 +149,10 @@
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/color.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="inner_tab_grey">#8B8B8B</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/res/values/wallet_colors.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
     <color name="wallet_bright_foreground_holo_light">#ff000000</color>
@@ -169,322 +167,34 @@
     <color name="wallet_holo_blue_light">#ff33b5e5</color>
     <color name="wallet_link_text_light">#0000ee</color>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/color.xml -->
-    <eat-comment />
+    <eat-comment/>
     <color name="white">#FFFFFF</color>
-    <declare-styleable name="AdsAttrs">
-        <attr name="adSize" format="string" />
-        <attr name="adSizes" format="string" />
-        <attr name="adUnitId" format="string" />
-    </declare-styleable>
-    <declare-styleable name="CustomWalletTheme">
-        <attr name="windowTransitionStyle" format="enum">
-            <enum name="slide" value="1" />
-            <enum name="none" value="2" />
-        </attr>
-    </declare-styleable>
-    <declare-styleable name="DragSortListView">
-        <attr name="collapsed_height" format="dimension" />
-        <attr name="drag_scroll_start" format="float" />
-        <attr name="max_drag_scroll_speed" format="float" />
-        <attr name="float_background_color" format="color" />
-        <attr name="remove_mode">
-            <enum name="clickRemove" value="0" />
-            <enum name="flingRemove" value="1" />
-        </attr>
-        <attr name="track_drag_sort" format="boolean" />
-        <attr name="float_alpha" format="float" />
-        <attr name="slide_shuffle_speed" format="float" />
-        <attr name="remove_animation_duration" format="integer" />
-        <attr name="drop_animation_duration" format="integer" />
-        <attr name="drag_enabled" format="boolean" />
-        <attr name="sort_enabled" format="boolean" />
-        <attr name="remove_enabled" format="boolean" />
-        <attr name="drag_start_mode">
-            <enum name="onDown" value="0" />
-            <enum name="onMove" value="1" />
-            <enum name="onLongPress" value="2" />
-        </attr>
-        <attr name="drag_handle_id" format="integer" />
-        <attr name="fling_handle_id" format="integer" />
-        <attr name="click_remove_id" format="integer" />
-        <attr name="use_default_controller" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="LoadingImageView">
-        <attr name="imageAspectRatioAdjust" format="enum">
-            <enum name="none" value="0" />
-            <enum name="adjust_width" value="1" />
-            <enum name="adjust_height" value="2" />
-        </attr>
-        <attr name="imageAspectRatio" format="float" />
-        <attr name="circleCrop" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="MapAttrs">
-        <attr name="mapType" format="enum">
-            <enum name="none" value="0" />
-            <enum name="normal" value="1" />
-            <enum name="satellite" value="2" />
-            <enum name="terrain" value="3" />
-            <enum name="hybrid" value="4" />
-        </attr>
-        <attr name="cameraBearing" format="float" />
-        <attr name="cameraTargetLat" format="float" />
-        <attr name="cameraTargetLng" format="float" />
-        <attr name="cameraTilt" format="float" />
-        <attr name="cameraZoom" format="float" />
-        <attr name="liteMode" format="boolean" />
-        <attr name="uiCompass" format="boolean" />
-        <attr name="uiRotateGestures" format="boolean" />
-        <attr name="uiScrollGestures" format="boolean" />
-        <attr name="uiTiltGestures" format="boolean" />
-        <attr name="uiZoomControls" format="boolean" />
-        <attr name="uiZoomGestures" format="boolean" />
-        <attr name="useViewLifecycle" format="boolean" />
-        <attr name="zOrderOnTop" format="boolean" />
-        <attr name="uiMapToolbar" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="PagerSlidingTabStrip">
-        <attr name="pstsIndicatorColor" format="color" />
-        <attr name="pstsUnderlineColor" format="color" />
-        <attr name="pstsDividerColor" format="color" />
-        <attr name="pstsIndicatorHeight" format="dimension" />
-        <attr name="pstsUnderlineHeight" format="dimension" />
-        <attr name="pstsDividerPadding" format="dimension" />
-        <attr name="pstsTabPaddingLeftRight" format="dimension" />
-        <attr name="pstsScrollOffset" format="dimension" />
-        <attr name="pstsTabBackground" format="reference" />
-        <attr name="pstsShouldExpand" format="boolean" />
-        <attr name="pstsTextAllCaps" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActionBar">
-        <attr name="navigationMode">
-            <enum name="normal" value="0" />
-            <enum name="listMode" value="1" />
-            <enum name="tabMode" value="2" />
-        </attr>
-        <attr name="displayOptions">
-            <flag name="useLogo" value="0x1" />
-            <flag name="showHome" value="0x2" />
-            <flag name="homeAsUp" value="0x4" />
-            <flag name="showTitle" value="0x8" />
-            <flag name="showCustom" value="0x10" />
-            <flag name="disableHome" value="0x20" />
-        </attr>
-        <attr name="title" format="string" />
-        <attr name="subtitle" format="string" />
-        <attr name="titleTextStyle" />
-        <attr name="subtitleTextStyle" />
-        <attr name="icon" format="reference" />
-        <attr name="logo" format="reference" />
-        <attr name="divider" />
-        <attr name="background" />
-        <attr name="backgroundStacked" format="reference|color" />
-        <attr name="backgroundSplit" />
-        <attr name="customNavigationLayout" format="reference" />
-        <attr name="height" />
-        <attr name="homeLayout" format="reference" />
-        <attr name="progressBarStyle" format="reference" />
-        <attr name="indeterminateProgressStyle" format="reference" />
-        <attr name="progressBarPadding" format="dimension" />
-        <attr name="itemPadding" format="dimension" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActionMenuItemView">
-        <attr name="android:minWidth" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActionMode">
-        <attr name="titleTextStyle" />
-        <attr name="subtitleTextStyle" />
-        <attr name="background" />
-        <attr name="backgroundSplit" />
-        <attr name="height" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActivityChooserView">
-        <attr name="initialActivityCount" format="string" />
-        <attr name="expandActivityOverflowButtonDrawable" format="reference" />
-        <attr name="android:background" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuGroup">
-        <attr name="android:id" />
-        <attr name="android:menuCategory" />
-        <attr name="android:orderInCategory" />
-        <attr name="android:checkableBehavior" />
-        <attr name="android:visible" />
-        <attr name="android:enabled" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuItem">
-        <attr name="android:id" />
-        <attr name="android:menuCategory" />
-        <attr name="android:orderInCategory" />
-        <attr name="android:title" />
-        <attr name="android:titleCondensed" />
-        <attr name="android:icon" />
-        <attr name="android:alphabeticShortcut" />
-        <attr name="android:numericShortcut" />
-        <attr name="android:checkable" />
-        <attr name="android:checked" />
-        <attr name="android:visible" />
-        <attr name="android:enabled" />
-        <attr name="android:onClick" />
-        <attr name="android:showAsAction" />
-        <attr name="android:actionLayout" />
-        <attr name="android:actionViewClass" />
-        <attr name="android:actionProviderClass" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuView">
-        <attr name="itemTextAppearance" format="reference" />
-        <attr name="horizontalDivider" format="reference" />
-        <attr name="verticalDivider" format="reference" />
-        <attr name="headerBackground" format="color|reference" />
-        <attr name="itemBackground" format="color|reference" />
-        <attr name="windowAnimationStyle" format="reference" />
-        <attr name="itemIconDisabledAlpha" format="float" />
-        <attr name="preserveIconSpacing" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="SherlockSearchView">
-        <attr name="iconifiedByDefault" format="boolean" />
-        <attr name="android:maxWidth" />
-        <attr name="queryHint" format="string" />
-        <attr name="android:imeOptions" />
-        <attr name="android:inputType" />
-    </declare-styleable>
-    <declare-styleable name="SherlockSpinner">
-        <attr name="android:prompt" />
-        <attr name="android:dropDownSelector" />
-        <attr name="android:popupBackground" />
-        <attr name="android:dropDownVerticalOffset" />
-        <attr name="android:dropDownHorizontalOffset" />
-        <attr name="android:dropDownWidth" />
-        <attr name="android:popupPromptView" />
-        <attr name="android:gravity" />
-    </declare-styleable>
-    <declare-styleable name="SherlockTheme">
-        <attr name="actionBarTabStyle" format="reference" />
-        <attr name="actionBarTabBarStyle" format="reference" />
-        <attr name="actionBarTabTextStyle" format="reference" />
-        <attr name="actionOverflowButtonStyle" format="reference" />
-        <attr name="actionBarStyle" format="reference" />
-        <attr name="actionBarSplitStyle" format="reference" />
-        <attr name="actionBarWidgetTheme" format="reference" />
-        <attr name="actionBarSize" format="dimension">
-            <enum name="wrap_content" value="0" />
-        </attr>
-        <attr name="actionBarDivider" format="reference" />
-        <attr name="actionBarItemBackground" format="reference" />
-        <attr name="actionMenuTextAppearance" format="reference" />
-        <attr name="actionMenuTextColor" format="color|reference" />
-        <attr name="actionModeStyle" format="reference" />
-        <attr name="actionModeCloseButtonStyle" format="reference" />
-        <attr name="actionModeBackground" format="reference" />
-        <attr name="actionModeSplitBackground" format="reference" />
-        <attr name="actionModeCloseDrawable" format="reference" />
-        <attr name="actionModeShareDrawable" format="reference" />
-        <attr name="actionModePopupWindowStyle" format="reference" />
-        <attr name="buttonStyleSmall" format="reference" />
-        <attr name="selectableItemBackground" format="reference" />
-        <attr name="windowContentOverlay" format="reference" />
-        <attr name="textAppearanceLargePopupMenu" format="reference" />
-        <attr name="textAppearanceSmallPopupMenu" format="reference" />
-        <attr name="textAppearanceSmall" format="reference" />
-        <attr name="textColorPrimary" format="color" />
-        <attr name="textColorPrimaryDisableOnly" format="color" />
-        <attr name="textColorPrimaryInverse" format="color" />
-        <attr name="spinnerItemStyle" format="reference" />
-        <attr name="spinnerDropDownItemStyle" format="reference" />
-        <attr name="searchAutoCompleteTextView" format="reference" />
-        <attr name="searchDropdownBackground" format="reference" />
-        <attr name="searchViewCloseIcon" format="reference" />
-        <attr name="searchViewGoIcon" format="reference" />
-        <attr name="searchViewSearchIcon" format="reference" />
-        <attr name="searchViewVoiceIcon" format="reference" />
-        <attr name="searchViewEditQuery" format="reference" />
-        <attr name="searchViewEditQueryBackground" format="reference" />
-        <attr name="searchViewTextField" format="reference" />
-        <attr name="searchViewTextFieldRight" format="reference" />
-        <attr name="textColorSearchUrl" format="reference|color" />
-        <attr name="searchResultListItemHeight" format="dimension" />
-        <attr name="textAppearanceSearchResultTitle" format="reference" />
-        <attr name="textAppearanceSearchResultSubtitle" format="reference" />
-        <attr name="listPreferredItemHeightSmall" format="dimension" />
-        <attr name="listPreferredItemPaddingLeft" format="dimension" />
-        <attr name="listPreferredItemPaddingRight" format="dimension" />
-        <attr name="textAppearanceListItemSmall" format="reference" />
-        <attr name="windowMinWidthMajor" format="dimension" />
-        <attr name="windowMinWidthMinor" format="dimension" />
-        <attr name="dividerVertical" format="reference" />
-        <attr name="actionDropDownStyle" format="reference" />
-        <attr name="actionButtonStyle" format="reference" />
-        <attr name="homeAsUpIndicator" format="reference" />
-        <attr name="dropDownListViewStyle" format="reference" />
-        <attr name="popupMenuStyle" format="reference" />
-        <attr name="dropdownListPreferredItemHeight" format="dimension" />
-        <attr name="actionSpinnerItemStyle" format="reference" />
-        <attr name="windowNoTitle" format="boolean" />
-        <attr name="windowActionBar" format="boolean" />
-        <attr name="windowActionBarOverlay" format="boolean" />
-        <attr name="windowActionModeOverlay" format="boolean" />
-        <attr name="windowSplitActionBar" format="boolean" />
-        <attr name="listPopupWindowStyle" format="reference" />
-        <attr name="activityChooserViewStyle" format="reference" />
-        <attr name="activatedBackgroundIndicator" format="reference" />
-        <attr name="dropDownHintAppearance" format="reference" />
-    </declare-styleable>
-    <declare-styleable name="SherlockView">
-        <attr name="android:focusable" />
-    </declare-styleable>
-    <declare-styleable name="WalletFragmentOptions">
-        <attr name="appTheme" format="enum">
-            <enum name="holo_dark" value="0" />
-            <enum name="holo_light" value="1" />
-        </attr>
-        <attr name="environment" format="enum">
-            <enum name="production" value="1" />
-            <enum name="test" value="3" />
-            <enum name="sandbox" value="0" />
-            <enum name="strict_sandbox" value="2" />
-        </attr>
-        <attr name="fragmentStyle" format="reference" />
-        <attr name="fragmentMode" format="enum">
-            <enum name="buyButton" value="1" />
-            <enum name="selectionDetails" value="2" />
-        </attr>
-    </declare-styleable>
-    <declare-styleable name="WalletFragmentStyle">
-        <attr name="buyButtonHeight" format="dimension">
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
-        <attr name="buyButtonWidth" format="dimension">
-            <enum name="match_parent" value="-1" />
-            <enum name="wrap_content" value="-2" />
-        </attr>
-        <attr name="buyButtonText" format="enum">
-            <enum name="buy_with_google" value="1" />
-            <enum name="buy_now" value="2" />
-            <enum name="book_now" value="3" />
-            <enum name="donate_with_google" value="4" />
-        </attr>
-        <attr name="buyButtonAppearance" format="enum">
-            <enum name="classic" value="1" />
-            <enum name="grayscale" value="2" />
-            <enum name="monochrome" value="3" />
-        </attr>
-        <attr name="maskedWalletDetailsTextAppearance" format="reference" />
-        <attr name="maskedWalletDetailsHeaderTextAppearance" format="reference" />
-        <attr name="maskedWalletDetailsBackground" format="reference|color" />
-        <attr name="maskedWalletDetailsButtonTextAppearance" format="reference" />
-        <attr name="maskedWalletDetailsButtonBackground" format="reference|color" />
-        <attr name="maskedWalletDetailsLogoTextColor" format="color" />
-        <attr name="maskedWalletDetailsLogoImageType" format="enum">
-            <enum name="classic" value="1" />
-            <enum name="monochrome" value="2" />
-        </attr>
-    </declare-styleable>
+    <declare-styleable name="AdsAttrs"><attr format="string" name="adSize"/><attr format="string" name="adSizes"/><attr format="string" name="adUnitId"/></declare-styleable>
+    <declare-styleable name="CustomWalletTheme"><attr format="enum" name="windowTransitionStyle"><enum name="slide" value="1"/><enum name="none" value="2"/></attr></declare-styleable>
+    <declare-styleable name="DragSortListView"><attr format="dimension" name="collapsed_height"/><attr format="float" name="drag_scroll_start"/><attr format="float" name="max_drag_scroll_speed"/><attr format="color" name="float_background_color"/><attr name="remove_mode"><enum name="clickRemove" value="0"/><enum name="flingRemove" value="1"/></attr><attr format="boolean" name="track_drag_sort"/><attr format="float" name="float_alpha"/><attr format="float" name="slide_shuffle_speed"/><attr format="integer" name="remove_animation_duration"/><attr format="integer" name="drop_animation_duration"/><attr format="boolean" name="drag_enabled"/><attr format="boolean" name="sort_enabled"/><attr format="boolean" name="remove_enabled"/><attr name="drag_start_mode"><enum name="onDown" value="0"/><enum name="onMove" value="1"/><enum name="onLongPress" value="2"/></attr><attr format="integer" name="drag_handle_id"/><attr format="integer" name="fling_handle_id"/><attr format="integer" name="click_remove_id"/><attr format="boolean" name="use_default_controller"/></declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr format="enum" name="imageAspectRatioAdjust"><enum name="none" value="0"/><enum name="adjust_width" value="1"/><enum name="adjust_height" value="2"/></attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
+    <declare-styleable name="MapAttrs"><attr format="enum" name="mapType"><enum name="none" value="0"/><enum name="normal" value="1"/><enum name="satellite" value="2"/><enum name="terrain" value="3"/><enum name="hybrid" value="4"/></attr><attr format="float" name="cameraBearing"/><attr format="float" name="cameraTargetLat"/><attr format="float" name="cameraTargetLng"/><attr format="float" name="cameraTilt"/><attr format="float" name="cameraZoom"/><attr format="boolean" name="liteMode"/><attr format="boolean" name="uiCompass"/><attr format="boolean" name="uiRotateGestures"/><attr format="boolean" name="uiScrollGestures"/><attr format="boolean" name="uiTiltGestures"/><attr format="boolean" name="uiZoomControls"/><attr format="boolean" name="uiZoomGestures"/><attr format="boolean" name="useViewLifecycle"/><attr format="boolean" name="zOrderOnTop"/><attr format="boolean" name="uiMapToolbar"/></declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/></declare-styleable>
+    <declare-styleable name="SherlockActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr format="string" name="title"/><attr format="string" name="subtitle"/><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr name="divider"/><attr name="background"/><attr format="reference|color" name="backgroundStacked"/><attr name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr format="dimension" name="itemPadding"/></declare-styleable>
+    <declare-styleable name="SherlockActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
+    <declare-styleable name="SherlockActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/></declare-styleable>
+    <declare-styleable name="SherlockActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="SherlockMenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
+    <declare-styleable name="SherlockMenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="android:showAsAction"/><attr name="android:actionLayout"/><attr name="android:actionViewClass"/><attr name="android:actionProviderClass"/></declare-styleable>
+    <declare-styleable name="SherlockMenuView"><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="horizontalDivider"/><attr format="reference" name="verticalDivider"/><attr format="color|reference" name="headerBackground"/><attr format="color|reference" name="itemBackground"/><attr format="reference" name="windowAnimationStyle"/><attr format="float" name="itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
+    <declare-styleable name="SherlockSearchView"><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/></declare-styleable>
+    <declare-styleable name="SherlockSpinner"><attr name="android:prompt"/><attr name="android:dropDownSelector"/><attr name="android:popupBackground"/><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/><attr name="android:dropDownWidth"/><attr name="android:popupPromptView"/><attr name="android:gravity"/></declare-styleable>
+    <declare-styleable name="SherlockTheme"><attr format="reference" name="actionBarTabStyle"/><attr format="reference" name="actionBarTabBarStyle"/><attr format="reference" name="actionBarTabTextStyle"/><attr format="reference" name="actionOverflowButtonStyle"/><attr format="reference" name="actionBarStyle"/><attr format="reference" name="actionBarSplitStyle"/><attr format="reference" name="actionBarWidgetTheme"/><attr format="dimension" name="actionBarSize"><enum name="wrap_content" value="0"/></attr><attr format="reference" name="actionBarDivider"/><attr format="reference" name="actionBarItemBackground"/><attr format="reference" name="actionMenuTextAppearance"/><attr format="color|reference" name="actionMenuTextColor"/><attr format="reference" name="actionModeStyle"/><attr format="reference" name="actionModeCloseButtonStyle"/><attr format="reference" name="actionModeBackground"/><attr format="reference" name="actionModeSplitBackground"/><attr format="reference" name="actionModeCloseDrawable"/><attr format="reference" name="actionModeShareDrawable"/><attr format="reference" name="actionModePopupWindowStyle"/><attr format="reference" name="buttonStyleSmall"/><attr format="reference" name="selectableItemBackground"/><attr format="reference" name="windowContentOverlay"/><attr format="reference" name="textAppearanceLargePopupMenu"/><attr format="reference" name="textAppearanceSmallPopupMenu"/><attr format="reference" name="textAppearanceSmall"/><attr format="color" name="textColorPrimary"/><attr format="color" name="textColorPrimaryDisableOnly"/><attr format="color" name="textColorPrimaryInverse"/><attr format="reference" name="spinnerItemStyle"/><attr format="reference" name="spinnerDropDownItemStyle"/><attr format="reference" name="searchAutoCompleteTextView"/><attr format="reference" name="searchDropdownBackground"/><attr format="reference" name="searchViewCloseIcon"/><attr format="reference" name="searchViewGoIcon"/><attr format="reference" name="searchViewSearchIcon"/><attr format="reference" name="searchViewVoiceIcon"/><attr format="reference" name="searchViewEditQuery"/><attr format="reference" name="searchViewEditQueryBackground"/><attr format="reference" name="searchViewTextField"/><attr format="reference" name="searchViewTextFieldRight"/><attr format="reference|color" name="textColorSearchUrl"/><attr format="dimension" name="searchResultListItemHeight"/><attr format="reference" name="textAppearanceSearchResultTitle"/><attr format="reference" name="textAppearanceSearchResultSubtitle"/><attr format="dimension" name="listPreferredItemHeightSmall"/><attr format="dimension" name="listPreferredItemPaddingLeft"/><attr format="dimension" name="listPreferredItemPaddingRight"/><attr format="reference" name="textAppearanceListItemSmall"/><attr format="dimension" name="windowMinWidthMajor"/><attr format="dimension" name="windowMinWidthMinor"/><attr format="reference" name="dividerVertical"/><attr format="reference" name="actionDropDownStyle"/><attr format="reference" name="actionButtonStyle"/><attr format="reference" name="homeAsUpIndicator"/><attr format="reference" name="dropDownListViewStyle"/><attr format="reference" name="popupMenuStyle"/><attr format="dimension" name="dropdownListPreferredItemHeight"/><attr format="reference" name="actionSpinnerItemStyle"/><attr format="boolean" name="windowNoTitle"/><attr format="boolean" name="windowActionBar"/><attr format="boolean" name="windowActionBarOverlay"/><attr format="boolean" name="windowActionModeOverlay"/><attr format="boolean" name="windowSplitActionBar"/><attr format="reference" name="listPopupWindowStyle"/><attr format="reference" name="activityChooserViewStyle"/><attr format="reference" name="activatedBackgroundIndicator"/><attr format="reference" name="dropDownHintAppearance"/></declare-styleable>
+    <declare-styleable name="SherlockView"><attr name="android:focusable"/></declare-styleable>
+    <declare-styleable name="WalletFragmentOptions"><attr format="enum" name="appTheme"><enum name="holo_dark" value="0"/><enum name="holo_light" value="1"/></attr><attr format="enum" name="environment"><enum name="production" value="1"/><enum name="test" value="3"/><enum name="sandbox" value="0"/><enum name="strict_sandbox" value="2"/></attr><attr format="reference" name="fragmentStyle"/><attr format="enum" name="fragmentMode"><enum name="buyButton" value="1"/><enum name="selectionDetails" value="2"/></attr></declare-styleable>
+    <declare-styleable name="WalletFragmentStyle"><attr format="dimension" name="buyButtonHeight"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="dimension" name="buyButtonWidth"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="enum" name="buyButtonText"><enum name="buy_with_google" value="1"/><enum name="buy_now" value="2"/><enum name="book_now" value="3"/><enum name="donate_with_google" value="4"/></attr><attr format="enum" name="buyButtonAppearance"><enum name="classic" value="1"/><enum name="grayscale" value="2"/><enum name="monochrome" value="3"/></attr><attr format="reference" name="maskedWalletDetailsTextAppearance"/><attr format="reference" name="maskedWalletDetailsHeaderTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsBackground"/><attr format="reference" name="maskedWalletDetailsButtonTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsButtonBackground"/><attr format="color" name="maskedWalletDetailsLogoTextColor"/><attr format="enum" name="maskedWalletDetailsLogoImageType"><enum name="classic" value="1"/><enum name="monochrome" value="2"/></attr></declare-styleable>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="about_image_height">175sp</dimen>
     <dimen name="about_image_land_padding">35sp</dimen>
     <dimen name="about_image_width">175sp</dimen>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="abs__action_bar_default_height">48dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">8dip</dimen>
     <dimen name="abs__action_bar_subtitle_bottom_margin">5dip</dimen>
@@ -499,7 +209,7 @@
     <dimen name="abs__search_view_preferred_width">320dip</dimen>
     <dimen name="abs__search_view_text_min_width">160dip</dimen>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <dimen name="activity_horizontal_margin">16sp</dimen>
     <dimen name="activity_vertical_margin">16sp</dimen>
     <dimen name="cs_list_image_favourite_height">40sp</dimen>
@@ -529,54 +239,44 @@
     <dimen name="vb_time_image_vehicle_height">40sp</dimen>
     <dimen name="vb_time_image_vehicle_width">40sp</dimen>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
-    <item name="abs__action_menu_divider" type="id" />
-    <item name="abs__action_menu_presenter" type="id" />
-    <item name="abs__home" type="id" />
-    <item name="abs__progress_circular" type="id" />
-    <item name="abs__progress_horizontal" type="id" />
-    <item name="abs__up" type="id" />
+    <eat-comment/>
+    <item name="abs__action_menu_divider" type="id"/>
+    <item name="abs__action_menu_presenter" type="id"/>
+    <item name="abs__home" type="id"/>
+    <item name="abs__progress_circular" type="id"/>
+    <item name="abs__progress_horizontal" type="id"/>
+    <item name="abs__up" type="id"/>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/res/values/cast_ids.xml -->
-    <eat-comment />
-    <item name="cast_notification_id" type="id" />
+    <eat-comment/>
+    <item name="cast_notification_id" type="id"/>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <integer name="abs__max_action_buttons">2</integer>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/dimens.xml -->
-    <eat-comment />
+    <eat-comment/>
     <integer name="google_map_route_line_width">5</integer>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values/version.xml -->
-    <eat-comment />
+    <eat-comment/>
     <integer name="google_play_services_version">7571000</integer>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="about_information" formatted="false">
-        <![CDATA[<b>%s версия %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>Android системата предоставя подробна информация,
+    <eat-comment/>
+    <string formatted="false" name="about_information">
+<![CDATA[<b>%s версия %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>Android системата предоставя подробна информация, 
 		свързана с използването на градския транспорт в София, като часове на пристигане в реално време, разписания на превозните средства, 
 		разположения на спирките на територията на София, както и локализиране на най-близките спирки, в зависимост от текущото местоположение.<br><br>
 		<i>Данните се извличат от: <b><a href="http://m.sumc.bg">http://m.sumc.bg</a></b></i>]]>
     </string>
-    <string name="about_subtitle" formatted="false"><![CDATA[Версия %s]]></string>
-    <string name="about_update_app" formatted="false">
-        <![CDATA[Проверка за нова версия на приложението...]]></string>
-    <string name="about_update_app_last" formatted="false">
-        <![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>
-    <string name="about_update_app_new" formatted="false">
-        <![CDATA[Налична е нова версия - <b>Софбус 24 - версия %s</b>. Бихте ли желали да обновите приложението?]]></string>
-    <string name="about_update_db" formatted="false">
-        <![CDATA[Проверка за обновление на спирките...]]></string>
-    <string name="about_update_db_copy" formatted="false">
-        <![CDATA[Обновяване на спирките на градския транспорт...]]></string>
-    <string name="about_update_db_last">В момента няма налично обновление на спирките. Моля опитайте
-        по-късно.
-    </string>
-    <string name="about_update_db_new">Налично е обновление на спирките. Бихте ли желали да добавите
-        новите спирки?
-    </string>
-    <string name="about_update_db_restart" formatted="false">
-        <![CDATA[Новите спирки бяха добавени успешно. Ще трябва да рестартирате приложението, за да използвате обновената информация. Искате ли да рестартирате <b>Софбус 24</b> сега?]]></string>
+    <string formatted="false" name="about_subtitle"><![CDATA[Версия %s]]></string>
+    <string formatted="false" name="about_update_app"><![CDATA[Проверка за нова версия на приложението...]]></string>
+    <string formatted="false" name="about_update_app_last"><![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>
+    <string formatted="false" name="about_update_app_new"><![CDATA[Налична е нова версия - <b>Софбус 24 - версия %s</b>. Бихте ли желали да обновите приложението?]]></string>
+    <string formatted="false" name="about_update_db"><![CDATA[Проверка за обновление на спирките...]]></string>
+    <string formatted="false" name="about_update_db_copy"><![CDATA[Обновяване на спирките на градския транспорт...]]></string>
+    <string name="about_update_db_last">В момента няма налично обновление на спирките. Моля опитайте по-късно.</string>
+    <string name="about_update_db_new">Налично е обновление на спирките. Бихте ли желали да добавите новите спирки?</string>
+    <string formatted="false" name="about_update_db_restart"><![CDATA[Новите спирки бяха добавени успешно. Ще трябва да рестартирате приложението, за да използвате обновената информация. Искате ли да рестартирате <b>Софбус 24</b> сега?]]></string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="abs__action_bar_home_description">Navigate home</string>
     <string name="abs__action_bar_up_description">Navigate up</string>
     <string name="abs__action_menu_overflow_description">More options</string>
@@ -589,14 +289,12 @@
     <string name="abs__searchview_description_submit">Submit query</string>
     <string name="abs__searchview_description_voice">Voice search</string>
     <string name="abs__shareactionprovider_share_with">Share with</string>
-    <string name="abs__shareactionprovider_share_with_application">Share with
-        <ns1:g example="Bluetooth" id="application_name">%s</ns1:g>
-    </string>
+    <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g example="Bluetooth" id="application_name">%s</ns1:g></string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/res/values/admob_strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="accept">Accept</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="action_about_update_app">Проверка за нова версия</string>
     <string name="action_about_update_db">Обновяване на спирките</string>
     <string name="action_clear_schedule_cache">Изчисти кеша</string>
@@ -670,237 +368,115 @@
     <string name="app_button_save">Запази</string>
     <string name="app_button_update">Обнови</string>
     <string name="app_button_yes">Да</string>
-    <string name="app_captcha_error" formatted="false">
-        <![CDATA[Трябва да въведете символите от изображението (<b>captcha код</b>), за да преминете теста за сигурност на <b>СКГТ</b> и да извлечете нужната информация.]]></string>
-    <string name="app_coordinates_error">Спирката не може да бъде визуализирана (не са намерени
-        нейните координати в базата от данни).
-    </string>
-    <string name="app_database_error" formatted="false">
-        <![CDATA[Възникна неочакван проблем при стартирането на <b><i>Софбус 24</i></b>. Моля опитайте отново като <b><i>рестартирате</i></b> приложението. Ако грешката продължава да се появява, моля свържете се с мен чрез <b><i>имейл бутона</i></b> отдолу.]]></string>
+    <string formatted="false" name="app_captcha_error"><![CDATA[Трябва да въведете символите от изображението (<b>captcha код</b>), за да преминете теста за сигурност на <b>СКГТ</b> и да извлечете нужната информация.]]></string>
+    <string name="app_coordinates_error">Спирката не може да бъде визуализирана (не са намерени нейните координати в базата от данни).</string>
+    <string formatted="false" name="app_database_error"><![CDATA[Възникна неочакван проблем при стартирането на <b><i>Софбус 24</i></b>. Моля опитайте отново като <b><i>рестартирате</i></b> приложението. Ако грешката продължава да се появява, моля свържете се с мен чрез <b><i>имейл бутона</i></b> отдолу.]]></string>
     <string name="app_dialog_title_error">Грешка</string>
     <string name="app_dialog_title_important">Важно</string>
     <string name="app_dialog_title_info">Информация</string>
     <string name="app_dialog_title_rate">Оценете приложението</string>
-    <string name="app_distance" formatted="false">Разстояние: ~%s</string>
+    <string formatted="false" name="app_distance">Разстояние: ~%s</string>
     <string name="app_distance_kilometers">км </string>
     <string name="app_distance_meters">м</string>
     <string name="app_distance_none">Разстояние: ∞ (изчислява се…)</string>
-    <string name="app_google_play_msg">Услугите за Google Play, на които разчита Софбус 24 за
-        показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте
-        ги, за да продължите.
-    </string>
+    <string name="app_google_play_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_play_titlte">Услуги за Google Play</string>
-    <string name="app_google_street_view_msg">Услугите за Google Play, на които разчита Софбус 24 за
-        показване на Google Street View, не се поддържат от устройството Ви. Моля, инсталирайте ги,
-        за да продължите.
-    </string>
+    <string name="app_google_street_view_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на Google Street View, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_street_view_title">Google Street View</string>
-    <string name="app_img_empty_content_description" />
-    <string name="app_info_error" formatted="false">
-        <![CDATA[В момента сайтът за градска мобилност не предоставя информация за <b>%s</b>. Моля опитайте пак по-късно.]]></string>
-    <string name="app_internet_error">Възникна грешка при извличането на информацията. Моля
-        проверете вашата интернет връзка и опитайте отново.
-    </string>
-    <string name="app_internet_or_info_error">В момента няма намерена информация. Моля проверете
-        вашата интернет връзка или опитайте по-късно.
-    </string>
-    <string name="app_loading_closest_station" formatted="false">
-        <![CDATA[Търсене на най-близката спирка...]]></string>
-    <string name="app_loading_current_location" formatted="false">
-        <![CDATA[Локализиране на текущото местоположение...]]></string>
-    <string name="app_location_access_error" formatted="false">
-        <![CDATA[Моля активирайте опцията <b><i>\"Достъп до местоположението ми\"</i></b>, за да може <b><i>Софбус 24</i></b> да използва информация за вашата локация.]]></string>
-    <string name="app_location_modules_error">Моля включете поне едно от устройствата (Network, WiFi
-        или GPS), за да бъде засечено текущото ви местоположение.
-    </string>
-    <string name="app_location_modules_timeout_error">Намирането на текущото местоположение продължи
-        твърде дълго или всички локализиращи модули са изключени (Network, WiFi или GPS). Моля
-        включете някой от тях и опитайте отново.
-    </string>
-    <string name="app_location_timeout_error">Намирането на текущото местоположение продължи твърде
-        дълго. Моля опитайте отново.
-    </string>
-    <string name="app_location_timeout_map_error">Намирането на текущото местоположение продължи
-        твърде дълго. Картата ще бъде позиционирана върху центъра на София, докато бъдете
-        локализирани.
-    </string>
+    <string name="app_img_empty_content_description"/>
+    <string formatted="false" name="app_info_error"><![CDATA[В момента сайтът за градска мобилност не предоставя информация за <b>%s</b>. Моля опитайте пак по-късно.]]></string>
+    <string name="app_internet_error">Възникна грешка при извличането на информацията. Моля проверете вашата интернет връзка и опитайте отново.</string>
+    <string name="app_internet_or_info_error">В момента няма намерена информация. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
+    <string formatted="false" name="app_loading_closest_station"><![CDATA[Търсене на най-близката спирка...]]></string>
+    <string formatted="false" name="app_loading_current_location"><![CDATA[Локализиране на текущото местоположение...]]></string>
+    <string formatted="false" name="app_location_access_error"><![CDATA[Моля активирайте опцията <b><i>\"Достъп до местоположението ми\"</i></b>, за да може <b><i>Софбус 24</i></b> да използва информация за вашата локация.]]></string>
+    <string name="app_location_modules_error">Моля включете поне едно от устройствата (Network, WiFi или GPS), за да бъде засечено текущото ви местоположение.</string>
+    <string name="app_location_modules_timeout_error">Намирането на текущото местоположение продължи твърде дълго или всички локализиращи модули са изключени (Network, WiFi или GPS). Моля включете някой от тях и опитайте отново.</string>
+    <string name="app_location_timeout_error">Намирането на текущото местоположение продължи твърде дълго. Моля опитайте отново.</string>
+    <string name="app_location_timeout_map_error">Намирането на текущото местоположение продължи твърде дълго. Картата ще бъде позиционирана върху центъра на София, докато бъдете локализирани.</string>
     <string name="app_name" translatable="false">Софбус 24</string>
     <string name="app_navigation_drawer_close" translatable="false">Затвори</string>
     <string name="app_navigation_drawer_open" translatable="false">Отвори</string>
-    <string name="app_nearest_station_init_error">Намирането на най-близката до вас спирка беше
-        неуспешно. По подразбиране ще бъде използвана най-близката до центъра на София.
-    </string>
-    <string name="app_nearest_station_modules_error">Моля включете поне едно от устройствата
-        (Network, WiFi или GPS), за да бъде намерена най-близката до вас спирка и опитайте отново.
-    </string>
-    <string name="app_nearest_station_timeout_error">Намирането на най-близката до вас спирка
-        продължи твърде дълго. Моля опитайте отново.
-    </string>
-    <string name="app_no_station_selected_error">Моля изберете спирка от картата, за да бъде
-        визуализирана чрез режима Google Street View.
-    </string>
+    <string name="app_nearest_station_init_error">Намирането на най-близката до вас спирка беше неуспешно. По подразбиране ще бъде използвана най-близката до центъра на София.</string>
+    <string name="app_nearest_station_modules_error">Моля включете поне едно от устройствата (Network, WiFi или GPS), за да бъде намерена най-близката до вас спирка и опитайте отново.</string>
+    <string name="app_nearest_station_timeout_error">Намирането на най-близката до вас спирка продължи твърде дълго. Моля опитайте отново.</string>
+    <string name="app_no_station_selected_error">Моля изберете спирка от картата, за да бъде визуализирана чрез режима Google Street View.</string>
     <string name="app_remaining_hours">ч</string>
     <string name="app_remaining_minutes">м</string>
-    <string name="app_send_email_body" formatted="false">
-        <![CDATA[Възникна неочакван проблем при стартирането на Софбус 24...]]></string>
+    <string formatted="false" name="app_send_email_body"><![CDATA[Възникна неочакван проблем при стартирането на Софбус 24...]]></string>
     <string name="app_send_email_chooser">Изпращане на мейл</string>
-    <string name="app_send_email_chooser_error">Възникна грешка, тъй като няма инсталирани мейл
-        клиенти. Моля добавете, за да може да изпратите мейл.
-    </string>
+    <string name="app_send_email_chooser_error">Възникна грешка, тъй като няма инсталирани мейл клиенти. Моля добавете, за да може да изпратите мейл.</string>
     <string name="app_send_email_subject">Проблем при стартирането на Софбус 24</string>
     <string name="app_sofbus24">Софбус 24</string>
-    <string name="app_toast_add_favourites" formatted="false">
-        <![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
-    <string name="app_toast_remove_favourites" formatted="false">
-        <![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
-    <string name="app_toast_rename_favourites" formatted="false">
-        <![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
+    <string formatted="false" name="app_toast_add_favourites"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
+    <string formatted="false" name="app_toast_remove_favourites"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
+    <string formatted="false" name="app_toast_rename_favourites"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values/auth_strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/res/values/cast_strings.xml -->
-    <eat-comment />
-    <string name="cast_notification_connected_message">Connected to
-        <ns1:g id="name">%1$s</ns1:g>
-    </string>
-    <string name="cast_notification_connecting_message">Connecting to
-        <ns1:g id="name">%1$s</ns1:g>
-    </string>
+    <eat-comment/>
+    <string name="cast_notification_connected_message">Connected to <ns1:g id="name">%1$s</ns1:g></string>
+    <string name="cast_notification_connecting_message">Connecting to <ns1:g id="name">%1$s</ns1:g></string>
     <string name="cast_notification_disconnect">Disconnect</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values/common_strings.xml -->
-    <eat-comment />
-    <string name="common_android_wear_notification_needs_update_text">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        requires an update to the Android Wear app.
-    </string>
-    <string name="common_android_wear_update_text">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t run unless you update the Android Wear app.
-    </string>
-    <string name="common_android_wear_update_title" msgid="6006316683626838685">Update Android
-        Wear
-    </string>
-    <string name="common_google_play_services_api_unavailable_text">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        requires one or more Google Play services that are not currently available. Please contact
-        the developer for assistance.
-    </string>
-    <string name="common_google_play_services_enable_button" msgid="2523291102206661146">Enable
-        Google Play services
-    </string>
-    <string name="common_google_play_services_enable_text" msgid="227660514972886228">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t work unless you enable Google Play services.
-    </string>
-    <string name="common_google_play_services_enable_title" msgid="5122002158466380389">Enable
-        Google Play services
-    </string>
-    <string name="common_google_play_services_error_notification_requested_by_msg">Requested by
-        <ns1:g id="app_name">%1$s</ns1:g>
-    </string>
-    <string name="common_google_play_services_install_button" msgid="7153882981874058840">Get Google
-        Play services
-    </string>
-    <string name="common_google_play_services_install_text_phone" msgid="2122112764540849864">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t run without Google Play services, which are missing from your phone.
-    </string>
-    <string name="common_google_play_services_install_text_tablet" msgid="7351599665250191022">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t run without Google Play services, which are missing from your tablet.
-    </string>
-    <string name="common_google_play_services_install_title" msgid="7215213145546190223">Get Google
-        Play services
-    </string>
-    <string name="common_google_play_services_invalid_account_text">The specified account does not
-        exist on this device. Please choose a different account.
-    </string>
+    <eat-comment/>
+    <string name="common_android_wear_notification_needs_update_text"><ns1:g id="app_name">%1$s</ns1:g> requires an update to the Android Wear app.</string>
+    <string name="common_android_wear_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update the Android Wear app.</string>
+    <string msgid="6006316683626838685" name="common_android_wear_update_title">Update Android Wear</string>
+    <string name="common_google_play_services_api_unavailable_text"><ns1:g id="app_name">%1$s</ns1:g> requires one or more Google Play services that are not currently available. Please contact the developer for assistance.</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable Google Play services</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string name="common_google_play_services_error_notification_requested_by_msg">Requested by <ns1:g id="app_name">%1$s</ns1:g></string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Get Google Play services</string>
+    <string msgid="2122112764540849864" name="common_google_play_services_install_text_phone"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your phone.</string>
+    <string msgid="7351599665250191022" name="common_google_play_services_install_text_tablet"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your tablet.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_invalid_account_text">The specified account does not exist on this device. Please choose a different account.</string>
     <string name="common_google_play_services_invalid_account_title">Invalid Account</string>
-    <string name="common_google_play_services_needs_enabling_title">An application requires Google
-        Play services to be enabled.
-    </string>
-    <string name="common_google_play_services_network_error_text">A data connection is required to
-        connect to Google Play services.
-    </string>
+    <string name="common_google_play_services_needs_enabling_title">An application requires Google Play services to be enabled.</string>
+    <string name="common_google_play_services_network_error_text">A data connection is required to connect to Google Play services.</string>
     <string name="common_google_play_services_network_error_title">Network Error</string>
-    <string name="common_google_play_services_notification_needs_update_title">An application
-        requires an update for Google Play services.
-    </string>
-    <string name="common_google_play_services_notification_ticker">Google Play services error
-    </string>
-    <string name="common_google_play_services_sign_in_failed_text">Error signing in the specified
-        account. Please choose a different account.
-    </string>
+    <string name="common_google_play_services_notification_needs_update_title">An application requires an update for Google Play services.</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_sign_in_failed_text">Error signing in the specified account. Please choose a different account.</string>
     <string name="common_google_play_services_sign_in_failed_title">Sign in failed</string>
-    <string name="common_google_play_services_unknown_issue">Unknown issue with Google Play
-        services.
-    </string>
-    <string name="common_google_play_services_unsupported_text">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        relies on Google Play services, which is not supported by your device. Contact the
-        manufacturer for assistance.
-    </string>
+    <string name="common_google_play_services_unknown_issue">Unknown issue with Google Play services.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> relies on Google Play services, which is not supported by your device. Contact the manufacturer for assistance.</string>
     <string name="common_google_play_services_unsupported_title">Google Play services</string>
-    <string name="common_google_play_services_update_button" msgid="6556509956452265614">Update
-    </string>
-    <string name="common_google_play_services_update_text" msgid="9053896323427875356">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t run unless you update Google Play services.
-    </string>
-    <string name="common_google_play_services_update_title" msgid="6006316683626838685">Update
-        Google Play services
-    </string>
-    <string name="common_google_play_services_updating_text">
-        <ns1:g id="app_name">%1$s</ns1:g>
-        won\'t run without Google Play services, which are currently updating.
-    </string>
-    <string name="common_google_play_services_updating_title">Google Play services are updating
-    </string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_updating_title">Google Play services are updating</string>
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/res/values/admob_strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="cs_list_item_empty_list">Няма намерени спирки в радиус от 100 км. за това търсене.
-        Моля опитайте с други критерии или се приближете до София.
-    </string>
+    <eat-comment/>
+    <string name="cs_list_item_empty_list">Няма намерени спирки в радиус от 100 км. за това търсене. Моля опитайте с други критерии или се приближете до София.</string>
     <string name="cs_list_search_hint">Търсене по име или номер</string>
     <string name="cs_list_title">Най-близки спирки</string>
     <string name="cs_map_clear_info">Картата беше върната в начално си положение.</string>
-    <string name="cs_map_closest_stations" formatted="false">
-        <![CDATA[Визуализиране на най-близките спирки...]]></string>
-    <string name="cs_map_fetch_route" formatted="false">
-        <![CDATA[Изчертаване на маршрута...]]></string>
-    <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля
-        проверете вашата интернет връзка или опитайте по-късно.
-    </string>
-    <string name="cs_map_hybrid" formatted="false">
-        <![CDATA[Слоят <b><i>Hybrid</i></b> беше активиран.]]></string>
-    <string name="cs_map_location_error">Моля изчакайте да бъде локализирано текущото ви
-        местоположение.
-    </string>
-    <string name="cs_map_normal" formatted="false">
-        <![CDATA[Слоят <b><i>Normal</i></b> беше активиран.]]></string>
-    <string name="cs_map_route_error">Моля изберете спирка от картата, за да бъде визуализиран
-        маршрута до нея.
-    </string>
-    <string name="cs_map_satellite" formatted="false">
-        <![CDATA[Слоят <b><i>Satellite</i></b> беше активиран.]]></string>
-    <string name="cs_map_subtitle" formatted="false">Спирки в радиус от %s метра: %s</string>
-    <string name="cs_map_terrain" formatted="false">
-        <![CDATA[Слоят <b><i>Terrain</i></b> беше активиран.]]></string>
+    <string formatted="false" name="cs_map_closest_stations"><![CDATA[Визуализиране на най-близките спирки...]]></string>
+    <string formatted="false" name="cs_map_fetch_route"><![CDATA[Изчертаване на маршрута...]]></string>
+    <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
+    <string formatted="false" name="cs_map_hybrid"><![CDATA[Слоят <b><i>Hybrid</i></b> беше активиран.]]></string>
+    <string name="cs_map_location_error">Моля изчакайте да бъде локализирано текущото ви местоположение.</string>
+    <string formatted="false" name="cs_map_normal"><![CDATA[Слоят <b><i>Normal</i></b> беше активиран.]]></string>
+    <string name="cs_map_route_error">Моля изберете спирка от картата, за да бъде визуализиран маршрута до нея.</string>
+    <string formatted="false" name="cs_map_satellite"><![CDATA[Слоят <b><i>Satellite</i></b> беше активиран.]]></string>
+    <string formatted="false" name="cs_map_subtitle">Спирки в радиус от %s метра: %s</string>
+    <string formatted="false" name="cs_map_terrain"><![CDATA[Слоят <b><i>Terrain</i></b> беше активиран.]]></string>
     <string name="cs_map_title">Google Maps</string>
-    <string name="cs_map_traffic_off_info">Слоят, показващ трафика върху картата Google Maps, беше
-        деактивиран.
-    </string>
-    <string name="cs_map_traffic_on_info">Слоят, показващ трафика върху картата Google Maps, беше
-        активиран.
-    </string>
+    <string name="cs_map_traffic_off_info">Слоят, показващ трафика върху картата Google Maps, беше деактивиран.</string>
+    <string name="cs_map_traffic_on_info">Слоят, показващ трафика върху картата Google Maps, беше активиран.</string>
     <string name="cs_map_type_btt">Градски Транспорт</string>
     <string name="cs_map_type_bus">Автобуси</string>
     <string name="cs_map_type_bus_tram">Автобуси и Трамваи</string>
@@ -911,13 +487,11 @@
     <string name="cs_map_type_trolley">Тролеи</string>
     <string name="cs_map_type_trolley_tram">Тролеи и Трамваи</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/res/values/admob_strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="decline">Decline</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="droid_trans_no_info">Няма достатъчно информация за избраната линия. Моля опитайте
-        с някой от другите начини за търсене.
-    </string>
+    <eat-comment/>
+    <string name="droid_trans_no_info">Няма достатъчно информация за избраната линия. Моля опитайте с някой от другите начини за търсене.</string>
     <string name="droid_trans_schedule">Разписание</string>
     <string name="droid_trans_title">Коли на СКГТ</string>
     <string name="droid_trans_type_bus">Автобусен</string>
@@ -931,9 +505,7 @@
     <string name="edit_tabs_metro">Метро</string>
     <string name="edit_tabs_metro_orientation" translatable="false">Метро</string>
     <string name="edit_tabs_metro_pre_honeycomb" translatable="false">Метро</string>
-    <string name="edit_tabs_not_saved_msg">Направили сте промяна на началния екран. Сигурни ли сте,
-        че искате да продължите без да запаметите промените.
-    </string>
+    <string name="edit_tabs_not_saved_msg">Направили сте промяна на началния екран. Сигурни ли сте, че искате да продължите без да запаметите промените.</string>
     <string name="edit_tabs_not_saved_title">Потвърждение</string>
     <string name="edit_tabs_schedule">Разписание</string>
     <string name="edit_tabs_schedule_orientation" translatable="false">Разписание</string>
@@ -949,24 +521,17 @@
     <string name="fav_info_position">Позиция във Фаворити</string>
     <string name="fav_info_real_name">Оригинално име</string>
     <string name="fav_info_usage_count">Брой използвания</string>
-    <string name="fav_item_empty_list" formatted="false">
-        <![CDATA[Няма намерени спирки в секцията <b>Любими</b>. За да добавите спирката, която търсите, намерете я в някой от останалите табове и маркирайте звездата пред нея.]]></string>
-    <string name="fav_item_metro_station_number_text" formatted="false">Метростанция номер: %s
-    </string>
-    <string name="fav_item_remove_confirmation" formatted="false">
-        <![CDATA[Сигурни ли сте, че искате да премахнете спирка <b><i>%s (%s)</i></b> от <b>Любими?</b>]]></string>
+    <string formatted="false" name="fav_item_empty_list"><![CDATA[Няма намерени спирки в секцията <b>Любими</b>. За да добавите спирката, която търсите, намерете я в някой от останалите табове и маркирайте звездата пред нея.]]></string>
+    <string formatted="false" name="fav_item_metro_station_number_text">Метростанция номер: %s</string>
+    <string formatted="false" name="fav_item_remove_confirmation"><![CDATA[Сигурни ли сте, че искате да премахнете спирка <b><i>%s (%s)</i></b> от <b>Любими?</b>]]></string>
     <string name="fav_item_remove_title">Премахни</string>
     <string name="fav_item_rename_hint">Въведи ново име</string>
-    <string name="fav_item_rename_msg" formatted="false">
-        <![CDATA[Промени името на спирка <b><i>%s (%s)</i></b> на:]]></string>
+    <string formatted="false" name="fav_item_rename_msg"><![CDATA[Промени името на спирка <b><i>%s (%s)</i></b> на:]]></string>
     <string name="fav_item_rename_title">Преименувай</string>
-    <string name="fav_item_station_number_text" formatted="false">Спирка номер: %s</string>
-    <string name="fav_menu_remove_all_confirmation" formatted="false">
-        <![CDATA[Сигурни ли сте, че искате да премахнете всички спирки от <b>Любими?</b>]]></string>
-    <string name="fav_menu_remove_all_empty_toast" formatted="false">
-        <![CDATA[Няма добавени спирки в секцията <b>Любими.</b>]]></string>
-    <string name="fav_menu_remove_all_toast" formatted="false">
-        <![CDATA[Всички спирки бяха премахнати от секцията <b>Любими.</b>]]></string>
+    <string formatted="false" name="fav_item_station_number_text">Спирка номер: %s</string>
+    <string formatted="false" name="fav_menu_remove_all_confirmation"><![CDATA[Сигурни ли сте, че искате да премахнете всички спирки от <b>Любими?</b>]]></string>
+    <string formatted="false" name="fav_menu_remove_all_empty_toast"><![CDATA[Няма добавени спирки в секцията <b>Любими.</b>]]></string>
+    <string formatted="false" name="fav_menu_remove_all_toast"><![CDATA[Всички спирки бяха премахнати от секцията <b>Любими.</b>]]></string>
     <string name="fav_menu_sort_custom">По избор</string>
     <string name="fav_menu_sort_date_added">Дата на добавяне</string>
     <string name="fav_menu_sort_date_last_access">Последно използване</string>
@@ -976,57 +541,38 @@
     <string name="fav_menu_sort_order_last">Най-отдолу</string>
     <string name="fav_menu_sort_order_title">Преместване</string>
     <string name="fav_menu_sort_order_up">Нагоре</string>
-    <string name="fav_menu_sort_success" formatted="false">
-        <![CDATA[Секцията <b>Любими</b> беше успешно сортирана.]]></string>
+    <string formatted="false" name="fav_menu_sort_success"><![CDATA[Секцията <b>Любими</b> беше успешно сортирана.]]></string>
     <string name="fav_menu_sort_title">Сортиране</string>
     <string name="fav_menu_sort_type_asc">Възходящо</string>
     <string name="fav_menu_sort_type_desc">Низходящо</string>
     <string name="fav_menu_sort_type_title">Сортиране</string>
     <string name="fav_menu_sort_usage_count">Честота на използване</string>
     <string name="fav_search_hint">Търсене по име или номер</string>
-    <string name="gcm_dialog_message_rate">Ако приложението Ви харесва, моля отделете минутка, за да
-        го оцените (извинете, ако вече сте го направили). За мен вашият глас е от съществено
-        значение. Благодаря Ви за подкрепата!
-    </string>
+    <string name="gcm_dialog_message_rate">Ако приложението Ви харесва, моля отделете минутка, за да го оцените (извинете, ако вече сте го направили). За мен вашият глас е от съществено значение. Благодаря Ви за подкрепата!</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/googlemaps.xml -->
-    <eat-comment />
-    <string name="google_maps_api_2_map_debug_home" translatable="false">
-        AIzaSyCKC3NyhssURiYHsoDRycTPrs1f_w8_xn8
-    </string>
-    <string name="google_maps_api_2_map_debug_office" translatable="false">
-        AIzaSyBaK6cgmNC6yeJJVe7HZZ-YTxcDsjKuN5o
-    </string>
-    <string name="google_maps_api_2_map_release_home" translatable="false">
-        AIzaSyA37hK9KZ6S4RvXuksmb2-qjAZDlkFMDs8
-    </string>
+    <eat-comment/>
+    <string name="google_maps_api_2_map_debug_home" translatable="false">AIzaSyCKC3NyhssURiYHsoDRycTPrs1f_w8_xn8</string>
+    <string name="google_maps_api_2_map_debug_office" translatable="false">AIzaSyBaK6cgmNC6yeJJVe7HZZ-YTxcDsjKuN5o</string>
+    <string name="google_maps_api_2_map_release_home" translatable="false">AIzaSyA37hK9KZ6S4RvXuksmb2-qjAZDlkFMDs8</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="history_item_metro_station_number_text" formatted="false">Метростанция номер: %s
-    </string>
-    <string name="history_item_search_date" formatted="false">
-        <![CDATA[<i><font color="#FF4747">[%s] Търсене от %s</font></i>]]></string>
-    <string name="history_item_station_number" formatted="false">Спирка номер: %s</string>
-    <string name="history_list_empty_text">Няма регистрирани търсения до момента или те са били
-        изтрити от секцията История. Появата на нови става автоматично при търсенето на информация.
-    </string>
-    <string name="history_menu_remove_all_confirmation" formatted="false">
-        <![CDATA[Сигурни ли сте, че искате да премахнете всички търсения от секцията <b>История</b>?]]></string>
-    <string name="history_menu_remove_all_empty_toast" formatted="false">
-        <![CDATA[Няма регистрирани търсения до момента в секцията <b>История</b>.]]></string>
-    <string name="history_menu_remove_all_toast" formatted="false">
-        <![CDATA[Всички търсения бяха премахнати от секцията <b>История</b>.]]></string>
+    <eat-comment/>
+    <string formatted="false" name="history_item_metro_station_number_text">Метростанция номер: %s</string>
+    <string formatted="false" name="history_item_search_date"><![CDATA[<i><font color="#FF4747">[%s] Търсене от %s</font></i>]]></string>
+    <string formatted="false" name="history_item_station_number">Спирка номер: %s</string>
+    <string name="history_list_empty_text">Няма регистрирани търсения до момента или те са били изтрити от секцията История. Появата на нови става автоматично при търсенето на информация.</string>
+    <string formatted="false" name="history_menu_remove_all_confirmation"><![CDATA[Сигурни ли сте, че искате да премахнете всички търсения от секцията <b>История</b>?]]></string>
+    <string formatted="false" name="history_menu_remove_all_empty_toast"><![CDATA[Няма регистрирани търсения до момента в секцията <b>История</b>.]]></string>
+    <string formatted="false" name="history_menu_remove_all_toast"><![CDATA[Всички търсения бяха премахнати от секцията <b>История</b>.]]></string>
     <string name="history_title">История</string>
-    <string name="history_title_bus" formatted="false">Автобус №%s</string>
-    <string name="history_title_tram" formatted="false">Трамвай №%s</string>
-    <string name="history_title_trolley" formatted="false">Тролей №%s</string>
+    <string formatted="false" name="history_title_bus">Автобус №%s</string>
+    <string formatted="false" name="history_title_tram">Трамвай №%s</string>
+    <string formatted="false" name="history_title_trolley">Тролей №%s</string>
     <string name="history_type_bus">Автобус</string>
     <string name="history_type_metro">Метро</string>
     <string name="history_type_station">Спирка</string>
     <string name="history_type_tram">Трамвай</string>
     <string name="history_type_trolley">Тролей</string>
-    <string name="home_screen_choice">Моля изберете стартов екран (може да бъде променен по всяко
-        време от менюто в ляво):
-    </string>
+    <string name="home_screen_choice">Моля изберете стартов екран (може да бъде променен по всяко време от менюто в ляво):</string>
     <string name="home_screen_copyright">Copyright © Софбус 24 2012. All rights reserved</string>
     <string name="home_screen_summary">Намерете най-лесния маршрут в София.</string>
     <string name="menu_fav_google_maps">Google Maps</string>
@@ -1038,24 +584,17 @@
     <string name="menu_metro_station_map">Виж на картата</string>
     <string name="menu_metro_station_remove">Премахни от Любими</string>
     <string name="menu_metro_station_title">Изберете действие</string>
-    <string name="metro_item_empty_list" formatted="false">
-        <![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="metro_item_station_number_text" formatted="false">Метростанция номер: %s</string>
-    <string name="metro_item_station_number_text_sign" formatted="false">Станция №%s</string>
-    <string name="metro_loading_schedule" formatted="false">
-        <![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>...]]></string>
-    <string name="metro_menu_map_route_loading" formatted="false">
-        <![CDATA[Изчертаване на маршрута...]]></string>
-    <string name="metro_schedule_bussiness_park" formatted="false">
-        <![CDATA[<sup><small><small><b><small> </small>БП</b></small></small></sup>]]></string>
+    <string formatted="false" name="metro_item_empty_list"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string formatted="false" name="metro_item_station_number_text">Метростанция номер: %s</string>
+    <string formatted="false" name="metro_item_station_number_text_sign">Станция №%s</string>
+    <string formatted="false" name="metro_loading_schedule"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>...]]></string>
+    <string formatted="false" name="metro_menu_map_route_loading"><![CDATA[Изчертаване на маршрута...]]></string>
+    <string formatted="false" name="metro_schedule_bussiness_park"><![CDATA[<sup><small><small><b><small> </small>БП</b></small></small></sup>]]></string>
     <string name="metro_schedule_first">Първи влак</string>
     <string name="metro_schedule_last">Последен влак</string>
-    <string name="metro_schedule_legend" formatted="false">
-        <![CDATA[<font color="#FF0017"><sup>*</sup> Червено - Непълни Курсове</font>, <font color="#003366">ЛС - Летище София</font>, <font color="#003366">БП - Бизнес Парк</font>]]></string>
-    <string name="metro_schedule_refresh" formatted="false">
-        <![CDATA[Обновяване на оставащото време...]]></string>
-    <string name="metro_schedule_sofia_airport" formatted="false">
-        <![CDATA[<sup><small><small><b><small> </small>ЛС</b></small></small></sup>]]></string>
+    <string formatted="false" name="metro_schedule_legend"><![CDATA[<font color="#FF0017"><sup>*</sup> Червено - Непълни Курсове</font>, <font color="#003366">ЛС - Летище София</font>, <font color="#003366">БП - Бизнес Парк</font>]]></string>
+    <string formatted="false" name="metro_schedule_refresh"><![CDATA[Обновяване на оставащото време...]]></string>
+    <string formatted="false" name="metro_schedule_sofia_airport"><![CDATA[<sup><small><small><b><small> </small>ЛС</b></small></small></sup>]]></string>
     <string name="metro_search_hint">Търсене по име или номер</string>
     <string name="metro_search_tab_direction1">Маршрут 1</string>
     <string name="metro_search_tab_direction2">Маршрут 2</string>
@@ -1067,12 +606,9 @@
     <string name="navigation_drawer_home">Начален екран</string>
     <string name="navigation_drawer_home_cars">Коли на СКГТ</string>
     <string name="navigation_drawer_home_map">Карта</string>
-    <string name="navigation_drawer_home_screen_changed" formatted="false">
-        <![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
-    <string name="navigation_drawer_home_screen_error" formatted="false">
-        <![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
-    <string name="navigation_drawer_home_screen_remains" formatted="false">
-        <![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
+    <string formatted="false" name="navigation_drawer_home_screen_changed"><![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
+    <string formatted="false" name="navigation_drawer_home_screen_error"><![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
+    <string formatted="false" name="navigation_drawer_home_screen_remains"><![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
     <string name="navigation_drawer_home_standard">Стандартен</string>
     <string name="navigation_drawer_info">Информация</string>
     <string name="navigation_drawer_options">Настройки</string>
@@ -1084,127 +620,75 @@
     <string name="pref_category_common_theme_summary">Избор на облик на приложението</string>
     <string name="pref_category_common_theme_title">Тема</string>
     <string name="pref_category_map">КАРТА</string>
-    <string name="pref_category_map_marker_summary">Визуализиране на балонче с информация за
-        избраната спирка или директно показване на времената на пристигане (най-близки спирки)
-    </string>
+    <string name="pref_category_map_marker_summary">Визуализиране на балонче с информация за избраната спирка или директно показване на времената на пристигане (най-близки спирки)</string>
     <string name="pref_category_map_marker_title">Маркер на картата</string>
-    <string name="pref_category_map_marker_type_summary">Определяне на вида на картинката на маркера
-        върху картата
-    </string>
+    <string name="pref_category_map_marker_type_summary">Определяне на вида на картинката на маркера върху картата</string>
     <string name="pref_category_map_marker_type_title">Вид на маркера върху картата</string>
-    <string name="pref_category_map_position_summary">Позициониране на картата при промяна на
-        текущото местоположение
-    </string>
+    <string name="pref_category_map_position_summary">Позициониране на картата при промяна на текущото местоположение</string>
     <string name="pref_category_map_position_title">Позициониране</string>
-    <string name="pref_category_map_radius_summary">Големина на радиуса около текущото
-        местоположение или избрана точка, в който се визуализират спирки
-    </string>
+    <string name="pref_category_map_radius_summary">Големина на радиуса около текущото местоположение или избрана точка, в който се визуализират спирки</string>
     <string name="pref_category_map_radius_title">Радиус около текущото местоположение</string>
     <string name="pref_category_more">ДОПЪЛНИТЕЛНИ НАСТРОЙКИ</string>
-    <string name="pref_category_more_automatic_update_summary">Автоматична обновление при наличие на
-        нови спирки и коли на СКГТ (два пъти месечно)
-    </string>
-    <string name="pref_category_more_automatic_update_title">Автоматично обновление на спирките
-    </string>
-    <string name="pref_category_more_google_analytics_summary">Споделяне на анонимна информация за
-        използването на приложението
-    </string>
-    <string name="pref_category_more_google_analytics_title">Помощ за развитието на Софбус 24
-    </string>
+    <string name="pref_category_more_automatic_update_summary">Автоматична обновление при наличие на нови спирки и коли на СКГТ (два пъти месечно)</string>
+    <string name="pref_category_more_automatic_update_title">Автоматично обновление на спирките</string>
+    <string name="pref_category_more_google_analytics_summary">Споделяне на анонимна информация за използването на приложението</string>
+    <string name="pref_category_more_google_analytics_title">Помощ за развитието на Софбус 24</string>
     <string name="pref_category_schedule_cache">ЛОКАЛНО РАЗПИСАНИЕ</string>
-    <string name="pref_category_schedule_cache_cacheState_summary">Използване на локално разписание
-        на колите на градския транспорт (в случаи на проблем при извличането на информацията)
-    </string>
+    <string name="pref_category_schedule_cache_cacheState_summary">Използване на локално разписание на колите на градския транспорт (в случаи на проблем при извличането на информацията)</string>
     <string name="pref_category_schedule_cache_cacheState_title">Локално разписание</string>
-    <string name="pref_category_schedule_cache_numberOfDays_summary">Локалното разписание, което е
-        по-старо от максималния брой дни, ще бъде автоматично премахнато от кеша
-    </string>
-    <string name="pref_category_schedule_cache_numberOfDays_title">Максимален брой дни за запазване
-        на кеша
-    </string>
-    <string name="pref_category_schedule_cache_showCacheToast_summary">Показване на съобщение при
-        зареждането на локалното разписание
-    </string>
+    <string name="pref_category_schedule_cache_numberOfDays_summary">Локалното разписание, което е по-старо от максималния брой дни, ще бъде автоматично премахнато от кеша</string>
+    <string name="pref_category_schedule_cache_numberOfDays_title">Максимален брой дни за запазване на кеша</string>
+    <string name="pref_category_schedule_cache_showCacheToast_summary">Показване на съобщение при зареждането на локалното разписание</string>
     <string name="pref_category_schedule_cache_showCacheToast_title">Показване на съобщение</string>
     <string name="pref_category_stations">ИНФОРМАЦИЯ ЗА СПИРКИ</string>
-    <string name="pref_category_stations_timeSource_summary">Определяне на кое време да се използва
-        за показване/пресмятане на извлечената информация
-    </string>
+    <string name="pref_category_stations_timeSource_summary">Определяне на кое време да се използва за показване/пресмятане на извлечената информация</string>
     <string name="pref_category_stations_timeSource_title">Времена на градския транспорт</string>
-    <string name="pref_category_stations_timeType_summary">Оставащо време или времена на
-        пристигане
-    </string>
+    <string name="pref_category_stations_timeType_summary">Оставащо време или времена на пристигане</string>
     <string name="pref_category_stations_timeType_title">Извлечена информация</string>
     <string name="pref_category_visual">ВИЗУАЛНИ</string>
-    <string name="pref_category_visual_fav_summary">Визуализиране на фаворитите чрез Google Street
-        View (начален екран)
-    </string>
+    <string name="pref_category_visual_fav_summary">Визуализиране на фаворитите чрез Google Street View (начален екран)</string>
     <string name="pref_category_visual_fav_title">Фаворити</string>
-    <string name="pref_category_visual_hs_tabs_summary">Визуализиране на табовете на началния екран
-        (изображение и/или текст)
-    </string>
+    <string name="pref_category_visual_hs_tabs_summary">Визуализиране на табовете на началния екран (изображение и/или текст)</string>
     <string name="pref_category_visual_hs_tabs_title">Начален екран</string>
-    <string name="pref_reset">Сигурни ли сте, че искате да нулирате всички настройки и да ги върнете
-        в началното им положение?
-    </string>
-    <string name="pref_restart_app" formatted="false">
-        <![CDATA[Ще трябва да рестартирате приложението, за да има резултат от направените промени. Искате ли да рестартирате <b>Софбус 24</b> сега?]]></string>
+    <string name="pref_reset">Сигурни ли сте, че искате да нулирате всички настройки и да ги върнете в началното им положение?</string>
+    <string formatted="false" name="pref_restart_app"><![CDATA[Ще трябва да рестартирате приложението, за да има резултат от направените промени. Искате ли да рестартирате <b>Софбус 24</b> сега?]]></string>
     <string name="pref_title">Настройки</string>
-    <string name="pt_bus" formatted="false">Автобус №%s</string>
-    <string name="pt_empty_list" formatted="false">
-        <![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="pt_item_loading_schedule" formatted="false">
-        <![CDATA[Извличане на разписанието за <b><i>%s</b></i>...]]></string>
-    <string name="pt_item_station_number_text" formatted="false">Спирка номер: %s</string>
-    <string name="pt_item_station_number_text_sign" formatted="false">Спирка №%s</string>
-    <string name="pt_menu_clear_all_schedule_cache" formatted="false">
-        <![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
-    <string name="pt_menu_clear_all_schedule_cache_empty_toast" formatted="false">
-        <![CDATA[В момента не е налично локално разписание на колите на Градския Транспорт. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
-    <string name="pt_menu_clear_all_schedule_cache_settings" formatted="false">
-        <![CDATA[Вие изключихте използването на локалното разписание на колите на Градския Транспорт. Искате ли да премахнете запазената досега информация?]]></string>
-    <string name="pt_menu_clear_all_schedule_cache_toast" formatted="false">
-        <![CDATA[Локалното разписание на колите на Градския Транспорт беше успешно изтрито.]]></string>
-    <string name="pt_menu_clear_schedule_cache" formatted="false">
-        <![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание за <b>%s</b>?]]></string>
-    <string name="pt_menu_clear_schedule_cache_empty_toast" formatted="false">
-        <![CDATA[В момента не е налично локално разписание за <b>%s</b>. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
-    <string name="pt_menu_clear_schedule_cache_toast" formatted="false">
-        <![CDATA[Локалното разписание за <b>%s</b> беше успешно изтрито.]]></string>
-    <string name="pt_menu_map_route_loading" formatted="false">
-        <![CDATA[Изчертаване на маршрута...]]></string>
-    <string name="pt_schedule_cache_loaded" formatted="false">
-        <![CDATA[Възникна грешка при извличането на информацията за <b>%s</b>. Беше заредено локалното разписание от <b>%s</b>.]]></string>
+    <string formatted="false" name="pt_bus">Автобус №%s</string>
+    <string formatted="false" name="pt_empty_list"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string formatted="false" name="pt_item_loading_schedule"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>...]]></string>
+    <string formatted="false" name="pt_item_station_number_text">Спирка номер: %s</string>
+    <string formatted="false" name="pt_item_station_number_text_sign">Спирка №%s</string>
+    <string formatted="false" name="pt_menu_clear_all_schedule_cache"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
+    <string formatted="false" name="pt_menu_clear_all_schedule_cache_empty_toast"><![CDATA[В момента не е налично локално разписание на колите на Градския Транспорт. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
+    <string formatted="false" name="pt_menu_clear_all_schedule_cache_settings"><![CDATA[Вие изключихте използването на локалното разписание на колите на Градския Транспорт. Искате ли да премахнете запазената досега информация?]]></string>
+    <string formatted="false" name="pt_menu_clear_all_schedule_cache_toast"><![CDATA[Локалното разписание на колите на Градския Транспорт беше успешно изтрито.]]></string>
+    <string formatted="false" name="pt_menu_clear_schedule_cache"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание за <b>%s</b>?]]></string>
+    <string formatted="false" name="pt_menu_clear_schedule_cache_empty_toast"><![CDATA[В момента не е налично локално разписание за <b>%s</b>. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
+    <string formatted="false" name="pt_menu_clear_schedule_cache_toast"><![CDATA[Локалното разписание за <b>%s</b> беше успешно изтрито.]]></string>
+    <string formatted="false" name="pt_menu_map_route_loading"><![CDATA[Изчертаване на маршрута...]]></string>
+    <string formatted="false" name="pt_schedule_cache_loaded"><![CDATA[Възникна грешка при извличането на информацията за <b>%s</b>. Беше заредено локалното разписание от <b>%s</b>.]]></string>
     <string name="pt_schedule_first">Първа кола</string>
     <string name="pt_schedule_last">Последна кола</string>
     <string name="pt_search_hint">Търсене по име или номер</string>
-    <string name="pt_time_retrieval_choice" formatted="false">
-        <![CDATA[Информация за \"%s\"]]></string>
+    <string formatted="false" name="pt_time_retrieval_choice"><![CDATA[Информация за \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Разписание</string>
     <string name="pt_time_retrieval_virtual_boards">Времена на пристигане</string>
     <string name="pt_title">Разписание</string>
-    <string name="pt_tram" formatted="false">Трамвай №%s</string>
-    <string name="pt_trolley" formatted="false">Тролей №%s</string>
-    <string name="route_changes_label_creation_date" formatted="false">
-        <![CDATA[Качена на: %s]]></string>
-    <string name="route_changes_label_valid_from" formatted="false">
-        <![CDATA[Валидна от: %s]]></string>
-    <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на
-        колите на Градския Транспорт в София.
-    </string>
-    <string name="route_changes_loading" formatted="false">
-        <![CDATA[Търсене на маршрутни промени...]]></string>
+    <string formatted="false" name="pt_tram">Трамвай №%s</string>
+    <string formatted="false" name="pt_trolley">Тролей №%s</string>
+    <string formatted="false" name="route_changes_label_creation_date"><![CDATA[Качена на: %s]]></string>
+    <string formatted="false" name="route_changes_label_valid_from"><![CDATA[Валидна от: %s]]></string>
+    <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на колите на Градския Транспорт в София.</string>
+    <string formatted="false" name="route_changes_loading"><![CDATA[Търсене на маршрутни промени...]]></string>
     <string name="route_changes_news_choose_browser">Изберете браузър</string>
     <string name="route_changes_news_copy_link">Линкът е копиран</string>
-    <string name="route_changes_news_loading" formatted="false">
-        <![CDATA[Зареждане на <b><i>%s</i></b>...]]></string>
+    <string formatted="false" name="route_changes_news_loading"><![CDATA[Зареждане на <b><i>%s</i></b>...]]></string>
     <string name="route_changes_title">Маршрутни промени</string>
-    <string name="sch_item_bus" formatted="false">Автобус №%s</string>
+    <string formatted="false" name="sch_item_bus">Автобус №%s</string>
     <string name="sch_item_direction_choice">Изберете направление</string>
-    <string name="sch_item_empty_list" formatted="false">
-        <![CDATA[Няма намерени резултати за <b>%s</b> в секция <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="sch_item_tram" formatted="false">Трамвай №%s</string>
-    <string name="sch_item_trolley" formatted="false">Тролей №%s</string>
+    <string formatted="false" name="sch_item_empty_list"><![CDATA[Няма намерени резултати за <b>%s</b> в секция <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string formatted="false" name="sch_item_tram">Трамвай №%s</string>
+    <string formatted="false" name="sch_item_trolley">Тролей №%s</string>
     <string name="sch_search_hint">Търсене по име или номер</string>
     <string name="sch_search_tab_bus">Автобуси</string>
     <string name="sch_search_tab_tram">Трамваи</string>
@@ -1217,51 +701,38 @@
     <string name="station_map_trams"><![CDATA[Трамваи: ]]></string>
     <string name="station_map_trolleys"><![CDATA[Тролеи: ]]></string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/res/values/admob_strings.xml -->
-    <eat-comment />
+    <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="vb_item_empty_list" formatted="false">
-        <![CDATA[Няма намерени спирки за <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="vb_item_search_list" formatted="false">
-        <![CDATA[Моля въведете вашите критерии за търсене (<b>номер - четирицифрен код (пр. 0013)</b> или <b>име (цифра/и или букви на кирилица или латиница)</b> на спирката). Ако търсите по име е нужно да въведете <b>поне 3 символа</b>.]]></string>
-    <string name="vb_item_station_number_text" formatted="false">Спирка номер: %s</string>
+    <eat-comment/>
+    <string formatted="false" name="vb_item_empty_list"><![CDATA[Няма намерени спирки за <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string formatted="false" name="vb_item_search_list"><![CDATA[Моля въведете вашите критерии за търсене (<b>номер - четирицифрен код (пр. 0013)</b> или <b>име (цифра/и или букви на кирилица или латиница)</b> на спирката). Ако търсите по име е нужно да въведете <b>поне 3 символа</b>.]]></string>
+    <string formatted="false" name="vb_item_station_number_text">Спирка номер: %s</string>
     <string name="vb_search_hint">Търсене по име или номер</string>
-    <string name="vb_time_bus" formatted="false">Автобус №%s</string>
-    <string name="vb_time_captcha_check" formatted="false">
-        <![CDATA[Проверка на CAPTCHA изображението...]]></string>
-    <string name="vb_time_current_time" formatted="false">Информация към %s</string>
-    <string name="vb_time_item_both" formatted="false">
-        <![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
-    <string name="vb_time_item_remaining_time" formatted="false">
-        <![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
-    <string name="vb_time_item_time_of_arrival" formatted="false">
-        <![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
-    <string name="vb_time_retrieve_info" formatted="false">
-        <![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>...]]></string>
+    <string formatted="false" name="vb_time_bus">Автобус №%s</string>
+    <string formatted="false" name="vb_time_captcha_check"><![CDATA[Проверка на CAPTCHA изображението...]]></string>
+    <string formatted="false" name="vb_time_current_time">Информация към %s</string>
+    <string formatted="false" name="vb_time_item_both"><![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
+    <string formatted="false" name="vb_time_item_remaining_time"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
+    <string formatted="false" name="vb_time_item_time_of_arrival"><![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
+    <string formatted="false" name="vb_time_retrieve_info"><![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>...]]></string>
     <string name="vb_time_sumc_captcha">Тест за сигурност</string>
-    <string name="vb_time_sumc_captcha_msg">Моля въведете символите от изображението (на кирилица
-        или латиница):
-    </string>
+    <string name="vb_time_sumc_captcha_msg">Моля въведете символите от изображението (на кирилица или латиница):</string>
     <string name="vb_time_title">Виртуални табла</string>
-    <string name="vb_time_tram" formatted="false">Трамвай №%s</string>
-    <string name="vb_time_trolley" formatted="false">Тролей №%s</string>
+    <string formatted="false" name="vb_time_tram">Трамвай №%s</string>
+    <string formatted="false" name="vb_time_trolley">Тролей №%s</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/res/values/wallet_strings.xml -->
-    <eat-comment />
-    <string name="wallet_buy_button_place_holder"
-        translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">
-        Buy with Google
-    </string>
+    <eat-comment/>
+    <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/strings.xml -->
-    <eat-comment />
-    <string name="web_page_error" formatted="false">
-        <![CDATA[Страницата, която опитвате да достъпите, може би е временно недостъпна или преместена на друг адрес. Моля <b><i>проверете вашата Интернет връзка</i></b> и/или <b><i>опитайте да презаредите страницата</i></b>.]]></string>
+    <eat-comment/>
+    <string formatted="false" name="web_page_error"><![CDATA[Страницата, която опитвате да достъпите, може би е временно недостъпна или преместена на друг адрес. Моля <b><i>проверете вашата Интернет връзка</i></b> и/или <b><i>опитайте да презаредите страницата</i></b>.]]></string>
     <string name="web_page_title">ЦГМ - Разписания</string>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/styles.xml -->
-    <eat-comment />
-    <style name="AppBaseThemeDark" parent="Theme.Sherlock.Light" />
-    <style name="AppBaseThemeLight" parent="Theme.Sherlock.Light" />
+    <eat-comment/>
+    <style name="AppBaseThemeDark" parent="Theme.Sherlock.Light"/>
+    <style name="AppBaseThemeLight" parent="Theme.Sherlock.Light"/>
     <style name="AppThemeDark" parent="AppBaseThemeDark">
         <item name="actionBarStyle">@style/MyTheme.ActionBarStyleDark</item>
         <item name="android:windowBackground">@color/app_dark_theme_background</item>
@@ -1288,7 +759,7 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <style name="Sherlock.__TextAppearance.Small" parent="Widget">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
@@ -1296,7 +767,7 @@
     <style name="Sherlock.__Theme" parent="android:Theme.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="Sherlock.__Theme.DarkActionBar" parent="Theme.Sherlock.Light"></style>
+    <style name="Sherlock.__Theme.DarkActionBar" parent="Theme.Sherlock.Light"/>
     <style name="Sherlock.__Theme.Light" parent="android:Theme.Light.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
     </style>
@@ -1354,9 +825,8 @@
         <item name="android:completionThreshold">2</item>
         <item name="android:dropDownWidth">wrap_content</item>
     </style>
-    <style name="TextAppearance.Sherlock" parent="@android:style/TextAppearance" />
-    <style name="TextAppearance.Sherlock.Light.SearchResult"
-        parent="TextAppearance.Sherlock.SearchResult" />
+    <style name="TextAppearance.Sherlock" parent="@android:style/TextAppearance"/>
+    <style name="TextAppearance.Sherlock.Light.SearchResult" parent="TextAppearance.Sherlock.SearchResult"/>
     <style name="TextAppearance.Sherlock.Light.SearchResult.Subtitle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
@@ -1364,12 +834,9 @@
     <style name="TextAppearance.Sherlock.Light.SearchResult.Title">
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.Sherlock.Light.Small"
-        parent="TextAppearance.Sherlock.Small"></style>
-    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
-        parent="TextAppearance.Sherlock.Widget.PopupMenu.Large"></style>
-    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Small"
-        parent="TextAppearance.Sherlock.Widget.PopupMenu.Small"></style>
+    <style name="TextAppearance.Sherlock.Light.Small" parent="TextAppearance.Sherlock.Small"/>
+    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" parent="TextAppearance.Sherlock.Widget.PopupMenu.Large"/>
+    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Small" parent="TextAppearance.Sherlock.Widget.PopupMenu.Small"/>
     <style name="TextAppearance.Sherlock.SearchResult">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -1382,7 +849,7 @@
     <style name="TextAppearance.Sherlock.SearchResult.Title">
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.Sherlock.Small" parent="Sherlock.__TextAppearance.Small"></style>
+    <style name="TextAppearance.Sherlock.Small" parent="Sherlock.__TextAppearance.Small"/>
     <style name="TextAppearance.Sherlock.Widget.ActionBar.Menu" parent="Widget">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
@@ -1445,17 +912,17 @@
         <item name="android:textStyle">normal</item>
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/res/values/admob_iap_style.xml -->
-    <eat-comment />
+    <eat-comment/>
     <style name="Theme.IAPTheme" parent="android:Theme">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:backgroundDimEnabled">false</item>
+  </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
+    <eat-comment/>
     <style name="Theme.Sherlock" parent="Sherlock.__Theme">
         <!-- Action bar styles (from Theme.Holo) -->
         <item name="actionDropDownStyle">@style/Widget.Sherlock.Spinner.DropDown.ActionBar</item>
@@ -1698,7 +1165,7 @@
         <item name="windowNoTitle">true</item>
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values/styles.xml -->
-    <eat-comment />
+    <eat-comment/>
     <style name="TransperantTheme" parent="Theme.Sherlock.Light">
         <item name="windowNoTitle">true</item>
         <item name="background">@android:color/transparent</item>
@@ -1708,7 +1175,7 @@
         <item name="windowAnimationStyle">@android:style/Animation</item>
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/res/values/wallet_styles.xml -->
-    <eat-comment />
+    <eat-comment/>
     <style name="WalletFragmentDefaultButtonTextAppearance">
         <item name="android:textColor">@color/wallet_primary_text_holo_light</item>
         <item name="android:textColorHighlight">@color/wallet_highlighted_text_holo_light</item>
@@ -1717,8 +1184,7 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">normal</item>
     </style>
-    <style name="WalletFragmentDefaultDetailsHeaderTextAppearance"
-        parent="WalletFragmentDefaultDetailsTextAppearance">
+    <style name="WalletFragmentDefaultDetailsHeaderTextAppearance" parent="WalletFragmentDefaultDetailsTextAppearance">
         <item name="android:textStyle">bold</item>
     </style>
     <style name="WalletFragmentDefaultDetailsTextAppearance">
@@ -1734,24 +1200,17 @@
         <item name="buyButtonWidth">match_parent</item>
         <item name="buyButtonText">buy_with_google</item>
         <item name="buyButtonAppearance">classic</item>
-        <item name="maskedWalletDetailsTextAppearance">
-            @style/WalletFragmentDefaultDetailsTextAppearance
-        </item>
-        <item name="maskedWalletDetailsHeaderTextAppearance">
-            @style/WalletFragmentDefaultDetailsHeaderTextAppearance
-        </item>
+        <item name="maskedWalletDetailsTextAppearance">@style/WalletFragmentDefaultDetailsTextAppearance</item>
+        <item name="maskedWalletDetailsHeaderTextAppearance">@style/WalletFragmentDefaultDetailsHeaderTextAppearance</item>
         <item name="maskedWalletDetailsBackground">@color/wallet_bright_foreground_holo_light</item>
         <item name="maskedWalletDetailsButtonBackground">@android:drawable/btn_default</item>
-        <item name="maskedWalletDetailsButtonTextAppearance">
-            @style/WalletFragmentDefaultButtonTextAppearance
-        </item>
-        <item name="maskedWalletDetailsLogoTextColor">@color/wallet_bright_foreground_holo_dark
-        </item>
+        <item name="maskedWalletDetailsButtonTextAppearance">@style/WalletFragmentDefaultButtonTextAppearance</item>
+        <item name="maskedWalletDetailsLogoTextColor">@color/wallet_bright_foreground_holo_dark</item>
         <item name="maskedWalletDetailsLogoImageType">classic</item>
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/values/values.xml -->
-    <eat-comment />
-    <style name="Widget"></style>
+    <eat-comment/>
+    <style name="Widget"/>
     <style name="Widget.Sherlock.ActionBar" parent="Sherlock.__Widget.ActionBar">
         <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle
@@ -1821,16 +1280,14 @@
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionMode.Subtitle
         </item>
     </style>
-    <style name="Widget.Sherlock.ActivityChooserView"
-        parent="Sherlock.__Widget.ActivityChooserView"></style>
+    <style name="Widget.Sherlock.ActivityChooserView" parent="Sherlock.__Widget.ActivityChooserView"/>
     <style name="Widget.Sherlock.Button.Small" parent="Widget">
         <item name="android:textAppearance">?attr/textAppearanceSmall</item>
         <item name="android:textColor">@color/abs__primary_text_holo_dark</item>
         <item name="android:minHeight">48dip</item>
         <item name="android:minWidth">48dip</item>
     </style>
-    <style name="Widget.Sherlock.DropDownItem.Spinner"
-        parent="Sherlock.__Widget.Holo.DropDownItem"></style>
+    <style name="Widget.Sherlock.DropDownItem.Spinner" parent="Sherlock.__Widget.Holo.DropDownItem"/>
     <style name="Widget.Sherlock.Light.ActionBar" parent="Widget.Sherlock.ActionBar">
         <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle
@@ -1870,18 +1327,15 @@
         <item name="progressBarPadding">32dip</item>
         <item name="itemPadding">8dip</item>
     </style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabBar"
-        parent="Widget.Sherlock.ActionBar.TabBar"></style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabBar.Inverse"></style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabText"
-        parent="Widget.Sherlock.ActionBar.TabText"></style>
+    <style name="Widget.Sherlock.Light.ActionBar.TabBar" parent="Widget.Sherlock.ActionBar.TabBar"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabBar.Inverse"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabText" parent="Widget.Sherlock.ActionBar.TabText"/>
     <style name="Widget.Sherlock.Light.ActionBar.TabText.Inverse">
         <item name="android:textColor">?attr/textColorPrimaryInverse</item>
     </style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabView"
-        parent="Widget.Sherlock.ActionBar.TabView"></style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabView.Inverse"></style>
-    <style name="Widget.Sherlock.Light.ActionButton" parent="Widget.Sherlock.ActionButton"></style>
+    <style name="Widget.Sherlock.Light.ActionBar.TabView" parent="Widget.Sherlock.ActionBar.TabView"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabView.Inverse"/>
+    <style name="Widget.Sherlock.Light.ActionButton" parent="Widget.Sherlock.ActionButton"/>
     <style name="Widget.Sherlock.Light.ActionButton.CloseMode">
         <item name="android:background">@drawable/abs__btn_cab_done_holo_light</item>
     </style>
@@ -1900,8 +1354,7 @@
             @style/TextAppearance.Sherlock.Widget.ActionMode.Subtitle.Inverse
         </item>
     </style>
-    <style name="Widget.Sherlock.Light.ActivityChooserView"
-        parent="Widget.Sherlock.ActivityChooserView">
+    <style name="Widget.Sherlock.Light.ActivityChooserView" parent="Widget.Sherlock.ActivityChooserView">
         <item name="android:background">@drawable/abs__ab_share_pack_holo_light</item>
     </style>
     <style name="Widget.Sherlock.Light.Button.Small" parent="Widget">
@@ -1910,8 +1363,7 @@
         <item name="android:minHeight">48dip</item>
         <item name="android:minWidth">48dip</item>
     </style>
-    <style name="Widget.Sherlock.Light.DropDownItem.Spinner"
-        parent="Sherlock.__Widget.Holo.DropDownItem"></style>
+    <style name="Widget.Sherlock.Light.DropDownItem.Spinner" parent="Sherlock.__Widget.Holo.DropDownItem"/>
     <style name="Widget.Sherlock.Light.ListPopupWindow" parent="Widget">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
@@ -1923,23 +1375,19 @@
         <item name="android:divider">@drawable/abs__list_divider_holo_light</item>
         <item name="android:listSelector">@drawable/abs__list_selector_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.PopupMenu"
-        parent="Widget.Sherlock.Light.ListPopupWindow"></style>
+    <style name="Widget.Sherlock.Light.PopupMenu" parent="Widget.Sherlock.Light.ListPopupWindow"/>
     <style name="Widget.Sherlock.Light.PopupWindow.ActionMode" parent="Widget">
         <item name="android:popupBackground">@android:color/white</item>
     </style>
-    <style name="Widget.Sherlock.Light.ProgressBar" parent="Widget.Sherlock.ProgressBar"></style>
-    <style name="Widget.Sherlock.Light.ProgressBar.Horizontal"
-        parent="Widget.Sherlock.ProgressBar.Horizontal">
+    <style name="Widget.Sherlock.Light.ProgressBar" parent="Widget.Sherlock.ProgressBar"/>
+    <style name="Widget.Sherlock.Light.ProgressBar.Horizontal" parent="Widget.Sherlock.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/abs__progress_horizontal_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.SearchAutoCompleteTextView"
-        parent="Sherlock.__Widget.SearchAutoCompleteTextView">
+    <style name="Widget.Sherlock.Light.SearchAutoCompleteTextView" parent="Sherlock.__Widget.SearchAutoCompleteTextView">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.Spinner.DropDown.ActionBar"
-        parent="Sherlock.__Widget.Holo.Spinner">
+    <style name="Widget.Sherlock.Light.Spinner.DropDown.ActionBar" parent="Sherlock.__Widget.Holo.Spinner">
         <item name="android:background">@drawable/abs__spinner_ab_holo_light</item>
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
@@ -1951,28 +1399,24 @@
         <item name="android:dropDownHorizontalOffset">0dip</item>
         <item name="android:dropDownWidth">wrap_content</item>
     </style>
-    <style name="Widget.Sherlock.ListView.DropDown"
-        parent="Sherlock.__Widget.Holo.ListView"></style>
-    <style name="Widget.Sherlock.PopupMenu" parent="Widget.Sherlock.ListPopupWindow"></style>
-    <style name="Widget.Sherlock.PopupWindow.ActionMode" parent="Widget"></style>
+    <style name="Widget.Sherlock.ListView.DropDown" parent="Sherlock.__Widget.Holo.ListView"/>
+    <style name="Widget.Sherlock.PopupMenu" parent="Widget.Sherlock.ListPopupWindow"/>
+    <style name="Widget.Sherlock.PopupWindow.ActionMode" parent="Widget"/>
     <style name="Widget.Sherlock.ProgressBar" parent="android:Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@drawable/abs__progress_medium_holo</item>
         <item name="android:animationResolution">33</item>
     </style>
-    <style name="Widget.Sherlock.ProgressBar.Horizontal"
-        parent="android:Widget.ProgressBar.Horizontal">
+    <style name="Widget.Sherlock.ProgressBar.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/abs__progress_horizontal_holo_dark</item>
         <!--item name="android:indeterminateDrawable">@drawable/abs__progress_indeterminate_horizontal_holo</item-->
         <item name="android:minHeight">16dip</item>
         <item name="android:maxHeight">16dip</item>
     </style>
-    <style name="Widget.Sherlock.SearchAutoCompleteTextView"
-        parent="Sherlock.__Widget.SearchAutoCompleteTextView">
+    <style name="Widget.Sherlock.SearchAutoCompleteTextView" parent="Sherlock.__Widget.SearchAutoCompleteTextView">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_dark</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_dark</item>
     </style>
-    <style name="Widget.Sherlock.Spinner.DropDown.ActionBar"
-        parent="Sherlock.__Widget.Holo.Spinner">
+    <style name="Widget.Sherlock.Spinner.DropDown.ActionBar" parent="Sherlock.__Widget.Holo.Spinner">
         <item name="android:background">@drawable/abs__spinner_ab_holo_dark</item>
     </style>
     <style name="Widget.Sherlock.TextView.SpinnerItem" parent="Widget">

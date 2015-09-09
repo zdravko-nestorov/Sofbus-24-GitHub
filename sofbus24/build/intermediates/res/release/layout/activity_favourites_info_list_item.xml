@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:orientation="horizontal" android:padding="10dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
 
-    <ImageView android:id="@+id/favourites_info_item_img" android:layout_width="45dp"
-        android:layout_height="45dp" android:layout_gravity="center_vertical"
+    <ImageView
+        android:id="@+id/favourites_info_item_img"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginRight="15dp"
         android:contentDescription="@string/app_img_empty_content_description" />
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical" android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
 
-        <TextView android:id="@+id/favourites_info_item_category"
-            style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:maxLines="1" android:textSize="16sp"
+        <TextView
+            android:id="@+id/favourites_info_item_category"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView android:id="@+id/favourites_info_item_name"
-            style="?android:attr/textAppearanceSmall" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever" android:maxLines="1"
-            android:scrollHorizontally="true" android:singleLine="true" android:textSize="15sp" />
+        <TextView
+            android:id="@+id/favourites_info_item_name"
+            style="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </LinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/layout/activity_favourites_info_list_item.xml -->

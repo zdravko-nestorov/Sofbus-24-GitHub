@@ -15,7 +15,9 @@
 ** limitations under the License.
 */
 -->
-<com.actionbarsherlock.internal.widget.ActionBarContextView
-    xmlns:android="http://schemas.android.com/apk/res/android" style="?attr/actionModeStyle"
-    android:layout_width="fill_parent" android:layout_height="wrap_content"
-    android:visibility="gone" /><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_mode_bar.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_mode_bar.xml -->
+<com.actionbarsherlock.internal.widget.ActionBarContextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?attr/actionModeStyle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone" />
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_mode_bar.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_mode_bar.xml -->

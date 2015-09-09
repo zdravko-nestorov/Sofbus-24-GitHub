@@ -15,11 +15,20 @@
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <rotate android:drawable="@drawable/abs__spinner_48_outer_holo" android:fromDegrees="0"
-            android:pivotX="50%" android:pivotY="50%" android:toDegrees="1080" />
+        <rotate
+            android:drawable="@drawable/abs__spinner_48_outer_holo"
+            android:fromDegrees="0"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="1080" />
     </item>
     <item>
-        <rotate android:drawable="@drawable/abs__spinner_48_inner_holo" android:fromDegrees="720"
-            android:pivotX="50%" android:pivotY="50%" android:toDegrees="0" />
+        <rotate
+            android:drawable="@drawable/abs__spinner_48_inner_holo"
+            android:fromDegrees="720"
+            android:pivotX="50%"
+            android:pivotY="50%"
+            android:toDegrees="0" />
     </item>
-</layer-list><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable-v11/abs__progress_medium_holo.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable-v11/abs__progress_medium_holo.xml -->
+</layer-list>
+<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable-v11/abs__progress_medium_holo.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/drawable-v11/abs__progress_medium_holo.xml -->
