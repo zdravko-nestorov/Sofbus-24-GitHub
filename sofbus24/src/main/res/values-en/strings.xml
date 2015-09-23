@@ -416,7 +416,7 @@
 
     <!-- Home Screen Select -->
     <string name="home_screen_motto">do not miss the bus</string>
-    <string name="home_screen_choice_title">CHOOSE А HOME SCREEN</string>
+    <string name="home_screen_choice_title">PLEASE CHOOSE А HOME SCREEN</string>
     <string name="home_screen_choice_subtitle">(can be changed at anytime from the navigation menu)</string>
     <string name="home_screen_choice_standard_title">STANDARD</string>
     <string name="home_screen_choice_standard_subtitle">Quick access to the favourite stations</string>

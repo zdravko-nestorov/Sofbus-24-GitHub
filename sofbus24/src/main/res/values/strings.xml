@@ -427,7 +427,7 @@
 
     <!-- Home Screen Select -->
     <string name="home_screen_motto">не изпускай автобуса</string>
-    <string name="home_screen_choice_title">ИЗБЕРЕТЕ СТАРТОВ ЕКРАН</string>
+    <string name="home_screen_choice_title">МОЛЯ, ИЗБЕРЕТЕ СТАРТОВ ЕКРАН</string>
     <string name="home_screen_choice_subtitle">(може да бъде променен по всяко време от страничното меню)</string>
     <string name="home_screen_choice_standard_title">СТАНДАРТЕН</string>
     <string name="home_screen_choice_standard_subtitle">Бърз достъп до любимите спирки</string>

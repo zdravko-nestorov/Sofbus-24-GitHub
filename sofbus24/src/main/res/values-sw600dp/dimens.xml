@@ -11,6 +11,9 @@
     <dimen name="vb_time_image_street_view_height">135sp</dimen>
 
     <!-- Home Screen -->
+    <dimen name="home_screen_loading_image_height">80sp</dimen>
+    <dimen name="home_screen_loading_image_width">80sp</dimen>
+    <dimen name="home_screen_loading_image_top_margin">50sp</dimen>
     <dimen name="home_screen_choice_image_height">100sp</dimen>
     <dimen name="home_screen_choice_image_width">140sp</dimen>
     <dimen name="home_screen_confirm_image_height">90sp</dimen>

@@ -46,6 +46,9 @@
     <dimen name="schedule_image_vehicle_type_width">40sp</dimen>
 
     <!-- Home Screen -->
+    <dimen name="home_screen_loading_image_height">80sp</dimen>
+    <dimen name="home_screen_loading_image_width">80sp</dimen>
+    <dimen name="home_screen_loading_image_top_margin">50sp</dimen>
     <dimen name="home_screen_loading_border_radius">15sp</dimen>
     <dimen name="home_screen_choice_image_height">100sp</dimen>
     <dimen name="home_screen_choice_image_width">130sp</dimen>

@@ -49,6 +49,9 @@
     <dimen name="metro_schedule_legend_size">9sp</dimen>
 
     <!-- Home Screen -->
+    <dimen name="home_screen_loading_image_height">40sp</dimen>
+    <dimen name="home_screen_loading_image_width">40sp</dimen>
+    <dimen name="home_screen_loading_image_top_margin">30sp</dimen>
     <dimen name="home_screen_loading_border_radius">15sp</dimen>
     <dimen name="home_screen_choice_image_height">85sp</dimen>
     <dimen name="home_screen_choice_image_width">115sp</dimen>

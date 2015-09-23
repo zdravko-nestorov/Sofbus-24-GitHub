@@ -1,16 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#3FAAE5">
+    android:layout_height="match_parent">
 
-    <!-- Background image -->
+    <!-- Choose home screen -->
+
+    <RelativeLayout
+        android:id="@+id/sofbus24_home_screen_choice_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3FAAE5">
+
+        <!-- Image background (nested in LinearLayout to take only half of the screen) -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_img_empty_content_description"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bkg_home_screen_top" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <!-- Labels and Buttons -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Top Part of the Screen -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="12sp"
+                android:layout_weight="35"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- Sofbus 24 Motto -->
+
+                <TextView
+                    android:id="@+id/sofbus24_home_screen_top_motto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3sp"
+                    android:text="@string/home_screen_motto"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_screen_title_txt_size"
+                    android:textStyle="bold" />
+
+                <!-- Sofbus 24 Image Text -->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bkg_home_screen_logo" />
+
+            </LinearLayout>
+
+            <!-- Middle Part of the Screen -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="41">
+
+                <!-- Background image (nested in LinearLayout to take 78% of the screen) -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight="28" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight="72"
+                        android:background="#110000FF" />
+
+                </LinearLayout>
+
+                <!-- Labels and Buttons -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Standard home screen -->
+
+                    <LinearLayout
+                        android:id="@+id/sofbus24_home_screen_standard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/home_screen_choice_image_width"
+                            android:layout_height="@dimen/home_screen_choice_image_height"
+                            android:layout_marginBottom="5sp"
+                            android:contentDescription="@string/app_img_empty_content_description"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/btn_home_screen_standard" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_standard_title"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_title_txt_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_standard_subtitle"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_subtitle_txt_size" />
+                    </LinearLayout>
+
+                    <!-- GoogleMaps home screen -->
+
+                    <LinearLayout
+                        android:id="@+id/sofbus24_home_screen_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/home_screen_choice_image_width"
+                            android:layout_height="@dimen/home_screen_choice_image_height"
+                            android:layout_marginBottom="5sp"
+                            android:contentDescription="@string/app_img_empty_content_description"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/btn_home_screen_map" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_map_title"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_title_txt_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_map_subtitle"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_subtitle_txt_size" />
+
+                    </LinearLayout>
+
+                    <!-- Droidtrans home screen -->
+
+                    <LinearLayout
+                        android:id="@+id/sofbus24_home_screen_droidtrans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/home_screen_choice_image_width"
+                            android:layout_height="@dimen/home_screen_choice_image_height"
+                            android:layout_marginBottom="5sp"
+                            android:contentDescription="@string/app_img_empty_content_description"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/btn_home_screen_droidtrans" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_droidtrans_title"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_title_txt_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/home_screen_choice_droidtrans_subtitle"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/home_screen_subtitle_txt_size" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!-- Bottom Part of the Screen -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_margin="15sp"
+                android:layout_weight="24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Home Screen Choice labels -->
+
+                <LinearLayout
+                    android:id="@+id/sofbus24_home_screen_top_labels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_title"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_title_txt_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_screen_choice_subtitle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
+                </LinearLayout>
+
+                <!-- Confirm home screen button -->
+
+                <ImageView
+                    android:id="@+id/sofbus24_home_screen_select_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/home_screen_confirm_image_height"
+                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/btn_home_screen_confirm_selector" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- End of "Labels and Buttons" -->
+
+    </RelativeLayout>
+
+    <!-- Loading screen -->
 
     <RelativeLayout
         android:id="@+id/sofbus24_home_screen_loading_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
+
+        <!-- Background image -->
 
         <ImageView
             android:layout_width="match_parent"
@@ -20,7 +287,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/bkg_home_screen_select" />
 
-        <!-- Copyrihgt -->
+        <!-- Copyright -->
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,250 +304,18 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#4A000000" />
+            android:background="#1A000000" />
+
+        <!-- Loading layout -->
+
+        <ProgressBar
+            android:layout_width="@dimen/home_screen_loading_image_width"
+            android:layout_height="@dimen/home_screen_loading_image_height"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/home_screen_loading" />
+
     </RelativeLayout>
-
-    <!-- Choose home screen -->
-
-    <LinearLayout
-        android:id="@+id/sofbus24_home_screen_choice_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bkg_home_screen_top"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <!-- Top Part of the Screen -->
-
-        <RelativeLayout
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="14sp"
-            android:layout_marginTop="14sp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <!-- Sofbus 24 Motto -->
-
-            <TextView
-                android:id="@+id/sofbus24_home_screen_top_motto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10sp"
-                android:layout_marginLeft="6sp"
-                android:layout_marginRight="6sp"
-                android:text="@string/home_screen_motto"
-                android:textColor="@color/white"
-                android:textSize="@dimen/home_screen_title_txt_size"
-                android:textStyle="bold" />
-
-            <!-- Sofbus 24 Image Text -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/sofbus24_home_screen_top_labels"
-                android:layout_below="@+id/sofbus24_home_screen_top_motto"
-                android:layout_marginLeft="20sp"
-                android:layout_marginRight="20sp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/app_img_empty_content_description"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/bkg_home_screen_logo" />
-
-            </LinearLayout>
-
-            <!-- Home Screen Choice labels -->
-
-            <LinearLayout
-                android:id="@+id/sofbus24_home_screen_top_labels"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="6sp"
-                android:layout_marginRight="6sp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25sp"
-                    android:gravity="center"
-                    android:text="@string/home_screen_choice_title"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/home_screen_title_txt_size"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30sp"
-                    android:layout_marginRight="30sp"
-                    android:gravity="center"
-                    android:text="@string/home_screen_choice_subtitle"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/home_screen_subtitle_txt_size" />
-            </LinearLayout>
-
-        </RelativeLayout>
-
-        <!-- Bottom Part of the Screen -->
-
-        <LinearLayout
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <!-- Standard home screen -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/home_screen_choice_image_width"
-                    android:layout_height="@dimen/home_screen_choice_image_height"
-                    android:contentDescription="@string/app_img_empty_content_description"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/btn_home_screen_standard" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_standard_title"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_title_txt_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_standard_subtitle"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- GoogleMaps home screen -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0sp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/home_screen_choice_image_width"
-                    android:layout_height="@dimen/home_screen_choice_image_height"
-                    android:contentDescription="@string/app_img_empty_content_description"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/btn_home_screen_map" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_map_title"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_title_txt_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_map_subtitle"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- Droidtrans home screen -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0sp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/home_screen_choice_image_width"
-                    android:layout_height="@dimen/home_screen_choice_image_height"
-                    android:contentDescription="@string/app_img_empty_content_description"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/btn_home_screen_droidtrans" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_droidtrans_title"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_title_txt_size"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/home_screen_choice_droidtrans_subtitle"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/home_screen_subtitle_txt_size" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Confirm home screen button -->
-
-        <LinearLayout
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.3"
-            android:gravity="center_horizontal|bottom"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/home_screen_confirm_image_width"
-                android:layout_height="@dimen/home_screen_confirm_image_height"
-                android:layout_margin="15sp"
-                android:contentDescription="@string/app_img_empty_content_description"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_home_screen_confirm_selector" />
-        </LinearLayout>
-
-    </LinearLayout>
 
 </RelativeLayout>

@@ -3,42 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Background image -->
-
-    <RelativeLayout
-        android:id="@+id/sofbus24_home_screen_loading_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_img_empty_content_description"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bkg_home_screen_select" />
-
-        <!-- Copyrihgt -->
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:padding="@dimen/home_screen_copyright_txt_padding"
-            android:text="@string/home_screen_copyright"
-            android:textColor="#989898"
-            android:textSize="@dimen/home_screen_copyright_txt_size" />
-
-        <!-- View responsible for the dim effect -->
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#4A000000" />
-    </RelativeLayout>
-
     <!-- Choose home screen -->
 
     <LinearLayout
@@ -53,7 +17,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_weight="2.7"
+            android:layout_weight="38"
             android:background="#28A3EE">
 
             <!-- Image background (top part) -->
@@ -70,8 +34,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="14sp"
-                android:layout_marginTop="14sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="20sp"
                 android:orientation="vertical">
 
                 <!-- Sofbus 24 Motto -->
@@ -142,6 +106,8 @@
 
             </RelativeLayout>
 
+            <!-- End of "Labels (top part)" -->
+
         </RelativeLayout>
 
         <!-- Bottom Part of the Screen -->
@@ -149,15 +115,17 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/grid_border_home_screen" />
+            android:background="@drawable/grid_border_home_screen"
+            android:contentDescription="@string/app_img_empty_content_description" />
 
         <!-- Standard home screen -->
 
         <LinearLayout
+            android:id="@+id/sofbus24_home_screen_standard"
             android:layout_width="match_parent"
             android:layout_height="0sp"
             android:layout_marginTop="10sp"
-            android:layout_weight="1"
+            android:layout_weight="15"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -195,9 +163,10 @@
         <!-- GoogleMaps home screen -->
 
         <LinearLayout
+            android:id="@+id/sofbus24_home_screen_map"
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_weight="1"
+            android:layout_weight="15"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -235,9 +204,10 @@
         <!-- Droidtrans home screen -->
 
         <LinearLayout
+            android:id="@+id/sofbus24_home_screen_droidtrans"
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_weight="1"
+            android:layout_weight="15"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -277,11 +247,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_weight="1"
+            android:layout_weight="15"
             android:gravity="end|center_vertical"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/sofbus24_home_screen_select_btn"
                 android:layout_width="@dimen/home_screen_confirm_image_width"
                 android:layout_height="@dimen/home_screen_confirm_image_height"
                 android:layout_margin="15sp"
@@ -290,8 +261,55 @@
                 android:src="@drawable/btn_home_screen_confirm_selector" />
         </LinearLayout>
 
-        <!-- End of "Confirm home screen button" -->
-
     </LinearLayout>
+
+    <!-- Loading screen -->
+
+    <RelativeLayout
+        android:id="@+id/sofbus24_home_screen_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Background image -->
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_img_empty_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bkg_home_screen_select" />
+
+        <!-- Copyright -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/home_screen_copyright_txt_padding"
+            android:text="@string/home_screen_copyright"
+            android:textColor="#989898"
+            android:textSize="@dimen/home_screen_copyright_txt_size" />
+
+        <!-- View responsible for the dim effect -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1A000000" />
+
+        <!-- Loading layout -->
+
+        <ProgressBar
+            android:layout_width="@dimen/home_screen_loading_image_width"
+            android:layout_height="@dimen/home_screen_loading_image_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/home_screen_loading_image_top_margin"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/home_screen_loading" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
