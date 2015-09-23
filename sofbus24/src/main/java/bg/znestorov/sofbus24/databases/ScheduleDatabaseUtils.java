@@ -29,10 +29,20 @@ public class ScheduleDatabaseUtils {
     public static void deleteOldScheduleCache(Activity context) {
 
         ScheduleDataSource scheduleDatasource = new ScheduleDataSource(context);
-        scheduleDatasource.open();
-        scheduleDatasource.deleteScheduleCache(ScheduleCachePreferences
-                .getNumberOfDays(context));
-        scheduleDatasource.close();
+
+        try {
+            scheduleDatasource.open();
+            scheduleDatasource.deleteScheduleCache(ScheduleCachePreferences
+                    .getNumberOfDays(context));
+        } catch (Exception e) {
+            /*
+             * Workaround because of an error in the GooglePlay console "android.database.sqlite.SQLiteException"
+             * (reported on 30 Aug 23:59). In case of a problem with the DB opening, just skip the deleting of the
+             * old cache and next time when the application is opened, it will try again
+             */
+        } finally {
+            scheduleDatasource.close();
+        }
     }
 
     /**

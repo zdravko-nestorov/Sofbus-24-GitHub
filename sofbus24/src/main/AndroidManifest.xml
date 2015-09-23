@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="29"
+    android:versionCode="30"
     android:versionName="3.0">
 
     <!-- Specify the correct minSDK and targetSDK versions. -->

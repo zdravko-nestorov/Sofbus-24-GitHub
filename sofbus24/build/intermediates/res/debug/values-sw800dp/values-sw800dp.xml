@@ -6,9 +6,9 @@
     <item format="boolean" name="isPhone" type="bool">false</item>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-sw800dp/dimens.xml -->
     <eat-comment/>
-    <dimen name="home_screen_choice_image_height">115dp</dimen>
-    <dimen name="home_screen_choice_image_width">145dp</dimen>
-    <dimen name="home_screen_confirm_image_height">105dp</dimen>
-    <dimen name="home_screen_confirm_image_width">105dp</dimen>
+    <dimen name="home_screen_choice_image_height">115sp</dimen>
+    <dimen name="home_screen_choice_image_width">155sp</dimen>
+    <dimen name="home_screen_confirm_image_height">105sp</dimen>
+    <dimen name="home_screen_confirm_image_width">115sp</dimen>
     <dimen name="metro_schedule_legend_size">11sp</dimen>
 </resources>

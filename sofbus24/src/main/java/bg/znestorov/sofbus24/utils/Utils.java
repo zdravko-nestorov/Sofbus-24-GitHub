@@ -1,19 +1,5 @@
 package bg.znestorov.sofbus24.utils;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
-import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentActivity;
-import android.text.format.DateFormat;
-import android.util.DisplayMetrics;
-
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -27,6 +13,19 @@ import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentActivity;
+import android.text.format.DateFormat;
+import android.util.DisplayMetrics;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.UpdateTypeEnum;
@@ -68,7 +67,8 @@ public class Utils {
     /**
      * Check if the input is a number
      *
-     * @param input the input string
+     * @param input
+     *            the input string
      * @return if the input is a number
      */
     public static boolean isNumeric(String input) {
@@ -84,7 +84,8 @@ public class Utils {
     /**
      * Check if the input is an Integer
      *
-     * @param input the input string
+     * @param input
+     *            the input string
      * @return if the input is an Integer
      */
     public static boolean isInteger(String input) {
@@ -100,7 +101,8 @@ public class Utils {
     /**
      * Tests if the supplied string is NULL or 0-length.
      *
-     * @param String input
+     * @param input
+     *            the input string
      * @return boolean TRUE if empty, otherwise FALSE
      */
     public static boolean isEmpty(String input) {
@@ -111,7 +113,8 @@ public class Utils {
      * Function that extracts only digits from a given String. In case of an
      * empty string - return "".
      *
-     * @param value the input String
+     * @param value
+     *            the input String
      * @return the digits from the String
      */
     public static String getOnlyDigits(String value) {
@@ -128,7 +131,8 @@ public class Utils {
      * Function that remove all whitespaces and non visible characters such as
      * tab, \n from a string text. In case of an empty string - return "".
      *
-     * @param value the input String
+     * @param value
+     *            the input String
      * @return the digits from the String
      */
     public static String removeSpaces(String value) {
@@ -144,10 +148,12 @@ public class Utils {
     /**
      * Get a value from a string BEFORE some REGEX
      *
-     * @param value the string value
-     * @param regex the regex that is looked for
+     * @param value
+     *            the string value
+     * @param regex
+     *            the regex that is looked for
      * @return the substring value BEFORE the REGEX, or the value in case of no
-     * REGEX found
+     *         REGEX found
      */
     public static String getValueBefore(String value, String regex) {
         if (value.contains(regex)) {
@@ -160,10 +166,12 @@ public class Utils {
     /**
      * Get a value from a string BEFORE some REGEX (LAST)
      *
-     * @param value the string value
-     * @param regex the regex that is looked for
+     * @param value
+     *            the string value
+     * @param regex
+     *            the regex that is looked for
      * @return the substring value BEFORE the REGEX (LAST), or the value in case
-     * of no REGEX found
+     *         of no REGEX found
      */
     public static String getValueBeforeLast(String value, String regex) {
         if (value.contains(regex)) {
@@ -176,10 +184,12 @@ public class Utils {
     /**
      * Get a value from a string AFTER some REGEX
      *
-     * @param value the string value
-     * @param regex the regex that is looked for
+     * @param value
+     *            the string value
+     * @param regex
+     *            the regex that is looked for
      * @return the substring value AFTER the REGEX, or the value in case of no
-     * REGEX found
+     *         REGEX found
      */
     public static String getValueAfter(String value, String regex) {
         if (value.contains(regex)) {
@@ -192,10 +202,12 @@ public class Utils {
     /**
      * Get a value from a string AFTER some REGEX (LAST)
      *
-     * @param value the string value
-     * @param regex the regex that is looked for
+     * @param value
+     *            the string value
+     * @param regex
+     *            the regex that is looked for
      * @return the substring value AFTER the REGEX (LAST), or the value in case
-     * of no REGEX found
+     *         of no REGEX found
      */
     public static String getValueAfterLast(String value, String regex) {
         if (value.contains(regex)) {
@@ -208,11 +220,14 @@ public class Utils {
     /**
      * Get a value from a string BETWEEN the REGEX1 and REGEX2
      *
-     * @param value  the string value
-     * @param regex1 the regex that is looked for (after)
-     * @param regex2 the regex that is looked for (before)
+     * @param value
+     *            the string value
+     * @param regex1
+     *            the regex that is looked for (after)
+     * @param regex2
+     *            the regex that is looked for (before)
      * @return the substring value BETWEEN the REGEX1 and REGEX2, or the value
-     * in case of no REGEX found
+     *         in case of no REGEX found
      */
     public static String getValueBetween(String value, String regex1,
                                          String regex2) {
@@ -227,11 +242,14 @@ public class Utils {
     /**
      * Get a value from a string BETWEEN the last REGEX1 and REGEX2
      *
-     * @param value  the string value
-     * @param regex1 the regex that is looked for (after)
-     * @param regex2 the regex that is looked for (before)
+     * @param value
+     *            the string value
+     * @param regex1
+     *            the regex that is looked for (after)
+     * @param regex2
+     *            the regex that is looked for (before)
      * @return the substring value BETWEEN the REGEX1 and REGEX2, or the value
-     * in case of no REGEX found
+     *         in case of no REGEX found
      */
     public static String getValueBetweenLast(String value, String regex1,
                                              String regex2) {
@@ -247,10 +265,12 @@ public class Utils {
      * Filling a number with zeroes ("0") if it is lower than "outputLength"
      * digits
      *
-     * @param context the current activity context
-     * @param input   an input string containing a number
+     * @param input
+     *            an input string containing a number
+     * @param outputLength
+     *            the desired length of the output
      * @return a number (in string format) which is always at least
-     * "outputLength" digits
+     *         "outputLength" digits
      */
     public static String formatNumberOfDigits(String input, int outputLength) {
         String formatType = String.format(Locale.getDefault(), "%%0%dd",
@@ -267,9 +287,10 @@ public class Utils {
     /**
      * Remove the leading zeros in alphanumeric text with regex
      *
-     * @param input an input string containing a number
+     * @param input
+     *            an input string containing a number
      * @return a number (in string format) with removed leading zeroes (if
-     * exist)
+     *         exist)
      */
     public static String removeLeadingZeroes(String input) {
         try {
@@ -328,9 +349,12 @@ public class Utils {
     /**
      * Get the difference between two hours in format HH:MM
      *
-     * @param context   Context of the current activity
-     * @param afterTime a time after the current moment in format HH:MM
-     * @param currTime  the current time in format HH:MM
+     * @param context
+     *            Context of the current activity
+     * @param afterTime
+     *            a time after the current moment in format HH:MM
+     * @param currTime
+     *            the current time in format HH:MM
      * @return the difference between the times
      */
     public static String getTimeDifference(Activity context, String afterTime,
@@ -374,9 +398,11 @@ public class Utils {
     /**
      * Format the remaining time in format ~1h,20m
      *
-     * @param context    Context of the current activity
-     * @param difference the difference between the times (current one and the one
-     *                   after)
+     * @param context
+     *            Context of the current activity
+     * @param difference
+     *            the difference between the times (current one and the one
+     *            after)
      * @return the difference in format ~1h,20m
      */
     public static String formatTime(Activity context, String difference) {
@@ -416,7 +442,8 @@ public class Utils {
     /**
      * Transform the remaining time in minutes
      *
-     * @param remainingTime the remaining time in string format
+     * @param remainingTime
+     *            the remaining time in string format
      * @return the rmaining time in minutes
      */
     public static int getRemainingMinutes(String remainingTime) {
@@ -440,8 +467,10 @@ public class Utils {
     /**
      * Convert the millis in remaining time format (~Хч Хм)
      *
-     * @param context Context of the current activity
-     * @param millis  remaining time in millis
+     * @param context
+     *            Context of the current activity
+     * @param millis
+     *            remaining time in millis
      * @return the remaining time in format ~Хч Хм
      */
     public static String formatMillisInTime(Activity context, Long millis) {
@@ -467,7 +496,8 @@ public class Utils {
      * Function that format the direction name of the station or vehicle to be
      * in correct format. In case of an empty string - return "".
      *
-     * @param directionName the name of the direction
+     * @param directionName
+     *            the name of the direction
      * @return the correctly formatted direction
      */
     public static String formatDirectionName(String directionName) {
@@ -608,7 +638,7 @@ public class Utils {
         directionName = directionName.replaceAll(" ухо", " ж\\.к\\. Люлин 3");
         directionName = directionName.replaceAll("ДепоИскър", "Депо Искър");
         directionName = directionName.replaceAll("Ж\\.к\\.Люлин 1,2",
-                "ж\\.к\\. Люлин 1,2 - бул. Илиянци (подлеза)");
+                "ж\\.к\\. Люлин 1,2");
         directionName = directionName.replaceAll("Ж\\.К\\.", "Ж\\.к\\.");
         directionName = directionName.replaceAll("Ж\\.К\\. ", "Ж\\.к\\.");
         directionName = directionName.replaceAll("Ж\\.к\\. ", "Ж\\.к\\.");
@@ -647,6 +677,9 @@ public class Utils {
         directionName = directionName.replaceAll(
                 "ЧИТАЛИЩЕ СВЕТЛИНА Гара Искър",
                 "ЧИТАЛИЩЕ СВЕТЛИНА - Гара Искър");
+        directionName = directionName.replaceAll("жк.Младост 4",
+                "ж.к. Младост 4");
+
         if ("ж.к. Младост 1".equals(directionName)) {
             directionName = directionName.replaceAll("ж\\.к\\. Младост 1",
                     "ж\\.к\\. Младост 1 - ж\\.к\\. Люлин 1,2");
@@ -661,6 +694,89 @@ public class Utils {
                     .replaceAll(" - временна", "-временна");
         }
 
+        // BUS #4
+        if (directionName.contains("ж.к. Младост 1/бл.70/ - Кокалянско ханче")) {
+            directionName = directionName.replaceAll(
+                    "ж.к. Младост 1/бл\\.70/ - Кокалянско ханче",
+                    "ж.к. Младост 1 /бл\\.70/ - Кокалянско ханче");
+        }
+        if (directionName.contains("Кокалянско ханче - ж.к. Младост 1")) {
+            directionName = directionName.replaceAll(
+                    "Кокалянско ханче - ж\\.к\\. Младост 1",
+                    "Кокалянско ханче - ж\\.к\\. Младост 1 /бл\\.70/");
+        }
+
+        // BUS #7
+        if (directionName.contains("ЧИТАЛИЩЕ СВЕТЛИНА")) {
+            directionName = directionName.replaceAll("ЧИТАЛИЩЕ СВЕТЛИНА",
+                    "Читалище Светлина");
+        }
+
+        // BUS #9
+        if (directionName.contains("АВТОБАЗА ИСКЪР")) {
+            directionName = directionName.replaceAll("АВТОБАЗА ИСКЪР",
+                    "Автобаза Искър");
+        }
+        if (directionName.contains("УЛ. ГЕН. ГУРКО")) {
+            directionName = directionName.replaceAll("УЛ\\. ГЕН\\. ГУРКО",
+                    "ул\\. Генерал Гурко");
+        }
+
+        // BUS #23
+        if (directionName.contains("ГАРА КУРИЛО")) {
+            directionName = directionName.replaceAll("ГАРА КУРИЛО",
+                    "Гара Курило");
+        }
+
+        // BUS #27
+        if (directionName.contains("Село Кътина Гара София север")) {
+            directionName = directionName.replaceAll(
+                    "Село Кътина Гара София север",
+                    "Село Кътина - Гара София север");
+        }
+
+        // BUS #59
+        if (directionName.contains("АВТОСТАНЦИЯ КНЯЖЕВО")) {
+            directionName = directionName.replaceAll("АВТОСТАНЦИЯ КНЯЖЕВО",
+                    "Автостанция Княжево");
+        }
+        if (directionName.contains("село Мърчаево Толумска махала")) {
+            directionName = directionName.replaceAll(
+                    "село Мърчаево Толумска махала",
+                    "село Мърчаево (Толумска махала)");
+        }
+
+        // BUS #76
+        if (directionName.contains("жк.Младост 4")) {
+            directionName = directionName.replaceAll("жк\\.Младост 4",
+                    "ж\\.к\\. Младост 4");
+        }
+
+        // BUS #84
+        if (directionName.contains("ул. Ген Гурко")) {
+            directionName = directionName.replaceAll("ул\\. Ген Гурко",
+                    "ул\\. Генерал Гурко");
+        }
+
+        // BUS #82, #108 and #310
+        if (directionName.contains("ж.к. Люлин - 5")) {
+            directionName = directionName.replaceAll("ж\\.к\\. Люлин - 5",
+                    "ж\\.к\\. Люлин 5");
+        }
+
+        // BUS #94
+        if (directionName.contains("СУ СВ.КЛИМЕНТ ОХРИДСКИ")) {
+            directionName = directionName.replaceAll(
+                    "СУ СВ\\.КЛИМЕНТ ОХРИДСКИ", "СУ Свети Климент Охридски");
+        }
+
+        // BUS #117
+        if (directionName.contains("Автостанция Изток Град Бухово")) {
+            directionName = directionName.replaceAll(
+                    "Автостанция Изток Град Бухово",
+                    "Автостанция Изток - Град Бухово");
+        }
+
         // BUS #280 and #306
         if (directionName.contains("СУ Света Климент Охридски")) {
             directionName = directionName.replaceAll(
@@ -668,18 +784,43 @@ public class Utils {
         }
 
         // BUS #309
+        if ("ж.к. Люлин 1,2".equals(directionName)) {
+            directionName = "ж.к. Люлин 1,2 - бул. Илиянци (подлеза)";
+        }
         if ("бул. Илиянци - подлеза".equals(directionName)) {
             directionName = "бул. Илиянци (подлеза) - ж.к. Люлин 1,2";
         }
 
+        // BUS #413
+        if (directionName.contains("Технополис ж.к.Младост")) {
+            directionName = directionName.replaceAll(
+                    "Технополис ж\\.к\\.Младост",
+                    "Технополис ж\\.к\\. Младост 4");
+        }
+
         // TROLLEY #1
         if ("ж.к. Левски Г".equals(directionName)) {
-            directionName = "ж.к. Левски Г - ВМА";
+            directionName = "ж\\.к\\. Левски Г - ВМА";
+        }
+
+        // TROLLEY #8
+        if (directionName
+                .contains("ж.к. Гоце Делчев - МБАЛ Света Анна - ж.к. Люлин 3")) {
+            directionName = directionName
+                    .replaceAll(
+                            "ж\\.к\\. Гоце Делчев - МБАЛ Света Анна - ж\\.к\\. Люлин 3",
+                            "ж\\.к\\. Гоце Делчев - МБАЛ Света Анна");
+        }
+
+        // TROLLEY #9
+        if (directionName.contains("ж. к. Борово")) {
+            directionName = directionName.replaceAll("ж\\. к\\. Борово",
+                    "ж\\.к\\. Борово");
         }
 
         // TRAM #19
         if ("кв. Княжево Гара София север".equals(directionName)) {
-            directionName = "кв. Княжево - Гара София север";
+            directionName = "кв\\. Княжево - Гара София север";
         }
 
         return directionName;
@@ -688,10 +829,13 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the searched text
      *
-     * @param context         the current Activity context
-     * @param historyType     the type of the search - <b>public transport</b> or
-     *                        <b>metro</b>
-     * @param historyValueArr the value that has to be added to the history of searches
+     * @param context
+     *            the current Activity context
+     * @param historyType
+     *            the type of the search - <b>public transport</b> or
+     *            <b>metro</b>
+     * @param historyValueArr
+     *            the value that has to be added to the history of searches
      */
     public static void addSearchInHistory(Activity context,
                                           VehicleTypeEnum historyType, String... historyValueArr) {
@@ -732,8 +876,10 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context the current Activity context
-     * @param station the station that has to be added to the history of searches
+     * @param context
+     *            the current Activity context
+     * @param station
+     *            the station that has to be added to the history of searches
      */
     public static void addStationInHistory(Activity context,
                                            StationEntity station) {
@@ -757,9 +903,11 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context     the current Activity context
-     * @param stationsMap the map of stations that has to be added to the history of
-     *                    searches
+     * @param context
+     *            the current Activity context
+     * @param stationsMap
+     *            the map of stations that has to be added to the history of
+     *            searches
      */
     public static void addListOfStationsInHistory(Activity context,
                                                   HashMap<String, StationEntity> stationsMap) {
@@ -774,8 +922,10 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context the current Activity context
-     * @param station the station that has to be added to the history of searches
+     * @param context
+     *            the current Activity context
+     * @param vehicle
+     *            the vehicle that has to be added to the history of searches
      */
     public static void addVehicleInHistory(Activity context,
                                            VehicleEntity vehicle) {
@@ -786,7 +936,8 @@ public class Utils {
     /**
      * Check if the device is in landscape mode
      *
-     * @param context the current activity context
+     * @param context
+     *            the current activity context
      * @return if the device is in landscape mode
      */
     public static boolean isInLandscapeMode(Activity context) {
@@ -802,7 +953,8 @@ public class Utils {
     /**
      * Check if the device is tablet in landscape mode
      *
-     * @param context the current activity context
+     * @param context
+     *            the current activity context
      * @return if the device is tablet in landscape mode
      */
     public static boolean isTabletInLandscapeMode(Activity context) {
@@ -823,7 +975,8 @@ public class Utils {
      * Create a list with all items in the NavigationDrawer (each row of the
      * menu)
      *
-     * @param context the current activity context
+     * @param context
+     *            the current activity context
      * @return an ArrayList with all raws of the menu
      */
     public static ArrayList<String> initNavigationDrawerItems(Activity context) {
@@ -855,7 +1008,8 @@ public class Utils {
     /**
      * Check if there is an available network connection
      *
-     * @param context the current activity context
+     * @param context
+     *            the current activity context
      * @return if there is a network connection
      */
     public static boolean haveNetworkConnection(Activity context) {
@@ -895,8 +1049,10 @@ public class Utils {
     /**
      * Get the difference between two dates in days
      *
-     * @param startDateString the start date
-     * @param endDateString   the end date
+     * @param startDateString
+     *            the start date
+     * @param endDateString
+     *            the end date
      * @return the difference between the start and end date in days
      */
     @SuppressLint("SimpleDateFormat")
@@ -920,7 +1076,8 @@ public class Utils {
     /**
      * Get the closest date when the app had to be updated
      *
-     * @param updateType the update type (what would be updated - APP or DB)
+     * @param updateType
+     *            the update type (what would be updated - APP or DB)
      * @return the closest date when the app had to be updated
      */
     public static String getClosestDateForUpdate(UpdateTypeEnum updateType) {
@@ -957,9 +1114,12 @@ public class Utils {
     /**
      * Check if the date for update is in range
      *
-     * @param startDateString the start date in string format
-     * @param endDateString   the end date in string format
-     * @param updateType      the update type (what would be updated - APP or DB)
+     * @param startDateString
+     *            the start date in string format
+     * @param endDateString
+     *            the end date in string format
+     * @param updateType
+     *            the update type (what would be updated - APP or DB)
      * @return if the date is in range
      */
     public static boolean isDateInRange(String startDateString,
@@ -980,8 +1140,10 @@ public class Utils {
      * Check if an application or database update is available (APP - one per
      * month, DB - twice per month)
      *
-     * @param context    the current activity context
-     * @param updateType the update type (what would be updated - APP or DB)
+     * @param context
+     *            the current activity context
+     * @param updateType
+     *            the update type (what would be updated - APP or DB)
      */
     public static void checkForUpdate(FragmentActivity context,
                                       UpdateTypeEnum updateType) {
@@ -1034,8 +1196,10 @@ public class Utils {
      * Decode drawable to a Bitmap (save the allocated memory, but doesn't
      * really help)
      *
-     * @param context the activity context
-     * @param resId   the drawable res id
+     * @param context
+     *            the activity context
+     * @param resId
+     *            the drawable res id
      * @return the decoded bitmap
      */
     public static Bitmap decodeDrawable(Activity context, int resId) {
@@ -1076,7 +1240,8 @@ public class Utils {
     /**
      * Get the size of the screen in inches
      *
-     * @param context the current activity context
+     * @param context
+     *            the current activity context
      * @return the screen size in inches
      */
     public static double getScreenSizeInInches(Activity context) {
@@ -1107,7 +1272,8 @@ public class Utils {
     /**
      * Format the schedule cache timestamp in format DD.MM.YYY
      *
-     * @param timestamp the database timestamp
+     * @param timestamp
+     *            the database timestamp
      * @return the formatted timestamp
      */
     @SuppressLint("SimpleDateFormat")

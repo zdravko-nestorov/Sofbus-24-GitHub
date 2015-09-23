@@ -1,9 +1,5 @@
 package bg.znestorov.sofbus24.virtualboards;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.text.format.DateFormat;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,11 +9,15 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.text.format.DateFormat;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
+import bg.znestorov.sofbus24.utils.AlphanumComparator;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
@@ -74,7 +74,7 @@ public class ProcessVirtualBoards {
      * VirtualBoardsStation object
      *
      * @return a VirtualBoardsStation object, containing all information about
-     * the station
+     *         the station
      */
     public VirtualBoardsStationEntity getVBSingleStationFromHtml() {
         VirtualBoardsStationEntity vbStation = new VirtualBoardsStationEntity(
@@ -169,10 +169,8 @@ public class ProcessVirtualBoards {
             // Used to order the vehicles (BUS, TROLLEY, TRAM)
             switch (vehicleType) {
                 case BUS:
-                    vehiclesList.addAll(
-                            0,
-                            getVehiclesByTypeFromHtml(vehicleType,
-                                    vehiclesPartsHtml[i]));
+                    vehiclesList.addAll(0, getVehiclesByTypeFromHtml(vehicleType,
+                            vehiclesPartsHtml[i]));
                     break;
                 case TRAM:
                     vehiclesList.addAll(getVehiclesByTypeFromHtml(vehicleType,
@@ -183,10 +181,8 @@ public class ProcessVirtualBoards {
                         vehiclesList.addAll(getVehiclesByTypeFromHtml(vehicleType,
                                 vehiclesPartsHtml[i]));
                     } else {
-                        vehiclesList.addAll(
-                                1,
-                                getVehiclesByTypeFromHtml(vehicleType,
-                                        vehiclesPartsHtml[i]));
+                        vehiclesList.addAll(1, getVehiclesByTypeFromHtml(
+                                vehicleType, vehiclesPartsHtml[i]));
                     }
                     break;
             }
@@ -198,10 +194,12 @@ public class ProcessVirtualBoards {
     /**
      * Get a list with all vehicles for the corresponding type
      *
-     * @param vehicleType      the type of the current vehicle
-     * @param vehiclesPartHtml the part of the html code (representing one vehicle type)
+     * @param vehicleType
+     *            the type of the current vehicle
+     * @param vehiclesPartHtml
+     *            the part of the html code (representing one vehicle type)
      * @return a list with all information about the passing vehicles through
-     * this station
+     *         this station
      */
     private LinkedList<VehicleEntity> getVehiclesByTypeFromHtml(
             VehicleTypeEnum vehicleType, String vehiclesPartHtml) {
@@ -248,8 +246,11 @@ public class ProcessVirtualBoards {
             // Get and format the vehicle times of arrival
             String vehicleTimes = matcher.group(6);
             vehicleTimes = Utils.removeSpaces(vehicleTimes);
-            ArrayList<String> arrivalTimes = formatArrivalTimes(vehicleTimes
-                    .split(","));
+            ArrayList<String> arrivalTimes = formatArrivalTimes(
+                    vehicleTimes.split(","));
+
+            // Sort the arrival times (sometimes the times are not ordered)
+            Collections.sort(arrivalTimes, new AlphanumComparator());
 
             // Get and format the vehicle direction
             String vehicleDirection = matcher.group(7);
@@ -270,10 +271,10 @@ public class ProcessVirtualBoards {
         Collections.sort(vehiclesList, new Comparator<VehicleEntity>() {
             @Override
             public int compare(VehicleEntity vehicle1, VehicleEntity vehicle2) {
-                int vehicle1Number = Integer.parseInt(Utils
-                        .getOnlyDigits(vehicle1.getNumber()));
-                int vehicle2Number = Integer.parseInt(Utils
-                        .getOnlyDigits(vehicle2.getNumber()));
+                int vehicle1Number = Integer
+                        .parseInt(Utils.getOnlyDigits(vehicle1.getNumber()));
+                int vehicle2Number = Integer
+                        .parseInt(Utils.getOnlyDigits(vehicle2.getNumber()));
 
                 return vehicle1Number < vehicle2Number ? -1
                         : vehicle1Number > vehicle2Number ? 1 : 0;
@@ -287,7 +288,8 @@ public class ProcessVirtualBoards {
      * Transform the arrivalTimes array into a list. It is also checking for
      * each time of arrival if it is after the current hour
      *
-     * @param arrivalTimes an array with the arrival times
+     * @param arrivalTimes
+     *            an array with the arrival times
      * @return an array list, containing all times after the current hour
      */
     private ArrayList<String> formatArrivalTimes(String[] arrivalTimes) {
@@ -310,7 +312,8 @@ public class ProcessVirtualBoards {
      * Get the vehicle type according to its name (Автобус, Тролейбус or
      * Трамвай)
      *
-     * @param vehiclesPartHtml the part of the html code (representing one vehicle type)
+     * @param vehiclesPartHtml
+     *            the part of the html code (representing one vehicle type)
      * @return the vehicle type
      */
     private VehicleTypeEnum getVehicleType(String vehiclesPartHtml) {

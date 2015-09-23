@@ -135,14 +135,14 @@ public final class R {
 		public static final int abs__action_bar_subtitle_top_margin = 0x7f080004;
 		public static final int abs__action_bar_title_text_size = 0x7f080005;
 		public static final int abs__action_button_min_width = 0x7f080007;
-		public static final int abs__config_prefDialogWidth = 0x7f08002b;
-		public static final int abs__dialog_min_width_major = 0x7f080029;
-		public static final int abs__dialog_min_width_minor = 0x7f08002a;
-		public static final int abs__dropdownitem_icon_width = 0x7f08002c;
-		public static final int abs__dropdownitem_text_padding_left = 0x7f08002d;
-		public static final int abs__dropdownitem_text_padding_right = 0x7f08002e;
-		public static final int abs__search_view_preferred_width = 0x7f08002f;
-		public static final int abs__search_view_text_min_width = 0x7f080030;
+		public static final int abs__config_prefDialogWidth = 0x7f080030;
+		public static final int abs__dialog_min_width_major = 0x7f08002e;
+		public static final int abs__dialog_min_width_minor = 0x7f08002f;
+		public static final int abs__dropdownitem_icon_width = 0x7f080031;
+		public static final int abs__dropdownitem_text_padding_left = 0x7f080032;
+		public static final int abs__dropdownitem_text_padding_right = 0x7f080033;
+		public static final int abs__search_view_preferred_width = 0x7f080034;
+		public static final int abs__search_view_text_min_width = 0x7f080035;
 	}
 	public static final class drawable {
 		public static final int abs__ab_bottom_solid_dark_holo = 0x7f020000;
