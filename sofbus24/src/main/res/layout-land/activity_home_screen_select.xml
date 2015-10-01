@@ -120,6 +120,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/sofbus24_home_screen_standard_image"
                             android:layout_width="@dimen/home_screen_choice_image_width"
                             android:layout_height="@dimen/home_screen_choice_image_height"
                             android:layout_marginBottom="5sp"
@@ -154,6 +155,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/sofbus24_home_screen_map_image"
                             android:layout_width="@dimen/home_screen_choice_image_width"
                             android:layout_height="@dimen/home_screen_choice_image_height"
                             android:layout_marginBottom="5sp"
@@ -189,6 +191,7 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/sofbus24_home_screen_droidtrans_image"
                             android:layout_width="@dimen/home_screen_choice_image_width"
                             android:layout_height="@dimen/home_screen_choice_image_height"
                             android:layout_marginBottom="5sp"

@@ -56,28 +56,26 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 public class HomeScreenSelect extends SherlockFragmentActivity implements
         OnRecreateDatabaseListener {
 
-    private FragmentActivity context;
-    private GlobalEntity globalContext;
-
-    private int userChoice = -1;
-    private static final String BUNDLE_USER_CHOICE = "USER CHOICE";
-
-    private ImageView homeScreenBkg;
-    private View homeScreenChoiceView;
-    private ImageView homeScreenChoiceBtn;
-    private View homeScreenStandard;
-    private View homeScreenMap;
-    private View homeScreenDroidtrans;
-
-    private boolean isHomeScreenBoxViewVisible;
-    private static final String BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE = "IS HOME SCREEN BOX VIEW VISIBLE";
-
-    private static final Integer MAX_STARTUP_COUNT = 2;
-
     public static final int REQUEST_CODE_HOME_SCREEN_SELECT = 0;
     public static final int RESULT_CODE_ACTIVITY_NEW = 1;
     public static final int RESULT_CODE_ACTIVITY_FINISH = 2;
     public static final int RESULT_CODE_ACTIVITY_RESTART = 3;
+    private static final String BUNDLE_USER_CHOICE = "USER CHOICE";
+    private static final String BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE = "IS HOME SCREEN BOX VIEW VISIBLE";
+    private static final Integer MAX_STARTUP_COUNT = 2;
+    private FragmentActivity context;
+    private GlobalEntity globalContext;
+    private int userChoice = -1;
+    private View homeScreenChoiceView;
+    private View homeScreenStandard;
+    private ImageView homeScreenStandardImage;
+    private View homeScreenMap;
+    private ImageView homeScreenMapImage;
+    private View homeScreenDroidtrans;
+    private ImageView homeScreenDroidtransImage;
+    private ImageView homeScreenChoiceBtn;
+    private View homeScreenLoadingView;
+    private boolean isHomeScreenBoxViewVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +89,7 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
         globalContext = (GlobalEntity) getApplicationContext();
         userChoice = savedInstanceState == null ? -1 : savedInstanceState
                 .getInt(BUNDLE_USER_CHOICE);
-        isHomeScreenBoxViewVisible = savedInstanceState == null ? true
-                : savedInstanceState
+        isHomeScreenBoxViewVisible = savedInstanceState == null || savedInstanceState
                 .getBoolean(BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE);
 
         // Init the layout fields
@@ -107,8 +104,7 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,
-                                    Intent intent) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
 
         if (requestCode == REQUEST_CODE_HOME_SCREEN_SELECT) {
@@ -128,8 +124,8 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
-        isHomeScreenBoxViewVisible = homeScreenChoiceView != null ? homeScreenChoiceView
-                .getVisibility() == View.VISIBLE : true;
+        isHomeScreenBoxViewVisible = homeScreenChoiceView == null || homeScreenChoiceView
+                .getVisibility() == View.VISIBLE;
 
         outState.putInt(BUNDLE_USER_CHOICE, userChoice);
         outState.putBoolean(BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE,
@@ -149,58 +145,82 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
      * @param savedInstanceState the state of the activity
      * @param isFirstTimeStart   check if the method has been already started
      */
-    private void initLayoutFields(Bundle savedInstanceState,
-                                  boolean isFirstTimeStart) {
+    private void initLayoutFields(Bundle savedInstanceState, boolean isFirstTimeStart) {
 
-        // Check if the home screen choice view should be visible or not
+        // Initialize the layout fields
         homeScreenChoiceView = findViewById(R.id.sofbus24_home_screen_choice_view);
-        if (isHomeScreenBoxViewVisible) {
-            showHomeScreenBoxView();
-        } else {
-            hideHomeScreenBoxView();
-        }
-
-        // Init the button, which confirms the user choice
-        homeScreenChoiceBtn = (ImageView) findViewById(R.id.sofbus24_home_screen_select_btn);
-
-        // Init the homeScreenStandard view and assign it with a onClickListener (in case the user select it)
         homeScreenStandard = findViewById(R.id.sofbus24_home_screen_standard);
-        homeScreenStandard.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onHomeScreenSelected(1);
-            }
-        });
-
-        // Init the homeScreenMap view and assign it with a onClickListener (in case the user select it)
+        homeScreenStandardImage = (ImageView) findViewById(R.id.sofbus24_home_screen_standard_image);
         homeScreenMap = findViewById(R.id.sofbus24_home_screen_map);
-        homeScreenMap.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onHomeScreenSelected(2);
-            }
-        });
-
-        // Init the homeScreenDroidtrans view and assign it with a onClickListener (in case the user select it)
+        homeScreenMapImage = (ImageView) findViewById(R.id.sofbus24_home_screen_map_image);
         homeScreenDroidtrans = findViewById(R.id.sofbus24_home_screen_droidtrans);
-        homeScreenDroidtrans.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onHomeScreenSelected(3);
-            }
-        });
+        homeScreenDroidtransImage = (ImageView) findViewById(R.id.sofbus24_home_screen_droidtrans_image);
+        homeScreenChoiceBtn = (ImageView) findViewById(R.id.sofbus24_home_screen_select_btn);
+        homeScreenLoadingView = findViewById(R.id.sofbus24_home_screen_loading_view);
 
-        // Check what action to be taken on application startup
-        View homeScreenLoadingView = findViewById(R.id.sofbus24_home_screen_loading_view);
+        // Process the layout fields (assign actions to them)
+        processLayoutFields(savedInstanceState, isFirstTimeStart);
+    }
+
+    /**
+     * Assign actions to the layout fields
+     *
+     * @param savedInstanceState the state of the activity
+     * @param isFirstTimeStart   check if the method has been already started
+     */
+    private void processLayoutFields(Bundle savedInstanceState, boolean isFirstTimeStart) {
 
         boolean isHomeScreenSet = NavDrawerHomeScreenPreferences
                 .isUserHomeScreenChoosen(context);
 
-        if (!isHomeScreenSet) {
-            homeScreenLoadingView.setVisibility(View.GONE);
+        // Check if the home screen choice view should be visible or not and take the needed actions
+        if (isHomeScreenBoxViewVisible && !isHomeScreenSet) {
+            showHomeScreenBoxView();
+            hideHomeScreenLoadingView();
+
+            // Configure the button that confirms the user choice
+            homeScreenChoiceBtn.setVisibility(View.GONE);
+
+            // Configure the homeScreenStandard view and assign it with a onClickListener (in case the user select it)
+            homeScreenStandard.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onHomeScreenSelected(0);
+                }
+            });
+
+            // Configure the homeScreenMap view and assign it with a onClickListener (in case the user select it)
+            homeScreenMap.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onHomeScreenSelected(1);
+                }
+            });
+
+            // Configure the homeScreenDroidtrans view and assign it with a onClickListener (in case the user select it)
+            homeScreenDroidtrans.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onHomeScreenSelected(2);
+                }
+            });
+
+            // Check if the device is a tablet and show only two possible home screens
+            if (!globalContext.isPhoneDevice()) {
+
+                // Check the orientation of the device to define if the Droidtrans options should be GONE or INVISIBLE
+                if (Utils.isInLandscapeMode(context)) {
+                    homeScreenDroidtrans.setVisibility(View.GONE);
+                } else {
+                    homeScreenDroidtrans.setVisibility(View.INVISIBLE);
+                }
+            }
+
             processUserChoice(savedInstanceState);
         } else {
-            homeScreenLoadingView.setVisibility(View.VISIBLE);
+            hideHomeScreenBoxView();
+            showHomeScreenLoadingView();
+
             processAppStartUp(savedInstanceState, isFirstTimeStart);
         }
     }
@@ -212,18 +232,6 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
      */
     private void processUserChoice(final Bundle savedInstanceState) {
 
-        // Check if there is any user choice
-        if (userChoice >= 0) {
-            onHomeScreenSelected(userChoice);
-            homeScreenChoiceBtn.setVisibility(View.VISIBLE);
-        }
-
-        // Check if the device is a tablet and show only two possible home
-        // screens
-        if (!globalContext.isPhoneDevice()) {
-            homeScreenDroidtrans.setVisibility(View.GONE);
-        }
-
         // Set on click listener over the next button
         homeScreenChoiceBtn.setOnClickListener(new OnClickListener() {
 
@@ -233,6 +241,8 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
                 // Check if the user selected GoogleMaps as a home screen and if
                 // there are GooglePlayServices installed on its device
                 if (userChoice == 1 && !globalContext.areServicesAvailable()) {
+                    isHomeScreenBoxViewVisible = true;
+
                     GooglePlayServicesErrorDialog googlePlayServicesErrorDialog = GooglePlayServicesErrorDialog
                             .newInstance(getString(
                                     R.string.navigation_drawer_home_screen_error,
@@ -241,10 +251,11 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
                             getSupportFragmentManager(),
                             "GooglePlayServicesHomeScreenErrorDialog");
                 } else {
+                    isHomeScreenBoxViewVisible = false;
+
                     NavDrawerHomeScreenPreferences.setUserChoice(context,
                             userChoice);
-
-                    initLayoutFields(savedInstanceState, false);
+                    processLayoutFields(savedInstanceState, false);
                 }
             }
         });
@@ -252,23 +263,26 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
 
     /**
      * Get the id of the selected radio button
-     *
-     * @return the checked view id
      */
     private void onHomeScreenSelected(int userChoice) {
 
-        switch (userChoice) {
+        this.userChoice = userChoice;
+
+        switch (this.userChoice) {
+            case 0:
+                homeScreenStandardImage.setImageResource(R.drawable.btn_home_screen_standard_hover);
+                homeScreenMapImage.setImageResource(R.drawable.btn_home_screen_map);
+                homeScreenDroidtransImage.setImageResource(R.drawable.btn_home_screen_droidtrans);
+                break;
             case 1:
-                userChoice = 1;
-                break;
-            case 2:
-                userChoice = 2;
-                break;
-            case 3:
-                userChoice = 3;
+                homeScreenStandardImage.setImageResource(R.drawable.btn_home_screen_standard);
+                homeScreenMapImage.setImageResource(R.drawable.btn_home_screen_map_hover);
+                homeScreenDroidtransImage.setImageResource(R.drawable.btn_home_screen_droidtrans);
                 break;
             default:
-                userChoice = -1;
+                homeScreenStandardImage.setImageResource(R.drawable.btn_home_screen_standard);
+                homeScreenMapImage.setImageResource(R.drawable.btn_home_screen_map);
+                homeScreenDroidtransImage.setImageResource(R.drawable.btn_home_screen_droidtrans_hover);
                 break;
         }
 
@@ -278,14 +292,13 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
     }
 
     /**
-     * Load the information into the dabatase/objects and start the appropriate
+     * Load the information into the database/objects and start the appropriate
      * screens
      *
      * @param savedInstanceState the state of the activity
      * @param isFirstTimeStart   check if the method has been already started
      */
-    private void processAppStartUp(Bundle savedInstanceState,
-                                   boolean isFirstTimeStart) {
+    private void processAppStartUp(Bundle savedInstanceState, boolean isFirstTimeStart) {
 
         if (savedInstanceState == null || !isFirstTimeStart) {
 
@@ -397,6 +410,22 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
     }
 
     /**
+     * Show the Sofbus 24 HomeScreenSelect the loading view (this view contains the
+     * loading parts)
+     */
+    private void showHomeScreenLoadingView() {
+        homeScreenLoadingView.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * Hide the Sofbus 24 HomeScreenSelect the loading view (this view contains the
+     * loading parts)
+     */
+    private void hideHomeScreenLoadingView() {
+        homeScreenLoadingView.setVisibility(View.GONE);
+    }
+
+    /**
      * Class responsible for async creation of the databases
      *
      * @author Zdravko Nestorov
@@ -422,10 +451,8 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
             // Create the database by copying it from the assets folder to the
             // internal memory
             Sofbus24DatabaseUtils.createOrUpgradeSofbus24Database(context);
-            boolean isSofbus24DatabaseValid = Sofbus24DatabaseUtils
-                    .isSofbus24DatabaseValid(context);
 
-            return isSofbus24DatabaseValid;
+            return Sofbus24DatabaseUtils.isSofbus24DatabaseValid(context);
         }
 
         @Override
@@ -448,7 +475,7 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
                 deleteDatabase(Sofbus24SQLite.DB_NAME);
 
                 // If there are more than @MAX_STARTUP_COUNT, alert the user
-                // IMPORTANT: This case should not be rached anytime (very rare
+                // IMPORTANT: This case should not be reached anytime (very rare
                 // case when the user can't copy the database correctly into the
                 // memory)
                 if (startupCount > MAX_STARTUP_COUNT) {

@@ -8,11 +8,11 @@
     <dimen name="cs_list_image_street_view_height">95sp</dimen>
     <dimen name="home_screen_choice_image_height">70sp</dimen>
     <dimen name="home_screen_choice_image_width">100sp</dimen>
-    <dimen name="home_screen_confirm_image_height">60sp</dimen>
-    <dimen name="home_screen_confirm_image_width">60sp</dimen>
-    <dimen name="home_screen_motto_image_margin">50sp</dimen>
-    <dimen name="home_screen_subtitle_txt_size">13sp</dimen>
-    <dimen name="home_screen_title_txt_size">17sp</dimen>
+    <dimen name="home_screen_confirm_image_height">45sp</dimen>
+    <dimen name="home_screen_confirm_image_width">45sp</dimen>
+    <dimen name="home_screen_motto_image_margin">25sp</dimen>
+    <dimen name="home_screen_subtitle_txt_size">9sp</dimen>
+    <dimen name="home_screen_title_txt_size">14sp</dimen>
     <dimen name="sofbus24_empty_list_view_margin">10sp</dimen>
     <dimen name="sofbus24_empty_text_view_margin">0sp</dimen>
     <dimen name="vb_time_image_street_view_height">95sp</dimen>

@@ -85,7 +85,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25sp"
+                        android:layout_marginTop="15sp"
                         android:text="@string/home_screen_choice_title"
                         android:textColor="@color/white"
                         android:textSize="@dimen/home_screen_title_txt_size"
@@ -124,12 +124,13 @@
             android:id="@+id/sofbus24_home_screen_standard"
             android:layout_width="match_parent"
             android:layout_height="0sp"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="15sp"
             android:layout_weight="15"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/sofbus24_home_screen_standard_image"
                 android:layout_width="@dimen/home_screen_choice_image_width"
                 android:layout_height="@dimen/home_screen_choice_image_height"
                 android:contentDescription="@string/app_img_empty_content_description"
@@ -171,6 +172,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/sofbus24_home_screen_map_image"
                 android:layout_width="@dimen/home_screen_choice_image_width"
                 android:layout_height="@dimen/home_screen_choice_image_height"
                 android:contentDescription="@string/app_img_empty_content_description"
@@ -212,6 +214,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/sofbus24_home_screen_droidtrans_image"
                 android:layout_width="@dimen/home_screen_choice_image_width"
                 android:layout_height="@dimen/home_screen_choice_image_height"
                 android:contentDescription="@string/app_img_empty_content_description"

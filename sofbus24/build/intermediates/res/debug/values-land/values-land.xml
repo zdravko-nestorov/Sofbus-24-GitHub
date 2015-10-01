@@ -11,4 +11,5 @@
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-land/dimens.xml -->
     <eat-comment/>
     <dimen name="home_screen_choice_image_width">130sp</dimen>
+    <dimen name="home_screen_title_txt_size">22sp</dimen>
 </resources>
