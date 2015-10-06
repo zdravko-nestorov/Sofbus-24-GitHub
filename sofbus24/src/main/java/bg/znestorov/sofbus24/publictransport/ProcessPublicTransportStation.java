@@ -16,7 +16,7 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ProcessPublicTransportStation {
+class ProcessPublicTransportStation {
 
     private Activity context;
     private PublicTransportStationEntity ptStation;
@@ -66,7 +66,7 @@ public class ProcessPublicTransportStation {
 
         // Create the pattern and process the htmlResult
         Pattern pattern = Pattern
-                .compile(Constants.SCHECULE_REGEX_STATION_SCHEDULE);
+                .compile(Constants.SCHEDULE_REGEX_STATION_SCHEDULE);
         Matcher matcher = pattern.matcher(htmlResult);
 
         while (matcher.find()) {

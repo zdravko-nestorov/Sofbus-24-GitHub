@@ -15,7 +15,7 @@ import bg.znestorov.sofbus24.entity.StationEntity;
  * @author Zdravko Nestorov
  * @version 2.0
  */
-public class FavouritesSQLite extends SQLiteOpenHelper {
+class FavouritesSQLite extends SQLiteOpenHelper {
 
     // Table and columns names
     public static final String TABLE_FAVOURITES = "favourites";
@@ -41,7 +41,7 @@ public class FavouritesSQLite extends SQLiteOpenHelper {
             + COLUMN_USAGE_COUNT + " INTEGER NOT NULL, " + COLUMN_POSITION
             + " INTEGER NOT NULL" + ");";
     // Current activity context
-    private Activity context;
+    private final Activity context;
 
     public FavouritesSQLite(Activity context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -56,12 +56,12 @@ public class FavouritesSQLite extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion,
                           int newVersion) {
-        FavouritesDataSource favoritesDatasorce = new FavouritesDataSource(
+        FavouritesDataSource favoritesDatasource = new FavouritesDataSource(
                 context, database);
 
         List<StationEntity> favoritesList;
         try {
-            favoritesList = favoritesDatasorce.getAllStations();
+            favoritesList = favoritesDatasource.getAllStations();
         } catch (Exception e) {
             /**
              * Strange exception in the GooglePlay - when updating the DB, and
@@ -77,6 +77,6 @@ public class FavouritesSQLite extends SQLiteOpenHelper {
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVOURITES);
         database.execSQL(DATABASE_CREATE_FAVOURITES);
 
-        favoritesDatasorce.createStations(favoritesList);
+        favoritesDatasource.createStations(favoritesList);
     }
 }

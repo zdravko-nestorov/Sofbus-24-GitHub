@@ -82,15 +82,15 @@ public class RetrieveVirtualBoards {
 
     private static final String NDK_TUNNEL = "НДКТУНЕЛ";
     private static final String NDK_GRAFITTI = "НДКГРАФИТИ";
-    private Activity context;
-    private GlobalEntity globalContext;
-    private Object callerInstance;
+    private final Activity context;
+    private final GlobalEntity globalContext;
+    private final Object callerInstance;
+    private final HtmlRequestCodesEnum htmlRequestCode;
+    private final DefaultHttpClient httpClient;
+    private final StationsDataSource stationsDatasource;
+    private final FavouritesDataSource favouriteDatasource;
     private StationEntity station;
-    private HtmlRequestCodesEnum htmlRequestCode;
     private HtmlResultCodesEnum htmlResultCode;
-    private DefaultHttpClient httpClient;
-    private StationsDataSource stationsDatasource;
-    private FavouritesDataSource favouriteDatasource;
     /**
      * Indicates if the search is one of the special ones ([1137, 1138 -
      * НДК-тунел], [1139 - НДК-Графити]). In these cases, the procedure of
@@ -98,8 +98,8 @@ public class RetrieveVirtualBoards {
      */
     private boolean isSpecialCase;
     /**
-     * Indicates if the first time when the captch is required, the captch hack
-     * is used - this means that instead of captch we should use the current
+     * Indicates if the first time when the captcha is required, the captcha hack
+     * is used - this means that instead of captcha we should use the current
      * date in format MMDD
      */
     private boolean isCaptchaHackUsed = false;
@@ -399,7 +399,7 @@ public class RetrieveVirtualBoards {
      * response HTML source code, as follows:<br/>
      * <ul>
      * <li>0 - for TRAMS</li>
-     * <li>1 - for BUSSES</li>
+     * <li>1 - for BUSES</li>
      * <li>2 - for TROLLEYS</li>
      * </ul>
      *
@@ -551,8 +551,6 @@ public class RetrieveVirtualBoards {
      *
      * @param captchaId The id of the captcha image, token from the source file
      * @return a HTTP get request to the SUMC server
-     * @throws ClientProtocolException
-     * @throws IOException
      */
     private HttpGet createCaptchaRequest(String captchaId) {
         final HttpGet request = new HttpGet(String.format(
@@ -635,7 +633,7 @@ public class RetrieveVirtualBoards {
             isCaptchaHackUsed = true;
             processCaptchaText(captchaId, Utils.getCurrentDayMonth());
         } else {
-            // It should not never enter here - a captch hack should be user all
+            // It should not never enter here - a captcha hack should be user all
             // the time
 
             // Replace the AlertDialog with a DialogFragment
@@ -688,7 +686,7 @@ public class RetrieveVirtualBoards {
 
             dialogBuilder.setOnCancelListener(new OnCancelListener() {
                 public void onCancel(DialogInterface arg0) {
-                    proccessHtmlResult(null);
+                    processHtmlResult(null);
                 }
             });
 
@@ -734,7 +732,7 @@ public class RetrieveVirtualBoards {
      * @param htmlResult The response text, prepared from the HTTP request to the SUMC
      *                   server
      */
-    private void proccessHtmlResult(String htmlResult) {
+    private void processHtmlResult(String htmlResult) {
         saveCookiesToPreferences();
         saveHiddenVariablesToPreferences(htmlResult);
 
@@ -973,8 +971,8 @@ public class RetrieveVirtualBoards {
      * Create a progress dialog if needed (if the instance of this class is
      * created by the REFRESH - no progress dialog needed)
      *
-     * @param msg
-     * @return
+     * @param msg the progress dialog message
+     * @return the progress dialog
      */
     private ProgressDialog createProgressDialog(Spanned msg) {
         ProgressDialog progressDialog;
@@ -1004,7 +1002,7 @@ public class RetrieveVirtualBoards {
     }
 
     /**
-     * Make some adjusmtents in the special cases (([1137, 1138 - НДК-тунел],
+     * Make some adjustments in the special cases (([1137, 1138 - НДК-тунел],
      * [1139 - НДК-Графити])) - replace the original station numbers with the
      * closest ones
      *
@@ -1031,7 +1029,7 @@ public class RetrieveVirtualBoards {
     }
 
     /**
-     * Revert the adjusmtents in the special cases (([1137, 1138 - НДК-тунел],
+     * Revert the adjustments in the special cases (([1137, 1138 - НДК-тунел],
      * [1139 - НДК-Графити])) - replace the closest station numbers with the
      * original ones
      *
@@ -1045,17 +1043,17 @@ public class RetrieveVirtualBoards {
 
             stationsDatasource.open();
             if ("0364".equals(stationNumber)) {
-                station.assingStationValues(stationsDatasource.getStation(1137));
+                station.assignStationValues(stationsDatasource.getStation(1137));
                 setCustomField(station);
             }
 
             if ("0400".equals(stationNumber)) {
-                station.assingStationValues(stationsDatasource.getStation(1138));
+                station.assignStationValues(stationsDatasource.getStation(1138));
                 setCustomField(station);
             }
 
             if ("0363".equals(stationNumber)) {
-                station.assingStationValues(stationsDatasource.getStation(1139));
+                station.assignStationValues(stationsDatasource.getStation(1139));
                 setCustomField(station);
             }
             stationsDatasource.close();
@@ -1064,7 +1062,7 @@ public class RetrieveVirtualBoards {
 
     /**
      * Format the searched word by converting it in cyrillic and make it with
-     * captital letters. This is used in cases of search by word.
+     * capital letters. This is used in cases of search by word.
      *
      * @return the formatted station number
      */
@@ -1104,9 +1102,9 @@ public class RetrieveVirtualBoards {
      */
     private class RetrieveSumcInformation extends AsyncTask<Void, Void, String> {
 
-        private ProgressDialog progressDialog;
-        private String captchaText;
-        private String captchaId;
+        private final ProgressDialog progressDialog;
+        private final String captchaText;
+        private final String captchaId;
         private ArrayList<BasicNameValuePair> hiddenVariablesList;
 
         // Http Post parameter used to create/abort the HTTP connection
@@ -1255,7 +1253,7 @@ public class RetrieveVirtualBoards {
                          * Check if the SKGT site returned all needed
                          * information
                          * <ul>
-                         * <li>No result - INTERNER ERROR</li>
+                         * <li>No result - INTERNET ERROR</li>
                          * <li>Result with information about captcha (in case
                          * there are more than one vehicle and some of the
                          * requests face captcha image) - CAPTCHA NEEDED</li>
@@ -1291,7 +1289,7 @@ public class RetrieveVirtualBoards {
                     checkCaptchaText(htmlResult);
                     break;
                 default:
-                    proccessHtmlResult(htmlResult);
+                    processHtmlResult(htmlResult);
                     break;
             }
 
@@ -1365,8 +1363,8 @@ public class RetrieveVirtualBoards {
     private class RetrieveCaptchaInformation extends
             AsyncTask<Void, Void, Bitmap> {
 
-        private ProgressDialog progressDialog;
-        private String captchaId;
+        private final ProgressDialog progressDialog;
+        private final String captchaId;
 
         // Http Get parameter used to create/abort the HTTP connection
         private HttpGet httpGet;
@@ -1407,7 +1405,7 @@ public class RetrieveVirtualBoards {
                 getCaptchaText(captchaId, captchaImage);
             } else {
                 htmlResultCode = HtmlResultCodesEnum.NO_INTERNET;
-                proccessHtmlResult(null);
+                processHtmlResult(null);
             }
 
             dismissLoadingView();

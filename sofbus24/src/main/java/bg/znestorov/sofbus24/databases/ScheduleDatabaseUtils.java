@@ -52,7 +52,7 @@ public class ScheduleDatabaseUtils {
      * @param context the current activity context
      * @return if the schedule cache is available
      */
-    public static boolean isAnyScheduleCacheAvaialble(Activity context) {
+    public static boolean isAnyScheduleCacheAvailable(Activity context) {
 
         boolean isScheduleCacheAvailable;
 
@@ -91,7 +91,7 @@ public class ScheduleDatabaseUtils {
      * @param vehiclesNumber the selected schedule vehicle number
      * @return if the schedule cache is available
      */
-    public static boolean isVehiclesScheduleCacheAvaialble(Activity context,
+    public static boolean isVehiclesScheduleCacheAvailable(Activity context,
                                                            VehicleTypeEnum vehiclesType, String vehiclesNumber) {
 
         boolean isScheduleCacheAvailable;

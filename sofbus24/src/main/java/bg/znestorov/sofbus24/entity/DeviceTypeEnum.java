@@ -22,5 +22,5 @@ public enum DeviceTypeEnum {
     /**
      * If the device is a large table (tablet with a size of 800dp or higher)
      */
-    LARGE_TABLET;
+    LARGE_TABLET
 }

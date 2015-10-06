@@ -24,7 +24,7 @@ import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
 
 /**
- * Fragment used to re-arrange the HomeScreen tabs according to user willings
+ * Fragment used to re-arrange the HomeScreen tabs according to user willing
  *
  * @author Zdravko Nestorov
  * @version 1.0
@@ -38,7 +38,7 @@ public class EditTabsFragment extends SherlockListFragment {
     private ConfigEntity config;
     private boolean isReset;
     private EditTabsAdapter editTabsAdapter;
-    private DragSortListView.DropListener onDrop = new DragSortListView.DropListener() {
+    private final DragSortListView.DropListener onDrop = new DragSortListView.DropListener() {
         @Override
         public void drop(int from, int to) {
             if (from != to) {
@@ -182,19 +182,19 @@ public class EditTabsFragment extends SherlockListFragment {
 
         // Create each home tab according to the configuration
         HomeTabEntity homeTabFavourites = new HomeTabEntity(
-                config.isFavouritesVisibile(),
+                config.isFavouritesVisible(),
                 getString(R.string.edit_tabs_favourites),
                 config.getFavouritesPosition());
         HomeTabEntity homeTabSearch = new HomeTabEntity(
-                config.isSearchVisibile(),
+                config.isSearchVisible(),
                 getString(R.string.edit_tabs_search),
                 config.getSearchPosition());
         HomeTabEntity homeTabSchedule = new HomeTabEntity(
-                config.isScheduleVisibile(),
+                config.isScheduleVisible(),
                 getString(R.string.edit_tabs_schedule),
                 config.getSchedulePosition());
         HomeTabEntity homeTabMetro = new HomeTabEntity(
-                config.isMetroVisibile(), getString(R.string.edit_tabs_metro),
+                config.isMetroVisible(), getString(R.string.edit_tabs_metro),
                 config.getMetroPosition());
 
         // Build the List with the home tabs in the correct ordering
@@ -268,20 +268,20 @@ public class EditTabsFragment extends SherlockListFragment {
                     || tabName
                     .equals(getString(R.string.edit_tabs_favourites_orientation))) {
                 currentConfig.setFavouritesPosition(tabPosition);
-                currentConfig.setFavouritesVisibile(isTabVisible);
+                currentConfig.setFavouritesVisible(isTabVisible);
             } else if (tabName.equals(getString(R.string.edit_tabs_search))
                     || tabName
                     .equals(getString(R.string.edit_tabs_search_orientation))) {
                 currentConfig.setSearchPosition(tabPosition);
-                currentConfig.setSearchVisibile(isTabVisible);
+                currentConfig.setSearchVisible(isTabVisible);
             } else if (tabName.equals(getString(R.string.edit_tabs_schedule))
                     || tabName
                     .equals(getString(R.string.edit_tabs_schedule_orientation))) {
                 currentConfig.setSchedulePosition(tabPosition);
-                currentConfig.setScheduleVisibile(isTabVisible);
+                currentConfig.setScheduleVisible(isTabVisible);
             } else {
                 currentConfig.setMetroPosition(tabPosition);
-                currentConfig.setMetroVisibile(isTabVisible);
+                currentConfig.setMetroVisible(isTabVisible);
             }
         }
 

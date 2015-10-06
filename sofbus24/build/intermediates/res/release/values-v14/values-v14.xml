@@ -69,7 +69,7 @@
     </style>
     <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/src/main/res/values-v14/styles.xml -->
     <eat-comment/>
-    <style name="TransperantTheme" parent="android:Theme.Holo.Light">
+    <style name="TransparentTheme" parent="android:Theme.Holo.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:windowBackground">@android:color/transparent</item>

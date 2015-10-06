@@ -13,7 +13,7 @@ import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.navigation.NavDrawerHomeScreenPreferences;
 
 /**
- * Class used to interact with GoogleAnalytivs
+ * Class used to interact with GoogleAnalytics
  *
  * @author Zdravko Nestorov
  * @version 1.0
@@ -205,7 +205,7 @@ public class ActivityTracker {
      * settings screen)
      *
      * @param context      the current activity context
-     * @param appThemeEnum the choosen theme
+     * @param appThemeEnum the chosen theme
      */
     public static void changedApplicationTheme(Activity context,
                                                AppThemeEnum appThemeEnum) {

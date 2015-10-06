@@ -48,13 +48,13 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
     private static final String BUNDLE_VB_SEARCH_TEXT = "VB SEARCH TEXT";
     private static final String BUNDLE_VB_STATIONS_LIST = "VB STATION LIST";
     private static final String BUNDLE_VB_EMPTY_LIST_MSG = "VB EMPTY LIST MESSAGE";
+    private final ArrayList<StationEntity> vbList = new ArrayList<StationEntity>();
     private Activity context;
     private GridView gridViewVirtualBoards;
     private View emptyView;
     private TextView emptyTextView;
     private SearchEditText searchEditText;
     private String vbSearchText;
-    private ArrayList<StationEntity> vbList = new ArrayList<StationEntity>();
     private String emptyListMsg;
 
     @Override
@@ -107,7 +107,7 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
     }
 
     /**
-     * Retieve an information about the selected station
+     * Retrieve an information about the selected station
      *
      * @param station selected station
      */
@@ -163,8 +163,6 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
 
     /**
      * Modify the Search EditText field and activate the listeners
-     *
-     * @param searchEditText the search EditText
      */
     private void actionsOverSearchEditText() {
         // TODO: Find a way to set an alphanumeric keyboard with numeric as
@@ -401,7 +399,7 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
                     for (int i = end - 1; i >= start; i--) {
                         char currentChar = source.charAt(i);
 
-                        // Check if the charecter has to be removed
+                        // Check if the character has to be removed
                         if (!ActivityUtils.isCharAllowed(currentChar)) {
                             sourceAsSpannableBuilder.delete(i, i + 1);
                         }
@@ -418,7 +416,7 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
                     for (int i = start; i < end; i++) {
                         char currentChar = source.charAt(i);
 
-                        // Check if the charecter should be appended
+                        // Check if the character should be appended
                         if (ActivityUtils.isCharAllowed(currentChar)) {
                             filteredStringBuilder.append(currentChar);
                         }

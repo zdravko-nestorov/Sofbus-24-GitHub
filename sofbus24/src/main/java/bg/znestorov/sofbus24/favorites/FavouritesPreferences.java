@@ -14,7 +14,7 @@ import bg.znestorov.sofbus24.utils.Constants;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class FavouritesPreferences {
+class FavouritesPreferences {
 
     /**
      * Get the favourites sort type, defined by the user
@@ -26,7 +26,7 @@ public class FavouritesPreferences {
         SortTypeEnum favouritesSortType;
 
         SharedPreferences favouritesPreferences = context.getSharedPreferences(
-                Constants.FAVORUITES_ORDER_PREFERENCES_NAME,
+                Constants.FAVOURITES_ORDER_PREFERENCES_NAME,
                 Context.MODE_PRIVATE);
         String sortType = favouritesPreferences.getString(
                 Constants.FAVOURITES_ORDER_PREFERENCES_TYPE, null);
@@ -48,7 +48,7 @@ public class FavouritesPreferences {
     public static void setFavouritesSortType(Activity context,
                                              SortTypeEnum sortType) {
         SharedPreferences favouritesPreferences = context.getSharedPreferences(
-                Constants.FAVORUITES_ORDER_PREFERENCES_NAME,
+                Constants.FAVOURITES_ORDER_PREFERENCES_NAME,
                 Context.MODE_PRIVATE);
 
         Editor editor = favouritesPreferences.edit();

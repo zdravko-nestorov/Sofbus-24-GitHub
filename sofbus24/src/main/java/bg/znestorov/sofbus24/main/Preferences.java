@@ -20,11 +20,9 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 public class Preferences extends FragmentActivity implements
         OnResetSettingsListener {
 
+    private final PreferencesFragment preferencesFragment = new PreferencesFragment();
     private Activity context;
     private GlobalEntity globalContext;
-    private ActionBar actionBar;
-
-    private PreferencesFragment preferencesFragment = new PreferencesFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,7 @@ public class Preferences extends FragmentActivity implements
         globalContext = (GlobalEntity) getApplicationContext();
 
         // Set up the action bar
-        actionBar = getActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.pref_title));

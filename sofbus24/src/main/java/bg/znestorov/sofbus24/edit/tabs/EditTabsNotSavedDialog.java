@@ -20,22 +20,17 @@ import bg.znestorov.sofbus24.main.R;
 public class EditTabsNotSavedDialog extends DialogFragment {
 
     private Activity context;
-    private String title;
-    private String message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();
-        title = getString(R.string.edit_tabs_not_saved_title);
-        message = getString(R.string.edit_tabs_not_saved_msg);
-        negativeBtn = getString(R.string.app_button_no);
-        positiveBtn = getString(R.string.app_button_yes);
+        String title = getString(R.string.edit_tabs_not_saved_title);
+        String message = getString(R.string.edit_tabs_not_saved_msg);
+        String negativeBtn = getString(R.string.app_button_no);
+        String positiveBtn = getString(R.string.app_button_yes);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             public void onClick(DialogInterface dialog, int i) {
                 context.finish();
             }

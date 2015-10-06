@@ -12,29 +12,23 @@ import android.database.sqlite.SQLiteDatabase;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class Sofbus24DataSource {
+class Sofbus24DataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
-    private Sofbus24SQLite dbHelper;
-
-    private String stationsTableName = Sofbus24SQLite.TABLE_SOF_STAT;
-    private String[] stationsColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
+    private final Sofbus24SQLite dbHelper;
+    private final String[] stationsColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER, Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-
-    private String vehiclesTableName = Sofbus24SQLite.TABLE_SOF_VEHI;
-    private String[] vehiclesColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
+    private final String[] vehiclesColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER, Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
-
-    private String droidTransTableName = Sofbus24SQLite.TABLE_SOF_VEST;
-    private String[] droidTransColumns = {Sofbus24SQLite.COLUMN_PK_VEST_ID,
+    private final String[] droidTransColumns = {Sofbus24SQLite.COLUMN_PK_VEST_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_VEHI_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_STAT_ID,
             Sofbus24SQLite.COLUMN_VEST_DIRECTION};
+    // Database fields
+    private SQLiteDatabase database;
 
     public Sofbus24DataSource(Activity context) {
         dbHelper = new Sofbus24SQLite(context);
@@ -73,10 +67,11 @@ public class Sofbus24DataSource {
 
         boolean isStationsTabledValid = true;
 
-        for (int i = 0; i < stationsColumns.length; i++) {
+        for (String stationsColumn : stationsColumns) {
+            String stationsTableName = Sofbus24SQLite.TABLE_SOF_STAT;
             isStationsTabledValid = isStationsTabledValid
                     && existsColumnInTable(database, stationsTableName,
-                    stationsColumns[i]);
+                    stationsColumn);
 
             // In case there is an error - stop the loop
             if (!isStationsTabledValid) {
@@ -96,10 +91,11 @@ public class Sofbus24DataSource {
 
         boolean isVehiclesTabledValid = true;
 
-        for (int i = 0; i < vehiclesColumns.length; i++) {
+        for (String vehiclesColumn : vehiclesColumns) {
+            String vehiclesTableName = Sofbus24SQLite.TABLE_SOF_VEHI;
             isVehiclesTabledValid = isVehiclesTabledValid
                     && existsColumnInTable(database, vehiclesTableName,
-                    vehiclesColumns[i]);
+                    vehiclesColumn);
 
             // In case there is an error - stop the loop
             if (!isVehiclesTabledValid) {
@@ -120,10 +116,11 @@ public class Sofbus24DataSource {
 
         boolean isDroidTransTabledValid = true;
 
-        for (int i = 0; i < droidTransColumns.length; i++) {
+        for (String droidTransColumn : droidTransColumns) {
+            String droidTransTableName = Sofbus24SQLite.TABLE_SOF_VEST;
             isDroidTransTabledValid = isDroidTransTabledValid
                     && existsColumnInTable(database, droidTransTableName,
-                    droidTransColumns[i]);
+                    droidTransColumn);
 
             // In case there is an error - stop the loop
             if (!isDroidTransTabledValid) {
@@ -153,11 +150,7 @@ public class Sofbus24DataSource {
                     null);
 
             // Check if the column exists in the database
-            if (cursor.getColumnIndex(columnToCheck) != -1) {
-                existsColumnInTable = true;
-            } else {
-                existsColumnInTable = false;
-            }
+            existsColumnInTable = cursor.getColumnIndex(columnToCheck) != -1;
         } catch (Exception e) {
             existsColumnInTable = false;
         } finally {

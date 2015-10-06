@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * This class is used to send data from the MetroScehdule and PublicTransport
+ * This class is used to send data from the MetroSchedule and PublicTransport
  * fragment to all Metro and PublicTransport Fragments
  *
  * @author Zdravko Nestorov

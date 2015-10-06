@@ -36,7 +36,6 @@ public class RouteChanges extends SherlockListActivity {
 
     public static final String BUNDLE_ROUTE_CHANGES_NEWS_LIST = "ROUTE CHANGES NEWS LIST";
     private FragmentActivity context;
-    private ActionBar actionBar;
     private ProgressBar loadingRouteChanges;
     private View routeChangesContent;
     private RouteChangesAdapter routeChangesAdapter;
@@ -127,7 +126,7 @@ public class RouteChanges extends SherlockListActivity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.route_changes_title));
@@ -151,7 +150,7 @@ public class RouteChanges extends SherlockListActivity {
     }
 
     /**
-     * Actions on refresh the route chnages news
+     * Actions on refresh the route changes news
      */
     private void actionsOnRefresh() {
 

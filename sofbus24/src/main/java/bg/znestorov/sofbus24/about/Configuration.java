@@ -67,8 +67,8 @@ public class Configuration {
      * @param context   the current Activity context
      * @param newConfig the new Configuration object
      */
-    public static void editConfiguration(Activity context,
-                                         ConfigEntity newConfig) {
+    private static void editConfiguration(Activity context,
+                                          ConfigEntity newConfig) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(
                 Constants.CONFIGURATION_PREF_NAME, Context.MODE_PRIVATE);
@@ -76,19 +76,19 @@ public class Configuration {
         Editor edit = sharedPreferences.edit();
         edit.clear();
         edit.putBoolean(Constants.CONFIGURATION_PREF_FAVOURITES_VISIBILITY_KEY,
-                newConfig.isFavouritesVisibile());
+                newConfig.isFavouritesVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_FAVOURITES_POSITION_KEY,
                 newConfig.getFavouritesPosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_SEARCH_VISIBILITY_KEY,
-                newConfig.isSearchVisibile());
+                newConfig.isSearchVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SEARCH_POSITION_KEY,
                 newConfig.getSearchPosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_SCHEDULE_VISIBILITY_KEY,
-                newConfig.isScheduleVisibile());
+                newConfig.isScheduleVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SCHEDULE_POSITION_KEY,
                 newConfig.getSchedulePosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_METRO_VISIBILITY_KEY,
-                newConfig.isMetroVisibile());
+                newConfig.isMetroVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_METRO_POSITION_KEY,
                 newConfig.getMetroPosition());
         edit.putInt(Constants.CONFIGURATION_PREF_SOFBUS24_KEY,
@@ -133,7 +133,7 @@ public class Configuration {
      * @param context   the current Activity context
      * @param newConfig the new Configuration object
      */
-    public static void editTabConfigurationFileds(Activity context,
+    public static void editTabConfigurationFields(Activity context,
                                                   ConfigEntity newConfig) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(
@@ -141,19 +141,19 @@ public class Configuration {
 
         Editor edit = sharedPreferences.edit();
         edit.putBoolean(Constants.CONFIGURATION_PREF_FAVOURITES_VISIBILITY_KEY,
-                newConfig.isFavouritesVisibile());
+                newConfig.isFavouritesVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_FAVOURITES_POSITION_KEY,
                 newConfig.getFavouritesPosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_SEARCH_VISIBILITY_KEY,
-                newConfig.isSearchVisibile());
+                newConfig.isSearchVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SEARCH_POSITION_KEY,
                 newConfig.getSearchPosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_SCHEDULE_VISIBILITY_KEY,
-                newConfig.isScheduleVisibile());
+                newConfig.isScheduleVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SCHEDULE_POSITION_KEY,
                 newConfig.getSchedulePosition());
         edit.putBoolean(Constants.CONFIGURATION_PREF_METRO_VISIBILITY_KEY,
-                newConfig.isMetroVisibile());
+                newConfig.isMetroVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_METRO_POSITION_KEY,
                 newConfig.getMetroPosition());
         edit.commit();

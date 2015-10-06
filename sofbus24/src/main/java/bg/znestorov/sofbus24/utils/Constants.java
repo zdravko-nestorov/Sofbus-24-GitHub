@@ -49,7 +49,7 @@ public class Constants {
     public static final String BUNDLE_GOOGLE_STREET_VIEW = "GOOGLE_STREET_VIEW";
     // History --> HistoryFragment
     public static final String BUNDLE_HISTORY_LIST = "HISTORY LIST";
-    // Sofbus24/DroidTrans/ClosestStationsMap --> FavouritesFragmen
+    // Sofbus24/DroidTrans/ClosestStationsMap --> FavouritesFragment
     public static final String BUNDLE_IS_HOME_SCREEN_FRAGMENT = "IS HOME SCREEN FRAGMENT";
     // Sofbus24 --> DroidTrans
     public static final String BUNDLE_DROID_TRANS = "DROID TRANS";
@@ -172,32 +172,32 @@ public class Constants {
     /**
      * Schedule direction
      */
-    public static final String SCHECULE_URL_DIRECTION = "http://m.sofiatraffic.bg/schedules?";
-    public static final String SCHECULE_URL_DIRECTION_BUS_TYPE = "tt";
-    public static final String SCHECULE_URL_DIRECTION_LINE = "ln";
-    public static final String SCHECULE_URL_DIRECTION_SEARCH = "s";
-    public static final String SCHECULE_URL_DIRECTION_SEARCH_VALUE = "Търсене";
-    public static final String SCHECULE_REGEX_DIRECTION_PARTS = "<form method=\"get\" action=\"/schedules/vehicle\">";
-    public static final String SCHECULE_REGEX_DIRECTION_NAME = "<div class=\"info\">(.*?)<\\/div>";
-    public static final String SCHECULE_REGEX_DIRECTION_HIDDEN_VARIABLE = "<input type=\"hidden\" value=\"(.*?)\" name=\"%s\"\\/>";
-    public static final String SCHECULE_REGEX_DIRECTION_STATION = "<option id=\"(.*?)\" value=\".*?\">([^^]*?)<\\/option>";
+    public static final String SCHEDULE_URL_DIRECTION = "http://m.sofiatraffic.bg/schedules?";
+    public static final String SCHEDULE_URL_DIRECTION_BUS_TYPE = "tt";
+    public static final String SCHEDULE_URL_DIRECTION_LINE = "ln";
+    public static final String SCHEDULE_URL_DIRECTION_SEARCH = "s";
+    public static final String SCHEDULE_URL_DIRECTION_SEARCH_VALUE = "Търсене";
+    public static final String SCHEDULE_REGEX_DIRECTION_PARTS = "<form method=\"get\" action=\"/schedules/vehicle\">";
+    public static final String SCHEDULE_REGEX_DIRECTION_NAME = "<div class=\"info\">(.*?)<\\/div>";
+    public static final String SCHEDULE_REGEX_DIRECTION_HIDDEN_VARIABLE = "<input type=\"hidden\" value=\"(.*?)\" name=\"%s\"\\/>";
+    public static final String SCHEDULE_REGEX_DIRECTION_STATION = "<option id=\"(.*?)\" value=\".*?\">([^^]*?)<\\/option>";
 
-    public static final String SCHECULE_URL_STATION_SCHEDULE = "http://m.sofiatraffic.bg/schedules/vehicle?";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_STOP = "stop";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_CH = "ch";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_CH_VALUE = "Провери";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_VT = "vt";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_LID = "lid";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_RID = "rid";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_H = "h";
-    public static final String SCHECULE_URL_STATION_SCHEDULE_H_VALUE = "0";
-    public static final String SCHECULE_REGEX_STATION_SCHEDULE = "<td class=\"(schTdBrd|schTdNoBrd)\" align=\"center\">([^^]*?)<\\/td>";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE = "http://m.sofiatraffic.bg/schedules/vehicle?";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_STOP = "stop";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_CH = "ch";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_CH_VALUE = "Провери";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_VT = "vt";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_LID = "lid";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_RID = "rid";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_H = "h";
+    public static final String SCHEDULE_URL_STATION_SCHEDULE_H_VALUE = "0";
+    public static final String SCHEDULE_REGEX_STATION_SCHEDULE = "<td class=\"(schTdBrd|schTdNoBrd)\" align=\"center\">([^^]*?)<\\/td>";
 
     public static final String SUMC_SITE_SCHEDULE_URL_ADDRESS = "http://schedules.sofiatraffic.bg/%s/%s";
-    public static final String SUMC_SITE_SCHECULE_AUTOBUS = "autobus";
-    public static final String SUMC_SITE_SCHECULE_TROLLEYBUS = "trolleybus";
-    public static final String SUMC_SITE_SCHECULE_TRAMWAY = "tramway";
-    public static final String SUMC_SITE_SCHECULE_METRO = "metro";
+    public static final String SUMC_SITE_SCHEDULE_AUTOBUS = "autobus";
+    public static final String SUMC_SITE_SCHEDULE_TROLLEYBUS = "trolleybus";
+    public static final String SUMC_SITE_SCHEDULE_TRAMWAY = "tramway";
+    public static final String SUMC_SITE_SCHEDULE_METRO = "metro";
 
     /**
      * Metro Schedule
@@ -217,7 +217,7 @@ public class Constants {
     /**
      * Favorites Order
      */
-    public static final String FAVORUITES_ORDER_PREFERENCES_NAME = "favourites_order";
+    public static final String FAVOURITES_ORDER_PREFERENCES_NAME = "favourites_order";
     public static final String FAVOURITES_ORDER_PREFERENCES_TYPE = "type";
 
     /**

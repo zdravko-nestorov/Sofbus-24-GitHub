@@ -64,27 +64,24 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
  * @version 1.0
  */
 @SuppressLint({"DefaultLocale", "InflateParams"})
-public class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
+class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
-    private Activity context;
-    private GlobalEntity globalContext;
+    private final Activity context;
+    private final GlobalEntity globalContext;
 
-    private View emptyView;
-    private FavouritesStationFragment favouritesStationFragment;
+    private final View emptyView;
+    private final FavouritesStationFragment favouritesStationFragment;
 
-    private List<StationEntity> originalStations;
+    private final List<StationEntity> originalStations;
+    private final FavouritesDataSource favouritesDatasource;
+    private final boolean isPhoneDevice;
+    private final String language;
+    private final boolean isHomeScreenFragment;
+    private final ImageLoader imageLoader = ImageLoader.getInstance();
+    private final DisplayImageOptions displayImageOptions;
     private List<StationEntity> filteredStations;
-
-    private FavouritesDataSource favouritesDatasource;
-
     private Filter stationsFilter;
-    private boolean isPhoneDevice;
-    private String language;
-
-    private boolean isHomeScreenFragment;
     private boolean isReorderVisible;
-    private ImageLoader imageLoader = ImageLoader.getInstance();
-    private DisplayImageOptions displayImageOptions;
     private boolean expandedListItem;
 
     public FavouritesStationAdapter(Activity context,
@@ -128,11 +125,7 @@ public class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
         if (originalStationsSize != filteredStationsSize) {
             return isReorderVisible;
         } else {
-            if (filteredStationsSize > 1) {
-                return true;
-            } else {
-                return false;
-            }
+            return filteredStationsSize > 1;
         }
     }
 
@@ -215,19 +208,19 @@ public class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
                                 context, filterString);
                     }
 
-                    String filterebaleName;
-                    String filterebaleNumber;
+                    String filterableName;
+                    String filterableNumber;
 
-                    // Itterate over all stations and search which ones match
+                    // Iterate over all stations and search which ones match
                     // the filter
                     for (StationEntity station : originalStations) {
-                        filterebaleName = station.getName().toUpperCase();
-                        filterebaleNumber = station.getNumber().toUpperCase();
+                        filterableName = station.getName().toUpperCase();
+                        filterableNumber = station.getNumber().toUpperCase();
 
-                        if (filterebaleName.contains(filterString)
-                                || filterebaleNumber.contains(filterString)
-                                || filterebaleName.contains(filterStringOrig)
-                                || filterebaleNumber.contains(filterStringOrig)) {
+                        if (filterableName.contains(filterString)
+                                || filterableNumber.contains(filterString)
+                                || filterableName.contains(filterStringOrig)
+                                || filterableNumber.contains(filterStringOrig)) {
                             filterResultsData.add(station);
                         }
                     }
@@ -302,7 +295,7 @@ public class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             collapseListItem(viewHolder);
         }
 
-        // Show the order button only if the custom ordering is choosen
+        // Show the order button only if the custom ordering is chosen
         isReorderVisible = isReorderVisible();
         if (FavouritesPreferences.getFavouritesSortType(context) == SortTypeEnum.CUSTOM
                 && isReorderVisible) {
@@ -710,7 +703,7 @@ public class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
     }
 
     /**
-     * Assing different actions over each item in the menu
+     * Assign different actions over each item in the menu
      *
      * @param id      the menu id
      * @param station the selected station

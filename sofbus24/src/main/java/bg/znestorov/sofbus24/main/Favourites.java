@@ -15,7 +15,6 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 public class Favourites extends SherlockFragmentActivity {
 
     private static final String TAG_FAVOURITES_FRAGMENT = "FAVOURITES_FRAGMENT";
-    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,7 @@ public class Favourites extends SherlockFragmentActivity {
      * Initialize the ActionBar drawer
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getString(R.string.edit_tabs_favourites));
         actionBar.setDisplayHomeAsUpEnabled(true);
     }

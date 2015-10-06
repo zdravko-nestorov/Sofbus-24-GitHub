@@ -4,10 +4,10 @@
     android:installLocation="auto"
     android:versionCode="30"
     android:versionName="3.0" >
- <!-- Specify the correct minSDK and targetSDK versions. -->
+
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="23" />
 
     <!-- Google Maps related permissions -->
     <permission
@@ -130,7 +130,7 @@
             android:theme="@style/PopupTheme" />
         <activity
             android:name="bg.znestorov.sofbus24.main.PreferencesHidden"
-            android:theme="@style/TransperantTheme" />
+            android:theme="@style/TransparentTheme" />
 
         <!-- Edit Tabs -->
         <activity android:name="bg.znestorov.sofbus24.main.EditTabs" />
@@ -224,17 +224,23 @@
             android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
             android:theme="@style/Theme.IAPTheme" />
 
-        <meta-data
-            android:name="com.google.android.gms.wallet.api.enabled"
-            android:value="true" />
+        <provider
+            android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
+            android:authorities="bg.znestorov.sofbus24.main.google_measurement_service"
+            android:exported="false" />
 
         <receiver
-            android:name="com.google.android.gms.wallet.EnableWalletOptimizationReceiver"
-            android:exported="false" >
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true" >
             <intent-filter>
-                <action android:name="com.google.android.gms.wallet.ENABLE_WALLET_OPTIMIZATION" />
+                <action android:name="com.google.android.gms.measurement.UPLOAD" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

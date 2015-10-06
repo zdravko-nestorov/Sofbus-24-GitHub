@@ -26,13 +26,6 @@ import bg.znestorov.sofbus24.main.R;
 public class ScheduleCacheDeleteSettingsDialog extends DialogFragment {
 
     private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
-    private OnClickListener negativeOnClickListener;
 
     public static ScheduleCacheDeleteSettingsDialog newInstance() {
         return new ScheduleCacheDeleteSettingsDialog();
@@ -42,21 +35,21 @@ public class ScheduleCacheDeleteSettingsDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();
-        icon = R.drawable.ic_menu_delete;
-        title = getString(R.string.app_dialog_title_important);
-        negativeBtn = getString(R.string.app_button_no);
-        positiveBtn = getString(R.string.app_button_yes);
-        message = Html
+        int icon = R.drawable.ic_menu_delete;
+        String title = getString(R.string.app_dialog_title_important);
+        String negativeBtn = getString(R.string.app_button_no);
+        String positiveBtn = getString(R.string.app_button_yes);
+        Spanned message = Html
                 .fromHtml(getString(R.string.pt_menu_clear_all_schedule_cache_settings));
 
-        negativeOnClickListener = new OnClickListener() {
+        OnClickListener negativeOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 context.finish();
             }
         };
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

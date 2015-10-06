@@ -20,8 +20,6 @@ import bg.znestorov.sofbus24.utils.Constants;
  */
 public class MetroScheduleFragment extends ListFragment {
 
-    private Activity context;
-    private MetroScheduleAdapter metroArrayAdapter;
     private ScheduleEntity metroScheduleEntity;
 
     public static MetroScheduleFragment newInstance(
@@ -61,14 +59,14 @@ public class MetroScheduleFragment extends ListFragment {
                 R.layout.activity_metro_schedule_fragment, container, false);
 
         // Set the context (activity) associated with this fragment
-        context = getActivity();
+        Activity context = getActivity();
 
         // Get the Fragment position and MetroStation object from the Bundle
         metroScheduleEntity = (ScheduleEntity) getArguments().getSerializable(
                 Constants.BUNDLE_METRO_SCHEDULE);
 
         // Create the ListAdapter
-        metroArrayAdapter = new MetroScheduleAdapter(context,
+        MetroScheduleAdapter metroArrayAdapter = new MetroScheduleAdapter(context,
                 metroScheduleEntity);
 
         // Set the ListAdapter

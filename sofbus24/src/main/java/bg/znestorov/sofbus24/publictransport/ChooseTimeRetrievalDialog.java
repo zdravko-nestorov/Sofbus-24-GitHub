@@ -17,7 +17,7 @@ import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
 
 /**
- * Dialog offering a choice about what time to be retieved - schedule or virtual
+ * Dialog offering a choice about what time to be retrieved - schedule or virtual
  * boards
  *
  * @author Zdravko Nestorov
@@ -25,12 +25,9 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
  */
 public class ChooseTimeRetrievalDialog extends DialogFragment {
 
-    public static final String BUNDLE_PT_DIRECTION_ENTITY = "PT DIRECTION ENTITY";
-    public static final String BUNDLE_PT_STATION_ENTITY = "PT STATION ENTITY";
+    private static final String BUNDLE_PT_DIRECTION_ENTITY = "PT DIRECTION ENTITY";
+    private static final String BUNDLE_PT_STATION_ENTITY = "PT STATION ENTITY";
     private Activity context;
-    private String title;
-    private String[] choices;
-    private DialogInterface.OnClickListener onListItemClickListener;
     private DirectionsEntity ptDirections;
     private PublicTransportStationEntity ptStation;
 
@@ -51,8 +48,8 @@ public class ChooseTimeRetrievalDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
 
-        title = getString(R.string.pt_time_retrieval_choice);
-        choices = new String[]{
+        String title = getString(R.string.pt_time_retrieval_choice);
+        String[] choices = new String[]{
                 getString(R.string.pt_time_retrieval_schedule),
                 getString(R.string.pt_time_retrieval_virtual_boards)};
 
@@ -65,7 +62,7 @@ public class ChooseTimeRetrievalDialog extends DialogFragment {
                 context, R.layout.activity_public_transport_directions_item,
                 choices);
 
-        onListItemClickListener = new DialogInterface.OnClickListener() {
+        DialogInterface.OnClickListener onListItemClickListener = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialoginterface, int i) {
                 switch (i) {
                     case 0:

@@ -113,7 +113,7 @@ public class MetroStationFragment extends SherlockListFragment implements
     }
 
     /**
-     * Retieve an information about the selected metro station
+     * Retrieve an information about the selected metro station
      *
      * @param station the selected station
      */
@@ -176,7 +176,7 @@ public class MetroStationFragment extends SherlockListFragment implements
 
     /**
      * Initialize the layout fields and assign the appropriate listeners over
-     * them (directions tabs (TextViews), SerachEditText and EmptyList
+     * them (directions tabs (TextViews), SearchEditText and EmptyList
      * (TextView))
      *
      * @param fragmentView the current view of the fragment
@@ -190,7 +190,7 @@ public class MetroStationFragment extends SherlockListFragment implements
                 .findViewById(R.id.metro_station_list_empty_text);
 
         // Set on click listener over the grid view and hide the empty view in
-        // the bgining (if the ListFragment uses a GridView)
+        // the beginning (if the ListFragment uses a GridView)
         gridViewMetroStation = (GridView) fragmentView
                 .findViewById(R.id.metro_station_list_grid_view);
         if (gridViewMetroStation != null) {
@@ -290,9 +290,9 @@ public class MetroStationFragment extends SherlockListFragment implements
      */
     public class RetrieveMetroRoute extends AsyncTask<Void, Void, Intent> {
 
-        private Activity context;
-        private GlobalEntity globalContext;
-        private ProgressDialog progressDialog;
+        private final Activity context;
+        private final GlobalEntity globalContext;
+        private final ProgressDialog progressDialog;
 
         public RetrieveMetroRoute(Activity context,
                                   ProgressDialog progressDialog) {

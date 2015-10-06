@@ -8,5 +8,5 @@ package bg.znestorov.sofbus24.entity;
  * @version 1.0
  */
 public enum RetrieveCurrentLocationTypeEnum {
-    CS_MAP_INIT, CS_LIST_INIT, CS_LIST_REFRESH, DT_HOME_SCREEN, DT_INIT, DT_REFRESH;
+    CS_MAP_INIT, CS_LIST_INIT, CS_LIST_REFRESH, DT_HOME_SCREEN, DT_INIT, DT_REFRESH
 }

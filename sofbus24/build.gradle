@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "bg.znestorov.sofbus24.main"
         minSdkVersion 9
-        targetSdkVersion 16
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -24,7 +24,7 @@ dependencies {
     compile project(':pagerSlidingTabStrip')
     compile project(':rollWheelPicker')
     compile project(':actionBarSherlock')
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.code.gson:gson:2.3'
     compile('com.google.android.gms:play-services:+') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'mediarouter-v7'

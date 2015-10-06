@@ -20,15 +20,15 @@ public class ScheduleLoadVehicles {
 
     private static ScheduleLoadVehicles instance = null;
 
-    private List<VehicleEntity> busses;
+    private List<VehicleEntity> buses;
     private List<VehicleEntity> trolleys;
     private List<VehicleEntity> trams;
 
-    protected ScheduleLoadVehicles(Activity context) {
+    private ScheduleLoadVehicles(Activity context) {
         VehiclesDataSource vehiclesDatasource = new VehiclesDataSource(context);
         vehiclesDatasource.open();
 
-        busses = vehiclesDatasource.getVehiclesViaSearch(VehicleTypeEnum.BUS,
+        buses = vehiclesDatasource.getVehiclesViaSearch(VehicleTypeEnum.BUS,
                 "");
         trolleys = vehiclesDatasource.getVehiclesViaSearch(
                 VehicleTypeEnum.TROLLEY, "");
@@ -73,12 +73,23 @@ public class ScheduleLoadVehicles {
         return instance;
     }
 
-    public List<VehicleEntity> getBusses() {
-        return busses;
+    /**
+     * Check if the instance is already created
+     *
+     * @return if the instance is already created
+     */
+    public static boolean isInstanceCreated() {
+
+        return instance != null;
+
     }
 
-    public void setBusses(List<VehicleEntity> busses) {
-        this.busses = busses;
+    public List<VehicleEntity> getBuses() {
+        return buses;
+    }
+
+    public void setBuses(List<VehicleEntity> buses) {
+        this.buses = buses;
     }
 
     public List<VehicleEntity> getTrolleys() {
@@ -107,7 +118,7 @@ public class ScheduleLoadVehicles {
         ArrayList<VehicleEntity> vehiclesList = new ArrayList<VehicleEntity>();
         switch (vehicleType) {
             case 0:
-                vehiclesList.addAll(busses);
+                vehiclesList.addAll(buses);
                 break;
             case 1:
                 vehiclesList.addAll(trolleys);
@@ -143,23 +154,9 @@ public class ScheduleLoadVehicles {
         return getVehiclesList(currentDirection);
     }
 
-    /**
-     * Check if the instance is already created
-     *
-     * @return if the instance is already created
-     */
-    public static boolean isInstanceCreated() {
-
-        if (instance != null) {
-            return true;
-        }
-
-        return false;
-    }
-
     @Override
     public String toString() {
-        return getClass().getName() + " {\n\tbusses: " + busses
+        return getClass().getName() + " {\n\tbuses: " + buses
                 + "\n\ttrolleys: " + trolleys + "\n\ttrams: " + trams + "\n}";
     }
 

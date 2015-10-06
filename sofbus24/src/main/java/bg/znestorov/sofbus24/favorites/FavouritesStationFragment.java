@@ -58,20 +58,16 @@ public class FavouritesStationFragment extends SherlockListFragment implements
         OnRenameFavouritesListener, OnRemoveFavouritesListener,
         OnOrderChoiceListener, OnSortChoiceListener, OnSortTypeChoiceListener {
 
+    private final List<StationEntity> favouritesStations = new ArrayList<StationEntity>();
     private Activity context;
     private GlobalEntity globalContext;
-
     private StationsDataSource stationsDataSource;
     private FavouritesDataSource favouritesDatasource;
-
     private boolean isHomeScreenFragment;
-
     private GridView gridViewFavourites;
     private SearchEditText searchEditText;
     private View emptyView;
     private TextView emptyTextView;
-
-    private List<StationEntity> favouritesStations = new ArrayList<StationEntity>();
 
     public static FavouritesStationFragment getInstance(
             boolean isHomeScreenFragment) {
@@ -178,7 +174,7 @@ public class FavouritesStationFragment extends SherlockListFragment implements
     }
 
     @Override
-    public void onOrderChoosed(StationEntity station, OrderTypeEnum orderType) {
+    public void onOrderChoose(StationEntity station, OrderTypeEnum orderType) {
         if (favouritesDatasource == null) {
             favouritesDatasource = new FavouritesDataSource(context);
         }
@@ -196,10 +192,10 @@ public class FavouritesStationFragment extends SherlockListFragment implements
     }
 
     @Override
-    public void onSortChoosed(SortTypeEnum sortType) {
+    public void onSortChoose(SortTypeEnum sortType) {
         switch (sortType) {
             case CUSTOM:
-                onSortTypeChoosed(sortType);
+                onSortTypeChoose(sortType);
                 break;
             default:
                 DialogFragment dialogFragment = FavouritesSortTypeDialog
@@ -211,8 +207,8 @@ public class FavouritesStationFragment extends SherlockListFragment implements
     }
 
     @Override
-    public void onSortTypeChoosed(SortTypeEnum sortType) {
-        // Set the user choosen sort type in a preference file
+    public void onSortTypeChoose(SortTypeEnum sortType) {
+        // Set the user chosen sort type in a preference file
         FavouritesPreferences.setFavouritesSortType(context, sortType);
 
         // Reorder the favourites stations

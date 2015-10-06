@@ -34,16 +34,16 @@ public class StationsDataSource {
 
     // Number of nearest stations
     public static int nearestStationsCount = 8;
-    // Database fields
-    private SQLiteDatabase database;
-    private Sofbus24SQLite dbHelper;
-    private String[] allColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
+    private final Sofbus24SQLite dbHelper;
+    private final String[] allColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER, Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-    private Context context;
-    private String language;
+    private final Context context;
+    private final String language;
+    // Database fields
+    private SQLiteDatabase database;
 
     public StationsDataSource(Activity context) {
         this.context = context;
@@ -102,7 +102,7 @@ public class StationsDataSource {
 
     /**
      * Figure out which coordinate to be taken, so add the station in the
-     * dabatase (latitude and longitude)
+     * database (latitude and longitude)
      *
      * @param stationNumber     the number of the station (used to search the DB for the
      *                          station)
@@ -243,11 +243,11 @@ public class StationsDataSource {
         query.append(" WHERE %s %% 2 = %s			%n");
         query.append(" AND %s LIKE '%%%s%%'			%n");
 
-        String quertyString = String.format(query.toString(),
+        String queryString = String.format(query.toString(),
                 Sofbus24SQLite.TABLE_SOF_STAT,
                 Sofbus24SQLite.COLUMN_STAT_NUMBER, vehicleTypeIntValue,
                 Sofbus24SQLite.COLUMN_STAT_TYPE, VehicleTypeEnum.METRO);
-        Cursor cursor = database.rawQuery(quertyString, null);
+        Cursor cursor = database.rawQuery(queryString, null);
 
         // Iterating the cursor and fill the empty List<Station>
         cursor.moveToFirst();

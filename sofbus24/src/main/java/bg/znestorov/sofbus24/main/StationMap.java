@@ -40,7 +40,6 @@ public class StationMap extends SherlockFragmentActivity {
     private Activity context;
     private GlobalEntity globalContext;
 
-    private ActionBar actionBar;
     private VehiclesDataSource vehiclesDatasource;
 
     private GoogleMap stationMap;
@@ -62,7 +61,7 @@ public class StationMap extends SherlockFragmentActivity {
         vehiclesDatasource = new VehiclesDataSource(context);
 
         // Set up the action bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Get the station map fragment
@@ -233,8 +232,7 @@ public class StationMap extends SherlockFragmentActivity {
                             .getMapDistance(context, currentLocation,
                                     metroStation)));
         } else {
-            stationMarkerOptions = stationMarkerOptions.snippet(String
-                    .format(context.getString(R.string.app_distance_none)));
+            stationMarkerOptions = stationMarkerOptions.snippet(context.getString(R.string.app_distance_none));
         }
 
         Marker stationMarker = stationMap.addMarker(stationMarkerOptions);
@@ -242,7 +240,7 @@ public class StationMap extends SherlockFragmentActivity {
     }
 
     /**
-     * Process the PublicTranspStation object
+     * Process the PublicTransportStation object
      *
      * @param currentLocation the current user location
      * @param ptStation       the chosen public transport station
@@ -264,8 +262,7 @@ public class StationMap extends SherlockFragmentActivity {
                             MapUtils.getMapDistance(context, currentLocation,
                                     ptStation)));
         } else {
-            stationMarkerOptions = stationMarkerOptions.snippet(String
-                    .format(context.getString(R.string.app_distance_none)));
+            stationMarkerOptions = stationMarkerOptions.snippet(context.getString(R.string.app_distance_none));
         }
 
         Marker stationMarker = stationMap.addMarker(stationMarkerOptions);
@@ -294,8 +291,7 @@ public class StationMap extends SherlockFragmentActivity {
                             .getMapDistance(context, currentLocation,
                                     vbTimeStation)));
         } else {
-            stationMarkerOptions = stationMarkerOptions.snippet(String
-                    .format(context.getString(R.string.app_distance_none)));
+            stationMarkerOptions = stationMarkerOptions.snippet(context.getString(R.string.app_distance_none));
         }
 
         Marker stationMarker = stationMap.addMarker(stationMarkerOptions);
@@ -309,17 +305,17 @@ public class StationMap extends SherlockFragmentActivity {
      * @param stationLocation the location of the station over the map (using LatLng object)
      */
     private void animateMapFocus(LatLng stationLocation) {
-        LatLng focussedLatLng;
+        LatLng focusedLatLng;
 
         // Check if the user is already localized
         if (stationLocation != null) {
-            focussedLatLng = stationLocation;
+            focusedLatLng = stationLocation;
         } else {
-            focussedLatLng = centerStationLocation;
+            focusedLatLng = centerStationLocation;
         }
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(focussedLatLng).zoom(17).build();
+                .target(focusedLatLng).zoom(17).build();
         stationMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }
@@ -332,18 +328,18 @@ public class StationMap extends SherlockFragmentActivity {
      *                        object)
      */
     private void animateMapFocus(Location stationLocation) {
-        LatLng focussedLatLng;
+        LatLng focusedLatLng;
 
         // Check if the user is already localized
         if (stationLocation != null) {
-            focussedLatLng = new LatLng(stationLocation.getLatitude(),
+            focusedLatLng = new LatLng(stationLocation.getLatitude(),
                     stationLocation.getLongitude());
         } else {
-            focussedLatLng = centerStationLocation;
+            focusedLatLng = centerStationLocation;
         }
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(focussedLatLng).zoom(17).build();
+                .target(focusedLatLng).zoom(17).build();
         stationMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }
@@ -376,7 +372,7 @@ public class StationMap extends SherlockFragmentActivity {
     /**
      * Get the appropriate marker icon according to the station type
      *
-     * @param stationType the type of the station
+     * @param station the type of the station
      * @return the marker icon from the resources
      */
     private int getMarkerIcon(StationEntity station) {

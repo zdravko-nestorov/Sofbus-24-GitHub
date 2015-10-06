@@ -1,18 +1,5 @@
 package bg.znestorov.sofbus24.utils;
 
-import java.lang.reflect.Field;
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Locale;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -26,6 +13,19 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
+
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.Locale;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.UpdateTypeEnum;
@@ -334,7 +334,7 @@ public class Utils {
      *
      * @return the current day
      */
-    public static int getCurrentDay() {
+    private static int getCurrentDay() {
         int day;
         try {
             day = Integer.parseInt(DateFormat
@@ -360,8 +360,8 @@ public class Utils {
     public static String getTimeDifference(Activity context, String afterTime,
                                            String currTime) {
         String diff = "";
-        int afterTimeMilis = 0;
-        int currTimeMilis = 0;
+        int afterTimeMillis = 0;
+        int currTimeMillis = 0;
 
         // Format the times in case there is additional information (HH:MM|...)
         // - in case of metro schedule
@@ -374,12 +374,12 @@ public class Utils {
         }
 
         try {
-            afterTimeMilis = new BigDecimal(afterTime.split(":")[0]).intValue()
+            afterTimeMillis = new BigDecimal(afterTime.split(":")[0]).intValue()
                     * 60 + new BigDecimal(afterTime.split(":")[1]).intValue();
-            currTimeMilis = new BigDecimal(currTime.split(":")[0]).intValue()
+            currTimeMillis = new BigDecimal(currTime.split(":")[0]).intValue()
                     * 60 + new BigDecimal(currTime.split(":")[1]).intValue();
 
-            diff = (afterTimeMilis - currTimeMilis) + "";
+            diff = (afterTimeMillis - currTimeMillis) + "";
 
             if (!diff.contains("-")) {
                 diff = (new BigDecimal(diff).intValue() / 60) + ":"
@@ -405,7 +405,7 @@ public class Utils {
      *            after)
      * @return the difference in format ~1h,20m
      */
-    public static String formatTime(Activity context, String difference) {
+    private static String formatTime(Activity context, String difference) {
         String diff = "";
         String[] differenceArr = difference.split(":");
 
@@ -444,7 +444,7 @@ public class Utils {
      *
      * @param remainingTime
      *            the remaining time in string format
-     * @return the rmaining time in minutes
+     * @return the remaining time in minutes
      */
     public static int getRemainingMinutes(String remainingTime) {
         int remainingMinutes;
@@ -837,8 +837,8 @@ public class Utils {
      * @param historyValueArr
      *            the value that has to be added to the history of searches
      */
-    public static void addSearchInHistory(Activity context,
-                                          VehicleTypeEnum historyType, String... historyValueArr) {
+    private static void addSearchInHistory(Activity context,
+                                           VehicleTypeEnum historyType, String... historyValueArr) {
         HistoryOfSearches history = HistoryOfSearches.getInstance(context);
 
         // Get the name of the search
@@ -911,11 +911,10 @@ public class Utils {
      */
     public static void addListOfStationsInHistory(Activity context,
                                                   HashMap<String, StationEntity> stationsMap) {
-        Iterator<Entry<String, StationEntity>> stationIterator = stationsMap
-                .entrySet().iterator();
 
-        while (stationIterator.hasNext()) {
-            addStationInHistory(context, stationIterator.next().getValue());
+        for (Entry<String, StationEntity> stringStationEntityEntry : stationsMap
+                .entrySet()) {
+            addStationInHistory(context, stringStationEntityEntry.getValue());
         }
     }
 
@@ -943,11 +942,7 @@ public class Utils {
     public static boolean isInLandscapeMode(Activity context) {
 
         int currentOrientation = context.getResources().getConfiguration().orientation;
-        if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
-            return true;
-        } else {
-            return false;
-        }
+        return currentOrientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
     /**
@@ -963,12 +958,8 @@ public class Utils {
                 .getApplicationContext();
         int currentOrientation = context.getResources().getConfiguration().orientation;
 
-        if (!globalContext.isPhoneDevice()
-                && currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
-            return true;
-        } else {
-            return false;
-        }
+        return !globalContext.isPhoneDevice()
+                && currentOrientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
     /**
@@ -977,7 +968,7 @@ public class Utils {
      *
      * @param context
      *            the current activity context
-     * @return an ArrayList with all raws of the menu
+     * @return an ArrayList with all rows of the menu
      */
     public static ArrayList<String> initNavigationDrawerItems(Activity context) {
 
@@ -1022,15 +1013,15 @@ public class Utils {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo[] allNetworkInfo = connectivityManager.getAllNetworkInfo();
 
-        for (NetworkInfo networkIngo : allNetworkInfo) {
-            if ("WIFI".equalsIgnoreCase(networkIngo.getTypeName())) {
-                if (networkIngo.isConnected()) {
+        for (NetworkInfo networkInfo : allNetworkInfo) {
+            if ("WIFI".equalsIgnoreCase(networkInfo.getTypeName())) {
+                if (networkInfo.isConnected()) {
                     haveConnectedWifi = true;
                 }
             }
 
-            if ("MOBILE".equalsIgnoreCase(networkIngo.getTypeName())) {
-                if (networkIngo.isConnected()) {
+            if ("MOBILE".equalsIgnoreCase(networkInfo.getTypeName())) {
+                if (networkInfo.isConnected()) {
                     haveConnectedMobile = true;
                 }
             }
@@ -1080,7 +1071,7 @@ public class Utils {
      *            the update type (what would be updated - APP or DB)
      * @return the closest date when the app had to be updated
      */
-    public static String getClosestDateForUpdate(UpdateTypeEnum updateType) {
+    private static String getClosestDateForUpdate(UpdateTypeEnum updateType) {
         String closestDateForUpdate;
 
         Integer[] daysForUpdate;
@@ -1129,11 +1120,7 @@ public class Utils {
         int endCheckDifference = getDateDifferenceInDays(
                 getClosestDateForUpdate(updateType), endDateString);
 
-        if (startCheckDifference > 0 && endCheckDifference > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return startCheckDifference > 0 && endCheckDifference > 0;
     }
 
     /**

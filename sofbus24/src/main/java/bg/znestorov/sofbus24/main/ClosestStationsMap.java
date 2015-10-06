@@ -85,7 +85,23 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
     public static final String BUNDLE_IS_CS_MAP_HOME_SCREEN = "IS CLOSEST STATIONS MAP HOME SCREEN";
     private static final String GPS_PROVIDER = LocationManager.GPS_PROVIDER;
     private static final String NETWORK_PROVIDER = LocationManager.NETWORK_PROVIDER;
+    private final List<Polyline> routePolylineList = new ArrayList<Polyline>();
+    /**
+     * Connect each point over the map with the appropriate station
+     */
+    private final HashMap<String, StationEntity> markersAndStations = new HashMap<String, StationEntity>();
     private FragmentActivity context;
+    /**
+     * Listener used to check which marker snippet is pressed
+     */
+    private final OnInfoWindowClickListener onInfoWindowClickListener = new OnInfoWindowClickListener() {
+        @Override
+        public void onInfoWindowClick(Marker marker) {
+            // Get the station associated to this marker
+            StationEntity station = markersAndStations.get(marker.getId());
+            processWithStationResult(station);
+        }
+    };
     private GlobalEntity globalContext;
     private boolean isCSMapHomeScreen;
     private StationsDataSource stationsDatasource;
@@ -96,20 +112,16 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
     private String markerOptions;
     private boolean positionFocus;
     private BigDecimal stationsRadius;
-    private SharedPreferences sharedPreferences;
     private GoogleMap googleMap;
     private Location previousLocation;
-    private List<Polyline> routePoylineList = new ArrayList<Polyline>();
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private NavDrawerArrayAdapter mMenuAdapter;
-    private ArrayList<String> navigationItems;
     /**
      * Indicates if my location has been already focused
      */
     private boolean isMyLocationAlreadyFocused = false;
-
     /**
      * Indicates which marker is selected on the map (in case no selection -
      * null)
@@ -133,10 +145,6 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
             onMapTouchEvent(point);
         }
     };
-    /**
-     * Connect each point over the map with the appropriate station
-     */
-    private HashMap<String, StationEntity> markersAndStations = new HashMap<String, StationEntity>();
     /**
      * Listener used to check which marker is clicked
      */
@@ -166,29 +174,17 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                     // Get the station associated to this marker
                     StationEntity station = markersAndStations.get(marker
                             .getId());
-                    proccessWithStationResult(station);
+                    processWithStationResult(station);
                 }
 
                 return false;
             } else {
                 // Get the station associated to this marker
                 StationEntity station = markersAndStations.get(marker.getId());
-                proccessWithStationResult(station);
+                processWithStationResult(station);
 
                 return true;
             }
-        }
-    };
-
-    /**
-     * Listener used to check which marker snippet is pressed
-     */
-    private final OnInfoWindowClickListener onInfoWindowClickListener = new OnInfoWindowClickListener() {
-        @Override
-        public void onInfoWindowClick(Marker marker) {
-            // Get the station associated to this marker
-            StationEntity station = markersAndStations.get(marker.getId());
-            proccessWithStationResult(station);
         }
     };
 
@@ -204,9 +200,8 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
         // StationsDatasource
         context = ClosestStationsMap.this;
         globalContext = (GlobalEntity) getApplicationContext();
-        isCSMapHomeScreen = getIntent().getExtras() != null ? getIntent()
-                .getExtras().getBoolean(BUNDLE_IS_CS_MAP_HOME_SCREEN, false)
-                : false;
+        isCSMapHomeScreen = getIntent().getExtras() != null && getIntent()
+                .getExtras().getBoolean(BUNDLE_IS_CS_MAP_HOME_SCREEN, false);
         stationsDatasource = new StationsDataSource(context);
         vehiclesDatasource = new VehiclesDataSource(context);
         favouritesDatasource = new FavouritesDataSource(context);
@@ -255,7 +250,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      */
     private void getSharedPreferencesFields() {
         // Get SharedPreferences from option menu
-        sharedPreferences = PreferenceManager
+        SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(context);
 
         // Get "markerOptions" value from the SharedPreferences file
@@ -361,7 +356,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
             Handler handler = new Handler();
 
             try {
-                Runnable myrunnable = new Runnable() {
+                Runnable myRunnable = new Runnable() {
                     public void run() {
                         try {
                             if (previousLocation == null) {
@@ -425,7 +420,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                     }
                 };
 
-                handler.postDelayed(myrunnable, isCSMapHomeScreen ? 1000 : 3000);
+                handler.postDelayed(myRunnable, isCSMapHomeScreen ? 1000 : 3000);
             } catch (Exception e) {
                 /*
 				 * Strange bug from GooglePlayConsole (Last reported: 9 Jan
@@ -833,7 +828,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      */
     public void visualizeRoute(String result) {
         try {
-            // Tranform the string into a json object
+            // Transform the string into a json object
             JSONObject json = new JSONObject(result);
             JSONArray routeArray = json.getJSONArray("routes");
             JSONObject routes = routeArray.getJSONObject(0);
@@ -845,7 +840,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
             List<LatLng> routePointsList = decodePoly(encodedString);
 
             // Clear the route list
-            routePoylineList.clear();
+            routePolylineList.clear();
 
             // Iterate over the route points and visualize them on the map
             for (int z = 0; z < routePointsList.size() - 1; z++) {
@@ -859,7 +854,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                         .width(2).color(Color.BLUE).geodesic(true));
 
                 // Add the point to the route list
-                routePoylineList.add(polyline);
+                routePolylineList.add(polyline);
             }
         } catch (JSONException e) {
             Toast.makeText(context,
@@ -872,11 +867,11 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      * Clear the drawn route over the map
      */
     private void deleteRoute() {
-        for (Polyline polyline : routePoylineList) {
+        for (Polyline polyline : routePolylineList) {
             polyline.remove();
         }
 
-        routePoylineList.clear();
+        routePolylineList.clear();
     }
 
     /**
@@ -1015,7 +1010,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      *
      * @param station the station associated with the selected marker
      */
-    private void proccessWithStationResult(StationEntity station) {
+    private void processWithStationResult(StationEntity station) {
         // Getting the time of arrival of the vehicles
         String stationCustomField = station.getCustomField();
         String metroCustomField = String.format(Constants.METRO_STATION_URL,
@@ -1052,7 +1047,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
         actionBar.setHomeButtonEnabled(true);
 
         // Generate the titles of each row
-        navigationItems = Utils.initNavigationDrawerItems(context);
+        ArrayList<String> navigationItems = Utils.initNavigationDrawerItems(context);
 
         // Locate the DrawerLayout in the layout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer_layout);
@@ -1124,11 +1119,11 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
     public class LoadStationsFromDb extends
             AsyncTask<Void, Void, List<StationEntity>> {
 
-        private Activity context;
-        private VehiclesDataSource vehiclesDatasource;
+        private final Activity context;
+        private final VehiclesDataSource vehiclesDatasource;
 
-        private Location location;
-        private String progressDialogMsg;
+        private final Location location;
+        private final String progressDialogMsg;
 
         private ProgressDialog progressDialog;
 

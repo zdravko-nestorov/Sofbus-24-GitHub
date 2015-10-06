@@ -47,14 +47,11 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
 public class History extends SherlockListActivity implements
         OnDeleteAllHistoryListener {
 
+    private final ArrayList<HistoryEntity> historyList = new ArrayList<HistoryEntity>();
     private Activity context;
-    private ActionBar actionBar;
-
     private ProgressBar loadingHistory;
     private View historyContent;
-
     private HistoryAdapter historyAdapter;
-    private ArrayList<HistoryEntity> historyList = new ArrayList<HistoryEntity>();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -72,7 +69,7 @@ public class History extends SherlockListActivity implements
         initLayoutFields();
         setListAdapter();
 
-        // Start an asynchrnic task to load the data from the preferences file
+        // Start an asynchronous task to load the data from the preferences file
         new RetrieveHistoryOfSearches().execute();
     }
 
@@ -196,7 +193,7 @@ public class History extends SherlockListActivity implements
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.history_title));
@@ -226,7 +223,7 @@ public class History extends SherlockListActivity implements
         ListView listView = getListView();
         if (listView != null) {
 
-            // Start an asynchrnic task to refresh the history data
+            // Start an asynchronous task to refresh the history data
             new RetrieveHistoryOfSearches().execute();
 
             // If there are some items in the list after the refresh, scroll the
@@ -256,7 +253,7 @@ public class History extends SherlockListActivity implements
      * @param vehicle the vehicle on the current row
      * @return the vehicle caption in format: <b>Bus №xxx</b>
      */
-    public String getVehicleCaption(Context context, VehicleEntity vehicle) {
+    private String getVehicleCaption(Context context, VehicleEntity vehicle) {
         String vehicleCaption;
 
         switch (vehicle.getType()) {

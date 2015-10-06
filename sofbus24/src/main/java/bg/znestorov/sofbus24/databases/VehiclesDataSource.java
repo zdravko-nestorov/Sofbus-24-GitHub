@@ -26,15 +26,14 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 public class VehiclesDataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
-    private Sofbus24SQLite dbHelper;
-    private String[] allColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
+    private final Sofbus24SQLite dbHelper;
+    private final String[] allColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER, Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
-
-    private Activity context;
-    private String language;
+    private final Activity context;
+    private final String language;
+    // Database fields
+    private SQLiteDatabase database;
 
     public VehiclesDataSource(Activity context) {
         this.context = context;
@@ -113,7 +112,7 @@ public class VehiclesDataSource {
      * @param vehicle the current vehicle
      * @return the vehicle if it is found in the DB and null otherwise
      */
-    public VehicleEntity getVehicle(VehicleEntity vehicle) {
+    private VehicleEntity getVehicle(VehicleEntity vehicle) {
 
         String selection = Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = ? AND "
                 + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
@@ -252,10 +251,10 @@ public class VehiclesDataSource {
     }
 
     /**
-     * Get a vehicle that is passing through the choosen station
+     * Get a vehicle that is passing through the chosen station
      *
-     * @param station the choosen station
-     * @return a vehicle that is passing through the choosen station
+     * @param station the chosen station
+     * @return a vehicle that is passing through the chosen station
      */
     public VehicleEntity getVehicleViaStation(StationEntity station) {
 
@@ -310,10 +309,10 @@ public class VehiclesDataSource {
     }
 
     /**
-     * Get the vehicles' types that are passing through the choosen station
+     * Get the vehicles' types that are passing through the chosen station
      *
-     * @param station the choosen station
-     * @return the vehicles' types that are passing through the choosen station
+     * @param station the chosen station
+     * @return the vehicles' types that are passing through the chosen station
      */
     public VehicleTypeEnum getVehicleTypesViaStation(StationEntity station) {
 

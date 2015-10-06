@@ -14,43 +14,25 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="?attr/actionBarItemBackground"
-    android:enabled="false"
-    android:orientation="horizontal"
-    android:paddingRight="16dip">
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:background="?attr/actionBarItemBackground" android:enabled="false"
+    android:orientation="horizontal" android:paddingRight="16dip">
 
-    <ImageView
-        android:id="@id/abs__up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|left"
-        android:src="?attr/homeAsUpIndicator"
-        android:visibility="gone" />
+    <ImageView android:id="@id/abs__up" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center_vertical|left"
+        android:src="?attr/homeAsUpIndicator" android:visibility="gone" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|left"
-        android:orientation="vertical">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|left" android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/abs__action_bar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
+        <TextView android:id="@+id/abs__action_bar_title" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:ellipsize="end"
             android:singleLine="true" />
 
-        <TextView
-            android:id="@+id/abs__action_bar_subtitle"
-            android:layout_width="wrap_content"
+        <TextView android:id="@+id/abs__action_bar_subtitle" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/abs__action_bar_subtitle_bottom_margin"
             android:layout_marginTop="@dimen/abs__action_bar_subtitle_top_margin"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:visibility="gone" />
+            android:ellipsize="end" android:singleLine="true" android:visibility="gone" />
     </LinearLayout>
-</LinearLayout>
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_bar_title_item.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_bar_title_item.xml -->
+</LinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_bar_title_item.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout/abs__action_bar_title_item.xml -->

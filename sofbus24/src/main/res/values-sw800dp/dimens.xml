@@ -3,10 +3,4 @@
     <!-- Metro Schedule -->
     <dimen name="metro_schedule_legend_size">11sp</dimen>
 
-    <!-- Home Screen -->
-    <dimen name="home_screen_choice_image_height">115sp</dimen>
-    <dimen name="home_screen_choice_image_width">155sp</dimen>
-    <dimen name="home_screen_confirm_image_height">105sp</dimen>
-    <dimen name="home_screen_confirm_image_width">115sp</dimen>
-
 </resources>

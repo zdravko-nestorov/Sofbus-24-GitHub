@@ -20,8 +20,6 @@ import bg.znestorov.sofbus24.utils.Constants;
  */
 public class PublicTransportScheduleFragment extends ListFragment {
 
-    private Activity context;
-    private PublicTransportScheduleAdapter ptArrayAdapter;
     private ScheduleEntity ptScheduleEntity;
 
     public static PublicTransportScheduleFragment newInstance(
@@ -62,14 +60,14 @@ public class PublicTransportScheduleFragment extends ListFragment {
                 container, false);
 
         // Set the context (activity) associated with this fragment
-        context = getActivity();
+        Activity context = getActivity();
 
         // Get the Fragment position and MetroStation object from the Bundle
         ptScheduleEntity = (ScheduleEntity) getArguments().getSerializable(
                 Constants.BUNDLE_PUBLIC_TRANSPORT_SCHEDULE);
 
         // Create the ListAdapter
-        ptArrayAdapter = new PublicTransportScheduleAdapter(context,
+        PublicTransportScheduleAdapter ptArrayAdapter = new PublicTransportScheduleAdapter(context,
                 ptScheduleEntity);
 
         // Set the ListAdapter

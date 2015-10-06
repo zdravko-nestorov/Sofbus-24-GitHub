@@ -132,7 +132,7 @@ public class MapUtils {
      * @param latLng the input LatLng object
      * @return a location object base on the input LatLng one
      */
-    public static Location getLocation(LatLng latLng) {
+    private static Location getLocation(LatLng latLng) {
         Location location = new Location("");
         location.setLatitude(latLng.latitude);
         location.setLongitude(latLng.longitude);
@@ -146,7 +146,7 @@ public class MapUtils {
      * @param station the input Station object
      * @return a location object base on the input Station one
      */
-    public static Location getLocation(StationEntity station) {
+    private static Location getLocation(StationEntity station) {
         Location location = new Location("");
         location.setLatitude(Double.parseDouble(station.getLat()));
         location.setLongitude(Double.parseDouble(station.getLon()));
@@ -162,7 +162,7 @@ public class MapUtils {
      * @param location2 second location
      * @return the distance between the locations
      */
-    public static Float getDistance(Location location1, Location location2) {
+    private static Float getDistance(Location location1, Location location2) {
         Float distanceTo = location1.distanceTo(location2);
         BigDecimal bd = new BigDecimal(distanceTo);
         BigDecimal rounded = bd.setScale(2, BigDecimal.ROUND_HALF_UP);

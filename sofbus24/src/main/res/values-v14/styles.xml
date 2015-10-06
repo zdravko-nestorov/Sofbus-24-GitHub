@@ -46,8 +46,8 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <!-- ANDROID TRANSPERANT THEME -->
-    <style name="TransperantTheme" parent="android:Theme.Holo.Light">
+    <!-- ANDROID TRANSPARENT THEME -->
+    <style name="TransparentTheme" parent="android:Theme.Holo.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:windowBackground">@android:color/transparent</item>

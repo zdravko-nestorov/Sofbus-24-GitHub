@@ -120,7 +120,7 @@ public class DirectionsEntity implements Serializable {
         this.activeDirection = activeDirection;
     }
 
-    public int getActiveStation() {
+    private int getActiveStation() {
         return activeStation;
     }
 

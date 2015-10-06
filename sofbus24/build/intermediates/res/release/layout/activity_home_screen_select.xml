@@ -6,12 +6,12 @@
     <!-- Background image -->
 
     <ImageView
-        android:id="@+id/sofbus24_home_screen_bkg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_img_empty_content_description"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/bkg_home_screen_select" />
 
     <!-- View responsible for the dim effect -->
 
@@ -141,7 +141,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Copyrihgt -->
+    <!-- Copyright -->
 
     <TextView
         android:layout_width="wrap_content"

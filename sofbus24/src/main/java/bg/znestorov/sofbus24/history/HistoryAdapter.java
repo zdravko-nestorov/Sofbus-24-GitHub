@@ -26,8 +26,8 @@ import bg.znestorov.sofbus24.utils.Utils;
 public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
         Filterable {
 
-    private Activity context;
-    private List<HistoryEntity> historyList;
+    private final Activity context;
+    private final List<HistoryEntity> historyList;
 
     public HistoryAdapter(Activity context, List<HistoryEntity> historyList) {
         super(context, R.layout.activity_history_list_item, historyList);

@@ -158,7 +158,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
 
         // Start a new thread - just to wait 500 ms
         Handler handler = new Handler();
-        Runnable myrunnable = new Runnable() {
+        Runnable myRunnable = new Runnable() {
             public void run() {
                 try {
                     // Reset the time shown in the action bar
@@ -171,7 +171,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
             }
         };
 
-        handler.postDelayed(myrunnable, 500);
+        handler.postDelayed(myRunnable, 500);
     }
 
     /**
@@ -224,7 +224,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
         ptScheduleFragment = findViewById(R.id.pt_schedule_fragment);
         ptScheduleLoading = (ProgressBar) findViewById(R.id.pt_schedule_loading);
 
-        // Get the first and last traing TextViews and set them lables
+        // Get the first and last train TextViews and set them labels
         ptScheduleFirst = (TextView) findViewById(R.id.pt_schedule_first);
         ptScheduleLast = (TextView) findViewById(R.id.pt_schedule_last);
         actionsOverScheduleTextViews();
@@ -234,7 +234,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
      * Set onClickListeners over the ImageButtons
      */
     private void actionsOverImageButtons() {
-        // Set onClickListner over the Favorites ImageView
+        // Set onClickListener over the Favorites ImageView
         addToFavourites.setImageResource(getFavouriteImage(ptStation));
         addToFavourites.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -243,7 +243,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
             }
         });
 
-        // Set onClickListner over the left arrow
+        // Set onClickListener over the left arrow
         leftArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -260,7 +260,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
             }
         });
 
-        // Set onClickListner over the right arrow
+        // Set onClickListener over the right arrow
         rightArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

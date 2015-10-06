@@ -29,7 +29,6 @@ public class FavouritesRenameDialog extends DialogFragment {
 
     private static final String BUNDLE_STATION = "STATION";
     private static final String BUNDLE_INPUT_TEXT = "INPUT TEXT";
-    private Activity context;
     private StationEntity station;
     private EditText input;
     private String inputText;
@@ -46,7 +45,7 @@ public class FavouritesRenameDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        context = getActivity();
+        Activity context = getActivity();
         station = (StationEntity) getArguments()
                 .getSerializable(BUNDLE_STATION);
 
@@ -161,7 +160,7 @@ public class FavouritesRenameDialog extends DialogFragment {
     }
 
     public interface OnRenameFavouritesListener {
-        public void onRenameFavouritesClicked(String stationName,
-                                              StationEntity station);
+        void onRenameFavouritesClicked(String stationName,
+                                       StationEntity station);
     }
 }

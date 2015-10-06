@@ -43,10 +43,10 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrievePublicTransportDirection extends
         AsyncTask<Void, Void, DirectionsEntity> {
 
-    private Activity context;
-    private Object callerInstance;
-    private ProgressDialog progressDialog;
-    private VehicleEntity vehicle;
+    private final Activity context;
+    private final Object callerInstance;
+    private final ProgressDialog progressDialog;
+    private final VehicleEntity vehicle;
 
     public RetrievePublicTransportDirection(Activity context,
                                             Object callerInstance, ProgressDialog progressDialog,
@@ -87,7 +87,7 @@ public class RetrievePublicTransportDirection extends
         /**
          * Check if there is some problem with loading the schedule from the
          * SUMC site and if there is - load the local cache, otherwise - save
-         * the cache into the dabatase
+         * the cache into the database
          */
         if (ScheduleCachePreferences.isScheduleCacheActive(context)) {
 
@@ -204,15 +204,15 @@ public class RetrievePublicTransportDirection extends
         final List<NameValuePair> result = new ArrayList<NameValuePair>();
 
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_DIRECTION_BUS_TYPE,
+                Constants.SCHEDULE_URL_DIRECTION_BUS_TYPE,
                 getVehicleType(vehicle)));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_DIRECTION_LINE, vehicleNumber));
+                Constants.SCHEDULE_URL_DIRECTION_LINE, vehicleNumber));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_DIRECTION_SEARCH,
-                Constants.SCHECULE_URL_DIRECTION_SEARCH_VALUE));
+                Constants.SCHEDULE_URL_DIRECTION_SEARCH,
+                Constants.SCHEDULE_URL_DIRECTION_SEARCH_VALUE));
 
-        String returnURL = Constants.SCHECULE_URL_DIRECTION
+        String returnURL = Constants.SCHEDULE_URL_DIRECTION
                 + URLEncodedUtils.format(result, "UTF-8");
 
         return returnURL;

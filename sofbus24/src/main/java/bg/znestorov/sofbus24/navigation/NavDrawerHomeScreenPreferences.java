@@ -7,8 +7,8 @@ import android.content.SharedPreferences.Editor;
 
 public class NavDrawerHomeScreenPreferences {
 
-    public static final String HOME_SCREEN_PREFERENCES_NAME = "home_screen";
-    public static final String HOME_SCREEN_PREFERENCES_USER_CHOICE = "user_choice";
+    private static final String HOME_SCREEN_PREFERENCES_NAME = "home_screen";
+    private static final String HOME_SCREEN_PREFERENCES_USER_CHOICE = "user_choice";
 
     public static Integer getUserHomeScreenChoice(Activity context) {
         SharedPreferences homeScreenPreferences = context.getSharedPreferences(
@@ -19,7 +19,7 @@ public class NavDrawerHomeScreenPreferences {
         return userChoice;
     }
 
-    public static boolean isUserHomeScreenChoosen(Activity context) {
+    public static boolean isUserHomeScreenChosen(Activity context) {
         Integer userChoice = getUserHomeScreenChoice(context);
 
         return userChoice != null && userChoice != -1;

@@ -25,13 +25,13 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class VirtualBoardsAdapter extends ArrayAdapter<StationEntity> {
+class VirtualBoardsAdapter extends ArrayAdapter<StationEntity> {
 
     private final Activity context;
     private final FavouritesDataSource favouritesDatasource;
     private final List<StationEntity> stations;
 
-    private boolean isPhoneDevice;
+    private final boolean isPhoneDevice;
 
     public VirtualBoardsAdapter(Activity context, List<StationEntity> stations) {
         super(context, R.layout.activity_virtual_boards_list_item, stations);
@@ -124,8 +124,8 @@ public class VirtualBoardsAdapter extends ArrayAdapter<StationEntity> {
      * @param viewHolder holder containing all elements in the layout
      * @param station    the station on the current row
      */
-    public void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
-                                                final StationEntity station) {
+    private void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
+                                                 final StationEntity station) {
         viewHolder.addToFavourites.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 ActivityUtils.toggleFavouritesStation(context,

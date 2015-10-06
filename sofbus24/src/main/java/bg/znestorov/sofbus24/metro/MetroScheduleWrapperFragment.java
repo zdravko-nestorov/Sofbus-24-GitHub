@@ -57,7 +57,6 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
     private TextView metroScheduleLast;
     private View metroScheduleFragment;
     private ProgressBar metroScheduleLoading;
-    private TextView metroScheduleLegend;
     private MetroStationEntity ms;
     private ArrayList<ArrayList<String>> scheduleHourList;
     private int currentScheduleHourIndex = 0;
@@ -143,7 +142,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
     }
 
     /**
-     * Initialize the refresh by putting waitTiem delay
+     * Initialize the refresh by putting waitTime delay
      *
      * @param waitTime the period of time for the refresh (in milliseconds)
      */
@@ -157,7 +156,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
 
         // Start a new thread - just to wait 500 ms
         Handler handler = new Handler();
-        Runnable myrunnable = new Runnable() {
+        Runnable myRunnable = new Runnable() {
             public void run() {
                 try {
                     // Reset the time shown in the action bar
@@ -170,7 +169,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
             }
         };
 
-        handler.postDelayed(myrunnable, waitTime);
+        handler.postDelayed(myRunnable, waitTime);
     }
 
     /**
@@ -228,7 +227,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
         metroScheduleLoading = (ProgressBar) fragmentView
                 .findViewById(R.id.metro_schedule_loading);
 
-        // Get the first and last traing TextViews and set them lables
+        // Get the first and last train TextViews and set them labels
         metroScheduleFirst = (TextView) fragmentView
                 .findViewById(R.id.metro_schedule_first);
         metroScheduleLast = (TextView) fragmentView
@@ -236,7 +235,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
         actionsOverScheduleTextViews();
 
         // Get the legend TextView
-        metroScheduleLegend = (TextView) fragmentView
+        TextView metroScheduleLegend = (TextView) fragmentView
                 .findViewById(R.id.metro_schedule_legend);
         metroScheduleLegend.setText(Html
                 .fromHtml(getString(R.string.metro_schedule_legend)));
@@ -246,7 +245,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
      * Set onClickListeners over the ImageButtons
      */
     private void actionsOverImageButtons() {
-        // Set onClickListner over the Favorites ImageView
+        // Set onClickListener over the Favorites ImageView
         addToFavourites.setImageResource(getFavouriteImage(ms));
         addToFavourites.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -255,7 +254,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
             }
         });
 
-        // Set onClickListner over the left arrow
+        // Set onClickListener over the left arrow
         leftArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -272,7 +271,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
             }
         });
 
-        // Set onClickListner over the right arrow
+        // Set onClickListener over the right arrow
         rightArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

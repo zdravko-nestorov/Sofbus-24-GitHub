@@ -19,7 +19,6 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class About extends SherlockFragmentActivity {
 
     private SherlockFragmentActivity context;
-    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class About extends SherlockFragmentActivity {
                 getString(R.string.app_name), appVersion)));
 
         // Set up the action bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setSubtitle(String.format(getString(R.string.about_subtitle),
                 appVersion));

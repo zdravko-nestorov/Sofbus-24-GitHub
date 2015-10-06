@@ -24,8 +24,8 @@ public class CheckForUpdatesPreferences {
      * @param updateType the update type (what would be updated - APP or DB)
      * @return the last check date for updates
      */
-    public static String getLastCheckDate(Activity context,
-                                          UpdateTypeEnum updateType) {
+    private static String getLastCheckDate(Activity context,
+                                           UpdateTypeEnum updateType) {
 
         SharedPreferences applicationUpdate = context.getSharedPreferences(
                 Constants.CHECK_FOR_UPDATES_PREFERENCES_NAME,

@@ -34,5 +34,5 @@ public enum NotificationTypeEnum {
     /**
      * In case of wrong notification sent
      */
-    NONE;
+    NONE
 }

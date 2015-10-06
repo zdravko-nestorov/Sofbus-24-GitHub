@@ -13,6 +13,6 @@
         android:divider="@drawable/list_divider"
         android:dividerHeight="1sp"
         android:fastScrollEnabled="true"
-        android:focusable="true"></ListView>
+        android:focusable="true" />
 
 </RelativeLayout>

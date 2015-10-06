@@ -13,32 +13,20 @@
      limitations under the License.
 -->
 
-<com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/abs__action_mode_close_button"
-    style="?attr/actionModeCloseButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_marginRight="16dip"
-    android:clickable="true"
-    android:focusable="true"
+<com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abs__action_mode_close_button" style="?attr/actionModeCloseButtonStyle"
+    android:layout_width="wrap_content" android:layout_height="match_parent"
+    android:layout_marginRight="16dip" android:clickable="true" android:focusable="true"
     android:paddingLeft="8dip">
 
-    <ImageView
-        android:layout_width="48dip"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="center"
+    <ImageView android:layout_width="48dip" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:scaleType="center"
         android:src="?attr/actionModeCloseDrawable" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="4dip"
-        android:layout_marginRight="16dip"
-        android:text="@string/abs__action_mode_done"
-        android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:layout_marginLeft="4dip"
+        android:layout_marginRight="16dip" android:text="@string/abs__action_mode_done"
+        android:textAllCaps="true" android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="12sp" />
-</com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout-large/abs__action_mode_close_item.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout-large/abs__action_mode_close_item.xml -->
+</com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout-large/abs__action_mode_close_item.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/layout-large/abs__action_mode_close_item.xml -->

@@ -137,7 +137,7 @@
                     android:text=":"
                     android:textColor="#003366"
                     android:textSize="11sp"
-                    tools:ignore="SmallSp" />
+                    tools:ignore="HardcodedText,SmallSp" />
 
                 <TextView
                     android:id="@+id/metro_schedule_first"
@@ -172,7 +172,7 @@
                     android:text=":"
                     android:textColor="#003366"
                     android:textSize="11sp"
-                    tools:ignore="SmallSp" />
+                    tools:ignore="HardcodedText,SmallSp" />
 
                 <TextView
                     android:id="@+id/metro_schedule_last"

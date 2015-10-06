@@ -52,23 +52,18 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 public class StationRouteMap extends SherlockFragmentActivity {
 
+    private final LatLng mladostStationLocation = new LatLng(
+            Constants.GLOBAL_PARAM_MLADOST_1_LATITUDE,
+            Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
     private Activity context;
     private GlobalEntity globalContext;
-    private ActionBar actionBar;
-
     private DirectionsEntity directionsEntity;
-
     private GoogleMap stationMap;
     private View stationRouteLines;
-
     private boolean isCurrentLocationFocused = false;
     private LatLng centerStationLocation = new LatLng(
             Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE,
             Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
-    private LatLng mladostStationLocation = new LatLng(
-            Constants.GLOBAL_PARAM_MLADOST_1_LATITUDE,
-            Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
-
     private LatLng currentMarkerLatLng;
 
     /**
@@ -112,7 +107,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
         globalContext = (GlobalEntity) getApplicationContext();
 
         // Set up the action bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Get the station map fragment and the lines view
@@ -140,7 +135,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
             actionBar.setSubtitle(directionName);
 
             // Set a click listener over the map (when the map is clicked the
-            // snippet becames hidden)
+            // snippet became hidden)
             stationMap.setOnMapClickListener(onMapClickListener);
 
             // Set a click listener over the markers
@@ -344,9 +339,8 @@ public class StationRouteMap extends SherlockFragmentActivity {
                                     MapUtils.getMapDistance(context,
                                             currentLocation, station)));
                 } else {
-                    stationMarkerOptions = stationMarkerOptions.snippet(String
-                            .format(context
-                                    .getString(R.string.app_distance_none)));
+                    stationMarkerOptions = stationMarkerOptions.snippet(context
+                            .getString(R.string.app_distance_none));
                 }
 
                 stationMap.addMarker(stationMarkerOptions);
@@ -381,7 +375,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
     }
 
     /**
-     * Process the list of Public Transport (busses, trolleys and trams) objects
+     * Process the list of Public Transport (buses, trolleys and trams) objects
      *
      * @param currentLocation the current location
      */
@@ -439,9 +433,8 @@ public class StationRouteMap extends SherlockFragmentActivity {
                                     MapUtils.getMapDistance(context,
                                             currentLocation, station)));
                 } else {
-                    stationMarkerOptions = stationMarkerOptions.snippet(String
-                            .format(context
-                                    .getString(R.string.app_distance_none)));
+                    stationMarkerOptions = stationMarkerOptions.snippet(context
+                            .getString(R.string.app_distance_none));
                 }
 
                 Marker marker = stationMap.addMarker(stationMarkerOptions);
@@ -522,13 +515,13 @@ public class StationRouteMap extends SherlockFragmentActivity {
      * @param stationLocation the location of the station over the map (using LatLng object)
      */
     private void animateMapFocus(LatLng stationLocation) {
-        LatLng focussedLatLng;
+        LatLng focusedLatLng;
 
         // Check if the user is already localized
         if (stationLocation != null) {
-            focussedLatLng = stationLocation;
+            focusedLatLng = stationLocation;
         } else {
-            focussedLatLng = centerStationLocation;
+            focusedLatLng = centerStationLocation;
         }
 
         float zoom;
@@ -539,7 +532,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
         }
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(focussedLatLng).zoom(zoom).build();
+                .target(focusedLatLng).zoom(zoom).build();
         stationMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }
@@ -552,14 +545,14 @@ public class StationRouteMap extends SherlockFragmentActivity {
      *                        object)
      */
     private void animateMapFocus(Location stationLocation) {
-        LatLng focussedLatLng;
+        LatLng focusedLatLng;
 
         // Check if the user is already localized
         if (stationLocation != null) {
-            focussedLatLng = new LatLng(stationLocation.getLatitude(),
+            focusedLatLng = new LatLng(stationLocation.getLatitude(),
                     stationLocation.getLongitude());
         } else {
-            focussedLatLng = centerStationLocation;
+            focusedLatLng = centerStationLocation;
         }
 
         float zoom;
@@ -570,7 +563,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
         }
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(focussedLatLng).zoom(zoom).build();
+                .target(focusedLatLng).zoom(zoom).build();
         stationMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }

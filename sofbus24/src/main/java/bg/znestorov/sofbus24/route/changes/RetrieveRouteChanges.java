@@ -15,7 +15,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -37,13 +37,13 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrieveRouteChanges extends
         AsyncTask<Void, Void, ArrayList<RouteChangesEntity>> {
 
-    private FragmentActivity context;
-    private GlobalEntity globalContext;
+    private final FragmentActivity context;
+    private final GlobalEntity globalContext;
 
-    private ProgressDialog progressDialog;
-    private LoadTypeEnum loadType;
+    private final ProgressDialog progressDialog;
+    private final LoadTypeEnum loadType;
 
-    private ResponseHandler<String> responseHandler;
+    private final ResponseHandler<String> responseHandler;
 
     public RetrieveRouteChanges(FragmentActivity context,
                                 ProgressDialog progressDialog, LoadTypeEnum loadType) {
@@ -86,7 +86,7 @@ public class RetrieveRouteChanges extends
             routeChangesHttpClient.getConnectionManager().shutdown();
         }
 
-        // In case the progress dialog is dissmissed - cancel the async task
+        // In case the progress dialog is dismissed - cancel the async task
         if (loadType == LoadTypeEnum.INIT && !progressDialog.isShowing()) {
             cancel(true);
         }
@@ -153,7 +153,7 @@ public class RetrieveRouteChanges extends
                 Constants.ROUTE_CHANGES_URL_ADDRESS);
 
         List<BasicNameValuePair> nameValuePairs = new ArrayList<BasicNameValuePair>();
-        nameValuePairs.addAll(Arrays.asList(new BasicNameValuePair(
+        nameValuePairs.addAll(Collections.singletonList(new BasicNameValuePair(
                 Constants.ROUTE_CHANGES_FROM, String.valueOf(page * 20))));
 
         final UrlEncodedFormEntity entity = new UrlEncodedFormEntity(

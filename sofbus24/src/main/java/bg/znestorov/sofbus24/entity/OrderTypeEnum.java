@@ -8,5 +8,5 @@ package bg.znestorov.sofbus24.entity;
  * @version 1.0
  */
 public enum OrderTypeEnum {
-    UP, DOWN, FIRST, LAST;
+    UP, DOWN, FIRST, LAST
 }

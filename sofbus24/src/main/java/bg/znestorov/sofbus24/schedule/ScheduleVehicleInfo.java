@@ -1,12 +1,13 @@
 package bg.znestorov.sofbus24.schedule;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.text.Html;
+
+import java.util.ArrayList;
+
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.entity.DirectionsEntity;
 import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
@@ -30,11 +31,11 @@ import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
  */
 public class ScheduleVehicleInfo {
 
-    private Activity context;
-    private Object callerInstance;
+    private final Activity context;
+    private final Object callerInstance;
 
-    private StationsDataSource stationsDatasource;
-    private String language;
+    private final StationsDataSource stationsDatasource;
+    private final String language;
 
     public ScheduleVehicleInfo(Activity context, Object callerInstance) {
 
@@ -46,7 +47,7 @@ public class ScheduleVehicleInfo {
     }
 
     /**
-     * Retieve an information about the selected vehicle
+     * Retrieve an information about the selected vehicle
      *
      * @param vehicle
      *            the selected vehicle
@@ -76,7 +77,7 @@ public class ScheduleVehicleInfo {
     }
 
     /**
-     * Retieve an information about the selected vehicle
+     * Retrieve an information about the selected vehicle
      *
      * @param scheduleStationAdapter
      *            the ScheduleVehicleAdapter
@@ -824,7 +825,7 @@ public class ScheduleVehicleInfo {
      * @param vehicle
      *            the selected vehicle
      * @param rowCaption
-     *            the selectedrow caption
+     *            the selected row caption
      */
     private void proceedStandardCase(VehicleEntity vehicle, String rowCaption) {
         ProgressDialog progressDialog = new ProgressDialog(context);

@@ -161,21 +161,21 @@ public class ConfigEntity implements Serializable {
     }
 
     public ConfigEntity(int versionCode, String versionName,
-                        int stationsDbVersion, boolean favouritesVisibile,
-                        int favouritesPosition, boolean searchVisibile, int searchPosition,
-                        boolean scheduleVisibile, int schedulePosition,
-                        boolean metroVisibile, int metroPosition, int vehiclesDbVersion) {
+                        int stationsDbVersion, boolean favouritesVisible,
+                        int favouritesPosition, boolean searchVisible, int searchPosition,
+                        boolean scheduleVisible, int schedulePosition,
+                        boolean metroVisible, int metroPosition, int vehiclesDbVersion) {
 
         this.versionCode = versionCode;
         this.versionName = versionName;
 
-        this.favouritesVisible = favouritesVisibile;
+        this.favouritesVisible = favouritesVisible;
         this.favouritesPosition = favouritesPosition;
-        this.searchVisible = searchVisibile;
+        this.searchVisible = searchVisible;
         this.searchPosition = searchPosition;
-        this.scheduleVisible = scheduleVisibile;
+        this.scheduleVisible = scheduleVisible;
         this.schedulePosition = schedulePosition;
-        this.metroVisible = metroVisibile;
+        this.metroVisible = metroVisible;
         this.metroPosition = metroPosition;
 
         this.sofbus24DbVersion = stationsDbVersion;
@@ -197,12 +197,12 @@ public class ConfigEntity implements Serializable {
         this.versionName = versionName;
     }
 
-    public boolean isFavouritesVisibile() {
+    public boolean isFavouritesVisible() {
         return favouritesVisible;
     }
 
-    public void setFavouritesVisibile(boolean favouritesVisibile) {
-        this.favouritesVisible = favouritesVisibile;
+    public void setFavouritesVisible(boolean favouritesVisible) {
+        this.favouritesVisible = favouritesVisible;
     }
 
     public int getFavouritesPosition() {
@@ -213,12 +213,12 @@ public class ConfigEntity implements Serializable {
         this.favouritesPosition = favouritesPosition;
     }
 
-    public boolean isSearchVisibile() {
+    public boolean isSearchVisible() {
         return searchVisible;
     }
 
-    public void setSearchVisibile(boolean searchVisibile) {
-        this.searchVisible = searchVisibile;
+    public void setSearchVisible(boolean searchVisible) {
+        this.searchVisible = searchVisible;
     }
 
     public int getSearchPosition() {
@@ -229,12 +229,12 @@ public class ConfigEntity implements Serializable {
         this.searchPosition = searchPosition;
     }
 
-    public boolean isScheduleVisibile() {
+    public boolean isScheduleVisible() {
         return scheduleVisible;
     }
 
-    public void setScheduleVisibile(boolean scheduleVisibile) {
-        this.scheduleVisible = scheduleVisibile;
+    public void setScheduleVisible(boolean scheduleVisible) {
+        this.scheduleVisible = scheduleVisible;
     }
 
     public int getSchedulePosition() {
@@ -245,12 +245,12 @@ public class ConfigEntity implements Serializable {
         this.schedulePosition = schedulePosition;
     }
 
-    public boolean isMetroVisibile() {
+    public boolean isMetroVisible() {
         return metroVisible;
     }
 
-    public void setMetroVisibile(boolean metroVisibile) {
-        this.metroVisible = metroVisibile;
+    public void setMetroVisible(boolean metroVisible) {
+        this.metroVisible = metroVisible;
     }
 
     public int getMetroPosition() {
@@ -342,15 +342,15 @@ public class ConfigEntity implements Serializable {
      */
     public boolean isSameConfig(ConfigEntity config) {
 
-        boolean isSameConfig = this.isFavouritesVisibile() == config
-                .isFavouritesVisibile()
+        boolean isSameConfig = this.isFavouritesVisible() == config
+                .isFavouritesVisible()
                 && this.getFavouritesPosition() == config
                 .getFavouritesPosition()
-                && this.isSearchVisibile() == config.isSearchVisibile()
+                && this.isSearchVisible() == config.isSearchVisible()
                 && this.getSearchPosition() == config.getSearchPosition()
-                && this.isScheduleVisibile() == config.isScheduleVisibile()
+                && this.isScheduleVisible() == config.isScheduleVisible()
                 && this.getSchedulePosition() == config.getSchedulePosition()
-                && this.isMetroVisibile() == config.isMetroVisibile()
+                && this.isMetroVisible() == config.isMetroVisible()
                 && this.getMetroPosition() == config.getMetroPosition();
 
         return isSameConfig;
@@ -360,13 +360,13 @@ public class ConfigEntity implements Serializable {
     public String toString() {
         return getClass().getName() + " {\n\tversionCode: " + versionCode
                 + "\n\tversionName: " + versionName
-                + "\n\tfavouritesVisibile: " + favouritesVisible
+                + "\n\tfavouritesVisible: " + favouritesVisible
                 + "\n\tfavouritesPosition: " + favouritesPosition
-                + "\n\tsearchVisibile: " + searchVisible
+                + "\n\tsearchVisible: " + searchVisible
                 + "\n\tsearchPosition: " + searchPosition
-                + "\n\tscheduleVisibile: " + scheduleVisible
+                + "\n\tscheduleVisible: " + scheduleVisible
                 + "\n\tschedulePosition: " + schedulePosition
-                + "\n\tmetroVisibile: " + metroVisible + "\n\tmetroPosition: "
+                + "\n\tmetroVisible: " + metroVisible + "\n\tmetroPosition: "
                 + metroPosition + "\n\tstationsDbVersion: " + sofbus24DbVersion
                 + "\n}";
     }

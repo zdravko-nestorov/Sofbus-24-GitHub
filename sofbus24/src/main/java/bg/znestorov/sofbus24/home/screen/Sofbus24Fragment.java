@@ -58,15 +58,13 @@ import bg.znestorov.sofbus24.virtualboards.VirtualBoardsFragment;
 public class Sofbus24Fragment extends SherlockFragment implements
         ActionBar.TabListener {
 
+    private final List<Fragment> fragmentsList = new ArrayList<Fragment>();
     private SherlockFragmentActivity context;
     private GlobalEntity globalContext;
     private ActionBar actionBar;
-
     private ViewPager mViewPager;
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private PagerSlidingTabStrip mPagerSlidingTabs;
-
-    private List<Fragment> fragmentsList = new ArrayList<Fragment>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,7 +73,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
         View fragmentView = inflater.inflate(
                 R.layout.activity_sofbus24_fragment, container, false);
 
-        // Get the application and curren context;
+        // Get the application and current context;
         context = getSherlockActivity();
         globalContext = (GlobalEntity) context.getApplicationContext();
         LanguageChange.selectLocale(context);
@@ -201,7 +199,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
 
                 return true;
             case R.id.action_clear_schedule_cache:
-                if (ScheduleDatabaseUtils.isAnyScheduleCacheAvaialble(context)) {
+                if (ScheduleDatabaseUtils.isAnyScheduleCacheAvailable(context)) {
                     DialogFragment dialogFragment = ScheduleCacheDeleteDialog
                             .newInstance(VehicleTypeEnum.BTTM, "");
                     dialogFragment.show(getChildFragmentManager(), "dialog");
@@ -407,10 +405,10 @@ public class Sofbus24Fragment extends SherlockFragment implements
      * current application config file
      */
     private void createFragmentsList() {
-        // Get the application cofig file
+        // Get the application config file
         ConfigEntity config = new ConfigEntity(context);
 
-        // Emtpy the fragmentsList if contains any elements
+        // Empty the fragmentsList if contains any elements
         if (!fragmentsList.isEmpty()) {
             fragmentsList.clear();
         }
@@ -428,7 +426,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
     /**
      * Get the fragment according to the given HomeTab
      *
-     * @param homeTab HomeTab object pointing which fragment to be choosen
+     * @param homeTab HomeTab object pointing which fragment to be chosen
      * @return the fragment associated to the given HomeTab
      */
     private Fragment getFragmentByTagName(HomeTabEntity homeTab) {

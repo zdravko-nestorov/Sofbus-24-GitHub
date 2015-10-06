@@ -30,9 +30,8 @@ import bg.znestorov.sofbus24.utils.activity.NonSwipeableViewPager;
 public class ScheduleFragment extends SherlockFragment {
 
     private static final String BUNDLE_CURRENT_VEHICLE = "CURRENT VEHICLE";
+    private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private ViewPager mNonSwipeableViewPager;
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private int currentVehicle;
 
     @Override
@@ -108,7 +107,7 @@ public class ScheduleFragment extends SherlockFragment {
 
         // Create the adapter that will return a fragment for each of the
         // vehicles
-        mSectionsPagerAdapter = new SectionsPagerAdapter(
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(
                 getChildFragmentManager());
 
         // Set up the ViewPager with the sections adapter and load all tabs at
@@ -148,7 +147,7 @@ public class ScheduleFragment extends SherlockFragment {
      *
      * @param textViewBus     bus tab (TextView)
      * @param textViewTrolley trolley tab (TextView)
-     * @param textViewTrolley tram tab (TextView)
+     * @param textViewTram tram tab (TextView)
      */
     private void actionsOverDirectionsTextViews(final TextView textViewBus,
                                                 final TextView textViewTrolley, final TextView textViewTram) {
@@ -231,7 +230,7 @@ public class ScheduleFragment extends SherlockFragment {
      * @param tabNumber       the number of the direction
      * @param textViewBus     bus tab (TextView)
      * @param textViewTrolley trolley tab (TextView)
-     * @param textViewTrolley tram tab (TextView)
+     * @param textViewTram tram tab (TextView)
      */
     private void setActiveFragment(int tabNumber, TextView textViewBus,
                                    TextView textViewTrolley, TextView textViewTram) {

@@ -28,7 +28,7 @@ import bg.znestorov.sofbus24.utils.activity.DrawableClickListener;
 import bg.znestorov.sofbus24.utils.activity.SearchEditText;
 
 /**
- * Schedule Vehiles Fragment containing information about the public transport
+ * Schedule Vehicles Fragment containing information about the public transport
  * vehicles
  *
  * @author Zdravko Nestorov
@@ -45,7 +45,6 @@ public class ScheduleVehicleFragment extends SherlockListFragment implements
     private View emptyView;
     private TextView emptyTextView;
     private int currentVehicle;
-    private ScheduleLoadVehicles slv;
     private ScheduleVehicleAdapter scheduleVehicleAdapter;
     private ArrayList<VehicleEntity> stationsList = new ArrayList<VehicleEntity>();
     private String searchText;
@@ -119,13 +118,13 @@ public class ScheduleVehicleFragment extends SherlockListFragment implements
                 Constants.BUNDLE_PUBLIC_TRANSPORT_SCHEDULE);
 
         // Get the information about the current direction
-        slv = ScheduleLoadVehicles.getInstance(context);
+        ScheduleLoadVehicles slv = ScheduleLoadVehicles.getInstance(context);
         stationsList = slv.getVehiclesList(currentVehicle);
     }
 
     /**
      * Initialize the layout fields and assign the appropriate listeners over
-     * them (vehicles tabs (TextViews), SerachEditText and EmptyList (TextView))
+     * them (vehicles tabs (TextViews), SearchEditText and EmptyList (TextView))
      *
      * @param fragmentView the current view of the fragment
      */
@@ -138,7 +137,7 @@ public class ScheduleVehicleFragment extends SherlockListFragment implements
                 .findViewById(R.id.schedule_vehicle_list_empty_text);
 
         // Set on click listener over the grid view and hide the empty view in
-        // the bgining (if the ListFragment uses a GridView)
+        // the beginning (if the ListFragment uses a GridView)
         gridViewScheduleVehicles = (GridView) fragmentView
                 .findViewById(R.id.schedule_vehicle_list_grid_view);
         if (gridViewScheduleVehicles != null) {

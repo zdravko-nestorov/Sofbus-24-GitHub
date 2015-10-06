@@ -153,7 +153,7 @@ public class StationEntity implements Serializable {
     }
 
     /**
-     * Check if the station has cooredinates
+     * Check if the station has coordinates
      *
      * @return true if the station has coordinates, false otherwise
      */
@@ -177,7 +177,7 @@ public class StationEntity implements Serializable {
      *
      * @param station the new station values
      */
-    public void assingStationValues(StationEntity station) {
+    public void assignStationValues(StationEntity station) {
         this.number = Utils.formatNumberOfDigits(station.getNumber(), 4);
         this.name = station.getName();
         this.lat = station.getLat();

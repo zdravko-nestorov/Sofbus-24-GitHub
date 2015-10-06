@@ -54,19 +54,17 @@
 		<i>The data is extracted from: <b><u><a href="http://m.sumc.bg">http://m.sumc.bg</a></u></b></i>]]>
     </string>
     <string formatted="false" name="about_subtitle"><![CDATA[Version %s]]></string>
-    <string formatted="false" name="about_update_app"><![CDATA[Checking for a new version of the application...]]></string>
+    <string formatted="false" name="about_update_app"><![CDATA[Checking for a new version of the application…]]></string>
     <string formatted="false" name="about_update_app_last"><![CDATA[You are using the latest version of the application - <b>Sofbus 24 - version %s</b>. Please try again later.]]></string>
     <string formatted="false" name="about_update_app_new"><![CDATA[A new version is available - <b>Sofbus 24 - version %s</b>. Would you like to update the application?]]></string>
-    <string formatted="false" name="about_update_db"><![CDATA[Checking for a stations update...]]></string>
-    <string formatted="false" name="about_update_db_copy"><![CDATA[Updating the public transport stations...]]></string>
+    <string formatted="false" name="about_update_db"><![CDATA[Checking for a stations update…]]></string>
+    <string formatted="false" name="about_update_db_copy"><![CDATA[Updating the public transport stations…]]></string>
     <string name="about_update_db_last">There is no available stations update. Please try again later.</string>
     <string name="about_update_db_new">A station update is available. Would you like to add the new stops?</string>
     <string formatted="false" name="about_update_db_restart"><![CDATA[The new stations were added successfully. You have to restart the application for the changes to take effect. Do you want to restart </b>Sofbus 24<b> now?]]></string>
     <string name="action_about_update_app">Check for a New Version</string>
     <string name="action_about_update_db">Update the Stations DB</string>
     <string name="action_clear_schedule_cache">Clear cache</string>
-    <string name="action_closest_stations">Closest Stations</string>
-    <string name="action_closest_stations_list">Closest Stations</string>
     <string name="action_closest_stations_map">Google Maps</string>
     <string name="action_cs_list_map">Google Maps</string>
     <string name="action_cs_list_refresh">Refresh</string>
@@ -98,16 +96,11 @@
     <string name="action_ms_reset">Reset</string>
     <string name="action_pref_info_details">Information</string>
     <string name="action_pref_reset">Reset</string>
-    <string name="action_pt_map">Google Maps</string>
-    <string name="action_pt_refresh">Refresh</string>
-    <string name="action_pt_reset">Reset</string>
     <string name="action_pt_route_map">Route</string>
     <string name="action_pt_site">SKGT Schedule</string>
-    <string name="action_recent_history">History</string>
     <string name="action_route_changes_copy_link">Copy Link</string>
     <string name="action_route_changes_open_browser">Open in Browser</string>
     <string name="action_route_changes_refresh">Refresh</string>
-    <string name="action_route_changes_top">Top</string>
     <string name="action_sm_google_street_view">Street View</string>
     <string name="action_sm_map_mode">Map Mode</string>
     <string name="action_sm_map_mode_hybrid">Hybrid</string>
@@ -121,7 +114,6 @@
     <string name="action_web_page_refresh">Refresh</string>
     <string name="app_button_activate">Activate</string>
     <string name="app_button_cancel">Cancel</string>
-    <string name="app_button_confirm">Confirm</string>
     <string name="app_button_email">Email</string>
     <string name="app_button_exit">Exit</string>
     <string name="app_button_install">Install</string>
@@ -147,15 +139,15 @@
     <string name="app_distance_meters">m</string>
     <string name="app_distance_none">Distance: ∞ (calculating…)</string>
     <string name="app_google_play_msg">Google Play services, which Sofbus 24 uses to show the Google Maps, are not supported by your device. Please install them to move on.</string>
-    <string name="app_google_play_titlte">Google Play services</string>
+    <string name="app_google_play_title">Google Play services</string>
     <string name="app_google_street_view_msg">Google Play services, which Sofbus 24 uses to show the Google Street View, are not supported by your device. Please install them to move on.</string>
     <string name="app_google_street_view_title">Google Street View</string>
     <string name="app_img_empty_content_description"/>
     <string formatted="false" name="app_info_error"><![CDATA[Currently, the SKGT site does not provide any information about </b>%s<b>. Please try again later.]]></string>
     <string name="app_internet_error">An error occurred while retrieving the information. Please check your Internet connection and try again.</string>
     <string name="app_internet_or_info_error">No information is found at the moment. Please check your Internet connection or try again later.</string>
-    <string formatted="false" name="app_loading_closest_station"><![CDATA[Finding the nearest station...]]></string>
-    <string formatted="false" name="app_loading_current_location"><![CDATA[Localize the current location...]]></string>
+    <string formatted="false" name="app_loading_closest_station"><![CDATA[Finding the nearest station…]]></string>
+    <string formatted="false" name="app_loading_current_location"><![CDATA[Localize the current location…]]></string>
     <string formatted="false" name="app_location_access_error"><![CDATA[Please activate the option <b><i>\"Access to my location\"</i></b>, so <b><i>Sofbus 24</i></b> can use your location information.]]></string>
     <string name="app_location_modules_error">Please turn on at least one of the device\'s modules (Network, WiFi or GPS) to detect your current location.</string>
     <string name="app_location_modules_timeout_error">Finding the current location took too long or all localization modules are offline (Network, WiFi or GPS). Please turn on any of them and try again.</string>
@@ -167,7 +159,7 @@
     <string name="app_no_station_selected_error">Please select a station from the map to be visualized using Google Street View.</string>
     <string name="app_remaining_hours">h</string>
     <string name="app_remaining_minutes">m</string>
-    <string formatted="false" name="app_send_email_body"><![CDATA[Sofbus 24 experienced an unexpected error on startup...]]></string>
+    <string formatted="false" name="app_send_email_body"><![CDATA[Sofbus 24 experienced an unexpected error on startup…]]></string>
     <string name="app_send_email_chooser">Send mail</string>
     <string name="app_send_email_chooser_error">There are no email clients installed. Please add one to send an email.</string>
     <string name="app_send_email_subject">Sofbus 24 startup problem</string>
@@ -179,8 +171,8 @@
     <string name="cs_list_search_hint">Search by name or number</string>
     <string name="cs_list_title">Closest stations</string>
     <string name="cs_map_clear_info">The map was reset to default.</string>
-    <string formatted="false" name="cs_map_closest_stations"><![CDATA[Visualization of the nearest stations...]]></string>
-    <string formatted="false" name="cs_map_fetch_route"><![CDATA[Drawing the route...]]></string>
+    <string formatted="false" name="cs_map_closest_stations"><![CDATA[Visualization of the nearest stations…]]></string>
+    <string formatted="false" name="cs_map_fetch_route"><![CDATA[Drawing the route…]]></string>
     <string name="cs_map_fetch_route_error">There was a problem with drawing the route. Please check your Internet connection or try again later.</string>
     <string formatted="false" name="cs_map_hybrid"><![CDATA[The layer <b><i>Hybrid</i></b> was activated.]]></string>
     <string name="cs_map_location_error">Please wait to be located.</string>
@@ -267,7 +259,7 @@
     <string name="history_type_station">Station</string>
     <string name="history_type_tram">Tram</string>
     <string name="history_type_trolley">Trolley</string>
-    <string name="home_screen_choice">Please choose а start screen (it can be cnaged anytime from the left menu):</string>
+    <string name="home_screen_choice">Please choose а start screen (it can be changed anytime from the left menu):</string>
     <string name="home_screen_copyright">Copyright © Sofbus 24 2012. All rights reserved</string>
     <string name="home_screen_summary">Find your easiest way around Sofia.</string>
     <string name="menu_fav_google_maps">Google Maps</string>
@@ -278,17 +270,15 @@
     <string name="menu_metro_station_add">Add to Favorites</string>
     <string name="menu_metro_station_map">See on the map</string>
     <string name="menu_metro_station_remove">Remove from Favorites</string>
-    <string name="menu_metro_station_title">Choose an action</string>
     <string formatted="false" name="metro_item_empty_list"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
     <string formatted="false" name="metro_item_station_number_text">Metro station number: %s</string>
     <string formatted="false" name="metro_item_station_number_text_sign">Station №%s</string>
-    <string formatted="false" name="metro_loading_schedule"><![CDATA[Retrieving the schedule for station <b><i>%s (%s)</b></i>...]]></string>
-    <string formatted="false" name="metro_menu_map_route_loading"><![CDATA[Drawing the route...]]></string>
-    <string formatted="false" name="metro_schedule_bussiness_park"><![CDATA[<sup><small><small><b><small> </small>BP</b></small></small></sup>]]></string>
+    <string formatted="false" name="metro_loading_schedule"><![CDATA[Retrieving the schedule for station <b><i>%s (%s)</b></i>…]]></string>
+    <string formatted="false" name="metro_menu_map_route_loading"><![CDATA[Drawing the route…]]></string>
+    <string formatted="false" name="metro_schedule_business_park"><![CDATA[<sup><small><small><b><small> </small>BP</b></small></small></sup>]]></string>
     <string name="metro_schedule_first">First train</string>
     <string name="metro_schedule_last">Last train</string>
     <string formatted="false" name="metro_schedule_legend"><![CDATA[<font color="#FF0017"><sup>*</sup> Red - Incomplete Courses</font>, <font color="#003366">SA - Sofia Airport</font>, <font color="#003366">BP - Business Park</font>]]></string>
-    <string formatted="false" name="metro_schedule_refresh"><![CDATA[Updating the remaining time...]]></string>
     <string formatted="false" name="metro_schedule_sofia_airport"><![CDATA[<sup><small><small><b><small> </small>SA</b></small></small></sup>]]></string>
     <string name="metro_search_hint">Search by name or number</string>
     <string name="metro_search_tab_direction1">Route 1</string>
@@ -350,7 +340,7 @@
     <string name="pref_title">Settings</string>
     <string formatted="false" name="pt_bus">Bus №%s</string>
     <string formatted="false" name="pt_empty_list"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
-    <string formatted="false" name="pt_item_loading_schedule"><![CDATA[Retrieving the schedule for <b><i>%s</b></i>...]]></string>
+    <string formatted="false" name="pt_item_loading_schedule"><![CDATA[Retrieving the schedule for <b><i>%s</b></i>…]]></string>
     <string formatted="false" name="pt_item_station_number_text">Station number: %s</string>
     <string formatted="false" name="pt_item_station_number_text_sign">Station №%s</string>
     <string formatted="false" name="pt_menu_clear_all_schedule_cache"><![CDATA[Are you sure that you want to remove the local schedule for the Public Transport vehicles?]]></string>
@@ -360,7 +350,7 @@
     <string formatted="false" name="pt_menu_clear_schedule_cache"><![CDATA[Are you sure that you want to remove the local schedule for <b>%s</b>?]]></string>
     <string formatted="false" name="pt_menu_clear_schedule_cache_empty_toast"><![CDATA[There is no available local schedule for <b>%s</b>. If you want to use the offline schedule you should load it from the website of SKGT at least once.]]></string>
     <string formatted="false" name="pt_menu_clear_schedule_cache_toast"><![CDATA[The local schedule for <b>%s</b> was successfully deleted from the cache.]]></string>
-    <string formatted="false" name="pt_menu_map_route_loading"><![CDATA[Drawing the route...]]></string>
+    <string formatted="false" name="pt_menu_map_route_loading"><![CDATA[Drawing the route…]]></string>
     <string formatted="false" name="pt_schedule_cache_loaded"><![CDATA[An error occurred while retrieving the information for <b>%s</b>. The local schedule from <b>%s</b> was used.]]></string>
     <string name="pt_schedule_first">First car</string>
     <string name="pt_schedule_last">Last car</string>
@@ -374,10 +364,10 @@
     <string formatted="false" name="route_changes_label_creation_date"><![CDATA[Uploaded on: %s]]></string>
     <string formatted="false" name="route_changes_label_valid_from"><![CDATA[Valid from: %s]]></string>
     <string name="route_changes_list_empty_text">No changes of the Sofia Public Transport routes are announced.</string>
-    <string formatted="false" name="route_changes_loading"><![CDATA[Looking for a route changes...]]></string>
+    <string formatted="false" name="route_changes_loading"><![CDATA[Looking for a route changes…]]></string>
     <string name="route_changes_news_choose_browser">Choose a browser</string>
     <string name="route_changes_news_copy_link">Linked copied</string>
-    <string formatted="false" name="route_changes_news_loading"><![CDATA[Loading information about <b><i>%s</i></b>...]]></string>
+    <string formatted="false" name="route_changes_news_loading"><![CDATA[Loading information about <b><i>%s</i></b>…]]></string>
     <string name="route_changes_title">Route Changes</string>
     <string formatted="false" name="sch_item_bus">Bus №%s</string>
     <string name="sch_item_direction_choice">Choose a direction</string>
@@ -392,20 +382,17 @@
     <string name="sofbus24_metro_title">Metro</string>
     <string name="sofbus24_schedule_title">Schedule</string>
     <string name="sofbus24_search_title">Search</string>
-    <string name="station_map_buses"><![CDATA[Buses: ]]></string>
-    <string name="station_map_trams"><![CDATA[Trams: ]]></string>
-    <string name="station_map_trolleys"><![CDATA[Trolleys: ]]></string>
     <string formatted="false" name="vb_item_empty_list"><![CDATA[No stations are found for <b>%s</b>. Please try with other search criteria.]]></string>
     <string formatted="false" name="vb_item_search_list"><![CDATA[Please enter your search criteria (performed on the basis of <b>the number - four digit code (e.g. 0013)</b> or <b>the name (number/s or letters in Cyrillic or Latin)</b> of the station). If you are searching by name you need to enter <b>at least 3 characters</b>.]]></string>
     <string formatted="false" name="vb_item_station_number_text">Station number: %s</string>
     <string name="vb_search_hint">Search by name or number</string>
     <string formatted="false" name="vb_time_bus">Bus №%s</string>
-    <string formatted="false" name="vb_time_captcha_check"><![CDATA[CAPTCHA image verification...]]></string>
+    <string formatted="false" name="vb_time_captcha_check"><![CDATA[CAPTCHA image verification…]]></string>
     <string formatted="false" name="vb_time_current_time">Information at %s</string>
     <string formatted="false" name="vb_time_item_both"><![CDATA[<b><font color="#FF2727">Times: %s</font></b>]]></string>
     <string formatted="false" name="vb_time_item_remaining_time"><![CDATA[<b><font color="#FF2727">Remaining time: %s</font></b>]]></string>
     <string formatted="false" name="vb_time_item_time_of_arrival"><![CDATA[<b><font color="#FF2727">Times of arrival: %s</font></b>]]></string>
-    <string formatted="false" name="vb_time_retrieve_info"><![CDATA[Retrieving the times of arrival of <b><i>%s</b></i>...]]></string>
+    <string formatted="false" name="vb_time_retrieve_info"><![CDATA[Retrieving the times of arrival of <b><i>%s</b></i>…]]></string>
     <string name="vb_time_sumc_captcha">Security test</string>
     <string name="vb_time_sumc_captcha_msg">Please enter the characters from the image (in Cyrillic or Latin):</string>
     <string name="vb_time_title">Virtual boards</string>

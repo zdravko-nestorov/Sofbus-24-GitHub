@@ -42,7 +42,7 @@ public class FavouritesSortTypeDialog extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int itemNumber) {
                 ((OnSortTypeChoiceListener) getTargetFragment())
-                        .onSortTypeChoosed(getSortType(sortType, itemNumber));
+                        .onSortTypeChoose(getSortType(sortType, itemNumber));
             }
         });
 
@@ -103,6 +103,6 @@ public class FavouritesSortTypeDialog extends DialogFragment {
     }
 
     public interface OnSortTypeChoiceListener {
-        public void onSortTypeChoosed(SortTypeEnum sortType);
+        void onSortTypeChoose(SortTypeEnum sortType);
     }
 }

@@ -34,7 +34,6 @@ public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
 
     private Activity context;
     private GlobalEntity globalContext;
-    private ActionBar actionBar;
 
     private PreferenceScreen preferencesScreen;
     private Preference numberOfDays;
@@ -166,7 +165,7 @@ public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
      * Initialize the action bar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.pref_title));

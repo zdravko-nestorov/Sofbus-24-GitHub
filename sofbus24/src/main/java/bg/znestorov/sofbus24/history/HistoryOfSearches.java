@@ -30,10 +30,10 @@ public class HistoryOfSearches {
 
     private static HistoryOfSearches instance = null;
 
-    private SharedPreferences historyPreferences;
+    private final SharedPreferences historyPreferences;
     private int nextSearchNumber;
 
-    protected HistoryOfSearches(Activity context) {
+    private HistoryOfSearches(Activity context) {
         this.historyPreferences = context.getSharedPreferences(
                 Constants.HISTORY_PREFERENCES_NAME, Context.MODE_PRIVATE);
         this.nextSearchNumber = historyPreferences.getInt(
@@ -52,7 +52,7 @@ public class HistoryOfSearches {
      * Get the next search number from the preferences file and set it to the
      * object value
      *
-     * @return the next searc number
+     * @return the next search number
      */
     public int getNextSearchNumber() {
         nextSearchNumber = historyPreferences.getInt(
@@ -67,7 +67,7 @@ public class HistoryOfSearches {
      *
      * @param nextSearchNumber the next search number
      */
-    public void putNextSearchNumberInPreferences(int nextSearchNumber) {
+    private void putNextSearchNumberInPreferences(int nextSearchNumber) {
         if (nextSearchNumber > Constants.TOTAL_HISTORY_COUNT) {
             nextSearchNumber = nextSearchNumber % Constants.TOTAL_HISTORY_COUNT;
         }

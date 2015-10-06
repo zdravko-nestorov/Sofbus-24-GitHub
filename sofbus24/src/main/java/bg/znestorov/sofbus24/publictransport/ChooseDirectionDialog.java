@@ -24,11 +24,9 @@ import bg.znestorov.sofbus24.utils.Constants;
  */
 public class ChooseDirectionDialog extends DialogFragment {
 
-    public static final String BUNDLE_PT_DIRECTION_ENTITY = "PT DIRECTION ENTITY";
+    private static final String BUNDLE_PT_DIRECTION_ENTITY = "PT DIRECTION ENTITY";
     private Activity context;
     private GlobalEntity globalContext;
-    private String title;
-    private DialogInterface.OnClickListener onListItemClickListener;
     private DirectionsEntity ptDirectionsEntity;
 
     public static ChooseDirectionDialog newInstance(
@@ -47,7 +45,7 @@ public class ChooseDirectionDialog extends DialogFragment {
         context = getActivity();
         globalContext = (GlobalEntity) context.getApplicationContext();
 
-        title = getString(R.string.sch_item_direction_choice);
+        String title = getString(R.string.sch_item_direction_choice);
         ptDirectionsEntity = (DirectionsEntity) getArguments().getSerializable(
                 BUNDLE_PT_DIRECTION_ENTITY);
 
@@ -55,7 +53,7 @@ public class ChooseDirectionDialog extends DialogFragment {
                 context, R.layout.activity_public_transport_directions_item,
                 ptDirectionsEntity.getDirectionsNames());
 
-        onListItemClickListener = new DialogInterface.OnClickListener() {
+        DialogInterface.OnClickListener onListItemClickListener = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialoginterface, int i) {
                 ptDirectionsEntity.setActiveDirection(i);
                 Intent publicTransport;

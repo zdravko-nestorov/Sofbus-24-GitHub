@@ -24,13 +24,6 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class Sofbus24DatabaseErrorDialog extends DialogFragment {
 
     private Activity context;
-    private Spanned message;
-    private String negativeBtn;
-    private String neutralBtn;
-    private String positiveBtn;
-    private OnClickListener negativeOnClickListener;
-    private OnClickListener neutralOnClickListener;
-    private OnClickListener positiveOnClickListener;
     private OnRecreateDatabaseListener onRecreateDatabaseListener;
 
     public static Sofbus24DatabaseErrorDialog newInstance() {
@@ -52,12 +45,12 @@ public class Sofbus24DatabaseErrorDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();
-        message = Html.fromHtml(getString(R.string.app_database_error));
-        negativeBtn = getString(R.string.app_button_restart);
-        neutralBtn = getString(R.string.app_button_email);
-        positiveBtn = getString(R.string.app_button_exit);
+        Spanned message = Html.fromHtml(getString(R.string.app_database_error));
+        String negativeBtn = getString(R.string.app_button_restart);
+        String neutralBtn = getString(R.string.app_button_email);
+        String positiveBtn = getString(R.string.app_button_exit);
 
-        negativeOnClickListener = new OnClickListener() {
+        OnClickListener negativeOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ((OnRecreateDatabaseListener) onRecreateDatabaseListener)
@@ -65,7 +58,7 @@ public class Sofbus24DatabaseErrorDialog extends DialogFragment {
             }
         };
 
-        neutralOnClickListener = new OnClickListener() {
+        OnClickListener neutralOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 sendEmail();
@@ -73,7 +66,7 @@ public class Sofbus24DatabaseErrorDialog extends DialogFragment {
             }
         };
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ActivityUtils.closeApplication(context);
@@ -121,6 +114,6 @@ public class Sofbus24DatabaseErrorDialog extends DialogFragment {
     }
 
     public interface OnRecreateDatabaseListener {
-        public void onRecreateDatabaseClicked();
+        void onRecreateDatabaseClicked();
     }
 }

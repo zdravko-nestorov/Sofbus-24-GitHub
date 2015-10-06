@@ -24,15 +24,13 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ProcessPublicTransportDirection {
+class ProcessPublicTransportDirection {
 
+    private final StationsDataSource stationDatasource;
+    private final VehicleEntity vehicle;
+    private final String language;
     private Activity context;
-    private StationsDataSource stationDatasource;
-
-    private VehicleEntity vehicle;
     private String htmlResult;
-
-    private String language;
 
     public ProcessPublicTransportDirection(Activity context,
                                            VehicleEntity vehicle, String htmlResult) {
@@ -65,7 +63,7 @@ public class ProcessPublicTransportDirection {
         DirectionsEntity ptDirectionEntity = new DirectionsEntity();
 
         String[] htmlDirectionsParts = htmlResult
-                .split(Constants.SCHECULE_REGEX_DIRECTION_PARTS);
+                .split(Constants.SCHEDULE_REGEX_DIRECTION_PARTS);
         if (htmlDirectionsParts.length > 2) {
             ptDirectionEntity.setVehicle(vehicle);
             ptDirectionEntity.setVt(getDirectionsHiddenVariables("vt",
@@ -94,11 +92,11 @@ public class ProcessPublicTransportDirection {
                                                            String... htmlDirectionsParts) {
         ArrayList<String> hiddenVariableValues = new ArrayList<String>();
         Pattern pattern = Pattern.compile(String.format(
-                Constants.SCHECULE_REGEX_DIRECTION_HIDDEN_VARIABLE, name));
+                Constants.SCHEDULE_REGEX_DIRECTION_HIDDEN_VARIABLE, name));
 
         if (htmlDirectionsParts != null) {
-            for (int i = 0; i < htmlDirectionsParts.length; i++) {
-                Matcher matcher = pattern.matcher(htmlDirectionsParts[i]);
+            for (String htmlDirectionsPart : htmlDirectionsParts) {
+                Matcher matcher = pattern.matcher(htmlDirectionsPart);
 
                 if (matcher.find()) {
                     hiddenVariableValues.add(matcher.group(1));
@@ -118,10 +116,10 @@ public class ProcessPublicTransportDirection {
     private ArrayList<String> getDirectionsNames(String... htmlDirectionsParts) {
         ArrayList<String> directionsNames = new ArrayList<String>();
         Pattern pattern = Pattern
-                .compile(Constants.SCHECULE_REGEX_DIRECTION_NAME);
+                .compile(Constants.SCHEDULE_REGEX_DIRECTION_NAME);
 
-        for (int i = 0; i < htmlDirectionsParts.length; i++) {
-            Matcher matcher = pattern.matcher(htmlDirectionsParts[i]);
+        for (String htmlDirectionsPart : htmlDirectionsParts) {
+            Matcher matcher = pattern.matcher(htmlDirectionsPart);
 
             if (matcher.find()) {
                 String directionName = Utils.formatDirectionName(matcher
@@ -149,11 +147,11 @@ public class ProcessPublicTransportDirection {
             String... htmlDirectionsParts) {
         ArrayList<ArrayList<StationEntity>> ptDirectionsList = new ArrayList<ArrayList<StationEntity>>();
         Pattern pattern = Pattern
-                .compile(Constants.SCHECULE_REGEX_DIRECTION_STATION);
+                .compile(Constants.SCHEDULE_REGEX_DIRECTION_STATION);
 
         stationDatasource.open();
-        for (int i = 0; i < htmlDirectionsParts.length; i++) {
-            Matcher matcher = pattern.matcher(htmlDirectionsParts[i]);
+        for (String htmlDirectionsPart : htmlDirectionsParts) {
+            Matcher matcher = pattern.matcher(htmlDirectionsPart);
             ArrayList<StationEntity> ptStationsList = new ArrayList<StationEntity>();
 
             while (matcher.find()) {

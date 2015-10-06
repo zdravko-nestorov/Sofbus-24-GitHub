@@ -19,20 +19,14 @@ import bg.znestorov.sofbus24.main.R;
  * Class used to show the user an alert dialog, because no Google Play services
  * are installed on its device
  * <p/>
- * {@link https://code.google.com/p/android/issues/detail?id=42543}
+ * https://code.google.com/p/android/issues/detail?id=42543
  *
  * @author Zdravko Nestorov
  * @version 1.0
  */
 public class GooglePlayServicesErrorDialog extends DialogFragment {
 
-    public static final String BUNDLE_GOOGLE_PLAY_SERVICES_MESSAGE = "GOOGLE PLAY SERVICES MESSAGE";
-    private Activity context;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
+    private static final String BUNDLE_GOOGLE_PLAY_SERVICES_MESSAGE = "GOOGLE PLAY SERVICES MESSAGE";
 
     public static GooglePlayServicesErrorDialog newInstance(String message) {
 
@@ -48,14 +42,14 @@ public class GooglePlayServicesErrorDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        context = getActivity();
-        title = getString(R.string.app_google_play_titlte);
-        message = Html.fromHtml(getArguments().getString(
+        Activity context = getActivity();
+        String title = getString(R.string.app_google_play_title);
+        Spanned message = Html.fromHtml(getArguments().getString(
                 BUNDLE_GOOGLE_PLAY_SERVICES_MESSAGE));
-        negativeBtn = getString(R.string.app_button_later);
-        positiveBtn = getString(R.string.app_button_install);
+        String negativeBtn = getString(R.string.app_button_later);
+        String positiveBtn = getString(R.string.app_button_install);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             public void onClick(DialogInterface dialog, int i) {
                 // Try the new HTTP method
                 try {

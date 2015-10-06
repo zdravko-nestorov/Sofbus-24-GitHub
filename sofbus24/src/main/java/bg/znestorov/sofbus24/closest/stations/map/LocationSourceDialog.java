@@ -23,23 +23,17 @@ import bg.znestorov.sofbus24.main.R;
 public class LocationSourceDialog extends DialogFragment {
 
     private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
-        icon = R.drawable.ic_menu_mylocation;
-        title = getString(R.string.app_dialog_title_error);
-        message = Html.fromHtml(getString(R.string.app_location_access_error));
-        negativeBtn = getString(R.string.app_button_later);
-        positiveBtn = getString(R.string.app_button_activate);
+        int icon = R.drawable.ic_menu_mylocation;
+        String title = getString(R.string.app_dialog_title_error);
+        Spanned message = Html.fromHtml(getString(R.string.app_location_access_error));
+        String negativeBtn = getString(R.string.app_button_later);
+        String positiveBtn = getString(R.string.app_button_activate);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             public void onClick(DialogInterface dialog, int i) {
                 Intent intent = new Intent(
                         android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);

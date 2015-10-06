@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values-ca/common_strings.xml -->
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-ca/common_strings.xml -->
     <eat-comment/>
     <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> necessita que s\'actualitzi l\'aplicació Android Wear."</string>
     <string msgid="2453027084525739603" name="common_android_wear_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no s\'executarà fins que no actualitzis l\'aplicació Android Wear."</string>
@@ -32,6 +32,7 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> no s\'executarà sense els serveis de Google Play, que s\'estan actualitzant en aquest moment."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Actualitzant els serveis de Google Play"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Obre al telèfon"</string>
-    <string msgid="9071884888741449141" name="common_signin_button_text">"Inicia sessió"</string>
-    <string msgid="2429381841831957106" name="common_signin_button_text_long">"Inicia sessió amb Google"</string>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-ca/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Compra amb Google"</string>
 </resources>

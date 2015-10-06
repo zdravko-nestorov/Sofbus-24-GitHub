@@ -22,14 +22,8 @@ import bg.znestorov.sofbus24.main.R;
  */
 public class UpdateApplicationDialog extends DialogFragment {
 
-    public static final String BUNDLE_MESSAGE = "MESSAGE";
+    private static final String BUNDLE_MESSAGE = "MESSAGE";
     private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
 
     public static UpdateApplicationDialog newInstance(String message) {
         Bundle bundle = new Bundle();
@@ -44,13 +38,13 @@ public class UpdateApplicationDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
-        icon = R.drawable.ic_menu_info_details;
-        title = getString(R.string.app_dialog_title_important);
-        message = Html.fromHtml(getArguments().getString(BUNDLE_MESSAGE));
-        negativeBtn = getString(R.string.app_button_later);
-        positiveBtn = getString(R.string.app_button_update);
+        int icon = R.drawable.ic_menu_info_details;
+        String title = getString(R.string.app_dialog_title_important);
+        Spanned message = Html.fromHtml(getArguments().getString(BUNDLE_MESSAGE));
+        String negativeBtn = getString(R.string.app_button_later);
+        String positiveBtn = getString(R.string.app_button_update);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String appPackageName = context.getPackageName();

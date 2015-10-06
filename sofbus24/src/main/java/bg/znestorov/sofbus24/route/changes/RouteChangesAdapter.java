@@ -24,8 +24,8 @@ import bg.znestorov.sofbus24.main.R;
 public class RouteChangesAdapter extends ArrayAdapter<RouteChangesEntity>
         implements Filterable {
 
-    private Activity context;
-    private List<RouteChangesEntity> roadChangesList;
+    private final Activity context;
+    private final List<RouteChangesEntity> roadChangesList;
 
     public RouteChangesAdapter(Activity context,
                                List<RouteChangesEntity> roadChangesList) {

@@ -26,8 +26,6 @@ public class FavouritesInfoDialog extends DialogFragment {
 
     private static final String BUNDLE_STATION = "STATION";
     private Activity context;
-    private ListView favouritesInfoListView;
-    private FavouritesInfoDialogAdapter favouritesInfoDialogAdapter;
 
     public static FavouritesInfoDialog newInstance(StationEntity station) {
         Bundle bundle = new Bundle();
@@ -99,10 +97,10 @@ public class FavouritesInfoDialog extends DialogFragment {
         favouritesInfoList.add(station.getUsageCount() + "");
         favouritesInfoList.add(station.getPosition() + "");
 
-        // Asign the favourites info list to the ListView
-        favouritesInfoListView = (ListView) view
+        // Assign the favourites info list to the ListView
+        ListView favouritesInfoListView = (ListView) view
                 .findViewById(R.id.favourites_info_list);
-        favouritesInfoDialogAdapter = new FavouritesInfoDialogAdapter(context,
+        FavouritesInfoDialogAdapter favouritesInfoDialogAdapter = new FavouritesInfoDialogAdapter(context,
                 favouritesInfoList);
         favouritesInfoListView.setAdapter(favouritesInfoDialogAdapter);
 

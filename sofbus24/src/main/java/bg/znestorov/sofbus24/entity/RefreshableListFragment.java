@@ -20,6 +20,6 @@ public interface RefreshableListFragment {
      *                  list)
      * @param emptyText the text that will be shown if the list is empty
      */
-    public void onFragmentRefresh(Object obj, String emptyText);
+    void onFragmentRefresh(Object obj, String emptyText);
 
 }

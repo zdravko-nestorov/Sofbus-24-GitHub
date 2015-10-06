@@ -6,12 +6,6 @@
     android:versionCode="30"
     android:versionName="3.0">
 
-    <!-- Specify the correct minSDK and targetSDK versions. -->
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="16"
-        tools:ignore="OldTargetApi" />
-
     <!-- Google Maps related permissions -->
     <permission
         android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE"
@@ -129,7 +123,7 @@
             android:theme="@style/PopupTheme" />
         <activity
             android:name="bg.znestorov.sofbus24.main.PreferencesHidden"
-            android:theme="@style/TransperantTheme" />
+            android:theme="@style/TransparentTheme" />
 
         <!-- Edit Tabs -->
         <activity android:name="bg.znestorov.sofbus24.main.EditTabs" />

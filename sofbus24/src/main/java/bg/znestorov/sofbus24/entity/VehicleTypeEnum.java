@@ -26,15 +26,15 @@ public enum VehicleTypeEnum {
     BTT, METRO, METRO1, METRO2,
 
     /**
-     * This vehicles's type is used in the schedule cache to determine if we
+     * This vehicles' type is used in the schedule cache to determine if we
      * want to delete the whole cache or just a cache for a selected vehicle
      */
     BTTM,
 
     /**
      * This vehicle's type is used in Favorites section in case no GPS
-     * coordinates are availble for the current station, and we can't show its
+     * coordinates are available for the current station, and we can't show its
      * image
      */
-    NOIMAGE;
+    NOIMAGE
 }

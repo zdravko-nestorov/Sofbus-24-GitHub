@@ -30,11 +30,11 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  */
 public class RetrieveRouteChangesNews extends AsyncTask<Void, Void, String> {
 
-    private Activity context;
-    private ProgressDialog progressDialog;
-    private RouteChangesEntity routeChanges;
+    private final Activity context;
+    private final ProgressDialog progressDialog;
+    private final RouteChangesEntity routeChanges;
 
-    private ResponseHandler<String> responseHandler;
+    private final ResponseHandler<String> responseHandler;
 
     public RetrieveRouteChangesNews(Activity context,
                                     ProgressDialog progressDialog, RouteChangesEntity routeChanges) {

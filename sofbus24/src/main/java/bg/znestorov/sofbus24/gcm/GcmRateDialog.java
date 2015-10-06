@@ -21,14 +21,6 @@ import bg.znestorov.sofbus24.main.R;
 public class GcmRateDialog extends DialogFragment {
 
     private Activity context;
-    private String title;
-    private String message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private String neutralBtn;
-    private OnClickListener negativeOnClickListener;
-    private OnClickListener positiveOnClickListener;
-    private OnClickListener neutralOnClickListener;
 
     public static GcmRateDialog newInstance() {
         return new GcmRateDialog();
@@ -38,20 +30,20 @@ public class GcmRateDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();
-        title = getString(R.string.app_dialog_title_rate);
-        message = getString(R.string.gcm_dialog_message_rate);
-        negativeBtn = getString(R.string.app_button_no_thanks);
-        positiveBtn = getString(R.string.app_button_rate);
-        neutralBtn = getString(R.string.app_button_remind_later);
+        String title = getString(R.string.app_dialog_title_rate);
+        String message = getString(R.string.gcm_dialog_message_rate);
+        String negativeBtn = getString(R.string.app_button_no_thanks);
+        String positiveBtn = getString(R.string.app_button_rate);
+        String neutralBtn = getString(R.string.app_button_remind_later);
 
-        negativeOnClickListener = new OnClickListener() {
+        OnClickListener negativeOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 GcmPreferences.storeRated(context, true);
             }
         };
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 GcmPreferences.storeRated(context, true);
@@ -72,7 +64,7 @@ public class GcmRateDialog extends DialogFragment {
             }
         };
 
-        neutralOnClickListener = new OnClickListener() {
+        OnClickListener neutralOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 GcmPreferences.storeRated(context, false);

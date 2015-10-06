@@ -3263,7 +3263,7 @@ public class Devices {
     }
 
     /**
-     * Capitalize the charecters of the string input
+     * Capitalize the characters of the string input
      *
      * @param str the string input
      * @return the capitalized string

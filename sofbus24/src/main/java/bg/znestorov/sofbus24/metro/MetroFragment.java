@@ -36,11 +36,9 @@ import bg.znestorov.sofbus24.utils.activity.NonSwipeableViewPager;
 public class MetroFragment extends SherlockFragment {
 
     private static final String BUNDLE_CURRENT_DIRECTION = "CURRENT DIRECTION";
-    private Activity context;
+    private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private VehiclesDataSource vehiclesDataSource;
     private ViewPager mNonSwipeableViewPager;
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private int currentDirection;
     private boolean isPhoneDevice;
 
@@ -58,7 +56,7 @@ public class MetroFragment extends SherlockFragment {
         LanguageChange.selectLocale(getActivity());
 
         // Get the type of the device
-        context = getActivity();
+        Activity context = getActivity();
         vehiclesDataSource = new VehiclesDataSource(context);
         isPhoneDevice = ((GlobalEntity) context.getApplicationContext())
                 .isPhoneDevice();
@@ -158,7 +156,7 @@ public class MetroFragment extends SherlockFragment {
 
         // Create the adapter that will return a fragment for each of the metro
         // directions
-        mSectionsPagerAdapter = new SectionsPagerAdapter(
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(
                 getChildFragmentManager());
 
         // Set up the ViewPager with the sections adapter and load all tabs at

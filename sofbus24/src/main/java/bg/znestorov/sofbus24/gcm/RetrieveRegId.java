@@ -22,8 +22,8 @@ import bg.znestorov.sofbus24.utils.Utils;
 public class RetrieveRegId extends AsyncTask<Void, Void, String> {
 
     private static final Integer MAX_REGISTRATION_ATTEMPTS = 2;
-    private Activity context;
-    private GlobalEntity globalContext;
+    private final Activity context;
+    private final GlobalEntity globalContext;
     private Integer gcmRegistrationAttempt;
     private GoogleCloudMessaging gcm;
 
@@ -36,7 +36,7 @@ public class RetrieveRegId extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
 
-        String regId = GcmPreferences.getReistrationId(context);
+        String regId = GcmPreferences.getRegistrationId(context);
         String deviceModel = Devices.getDeviceName();
         String deviceOsVersion = Utils.getDeviceOsVersion();
 

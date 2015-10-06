@@ -21,7 +21,7 @@ import bg.znestorov.sofbus24.main.R;
  */
 public class RestartApplicationDialog extends DialogFragment {
 
-    public static final String BUNDLE_IS_RESETTED = "IS RESETTED";
+    private static final String BUNDLE_IS_RESETTED = "IS RESETTED";
 
     public static RestartApplicationDialog newInstance(boolean isResetted) {
         Bundle bundle = new Bundle();

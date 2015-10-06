@@ -29,9 +29,9 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrieveAppConfiguration extends
         AsyncTask<Void, Void, ConfigEntity> {
 
-    private FragmentActivity context;
-    private ProgressDialog progressDialog;
-    private boolean updateApp;
+    private final FragmentActivity context;
+    private final ProgressDialog progressDialog;
+    private final boolean updateApp;
 
     public RetrieveAppConfiguration(FragmentActivity context,
                                     ProgressDialog progressDialog, boolean updateApp) {

@@ -28,7 +28,6 @@ public class RouteChangesNews extends SherlockFragmentActivity {
 
     public static final String BUNDLE_ROUTE_CHANGES_NEWS = "ROUTE CHANGES NEWS";
     private Activity context;
-    private ActionBar actionBar;
     private RouteChangesEntity routeChanges;
 
     @Override
@@ -121,7 +120,7 @@ public class RouteChangesNews extends SherlockFragmentActivity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.route_changes_title));

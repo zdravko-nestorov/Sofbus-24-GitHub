@@ -48,7 +48,7 @@ public class FavouritesOrderDialog extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int itemNumber) {
                 String rowText = items[itemNumber].toString();
-                ((OnOrderChoiceListener) getTargetFragment()).onOrderChoosed(
+                ((OnOrderChoiceListener) getTargetFragment()).onOrderChoose(
                         station, getOrderType(rowText));
             }
         });
@@ -104,7 +104,7 @@ public class FavouritesOrderDialog extends DialogFragment {
     }
 
     public interface OnOrderChoiceListener {
-        public void onOrderChoosed(StationEntity station,
-                                   OrderTypeEnum orderType);
+        void onOrderChoose(StationEntity station,
+                           OrderTypeEnum orderType);
     }
 }

@@ -102,13 +102,9 @@ public class TranslatorLatinToCyrillic {
 
                 // Case there are at least 3 more symbols
                 if (input.substring(i).length() > 2) {
-                    if (Character.isUpperCase(input.charAt(i))
+                    capitalFlag = Character.isUpperCase(input.charAt(i))
                             || Character.isUpperCase(input.charAt(i + 1))
-                            || Character.isUpperCase(input.charAt(i + 2))) {
-                        capitalFlag = true;
-                    } else {
-                        capitalFlag = false;
-                    }
+                            || Character.isUpperCase(input.charAt(i + 2));
 
                     String latinSymbol = "" + input.charAt(i)
                             + input.charAt(i + 1) + input.charAt(i + 2);
@@ -116,12 +112,8 @@ public class TranslatorLatinToCyrillic {
                     String cyrillicSymbol = translatorMap.get(latinSymbol);
 
                     if (cyrillicSymbol == null) {
-                        if (Character.isUpperCase(input.charAt(i))
-                                || Character.isUpperCase(input.charAt(i + 1))) {
-                            capitalFlag = true;
-                        } else {
-                            capitalFlag = false;
-                        }
+                        capitalFlag = Character.isUpperCase(input.charAt(i))
+                                || Character.isUpperCase(input.charAt(i + 1));
 
                         latinSymbol = "" + input.charAt(i)
                                 + input.charAt(i + 1);
@@ -135,11 +127,9 @@ public class TranslatorLatinToCyrillic {
                             if (cyrillicSymbol == null) {
                                 output.append(latinSymbol);
                                 j = 1;
-                                continue;
                             } else {
                                 output.append(cyrillicSymbol);
                                 j = 1;
-                                continue;
                             }
                         } else {
                             if (capitalFlag) {
@@ -149,7 +139,6 @@ public class TranslatorLatinToCyrillic {
                                 output.append(cyrillicSymbol);
                             }
                             j = 2;
-                            continue;
                         }
                     } else {
                         if (capitalFlag) {
@@ -159,16 +148,11 @@ public class TranslatorLatinToCyrillic {
                             output.append(cyrillicSymbol);
                         }
                         j = 3;
-                        continue;
                     }
                     // Case there are 2 more symbols
                 } else if (input.substring(i).length() == 2) {
-                    if (Character.isUpperCase(input.charAt(i))
-                            || Character.isUpperCase(input.charAt(i + 1))) {
-                        capitalFlag = true;
-                    } else {
-                        capitalFlag = false;
-                    }
+                    capitalFlag = Character.isUpperCase(input.charAt(i))
+                            || Character.isUpperCase(input.charAt(i + 1));
 
                     String latinSymbol = "" + input.charAt(i)
                             + input.charAt(i + 1);
@@ -182,11 +166,9 @@ public class TranslatorLatinToCyrillic {
                         if (cyrillicSymbol == null) {
                             output.append(latinSymbol);
                             j = 1;
-                            continue;
                         } else {
                             output.append(cyrillicSymbol);
                             j = 1;
-                            continue;
                         }
                     } else {
                         if (capitalFlag) {
@@ -196,7 +178,6 @@ public class TranslatorLatinToCyrillic {
                             output.append(cyrillicSymbol);
                         }
                         j = 2;
-                        continue;
                     }
                     // Case there is 1 more symbol
                 } else if (input.substring(i).length() == 1) {
@@ -206,11 +187,9 @@ public class TranslatorLatinToCyrillic {
                     if (cyrillicSymbol == null) {
                         output.append(latinSymbol);
                         j = 1;
-                        continue;
                     } else {
                         output.append(cyrillicSymbol);
                         j = 1;
-                        continue;
                     }
                 }
             }

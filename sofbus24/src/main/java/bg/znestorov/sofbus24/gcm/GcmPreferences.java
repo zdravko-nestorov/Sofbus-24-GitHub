@@ -12,7 +12,7 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.Utils;
 
 /**
- * Responsible for the iteractions with the SharedPreference file, containing an
+ * Responsible for the interactions with the SharedPreference file, containing an
  * information about the Google Cloud Messaging services
  *
  * @author Zdravko Nestorov
@@ -28,7 +28,7 @@ public class GcmPreferences {
      * @param context the current context
      * @return the registration id from the SharedPreferences file
      */
-    public static String getReistrationId(Context context) {
+    public static String getRegistrationId(Context context) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(
                 Constants.GCM_PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -116,7 +116,7 @@ public class GcmPreferences {
      * Otherwise, do not edit the file
      *
      * @param context          the current context
-     * @param notificationDate the received notification
+     * @param notification the received notification
      */
     public static void storeNotification(Context context,
                                          NotificationEntity notification) {
@@ -170,7 +170,7 @@ public class GcmPreferences {
             case UPDATE_DB:
 
                 // If the type of the notification is UPDATE_DB and the current
-                // dabatase version is the same or higher than the one from the
+                // database version is the same or higher than the one from the
                 // notification - do not save anything in the SharedPreferences file
                 if (!Utils.isInteger(notificationData)
                         || currentConfig.getSofbus24DbVersion() >= Integer
@@ -228,7 +228,7 @@ public class GcmPreferences {
      * @return the isRated param from the SharedPreferences file (if the user
      * already rated the application)
      */
-    public static Boolean isRated(Context context) {
+    private static Boolean isRated(Context context) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(
                 Constants.GCM_PREFERENCES_NAME, Context.MODE_PRIVATE);

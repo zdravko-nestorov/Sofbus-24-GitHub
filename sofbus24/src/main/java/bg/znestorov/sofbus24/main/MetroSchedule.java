@@ -27,15 +27,13 @@ import bg.znestorov.sofbus24.utils.Utils;
 public class MetroSchedule extends SherlockFragmentActivity implements
         ActionBar.TabListener {
 
+    private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private Activity context;
     private ActionBar actionBar;
-
     private ViewPager mViewPager;
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    private int choosenDirection;
+    private int chosenDirection;
     private MetroScheduleEntity metroSchedule;
-    private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +92,7 @@ public class MetroSchedule extends SherlockFragmentActivity implements
         Bundle extras = getIntent().getExtras();
         metroSchedule = (MetroScheduleEntity) extras
                 .get(Constants.BUNDLE_METRO_SCHEDULE);
-        choosenDirection = metroSchedule.getChoosenDirection();
+        chosenDirection = metroSchedule.getChosenDirection();
     }
 
     /**
@@ -160,7 +158,7 @@ public class MetroSchedule extends SherlockFragmentActivity implements
      * Set the active fragment to be firstly visible (the chosen from the user)
      */
     private void setActiveFragment() {
-        mViewPager.setCurrentItem(choosenDirection);
+        mViewPager.setCurrentItem(chosenDirection);
     }
 
     /**

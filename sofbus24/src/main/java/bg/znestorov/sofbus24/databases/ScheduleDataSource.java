@@ -18,18 +18,18 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ScheduleDataSource {
+class ScheduleDataSource {
 
     private static final String EMPTY_COLUMN = "-";
-    // Database fields
-    private SQLiteDatabase database;
-    private ScheduleSQLite dbHelper;
-    private String[] scheduleColumns = {ScheduleSQLite.COLUMN_PK_SCHE_ID,
+    private final ScheduleSQLite dbHelper;
+    private final String[] scheduleColumns = {ScheduleSQLite.COLUMN_PK_SCHE_ID,
             ScheduleSQLite.COLUMN_SCHE_TYPE,
             ScheduleSQLite.COLUMN_SCHE_VEHICLE_NUMBER,
             ScheduleSQLite.COLUMN_SCHE_STATION_NUMBER,
             ScheduleSQLite.COLUMN_SCHE_DATA,
             ScheduleSQLite.COLUMN_SCHE_TIMESTAMP};
+    // Database fields
+    private SQLiteDatabase database;
 
     public ScheduleDataSource(Activity context) {
         this.dbHelper = new ScheduleSQLite(context);
@@ -50,7 +50,7 @@ public class ScheduleDataSource {
      * @param dataType   the type of the inserted data
      * @param dataNumber the number of the inserted data
      * @param data       the data for the current type and number
-     * @return if the data is successfull inserted into the db
+     * @return if the data is successful inserted into the db
      */
     public boolean createVehicleScheduleCache(VehicleTypeEnum dataType,
                                               String dataNumber, Object data) {
@@ -86,7 +86,7 @@ public class ScheduleDataSource {
      * @param vehicleNumber the number of the inserted vehicle
      * @param stationNumber the number of the inserted station
      * @param data          the data for the current type and number
-     * @return if the data is successfull inserted into the db
+     * @return if the data is successful inserted into the db
      */
     public boolean createStationScheduleCache(VehicleTypeEnum vehicleType,
                                               String vehicleNumber, String stationNumber, Object data) {
@@ -121,7 +121,7 @@ public class ScheduleDataSource {
      * @param vehicleType   the type of the inserted data
      * @param vehicleNumber the number of the inserted data
      * @param data          the data for the current type and number
-     * @return if the data is successfull inserted into the db
+     * @return if the data is successful inserted into the db
      */
     public boolean updateVehicleScheduleCache(VehicleTypeEnum vehicleType,
                                               String vehicleNumber, Object data) {
@@ -164,7 +164,7 @@ public class ScheduleDataSource {
      * @param vehicleNumber the number of the inserted data
      * @param stationNumber the number of the inserted station
      * @param data          the data for the current type and number
-     * @return if the data is successfull inserted into the db
+     * @return if the data is successful inserted into the db
      */
     public boolean updateStationScheduleCache(VehicleTypeEnum vehicleType,
                                               String vehicleNumber, String stationNumber, Object data) {
@@ -200,7 +200,7 @@ public class ScheduleDataSource {
     }
 
     /**
-     * Get a shcedule cache via a cache type and number
+     * Get a schedule cache via a cache type and number
      *
      * @param dataType   the type of the searched data
      * @param dataNumber the number of the searched data
@@ -236,7 +236,7 @@ public class ScheduleDataSource {
     }
 
     /**
-     * Get a shcedule cache via a cache type and number
+     * Get a schedule cache via a cache type and number
      *
      * @param vehicleType   the type of the searched data
      * @param vehicleNumber the number of the searched data

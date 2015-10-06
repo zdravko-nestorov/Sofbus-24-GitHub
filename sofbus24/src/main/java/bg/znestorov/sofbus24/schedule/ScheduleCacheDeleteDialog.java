@@ -27,12 +27,6 @@ public class ScheduleCacheDeleteDialog extends DialogFragment {
     private static final String BUNDLE_SCHEDULE_CACHE_TYPE = "SCHEDULE CACHE TYPE";
     private static final String BUNDLE_SCHEDULE_CACHE_NUMBER = "SCHEDULE CACHE NUMBER";
     private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
     private VehicleTypeEnum scheduleCacheType;
     private String scheduleCacheNumber;
     private String vehicleTitle;
@@ -55,10 +49,10 @@ public class ScheduleCacheDeleteDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();
-        icon = R.drawable.ic_menu_delete;
-        title = getString(R.string.app_dialog_title_important);
-        negativeBtn = getString(R.string.app_button_no);
-        positiveBtn = getString(R.string.app_button_yes);
+        int icon = R.drawable.ic_menu_delete;
+        String title = getString(R.string.app_dialog_title_important);
+        String negativeBtn = getString(R.string.app_button_no);
+        String positiveBtn = getString(R.string.app_button_yes);
 
         scheduleCacheType = VehicleTypeEnum.valueOf(getArguments().getString(
                 BUNDLE_SCHEDULE_CACHE_TYPE));
@@ -69,6 +63,7 @@ public class ScheduleCacheDeleteDialog extends DialogFragment {
                 scheduleCacheType, scheduleCacheNumber);
 
         // Check what cache should be deleted (local or all cache)
+        Spanned message;
         switch (scheduleCacheType) {
             case BTTM:
                 message = Html
@@ -80,7 +75,7 @@ public class ScheduleCacheDeleteDialog extends DialogFragment {
                 break;
         }
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

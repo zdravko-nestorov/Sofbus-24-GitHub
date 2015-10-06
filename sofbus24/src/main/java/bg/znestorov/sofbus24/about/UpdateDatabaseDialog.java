@@ -21,14 +21,8 @@ import bg.znestorov.sofbus24.main.R;
  */
 public class UpdateDatabaseDialog extends DialogFragment {
 
-    public static final String BUNDLE_NEW_APPLICATION_CONFIG = "NEW APPLICATION CONFIG";
+    private static final String BUNDLE_NEW_APPLICATION_CONFIG = "NEW APPLICATION CONFIG";
     private FragmentActivity context;
-    private int icon;
-    private String title;
-    private String message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
     private ConfigEntity newConfig;
 
     public static UpdateDatabaseDialog newInstance(ConfigEntity newConfig) {
@@ -44,17 +38,17 @@ public class UpdateDatabaseDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
-        icon = R.drawable.ic_menu_info_details;
-        title = getString(R.string.app_dialog_title_important);
-        message = getString(R.string.about_update_db_new);
-        negativeBtn = getString(R.string.app_button_later);
-        positiveBtn = getString(R.string.app_button_update);
+        int icon = R.drawable.ic_menu_info_details;
+        String title = getString(R.string.app_dialog_title_important);
+        String message = getString(R.string.about_update_db_new);
+        String negativeBtn = getString(R.string.app_button_later);
+        String positiveBtn = getString(R.string.app_button_update);
 
         Bundle bundle = getArguments();
         newConfig = (ConfigEntity) bundle
                 .getSerializable(BUNDLE_NEW_APPLICATION_CONFIG);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ProgressDialog progressDialog = new ProgressDialog(context);

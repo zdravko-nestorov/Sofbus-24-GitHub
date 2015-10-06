@@ -18,19 +18,13 @@
     limitations under the License.
 -->
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
 
-    <gradient
-        android:angle="90"
-        android:centerColor="#00FFFFFF"
-        android:endColor="#40808080"
+    <gradient android:angle="90" android:centerColor="#00FFFFFF" android:endColor="#40808080"
         android:startColor="#40808080" />
 
     <corners android:radius="8dp" />
 
-    <stroke
-        android:width="2dp"
-        android:color="#9933B5E5" />
+    <stroke android:width="2dp" android:color="#9933B5E5" />
 
 </shape><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/rollWheelPicker/src/main/res/drawable/wheel_bg.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/rollWheelPicker/unspecified/res/drawable/wheel_bg.xml -->

@@ -21,7 +21,6 @@ import bg.znestorov.sofbus24.utils.activity.DrawableClickListener.DrawablePositi
  */
 public class SearchEditText extends EditText {
 
-    int actionX, actionY;
     private Drawable drawableRight;
     private Drawable drawableLeft;
     private Drawable drawableTop;
@@ -69,8 +68,8 @@ public class SearchEditText extends EditText {
     public boolean onTouchEvent(MotionEvent event) {
         Rect bounds;
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            actionX = (int) event.getX();
-            actionY = (int) event.getY();
+            int actionX = (int) event.getX();
+            int actionY = (int) event.getY();
             if (drawableBottom != null
                     && drawableBottom.getBounds().contains(actionX, actionY)) {
                 clickListener.onClick(DrawablePosition.BOTTOM);
@@ -131,7 +130,7 @@ public class SearchEditText extends EditText {
                 /**
                  * IF USER CLICKS JUST OUT SIDE THE RECTANGLE OF THE DRAWABLE
                  * THAN ADD X AND SUBTRACT THE Y WITH SOME VALUE SO THAT AFTER
-                 * CALCULATING X AND Y CO-ORDINATE LIES INTO THE DRAWBABLE
+                 * CALCULATING X AND Y CO-ORDINATE LIES INTO THE DRAWABLE
                  * BOUND. - this process help to increase the tappable area of
                  * the rectangle.
                  */
@@ -140,7 +139,7 @@ public class SearchEditText extends EditText {
 
                 /**
                  * Since this is right drawable subtract the value of x from the
-                 * width of view. so that width - tappedarea will result in x
+                 * width of view. so that width - tapped area will result in x
                  * co-ordinate in drawable bound.
                  */
                 x = getWidth() - x;
@@ -158,9 +157,9 @@ public class SearchEditText extends EditText {
                 }
 
 				/*
-				 * If result after calculating for extra tappable area is
+                 * If result after calculating for extra tappable area is
 				 * negative. assign the original value so that after subtracting
-				 * extratapping area value doesn't go into negative value.
+				 * extra tapping area value doesn't go into negative value.
 				 */
 
                 if (y <= 0)

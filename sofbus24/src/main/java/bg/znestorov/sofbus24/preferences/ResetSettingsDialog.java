@@ -85,6 +85,6 @@ public class ResetSettingsDialog extends DialogFragment {
     }
 
     public interface OnResetSettingsListener {
-        public void onResetSettingsClicked();
+        void onResetSettingsClicked();
     }
 }

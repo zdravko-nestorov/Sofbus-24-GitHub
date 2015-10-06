@@ -18,13 +18,4 @@
     <!-- GoogleMapsRoute -->
     <integer name="google_map_route_line_width">4</integer>
 
-    <!-- Home Screen -->
-    <dimen name="home_screen_choice_image_height">70sp</dimen>
-    <dimen name="home_screen_choice_image_width">100sp</dimen>
-    <dimen name="home_screen_confirm_image_height">45sp</dimen>
-    <dimen name="home_screen_confirm_image_width">45sp</dimen>
-    <dimen name="home_screen_motto_image_margin">25sp</dimen>
-    <dimen name="home_screen_title_txt_size">14sp</dimen>
-    <dimen name="home_screen_subtitle_txt_size">9sp</dimen>
-
 </resources>

@@ -8,15 +8,15 @@ import bg.znestorov.sofbus24.entity.RouteChangesEntity;
 import bg.znestorov.sofbus24.utils.Constants;
 
 /**
- * Proccessing the route changes html source code, so take the needed data in an
+ * Processing the route changes html source code, so take the needed data in an
  * array list
  *
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ProcessRouteChanges {
+class ProcessRouteChanges {
 
-    private String htmlResult;
+    private final String htmlResult;
 
     public ProcessRouteChanges(String htmlResult) {
         this.htmlResult = htmlResult;

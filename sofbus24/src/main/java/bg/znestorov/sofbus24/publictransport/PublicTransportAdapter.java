@@ -32,20 +32,19 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class PublicTransportAdapter extends ArrayAdapter<StationEntity>
+class PublicTransportAdapter extends ArrayAdapter<StationEntity>
         implements Filterable {
 
-    private Activity context;
-    private FavouritesDataSource favouritesDatasource;
+    private final Activity context;
+    private final FavouritesDataSource favouritesDatasource;
 
-    private TextView emptyList;
-    private String directionName;
+    private final TextView emptyList;
+    private final String directionName;
 
-    private List<StationEntity> originalStations;
+    private final List<StationEntity> originalStations;
+    private final String language;
     private List<StationEntity> filteredStations;
-
     private Filter stationsFilter;
-    private String language;
 
     public PublicTransportAdapter(Activity context, TextView emptyList,
                                   String directionName, List<StationEntity> stations) {
@@ -167,17 +166,17 @@ public class PublicTransportAdapter extends ArrayAdapter<StationEntity>
                                 context, filterString);
                     }
 
-                    String filterebaleName;
-                    String filterebaleNumber;
+                    String filterableName;
+                    String filterableNumber;
 
-                    // Itterate over all stations and search which ones match
+                    // Iterate over all stations and search which ones match
                     // the filter
                     for (StationEntity station : originalStations) {
-                        filterebaleName = station.getName().toUpperCase();
-                        filterebaleNumber = station.getNumber().toUpperCase();
+                        filterableName = station.getName().toUpperCase();
+                        filterableNumber = station.getNumber().toUpperCase();
 
-                        if (filterebaleName.contains(filterString)
-                                || filterebaleNumber.contains(filterString)) {
+                        if (filterableName.contains(filterString)
+                                || filterableNumber.contains(filterString)) {
                             filterResultsData.add(station);
                         }
                     }
@@ -232,8 +231,8 @@ public class PublicTransportAdapter extends ArrayAdapter<StationEntity>
      * @param viewHolder holder containing all elements in the layout
      * @param station    the station on the current row
      */
-    public void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
-                                                final StationEntity station) {
+    private void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
+                                                 final StationEntity station) {
 
         // Add onClickListener over the addToFavourites ImageView
         viewHolder.addToFavourites.setOnClickListener(new OnClickListener() {

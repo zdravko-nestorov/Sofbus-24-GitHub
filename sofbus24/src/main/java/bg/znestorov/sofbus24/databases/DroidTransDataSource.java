@@ -22,16 +22,14 @@ import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
  */
 public class DroidTransDataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
-    private Sofbus24SQLite dbHelper;
-
-    private String[] vehiColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
+    private final Sofbus24SQLite dbHelper;
+    private final String[] vehiColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER, Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
-
-    private Activity context;
-    private String language;
+    private final Activity context;
+    private final String language;
+    // Database fields
+    private SQLiteDatabase database;
 
     public DroidTransDataSource(Activity context) {
         this.context = context;
@@ -110,9 +108,9 @@ public class DroidTransDataSource {
     }
 
     /**
-     * Get the vehcile numbers for the selected type
+     * Get the vehicle numbers for the selected type
      *
-     * @param vehicleType the choosen vehicle type
+     * @param vehicleType the chosen vehicle type
      * @return the vehicle numbers by type
      */
     public ArrayList<String> getVehicleNumbers(VehicleTypeEnum vehicleType) {
@@ -156,15 +154,15 @@ public class DroidTransDataSource {
     }
 
     /**
-     * Get the vehcile number position for the selected type (retrieve the
+     * Get the vehicle number position for the selected type (retrieve the
      * position in the WheelView)
      *
-     * @param vehicleType           the choosen vehicle type
-     * @param serachedVehicleNumber the searched vehicle number
+     * @param vehicleType           the chosen vehicle type
+     * @param searchedVehicleNumber the searched vehicle number
      * @return the vehicle number position by type
      */
     public int getVehicleNumbersPosition(VehicleTypeEnum vehicleType,
-                                         String serachedVehicleNumber) {
+                                         String searchedVehicleNumber) {
 
         int vehiclePosition = 0;
 
@@ -194,7 +192,7 @@ public class DroidTransDataSource {
         while (!cursor.isAfterLast()) {
 
             String dbVehicleNumber = cursor.getString(0);
-            if (dbVehicleNumber.equals(serachedVehicleNumber)) {
+            if (dbVehicleNumber.equals(searchedVehicleNumber)) {
                 break;
             }
 
@@ -279,7 +277,7 @@ public class DroidTransDataSource {
      * @param direction the current direction
      * @return the opposite direction
      */
-    public String getOppositeDirection(String direction) {
+    private String getOppositeDirection(String direction) {
 
         String oppositeDirection;
         String directionSeparator = " - ";

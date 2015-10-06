@@ -39,15 +39,12 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 public class PublicTransport extends SherlockFragmentActivity implements
         ActionBar.TabListener {
 
+    private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private Activity context;
     private ActionBar actionBar;
-
-    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-
     private int activeDirection;
     private DirectionsEntity ptDirectionsEntity;
-    private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +120,7 @@ public class PublicTransport extends SherlockFragmentActivity implements
                 VehicleTypeEnum vehicleType = vehicle.getType();
                 String vehicleNumber = vehicle.getNumber();
 
-                if (ScheduleDatabaseUtils.isVehiclesScheduleCacheAvaialble(context,
+                if (ScheduleDatabaseUtils.isVehiclesScheduleCacheAvailable(context,
                         vehicleType, vehicleNumber)) {
                     DialogFragment dialogFragment = ScheduleCacheDeleteDialog
                             .newInstance(vehicleType, vehicleNumber);
@@ -184,7 +181,7 @@ public class PublicTransport extends SherlockFragmentActivity implements
 
         // Create the adapter that will return a fragment for each of the
         // primary sections of the application
-        mSectionsPagerAdapter = new SectionsPagerAdapter(
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(
                 getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter and load all tabs at
@@ -281,9 +278,9 @@ public class PublicTransport extends SherlockFragmentActivity implements
      */
     public class RetrievePTRoute extends AsyncTask<Void, Void, Intent> {
 
-        private Activity context;
-        private GlobalEntity globalContext;
-        private ProgressDialog progressDialog;
+        private final Activity context;
+        private final GlobalEntity globalContext;
+        private final ProgressDialog progressDialog;
 
         public RetrievePTRoute(Activity context, ProgressDialog progressDialog) {
             this.context = context;

@@ -36,7 +36,6 @@ public class ClosestStationsList extends SherlockFragmentActivity {
     private SherlockFragmentActivity context;
     private GlobalEntity globalContext;
     private Bundle savedInstanceState;
-    private ActionBar actionBar;
     private View csListFragment;
     private ProgressBar csListLoading;
     private ImageView streetView;
@@ -126,7 +125,7 @@ public class ClosestStationsList extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.cs_list_title));
@@ -139,13 +138,13 @@ public class ClosestStationsList extends SherlockFragmentActivity {
         streetView = (ImageView) findViewById(R.id.cs_list_street_view_image);
         streetViewLoading = (ProgressBar) findViewById(R.id.cs_list_street_view_progress);
         streetViewButton = (ImageButton) findViewById(R.id.cs_list_street_view_button);
-        actionsOverStreetViewFileds();
+        actionsOverStreetViewFields();
     }
 
     /**
      * Set the onClickListener over the GoogleStreetView button
      */
-    private void actionsOverStreetViewFileds() {
+    private void actionsOverStreetViewFields() {
         streetViewButton
                 .setOnClickListener(new android.view.View.OnClickListener() {
                     @Override
@@ -188,7 +187,7 @@ public class ClosestStationsList extends SherlockFragmentActivity {
             csListFragment.onFragmentRefresh(currentLocation, null);
         }
 
-        // Proccess the layout fields
+        // Process the layout fields
         actionsOnFragmentStart();
     }
 
@@ -226,9 +225,6 @@ public class ClosestStationsList extends SherlockFragmentActivity {
 
     /**
      * Load the current location StreetView
-     *
-     * @param imageView   the ImageView of the StreetView from the layout
-     * @param progressBar the ProgressBar shown when the image is loading
      */
     private void loadLocationStreetView() {
         ImageLoader imageLoader = ImageLoader.getInstance();

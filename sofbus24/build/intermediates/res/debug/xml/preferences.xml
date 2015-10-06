@@ -6,8 +6,8 @@
         android:title="@string/pref_category_common">
         <ListPreference
             android:defaultValue="bg"
-            android:entries="@array/languagenChoice"
-            android:entryValues="@array/languagenChoiceValues"
+            android:entries="@array/languageChoice"
+            android:entryValues="@array/languageChoiceValues"
             android:key="appLanguage"
             android:summary="@string/pref_category_common_language_summary"
             android:title="@string/pref_category_common_language_title" />

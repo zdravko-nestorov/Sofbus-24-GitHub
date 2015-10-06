@@ -1,7 +1,6 @@
 <resources>
 
     <!-- Home Screen -->
-    <dimen name="home_screen_choice_image_width">130sp</dimen>
-    <dimen name="home_screen_title_txt_size">22sp</dimen>
+    <dimen name="home_screen_layout_width">360sp</dimen>
 
 </resources>

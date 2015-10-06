@@ -27,7 +27,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
+class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
 
     private final FavouritesDataSource favouritesDatasource;
     private final Activity context;
@@ -118,8 +118,8 @@ public class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
      * @param viewHolder holder containing all elements in the layout
      * @param station    the station on the current row
      */
-    public void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
-                                                final StationEntity station) {
+    private void actionsOverFavouritesImageViews(final ViewHolder viewHolder,
+                                                 final StationEntity station) {
         viewHolder.addToFavourites.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 ActivityUtils.toggleFavouritesStation(context,

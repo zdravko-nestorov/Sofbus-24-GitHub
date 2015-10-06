@@ -17,29 +17,22 @@ import bg.znestorov.sofbus24.main.R;
  * Class used to show the user an alert dialog, because no Google Play services
  * are installed on its device
  * <p/>
- * {@link https://code.google.com/p/android/issues/detail?id=42543}
+ * https://code.google.com/p/android/issues/detail?id=42543
  *
  * @author Zdravko Nestorov
  * @version 1.0
  */
 public class GoogleStreetViewErrorDialog extends DialogFragment {
 
-    private Activity context;
-    private String title;
-    private String message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        context = getActivity();
-        title = getString(R.string.app_google_street_view_title);
-        message = getString(R.string.app_google_street_view_msg);
-        negativeBtn = getString(R.string.app_button_later);
-        positiveBtn = getString(R.string.app_button_install);
+        Activity context = getActivity();
+        String title = getString(R.string.app_google_street_view_title);
+        String message = getString(R.string.app_google_street_view_msg);
+        String negativeBtn = getString(R.string.app_button_later);
+        String positiveBtn = getString(R.string.app_button_install);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             public void onClick(DialogInterface dialog, int i) {
                 // Try the new HTTP method
                 try {

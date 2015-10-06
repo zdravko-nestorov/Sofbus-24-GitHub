@@ -11,11 +11,11 @@
     </string-array>
 
     <!-- Language -->
-    <string-array name="languagenChoice" translatable="false">
+    <string-array name="languageChoice" translatable="false">
         <item name="bg">Български</item>
         <item name="en">English</item>
     </string-array>
-    <string-array name="languagenChoiceValues" translatable="false">
+    <string-array name="languageChoiceValues" translatable="false">
         <item name="bg">bg</item>
         <item name="en">en</item>
     </string-array>
@@ -23,7 +23,7 @@
     <!-- Home Screen Tabs -->
     <string-array name="tabsType">
         <item name="tabsTypeIcon">Изображение</item>
-        <item name="tabsTypeTtitle">Текст</item>
+        <item name="tabsTypeTitle">Текст</item>
         <item name="tabsTypeIconTitle">Изображение и текст</item>
     </string-array>
     <string-array name="tabsTypeValues" translatable="false">

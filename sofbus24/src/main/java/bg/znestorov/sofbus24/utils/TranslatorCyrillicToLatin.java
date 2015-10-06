@@ -103,34 +103,22 @@ public class TranslatorCyrillicToLatin {
             for (int i = 0; i < input.length(); i++) {
                 // Check if the first letter (but not last) is a Capital one
                 if (i == 0 && i < input.length() - 1) {
-                    if (Character.isUpperCase(input.charAt(i + 1))) {
-                        capitalFlag = true;
-                    } else {
-                        capitalFlag = false;
-                    }
+                    capitalFlag = Character.isUpperCase(input.charAt(i + 1));
                 }
 
                 // Check if a letter between the first and last is a Capital one
                 if (i > 0 && i < input.length() - 1) {
-                    if ((Character.isUpperCase(input.charAt(i - 1)) || input
+                    capitalFlag = (Character.isUpperCase(input.charAt(i - 1)) || input
                             .charAt(i - 1) == ' ')
                             && (Character.isUpperCase(input.charAt(i + 1)) || input
                             .charAt(i + 1) == ' ')
                             && !(input.charAt(i - 1) == ' ' && input
-                            .charAt(i + 1) == ' ')) {
-                        capitalFlag = true;
-                    } else {
-                        capitalFlag = false;
-                    }
+                            .charAt(i + 1) == ' ');
                 }
 
                 // Check if the last letter (but not first) is a Capital one
                 if (i > 0 && i == input.length() - 1) {
-                    if (Character.isUpperCase(input.charAt(i - 1))) {
-                        capitalFlag = true;
-                    } else {
-                        capitalFlag = false;
-                    }
+                    capitalFlag = Character.isUpperCase(input.charAt(i - 1));
                 }
 
                 String cyrillicSymbol = input.charAt(i) + "";

@@ -21,16 +21,16 @@ import bg.znestorov.sofbus24.utils.Constants;
 
 /**
  * Class used to share the registration id with the application server (save the
- * registration ids and send notification to them latelty)
+ * registration ids and send notification to them lately)
  *
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class GcmShareExternalServer {
+class GcmShareExternalServer {
 
     /**
      * Share the registration id with the application server (used to save the
-     * registration ids and send notification to them latelty)
+     * registration ids and send notification to them lately)
      *
      * @param context         the current Activity context
      * @param regId           the registration id
@@ -162,8 +162,8 @@ public class GcmShareExternalServer {
         byte[] digest = md.digest();
 
         // Converts the Byte Array to Hex String
-        for (int i = 0; i < digest.length; i++) {
-            sha1Digest += Integer.toString((digest[i] & 0xff) + 0x100, 16)
+        for (byte aDigest : digest) {
+            sha1Digest += Integer.toString((aDigest & 0xff) + 0x100, 16)
                     .substring(1);
         }
 

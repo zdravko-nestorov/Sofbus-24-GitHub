@@ -9,11 +9,9 @@ package bg.znestorov.sofbus24.utils.activity;
  */
 public interface DrawableClickListener {
 
-    public void onClick(DrawablePosition target);
+    void onClick(DrawablePosition target);
 
-    ;
-
-    public static enum DrawablePosition {
+    enum DrawablePosition {
         TOP, BOTTOM, LEFT, RIGHT
     }
 }

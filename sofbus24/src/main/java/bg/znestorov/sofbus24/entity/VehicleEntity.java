@@ -140,9 +140,9 @@ public class VehicleEntity implements Serializable {
     }
 
     /**
-     * Indicates if the vehicle entity has a shcedule URL
+     * Indicates if the vehicle entity has a schedule URL
      *
-     * @return if the vehicle has scedule url
+     * @return if the vehicle has schedule url
      */
     public boolean hasVehicleScheduleUrl() {
 

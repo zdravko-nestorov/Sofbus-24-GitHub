@@ -175,31 +175,28 @@ import android.widget.ListView;
  * @see #setListAdapter
  * @see android.widget.ListView
  */
+@SuppressLint("Registered")
 public class ListActivity extends FragmentActivity {
-    /**
-     * This field should be made private, so it is hidden from the SDK.
-     * {@hide}
-     */
-    protected ListAdapter mAdapter;
-    /**
-     * This field should be made private, so it is hidden from the SDK.
-     * {@hide}
-     */
-    protected ListView mList;
-
-    private Handler mHandler = new Handler();
-    private boolean mFinishedStart = false;
-
-    private Runnable mRequestFocus = new Runnable() {
-        public void run() {
-            mList.focusableViewAvailable(mList);
-        }
-    };
-    private AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {
+    private final Handler mHandler = new Handler();
+    private final AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             onListItemClick((ListView) parent, v, position, id);
         }
     };
+    /**
+     * This field should be made private, so it is hidden from the SDK.
+     */
+    private ListAdapter mAdapter;
+    /**
+     * This field should be made private, so it is hidden from the SDK.
+     */
+    private ListView mList;
+    private final Runnable mRequestFocus = new Runnable() {
+        public void run() {
+            mList.focusableViewAvailable(mList);
+        }
+    };
+    private boolean mFinishedStart = false;
 
     /**
      * This method will be called when an item in the list is selected.
@@ -212,7 +209,7 @@ public class ListActivity extends FragmentActivity {
      * @param position The position of the view in the list
      * @param id       The row id of the item that was clicked
      */
-    protected void onListItemClick(ListView l, View v, int position, long id) {
+    private void onListItemClick(ListView l, View v, int position, long id) {
     }
 
     /**
@@ -258,7 +255,7 @@ public class ListActivity extends FragmentActivity {
      * Set the currently selected list item to the specified
      * position with the adapter's data
      *
-     * @param position
+     * @param position the selected position
      */
     public void setSelection(int position) {
         mList.setSelection(position);
@@ -296,7 +293,7 @@ public class ListActivity extends FragmentActivity {
     /**
      * Provide the cursor for the list view.
      */
-    public void setListAdapter(ListAdapter adapter) {
+    private void setListAdapter(ListAdapter adapter) {
         synchronized (this) {
             ensureList();
             mAdapter = adapter;

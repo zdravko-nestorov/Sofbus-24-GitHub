@@ -33,14 +33,14 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
 public class NavDrawerHelper {
 
-    private FragmentActivity context;
-    private GlobalEntity globalContext;
+    private final FragmentActivity context;
+    private final GlobalEntity globalContext;
 
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
-    private ArrayList<String> navigationItems;
+    private final DrawerLayout mDrawerLayout;
+    private final ListView mDrawerList;
+    private final ArrayList<String> navigationItems;
 
-    private DrawerItemClickListener drawerItemClickListener;
+    private final DrawerItemClickListener drawerItemClickListener;
 
     public NavDrawerHelper(FragmentActivity context,
                            DrawerLayout mDrawerLayout, ListView mDrawerList,
@@ -207,8 +207,8 @@ public class NavDrawerHelper {
      * @param progressDialog the progress dialog
      */
     private void startClosestStationsList(ProgressDialog progressDialog) {
-        progressDialog.setMessage(String.format(context
-                .getString(R.string.app_loading_current_location)));
+        progressDialog.setMessage(context
+                .getString(R.string.app_loading_current_location));
 
         RetrieveCurrentLocation retrieveCurrentLocation = new RetrieveCurrentLocation(
                 context, context.getSupportFragmentManager(), progressDialog,
@@ -225,7 +225,7 @@ public class NavDrawerHelper {
     }
 
     /**
-     * Class responsible for registring user clicks over the navigation drawer
+     * Class responsible for registering user clicks over the navigation drawer
      */
     public class DrawerItemClickListener implements
             ListView.OnItemClickListener {

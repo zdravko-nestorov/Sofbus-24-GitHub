@@ -15,8 +15,8 @@ import java.util.Date;
  */
 public class WorkingDaysCalendar {
 
-    private static int APRIL_DAYS = 30;
-    private static int MAY_DAYS = 31;
+    private static final int APRIL_DAYS = 30;
+    private static final int MAY_DAYS = 31;
 
     /**
      * Check if the current date is a WORKING day (check if it is a Holiday or
@@ -26,11 +26,8 @@ public class WorkingDaysCalendar {
      * @return if the date is working day
      */
     public static boolean isWorkingDay(Calendar date) {
-        if (isHoliday(date) || isWeekend(date)) {
-            return false;
-        }
+        return !(isHoliday(date) || isWeekend(date));
 
-        return true;
     }
 
     /**
@@ -40,12 +37,9 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if the date is holiday
      */
-    public static boolean isHoliday(Calendar date) {
-        if (isStaticHoliday(date) || isFloatingHoliday(date)) {
-            return true;
-        }
+    private static boolean isHoliday(Calendar date) {
+        return isStaticHoliday(date) || isFloatingHoliday(date);
 
-        return false;
     }
 
     /**
@@ -55,16 +49,9 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if the date is from the weekend
      */
-    public static boolean isWeekend(Calendar date) {
-        if (date.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
-            return true;
-        }
+    private static boolean isWeekend(Calendar date) {
+        return date.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || date.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY;
 
-        if (date.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-            return true;
-        }
-
-        return false;
     }
 
     /**
@@ -73,7 +60,7 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if the date is a static holiday
      */
-    public static boolean isStaticHoliday(Calendar date) {
+    private static boolean isStaticHoliday(Calendar date) {
         // New Year
         if (date.get(Calendar.MONTH) == Calendar.JANUARY
                 && date.get(Calendar.DATE) == 1) {
@@ -141,12 +128,9 @@ public class WorkingDaysCalendar {
         }
 
         // Second Day of Christmas
-        if (date.get(Calendar.MONTH) == Calendar.DECEMBER
-                && date.get(Calendar.DATE) == 26) {
-            return true;
-        }
+        return date.get(Calendar.MONTH) == Calendar.DECEMBER
+                && date.get(Calendar.DATE) == 26;
 
-        return false;
     }
 
     /**
@@ -156,12 +140,9 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if the date is a floating holiday
      */
-    public static boolean isFloatingHoliday(Calendar date) {
-        if (isEaster(date) || isAscensionDay(date)) {
-            return true;
-        }
+    private static boolean isFloatingHoliday(Calendar date) {
+        return isEaster(date) || isAscensionDay(date);
 
-        return false;
     }
 
     /**
@@ -170,12 +151,9 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if it is Easter
      */
-    public static boolean isEaster(Calendar date) {
-        if (isEasterFriday(date) || isEasterMonday(date)) {
-            return true;
-        }
+    private static boolean isEaster(Calendar date) {
+        return isEasterFriday(date) || isEasterMonday(date);
 
-        return false;
     }
 
     /**
@@ -184,7 +162,7 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if it is Easter Friday
      */
-    public static boolean isEasterFriday(Calendar date) {
+    private static boolean isEasterFriday(Calendar date) {
         int monthEaster = getEasterMonday(date.get(Calendar.YEAR)).get(
                 Calendar.MONTH);
         int dayEaster = getEasterMonday(date.get(Calendar.YEAR)).get(
@@ -205,7 +183,7 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if it is Easter Monday
      */
-    public static boolean isEasterMonday(Calendar date) {
+    private static boolean isEasterMonday(Calendar date) {
         int monthEaster = getEasterMonday(date.get(Calendar.YEAR)).get(
                 Calendar.MONTH);
         int dayEaster = getEasterMonday(date.get(Calendar.YEAR)).get(
@@ -226,7 +204,7 @@ public class WorkingDaysCalendar {
      * @param date the date to be checked
      * @return if it is Ascension
      */
-    public static boolean isAscensionDay(Calendar date) {
+    private static boolean isAscensionDay(Calendar date) {
         int monthAscDay = getAscensionDay(date.get(Calendar.YEAR)).get(
                 Calendar.MONTH);
         int dayAscDay = getAscensionDay(date.get(Calendar.YEAR)).get(
@@ -248,7 +226,7 @@ public class WorkingDaysCalendar {
      * @return the Ascension date
      */
     @SuppressLint("SimpleDateFormat")
-    public static Calendar getAscensionDay(int year) {
+    private static Calendar getAscensionDay(int year) {
         int monthEaster = getEasterMonday(year).get(Calendar.MONTH);
         int mondayEaster = getEasterMonday(year).get(Calendar.DAY_OF_MONTH);
         int ascensionDay = mondayEaster + 38;
@@ -282,7 +260,7 @@ public class WorkingDaysCalendar {
      * @return the Easter Monday
      */
     @SuppressLint("SimpleDateFormat")
-    public static Calendar getEasterMonday(int year) {
+    private static Calendar getEasterMonday(int year) {
         int goldenNumber = year % 19;
         int epact = (19 * goldenNumber + 24) % 30;
         int vernalEquinoxToPaschalFullMoon = epact - epact / 28;

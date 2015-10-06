@@ -29,19 +29,18 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 public class FavouritesDataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
-    private FavouritesSQLite dbHelper;
-    private String[] allColumns = {FavouritesSQLite.COLUMN_NUMBER,
+    private final String[] allColumns = {FavouritesSQLite.COLUMN_NUMBER,
             FavouritesSQLite.COLUMN_NAME, FavouritesSQLite.COLUMN_LAT,
             FavouritesSQLite.COLUMN_LON, FavouritesSQLite.COLUMN_CUSTOM_FIELD,
             FavouritesSQLite.COLUMN_DATE_ADDED,
             FavouritesSQLite.COLUMN_DATE_LAST_ACCESS,
             FavouritesSQLite.COLUMN_USAGE_COUNT,
             FavouritesSQLite.COLUMN_POSITION};
-
-    private Activity context;
-    private String language;
+    private final Activity context;
+    private final String language;
+    // Database fields
+    private SQLiteDatabase database;
+    private FavouritesSQLite dbHelper;
 
     public FavouritesDataSource(Activity context) {
         this.context = context;
@@ -102,11 +101,11 @@ public class FavouritesDataSource {
             }
             values.put(FavouritesSQLite.COLUMN_DATE_ADDED, dateAdded);
 
-            String dateLastAcces = station.getDateLastAccess();
-            if (dateLastAcces == null || "".equals(dateLastAcces)) {
-                dateLastAcces = currentDate;
+            String dateLastAccess = station.getDateLastAccess();
+            if (dateLastAccess == null || "".equals(dateLastAccess)) {
+                dateLastAccess = currentDate;
             }
-            values.put(FavouritesSQLite.COLUMN_DATE_LAST_ACCESS, dateLastAcces);
+            values.put(FavouritesSQLite.COLUMN_DATE_LAST_ACCESS, dateLastAccess);
 
             values.put(FavouritesSQLite.COLUMN_USAGE_COUNT,
                     station.getUsageCount());
@@ -136,7 +135,7 @@ public class FavouritesDataSource {
     /**
      * Adding a list of stations to the database
      *
-     * @param stationsList the lits of stations
+     * @param stationsList the lists of stations
      */
     public void createStations(List<StationEntity> stationsList) {
         if (stationsList != null && stationsList.size() > 0) {
@@ -200,7 +199,7 @@ public class FavouritesDataSource {
      *
      * @return the last added favorite position
      */
-    public int getLastPoistion() {
+    private int getLastPosition() {
         int nextPosition = 1;
         Cursor cursor = database
                 .query(FavouritesSQLite.TABLE_FAVOURITES, new String[]{"MAX("
@@ -225,7 +224,7 @@ public class FavouritesDataSource {
      * @return the next free position
      */
     private int getNextPosition() {
-        return getLastPoistion() + 1;
+        return getLastPosition() + 1;
     }
 
     /**
@@ -287,7 +286,7 @@ public class FavouritesDataSource {
      *
      * @param stations the new list with stations
      */
-    public void updateStations(List<StationEntity> stations) {
+    private void updateStations(List<StationEntity> stations) {
         for (int i = 0; i < stations.size(); i++) {
             StationEntity station = stations.get(i);
             station.setPosition(i + 1);
@@ -296,7 +295,7 @@ public class FavouritesDataSource {
     }
 
     /**
-     * Update the station information (set the last access date and the usega
+     * Update the station information (set the last access date and the usage
      * count)
      *
      * @param station the new station parameters
@@ -369,10 +368,10 @@ public class FavouritesDataSource {
     /**
      * Check if a station exists in the DB (according to its position)
      *
-     * @param station the input station
+     * @param position the input station position
      * @return the station if it is found in the DB and null otherwise
      */
-    public StationEntity getStation(int position) {
+    private StationEntity getStation(int position) {
         // Selecting the row that contains the station data
         Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
                 allColumns,
@@ -434,7 +433,7 @@ public class FavouritesDataSource {
     }
 
     /**
-     * Get all stations from the database (used only to updgrade the db version)
+     * Get all stations from the database (used only to upgrade the db version)
      *
      * @return a list with all stations from the DB
      */
@@ -498,7 +497,7 @@ public class FavouritesDataSource {
      * @param stationToExclude the station that has to be excluded
      * @return a list with all stations from the DB
      */
-    public ArrayList<StationEntity> getAllStationsSortedWithExcludes(
+    private ArrayList<StationEntity> getAllStationsSortedWithExcludes(
             SortTypeEnum sortType, StationEntity stationToExclude) {
         ArrayList<StationEntity> stations = new ArrayList<StationEntity>();
 
@@ -525,7 +524,7 @@ public class FavouritesDataSource {
     }
 
     /**
-     * Create a string represantion to use it in the query of the sort type
+     * Create a string representation to use it in the query of the sort type
      *
      * @param sortType the current sort type
      * @return the order by query part
@@ -592,7 +591,7 @@ public class FavouritesDataSource {
         StationEntity oldStation = getStation(station);
 
         int oldPosition = oldStation.getPosition();
-        int maxPosition = getLastPoistion();
+        int maxPosition = getLastPosition();
 
         ArrayList<StationEntity> stations = getAllStationsSortedWithExcludes(
                 SortTypeEnum.CUSTOM, station);
@@ -629,14 +628,14 @@ public class FavouritesDataSource {
     /**
      * Indicates if the station is first, medium or last
      *
-     * @param station the choosen station
+     * @param station the chosen station
      * @return if the station is first, medium or last
      */
     public PositionTypeEnum getStationPosition(StationEntity station) {
         station = getStation(station);
 
         int position = station.getPosition();
-        int maxPosition = getLastPoistion();
+        int maxPosition = getLastPosition();
 
         if (position == 1 && position == maxPosition) {
             return PositionTypeEnum.FIRST_AND_LAST;

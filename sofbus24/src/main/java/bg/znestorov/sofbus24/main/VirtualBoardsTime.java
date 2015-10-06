@@ -41,7 +41,6 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
     private Activity context;
     private GlobalEntity globalContext;
     private Bundle savedInstanceState;
-    private ActionBar actionBar;
     private View vbTimeFragment;
     private ProgressBar vbTimeLoading;
     private ImageView vbTimeStreetView;
@@ -178,7 +177,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.vb_time_title));
@@ -194,7 +193,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
         vbTimeStationCaption = (TextView) findViewById(R.id.vb_time_station_caption);
         vbTimeCurrentTime = (TextView) findViewById(R.id.vb_time_current_time);
         vbTimeStreetViewButton = (ImageButton) findViewById(R.id.vb_time_street_view_button);
-        actionsOverStreetViewFileds();
+        actionsOverStreetViewFields();
     }
 
     /**
@@ -202,7 +201,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
      * retrieval of the information and the onClickListener over the
      * GoogleStreetView button
      */
-    private void actionsOverStreetViewFileds() {
+    private void actionsOverStreetViewFields() {
         vbTimeStationCaption.setText(Html.fromHtml(getStationCaption()));
         vbTimeCurrentTime.setText(String.format(
                 getString(R.string.vb_time_current_time),
@@ -275,7 +274,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
             vbTimeFragment.onFragmentRefresh(newVBTimeStation, vbTimeEmptyText);
         }
 
-        // Proccess the layout fields
+        // Process the layout fields
         actionsOnFragmentStart();
     }
 
@@ -310,7 +309,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
         vbTimeFragment.setVisibility(View.VISIBLE);
         vbTimeLoading.setVisibility(View.GONE);
 
-        actionsOverStreetViewFileds();
+        actionsOverStreetViewFields();
     }
 
     /**

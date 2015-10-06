@@ -25,12 +25,12 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class RetrieveDatabases extends
+class RetrieveDatabases extends
         AsyncTask<Void, Void, HashMap<String, InputStream>> {
 
-    private FragmentActivity context;
-    private ProgressDialog progressDialog;
-    private ConfigEntity newConfig;
+    private final FragmentActivity context;
+    private final ProgressDialog progressDialog;
+    private final ConfigEntity newConfig;
 
     public RetrieveDatabases(FragmentActivity context,
                              ProgressDialog progressDialog, ConfigEntity newConfig) {

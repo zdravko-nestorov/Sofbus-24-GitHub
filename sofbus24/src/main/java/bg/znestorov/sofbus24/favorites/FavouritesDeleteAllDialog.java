@@ -20,29 +20,21 @@ import bg.znestorov.sofbus24.main.R;
  */
 public class FavouritesDeleteAllDialog extends DialogFragment {
 
-    private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
-
     public static FavouritesDeleteAllDialog newInstance() {
         return new FavouritesDeleteAllDialog();
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        context = getActivity();
-        icon = R.drawable.ic_menu_delete;
-        title = getString(R.string.app_dialog_title_important);
-        message = Html
+        Activity context = getActivity();
+        int icon = R.drawable.ic_menu_delete;
+        String title = getString(R.string.app_dialog_title_important);
+        Spanned message = Html
                 .fromHtml(getString(R.string.fav_menu_remove_all_confirmation));
-        negativeBtn = getString(R.string.app_button_no);
-        positiveBtn = getString(R.string.app_button_yes);
+        String negativeBtn = getString(R.string.app_button_no);
+        String positiveBtn = getString(R.string.app_button_yes);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ((OnDeleteAllFavouritesListener) getTargetFragment())
@@ -59,6 +51,6 @@ public class FavouritesDeleteAllDialog extends DialogFragment {
     }
 
     public interface OnDeleteAllFavouritesListener {
-        public void onDeleteAllFavouritesClicked();
+        void onDeleteAllFavouritesClicked();
     }
 }

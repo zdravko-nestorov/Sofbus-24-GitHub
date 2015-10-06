@@ -45,9 +45,9 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     public static final String COLUMN_FK_VEST_VEHI_ID = "FK_VEST_VEHI_ID";
     public static final String COLUMN_FK_VEST_STAT_ID = "FK_VEST_STAT_ID";
     public static final String COLUMN_VEST_DIRECTION = "VEST_DIRECTION";
-    private static final int DATABASE_VERSION = 1;
     // The Android's default system path of the database
-    public static String DB_NAME = "sofbus24.db";
+    public static final String DB_NAME = "sofbus24.db";
+    private static final int DATABASE_VERSION = 1;
     private final Activity context;
     private SQLiteDatabase dbSofbus24;
 
@@ -81,8 +81,8 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		/*
-		 * Not needed anymore, because there was a bug when trying to put a new
-		 * version of the database in the cofigugration data folder. The new
+         * Not needed anymore, because there was a bug when trying to put a new
+		 * version of the database in the configuration data folder. The new
 		 * version of the db was '2'. which is causing the problem 'Can't
 		 * downgrade database from version 2 to 1'. Because of this we need to
 		 * override the method if you want to be able to run the application
@@ -107,10 +107,10 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
      * Create or upgrade (if needed) the database
      *
      * @param is           the database file input stream (or null if the app will use
-     *                     the internal embeded database)
+     *                     the internal embedded database)
      * @param newDbVersion the new version of the database
      */
-    public void createOrUpgradeDabaBase(InputStream is, int newDbVersion) {
+    public void createOrUpgradeDataBase(InputStream is, int newDbVersion) {
 
         // Update the configuration file only in case the upgrade of the
         // database is because of a new version of the application (not in case
@@ -148,7 +148,7 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
      * database
      *
      * @param is the database file input stream (or null if the app will use
-     *           the internal embeded database)
+     *           the internal embedded database)
      */
     private void createDataBase(InputStream is) {
 

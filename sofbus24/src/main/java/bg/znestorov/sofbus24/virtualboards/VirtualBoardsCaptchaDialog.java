@@ -31,14 +31,12 @@ import bg.znestorov.sofbus24.utils.activity.SerialBitmap;
  */
 public class VirtualBoardsCaptchaDialog extends DialogFragment {
 
-    public static final String BUNDLE_CAPTCHA_ID = "CAPTCHA ID";
-    public static final String BUNDLE_CAPTCHA_IMAGE = "CAPTCHA IMAGE";
+    private static final String BUNDLE_CAPTCHA_ID = "CAPTCHA ID";
+    private static final String BUNDLE_CAPTCHA_IMAGE = "CAPTCHA IMAGE";
     private static final String BUNDLE_INPUT_TEXT = "INPUT TEXT";
     private Activity context;
     private String captchaId;
-    private Bitmap captchaImage;
     private EditText input;
-    private String inputText;
 
     public static VirtualBoardsCaptchaDialog newInstance(String captchaId,
                                                          Bitmap captchaImage) {
@@ -57,9 +55,10 @@ public class VirtualBoardsCaptchaDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
         captchaId = getArguments().getString(BUNDLE_CAPTCHA_ID);
-        captchaImage = ((SerialBitmap) getArguments().getSerializable(
+        Bitmap captchaImage = ((SerialBitmap) getArguments().getSerializable(
                 BUNDLE_CAPTCHA_IMAGE)).getBitmap();
 
+        String inputText;
         if (savedInstanceState != null) {
             inputText = savedInstanceState.getString(BUNDLE_INPUT_TEXT);
         } else {
@@ -161,8 +160,8 @@ public class VirtualBoardsCaptchaDialog extends DialogFragment {
 
     public interface OnCaptchaActionsListener {
 
-        public void onCaptchaCompleted(String captchaId, String captchaText);
+        void onCaptchaCompleted(String captchaId, String captchaText);
 
-        public void onCaptchaCancelled();
+        void onCaptchaCancelled();
     }
 }

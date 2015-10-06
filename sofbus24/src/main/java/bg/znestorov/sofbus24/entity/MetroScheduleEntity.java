@@ -18,20 +18,18 @@ import java.util.List;
 public class MetroScheduleEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    private int choosenDirection;
+    private final int metroStationsSize;
+    private int chosenDirection;
     private List<MetroStationEntity> metroStations;
-    private int metroStationsSize;
-
     private String scheduleCacheTimestamp;
 
-    public MetroScheduleEntity(int choosenDirection,
+    public MetroScheduleEntity(int chosenDirection,
                                MetroStationEntity metroStation1, MetroStationEntity metroStation2) {
-        this.choosenDirection = choosenDirection;
+        this.chosenDirection = chosenDirection;
 
         this.metroStations = new ArrayList<MetroStationEntity>();
         this.metroStations.add(metroStation1);
-        if (choosenDirection == 0) {
+        if (chosenDirection == 0) {
             this.metroStations.add(metroStation2);
         } else {
             this.metroStations.add(0, metroStation2);
@@ -41,12 +39,12 @@ public class MetroScheduleEntity implements Serializable {
                 : 0;
     }
 
-    public int getChoosenDirection() {
-        return choosenDirection;
+    public int getChosenDirection() {
+        return chosenDirection;
     }
 
-    public void setChoosenDirection(int choosenDirection) {
-        this.choosenDirection = choosenDirection;
+    public void setChosenDirection(int chosenDirection) {
+        this.chosenDirection = chosenDirection;
     }
 
     public List<MetroStationEntity> getMetroStations() {
@@ -70,7 +68,7 @@ public class MetroScheduleEntity implements Serializable {
     }
 
     /**
-     * Get the station at a choosen position
+     * Get the station at a chosen position
      *
      * @param position the user defined position
      * @return the found station
@@ -85,12 +83,12 @@ public class MetroScheduleEntity implements Serializable {
     }
 
     /**
-     * Get the choosen station
+     * Get the chosen station
      *
-     * @return the choosen StationEntity
+     * @return the chosen StationEntity
      */
-    public MetroStationEntity getChoosenStationEntity() {
-        return getStationEntity(choosenDirection);
+    public MetroStationEntity getChosenStationEntity() {
+        return getStationEntity(chosenDirection);
     }
 
     /**
@@ -103,10 +101,10 @@ public class MetroScheduleEntity implements Serializable {
     }
 
     /**
-     * Get the name of the choosen direction and format it appropriate
+     * Get the name of the chosen direction and format it appropriate
      *
      * @param context  the current activity context
-     * @param position the choosen direction
+     * @param position the chosen direction
      * @return the formatted direction name
      */
     public String getDirectionName(Activity context, int position) {
@@ -138,30 +136,30 @@ public class MetroScheduleEntity implements Serializable {
     }
 
     /**
-     * Set the direction of the station on the choosen position
+     * Set the direction of the station on the chosen position
      *
-     * @param position           the choosen position
-     * @param docStationSchedule the document with the information about the choosen station
+     * @param position           the chosen position
+     * @param docStationSchedule the document with the information about the chosen station
      */
     public void setDirection(int position, Document docStationSchedule) {
         getStationEntity(position).setDirection(docStationSchedule);
     }
 
     /**
-     * Set the weekday schedule of the station on the choosen position
+     * Set the weekday schedule of the station on the chosen position
      *
-     * @param position           the choosen position
-     * @param docStationSchedule the document with the information about the choosen station
+     * @param position           the chosen position
+     * @param docStationSchedule the document with the information about the chosen station
      */
     public void setWeekdaySchedule(int position, Document docStationSchedule) {
         getStationEntity(position).setWeekdaySchedule(docStationSchedule);
     }
 
     /**
-     * Set the holiday schedule of the station on the choosen position
+     * Set the holiday schedule of the station on the chosen position
      *
-     * @param position           the choosen position
-     * @param docStationSchedule the document with the information about the choosen station
+     * @param position           the chosen position
+     * @param docStationSchedule the document with the information about the chosen station
      */
     public void setHolidaySchedule(int position, Document docStationSchedule) {
         getStationEntity(position).setHolidaySchedule(docStationSchedule);
@@ -179,8 +177,8 @@ public class MetroScheduleEntity implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getName() + " {\n\tchoosenDirection: "
-                + choosenDirection + "\n\tmetroStations: " + metroStations
+        return getClass().getName() + " {\n\tchosenDirection: "
+                + chosenDirection + "\n\tmetroStations: " + metroStations
                 + "\n\tmetroStationsSize: " + metroStationsSize
                 + "\n\tscheduleCacheTimestamp: " + scheduleCacheTimestamp
                 + "\n}";

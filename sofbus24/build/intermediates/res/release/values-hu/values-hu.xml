@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values-hu/common_strings.xml -->
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-hu/common_strings.xml -->
     <eat-comment/>
     <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"A(z) <ns1:g id="APP_NAME">%1$s</ns1:g> alkalmazás az Android Wear alkalmazás frissítését igényli."</string>
     <string msgid="2453027084525739603" name="common_android_wear_update_text">"A(z) <ns1:g id="APP_NAME">%1$s</ns1:g> alkalmazás csak az Android Wear alkalmazás frissítését követően fog működni."</string>
@@ -32,6 +32,7 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"A(z) <ns1:g id="APP_NAME">%1$s</ns1:g> alkalmazás nem fut a Google Play-szolgáltatások nélkül, amelyek éppen frissülnek."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"A Google Play-szolgáltatások frissülnek"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Megnyitás a telefonon"</string>
-    <string msgid="9071884888741449141" name="common_signin_button_text">"Belépés"</string>
-    <string msgid="2429381841831957106" name="common_signin_button_text_long">"Google-bejelentkezés"</string>
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-hu/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Vásárlás a Google-lal"</string>
 </resources>

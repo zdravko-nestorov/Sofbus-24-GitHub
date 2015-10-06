@@ -1,10 +1,10 @@
 package bg.znestorov.sofbus24.databases;
 
+import android.app.Activity;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-
-import android.app.Activity;
 
 /**
  * Class containing all helping functions for creating the Stations DB from an
@@ -17,7 +17,7 @@ public class Sofbus24DatabaseUtils {
 
     /**
      * The version of the database. When an application update is made, it is
-     * recomended to use the same version that is used into the ConfigData
+     * recommended to use the same version that is used into the ConfigData
      * project. This way when the user install it for a first time or update it,
      * the version will be the same as in the config file, which won't activate
      * the automatic application update (it may be one version up - all is up to
@@ -43,7 +43,7 @@ public class Sofbus24DatabaseUtils {
 
         InputStream dbInputStream = getDatabaseInputStream(context);
         Sofbus24SQLite myDbHelper = new Sofbus24SQLite(context);
-        myDbHelper.createOrUpgradeDabaBase(dbInputStream, DB_STATIONS_VERSION);
+        myDbHelper.createOrUpgradeDataBase(dbInputStream, DB_STATIONS_VERSION);
 
         // Delete the new db file after the DB is updated (if the update is done
         // via the application)
@@ -85,9 +85,9 @@ public class Sofbus24DatabaseUtils {
      * @param context
      *            the current Activity context
      * @param path
-     *            the dabatase file
+     *            the database file
      */
-    private static void deleteDabatase(Activity context, String path) {
+    private static void deleteDatabase(Activity context, String path) {
         File dbFile = new File(path);
         dbFile.delete();
     }
@@ -99,14 +99,14 @@ public class Sofbus24DatabaseUtils {
      *            the current activity context
      */
     private static void deleteOldDatabases(Activity context) {
-        deleteDabatase(context, DB_PATH + DB_STATIONS_NAME);
-        deleteDabatase(context, DB_PATH + DB_STATIONS_JOURNAL_NAME);
-        deleteDabatase(context, DB_PATH + DB_VEHICLES_NAME);
-        deleteDabatase(context, DB_PATH + DB_VEHICLES_JOURNAL_NAME);
+        deleteDatabase(context, DB_PATH + DB_STATIONS_NAME);
+        deleteDatabase(context, DB_PATH + DB_STATIONS_JOURNAL_NAME);
+        deleteDatabase(context, DB_PATH + DB_VEHICLES_NAME);
+        deleteDatabase(context, DB_PATH + DB_VEHICLES_JOURNAL_NAME);
     }
 
     /**
-     * Get the input dabatase stream (if a dabatase update is found - get the
+     * Get the input database stream (if a database update is found - get the
      * stream from the Files folder and delete the existing database)
      *
      * @param context

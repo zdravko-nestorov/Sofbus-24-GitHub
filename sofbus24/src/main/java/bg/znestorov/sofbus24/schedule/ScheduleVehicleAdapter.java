@@ -29,18 +29,17 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ScheduleVehicleAdapter extends ArrayAdapter<VehicleEntity> {
+class ScheduleVehicleAdapter extends ArrayAdapter<VehicleEntity> {
 
     private final Activity context;
     private final List<VehicleEntity> originalVehicles;
-    private View emptyView;
-    private TextView emptyTextView;
-    private String vehicleName;
+    private final View emptyView;
+    private final TextView emptyTextView;
+    private final String vehicleName;
+    private final boolean isPhoneDevice;
+    private final String language;
     private List<VehicleEntity> filteredVehicles;
-
-    private boolean isPhoneDevice;
     private Filter stationsFilter;
-    private String language;
 
     public ScheduleVehicleAdapter(Activity context, View emptyView,
                                   TextView emptyTextView, String vehicleName,
@@ -168,17 +167,17 @@ public class ScheduleVehicleAdapter extends ArrayAdapter<VehicleEntity> {
                                 context, filterString);
                     }
 
-                    String filterebleNumber;
+                    String filteredNumber;
                     String filterableDirection;
 
-                    // Itterate over all stations and search which ones match
+                    // Iterate over all stations and search which ones match
                     // the filter
                     for (VehicleEntity vehicle : originalVehicles) {
-                        filterebleNumber = vehicle.getNumber().toUpperCase();
+                        filteredNumber = vehicle.getNumber().toUpperCase();
                         filterableDirection = vehicle.getDirection()
                                 .toUpperCase();
 
-                        if (filterebleNumber.contains(filterString)
+                        if (filteredNumber.contains(filterString)
                                 || filterableDirection.contains(filterString)) {
                             filterResultsData.add(vehicle);
                         }

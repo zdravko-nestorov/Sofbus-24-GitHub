@@ -35,10 +35,10 @@ import com.actionbarsherlock.view.MenuItem;
  */
 public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
 
-    private Context mContext;
-    private MenuBuilder mMenu;
-    private View mAnchor;
-    private MenuPopupHelper mPopup;
+    private final Context mContext;
+    private final MenuBuilder mMenu;
+    private final View mAnchor;
+    private final MenuPopupHelper mPopup;
     private OnMenuItemClickListener mMenuItemClickListener;
     private OnDismissListener mDismissListener;
 
@@ -125,28 +125,16 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
         mDismissListener = listener;
     }
 
-    /**
-     * @hide
-     */
     public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item) {
-        if (mMenuItemClickListener != null) {
-            return mMenuItemClickListener.onMenuItemClick(item);
-        }
-        return false;
+        return mMenuItemClickListener != null && mMenuItemClickListener.onMenuItemClick(item);
     }
 
-    /**
-     * @hide
-     */
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {
         if (mDismissListener != null) {
             mDismissListener.onDismiss(this);
         }
     }
 
-    /**
-     * @hide
-     */
     public boolean onOpenSubMenu(MenuBuilder subMenu) {
         if (subMenu == null)
             return false;
@@ -161,15 +149,9 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
         return true;
     }
 
-    /**
-     * @hide
-     */
     public void onCloseSubMenu(SubMenuBuilder menu) {
     }
 
-    /**
-     * @hide
-     */
     public void onMenuModeChange(MenuBuilder menu) {
     }
 
@@ -183,7 +165,7 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
          *
          * @param menu The PopupMenu that was dismissed.
          */
-        public void onDismiss(PopupMenu menu);
+        void onDismiss(PopupMenu menu);
     }
 
     /**
@@ -199,6 +181,6 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
          * @return <code>true</code> if the event was handled,
          * <code>false</code> otherwise.
          */
-        public boolean onMenuItemClick(MenuItem item);
+        boolean onMenuItemClick(MenuItem item);
     }
 }

@@ -27,7 +27,7 @@ public class MetroLoadStations {
     private ArrayList<ArrayList<StationEntity>> metroDirectionsList;
     private ArrayList<ArrayList<StationEntity>> metroDirectionsListFormatted;
 
-    protected MetroLoadStations(Activity context) {
+    private MetroLoadStations(Activity context) {
         // Get the directions' names
         VehiclesDataSource vehiclesDatasource = new VehiclesDataSource(context);
         vehiclesDatasource.open();
@@ -97,6 +97,17 @@ public class MetroLoadStations {
         }
 
         return instance;
+    }
+
+    /**
+     * Check if the instance is already created
+     *
+     * @return if the instance is already created
+     */
+    public static boolean isInstanceCreated() {
+
+        return instance != null;
+
     }
 
     public ArrayList<String> getMetroDirectionsNames() {
@@ -182,8 +193,8 @@ public class MetroLoadStations {
      *                    be removed)
      * @return the direction name
      */
-    public String getDirectionName(VehicleTypeEnum vehicleType,
-                                   boolean formatted, boolean truncated) {
+    private String getDirectionName(VehicleTypeEnum vehicleType,
+                                    boolean formatted, boolean truncated) {
         // Get the metro direction according to the vehicle type
         String metroDirectionName;
         switch (vehicleType) {
@@ -248,20 +259,6 @@ public class MetroLoadStations {
         }
 
         return getDirectionList(currentDirection);
-    }
-
-    /**
-     * Check if the instance is already created
-     *
-     * @return if the instance is already created
-     */
-    public static boolean isInstanceCreated() {
-
-        if (instance != null) {
-            return true;
-        }
-
-        return false;
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * Bitmap that allows to be serilalized
+ * Bitmap that allows to be serialized
  *
  * @author Zdravko Nestorov
  * @version 1.0
@@ -27,7 +27,7 @@ public class SerialBitmap implements Serializable {
     /**
      * Converts the Bitmap into a byte array for serialization
      *
-     * @param out
+     * @param out the output stream
      * @throws IOException
      */
     private void writeObject(ObjectOutputStream out) throws IOException {
@@ -38,14 +38,12 @@ public class SerialBitmap implements Serializable {
     }
 
     /**
-     * Deserializes a byte array representing the Bitmap and decodes it
+     * Deserialize a byte array representing the Bitmap and decodes it
      *
-     * @param in
+     * @param in the input stream
      * @throws IOException
-     * @throws ClassNotFoundException
      */
-    private void readObject(ObjectInputStream in) throws IOException,
-            ClassNotFoundException {
+    private void readObject(ObjectInputStream in) throws IOException {
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
         int b;
         while ((b = in.read()) != -1)

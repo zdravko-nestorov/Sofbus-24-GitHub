@@ -42,11 +42,11 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     // The minimum distance and time to for the location updates
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
     private static final long MIN_TIME_BETWEEN_UPDATES = 1000 * 2;
-    private FragmentActivity context;
-    private GlobalEntity globalContext;
-    private FragmentManager fragmentManager;
-    private ProgressDialog progressDialog;
-    private RetrieveCurrentLocationTypeEnum retrieveCurrentLocationType;
+    private final FragmentActivity context;
+    private final GlobalEntity globalContext;
+    private final FragmentManager fragmentManager;
+    private final ProgressDialog progressDialog;
+    private final RetrieveCurrentLocationTypeEnum retrieveCurrentLocationType;
     // Default latitude and longitude
     private double latitude = 0.0;
     private double longitude = 0.0;
@@ -56,7 +56,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     private MyLocationListener myGPSLocationListener;
     // Available Location providers
     private boolean areLocationServicesAvailable;
-    private boolean isAnyProviderEabled;
+    private boolean isAnyProviderEnabled;
 
     public RetrieveCurrentLocation(FragmentActivity context,
                                    FragmentManager fragmentManager, ProgressDialog progressDialog,
@@ -89,7 +89,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                 registerForLocationUpdates();
             }
         } catch (Exception e) {
-            isAnyProviderEabled = false;
+            isAnyProviderEnabled = false;
         }
     }
 
@@ -99,11 +99,11 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
         while (latitude == 0.0 && longitude == 0.0) {
 
             // In case of all providers are disabled - cancel the async task
-            if (!isAnyProviderEabled) {
+            if (!isAnyProviderEnabled) {
                 cancel(true);
             }
 
-            // In case the progress dialog is dissmissed - cancel the async task
+            // In case the progress dialog is dismissed - cancel the async task
             if (progressDialog != null && !progressDialog.isShowing()) {
                 cancel(true);
             }
@@ -187,8 +187,6 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
     /**
      * Check if any of the providers is enabled
-     *
-     * @return if any provider is ebanled
      */
     private void registerForLocationUpdates() {
 
@@ -202,9 +200,9 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                     .isProviderEnabled(NETWORK_PROVIDER);
 
             // Check if any of the providers is enabled
-            isAnyProviderEabled = isGPSEnabled || isNetworkEnabled;
+            isAnyProviderEnabled = isGPSEnabled || isNetworkEnabled;
 
-            if (isAnyProviderEabled) {
+            if (isAnyProviderEnabled) {
                 if (isNetworkEnabled) {
                     if (myNetworkLocationListener == null) {
                         myNetworkLocationListener = new MyLocationListener();
@@ -481,7 +479,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
      */
     private void showLocationMapErrorToast() {
 
-        if (!isAnyProviderEabled) {
+        if (!isAnyProviderEnabled) {
             showLongToast(context
                     .getString(R.string.app_location_modules_error));
         } else {
@@ -495,7 +493,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
      */
     private void showLocationErrorToast() {
 
-        if (!isAnyProviderEabled) {
+        if (!isAnyProviderEnabled) {
             showLongToast(context
                     .getString(R.string.app_location_modules_error));
         } else {
@@ -509,7 +507,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
      */
     private void showNearestStationErrorToast() {
 
-        if (!isAnyProviderEabled) {
+        if (!isAnyProviderEnabled) {
             showLongToast(context
                     .getString(R.string.app_nearest_station_modules_error));
         } else {
@@ -519,7 +517,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     }
 
     /**
-     * Show a location source erro dialog
+     * Show a location source error dialog
      */
     private void showLocationSourceDialog() {
         try {
@@ -536,7 +534,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    public class MyLocationListener implements LocationListener {
+    private class MyLocationListener implements LocationListener {
 
         @Override
         public void onLocationChanged(Location location) {

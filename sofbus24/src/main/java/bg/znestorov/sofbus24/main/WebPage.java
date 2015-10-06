@@ -105,12 +105,12 @@ public class WebPage extends SherlockActivity {
 
                 return true;
             case R.id.action_web_page_home:
-                setActiobBarTitles();
+                setActionBarTitles();
                 loadWebPage(createStationUrlAddress());
 
                 return true;
             case R.id.action_web_page_refresh:
-                setActiobBarTitles();
+                setActionBarTitles();
                 loadWebPage(webPage.getUrl());
 
                 return true;
@@ -126,13 +126,13 @@ public class WebPage extends SherlockActivity {
         actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        setActiobBarTitles();
+        setActionBarTitles();
     }
 
     /**
      * Set the titles of the action bar (title and subtitle)
      */
-    private void setActiobBarTitles() {
+    private void setActionBarTitles() {
         actionBar.setTitle(getString(R.string.web_page_title));
         actionBar.setSubtitle(Utils.getCurrentDateTime());
     }
@@ -196,7 +196,7 @@ public class WebPage extends SherlockActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         int width = displaymetrics.widthPixels;
 
-        Double scale = Double.valueOf(width) / Double.valueOf(719);
+        Double scale = (double) width / (double) 719;
         scale = scale * 100d;
 
         return scale.intValue();
@@ -249,16 +249,16 @@ public class WebPage extends SherlockActivity {
         String vehicleType;
         switch (vehicle.getType()) {
             case BUS:
-                vehicleType = Constants.SUMC_SITE_SCHECULE_AUTOBUS;
+                vehicleType = Constants.SUMC_SITE_SCHEDULE_AUTOBUS;
                 break;
             case TROLLEY:
-                vehicleType = Constants.SUMC_SITE_SCHECULE_TROLLEYBUS;
+                vehicleType = Constants.SUMC_SITE_SCHEDULE_TROLLEYBUS;
                 break;
             case TRAM:
-                vehicleType = Constants.SUMC_SITE_SCHECULE_TRAMWAY;
+                vehicleType = Constants.SUMC_SITE_SCHEDULE_TRAMWAY;
                 break;
             default:
-                vehicleType = Constants.SUMC_SITE_SCHECULE_METRO;
+                vehicleType = Constants.SUMC_SITE_SCHEDULE_METRO;
                 break;
         }
 
@@ -291,7 +291,7 @@ public class WebPage extends SherlockActivity {
     }
 
     /**
-     * Fix the css of the sumc site page (there are a lot of erros with
+     * Fix the css of the sumc site page (there are a lot of errors with
      * scrolling and not needed images)
      *
      * @param view the web view container
@@ -365,8 +365,8 @@ public class WebPage extends SherlockActivity {
      */
     public class WebViewSumcClient extends WebViewClient {
 
-        private ProgressBar progressBar;
-        private View webPageError;
+        private final ProgressBar progressBar;
+        private final View webPageError;
 
         private boolean hasError;
 

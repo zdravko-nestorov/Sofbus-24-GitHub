@@ -29,13 +29,13 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
+class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         implements Filterable {
 
-    private Activity context;
+    private final Activity context;
 
-    private VirtualBoardsStationEntity vbTimeStation;
-    private String timeType;
+    private final VirtualBoardsStationEntity vbTimeStation;
+    private final String timeType;
 
     public VirtualBoardsTimeAdapter(Activity context,
                                     VirtualBoardsStationEntity vbTimeStation) {
@@ -251,19 +251,22 @@ public class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
     private Spanned getRowTimeCaption(VehicleEntity stationVehicle) {
         Spanned rowTimeCaption;
 
-        if (timeType.equals(Constants.PREFERENCE_DEFAULT_VALUE_TIME_TYPE)) {
-            rowTimeCaption = Html.fromHtml(String.format(
-                    context.getString(R.string.vb_time_item_remaining_time),
-                    getRemainingTimes(stationVehicle)));
-        } else if (timeType
-                .equals(Constants.PREFERENCE_DEFAULT_VALUE_TIME_TYPE_ARRIVAL)) {
-            rowTimeCaption = Html.fromHtml(String.format(
-                    context.getString(R.string.vb_time_item_time_of_arrival),
-                    getArrivalTimes(stationVehicle)));
-        } else {
-            rowTimeCaption = Html.fromHtml(String.format(
-                    context.getString(R.string.vb_time_item_both),
-                    getBothTimes(stationVehicle)));
+        switch (timeType) {
+            case Constants.PREFERENCE_DEFAULT_VALUE_TIME_TYPE:
+                rowTimeCaption = Html.fromHtml(String.format(
+                        context.getString(R.string.vb_time_item_remaining_time),
+                        getRemainingTimes(stationVehicle)));
+                break;
+            case Constants.PREFERENCE_DEFAULT_VALUE_TIME_TYPE_ARRIVAL:
+                rowTimeCaption = Html.fromHtml(String.format(
+                        context.getString(R.string.vb_time_item_time_of_arrival),
+                        getArrivalTimes(stationVehicle)));
+                break;
+            default:
+                rowTimeCaption = Html.fromHtml(String.format(
+                        context.getString(R.string.vb_time_item_both),
+                        getBothTimes(stationVehicle)));
+                break;
         }
 
         return rowTimeCaption;

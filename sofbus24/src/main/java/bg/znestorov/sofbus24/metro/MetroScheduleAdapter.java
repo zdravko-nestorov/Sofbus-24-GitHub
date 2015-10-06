@@ -22,10 +22,10 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class MetroScheduleAdapter extends ArrayAdapter<String> {
+class MetroScheduleAdapter extends ArrayAdapter<String> {
 
-    private Activity context;
-    private ScheduleEntity metroScheduleEntity;
+    private final Activity context;
+    private final ScheduleEntity metroScheduleEntity;
 
     public MetroScheduleAdapter(Activity context,
                                 ScheduleEntity metroScheduleEntity) {
@@ -117,7 +117,7 @@ public class MetroScheduleAdapter extends ArrayAdapter<String> {
 
         // Format the metro schedule
         metroSchedule = metroSchedule.replaceAll(
-                "([|]{0,1}[A-Z]{0,2}){0,3}[ ]{1}[(]{1}", " (");
+                "([|]?[A-Z]{0,2}){0,3}[ ][(]", " (");
         metroSchedule = Utils.getValueBefore(metroSchedule, "|");
         metroSchedule = metroSchedule.trim();
 
@@ -134,7 +134,7 @@ public class MetroScheduleAdapter extends ArrayAdapter<String> {
                 break;
             case BP:
                 metroSchedule = metroSchedule
-                        + context.getString(R.string.metro_schedule_bussiness_park);
+                        + context.getString(R.string.metro_schedule_business_park);
                 metroScheduleColor = "#000000";
                 break;
             case IC_SA:
@@ -144,7 +144,7 @@ public class MetroScheduleAdapter extends ArrayAdapter<String> {
                 break;
             case IC_BP:
                 metroSchedule = metroSchedule
-                        + context.getString(R.string.metro_schedule_bussiness_park);
+                        + context.getString(R.string.metro_schedule_business_park);
                 metroScheduleColor = "#FF0017";
                 break;
             default:

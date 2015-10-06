@@ -28,12 +28,10 @@ public class Sofbus24 extends SherlockFragmentActivity {
 
     private static final String TAG_SOFBUS_24_FRAGMENT = "SOFBUS_24_FRAGMENT";
     private FragmentActivity context;
-    private ActionBar actionBar;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private NavDrawerArrayAdapter mMenuAdapter;
-    private ArrayList<String> navigationItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
         LanguageChange.selectLocale(this);
         setContentView(R.layout.activity_sofbus24);
 
-        // Get the application and curren context;
+        // Get the application and current context;
         context = Sofbus24.this;
         ActivityUtils.showHomeActivtyChangedToast(context,
                 getString(R.string.navigation_drawer_home_standard));
@@ -96,7 +94,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
      */
     private void initNavigationDrawer() {
 
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
 
         // Enable ActionBar app icon to behave as action to toggle nav
@@ -105,7 +103,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
         actionBar.setHomeButtonEnabled(true);
 
         // Generate the titles of each row
-        navigationItems = Utils.initNavigationDrawerItems(context);
+        ArrayList<String> navigationItems = Utils.initNavigationDrawerItems(context);
 
         // Locate the DrawerLayout in the layout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer_layout);

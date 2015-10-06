@@ -42,24 +42,23 @@ import bg.znestorov.sofbus24.utils.activity.PopupMenu;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class MetroStationAdapter extends ArrayAdapter<StationEntity> {
+class MetroStationAdapter extends ArrayAdapter<StationEntity> {
 
-    private Activity context;
-    private GlobalEntity globalContext;
+    private final Activity context;
+    private final GlobalEntity globalContext;
 
-    private MetroStationFragment metroStationFragment;
-    private FavouritesDataSource favouritesDatasource;
+    private final MetroStationFragment metroStationFragment;
+    private final FavouritesDataSource favouritesDatasource;
 
-    private View emptyView;
-    private TextView emptyTextView;
-    private String directionName;
+    private final View emptyView;
+    private final TextView emptyTextView;
+    private final String directionName;
 
-    private List<StationEntity> originalStations;
+    private final List<StationEntity> originalStations;
+    private final boolean isPhoneDevice;
+    private final String language;
     private List<StationEntity> filteredStations;
-
-    private boolean isPhoneDevice;
     private Filter stationsFilter;
-    private String language;
 
     public MetroStationAdapter(Activity context,
                                MetroStationFragment metroStationFragment, View emptyView,
@@ -151,7 +150,7 @@ public class MetroStationAdapter extends ArrayAdapter<StationEntity> {
 
     @Override
     public boolean isEmpty() {
-        return filteredStations != null ? filteredStations.isEmpty() : false;
+        return filteredStations != null && filteredStations.isEmpty();
     }
 
     /**
@@ -198,17 +197,17 @@ public class MetroStationAdapter extends ArrayAdapter<StationEntity> {
                                 context, filterString);
                     }
 
-                    String filterebaleName;
-                    String filterebaleNumber;
+                    String filterableName;
+                    String filterableNumber;
 
-                    // Itterate over all stations and search which ones match
+                    // Iterate over all stations and search which ones match
                     // the filter
                     for (StationEntity station : originalStations) {
-                        filterebaleName = station.getName().toUpperCase();
-                        filterebaleNumber = station.getNumber().toUpperCase();
+                        filterableName = station.getName().toUpperCase();
+                        filterableNumber = station.getNumber().toUpperCase();
 
-                        if (filterebaleName.contains(filterString)
-                                || filterebaleNumber.contains(filterString)) {
+                        if (filterableName.contains(filterString)
+                                || filterableNumber.contains(filterString)) {
                             filterResultsData.add(station);
                         }
                     }
@@ -343,7 +342,7 @@ public class MetroStationAdapter extends ArrayAdapter<StationEntity> {
     }
 
     /**
-     * Assing different actions over each item in the menu
+     * Assign different actions over each item in the menu
      *
      * @param id      the menu id
      * @param station the selected station

@@ -20,7 +20,6 @@ import bg.znestorov.sofbus24.main.R;
 public class FavouritesRemoveDialog extends DialogFragment {
 
     private static final String BUNDLE_STATION = "STATION";
-    private Activity context;
 
     private StationEntity station;
 
@@ -36,7 +35,7 @@ public class FavouritesRemoveDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        context = getActivity();
+        Activity context = getActivity();
         station = (StationEntity) getArguments()
                 .getSerializable(BUNDLE_STATION);
 
@@ -62,7 +61,7 @@ public class FavouritesRemoveDialog extends DialogFragment {
     }
 
     public interface OnRemoveFavouritesListener {
-        public void onRemoveFavouritesClicked(StationEntity station);
+        void onRemoveFavouritesClicked(StationEntity station);
     }
 
 }

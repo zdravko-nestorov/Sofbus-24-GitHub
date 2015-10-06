@@ -19,10 +19,10 @@ import bg.znestorov.sofbus24.main.R;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class FavouritesInfoDialogAdapter extends ArrayAdapter<String> {
+class FavouritesInfoDialogAdapter extends ArrayAdapter<String> {
 
-    private Activity context;
-    private ArrayList<String> favouritesInfoList;
+    private final Activity context;
+    private final ArrayList<String> favouritesInfoList;
 
     public FavouritesInfoDialogAdapter(Activity context,
                                        ArrayList<String> favouritesInfoList) {

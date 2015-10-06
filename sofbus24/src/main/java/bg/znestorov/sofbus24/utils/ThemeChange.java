@@ -26,11 +26,11 @@ public class ThemeChange {
      */
     public static AppThemeEnum getAppTheme(Activity context) {
 
-        String choosenTheme = PreferenceManager.getDefaultSharedPreferences(
+        String chosenTheme = PreferenceManager.getDefaultSharedPreferences(
                 context).getString(Constants.PREFERENCE_KEY_APP_THEME,
                 Constants.PREFERENCE_DEFAULT_VALUE_APP_THEME);
 
-        if (Constants.PREFERENCE_DEFAULT_VALUE_APP_THEME.equals(choosenTheme)) {
+        if (Constants.PREFERENCE_DEFAULT_VALUE_APP_THEME.equals(chosenTheme)) {
             return AppThemeEnum.LIGHT;
         } else {
             return AppThemeEnum.DARK;

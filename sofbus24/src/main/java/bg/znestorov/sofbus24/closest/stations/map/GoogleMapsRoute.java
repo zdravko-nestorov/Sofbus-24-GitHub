@@ -24,7 +24,7 @@ import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 /**
- * Asynchronic class used to retrieve the route between a map location and a
+ * Asynchronous class used to retrieve the route between a map location and a
  * station
  *
  * @author Zdravko Nestorov
@@ -32,12 +32,11 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  */
 public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
 
-    private Activity context;
-    private Object callerInstance;
-
+    private final Activity context;
+    private final Object callerInstance;
+    private final String routeUrl;
+    private final String distance;
     private ProgressDialog progressDialog;
-    private String routeUrl;
-    private String distance;
 
     public GoogleMapsRoute(Activity context, Object callerInstance,
                            Location currentLocation, LatLng latLng) {

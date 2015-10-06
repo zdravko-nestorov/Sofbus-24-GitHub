@@ -9,7 +9,6 @@
     <string name="app_img_empty_content_description" />
     <string name="app_button_ok">OK</string>
     <string name="app_button_save">Запази</string>
-    <string name="app_button_confirm">Потвърди</string>
     <string name="app_button_cancel">Отказ</string>
     <string name="app_button_yes">Да</string>
     <string name="app_button_no">Не</string>
@@ -32,8 +31,8 @@
     <string name="app_info_error" formatted="false"><![CDATA[В момента сайтът за градска мобилност не предоставя информация за <b>%s</b>. Моля опитайте пак по-късно.]]></string>
     <string name="app_captcha_error" formatted="false"><![CDATA[Трябва да въведете символите от изображението (<b>captcha код</b>), за да преминете теста за сигурност на <b>СКГТ</b> и да извлечете нужната информация.]]></string>
     <string name="app_internet_or_info_error">В момента няма намерена информация. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
-    <string name="app_loading_current_location" formatted="false"><![CDATA[Локализиране на текущото местоположение...]]></string>
-    <string name="app_loading_closest_station" formatted="false"><![CDATA[Търсене на най-близката спирка...]]></string>
+    <string name="app_loading_current_location" formatted="false"><![CDATA[Локализиране на текущото местоположение…]]></string>
+    <string name="app_loading_closest_station" formatted="false"><![CDATA[Търсене на най-близката спирка…]]></string>
     <string name="app_location_access_error" formatted="false"><![CDATA[Моля активирайте опцията <b><i>\"Достъп до местоположението ми\"</i></b>, за да може <b><i>Софбус 24</i></b> да използва информация за вашата локация.]]></string>
     <string name="app_location_modules_error">Моля включете поне едно от устройствата (Network, WiFi или GPS), за да бъде засечено текущото ви местоположение.</string>
     <string name="app_location_timeout_error">Намирането на текущото местоположение продължи твърде дълго. Моля опитайте отново.</string>
@@ -53,22 +52,19 @@
     <string name="app_toast_add_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
-    <string name="app_google_play_titlte">Услуги за Google Play</string>
+    <string name="app_google_play_title">Услуги за Google Play</string>
     <string name="app_google_play_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_street_view_title">Google Street View</string>
     <string name="app_google_street_view_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на Google Street View, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_send_email_subject">Проблем при стартирането на Софбус 24</string>
-    <string name="app_send_email_body" formatted="false"><![CDATA[Възникна неочакван проблем при стартирането на Софбус 24...]]></string>
+    <string name="app_send_email_body" formatted="false"><![CDATA[Възникна неочакван проблем при стартирането на Софбус 24…]]></string>
     <string name="app_send_email_chooser">Изпращане на мейл</string>
     <string name="app_send_email_chooser_error">Възникна грешка, тъй като няма инсталирани мейл клиенти. Моля добавете, за да може да изпратите мейл.</string>
 
     <!-- Action Bar -->
     <!-- Sofbus24 -->
     <string name="action_droidtrans">Коли на СКГТ</string>
-    <string name="action_recent_history">История</string>
-    <string name="action_closest_stations">Най-близки спирки</string>
     <string name="action_closest_stations_map">Карта</string>
-    <string name="action_closest_stations_list">Списък</string>
     <string name="action_more">Повече</string>
     <string name="action_favourites_sort">Сортирай</string>
     <string name="action_favourites_remove_all">Изтрий всички</string>
@@ -117,9 +113,6 @@
     <!-- Public Transport -->
     <string name="action_pt_route_map">Маршрут</string>
     <string name="action_pt_site">ЦГМ Разписание</string>
-    <string name="action_pt_reset">Нулиране</string>
-    <string name="action_pt_refresh">Обнови</string>
-    <string name="action_pt_map">Карта</string>
     <!-- History -->
     <string name="action_history_top">Най-отгоре</string>
     <string name="action_history_delete_all">Изтрий всички</string>
@@ -130,7 +123,6 @@
     <string name="action_web_page_home">Начало</string>
     <string name="action_web_page_refresh">Обнови</string>
     <!-- Route Changes -->
-    <string name="action_route_changes_top">Най-отгоре</string>
     <string name="action_route_changes_refresh">Обнови</string>
     <!-- Route Changes List -->
     <string name="action_route_changes_copy_link">Копирай линк</string>
@@ -144,7 +136,6 @@
     <string name="menu_fav_google_street_view">Street View</string>
     <string name="menu_fav_information">Информация</string>
     <!-- Metro Station -->
-    <string name="menu_metro_station_title">Изберете действие</string>
     <string name="menu_metro_station_add">Добави в Любими</string>
     <string name="menu_metro_station_remove">Премахни от Любими</string>
     <string name="menu_metro_station_map">Виж на картата</string>
@@ -166,8 +157,8 @@
     <string name="cs_map_type_trolley_tram">Тролеи и Трамваи</string>
     <string name="cs_map_type_bus_trolley_tram">Автобуси, Тролеи и Трамваи</string>
     <string name="cs_map_type_metro">Метро</string>
-    <string name="cs_map_closest_stations" formatted="false"><![CDATA[Визуализиране на най-близките спирки...]]></string>
-    <string name="cs_map_fetch_route" formatted="false"><![CDATA[Изчертаване на маршрута...]]></string>
+    <string name="cs_map_closest_stations" formatted="false"><![CDATA[Визуализиране на най-близките спирки…]]></string>
+    <string name="cs_map_fetch_route" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="cs_map_location_error">Моля изчакайте да бъде локализирано текущото ви местоположение.</string>
     <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
     <string name="cs_map_route_error">Моля изберете спирка от картата, за да бъде визуализиран маршрута до нея.</string>
@@ -238,7 +229,6 @@
     <string name="edit_tabs_schedule_orientation" translatable="false">Разписание</string>
     <string name="edit_tabs_schedule_pre_honeycomb" translatable="false">Разписание</string>
     <string name="edit_tabs_metro">Метро</string>
-    <string name="edit_tabs_metro_orientation" translatable="false">Метро</string>
     <string name="edit_tabs_metro_pre_honeycomb" translatable="false">Метро</string>
     <string name="edit_tabs_toast">Началният екран беше променен</string>
     <string name="edit_tabs_not_saved_title">Потвърждение</string>
@@ -252,13 +242,13 @@
 		разположения на спирките на територията на София, както и локализиране на най-близките спирки, в зависимост от текущото местоположение.<br><br>
 		<i>Данните се извличат от: <b><a href="http://m.sumc.bg">http://m.sumc.bg</a></b></i>]]>
     </string>
-    <string name="about_update_app" formatted="false"><![CDATA[Проверка за нова версия на приложението...]]></string>
+    <string name="about_update_app" formatted="false"><![CDATA[Проверка за нова версия на приложението…]]></string>
     <string name="about_update_app_last" formatted="false"><![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>
     <string name="about_update_app_new" formatted="false"><![CDATA[Налична е нова версия - <b>Софбус 24 - версия %s</b>. Бихте ли желали да обновите приложението?]]></string>
-    <string name="about_update_db" formatted="false"><![CDATA[Проверка за обновление на спирките...]]></string>
+    <string name="about_update_db" formatted="false"><![CDATA[Проверка за обновление на спирките…]]></string>
     <string name="about_update_db_last">В момента няма налично обновление на спирките. Моля опитайте по-късно.</string>
     <string name="about_update_db_new">Налично е обновление на спирките. Бихте ли желали да добавите новите спирки?</string>
-    <string name="about_update_db_copy" formatted="false"><![CDATA[Обновяване на спирките на градския транспорт...]]></string>
+    <string name="about_update_db_copy" formatted="false"><![CDATA[Обновяване на спирките на градския транспорт…]]></string>
     <string name="about_update_db_restart" formatted="false"><![CDATA[Новите спирки бяха добавени успешно. Ще трябва да рестартирате приложението, за да използвате обновената информация. Искате ли да рестартирате <b>Софбус 24</b> сега?]]></string>
 
     <!-- Favourites Fragment -->
@@ -308,8 +298,8 @@
     <string name="vb_time_bus" formatted="false">Автобус №%s</string>
     <string name="vb_time_trolley" formatted="false">Тролей №%s</string>
     <string name="vb_time_tram" formatted="false">Трамвай №%s</string>
-    <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>...]]></string>
-    <string name="vb_time_captcha_check" formatted="false"><![CDATA[Проверка на CAPTCHA изображението...]]></string>
+    <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>…]]></string>
+    <string name="vb_time_captcha_check" formatted="false"><![CDATA[Проверка на CAPTCHA изображението…]]></string>
     <string name="vb_time_sumc_captcha">Тест за сигурност</string>
     <string name="vb_time_sumc_captcha_msg">Моля въведете символите от изображението (на кирилица или латиница):</string>
     <string name="vb_time_item_remaining_time" formatted="false"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
@@ -333,11 +323,11 @@
     <string name="pt_bus" formatted="false">Автобус №%s</string>
     <string name="pt_trolley" formatted="false">Тролей №%s</string>
     <string name="pt_tram" formatted="false">Трамвай №%s</string>
-    <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>...]]></string>
+    <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false">Спирка номер: %s</string>
     <string name="pt_item_station_number_text_sign" formatted="false">Спирка №%s</string>
     <string name="pt_empty_list" formatted="false"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута...]]></string>
+    <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_settings" formatted="false"><![CDATA[Вие изключихте използването на локалното разписание на колите на Градския Транспорт. Искате ли да премахнете запазената досега информация?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_toast" formatted="false"><![CDATA[Локалното разписание на колите на Градския Транспорт беше успешно изтрито.]]></string>
@@ -358,21 +348,15 @@
     <string name="metro_item_station_number_text" formatted="false">Метростанция номер: %s</string>
     <string name="metro_item_station_number_text_sign" formatted="false">Станция №%s</string>
     <string name="metro_item_empty_list" formatted="false"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
-    <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута...]]></string>
-    <string name="metro_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>...]]></string>
-    <string name="metro_schedule_refresh" formatted="false"><![CDATA[Обновяване на оставащото време...]]></string>
+    <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
+    <string name="metro_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>…]]></string>
 
     <!-- Metro Schedule -->
     <string name="metro_schedule_first">Първи влак</string>
     <string name="metro_schedule_last">Последен влак</string>
     <string name="metro_schedule_sofia_airport" formatted="false"><![CDATA[<sup><small><small><b><small> </small>ЛС</b></small></small></sup>]]></string>
-    <string name="metro_schedule_bussiness_park" formatted="false"><![CDATA[<sup><small><small><b><small> </small>БП</b></small></small></sup>]]></string>
+    <string name="metro_schedule_business_park" formatted="false"><![CDATA[<sup><small><small><b><small> </small>БП</b></small></small></sup>]]></string>
     <string name="metro_schedule_legend" formatted="false"><![CDATA[<font color="#FF0017"><sup>*</sup> Червено - Непълни Курсове</font>, <font color="#003366">ЛС - Летище София</font>, <font color="#003366">БП - Бизнес Парк</font>]]></string>
-
-    <!-- Station Map Fragment -->
-    <string name="station_map_buses"><![CDATA[Автобуси: ]]></string>
-    <string name="station_map_trolleys"><![CDATA[Тролеи: ]]></string>
-    <string name="station_map_trams"><![CDATA[Трамваи: ]]></string>
 
     <!-- Station Route Map Fragment -->
     <string name="metro_search_tab_line1">Линия 1</string>
@@ -426,16 +410,9 @@
     <string name="navigation_drawer_home_screen_changed" formatted="false"><![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
 
     <!-- Home Screen Select -->
-    <string name="home_screen_motto">не изпускай автобуса</string>
-    <string name="home_screen_choice_title">МОЛЯ, ИЗБЕРЕТЕ СТАРТОВ ЕКРАН</string>
-    <string name="home_screen_choice_subtitle">(може да бъде променен по всяко време от страничното меню)</string>
-    <string name="home_screen_choice_standard_title">СТАНДАРТЕН</string>
-    <string name="home_screen_choice_standard_subtitle">Бърз достъп до любимите спирки</string>
-    <string name="home_screen_choice_map_title">КАРТА</string>
-    <string name="home_screen_choice_map_subtitle">Карта с най-близките спирки</string>
-    <string name="home_screen_choice_droidtrans_title">КОЛИ НА СКГТ</string>
-    <string name="home_screen_choice_droidtrans_subtitle">Бърз преглед на колите на СКГТ</string>
     <string name="home_screen_copyright">Copyright © Софбус 24 2012. All rights reserved</string>
+    <string name="home_screen_choice">Моля изберете стартов екран (може да бъде променен по всяко време от менюто в ляво):</string>
+    <string name="home_screen_summary">Намерете най-лесния маршрут в София.</string>
 
     <!-- Web Page -->
     <string name="web_page_title">ЦГМ - Разписания</string>
@@ -445,9 +422,9 @@
     <string name="route_changes_title">Маршрутни промени</string>
     <string name="route_changes_label_creation_date" formatted="false"><![CDATA[Качена на: %s]]></string>
     <string name="route_changes_label_valid_from" formatted="false"><![CDATA[Валидна от: %s]]></string>
-    <string name="route_changes_loading" formatted="false"><![CDATA[Търсене на маршрутни промени...]]></string>
+    <string name="route_changes_loading" formatted="false"><![CDATA[Търсене на маршрутни промени…]]></string>
     <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на колите на Градския Транспорт в София.</string>
-    <string name="route_changes_news_loading" formatted="false"><![CDATA[Зареждане на <b><i>%s</i></b>...]]></string>
+    <string name="route_changes_news_loading" formatted="false"><![CDATA[Зареждане на <b><i>%s</i></b>…]]></string>
     <string name="route_changes_news_copy_link">Линкът е копиран</string>
     <string name="route_changes_news_choose_browser">Изберете браузър</string>
 

@@ -41,11 +41,11 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrieveMetroSchedule extends
         AsyncTask<Void, Void, MetroScheduleEntity> {
 
-    private Activity context;
-    private GlobalEntity globalContext;
-    private ProgressDialog progressDialog;
+    private final Activity context;
+    private final GlobalEntity globalContext;
+    private final ProgressDialog progressDialog;
 
-    private StationEntity station;
+    private final StationEntity station;
 
     public RetrieveMetroSchedule(Activity context,
                                  ProgressDialog progressDialog, StationEntity station) {
@@ -93,7 +93,7 @@ public class RetrieveMetroSchedule extends
         /**
          * Check if there is some problem with loading the schedule from the
          * SUMC site and if there is - load the local cache, otherwise - save
-         * the cache into the dabatase
+         * the cache into the database
          */
         if (ScheduleCachePreferences.isScheduleCacheActive(context)) {
 
@@ -124,7 +124,7 @@ public class RetrieveMetroSchedule extends
         // error occurred
         if (metroSchedule != null && metroSchedule.isMetroInformationValid()) {
             Utils.addStationInHistory(context,
-                    metroSchedule.getChoosenStationEntity());
+                    metroSchedule.getChosenStationEntity());
 
             Intent metroScheduleIntent;
             if (globalContext.isPhoneDevice()) {
@@ -217,34 +217,34 @@ public class RetrieveMetroSchedule extends
      * in both directions
      */
     private MetroScheduleEntity getMetroScheduleEntity() {
-        int choosenDirection;
+        int chosenDirection;
         int oppositeStationNumber;
 
-        // Get the number of the choosen station
-        int choosenStationNumber = Integer.parseInt(Utils.getOnlyDigits(station
+        // Get the number of the chosen station
+        int chosenStationNumber = Integer.parseInt(Utils.getOnlyDigits(station
                 .getNumber()));
 
-        // Check the number of the choosen station, so determine the direction
+        // Check the number of the chosen station, so determine the direction
         // and the number of the opposite station
-        if (choosenStationNumber % 2 == 1) {
-            choosenDirection = 0;
-            oppositeStationNumber = choosenStationNumber + 1;
+        if (chosenStationNumber % 2 == 1) {
+            chosenDirection = 0;
+            oppositeStationNumber = chosenStationNumber + 1;
         } else {
-            choosenDirection = 1;
-            oppositeStationNumber = choosenStationNumber - 1;
+            chosenDirection = 1;
+            oppositeStationNumber = chosenStationNumber - 1;
         }
 
-        // Get the data of the oppsoite station from the database
+        // Get the data of the opposite station from the database
         StationsDataSource stationsDatasource = new StationsDataSource(context);
         stationsDatasource.open();
-        StationEntity oppsoiteMetroStation = stationsDatasource
+        StationEntity oppositeMetroStation = stationsDatasource
                 .getStation(oppositeStationNumber);
         stationsDatasource.close();
 
         // Construct the MetroScheduleEntity with the need information
         MetroScheduleEntity metroSchedule = new MetroScheduleEntity(
-                choosenDirection, new MetroStationEntity(station),
-                new MetroStationEntity(oppsoiteMetroStation));
+                chosenDirection, new MetroStationEntity(station),
+                new MetroStationEntity(oppositeMetroStation));
 
         return metroSchedule;
     }

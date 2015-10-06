@@ -59,7 +59,7 @@ import kankan.wheel.widget.adapters.AbstractWheelTextAdapter;
 import kankan.wheel.widget.adapters.ArrayWheelAdapter;
 
 /**
- * Represents the funcionality of the DroidTrans application (not active in the
+ * Represents the functionality of the DroidTrans application (not active in the
  * market). The main functionality of the class is to start a location update
  * listener to find the current location (if enabled) and the nearest station to
  * it. If no location is found in next 3 seconds, check if there is available
@@ -98,7 +98,6 @@ public class DroidTrans extends SherlockFragmentActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private NavDrawerArrayAdapter mMenuAdapter;
-    private ArrayList<String> navigationItems;
     private Location userLocation;
 
     @Override
@@ -253,7 +252,7 @@ public class DroidTrans extends SherlockFragmentActivity {
 
     /**
      * Initialize the global variables (get the current activity context and
-     * initialize the db datasources)
+     * initialize the db datasource)
      */
     private void initGlobalVariables() {
 
@@ -276,8 +275,8 @@ public class DroidTrans extends SherlockFragmentActivity {
         Bundle bundle = getIntent().getExtras();
 
         // Each time check if this is the home screen or not
-        isDroidTransHomeScreen = bundle != null ? bundle.getBoolean(
-                BUNDLE_IS_DROID_TRANS_HOME_SCREEN, false) : false;
+        isDroidTransHomeScreen = bundle != null && bundle.getBoolean(
+                BUNDLE_IS_DROID_TRANS_HOME_SCREEN, false);
 
         // Show a notification that the home screen is changed (if needed)
         ActivityUtils.showHomeActivtyChangedToast(context,
@@ -551,7 +550,7 @@ public class DroidTrans extends SherlockFragmentActivity {
     }
 
     /**
-     * Get the vehcile type position in the wheel view via the vehicle type
+     * Get the vehicle type position in the wheel view via the vehicle type
      *
      * @param vehicleType the current vehicle type
      * @return the position of the vehicle type in the wheel view
@@ -851,7 +850,7 @@ public class DroidTrans extends SherlockFragmentActivity {
         actionBar.setHomeButtonEnabled(true);
 
         // Generate the titles of each row
-        navigationItems = Utils.initNavigationDrawerItems(context);
+        ArrayList<String> navigationItems = Utils.initNavigationDrawerItems(context);
 
         // Locate the DrawerLayout in the layout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer_layout);
@@ -944,14 +943,14 @@ public class DroidTrans extends SherlockFragmentActivity {
      */
     private class VehiclesAdapter extends AbstractWheelTextAdapter {
 
-        private ArrayList<VehicleTypeEnum> vehicleTypes;
-        private ArrayList<Integer> vehicleImages;
+        private final ArrayList<VehicleTypeEnum> vehicleTypes;
+        private final ArrayList<Integer> vehicleImages;
 
         /**
          * Constructor
          */
-        protected VehiclesAdapter(Activity context,
-                                  ArrayList<VehicleTypeEnum> vehicleTypes) {
+        VehiclesAdapter(Activity context,
+                        ArrayList<VehicleTypeEnum> vehicleTypes) {
 
             super(context, R.layout.activity_droidtrans_list_item, NO_RESOURCE);
 

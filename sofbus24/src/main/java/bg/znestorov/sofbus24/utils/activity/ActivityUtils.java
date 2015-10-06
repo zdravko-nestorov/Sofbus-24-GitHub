@@ -263,7 +263,7 @@ public class ActivityUtils {
         try {
             // Check if the context is given
             if (context != null) {
-                // Fetch the packagemanager so we can get the default launch
+                // Fetch the package manager so we can get the default launch
                 // activity (we can replace this intent with any other activity
                 // if you want)
                 PackageManager pm = context.getPackageManager();
@@ -481,7 +481,7 @@ public class ActivityUtils {
     }
 
     /**
-     * Check if a charecter is allowed (if it is a valid input)
+     * Check if a character is allowed (if it is a valid input)
      *
      * @param currentChar the entered char
      * @return if it is allowed or not
@@ -536,15 +536,15 @@ public class ActivityUtils {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo[] allNetworkInfo = connectivityManager.getAllNetworkInfo();
 
-        for (NetworkInfo networkIngo : allNetworkInfo) {
-            if ("WIFI".equalsIgnoreCase(networkIngo.getTypeName())) {
-                if (networkIngo.isConnected()) {
+        for (NetworkInfo networkInfo : allNetworkInfo) {
+            if ("WIFI".equalsIgnoreCase(networkInfo.getTypeName())) {
+                if (networkInfo.isConnected()) {
                     haveConnectedWifi = true;
                 }
             }
 
-            if ("MOBILE".equalsIgnoreCase(networkIngo.getTypeName())) {
-                if (networkIngo.isConnected()) {
+            if ("MOBILE".equalsIgnoreCase(networkInfo.getTypeName())) {
+                if (networkInfo.isConnected()) {
                     haveConnectedMobile = true;
                 }
             }
@@ -619,7 +619,7 @@ public class ActivityUtils {
     }
 
     /**
-     * Set finish on touch outside to be activated only on pre Honecomb devices
+     * Set finish on touch outside to be activated only on pre Honeycomb devices
      *
      * @param context the current activity context
      * @param finish  if the activity has to be finished
@@ -653,7 +653,7 @@ public class ActivityUtils {
     }
 
     /**
-     * Force the tabs not to be embaded in the ActionBar
+     * Force the tabs not to be embedded in the ActionBar
      *
      * @param context the current activity context
      */
@@ -724,14 +724,14 @@ public class ActivityUtils {
     /**
      * In case of API level 8-14, there is a problem with the background of the
      * AlertDialogs. If we want a LIGHT, we should inverse the current one. The
-     * {@value isInverseBackgroundForced} is used to determine which theme
+     * isInverseBackgroundForced is used to determine which theme
      * should be used:
      * <ul>
      * <li>TRUE - light background</li>
      * <li>FALSE - dark background</li>
      * </ul>
      *
-     * @param context       the current activirty context
+     * @param context       the current activity context
      * @param dialogBuilder the dialog builder
      */
     public static void setInverseBackgroundForced(Activity context,
@@ -771,8 +771,8 @@ public class ActivityUtils {
      * @param millisInFuture    the millis in future
      * @param countDownInterval the count down interval
      */
-    public static void showLongToast(Activity context, String message,
-                                     long millisInFuture, long countDownInterval) {
+    private static void showLongToast(Activity context, String message,
+                                      long millisInFuture, long countDownInterval) {
 
         showLongToast(context, Html.fromHtml(message), millisInFuture,
                 countDownInterval);
@@ -797,8 +797,8 @@ public class ActivityUtils {
      * @param millisInFuture    the millis in future
      * @param countDownInterval the count down interval
      */
-    public static void showLongToast(Activity context, Spanned message,
-                                     long millisInFuture, long countDownInterval) {
+    private static void showLongToast(Activity context, Spanned message,
+                                      long millisInFuture, long countDownInterval) {
 
         final Toast registrationToast = Toast.makeText(context, message,
                 Toast.LENGTH_LONG);
@@ -942,7 +942,7 @@ public class ActivityUtils {
         }
     }
 
-    public static void setMapTransparent(ViewGroup group) {
+    private static void setMapTransparent(ViewGroup group) {
         int childCount = group.getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = group.getChildAt(i);
@@ -969,7 +969,7 @@ public class ActivityUtils {
 
             @Override
             public String handleResponse(final HttpResponse response)
-                    throws HttpResponseException, IOException {
+                    throws IOException {
 
                 StatusLine statusLine = response.getStatusLine();
                 if (statusLine.getStatusCode() >= 300) {
@@ -985,11 +985,11 @@ public class ActivityUtils {
     }
 
     /**
-     * Set a transperant backgroun to a WebView
+     * Set a transparent background to a WebView
      *
      * @param webView the WebView with a default background
      */
-    public static void setWebViewTransperantBackground(WebView webView) {
+    public static void setWebViewTransparentBackground(WebView webView) {
 
         if (android.os.Build.VERSION.SDK_INT < 16) {
             webView.setBackgroundColor(0x00000000);
@@ -1050,7 +1050,7 @@ public class ActivityUtils {
     /**
      * Create a station title in format - [Station name] ([Station number])
      *
-     * @param station the choosen station
+     * @param station the chosen station
      * @return title in format - [Station name] ([Station number])
      */
     public static String getStationTitle(StationEntity station) {
@@ -1068,7 +1068,7 @@ public class ActivityUtils {
      */
     public static void startPreferencesHiddenActivity(Activity context) {
 
-        if (ScheduleDatabaseUtils.isAnyScheduleCacheAvaialble(context)) {
+        if (ScheduleDatabaseUtils.isAnyScheduleCacheAvailable(context)) {
             Intent preferencesHiddenIntent = new Intent(context,
                     PreferencesHidden.class);
             context.startActivity(preferencesHiddenIntent);

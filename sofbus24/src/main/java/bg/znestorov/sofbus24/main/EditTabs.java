@@ -25,7 +25,6 @@ public class EditTabs extends SherlockFragmentActivity {
     private Activity context;
     private GlobalEntity globalContext;
     private Bundle savedInstanceState;
-    private ActionBar actionBar;
     private Button cancelChanges;
     private Button saveChanges;
     private Fragment editTabsFragment;
@@ -91,7 +90,7 @@ public class EditTabs extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.edit_tabs_title));
@@ -106,19 +105,19 @@ public class EditTabs extends SherlockFragmentActivity {
      * Set onClickListeners over the ImageButtons
      */
     private void actionsOverButtons() {
-        // Set onClickListner over the Cancel Button
+        // Set onClickListener over the Cancel Button
         cancelChanges.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 finish();
             }
         });
 
-        // Set onClickListner over the Cancel Button
+        // Set onClickListener over the Cancel Button
         saveChanges.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 ConfigEntity newConfig = ((EditTabsFragment) editTabsFragment)
                         .getNewConfig();
-                Configuration.editTabConfigurationFileds(context, newConfig);
+                Configuration.editTabConfigurationFields(context, newConfig);
 
                 globalContext.setHomeScreenChanged(true);
                 finish();

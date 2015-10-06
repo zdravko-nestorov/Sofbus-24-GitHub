@@ -16,5 +16,5 @@ public enum UpdateTypeEnum {
     /**
      * Indicates that the database needs to be updated
      */
-    DB;
+    DB
 }

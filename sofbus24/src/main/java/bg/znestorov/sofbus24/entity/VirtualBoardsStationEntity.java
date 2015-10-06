@@ -52,7 +52,7 @@ public class VirtualBoardsStationEntity extends StationEntity implements
         this.vehiclesList = vehiclesList;
     }
 
-    public String getSkgtTime() {
+    private String getSkgtTime() {
         return skgtTime;
     }
 
@@ -60,7 +60,7 @@ public class VirtualBoardsStationEntity extends StationEntity implements
         this.skgtTime = skgtTime;
     }
 
-    public String getSystemTime() {
+    private String getSystemTime() {
         return systemTime;
     }
 
@@ -79,7 +79,7 @@ public class VirtualBoardsStationEntity extends StationEntity implements
     /**
      * Reset the station with the fields from a new station object
      *
-     * @param vbStation the new viertual boards station object
+     * @param vbStation the new virtual boards station object
      */
     public void setVirtualBoardsTimeStation(VirtualBoardsStationEntity vbStation) {
         if (vbStation != null) {

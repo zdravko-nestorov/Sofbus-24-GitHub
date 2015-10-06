@@ -43,7 +43,6 @@ public class GlobalEntity extends Application {
         super.onCreate();
         initialize();
     }
-    ;
 
     public boolean isPhoneDevice() {
         return isPhoneDevice;
@@ -177,11 +176,7 @@ public class GlobalEntity extends Application {
             // check that verifies that Google Play services is installed and
             // enabled on this device, and that the version installed on this
             // device is no older than the one required by this client
-            if (GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS) {
-                areServicesAvailable = true;
-            } else {
-                areServicesAvailable = false;
-            }
+            areServicesAvailable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS;
         } catch (PackageManager.NameNotFoundException e) {
             areServicesAvailable = false;
         }
@@ -218,7 +213,7 @@ public class GlobalEntity extends Application {
      * that they are created only once per application instance.
      */
     public enum TrackerName {
-        APP_TRACKER;
+        APP_TRACKER
     }
 
 }

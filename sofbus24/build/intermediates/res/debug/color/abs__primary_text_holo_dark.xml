@@ -14,12 +14,13 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/abs__bright_foreground_disabled_holo_dark" android:state_enabled="false" />
-    <item android:color="@color/abs__bright_foreground_holo_dark" android:state_window_focused="false" />
+    <item android:color="@color/abs__bright_foreground_disabled_holo_dark"
+        android:state_enabled="false" />
+    <item android:color="@color/abs__bright_foreground_holo_dark"
+        android:state_window_focused="false" />
     <item android:color="@color/abs__bright_foreground_holo_dark" android:state_pressed="true" />
     <item android:color="@color/abs__bright_foreground_holo_dark" android:state_selected="true" />
     <item android:color="@color/abs__bright_foreground_holo_dark" android:state_activated="true" />
     <item android:color="@color/abs__bright_foreground_holo_dark" />
     <!-- not selected -->
-</selector>
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/color/abs__primary_text_holo_dark.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/color/abs__primary_text_holo_dark.xml -->
+</selector><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/color/abs__primary_text_holo_dark.xml --><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/sofbus24/build/intermediates/exploded-aar/Sofbus24/actionBarSherlock/unspecified/res/color/abs__primary_text_holo_dark.xml -->

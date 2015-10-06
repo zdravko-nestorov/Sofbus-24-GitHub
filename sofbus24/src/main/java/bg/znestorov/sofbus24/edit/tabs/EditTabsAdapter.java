@@ -24,10 +24,10 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class EditTabsAdapter extends ArrayAdapter<HomeTabEntity> {
+class EditTabsAdapter extends ArrayAdapter<HomeTabEntity> {
 
-    private SherlockFragmentActivity context;
-    private List<HomeTabEntity> editTabsList;
+    private final SherlockFragmentActivity context;
+    private final List<HomeTabEntity> editTabsList;
 
     public EditTabsAdapter(SherlockFragmentActivity context,
                            List<HomeTabEntity> editTabsList) {

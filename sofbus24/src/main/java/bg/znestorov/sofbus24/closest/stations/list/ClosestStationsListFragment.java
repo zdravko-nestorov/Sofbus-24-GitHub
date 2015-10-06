@@ -48,6 +48,7 @@ public class ClosestStationsListFragment extends ListFragment implements
 
     private static final String SAVED_STATE_STATIONS_COUNT_KEY = "Closest stations count";
     private static final String SAVED_STATE_SEARCH_TEXT_KEY = "Closest Stations Search Text";
+    private final List<StationEntity> searchStationList = new ArrayList<StationEntity>();
     private Activity context;
     private LatLng currentLocation;
     private StationsDataSource stationsDatasource;
@@ -55,7 +56,6 @@ public class ClosestStationsListFragment extends ListFragment implements
     private String closestStationsSearchText = "";
     private boolean isListLoading = false;
     private boolean isListFullLoaded = false;
-    private List<StationEntity> searchStationList = new ArrayList<StationEntity>();
     private ArrayAdapter<StationEntity> closestStationsAdapter;
 
     public static ClosestStationsListFragment newInstance(LatLng currentLocation) {
@@ -123,8 +123,6 @@ public class ClosestStationsListFragment extends ListFragment implements
                                     isListFullLoaded = true;
                                 }
                             }
-
-                            ;
 
                         }.execute();
                     }

@@ -2,7 +2,7 @@ package bg.znestorov.sofbus24.entity;
 
 /**
  * The type of the metro schedule - INCOMPLETE COURSE, SOFIA AIRPORT or
- * BUSSINESS PARK
+ * BUSINESS PARK
  *
  * @author Zdravko Nestorov
  * @version 1.0
@@ -20,7 +20,7 @@ public enum MetroScheduleType {
     SA,
 
     /**
-     * Indicates the trains that goes to the BUSSINESS PARK
+     * Indicates the trains that goes to the BUSINESS PARK
      */
     BP,
 
@@ -32,5 +32,5 @@ public enum MetroScheduleType {
     /**
      * None of the special schedule types
      */
-    NONE;
+    NONE
 }

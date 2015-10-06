@@ -25,11 +25,11 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  */
 public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
 
-    private Activity context;
-    private ArrayList<String> navigationItems;
-    private ArrayList<Integer> navigationItemsImgs;
+    private final Activity context;
+    private final ArrayList<String> navigationItems;
+    private final ArrayList<Integer> navigationItemsImgs;
 
-    private boolean isPhoneDevice;
+    private final boolean isPhoneDevice;
 
     public NavDrawerArrayAdapter(Activity context,
                                  ArrayList<String> navigationItems) {
@@ -196,17 +196,17 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
     }
 
     /**
-     * Define the image that marks the choosen home screen
+     * Define the image that marks the chosen home screen
      *
      * @param position   the current row position
      * @param viewHolder the view holder of the current row
      */
     private void initCheckedImage(int position, ViewHolder viewHolder) {
         int userHomeScreenChoice = 0;
-        boolean isUserHomeScreenChoosen = NavDrawerHomeScreenPreferences
-                .isUserHomeScreenChoosen(context);
+        boolean isUserHomeScreenChosen = NavDrawerHomeScreenPreferences
+                .isUserHomeScreenChosen(context);
 
-        if (isUserHomeScreenChoosen) {
+        if (isUserHomeScreenChosen) {
             userHomeScreenChoice = NavDrawerHomeScreenPreferences
                     .getUserHomeScreenChoice(context);
         } else {

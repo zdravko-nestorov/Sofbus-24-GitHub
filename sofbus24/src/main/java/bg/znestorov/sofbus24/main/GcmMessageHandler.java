@@ -12,8 +12,6 @@ import bg.znestorov.sofbus24.gcm.GcmPreferences;
 
 public class GcmMessageHandler extends IntentService {
 
-    private Context context;
-
     public GcmMessageHandler() {
         super("GcmMessageHandler");
     }
@@ -27,7 +25,7 @@ public class GcmMessageHandler extends IntentService {
     protected void onHandleIntent(Intent intent) {
 
         // Get the current service context
-        context = GcmMessageHandler.this;
+        Context context = GcmMessageHandler.this;
 
         // The getMessageType() intent parameter must be the intent you received
         // in your BroadcastReceiver

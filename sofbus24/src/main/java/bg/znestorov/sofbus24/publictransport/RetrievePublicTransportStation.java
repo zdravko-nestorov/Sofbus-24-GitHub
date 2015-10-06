@@ -45,14 +45,12 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrievePublicTransportStation extends
         AsyncTask<Void, Void, PublicTransportStationEntity> {
 
-    private Activity context;
-    private GlobalEntity globalContext;
-    private ProgressDialog progressDialog;
-
+    private final Activity context;
+    private final GlobalEntity globalContext;
+    private final ProgressDialog progressDialog;
+    private final DirectionsEntity ptDirectionsEntity;
+    private final int activeDirection;
     private PublicTransportStationEntity ptStation;
-    private DirectionsEntity ptDirectionsEntity;
-
-    private int activeDirection;
 
     public RetrievePublicTransportStation(Activity context,
                                           ProgressDialog progressDialog,
@@ -101,7 +99,7 @@ public class RetrievePublicTransportStation extends
         /**
          * Check if there is some problem with loading the schedule from the
          * SUMC site and if there is - load the local cache, otherwise - save
-         * the cache into the dabatase
+         * the cache into the database
          */
         if (ScheduleCachePreferences.isScheduleCacheActive(context)) {
 
@@ -203,27 +201,27 @@ public class RetrievePublicTransportStation extends
         final List<NameValuePair> result = new ArrayList<NameValuePair>();
 
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_STOP, ptStation.getId()));
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_STOP, ptStation.getId()));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_CH,
-                Constants.SCHECULE_URL_STATION_SCHEDULE_CH_VALUE));
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_CH,
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_CH_VALUE));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_VT, ptDirectionsEntity
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_VT, ptDirectionsEntity
                 .getVt().get(activeDirection)));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_VT, ptDirectionsEntity
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_VT, ptDirectionsEntity
                 .getVt().get(activeDirection)));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_LID, ptDirectionsEntity
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_LID, ptDirectionsEntity
                 .getLid().get(activeDirection)));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_RID, ptDirectionsEntity
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_RID, ptDirectionsEntity
                 .getRid().get(activeDirection)));
         result.add(new BasicNameValuePair(
-                Constants.SCHECULE_URL_STATION_SCHEDULE_H,
-                Constants.SCHECULE_URL_STATION_SCHEDULE_H_VALUE));
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_H,
+                Constants.SCHEDULE_URL_STATION_SCHEDULE_H_VALUE));
 
-        String returnURL = Constants.SCHECULE_URL_STATION_SCHEDULE
+        String returnURL = Constants.SCHEDULE_URL_STATION_SCHEDULE
                 + URLEncodedUtils.format(result, "UTF-8");
 
         return returnURL;

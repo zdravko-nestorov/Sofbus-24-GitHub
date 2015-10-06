@@ -104,8 +104,8 @@ public class GcmUtils {
      * @param notificationData the received notification data
      * @return the notification data in the correct language
      */
-    public static String getGcmInfoNotificationData(Activity context,
-                                                    String notificationData) {
+    private static String getGcmInfoNotificationData(Activity context,
+                                                     String notificationData) {
 
         try {
             // Get the application language
@@ -128,7 +128,7 @@ public class GcmUtils {
      * @param notificationData the received notification data
      * @return the notification data in the correct format
      */
-    public static String getGcmUpdateAppNotificationData(String notificationData) {
+    private static String getGcmUpdateAppNotificationData(String notificationData) {
 
         if (!Utils.isEmpty(notificationData)) {
             notificationData = Utils.getValueBefore(notificationData, "(")

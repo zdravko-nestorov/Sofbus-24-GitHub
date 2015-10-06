@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * @author Zdravko Nestorov
  * @version 2.0
  */
-public class ScheduleSQLite extends SQLiteOpenHelper {
+class ScheduleSQLite extends SQLiteOpenHelper {
 
     // Table and columns names
     public static final String TABLE_SOF_SCHE = "SOF_SCHE";

@@ -19,10 +19,10 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class PublicTransportScheduleAdapter extends ArrayAdapter<String> {
+class PublicTransportScheduleAdapter extends ArrayAdapter<String> {
 
-    private Activity context;
-    private ScheduleEntity ptScheduleEntity;
+    private final Activity context;
+    private final ScheduleEntity ptScheduleEntity;
 
     public PublicTransportScheduleAdapter(Activity context,
                                           ScheduleEntity ptScheduleEntity) {

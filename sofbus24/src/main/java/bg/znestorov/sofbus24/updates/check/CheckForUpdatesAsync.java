@@ -34,8 +34,8 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  */
 public class CheckForUpdatesAsync extends AsyncTask<Void, Void, ConfigEntity> {
 
-    private FragmentActivity context;
-    private UpdateTypeEnum updateType;
+    private final FragmentActivity context;
+    private final UpdateTypeEnum updateType;
 
     public CheckForUpdatesAsync(FragmentActivity context,
                                 UpdateTypeEnum updateType) {
@@ -123,7 +123,7 @@ public class CheckForUpdatesAsync extends AsyncTask<Void, Void, ConfigEntity> {
     }
 
     /**
-     * Check if the dabatase should be updated
+     * Check if the database should be updated
      *
      * @param newConfig the new application configuration
      */

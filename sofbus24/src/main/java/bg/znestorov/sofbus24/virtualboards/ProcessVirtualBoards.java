@@ -1,5 +1,9 @@
 package bg.znestorov.sofbus24.virtualboards;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.text.format.DateFormat;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -9,9 +13,6 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.text.format.DateFormat;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
@@ -31,12 +32,12 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @version 1.0
  */
 @SuppressLint("DefaultLocale")
-public class ProcessVirtualBoards {
+class ProcessVirtualBoards {
 
+    private final String language;
     private Activity context;
     private StationsDataSource stationsDatasource;
     private String htmlResult;
-    private String language;
 
     public ProcessVirtualBoards(Activity context, String htmlResult) {
         this.context = context;
@@ -163,26 +164,26 @@ public class ProcessVirtualBoards {
         String[] vehiclesPartsHtml = htmlResult
                 .split(Constants.VB_REGEX_VEHICLE_PARTS);
 
-        for (int i = 0; i < vehiclesPartsHtml.length; i++) {
-            VehicleTypeEnum vehicleType = getVehicleType(vehiclesPartsHtml[i]);
+        for (String aVehiclesPartsHtml : vehiclesPartsHtml) {
+            VehicleTypeEnum vehicleType = getVehicleType(aVehiclesPartsHtml);
 
             // Used to order the vehicles (BUS, TROLLEY, TRAM)
             switch (vehicleType) {
                 case BUS:
                     vehiclesList.addAll(0, getVehiclesByTypeFromHtml(vehicleType,
-                            vehiclesPartsHtml[i]));
+                            aVehiclesPartsHtml));
                     break;
                 case TRAM:
                     vehiclesList.addAll(getVehiclesByTypeFromHtml(vehicleType,
-                            vehiclesPartsHtml[i]));
+                            aVehiclesPartsHtml));
                     break;
                 default:
                     if (vehiclesList.isEmpty()) {
                         vehiclesList.addAll(getVehiclesByTypeFromHtml(vehicleType,
-                                vehiclesPartsHtml[i]));
+                                aVehiclesPartsHtml));
                     } else {
                         vehiclesList.addAll(1, getVehiclesByTypeFromHtml(
-                                vehicleType, vehiclesPartsHtml[i]));
+                                vehicleType, aVehiclesPartsHtml));
                     }
                     break;
             }
@@ -210,7 +211,7 @@ public class ProcessVirtualBoards {
 
         while (matcher.find()) {
 
-            // Get the shedule variables
+            // Get the schedule variables
             int stop;
             try {
                 stop = Integer.parseInt(matcher.group(1));
@@ -297,11 +298,11 @@ public class ProcessVirtualBoards {
         String currentTime = DateFormat.format("kk:mm", new java.util.Date())
                 .toString();
 
-        for (int i = 0; i < arrivalTimes.length; i++) {
+        for (String arrivalTime : arrivalTimes) {
             String differenceTime = Utils.getTimeDifference(context,
-                    arrivalTimes[i], currentTime);
+                    arrivalTime, currentTime);
             if (!"".equals(differenceTime) && !"---".equals(differenceTime)) {
-                arrivalTimesList.add(arrivalTimes[i]);
+                arrivalTimesList.add(arrivalTime);
             }
         }
 

@@ -22,7 +22,7 @@ public class DroidTransLoadInfo {
     private ArrayList<VehicleTypeEnum> vehicleTypes;
     private HashMap<VehicleTypeEnum, ArrayList<String>> vehicleNumbersMap;
 
-    protected DroidTransLoadInfo(Activity context) {
+    private DroidTransLoadInfo(Activity context) {
 
         DroidTransDataSource droidtransDatasource = new DroidTransDataSource(
                 context);
@@ -81,11 +81,8 @@ public class DroidTransLoadInfo {
      */
     public static boolean isInstanceCreated() {
 
-        if (instance != null) {
-            return true;
-        }
+        return instance != null;
 
-        return false;
     }
 
     public ArrayList<VehicleTypeEnum> getVehicleTypes() {

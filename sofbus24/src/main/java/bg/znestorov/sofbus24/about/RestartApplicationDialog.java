@@ -22,12 +22,6 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RestartApplicationDialog extends DialogFragment {
 
     private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String negativeBtn;
-    private String positiveBtn;
-    private OnClickListener positiveOnClickListener;
 
     public static RestartApplicationDialog newInstance() {
         return new RestartApplicationDialog();
@@ -36,13 +30,13 @@ public class RestartApplicationDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         context = getActivity();
-        icon = R.drawable.ic_menu_info_details;
-        title = getString(R.string.app_dialog_title_important);
-        message = Html.fromHtml(getString(R.string.about_update_db_restart));
-        negativeBtn = getString(R.string.app_button_no);
-        positiveBtn = getString(R.string.app_button_yes);
+        int icon = R.drawable.ic_menu_info_details;
+        String title = getString(R.string.app_dialog_title_important);
+        Spanned message = Html.fromHtml(getString(R.string.about_update_db_restart));
+        String negativeBtn = getString(R.string.app_button_no);
+        String positiveBtn = getString(R.string.app_button_yes);
 
-        positiveOnClickListener = new OnClickListener() {
+        OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ActivityUtils.restartApplication(context);

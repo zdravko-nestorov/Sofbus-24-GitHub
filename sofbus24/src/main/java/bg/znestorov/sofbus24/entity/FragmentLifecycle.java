@@ -19,6 +19,6 @@ public interface FragmentLifecycle {
      *
      * @param context the current Activity context
      */
-    public void onResumeFragment(Activity context);
+    void onResumeFragment(Activity context);
 
 }

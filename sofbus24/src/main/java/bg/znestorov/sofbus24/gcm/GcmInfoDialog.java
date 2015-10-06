@@ -18,12 +18,7 @@ import bg.znestorov.sofbus24.main.R;
  */
 public class GcmInfoDialog extends DialogFragment {
 
-    public static final String BUNDLE_MESSAGE = "MESSAGE";
-    private Activity context;
-    private int icon;
-    private String title;
-    private Spanned message;
-    private String neutralBtn;
+    private static final String BUNDLE_MESSAGE = "MESSAGE";
 
     public static GcmInfoDialog newInstance(String message) {
         Bundle bundle = new Bundle();
@@ -38,11 +33,11 @@ public class GcmInfoDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        context = getActivity();
-        icon = R.drawable.ic_menu_info_details;
-        title = getString(R.string.app_dialog_title_info);
-        message = Html.fromHtml(getArguments().getString(BUNDLE_MESSAGE));
-        neutralBtn = getString(R.string.app_button_ok);
+        Activity context = getActivity();
+        int icon = R.drawable.ic_menu_info_details;
+        String title = getString(R.string.app_dialog_title_info);
+        Spanned message = Html.fromHtml(getArguments().getString(BUNDLE_MESSAGE));
+        String neutralBtn = getString(R.string.app_button_ok);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setIcon(icon).setTitle(title).setMessage(message)
