@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res"><file name="wheel_bg" path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res\drawable\wheel_bg.xml" qualifiers="" type="drawable"/><file name="wheel_val" path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res\drawable\wheel_val.xml" qualifiers="" type="drawable"/></source><source path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\rs\release"/><source path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\generated\release"/></dataSet><dataSet config="release"><source path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\release\res"/></dataSet><mergedItems/></merger>
+<merger version="3">
+    <dataSet config="main">
+        <source path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res">
+            <file name="wheel_bg"
+                path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res\drawable\wheel_bg.xml"
+                qualifiers="" type="drawable" />
+            <file name="wheel_val"
+                path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\main\res\drawable\wheel_val.xml"
+                qualifiers="" type="drawable" />
+        </source>
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\rs\release" />
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\generated\res\generated\release" />
+    </dataSet>
+    <dataSet config="release">
+        <source
+            path="D:\Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\src\release\res" />
+    </dataSet>
+    <mergedItems />
+</merger>

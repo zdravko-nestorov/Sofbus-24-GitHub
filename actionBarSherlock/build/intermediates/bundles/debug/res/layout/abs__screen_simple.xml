@@ -22,9 +22,9 @@ enabled.
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:fitsSystemWindows="true" android:orientation="vertical">
-    <ViewStub android:id="@+id/abs__action_mode_bar_stub"
-        android:layout_width="fill_parent" android:layout_height="wrap_content"
-        android:inflatedId="@+id/abs__action_mode_bar" android:layout="@layout/abs__action_mode_bar" />
+    <ViewStub android:id="@+id/abs__action_mode_bar_stub" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:inflatedId="@+id/abs__action_mode_bar"
+        android:layout="@layout/abs__action_mode_bar" />
     <com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout
         android:id="@+id/abs__content" android:layout_width="fill_parent"
         android:layout_height="fill_parent" android:foreground="?attr/windowContentOverlay"

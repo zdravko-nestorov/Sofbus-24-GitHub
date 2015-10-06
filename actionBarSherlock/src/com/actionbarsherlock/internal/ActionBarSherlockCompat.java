@@ -133,6 +133,7 @@ public class ActionBarSherlockCompat extends ActionBarSherlock implements MenuBu
      * Parent view in which the context action bar is displayed.
      */
     private ActionBarContextView mActionModeView;
+
     public ActionBarSherlockCompat(Activity activity, int flags) {
         super(activity, flags);
     }

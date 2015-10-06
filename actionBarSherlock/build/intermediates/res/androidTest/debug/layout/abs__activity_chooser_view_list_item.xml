@@ -15,9 +15,9 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/abs__list_item" android:layout_width="match_parent"
-    android:layout_height="?attr/dropdownListPreferredItemHeight" android:background="?attr/activatedBackgroundIndicator"
-    android:minWidth="196dip" android:orientation="vertical"
-    android:paddingLeft="16dip" android:paddingRight="16dip">
+    android:layout_height="?attr/dropdownListPreferredItemHeight"
+    android:background="?attr/activatedBackgroundIndicator" android:minWidth="196dip"
+    android:orientation="vertical" android:paddingLeft="16dip" android:paddingRight="16dip">
 
     <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
         android:duplicateParentState="true">
@@ -28,9 +28,9 @@
 
         <TextView android:id="@+id/abs__title" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_gravity="center_vertical"
-            android:duplicateParentState="true"
-            android:ellipsize="marquee" android:fadingEdge="horizontal"
-            android:singleLine="true" android:textAppearance="?attr/textAppearanceLargePopupMenu" />
+            android:duplicateParentState="true" android:ellipsize="marquee"
+            android:fadingEdge="horizontal" android:singleLine="true"
+            android:textAppearance="?attr/textAppearanceLargePopupMenu" />
 
     </LinearLayout>
 

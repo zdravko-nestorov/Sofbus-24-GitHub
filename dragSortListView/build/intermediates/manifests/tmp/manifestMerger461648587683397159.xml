@@ -10,5 +10,6 @@
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
         android:functionalTest="false" android:handleProfiling="false"
-        android:label="Tests for com.mobeta.android.dslv.test" android:targetPackage="com.mobeta.android.dslv.test" />
+        android:label="Tests for com.mobeta.android.dslv.test"
+        android:targetPackage="com.mobeta.android.dslv.test" />
 </manifest>

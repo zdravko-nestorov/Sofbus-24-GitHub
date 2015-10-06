@@ -29,14 +29,15 @@
 
     <ImageView android:id="@+id/abs__search_button" style="?attr/actionButtonStyle"
         android:layout_width="wrap_content" android:layout_height="match_parent"
-        android:layout_gravity="center_vertical" android:contentDescription="@string/abs__searchview_description_search"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/abs__searchview_description_search"
         android:src="?attr/searchViewSearchIcon" />
 
     <LinearLayout android:id="@+id/abs__search_edit_frame" android:layout_width="wrap_content"
         android:layout_height="wrap_content" android:layout_gravity="center_vertical"
         android:layout_marginBottom="4dip" android:layout_marginLeft="8dip"
-        android:layout_marginRight="8dip" android:layout_marginTop="4dip"
-        android:layout_weight="1" android:orientation="horizontal">
+        android:layout_marginRight="8dip" android:layout_marginTop="4dip" android:layout_weight="1"
+        android:orientation="horizontal">
 
         <ImageView android:id="@+id/abs__search_mag_icon"
             android:layout_width="@dimen/abs__dropdownitem_icon_width"
@@ -51,25 +52,26 @@
             android:layout_weight="1" android:background="?attr/searchViewTextField"
             android:orientation="horizontal">
 
-            <view android:id="@+id/abs__search_src_text"
-                style="?attr/searchAutoCompleteTextView" class="com.actionbarsherlock.widget.SearchView$SearchAutoComplete"
-                android:layout_width="0dp" android:layout_height="36dip" android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:background="@null"
+            <view android:id="@+id/abs__search_src_text" style="?attr/searchAutoCompleteTextView"
+                class="com.actionbarsherlock.widget.SearchView$SearchAutoComplete"
+                android:layout_width="0dp" android:layout_height="36dip"
+                android:layout_gravity="bottom" android:layout_weight="1" android:background="@null"
                 android:contentDescription="@string/abs__searchview_description_query"
                 android:dropDownAnchor="@id/abs__search_edit_frame"
-                android:dropDownHeight="wrap_content" android:dropDownHorizontalOffset="0dip" android:dropDownVerticalOffset="0dip"
-                android:ellipsize="end"
-                android:imeOptions="actionSearch" android:inputType="text|textAutoComplete|textNoSuggestions"
+                android:dropDownHeight="wrap_content" android:dropDownHorizontalOffset="0dip"
+                android:dropDownVerticalOffset="0dip" android:ellipsize="end"
+                android:imeOptions="actionSearch"
+                android:inputType="text|textAutoComplete|textNoSuggestions"
                 android:minWidth="@dimen/abs__search_view_text_min_width"
-                android:paddingLeft="@dimen/abs__dropdownitem_text_padding_left" android:paddingRight="@dimen/abs__dropdownitem_text_padding_right"
+                android:paddingLeft="@dimen/abs__dropdownitem_text_padding_left"
+                android:paddingRight="@dimen/abs__dropdownitem_text_padding_right"
                 android:singleLine="true" />
 
             <ImageView android:id="@+id/abs__search_close_btn" android:layout_width="wrap_content"
                 android:layout_height="match_parent" android:layout_gravity="center_vertical"
-                android:background="?attr/selectableItemBackground" android:contentDescription="@string/abs__searchview_description_clear"
-                android:focusable="true"
-                android:paddingLeft="8dip" android:paddingRight="8dip"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/abs__searchview_description_clear"
+                android:focusable="true" android:paddingLeft="8dip" android:paddingRight="8dip"
                 android:src="?attr/searchViewCloseIcon" />
 
         </LinearLayout>
@@ -80,19 +82,17 @@
 
             <ImageView android:id="@+id/abs__search_go_btn" android:layout_width="wrap_content"
                 android:layout_height="match_parent" android:layout_gravity="center_vertical"
-                android:background="?attr/selectableItemBackground" android:contentDescription="@string/abs__searchview_description_submit"
-                android:focusable="true"
-                android:paddingLeft="16dip" android:paddingRight="16dip"
-                android:src="?attr/searchViewGoIcon"
-                android:visibility="gone" />
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/abs__searchview_description_submit"
+                android:focusable="true" android:paddingLeft="16dip" android:paddingRight="16dip"
+                android:src="?attr/searchViewGoIcon" android:visibility="gone" />
 
             <ImageView android:id="@+id/abs__search_voice_btn" android:layout_width="wrap_content"
                 android:layout_height="match_parent" android:layout_gravity="center_vertical"
-                android:background="?attr/selectableItemBackground" android:contentDescription="@string/abs__searchview_description_voice"
-                android:focusable="true"
-                android:paddingLeft="16dip" android:paddingRight="16dip"
-                android:src="?attr/searchViewVoiceIcon"
-                android:visibility="gone" />
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/abs__searchview_description_voice"
+                android:focusable="true" android:paddingLeft="16dip" android:paddingRight="16dip"
+                android:src="?attr/searchViewVoiceIcon" android:visibility="gone" />
 
         </LinearLayout>
     </LinearLayout>

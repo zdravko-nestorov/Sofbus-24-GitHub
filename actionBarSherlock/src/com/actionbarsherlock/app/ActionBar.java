@@ -765,6 +765,14 @@ public abstract class ActionBar {
         public abstract Tab setIcon(int resId);
 
         /**
+         * Set the icon displayed on this tab.
+         *
+         * @param icon The drawable to use as an icon
+         * @return The current instance for call chaining
+         */
+        public abstract Tab setIcon(Drawable icon);
+
+        /**
          * Return the text of this tab.
          *
          * @return The tab's text
@@ -779,14 +787,6 @@ public abstract class ActionBar {
          * @return The current instance for call chaining
          */
         public abstract Tab setText(int resId);
-
-        /**
-         * Set the icon displayed on this tab.
-         *
-         * @param icon The drawable to use as an icon
-         * @return The current instance for call chaining
-         */
-        public abstract Tab setIcon(Drawable icon);
 
         /**
          * Set the text displayed on this tab. Text may be truncated if there is not

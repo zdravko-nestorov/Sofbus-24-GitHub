@@ -13,48 +13,25 @@
      limitations under the License.
 -->
 
-<com.actionbarsherlock.internal.view.menu.ActionMenuItemView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="?attr/actionButtonStyle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:addStatesFromChildren="true"
-    android:focusable="true"
-    android:gravity="center"
-    android:paddingLeft="4dip"
-    android:paddingRight="4dip">
+<com.actionbarsherlock.internal.view.menu.ActionMenuItemView
+    xmlns:android="http://schemas.android.com/apk/res/android" style="?attr/actionButtonStyle"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:layout_gravity="center" android:addStatesFromChildren="true" android:focusable="true"
+    android:gravity="center" android:paddingLeft="4dip" android:paddingRight="4dip">
 
-    <ImageButton
-        android:id="@+id/abs__imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="4dip"
-        android:layout_marginLeft="4dip"
-        android:layout_marginRight="4dip"
-        android:layout_marginTop="4dip"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:focusable="false"
-        android:scaleType="fitCenter"
-        android:visibility="gone" />
+    <ImageButton android:id="@+id/abs__imageButton" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:layout_marginBottom="4dip" android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip" android:layout_marginTop="4dip"
+        android:adjustViewBounds="true" android:background="@null" android:focusable="false"
+        android:scaleType="fitCenter" android:visibility="gone" />
 
-    <com.actionbarsherlock.internal.widget.CapitalizingButton
-        android:id="@+id/abs__textButton"
-        style="?attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@null"
-        android:ellipsize="none"
-        android:focusable="false"
-        android:paddingBottom="4dip"
-        android:paddingLeft="4dip"
-        android:paddingRight="4dip"
-        android:paddingTop="4dip"
-        android:singleLine="true"
+    <com.actionbarsherlock.internal.widget.CapitalizingButton android:id="@+id/abs__textButton"
+        style="?attr/buttonStyleSmall" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:background="@null" android:ellipsize="none" android:focusable="false"
+        android:paddingBottom="4dip" android:paddingLeft="4dip" android:paddingRight="4dip"
+        android:paddingTop="4dip" android:singleLine="true"
         android:textAppearance="?attr/actionMenuTextAppearance"
-        android:textColor="?attr/actionMenuTextColor"
-        android:visibility="gone" />
-</com.actionbarsherlock.internal.view.menu.ActionMenuItemView>
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_menu_item_layout.xml -->
+        android:textColor="?attr/actionMenuTextColor" android:visibility="gone" />
+</com.actionbarsherlock.internal.view.menu.ActionMenuItemView><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_menu_item_layout.xml -->

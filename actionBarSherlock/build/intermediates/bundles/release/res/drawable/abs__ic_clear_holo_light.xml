@@ -14,7 +14,7 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/abs__ic_clear_search_api_disabled_holo_light" android:state_enabled="false" />
+    <item android:drawable="@drawable/abs__ic_clear_search_api_disabled_holo_light"
+        android:state_enabled="false" />
     <item android:drawable="@drawable/abs__ic_clear_search_api_holo_light" />
-</selector>
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__ic_clear_holo_light.xml -->
+</selector><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__ic_clear_holo_light.xml -->

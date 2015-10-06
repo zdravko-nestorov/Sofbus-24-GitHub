@@ -14,9 +14,10 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/abs__bright_foreground_disabled_holo_light" android:state_enabled="false" />
+    <item android:color="@color/abs__bright_foreground_disabled_holo_light"
+        android:state_enabled="false" />
     <item android:color="@color/abs__bright_foreground_holo_light" />
     <!-- not selected -->
 </selector>
 
-<!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/color/abs__primary_text_disable_only_holo_light.xml -->
+    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/color/abs__primary_text_disable_only_holo_light.xml -->

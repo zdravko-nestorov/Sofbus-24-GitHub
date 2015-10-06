@@ -39,6 +39,6 @@ This is an optimized layout for a screen with the Action Bar enabled.
         android:foregroundGravity="fill_horizontal|top" />
     <com.actionbarsherlock.internal.widget.ActionBarContainer
         android:id="@+id/abs__split_action_bar" style="?attr/actionBarSplitStyle"
-        android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="center"
-        android:visibility="gone" />
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:visibility="gone" />
 </LinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__screen_action_bar.xml -->

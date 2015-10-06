@@ -48,8 +48,8 @@
         android:layout_width="match_parent" android:layout_height="29dip"
         android:layout_alignParentBottom="true" android:layout_alignWithParentIfMissing="true"
         android:layout_toLeftOf="@android:id/icon2" android:layout_toRightOf="@android:id/icon1"
-        android:gravity="top" android:paddingBottom="4dip"
-        android:singleLine="true" android:textAppearance="?attr/textAppearanceSearchResultSubtitle"
+        android:gravity="top" android:paddingBottom="4dip" android:singleLine="true"
+        android:textAppearance="?attr/textAppearanceSearchResultSubtitle"
         android:visibility="gone" />
 
     <!-- The title is placed above the subtitle, if there is one. If there is no
