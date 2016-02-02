@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "bg.znestorov.sofbus24.main"
         minSdkVersion 9
-        targetSdkVersion 23
+        targetSdkVersion 22
     }
 
     buildTypes {
