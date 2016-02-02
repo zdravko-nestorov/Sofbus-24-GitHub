@@ -646,7 +646,7 @@ public class RetrieveVirtualBoards {
             panel.setOrientation(LinearLayout.VERTICAL);
 
             ImageView image = new ImageView(context);
-            image.setId(2);
+            image.setId(R.id.captchaImageViewId);
             image.setImageBitmap(captchaImage);
 
             // Add the image to the view and fix its size
@@ -661,7 +661,7 @@ public class RetrieveVirtualBoards {
             image.setLayoutParams(layoutParams);
 
             final EditText input = new EditText(context);
-            input.setId(1);
+            input.setId(R.id.captchaEditTextId);
             input.setSingleLine();
             input.setInputType(InputType.TYPE_CLASS_TEXT
                     | InputType.TYPE_TEXT_VARIATION_URI
