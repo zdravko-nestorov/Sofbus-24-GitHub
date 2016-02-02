@@ -14,11 +14,8 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/abs__spinner_ab_disabled_holo_light"
-        android:state_enabled="false" />
-    <item android:drawable="@drawable/abs__spinner_ab_pressed_holo_light"
-        android:state_pressed="true" />
-    <item android:drawable="@drawable/abs__spinner_ab_focused_holo_light"
-        android:state_focused="true" android:state_pressed="false" />
+    <item android:drawable="@drawable/abs__spinner_ab_disabled_holo_light" android:state_enabled="false" />
+    <item android:drawable="@drawable/abs__spinner_ab_pressed_holo_light" android:state_pressed="true" />
+    <item android:drawable="@drawable/abs__spinner_ab_focused_holo_light" android:state_focused="true" android:state_pressed="false" />
     <item android:drawable="@drawable/abs__spinner_ab_default_holo_light" />
-</selector><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__spinner_ab_holo_light.xml -->
+</selector>

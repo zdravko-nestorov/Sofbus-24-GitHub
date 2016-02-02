@@ -13,13 +13,20 @@
      limitations under the License.
 -->
 
-<com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/abs__action_mode_close_button" style="?attr/actionModeCloseButtonStyle"
-    android:layout_width="wrap_content" android:layout_height="fill_parent"
-    android:layout_marginRight="16dip" android:clickable="true" android:focusable="true"
+<com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abs__action_mode_close_button"
+    style="?attr/actionModeCloseButtonStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_marginRight="16dip"
+    android:clickable="true"
+    android:focusable="true"
     android:paddingLeft="8dip">
-    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="center" android:scaleType="fitCenter"
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
         android:src="?attr/actionModeCloseDrawable" />
-</com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__action_mode_close_item.xml -->
+</com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>

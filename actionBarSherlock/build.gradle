@@ -1,9 +1,5 @@
 apply plugin: 'android-library'
 
-dependencies {
-    compile 'com.android.support:support-v4:18.0.+'
-}
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -15,4 +11,8 @@ android {
             res.srcDirs = ['res']
         }
     }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:22.2.0'
 }

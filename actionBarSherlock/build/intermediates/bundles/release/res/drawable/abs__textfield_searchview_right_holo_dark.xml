@@ -14,9 +14,7 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/abs__textfield_search_right_selected_holo_dark"
-        android:state_focused="true" />
+    <item android:drawable="@drawable/abs__textfield_search_right_selected_holo_dark" android:state_focused="true" />
     <item android:drawable="@drawable/abs__textfield_search_right_default_holo_dark" />
 </selector>
 
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__textfield_searchview_right_holo_dark.xml -->
