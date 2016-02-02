@@ -5,6 +5,7 @@
       <w>&amp;lid</w>
       <w>&amp;rid</w>
       <w>&amp;yaw</w>
+      <w>abcfolder</w>
       <w>acer</w>
       <w>acro</w>
       <w>actionbarsherlock</w>
@@ -115,6 +116,7 @@
       <w>codinavid</w>
       <w>comancheatt</w>
       <w>comanchecan</w>
+      <w>contentprovider</w>
       <w>coolpix</w>
       <w>coreprimelte</w>
       <w>coreprimelteaio</w>
@@ -150,6 +152,7 @@
       <w>degaswifidtv</w>
       <w>degaswifiopenbnn</w>
       <w>degaswifiue</w>
+      <w>delim</w>
       <w>delos</w>
       <w>delosltelgt</w>
       <w>deloslteskt</w>
@@ -157,6 +160,7 @@
       <w>dend</w>
       <w>deschutes</w>
       <w>desirec</w>
+      <w>deyan</w>
       <w>digicel</w>
       <w>dios</w>
       <w>djojo</w>
@@ -173,6 +177,7 @@
       <w>doubleshot</w>
       <w>droidtrans</w>
       <w>droidx</w>
+      <w>dropbox</w>
       <w>dslv</w>
       <w>dstart</w>
       <w>dstv</w>
@@ -241,6 +246,7 @@
       <w>gelatods</w>
       <w>geur</w>
       <w>gltn</w>
+      <w>gmail</w>
       <w>gnfc</w>
       <w>goghcri</w>
       <w>goghspr</w>
@@ -543,6 +549,7 @@
       <w>mprojectltelgt</w>
       <w>mprojectlteskt</w>
       <w>mprojectqlte</w>
+      <w>msword</w>
       <w>mylocation</w>
       <w>nestorov</w>
       <w>netphone</w>
@@ -574,11 +581,13 @@
       <w>nyhss</w>
       <w>obake</w>
       <w>obakem</w>
+      <w>officedocument</w>
       <w>oldh</w>
       <w>oldw</w>
       <w>olleh</w>
       <w>omegar</w>
       <w>onex</w>
+      <w>openxmlformats</w>
       <w>optiimus</w>
       <w>optimus</w>
       <w>orinoquia</w>
@@ -595,6 +604,7 @@
       <w>poleicngi</w>
       <w>polylines</w>
       <w>prada</w>
+      <w>presentationml</w>
       <w>primodd</w>
       <w>primods</w>
       <w>primus</w>
@@ -609,6 +619,7 @@
       <w>qhdul</w>
       <w>qilive</w>
       <w>qinara</w>
+      <w>qqvntv</w>
       <w>qtaqz</w>
       <w>raybst</w>
       <w>razr</w>
@@ -622,6 +633,7 @@
       <w>retbr</w>
       <w>reverb</w>
       <w>reyo</w>
+      <w>rfjb</w>
       <w>roraima</w>
       <w>rossalte</w>
       <w>rossaltectc</w>
@@ -684,14 +696,19 @@
       <w>spcwifi</w>
       <w>spcwifiany</w>
       <w>speedsurfer</w>
+      <w>spreadsheetml</w>
       <w>spro</w>
       <w>spyder</w>
       <w>sqlite</w>
+      <w>sqlitecantopendatabaseexception</w>
       <w>stackoverflow</w>
       <w>staraddict</w>
       <w>startrail</w>
       <w>stjr</w>
+      <w>stoped</w>
       <w>streetview</w>
+      <w>subfolders</w>
+      <w>subnav</w>
       <w>sumc</w>
       <w>sunfire</w>
       <w>superiorcmcc</w>
@@ -715,6 +732,7 @@
       <w>telecom</w>
       <w>telenor</w>
       <w>telpad</w>
+      <w>textfile</w>
       <w>tfnspr</w>
       <w>tfnvzw</w>
       <w>thunderbird</w>
@@ -778,6 +796,7 @@
       <w>viennaltekx</w>
       <w>viennaltevzw</w>
       <w>viettel</w>
+      <w>viktorov</w>
       <w>villec</w>
       <w>vins</w>
       <w>vivalto</w>
@@ -804,6 +823,7 @@
       <w>wilcoxlte</w>
       <w>wimax</w>
       <w>wingray</w>
+      <w>wordprocessingml</w>
       <w>wyse</w>
       <w>xcover</w>
       <w>xiaomi</w>
