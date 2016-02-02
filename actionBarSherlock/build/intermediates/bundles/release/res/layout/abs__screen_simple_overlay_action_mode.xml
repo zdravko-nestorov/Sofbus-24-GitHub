@@ -20,15 +20,21 @@ enabled.
 -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
     <com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout
-        android:id="@+id/abs__content" android:layout_width="fill_parent"
-        android:layout_height="fill_parent" android:foreground="?attr/windowContentOverlay"
+        android:id="@+id/abs__content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:foreground="?attr/windowContentOverlay"
         android:foregroundGravity="fill_horizontal|top" />
 
-    <ViewStub android:id="@+id/abs__action_mode_bar_stub" android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:inflatedId="@+id/abs__action_mode_bar"
+    <ViewStub
+        android:id="@+id/abs__action_mode_bar_stub"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inflatedId="@+id/abs__action_mode_bar"
         android:layout="@layout/abs__action_mode_bar" />
-</FrameLayout><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/layout/abs__screen_simple_overlay_action_mode.xml -->
+</FrameLayout>
