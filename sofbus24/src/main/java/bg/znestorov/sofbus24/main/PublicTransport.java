@@ -166,6 +166,7 @@ public class PublicTransport extends SherlockFragmentActivity implements
      * Initialize the layout fields (ActionBar, ViewPager and
      * SectionsPagerAdapter)
      */
+    @SuppressWarnings("deprecation")
     private void initLayoutFields() {
 
         // Set up the ActionBar

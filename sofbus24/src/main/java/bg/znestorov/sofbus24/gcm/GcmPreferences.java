@@ -67,7 +67,7 @@ public class GcmPreferences {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(Constants.GCM_PREFERENCES_REG_ID, regId);
         editor.putInt(Constants.GCM_PREFERENCES_APP_VERSION, appVersion);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -115,7 +115,7 @@ public class GcmPreferences {
      * in the SharedPreferences file and set the notification type accordingly.
      * Otherwise, do not edit the file
      *
-     * @param context          the current context
+     * @param context      the current context
      * @param notification the received notification
      */
     public static void storeNotification(Context context,
@@ -201,7 +201,7 @@ public class GcmPreferences {
                 notificationType.toString());
         editor.putString(Constants.GCM_PREFERENCES_NOTIFICATION_DATA,
                 notificationData);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -218,7 +218,7 @@ public class GcmPreferences {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(Constants.GCM_PREFERENCES_NOTIFICATION_TYPE);
         editor.remove(Constants.GCM_PREFERENCES_NOTIFICATION_DATA);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -252,7 +252,7 @@ public class GcmPreferences {
 
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean(Constants.GCM_PREFERENCES_IS_RATED, isRated);
-        editor.commit();
+        editor.apply();
     }
 
 }

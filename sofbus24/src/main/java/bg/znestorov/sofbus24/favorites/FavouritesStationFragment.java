@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
@@ -520,7 +519,7 @@ public class FavouritesStationFragment extends SherlockListFragment implements
      */
     private void setEmptyListView() {
         if (gridViewFavourites == null
-                || ((BaseAdapter) gridViewFavourites.getAdapter()).isEmpty()) {
+                || gridViewFavourites.getAdapter().isEmpty()) {
 
             // In case of GridView (in ListView this is automatically)
             if (emptyView != null) {

@@ -69,6 +69,7 @@ import kankan.wheel.widget.adapters.ArrayWheelAdapter;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressWarnings("deprecation")
 public class DroidTrans extends SherlockFragmentActivity {
 
     public static final String BUNDLE_IS_DROID_TRANS_HOME_SCREEN = "IS DROID TRANS HOME SCREEN";
@@ -861,7 +862,7 @@ public class DroidTrans extends SherlockFragmentActivity {
         mDrawerList = (ListView) findViewById(R.id.navigation_drawer_listview);
         mMenuAdapter = new NavDrawerArrayAdapter(context, navigationItems);
         mDrawerList.setAdapter(mMenuAdapter);
-        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context,
+        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, null,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
 

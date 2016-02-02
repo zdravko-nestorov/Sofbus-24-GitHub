@@ -75,7 +75,7 @@ class ProcessVirtualBoards {
      * VirtualBoardsStation object
      *
      * @return a VirtualBoardsStation object, containing all information about
-     *         the station
+     * the station
      */
     public VirtualBoardsStationEntity getVBSingleStationFromHtml() {
         VirtualBoardsStationEntity vbStation = new VirtualBoardsStationEntity(
@@ -195,12 +195,10 @@ class ProcessVirtualBoards {
     /**
      * Get a list with all vehicles for the corresponding type
      *
-     * @param vehicleType
-     *            the type of the current vehicle
-     * @param vehiclesPartHtml
-     *            the part of the html code (representing one vehicle type)
+     * @param vehicleType      the type of the current vehicle
+     * @param vehiclesPartHtml the part of the html code (representing one vehicle type)
      * @return a list with all information about the passing vehicles through
-     *         this station
+     * this station
      */
     private LinkedList<VehicleEntity> getVehiclesByTypeFromHtml(
             VehicleTypeEnum vehicleType, String vehiclesPartHtml) {
@@ -289,8 +287,7 @@ class ProcessVirtualBoards {
      * Transform the arrivalTimes array into a list. It is also checking for
      * each time of arrival if it is after the current hour
      *
-     * @param arrivalTimes
-     *            an array with the arrival times
+     * @param arrivalTimes an array with the arrival times
      * @return an array list, containing all times after the current hour
      */
     private ArrayList<String> formatArrivalTimes(String[] arrivalTimes) {
@@ -313,8 +310,7 @@ class ProcessVirtualBoards {
      * Get the vehicle type according to its name (Автобус, Тролейбус or
      * Трамвай)
      *
-     * @param vehiclesPartHtml
-     *            the part of the html code (representing one vehicle type)
+     * @param vehiclesPartHtml the part of the html code (representing one vehicle type)
      * @return the vehicle type
      */
     private VehicleTypeEnum getVehicleType(String vehiclesPartHtml) {

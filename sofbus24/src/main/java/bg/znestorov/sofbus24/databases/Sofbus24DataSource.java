@@ -34,6 +34,25 @@ class Sofbus24DataSource {
         dbHelper = new Sofbus24SQLite(context);
     }
 
+    /**
+     * A strange error occurs sometimes - {android.database.sqlite.SQLiteDiskIOException:
+     * disk I/O error}. The exception itself is generated in the native sqlite code, and
+     * while I haven't looked up the C/C++ part of the JNI interface, this should come
+     * directly from the underlying sqlite3_open call. For non obvious reasons the actual
+     * error code is not included in the thrown exception, so you are basically out of luck
+     * here to find the root cause.
+     * As this comes directly from the native layer it's some kind of filesystem/hardware problem.
+     * The card may be broken, the card socket may be broken/dirty/whatever or anything in between
+     * could be messed up (most likely physically).
+     * <p/>
+     * For more information, StackOverflow posts:<br/>
+     * {http://stackoverflow.com/questions/20189026/contentprovider-throws-
+     * sqlitecantopendatabaseexception-unable-to-open-database}<br/>
+     * {http://stackoverflow.com/questions/4651797/database-handling-stoped-
+     * working-on-android-2-2-1-desire-hd-1-72-405-3/4828540#4828540}
+     *
+     * @throws SQLException
+     */
     private void open() throws SQLException {
         database = dbHelper.getWritableDatabase();
     }

@@ -65,14 +65,14 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         /*
-		 * Not needed as the database is copied from the assets folder
+         * Not needed as the database is copied from the assets folder
 		 */
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		/*
-		 * Not needed as the application is taking care of the database update
+        /*
+         * Not needed as the application is taking care of the database update
 		 * (to prevent any bugs when the database is updated internally or with
 		 * the application update)
 		 */
@@ -80,7 +80,7 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		/*
+        /*
          * Not needed anymore, because there was a bug when trying to put a new
 		 * version of the database in the configuration data folder. The new
 		 * version of the db was '2'. which is causing the problem 'Can't

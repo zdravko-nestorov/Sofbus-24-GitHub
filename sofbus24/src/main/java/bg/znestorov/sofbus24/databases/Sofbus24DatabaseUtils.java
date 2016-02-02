@@ -35,8 +35,7 @@ public class Sofbus24DatabaseUtils {
      * Delete the old databases (stations.db and vehicles.db) and create an
      * empty database on the system and rewrites it with the ready database
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      */
     public static void createOrUpgradeSofbus24Database(Activity context) {
         deleteOldDatabases(context);
@@ -55,8 +54,7 @@ public class Sofbus24DatabaseUtils {
     /**
      * Check if the database is valid (if all tables and columns exists)
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return if the database is valid
      */
     public static boolean isSofbus24DatabaseValid(Activity context) {
@@ -69,8 +67,7 @@ public class Sofbus24DatabaseUtils {
      * Delete all records from the Station DB (the DB remains empty - it is not
      * deleted)
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      */
     public static void deleteStationDatabase(Activity context) {
         StationsDataSource stationsDatasource = new StationsDataSource(context);
@@ -82,10 +79,8 @@ public class Sofbus24DatabaseUtils {
     /**
      * Delete the database file in the current path
      *
-     * @param context
-     *            the current Activity context
-     * @param path
-     *            the database file
+     * @param context the current Activity context
+     * @param path    the database file
      */
     private static void deleteDatabase(Activity context, String path) {
         File dbFile = new File(path);
@@ -95,8 +90,7 @@ public class Sofbus24DatabaseUtils {
     /**
      * Delete the old databases that were used (Stations and Vehicles)
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      */
     private static void deleteOldDatabases(Activity context) {
         deleteDatabase(context, DB_PATH + DB_STATIONS_NAME);
@@ -109,8 +103,7 @@ public class Sofbus24DatabaseUtils {
      * Get the input database stream (if a database update is found - get the
      * stream from the Files folder and delete the existing database)
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return the input database stream
      */
     private static InputStream getDatabaseInputStream(Activity context) {

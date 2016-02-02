@@ -3,7 +3,10 @@ package bg.znestorov.sofbus24.navigation;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +15,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.about.RetrieveAppConfiguration;
+import bg.znestorov.sofbus24.backup.ChooseBackupDialog;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocationTimeout;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -34,6 +38,7 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 public class NavDrawerHelper {
 
     private final FragmentActivity context;
+    private final Fragment fragment;
     private final GlobalEntity globalContext;
 
     private final DrawerLayout mDrawerLayout;
@@ -42,11 +47,12 @@ public class NavDrawerHelper {
 
     private final DrawerItemClickListener drawerItemClickListener;
 
-    public NavDrawerHelper(FragmentActivity context,
+    public NavDrawerHelper(FragmentActivity context, Fragment fragment,
                            DrawerLayout mDrawerLayout, ListView mDrawerList,
                            ArrayList<String> navigationItems) {
 
         this.context = context;
+        this.fragment = fragment;
         this.globalContext = (GlobalEntity) context.getApplicationContext();
 
         this.mDrawerLayout = mDrawerLayout;
@@ -146,13 +152,24 @@ public class NavDrawerHelper {
 
                     RetrieveAppConfiguration retrieveAppConfiguration;
                     retrieveAppConfiguration = new RetrieveAppConfiguration(
-                            context, progressDialog, true);
+                            context, fragment, progressDialog, true);
                     retrieveAppConfiguration.execute();
                 } else {
                     ActivityUtils.showNoInternetToast(context);
                 }
                 break;
             case 10:
+                FragmentManager fragmentManager;
+                if (fragment == null) {
+                    fragmentManager = context.getSupportFragmentManager();
+                } else {
+                    fragmentManager = fragment.getChildFragmentManager();
+                }
+
+                DialogFragment chooseBackupDialog = ChooseBackupDialog.newInstance();
+                chooseBackupDialog.show(fragmentManager, "dialogFragment");
+                break;
+            case 11:
                 context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH);
                 context.finish();
                 break;

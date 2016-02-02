@@ -42,6 +42,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressWarnings("deprecation")
 public class RetrievePublicTransportStation extends
         AsyncTask<Void, Void, PublicTransportStationEntity> {
 

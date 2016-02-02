@@ -24,6 +24,7 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
+@SuppressWarnings("deprecation")
 public class Sofbus24 extends SherlockFragmentActivity {
 
     private static final String TAG_SOFBUS_24_FRAGMENT = "SOFBUS_24_FRAGMENT";
@@ -46,11 +47,17 @@ public class Sofbus24 extends SherlockFragmentActivity {
         ActivityUtils.showHomeActivtyChangedToast(context,
                 getString(R.string.navigation_drawer_home_standard));
 
+        // Create the Sofbus24 fragment (should be created before the NavigationDrawer,
+        // so can be used for showing some DialogFragments from the NavigationPanel,
+        // which won't be recreated on orientation changes).
+        // For example - all backup dialogs, information dialogs and so on
+        Sofbus24Fragment sofbus24Fragment = getSofbus24Fragment(savedInstanceState);
+
         // Initialize the ActionBar and the NavigationDrawer
-        initNavigationDrawer();
+        initNavigationDrawer(sofbus24Fragment);
 
         // Start the Sofbus24 fragment
-        startSofbus24Fragment(savedInstanceState);
+        startSofbus24Fragment(sofbus24Fragment);
 
         // Check for an update
         if (savedInstanceState == null) {
@@ -89,10 +96,51 @@ public class Sofbus24 extends SherlockFragmentActivity {
         }
     }
 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(
+            android.content.res.Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        // Pass any configuration change to the drawer toggles
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    /**
+     * Get the Sofbus24 fragment (create a new one or get the one from the Bundle)
+     *
+     * @param savedInstanceState the current state of the activity
+     */
+    private Sofbus24Fragment getSofbus24Fragment(Bundle savedInstanceState) {
+        Sofbus24Fragment sofbus24Fragment;
+
+        if (savedInstanceState == null) {
+            sofbus24Fragment = new Sofbus24Fragment();
+        } else {
+            sofbus24Fragment = (Sofbus24Fragment) getSupportFragmentManager()
+                    .findFragmentByTag(TAG_SOFBUS_24_FRAGMENT);
+
+            if (sofbus24Fragment == null) {
+                sofbus24Fragment = new Sofbus24Fragment();
+            }
+        }
+
+        return sofbus24Fragment;
+    }
+
     /**
      * Initialize the navigation drawer
+     *
+     * @param sofbus24Fragment the fragment that will initialize all screens on the home screen dialog
      */
-    private void initNavigationDrawer() {
+    private void initNavigationDrawer(Sofbus24Fragment sofbus24Fragment) {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
@@ -114,7 +162,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
         mDrawerList = (ListView) findViewById(R.id.navigation_drawer_listview);
         mMenuAdapter = new NavDrawerArrayAdapter(context, navigationItems);
         mDrawerList.setAdapter(mMenuAdapter);
-        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context,
+        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, sofbus24Fragment,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
 
@@ -145,42 +193,12 @@ public class Sofbus24 extends SherlockFragmentActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-        // Sync the toggle state after onRestoreInstanceState has occurred.
-        mDrawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(
-            android.content.res.Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        // Pass any configuration change to the drawer toggles
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }
-
     /**
      * Start the Sofbus24 fragment
      *
-     * @param savedInstanceState the current state of the activity
+     * @param sofbus24Fragment the fragment that will initialize all screens on the home screen dialog
      */
-    private void startSofbus24Fragment(Bundle savedInstanceState) {
-        Sofbus24Fragment sofbus24Fragment;
-
-        if (savedInstanceState == null) {
-            sofbus24Fragment = new Sofbus24Fragment();
-        } else {
-            sofbus24Fragment = (Sofbus24Fragment) getSupportFragmentManager()
-                    .findFragmentByTag(TAG_SOFBUS_24_FRAGMENT);
-
-            if (sofbus24Fragment == null) {
-                sofbus24Fragment = new Sofbus24Fragment();
-            }
-        }
-
+    private void startSofbus24Fragment(Sofbus24Fragment sofbus24Fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.sofbus24_fragment, sofbus24Fragment,

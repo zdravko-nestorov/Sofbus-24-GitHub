@@ -6,7 +6,7 @@
     <string name="app_sofbus24">Софбус 24</string>
     <string name="app_navigation_drawer_open" translatable="false">Отвори</string>
     <string name="app_navigation_drawer_close" translatable="false">Затвори</string>
-    <string name="app_img_empty_content_description" />
+    <string name="app_img_empty_content_description" translatable="false" />
     <string name="app_button_ok">OK</string>
     <string name="app_button_save">Запази</string>
     <string name="app_button_cancel">Отказ</string>
@@ -404,6 +404,7 @@
     <string name="navigation_drawer_options">Настройки</string>
     <string name="navigation_drawer_info">Информация</string>
     <string name="navigation_drawer_update">Актуализация</string>
+    <string name="navigation_drawer_backup">Бекъп на данни</string>
     <string name="navigation_drawer_exit">Изход</string>
     <string name="navigation_drawer_home_screen_error" formatted="false"><![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
     <string name="navigation_drawer_home_screen_remains" formatted="false"><![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
@@ -430,5 +431,31 @@
 
     <!-- Google Cloud Messages -->
     <string name="gcm_dialog_message_rate">Ако приложението Ви харесва, моля отделете минутка, за да го оцените (извинете, ако вече сте го направили). За мен вашият глас е от съществено значение. Благодаря Ви за подкрепата!</string>
+
+    <!-- File Explorer -->
+    <string name="file_explorer_large_file" formatted="false"><![CDATA[Надвишен е максималният размер за файл - %s MB.]]></string>
+    <string name="file_explorer_file">1 обект</string>
+    <string name="file_explorer_files" formatted="false"><![CDATA[%s обекта]]></string>
+    <string name="file_explorer_hint" formatted="false"><![CDATA[Име на backup файла]]></string>
+    <string name="file_explorer_b" formatted="false" translatable="false"><![CDATA[%s B]]></string>
+    <string name="file_explorer_kb" formatted="false" translatable="false"><![CDATA[%s kB]]></string>
+    <string name="file_explorer_mb" formatted="false" translatable="false"><![CDATA[%s MB]]></string>
+    <string name="file_explorer_gb" formatted="false" translatable="false"><![CDATA[%s GB]]></string>
+
+    <!-- Backup -->
+    <string name="backup_import_export_choice">Избор на бекъп</string>
+    <string name="backup_import_loading" formatted="false"><![CDATA[Възстановяване на потребителските настройки…]]></string>
+    <string name="backup_import_success">Вашите настройки бяха възстановени успешно. Приложението ще се рестартира автоматично, за да има резултат от направените промени.</string>
+    <string name="backup_import_failed">Възникна проблем при възстановяването на вашите настройки. Моля опитайте отново.</string>
+    <string name="backup_import_confirm_title">Потвърждение</string>
+    <string name="backup_import_confirm_msg" formatted="false"><![CDATA[Сигурни ли сте, че искате да презапишете потребителските си настройки с тези от файла <b><i>%s</i></b>?]]></string>
+    <string name="backup_export_loading" formatted="false"><![CDATA[Запазване на потребителските настройки…]]></string>
+    <string name="backup_export_success" formatted="false"><![CDATA[Вашите настройки бяха запазени успешно - <b>%s</b>. Те могат да бъдат възстановени по всяко време.]]></string>
+    <string name="backup_export_failed">Възникна проблем при запазването на вашите настройки. Моля опитайте отново.</string>
+    <string name="backup_export_backup_name" formatted="false"><![CDATA[Името на файла не може да е празно или да съдържа някой от символите: \\\/:*?\"<>|]]></string>
+    <string name="backup_export_write_permission">Нямате права за запис в тази директория!</string>
+    <string name="backup_export_file_size">Файлът, който се опитвате да запишете е по-голям от наличното прострсранство. Моля освободете място и опитайте отново.</string>
+    <string name="backup_export_duplicate_title">Дублиращ се файл</string>
+    <string name="backup_export_duplicate_msg" formatted="false"><![CDATA[Файлът <b><i>%s</i></b> вече съществува. Бихте ли желали да го презапишете?]]></string>
 
 </resources>

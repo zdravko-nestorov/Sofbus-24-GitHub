@@ -27,7 +27,6 @@ import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
  *
  * @author Zdravko Nestorov
  * @version 1.0
- *
  */
 public class ScheduleVehicleInfo {
 
@@ -49,10 +48,8 @@ public class ScheduleVehicleInfo {
     /**
      * Retrieve an information about the selected vehicle
      *
-     * @param vehicle
-     *            the selected vehicle
-     * @param vehicleTitle
-     *            the vehicle title in format: "xxxxx №xxx"
+     * @param vehicle      the selected vehicle
+     * @param vehicleTitle the vehicle title in format: "xxxxx №xxx"
      */
     public void onListItemClick(VehicleEntity vehicle, String vehicleTitle) {
 
@@ -79,15 +76,13 @@ public class ScheduleVehicleInfo {
     /**
      * Retrieve an information about the selected vehicle
      *
-     * @param scheduleStationAdapter
-     *            the ScheduleVehicleAdapter
-     * @param position
-     *            the position of the selected vehicle
+     * @param scheduleStationAdapter the ScheduleVehicleAdapter
+     * @param position               the position of the selected vehicle
      */
     public void onListItemClick(ScheduleVehicleAdapter scheduleStationAdapter,
                                 int position) {
 
-        VehicleEntity vehicle = (VehicleEntity) scheduleStationAdapter
+        VehicleEntity vehicle = scheduleStationAdapter
                 .getItem(position);
         String rowCaption = scheduleStationAdapter.getVehicleCaption(context,
                 vehicle);
@@ -98,8 +93,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a bus with number 1-TB
      *
-     * @param vehicle
-     *            the selected vehicle with number 1-TB
+     * @param vehicle the selected vehicle with number 1-TB
      * @return a direction entity for this tram
      */
     private DirectionsEntity createDirectionEntity1TB(VehicleEntity vehicle) {
@@ -174,8 +168,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a tram with number 6-A
      *
-     * @param vehicle
-     *            the selected vehicle with number 6-A
+     * @param vehicle the selected vehicle with number 6-A
      * @return a direction entity for this tram
      */
     private DirectionsEntity createDirectionEntity6A(VehicleEntity vehicle) {
@@ -273,8 +266,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a bus with number 10-TM
      *
-     * @param vehicle
-     *            the selected vehicle with number 10-TM
+     * @param vehicle the selected vehicle with number 10-TM
      * @return a direction entity for this bus
      */
     private DirectionsEntity createDirectionEntity10TM(VehicleEntity vehicle) {
@@ -348,8 +340,7 @@ public class ScheduleVehicleInfo {
      * Create a direction entity in case the vehicle is a trolley with number
      * 11-A
      *
-     * @param vehicle
-     *            the selected vehicle with number 11-A
+     * @param vehicle the selected vehicle with number 11-A
      * @return a direction entity for this tram
      */
     private DirectionsEntity createDirectionEntity11A(VehicleEntity vehicle) {
@@ -480,8 +471,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a bus with number 11-TM
      *
-     * @param vehicle
-     *            the selected vehicle with number 11-TM
+     * @param vehicle the selected vehicle with number 11-TM
      * @return a direction entity for this bus
      */
     private DirectionsEntity createDirectionEntity11TM(VehicleEntity vehicle) {
@@ -568,8 +558,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a bus with number 12-A
      *
-     * @param vehicle
-     *            the selected vehicle with number 12-A
+     * @param vehicle the selected vehicle with number 12-A
      * @return a direction entity for this bus
      */
     private DirectionsEntity createDirectionEntity12A(VehicleEntity vehicle) {
@@ -646,8 +635,7 @@ public class ScheduleVehicleInfo {
     /**
      * Create a direction entity in case the vehicle is a bus with number 44-B
      *
-     * @param vehicle
-     *            the selected vehicle with number 44-B
+     * @param vehicle the selected vehicle with number 44-B
      * @return a direction entity for this bus
      */
     private DirectionsEntity createDirectionEntity44B(VehicleEntity vehicle) {
@@ -754,8 +742,7 @@ public class ScheduleVehicleInfo {
     /**
      * Translate the string if needed
      *
-     * @param input
-     *            the input string
+     * @param input the input string
      * @return the translated string (if needed)
      */
     private String translateString(String input) {
@@ -772,12 +759,9 @@ public class ScheduleVehicleInfo {
     /**
      * Create a PublicTransportStationEntity using the given number, name and id
      *
-     * @param number
-     *            the station number
-     * @param name
-     *            the station name
-     * @param id
-     *            the station id
+     * @param number the station number
+     * @param name   the station name
+     * @param id     the station id
      * @return the PublicTransportStation entity
      */
     private PublicTransportStationEntity createPublicTransportStation(
@@ -800,8 +784,7 @@ public class ScheduleVehicleInfo {
     /**
      * Retrieve information about the selected vehicle in the special cases
      *
-     * @param ptDirectionsEntity
-     *            the DirectionEntity in the special case
+     * @param ptDirectionsEntity the DirectionEntity in the special case
      */
     private void proceedSpecialCase(DirectionsEntity ptDirectionsEntity) {
         // Get the fragment manager to start the dialog fragment
@@ -822,10 +805,8 @@ public class ScheduleVehicleInfo {
     /**
      * Retrieve information about the selected vehicle in the standard cases
      *
-     * @param vehicle
-     *            the selected vehicle
-     * @param rowCaption
-     *            the selected row caption
+     * @param vehicle    the selected vehicle
+     * @param rowCaption the selected row caption
      */
     private void proceedStandardCase(VehicleEntity vehicle, String rowCaption) {
         ProgressDialog progressDialog = new ProgressDialog(context);

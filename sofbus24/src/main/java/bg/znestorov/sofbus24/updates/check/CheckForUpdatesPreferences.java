@@ -122,7 +122,7 @@ public class CheckForUpdatesPreferences {
 
         Editor editor = applicationUpdate.edit();
         editor.putString(getPreferencesFieldToUpdate(updateType), lastCheckDate);
-        editor.commit();
+        editor.apply();
     }
 
     /**

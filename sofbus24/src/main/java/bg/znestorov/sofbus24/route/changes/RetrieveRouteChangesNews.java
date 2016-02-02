@@ -28,6 +28,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressWarnings("deprecation")
 public class RetrieveRouteChangesNews extends AsyncTask<Void, Void, String> {
 
     private final Activity context;
@@ -130,31 +131,16 @@ public class RetrieveRouteChangesNews extends AsyncTask<Void, Void, String> {
         String articleBody = null;
 
         if (htmlResult != null) {
-
             Pattern pattern = Pattern
-                    .compile(Constants.ROUTE_CHANGES_NEWS_REGEX_1);
+                    .compile(Constants.ROUTE_CHANGES_NEWS_REGEX);
             Matcher matcher = pattern.matcher(htmlResult);
 
             if (matcher.find()) {
                 articleBody = matcher.group(1);
                 articleBody = articleBody.replaceAll("&nbsp;", "");
-            } else {
-                pattern = Pattern.compile(Constants.ROUTE_CHANGES_NEWS_REGEX_2);
-                matcher = pattern.matcher(htmlResult);
-
-                if (matcher.find()) {
-                    articleBody = matcher.group(1);
-                    articleBody = articleBody.replaceAll("&nbsp;", "");
-                } else {
-                    pattern = Pattern
-                            .compile(Constants.ROUTE_CHANGES_NEWS_REGEX_3);
-                    matcher = pattern.matcher(htmlResult);
-
-                    if (matcher.find()) {
-                        articleBody = matcher.group(1);
-                        articleBody = articleBody.replaceAll("&nbsp;", "");
-                    }
-                }
+                articleBody = articleBody.replaceAll(Constants.ROUTE_CHANGES_IMAGE_REGEX, "");
+                articleBody = articleBody.replaceAll(Constants.ROUTE_CHANGES_NEW_LINES_REGEX, "");
+                articleBody = "<div>" + articleBody.trim();
             }
         }
 

@@ -24,8 +24,9 @@ dependencies {
     compile project(':pagerSlidingTabStrip')
     compile project(':rollWheelPicker')
     compile project(':actionBarSherlock')
-    compile 'com.google.code.gson:gson:2.3'
-    compile('com.google.android.gms:play-services:+') {
+    compile 'net.lingala.zip4j:zip4j:1.2.4'
+    compile 'com.google.code.gson:gson:2.4'
+    compile('com.google.android.gms:play-services:8.1.0') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'mediarouter-v7'
     }

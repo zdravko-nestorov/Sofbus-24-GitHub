@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Global labels -->
     <string name="app_sofbus24">Sofbus 24</string>
-    <string name="app_img_empty_content_description" />
+    <string name="app_img_empty_content_description" tools:ignore="ExtraTranslation" />
     <string name="app_button_ok">OK</string>
     <string name="app_button_save">Save</string>
     <string name="app_button_cancel">Cancel</string>
@@ -394,6 +394,7 @@
     <string name="navigation_drawer_options">Settings</string>
     <string name="navigation_drawer_info">Information</string>
     <string name="navigation_drawer_update">Check for update</string>
+    <string name="navigation_drawer_backup">Backup data</string>
     <string name="navigation_drawer_exit">Exit</string>
     <string name="navigation_drawer_home_screen_error" formatted="false"><![CDATA[Google Play services, which Sofbus 24 uses to show the Google Maps, are not supported by your device. Please install them so you can choose <b><i>%s</i></b> as a home screen.]]></string>
     <string name="navigation_drawer_home_screen_remains" formatted="false"><![CDATA[The home screen remains the same - <b><i>%s</i></b>. It will be visualized on every application startup until it is changed again.]]></string>
@@ -420,5 +421,27 @@
 
     <!-- Google Cloud Messages -->
     <string name="gcm_dialog_message_rate">If you enjoy using this app, would you mind taking a moment to rate it (sorry if you already did it)? It won\'t take more than a minute. Thank you for your support!</string>
+
+    <!-- File Explorer -->
+    <string name="file_explorer_large_file" formatted="false"><![CDATA[Backup file size exceeds the allowable limit - %s MB.]]></string>
+    <string name="file_explorer_file">1 object</string>
+    <string name="file_explorer_files" formatted="false"><![CDATA[%s objects]]></string>
+    <string name="file_explorer_hint" formatted="false"><![CDATA[Backup filename]]></string>
+
+    <!-- Backup -->
+    <string name="backup_import_export_choice">Backup choice</string>
+    <string name="backup_import_loading" formatted="false"><![CDATA[Restoring your settings and data…]]></string>
+    <string name="backup_import_success">Your settings were successfully restored. The application will automatically restart in order for the changes to take effect.</string>
+    <string name="backup_import_failed">A problem occurred while restoring your settings. Please try again.</string>
+    <string name="backup_import_confirm_title">Confirmation</string>
+    <string name="backup_import_confirm_msg" formatted="false"><![CDATA[Do you want to replace all of your settings with these from the file named <b><i>%s</i></b>?]]></string>
+    <string name="backup_export_loading" formatted="false"><![CDATA[Saving your settings and data…]]></string>
+    <string name="backup_export_success" formatted="false"><![CDATA[Your settings were successfully saved - <b>%s</b>. They can be restored at any time.]]></string>
+    <string name="backup_export_failed">A problem occurred while saving your settings. Please try again.</string>
+    <string name="backup_export_backup_name" formatted="false"><![CDATA[A file name can\'t be empty or contain any of the following characters: \\\/:*?\"<>|]]></string>
+    <string name="backup_export_write_permission">You don\'t have permissions to save in this folder!</string>
+    <string name="backup_export_file_size">The file to save is bigger than the space available. Please free up some space and try again.</string>
+    <string name="backup_export_duplicate_title">Duplicate file</string>
+    <string name="backup_export_duplicate_msg" formatted="false"><![CDATA[The destination already has a file named <b><i>%s</i></b>. Do you want to replace the file with the new one?]]></string>
 
 </resources>
