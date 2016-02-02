@@ -4,7 +4,7 @@
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
     android:versionCode="30"
-    android:versionName="3.0">
+    android:versionName="2.6">
 
     <!-- Google Maps related permissions -->
     <permission
