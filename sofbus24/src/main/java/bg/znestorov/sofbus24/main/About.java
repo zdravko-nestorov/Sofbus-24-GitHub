@@ -74,7 +74,7 @@ public class About extends SherlockFragmentActivity {
                 if (ActivityUtils.haveNetworkConnection(context)) {
                     progressDialog.setMessage(getString(R.string.about_update_db));
                     retrieveAppConfiguration = new RetrieveAppConfiguration(
-                            context, progressDialog, false);
+                            context, null, progressDialog, false);
                     retrieveAppConfiguration.execute();
                 } else {
                     ActivityUtils.showNoInternetToast(context);
@@ -84,7 +84,7 @@ public class About extends SherlockFragmentActivity {
                 if (ActivityUtils.haveNetworkConnection(context)) {
                     progressDialog.setMessage(getString(R.string.about_update_app));
                     retrieveAppConfiguration = new RetrieveAppConfiguration(
-                            context, progressDialog, true);
+                            context, null, progressDialog, true);
                     retrieveAppConfiguration.execute();
                 } else {
                     ActivityUtils.showNoInternetToast(context);

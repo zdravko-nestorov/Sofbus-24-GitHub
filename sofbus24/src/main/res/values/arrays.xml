@@ -106,4 +106,11 @@
         <item name="2600">2600</item>
     </string-array>
 
+    <!-- Backup Choose Dialog -->
+    <string-array name="backupChooseItems">
+        <item name="backup_import_choice">Възстановяване на данни</item>
+        <item name="backup_export_choice">Запазване на данни</item>
+    </string-array>
+
+
 </resources>

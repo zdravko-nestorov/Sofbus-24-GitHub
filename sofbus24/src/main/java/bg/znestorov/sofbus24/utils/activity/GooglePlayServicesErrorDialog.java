@@ -50,6 +50,7 @@ public class GooglePlayServicesErrorDialog extends DialogFragment {
         String positiveBtn = getString(R.string.app_button_install);
 
         OnClickListener positiveOnClickListener = new OnClickListener() {
+            @SuppressWarnings("deprecation")
             public void onClick(DialogInterface dialog, int i) {
                 // Try the new HTTP method
                 try {

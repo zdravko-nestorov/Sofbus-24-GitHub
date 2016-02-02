@@ -1,6 +1,7 @@
 package bg.znestorov.sofbus24.utils;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -9,11 +10,18 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.os.StatFs;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -31,6 +39,7 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.UpdateTypeEnum;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.history.HistoryEntity;
 import bg.znestorov.sofbus24.history.HistoryOfSearches;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.updates.check.CheckForUpdatesAsync;
@@ -52,6 +61,11 @@ public class Utils {
      * The days that the application and the database should be updated
      */
     private static final Set<Integer> DAYS_FOR_DB_UPDATE;
+    /**
+     * Maximum number of attempts when a file is copied/replaced. If some file
+     * fails to copy/replace, try the value of the variable more attempts
+     */
+    private static final Integer MAX_COPY_FILE_ATTEMPTS = 3;
 
     static {
         DAYS_FOR_APP_UPDATE = new LinkedHashSet<Integer>();
@@ -67,8 +81,7 @@ public class Utils {
     /**
      * Check if the input is a number
      *
-     * @param input
-     *            the input string
+     * @param input the input string
      * @return if the input is a number
      */
     public static boolean isNumeric(String input) {
@@ -84,8 +97,7 @@ public class Utils {
     /**
      * Check if the input is an Integer
      *
-     * @param input
-     *            the input string
+     * @param input the input string
      * @return if the input is an Integer
      */
     public static boolean isInteger(String input) {
@@ -101,8 +113,7 @@ public class Utils {
     /**
      * Tests if the supplied string is NULL or 0-length.
      *
-     * @param input
-     *            the input string
+     * @param input the input string
      * @return boolean TRUE if empty, otherwise FALSE
      */
     public static boolean isEmpty(String input) {
@@ -113,8 +124,7 @@ public class Utils {
      * Function that extracts only digits from a given String. In case of an
      * empty string - return "".
      *
-     * @param value
-     *            the input String
+     * @param value the input String
      * @return the digits from the String
      */
     public static String getOnlyDigits(String value) {
@@ -131,8 +141,7 @@ public class Utils {
      * Function that remove all whitespaces and non visible characters such as
      * tab, \n from a string text. In case of an empty string - return "".
      *
-     * @param value
-     *            the input String
+     * @param value the input String
      * @return the digits from the String
      */
     public static String removeSpaces(String value) {
@@ -148,12 +157,10 @@ public class Utils {
     /**
      * Get a value from a string BEFORE some REGEX
      *
-     * @param value
-     *            the string value
-     * @param regex
-     *            the regex that is looked for
+     * @param value the string value
+     * @param regex the regex that is looked for
      * @return the substring value BEFORE the REGEX, or the value in case of no
-     *         REGEX found
+     * REGEX found
      */
     public static String getValueBefore(String value, String regex) {
         if (value.contains(regex)) {
@@ -166,12 +173,10 @@ public class Utils {
     /**
      * Get a value from a string BEFORE some REGEX (LAST)
      *
-     * @param value
-     *            the string value
-     * @param regex
-     *            the regex that is looked for
+     * @param value the string value
+     * @param regex the regex that is looked for
      * @return the substring value BEFORE the REGEX (LAST), or the value in case
-     *         of no REGEX found
+     * of no REGEX found
      */
     public static String getValueBeforeLast(String value, String regex) {
         if (value.contains(regex)) {
@@ -184,12 +189,10 @@ public class Utils {
     /**
      * Get a value from a string AFTER some REGEX
      *
-     * @param value
-     *            the string value
-     * @param regex
-     *            the regex that is looked for
+     * @param value the string value
+     * @param regex the regex that is looked for
      * @return the substring value AFTER the REGEX, or the value in case of no
-     *         REGEX found
+     * REGEX found
      */
     public static String getValueAfter(String value, String regex) {
         if (value.contains(regex)) {
@@ -202,12 +205,10 @@ public class Utils {
     /**
      * Get a value from a string AFTER some REGEX (LAST)
      *
-     * @param value
-     *            the string value
-     * @param regex
-     *            the regex that is looked for
+     * @param value the string value
+     * @param regex the regex that is looked for
      * @return the substring value AFTER the REGEX (LAST), or the value in case
-     *         of no REGEX found
+     * of no REGEX found
      */
     public static String getValueAfterLast(String value, String regex) {
         if (value.contains(regex)) {
@@ -220,14 +221,11 @@ public class Utils {
     /**
      * Get a value from a string BETWEEN the REGEX1 and REGEX2
      *
-     * @param value
-     *            the string value
-     * @param regex1
-     *            the regex that is looked for (after)
-     * @param regex2
-     *            the regex that is looked for (before)
+     * @param value  the string value
+     * @param regex1 the regex that is looked for (after)
+     * @param regex2 the regex that is looked for (before)
      * @return the substring value BETWEEN the REGEX1 and REGEX2, or the value
-     *         in case of no REGEX found
+     * in case of no REGEX found
      */
     public static String getValueBetween(String value, String regex1,
                                          String regex2) {
@@ -242,14 +240,11 @@ public class Utils {
     /**
      * Get a value from a string BETWEEN the last REGEX1 and REGEX2
      *
-     * @param value
-     *            the string value
-     * @param regex1
-     *            the regex that is looked for (after)
-     * @param regex2
-     *            the regex that is looked for (before)
+     * @param value  the string value
+     * @param regex1 the regex that is looked for (after)
+     * @param regex2 the regex that is looked for (before)
      * @return the substring value BETWEEN the REGEX1 and REGEX2, or the value
-     *         in case of no REGEX found
+     * in case of no REGEX found
      */
     public static String getValueBetweenLast(String value, String regex1,
                                              String regex2) {
@@ -265,12 +260,10 @@ public class Utils {
      * Filling a number with zeroes ("0") if it is lower than "outputLength"
      * digits
      *
-     * @param input
-     *            an input string containing a number
-     * @param outputLength
-     *            the desired length of the output
+     * @param input        an input string containing a number
+     * @param outputLength the desired length of the output
      * @return a number (in string format) which is always at least
-     *         "outputLength" digits
+     * "outputLength" digits
      */
     public static String formatNumberOfDigits(String input, int outputLength) {
         String formatType = String.format(Locale.getDefault(), "%%0%dd",
@@ -287,10 +280,9 @@ public class Utils {
     /**
      * Remove the leading zeros in alphanumeric text with regex
      *
-     * @param input
-     *            an input string containing a number
+     * @param input an input string containing a number
      * @return a number (in string format) with removed leading zeroes (if
-     *         exist)
+     * exist)
      */
     public static String removeLeadingZeroes(String input) {
         try {
@@ -349,12 +341,9 @@ public class Utils {
     /**
      * Get the difference between two hours in format HH:MM
      *
-     * @param context
-     *            Context of the current activity
-     * @param afterTime
-     *            a time after the current moment in format HH:MM
-     * @param currTime
-     *            the current time in format HH:MM
+     * @param context   Context of the current activity
+     * @param afterTime a time after the current moment in format HH:MM
+     * @param currTime  the current time in format HH:MM
      * @return the difference between the times
      */
     public static String getTimeDifference(Activity context, String afterTime,
@@ -398,11 +387,9 @@ public class Utils {
     /**
      * Format the remaining time in format ~1h,20m
      *
-     * @param context
-     *            Context of the current activity
-     * @param difference
-     *            the difference between the times (current one and the one
-     *            after)
+     * @param context    Context of the current activity
+     * @param difference the difference between the times (current one and the one
+     *                   after)
      * @return the difference in format ~1h,20m
      */
     private static String formatTime(Activity context, String difference) {
@@ -442,8 +429,7 @@ public class Utils {
     /**
      * Transform the remaining time in minutes
      *
-     * @param remainingTime
-     *            the remaining time in string format
+     * @param remainingTime the remaining time in string format
      * @return the remaining time in minutes
      */
     public static int getRemainingMinutes(String remainingTime) {
@@ -467,10 +453,8 @@ public class Utils {
     /**
      * Convert the millis in remaining time format (~Хч Хм)
      *
-     * @param context
-     *            Context of the current activity
-     * @param millis
-     *            remaining time in millis
+     * @param context Context of the current activity
+     * @param millis  remaining time in millis
      * @return the remaining time in format ~Хч Хм
      */
     public static String formatMillisInTime(Activity context, Long millis) {
@@ -496,8 +480,7 @@ public class Utils {
      * Function that format the direction name of the station or vehicle to be
      * in correct format. In case of an empty string - return "".
      *
-     * @param directionName
-     *            the name of the direction
+     * @param directionName the name of the direction
      * @return the correctly formatted direction
      */
     public static String formatDirectionName(String directionName) {
@@ -829,13 +812,10 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the searched text
      *
-     * @param context
-     *            the current Activity context
-     * @param historyType
-     *            the type of the search - <b>public transport</b> or
-     *            <b>metro</b>
-     * @param historyValueArr
-     *            the value that has to be added to the history of searches
+     * @param context         the current Activity context
+     * @param historyType     the type of the search - <b>public transport</b> or
+     *                        <b>metro</b>
+     * @param historyValueArr the value that has to be added to the history of searches
      */
     private static void addSearchInHistory(Activity context,
                                            VehicleTypeEnum historyType, String... historyValueArr) {
@@ -860,26 +840,31 @@ public class Utils {
             historyType = VehicleTypeEnum.METRO;
         }
 
+        // Create the current/last HistoryEntity and searchNumber
+        int lastSearchNumber = history.getLastSearchNumber();
+        HistoryEntity lastHistoryEntity = history.getLastHistoryEntity(context);
+
+        // Create the next HistoryEntity and searchNumber
         int nextSearchNumber = history.getNextSearchNumber();
-        history.putFiledInPreferences(context,
-                Constants.HISTORY_PREFERENCES_SEARCH_VALUE, nextSearchNumber,
-                historyValue, true);
-        history.putFiledInPreferences(context,
-                Constants.HISTORY_PREFERENCES_SEARCH_DATE, nextSearchNumber,
-                DateFormat.format("dd.MM.yyyy, kk:mm:ss", new java.util.Date())
-                        .toString(), true);
-        history.putFiledInPreferences(context,
-                Constants.HISTORY_PREFERENCES_SEARCH_TYPE, nextSearchNumber,
-                historyType.name(), false);
+        HistoryEntity nextHistoryEntity = new HistoryEntity(historyValue, DateFormat.format("dd.MM.yyyy, kk:mm:ss",
+                new java.util.Date()).toString(), historyType);
+
+        // Check if the last HistoryEntity recorded in the SharedPreferences file is
+        // the same as the current one (in case of refresh or something similar to this).
+        // According to an user (Gmail - Deyan Viktorov), only the time of the history search
+        // should be updated
+        if (lastHistoryEntity.equals(nextHistoryEntity)) {
+            history.putHistoryEntityInPreferences(context, lastSearchNumber, nextHistoryEntity);
+        } else {
+            history.putHistoryEntityInPreferences(context, nextSearchNumber, nextHistoryEntity);
+        }
     }
 
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context
-     *            the current Activity context
-     * @param station
-     *            the station that has to be added to the history of searches
+     * @param context the current Activity context
+     * @param station the station that has to be added to the history of searches
      */
     public static void addStationInHistory(Activity context,
                                            StationEntity station) {
@@ -903,11 +888,9 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context
-     *            the current Activity context
-     * @param stationsMap
-     *            the map of stations that has to be added to the history of
-     *            searches
+     * @param context     the current Activity context
+     * @param stationsMap the map of stations that has to be added to the history of
+     *                    searches
      */
     public static void addListOfStationsInHistory(Activity context,
                                                   HashMap<String, StationEntity> stationsMap) {
@@ -921,10 +904,8 @@ public class Utils {
     /**
      * Add a search to the history of searches, using the station
      *
-     * @param context
-     *            the current Activity context
-     * @param vehicle
-     *            the vehicle that has to be added to the history of searches
+     * @param context the current Activity context
+     * @param vehicle the vehicle that has to be added to the history of searches
      */
     public static void addVehicleInHistory(Activity context,
                                            VehicleEntity vehicle) {
@@ -935,8 +916,7 @@ public class Utils {
     /**
      * Check if the device is in landscape mode
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return if the device is in landscape mode
      */
     public static boolean isInLandscapeMode(Activity context) {
@@ -948,8 +928,7 @@ public class Utils {
     /**
      * Check if the device is tablet in landscape mode
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return if the device is tablet in landscape mode
      */
     public static boolean isTabletInLandscapeMode(Activity context) {
@@ -966,8 +945,7 @@ public class Utils {
      * Create a list with all items in the NavigationDrawer (each row of the
      * menu)
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return an ArrayList with all rows of the menu
      */
     public static ArrayList<String> initNavigationDrawerItems(Activity context) {
@@ -991,6 +969,8 @@ public class Utils {
         navigationItems.add(context.getString(R.string.navigation_drawer_info));
         navigationItems.add(context
                 .getString(R.string.navigation_drawer_update));
+        navigationItems.add(context
+                .getString(R.string.navigation_drawer_backup));
         navigationItems.add(context.getString(R.string.navigation_drawer_exit));
 
         return navigationItems;
@@ -999,8 +979,7 @@ public class Utils {
     /**
      * Check if there is an available network connection
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return if there is a network connection
      */
     public static boolean haveNetworkConnection(Activity context) {
@@ -1040,10 +1019,8 @@ public class Utils {
     /**
      * Get the difference between two dates in days
      *
-     * @param startDateString
-     *            the start date
-     * @param endDateString
-     *            the end date
+     * @param startDateString the start date
+     * @param endDateString   the end date
      * @return the difference between the start and end date in days
      */
     @SuppressLint("SimpleDateFormat")
@@ -1067,8 +1044,7 @@ public class Utils {
     /**
      * Get the closest date when the app had to be updated
      *
-     * @param updateType
-     *            the update type (what would be updated - APP or DB)
+     * @param updateType the update type (what would be updated - APP or DB)
      * @return the closest date when the app had to be updated
      */
     private static String getClosestDateForUpdate(UpdateTypeEnum updateType) {
@@ -1105,12 +1081,9 @@ public class Utils {
     /**
      * Check if the date for update is in range
      *
-     * @param startDateString
-     *            the start date in string format
-     * @param endDateString
-     *            the end date in string format
-     * @param updateType
-     *            the update type (what would be updated - APP or DB)
+     * @param startDateString the start date in string format
+     * @param endDateString   the end date in string format
+     * @param updateType      the update type (what would be updated - APP or DB)
      * @return if the date is in range
      */
     public static boolean isDateInRange(String startDateString,
@@ -1127,10 +1100,8 @@ public class Utils {
      * Check if an application or database update is available (APP - one per
      * month, DB - twice per month)
      *
-     * @param context
-     *            the current activity context
-     * @param updateType
-     *            the update type (what would be updated - APP or DB)
+     * @param context    the current activity context
+     * @param updateType the update type (what would be updated - APP or DB)
      */
     public static void checkForUpdate(FragmentActivity context,
                                       UpdateTypeEnum updateType) {
@@ -1183,10 +1154,8 @@ public class Utils {
      * Decode drawable to a Bitmap (save the allocated memory, but doesn't
      * really help)
      *
-     * @param context
-     *            the activity context
-     * @param resId
-     *            the drawable res id
+     * @param context the activity context
+     * @param resId   the drawable res id
      * @return the decoded bitmap
      */
     public static Bitmap decodeDrawable(Activity context, int resId) {
@@ -1227,8 +1196,7 @@ public class Utils {
     /**
      * Get the size of the screen in inches
      *
-     * @param context
-     *            the current activity context
+     * @param context the current activity context
      * @return the screen size in inches
      */
     public static double getScreenSizeInInches(Activity context) {
@@ -1259,8 +1227,7 @@ public class Utils {
     /**
      * Format the schedule cache timestamp in format DD.MM.YYY
      *
-     * @param timestamp
-     *            the database timestamp
+     * @param timestamp the database timestamp
      * @return the formatted timestamp
      */
     @SuppressLint("SimpleDateFormat")
@@ -1321,6 +1288,254 @@ public class Utils {
         }
 
         return deviceOsVersion.toString();
+    }
+
+    /**
+     * Check if a given filename is valid according to the OS rules
+     *
+     * @param filename the filename to check
+     * @return if the filename is valid or not
+     */
+    public static boolean isFilenameValid(String filename) {
+        if (isEmpty(filename)) {
+            return false;
+        }
+
+        File file = new File(filename);
+        try {
+            file.getCanonicalPath();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Check if a given file path has read/write permission
+     *
+     * @param filePath the file path to check
+     * @return if the file path has read/write permission
+     */
+    public static boolean hasWritePermissions(String filePath) {
+        if (isEmpty(filePath)) {
+            return false;
+        }
+
+        File file = new File(filePath);
+        return file.canWrite();
+    }
+
+    /**
+     * Check if a given file already exists
+     *
+     * @param filePath the file to check
+     * @return if the file already exists
+     */
+    public static boolean isFileExists(String filePath) {
+        if (isEmpty(filePath)) {
+            return false;
+        }
+
+        File file = new File(filePath);
+        return file.exists();
+    }
+
+    /**
+     * Check if there is enough space to save the file
+     *
+     * @param filePath the file path to check
+     * @return if there is enough space to save the file
+     */
+    @SuppressWarnings("deprecation")
+    public static float getAvailableSpaceInBytes(String filePath) {
+        if (isEmpty(filePath)) {
+            return 0.f;
+        }
+
+        StatFs stat = new StatFs(filePath);
+
+        long bytesAvailable;
+        bytesAvailable = Build.VERSION.SDK_INT >= 18 ? getAvailableSpaceInBytes(stat) : (long) stat.getBlockSize() * (long) stat.getAvailableBlocks();
+
+        return bytesAvailable;
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+    private static long getAvailableSpaceInBytes(StatFs stat) {
+        return stat.getBlockSizeLong() * stat.getAvailableBlocksLong();
+    }
+
+    /**
+     * Returns the name of the file or directory represented by this file
+     *
+     * @param filepath the selected filepath
+     * @return the filename of the given filepath
+     */
+    public static String getFilenameFromPath(String filepath) {
+        return new File(filepath).getName();
+    }
+
+    /**
+     * Returns the filepath only or the parent directory
+     * (Example: C:\\abcfolder\\textfile.txt“ --> “C:\\abcfolder\\“)
+     *
+     * @param filepath the selected filepath
+     * @return the filepath only
+     */
+    public static String getParentPathFromPath(String filepath) {
+        if (isEmpty(filepath)) {
+            return "";
+        }
+
+        String absolutePath = new File(filepath).getAbsolutePath();
+        String parentPath = absolutePath.substring(0, absolutePath.lastIndexOf(File.separator)) + File.separator;
+
+        return parentPath;
+    }
+
+    /**
+     * Returns the file name without its <a href="http://en.wikipedia.org/wiki/Filename_extension">file extension</a> or path.
+     * This is similar to the {@code basename} unix command. The result does not include the '{@code .}'.
+     *
+     * @param filepath The name of the file to trim the extension from. This can be either a fully
+     *                 qualified file name (including a path) or just a file name.
+     * @return The file name without its path or extension.
+     */
+    public static String getFilenameWithoutExtension(String filepath) {
+        if (isEmpty(filepath)) {
+            return "";
+        }
+
+        String fileName = getFilenameFromPath(filepath);
+        int dotIndex = fileName.lastIndexOf('.');
+
+        return (dotIndex == -1) ? fileName : fileName.substring(0, dotIndex);
+    }
+
+    /**
+     * Deletes the given folder and all its files/subfolders recursively
+     *
+     * @param fileOrDirectory the file or folder path to delete recursively
+     * @return if the delete procedure was successful
+     */
+    public static boolean deleteFileOrDirectory(String fileOrDirectory) {
+        return isEmpty(fileOrDirectory) || deleteFileOrDirectory(new File(fileOrDirectory));
+
+    }
+
+    /**
+     * Deletes the given folder and all its files/subfolders recursively
+     *
+     * @param fileOrDirectory the file or folder to delete recursively
+     * @return if the delete procedure was successful
+     */
+    private static boolean deleteFileOrDirectory(File fileOrDirectory) {
+
+        if (fileOrDirectory.exists()) {
+
+            File[] files = fileOrDirectory.listFiles();
+            if (files == null) {
+                return fileOrDirectory.delete();
+            }
+
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteFileOrDirectory(file);
+                } else {
+                    file.delete();
+                }
+            }
+        }
+
+        return (fileOrDirectory.delete());
+    }
+
+    /**
+     * This method copies a file or directory to the target file or directory (if targetLocation does not exist, it will be created)
+     *
+     * @param sourceLocation the source file/directory location
+     * @param targetLocation the target location
+     * @throws IOException
+     */
+    public static void copyAndReplaceFileOrDirectory(String sourceLocation, String targetLocation) throws IOException {
+        if (isEmpty(sourceLocation)) {
+            return;
+        }
+
+        copyAndReplaceFileOrDirectory(new File(sourceLocation), new File(targetLocation));
+    }
+
+    /**
+     * This method copies a file or directory to the target file or directory (if targetLocation does not exist, it will be created)
+     *
+     * @param sourceLocation the source file/directory
+     * @param targetLocation the target directory
+     * @throws IOException
+     */
+    private static void copyAndReplaceFileOrDirectory(File sourceLocation, File targetLocation) throws IOException {
+
+        if (sourceLocation.isDirectory()) {
+            copyAndReplaceDirectory(sourceLocation, targetLocation);
+        } else {
+            copyAndReplaceFile(sourceLocation, targetLocation, 1);
+        }
+    }
+
+    /**
+     * Copies the source directory to the target location and replace it if existing
+     *
+     * @param sourceLocation the source directory
+     * @param targetLocation the target directory
+     * @throws IOException
+     */
+    private static void copyAndReplaceDirectory(File sourceLocation, File targetLocation) throws IOException {
+
+        if (!targetLocation.exists()) {
+            targetLocation.mkdir();
+        }
+
+        String[] children = sourceLocation.list();
+        for (String child : children) {
+            copyAndReplaceFileOrDirectory(new File(sourceLocation, child),
+                    new File(targetLocation, child));
+        }
+    }
+
+    /**
+     * Copies all bytes from an input stream to a file. If the target file exists, than it is replaced.
+     *
+     * @param sourceLocation the source file
+     * @param targetLocation the target directory
+     * @param copyAttempts   indicates the consecutive number of times this method is called recursively
+     * @throws IOException
+     */
+    private static void copyAndReplaceFile(File sourceLocation, File targetLocation, int copyAttempts) throws IOException {
+
+        try {
+            // As this method is copy and replace, we should firstly remove the file
+            // and after that write the new one on its place
+            if (targetLocation.exists()) {
+                targetLocation.delete();
+            }
+
+            InputStream in = new FileInputStream(sourceLocation);
+            OutputStream out = new FileOutputStream(targetLocation);
+
+            // Copy the bits from input stream to output stream
+            byte[] buf = new byte[1024];
+            int len;
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+            in.close();
+            out.close();
+        } catch (IOException e) {
+            if (copyAttempts == MAX_COPY_FILE_ATTEMPTS) {
+                throw e;
+            } else {
+                copyAndReplaceFile(sourceLocation, targetLocation, copyAttempts + 1);
+            }
+        }
     }
 
 }

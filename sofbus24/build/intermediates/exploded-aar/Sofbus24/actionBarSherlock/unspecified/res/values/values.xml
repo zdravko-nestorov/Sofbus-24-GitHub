@@ -1,210 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__attrs.xml -->
-    <eat-comment />
-    <attr name="background" format="reference|color" />
-    <attr name="backgroundSplit" format="reference|color" />
-    <attr name="divider" format="reference" />
-    <attr name="height" format="dimension" />
-    <attr name="subtitleTextStyle" format="reference" />
-    <attr name="titleTextStyle" format="reference" />
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__bools.xml -->
-    <eat-comment />
+    <attr format="reference|color" name="background"/>
+    <attr format="reference|color" name="backgroundSplit"/>
+    <attr format="reference" name="divider"/>
+    <attr format="dimension" name="height"/>
+    <attr format="reference" name="subtitleTextStyle"/>
+    <attr format="reference" name="titleTextStyle"/>
     <bool name="abs__action_bar_embed_tabs">false</bool>
     <bool name="abs__action_bar_expanded_action_views_exclusive">true</bool>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__config.xml -->
-    <eat-comment />
     <bool name="abs__config_actionMenuItemAllCaps">true</bool>
     <bool name="abs__config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abs__config_showMenuShortcutsWhenKeyboardPresent">false</bool>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__bools.xml -->
-    <eat-comment />
     <bool name="abs__split_action_bar_is_narrow">true</bool>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__colors.xml -->
-    <eat-comment />
     <color name="abs__background_holo_dark">#ff000000</color>
     <color name="abs__background_holo_light">#fff3f3f3</color>
     <color name="abs__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
     <color name="abs__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="abs__bright_foreground_holo_dark">@color/abs__background_holo_light</color>
     <color name="abs__bright_foreground_holo_light">@color/abs__background_holo_dark</color>
-    <declare-styleable name="SherlockActionBar">
-        <attr name="navigationMode">
-            <enum name="normal" value="0" />
-            <enum name="listMode" value="1" />
-            <enum name="tabMode" value="2" />
-        </attr>
-        <attr name="displayOptions">
-            <flag name="useLogo" value="0x1" />
-            <flag name="showHome" value="0x2" />
-            <flag name="homeAsUp" value="0x4" />
-            <flag name="showTitle" value="0x8" />
-            <flag name="showCustom" value="0x10" />
-            <flag name="disableHome" value="0x20" />
-        </attr>
-        <attr name="title" format="string" />
-        <attr name="subtitle" format="string" />
-        <attr name="titleTextStyle" />
-        <attr name="subtitleTextStyle" />
-        <attr name="icon" format="reference" />
-        <attr name="logo" format="reference" />
-        <attr name="divider" />
-        <attr name="background" />
-        <attr name="backgroundStacked" format="reference|color" />
-        <attr name="backgroundSplit" />
-        <attr name="customNavigationLayout" format="reference" />
-        <attr name="height" />
-        <attr name="homeLayout" format="reference" />
-        <attr name="progressBarStyle" format="reference" />
-        <attr name="indeterminateProgressStyle" format="reference" />
-        <attr name="progressBarPadding" format="dimension" />
-        <attr name="itemPadding" format="dimension" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActionMenuItemView">
-        <attr name="android:minWidth" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActionMode">
-        <attr name="titleTextStyle" />
-        <attr name="subtitleTextStyle" />
-        <attr name="background" />
-        <attr name="backgroundSplit" />
-        <attr name="height" />
-    </declare-styleable>
-    <declare-styleable name="SherlockActivityChooserView">
-        <attr name="initialActivityCount" format="string" />
-        <attr name="expandActivityOverflowButtonDrawable" format="reference" />
-        <attr name="android:background" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuGroup">
-        <attr name="android:id" />
-        <attr name="android:menuCategory" />
-        <attr name="android:orderInCategory" />
-        <attr name="android:checkableBehavior" />
-        <attr name="android:visible" />
-        <attr name="android:enabled" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuItem">
-        <attr name="android:id" />
-        <attr name="android:menuCategory" />
-        <attr name="android:orderInCategory" />
-        <attr name="android:title" />
-        <attr name="android:titleCondensed" />
-        <attr name="android:icon" />
-        <attr name="android:alphabeticShortcut" />
-        <attr name="android:numericShortcut" />
-        <attr name="android:checkable" />
-        <attr name="android:checked" />
-        <attr name="android:visible" />
-        <attr name="android:enabled" />
-        <attr name="android:onClick" />
-        <attr name="android:showAsAction" />
-        <attr name="android:actionLayout" />
-        <attr name="android:actionViewClass" />
-        <attr name="android:actionProviderClass" />
-    </declare-styleable>
-    <declare-styleable name="SherlockMenuView">
-        <attr name="itemTextAppearance" format="reference" />
-        <attr name="horizontalDivider" format="reference" />
-        <attr name="verticalDivider" format="reference" />
-        <attr name="headerBackground" format="color|reference" />
-        <attr name="itemBackground" format="color|reference" />
-        <attr name="windowAnimationStyle" format="reference" />
-        <attr name="itemIconDisabledAlpha" format="float" />
-        <attr name="preserveIconSpacing" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="SherlockSearchView">
-        <attr name="iconifiedByDefault" format="boolean" />
-        <attr name="android:maxWidth" />
-        <attr name="queryHint" format="string" />
-        <attr name="android:imeOptions" />
-        <attr name="android:inputType" />
-    </declare-styleable>
-    <declare-styleable name="SherlockSpinner">
-        <attr name="android:prompt" />
-        <attr name="android:dropDownSelector" />
-        <attr name="android:popupBackground" />
-        <attr name="android:dropDownVerticalOffset" />
-        <attr name="android:dropDownHorizontalOffset" />
-        <attr name="android:dropDownWidth" />
-        <attr name="android:popupPromptView" />
-        <attr name="android:gravity" />
-    </declare-styleable>
-    <declare-styleable name="SherlockTheme">
-        <attr name="actionBarTabStyle" format="reference" />
-        <attr name="actionBarTabBarStyle" format="reference" />
-        <attr name="actionBarTabTextStyle" format="reference" />
-        <attr name="actionOverflowButtonStyle" format="reference" />
-        <attr name="actionBarStyle" format="reference" />
-        <attr name="actionBarSplitStyle" format="reference" />
-        <attr name="actionBarWidgetTheme" format="reference" />
-        <attr name="actionBarSize" format="dimension">
-            <enum name="wrap_content" value="0" />
-        </attr>
-        <attr name="actionBarDivider" format="reference" />
-        <attr name="actionBarItemBackground" format="reference" />
-        <attr name="actionMenuTextAppearance" format="reference" />
-        <attr name="actionMenuTextColor" format="color|reference" />
-        <attr name="actionModeStyle" format="reference" />
-        <attr name="actionModeCloseButtonStyle" format="reference" />
-        <attr name="actionModeBackground" format="reference" />
-        <attr name="actionModeSplitBackground" format="reference" />
-        <attr name="actionModeCloseDrawable" format="reference" />
-        <attr name="actionModeShareDrawable" format="reference" />
-        <attr name="actionModePopupWindowStyle" format="reference" />
-        <attr name="buttonStyleSmall" format="reference" />
-        <attr name="selectableItemBackground" format="reference" />
-        <attr name="windowContentOverlay" format="reference" />
-        <attr name="textAppearanceLargePopupMenu" format="reference" />
-        <attr name="textAppearanceSmallPopupMenu" format="reference" />
-        <attr name="textAppearanceSmall" format="reference" />
-        <attr name="textColorPrimary" format="color" />
-        <attr name="textColorPrimaryDisableOnly" format="color" />
-        <attr name="textColorPrimaryInverse" format="color" />
-        <attr name="spinnerItemStyle" format="reference" />
-        <attr name="spinnerDropDownItemStyle" format="reference" />
-        <attr name="searchAutoCompleteTextView" format="reference" />
-        <attr name="searchDropdownBackground" format="reference" />
-        <attr name="searchViewCloseIcon" format="reference" />
-        <attr name="searchViewGoIcon" format="reference" />
-        <attr name="searchViewSearchIcon" format="reference" />
-        <attr name="searchViewVoiceIcon" format="reference" />
-        <attr name="searchViewEditQuery" format="reference" />
-        <attr name="searchViewEditQueryBackground" format="reference" />
-        <attr name="searchViewTextField" format="reference" />
-        <attr name="searchViewTextFieldRight" format="reference" />
-        <attr name="textColorSearchUrl" format="reference|color" />
-        <attr name="searchResultListItemHeight" format="dimension" />
-        <attr name="textAppearanceSearchResultTitle" format="reference" />
-        <attr name="textAppearanceSearchResultSubtitle" format="reference" />
-        <attr name="listPreferredItemHeightSmall" format="dimension" />
-        <attr name="listPreferredItemPaddingLeft" format="dimension" />
-        <attr name="listPreferredItemPaddingRight" format="dimension" />
-        <attr name="textAppearanceListItemSmall" format="reference" />
-        <attr name="windowMinWidthMajor" format="dimension" />
-        <attr name="windowMinWidthMinor" format="dimension" />
-        <attr name="dividerVertical" format="reference" />
-        <attr name="actionDropDownStyle" format="reference" />
-        <attr name="actionButtonStyle" format="reference" />
-        <attr name="homeAsUpIndicator" format="reference" />
-        <attr name="dropDownListViewStyle" format="reference" />
-        <attr name="popupMenuStyle" format="reference" />
-        <attr name="dropdownListPreferredItemHeight" format="dimension" />
-        <attr name="actionSpinnerItemStyle" format="reference" />
-        <attr name="windowNoTitle" format="boolean" />
-        <attr name="windowActionBar" format="boolean" />
-        <attr name="windowActionBarOverlay" format="boolean" />
-        <attr name="windowActionModeOverlay" format="boolean" />
-        <attr name="windowSplitActionBar" format="boolean" />
-        <attr name="listPopupWindowStyle" format="reference" />
-        <attr name="activityChooserViewStyle" format="reference" />
-        <attr name="activatedBackgroundIndicator" format="reference" />
-        <attr name="dropDownHintAppearance" format="reference" />
-    </declare-styleable>
-    <declare-styleable name="SherlockView">
-        <attr name="android:focusable" />
-    </declare-styleable>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__dimens.xml -->
-    <eat-comment />
+    <declare-styleable name="SherlockActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr format="string" name="title"/><attr format="string" name="subtitle"/><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr name="divider"/><attr name="background"/><attr format="reference|color" name="backgroundStacked"/><attr name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr format="dimension" name="itemPadding"/></declare-styleable>
+    <declare-styleable name="SherlockActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
+    <declare-styleable name="SherlockActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/></declare-styleable>
+    <declare-styleable name="SherlockActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="SherlockMenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
+    <declare-styleable name="SherlockMenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="android:showAsAction"/><attr name="android:actionLayout"/><attr name="android:actionViewClass"/><attr name="android:actionProviderClass"/></declare-styleable>
+    <declare-styleable name="SherlockMenuView"><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="horizontalDivider"/><attr format="reference" name="verticalDivider"/><attr format="color|reference" name="headerBackground"/><attr format="color|reference" name="itemBackground"/><attr format="reference" name="windowAnimationStyle"/><attr format="float" name="itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
+    <declare-styleable name="SherlockSearchView"><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/></declare-styleable>
+    <declare-styleable name="SherlockSpinner"><attr name="android:prompt"/><attr name="android:dropDownSelector"/><attr name="android:popupBackground"/><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/><attr name="android:dropDownWidth"/><attr name="android:popupPromptView"/><attr name="android:gravity"/></declare-styleable>
+    <declare-styleable name="SherlockTheme"><attr format="reference" name="actionBarTabStyle"/><attr format="reference" name="actionBarTabBarStyle"/><attr format="reference" name="actionBarTabTextStyle"/><attr format="reference" name="actionOverflowButtonStyle"/><attr format="reference" name="actionBarStyle"/><attr format="reference" name="actionBarSplitStyle"/><attr format="reference" name="actionBarWidgetTheme"/><attr format="dimension" name="actionBarSize"><enum name="wrap_content" value="0"/></attr><attr format="reference" name="actionBarDivider"/><attr format="reference" name="actionBarItemBackground"/><attr format="reference" name="actionMenuTextAppearance"/><attr format="color|reference" name="actionMenuTextColor"/><attr format="reference" name="actionModeStyle"/><attr format="reference" name="actionModeCloseButtonStyle"/><attr format="reference" name="actionModeBackground"/><attr format="reference" name="actionModeSplitBackground"/><attr format="reference" name="actionModeCloseDrawable"/><attr format="reference" name="actionModeShareDrawable"/><attr format="reference" name="actionModePopupWindowStyle"/><attr format="reference" name="buttonStyleSmall"/><attr format="reference" name="selectableItemBackground"/><attr format="reference" name="windowContentOverlay"/><attr format="reference" name="textAppearanceLargePopupMenu"/><attr format="reference" name="textAppearanceSmallPopupMenu"/><attr format="reference" name="textAppearanceSmall"/><attr format="color" name="textColorPrimary"/><attr format="color" name="textColorPrimaryDisableOnly"/><attr format="color" name="textColorPrimaryInverse"/><attr format="reference" name="spinnerItemStyle"/><attr format="reference" name="spinnerDropDownItemStyle"/><attr format="reference" name="searchAutoCompleteTextView"/><attr format="reference" name="searchDropdownBackground"/><attr format="reference" name="searchViewCloseIcon"/><attr format="reference" name="searchViewGoIcon"/><attr format="reference" name="searchViewSearchIcon"/><attr format="reference" name="searchViewVoiceIcon"/><attr format="reference" name="searchViewEditQuery"/><attr format="reference" name="searchViewEditQueryBackground"/><attr format="reference" name="searchViewTextField"/><attr format="reference" name="searchViewTextFieldRight"/><attr format="reference|color" name="textColorSearchUrl"/><attr format="dimension" name="searchResultListItemHeight"/><attr format="reference" name="textAppearanceSearchResultTitle"/><attr format="reference" name="textAppearanceSearchResultSubtitle"/><attr format="dimension" name="listPreferredItemHeightSmall"/><attr format="dimension" name="listPreferredItemPaddingLeft"/><attr format="dimension" name="listPreferredItemPaddingRight"/><attr format="reference" name="textAppearanceListItemSmall"/><attr format="dimension" name="windowMinWidthMajor"/><attr format="dimension" name="windowMinWidthMinor"/><attr format="reference" name="dividerVertical"/><attr format="reference" name="actionDropDownStyle"/><attr format="reference" name="actionButtonStyle"/><attr format="reference" name="homeAsUpIndicator"/><attr format="reference" name="dropDownListViewStyle"/><attr format="reference" name="popupMenuStyle"/><attr format="dimension" name="dropdownListPreferredItemHeight"/><attr format="reference" name="actionSpinnerItemStyle"/><attr format="boolean" name="windowNoTitle"/><attr format="boolean" name="windowActionBar"/><attr format="boolean" name="windowActionBarOverlay"/><attr format="boolean" name="windowActionModeOverlay"/><attr format="boolean" name="windowSplitActionBar"/><attr format="reference" name="listPopupWindowStyle"/><attr format="reference" name="activityChooserViewStyle"/><attr format="reference" name="activatedBackgroundIndicator"/><attr format="reference" name="dropDownHintAppearance"/></declare-styleable>
+    <declare-styleable name="SherlockView"><attr name="android:focusable"/></declare-styleable>
     <dimen name="abs__action_bar_default_height">48dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">8dip</dimen>
     <dimen name="abs__action_bar_subtitle_bottom_margin">5dip</dimen>
@@ -212,29 +36,19 @@
     <dimen name="abs__action_bar_subtitle_top_margin">-3dp</dimen>
     <dimen name="abs__action_bar_title_text_size">18dp</dimen>
     <dimen name="abs__action_button_min_width">56dip</dimen>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__config.xml -->
-    <eat-comment />
     <dimen name="abs__config_prefDialogWidth">320dp</dimen>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__dimens.xml -->
-    <eat-comment />
     <dimen name="abs__dropdownitem_icon_width">32dip</dimen>
     <dimen name="abs__dropdownitem_text_padding_left">8dip</dimen>
     <dimen name="abs__dropdownitem_text_padding_right">8dip</dimen>
     <dimen name="abs__search_view_preferred_width">320dip</dimen>
     <dimen name="abs__search_view_text_min_width">160dip</dimen>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__ids.xml -->
-    <eat-comment />
-    <item name="abs__action_menu_divider" type="id" />
-    <item name="abs__action_menu_presenter" type="id" />
-    <item name="abs__home" type="id" />
-    <item name="abs__progress_circular" type="id" />
-    <item name="abs__progress_horizontal" type="id" />
-    <item name="abs__up" type="id" />
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__dimens.xml -->
-    <eat-comment />
+    <item name="abs__action_menu_divider" type="id"/>
+    <item name="abs__action_menu_presenter" type="id"/>
+    <item name="abs__home" type="id"/>
+    <item name="abs__progress_circular" type="id"/>
+    <item name="abs__progress_horizontal" type="id"/>
+    <item name="abs__up" type="id"/>
     <integer name="abs__max_action_buttons">2</integer>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__strings.xml -->
-    <eat-comment />
     <string name="abs__action_bar_home_description">Navigate home</string>
     <string name="abs__action_bar_up_description">Navigate up</string>
     <string name="abs__action_menu_overflow_description">More options</string>
@@ -247,26 +61,18 @@
     <string name="abs__searchview_description_submit">Submit query</string>
     <string name="abs__searchview_description_voice">Voice search</string>
     <string name="abs__shareactionprovider_share_with">Share with</string>
-    <string name="abs__shareactionprovider_share_with_application">Share with
-        <ns1:g example="Bluetooth" id="application_name">%s</ns1:g>
-    </string>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__styles.xml -->
-    <eat-comment />
+    <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g example="Bluetooth" id="application_name">%s</ns1:g></string>
     <style name="Sherlock.__TextAppearance.Small" parent="Widget">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__themes.xml -->
-    <eat-comment />
     <style name="Sherlock.__Theme" parent="android:Theme.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="Sherlock.__Theme.DarkActionBar" parent="Theme.Sherlock.Light" />
+    <style name="Sherlock.__Theme.DarkActionBar" parent="Theme.Sherlock.Light"/>
     <style name="Sherlock.__Theme.Light" parent="android:Theme.Light.NoTitleBar">
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__styles.xml -->
-    <eat-comment />
     <style name="Sherlock.__Widget.ActionBar" parent="Widget">
         <item name="displayOptions">useLogo|showHome|showTitle</item>
         <item name="height">?attr/actionBarSize</item>
@@ -321,9 +127,8 @@
         <item name="android:completionThreshold">2</item>
         <item name="android:dropDownWidth">wrap_content</item>
     </style>
-    <style name="TextAppearance.Sherlock" parent="@android:style/TextAppearance" />
-    <style name="TextAppearance.Sherlock.Light.SearchResult"
-        parent="TextAppearance.Sherlock.SearchResult" />
+    <style name="TextAppearance.Sherlock" parent="@android:style/TextAppearance"/>
+    <style name="TextAppearance.Sherlock.Light.SearchResult" parent="TextAppearance.Sherlock.SearchResult"/>
     <style name="TextAppearance.Sherlock.Light.SearchResult.Subtitle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
@@ -331,11 +136,9 @@
     <style name="TextAppearance.Sherlock.Light.SearchResult.Title">
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.Sherlock.Light.Small" parent="TextAppearance.Sherlock.Small" />
-    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large"
-        parent="TextAppearance.Sherlock.Widget.PopupMenu.Large" />
-    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Small"
-        parent="TextAppearance.Sherlock.Widget.PopupMenu.Small" />
+    <style name="TextAppearance.Sherlock.Light.Small" parent="TextAppearance.Sherlock.Small"/>
+    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" parent="TextAppearance.Sherlock.Widget.PopupMenu.Large"/>
+    <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Small" parent="TextAppearance.Sherlock.Widget.PopupMenu.Small"/>
     <style name="TextAppearance.Sherlock.SearchResult">
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -348,7 +151,7 @@
     <style name="TextAppearance.Sherlock.SearchResult.Title">
         <item name="android:textSize">18sp</item>
     </style>
-    <style name="TextAppearance.Sherlock.Small" parent="Sherlock.__TextAppearance.Small" />
+    <style name="TextAppearance.Sherlock.Small" parent="Sherlock.__TextAppearance.Small"/>
     <style name="TextAppearance.Sherlock.Widget.ActionBar.Menu" parent="Widget">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
@@ -410,8 +213,6 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
     </style>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__themes.xml -->
-    <eat-comment />
     <style name="Theme.Sherlock" parent="Sherlock.__Theme">
         <!-- Action bar styles (from Theme.Holo) -->
         <item name="actionDropDownStyle">@style/Widget.Sherlock.Spinner.DropDown.ActionBar</item>
@@ -653,9 +454,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values/abs__styles.xml -->
-    <eat-comment />
-    <style name="Widget" />
+    <style name="Widget"/>
     <style name="Widget.Sherlock.ActionBar" parent="Sherlock.__Widget.ActionBar">
         <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle
@@ -725,16 +524,14 @@
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionMode.Subtitle
         </item>
     </style>
-    <style name="Widget.Sherlock.ActivityChooserView"
-        parent="Sherlock.__Widget.ActivityChooserView" />
+    <style name="Widget.Sherlock.ActivityChooserView" parent="Sherlock.__Widget.ActivityChooserView"/>
     <style name="Widget.Sherlock.Button.Small" parent="Widget">
         <item name="android:textAppearance">?attr/textAppearanceSmall</item>
         <item name="android:textColor">@color/abs__primary_text_holo_dark</item>
         <item name="android:minHeight">48dip</item>
         <item name="android:minWidth">48dip</item>
     </style>
-    <style name="Widget.Sherlock.DropDownItem.Spinner"
-        parent="Sherlock.__Widget.Holo.DropDownItem" />
+    <style name="Widget.Sherlock.DropDownItem.Spinner" parent="Sherlock.__Widget.Holo.DropDownItem"/>
     <style name="Widget.Sherlock.Light.ActionBar" parent="Widget.Sherlock.ActionBar">
         <item name="titleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Title</item>
         <item name="subtitleTextStyle">@style/TextAppearance.Sherlock.Widget.ActionBar.Subtitle
@@ -774,18 +571,15 @@
         <item name="progressBarPadding">32dip</item>
         <item name="itemPadding">8dip</item>
     </style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabBar"
-        parent="Widget.Sherlock.ActionBar.TabBar" />
-    <style name="Widget.Sherlock.Light.ActionBar.TabBar.Inverse" />
-    <style name="Widget.Sherlock.Light.ActionBar.TabText"
-        parent="Widget.Sherlock.ActionBar.TabText" />
+    <style name="Widget.Sherlock.Light.ActionBar.TabBar" parent="Widget.Sherlock.ActionBar.TabBar"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabBar.Inverse"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabText" parent="Widget.Sherlock.ActionBar.TabText"/>
     <style name="Widget.Sherlock.Light.ActionBar.TabText.Inverse">
         <item name="android:textColor">?attr/textColorPrimaryInverse</item>
     </style>
-    <style name="Widget.Sherlock.Light.ActionBar.TabView"
-        parent="Widget.Sherlock.ActionBar.TabView" />
-    <style name="Widget.Sherlock.Light.ActionBar.TabView.Inverse" />
-    <style name="Widget.Sherlock.Light.ActionButton" parent="Widget.Sherlock.ActionButton" />
+    <style name="Widget.Sherlock.Light.ActionBar.TabView" parent="Widget.Sherlock.ActionBar.TabView"/>
+    <style name="Widget.Sherlock.Light.ActionBar.TabView.Inverse"/>
+    <style name="Widget.Sherlock.Light.ActionButton" parent="Widget.Sherlock.ActionButton"/>
     <style name="Widget.Sherlock.Light.ActionButton.CloseMode">
         <item name="android:background">@drawable/abs__btn_cab_done_holo_light</item>
     </style>
@@ -804,8 +598,7 @@
             @style/TextAppearance.Sherlock.Widget.ActionMode.Subtitle.Inverse
         </item>
     </style>
-    <style name="Widget.Sherlock.Light.ActivityChooserView"
-        parent="Widget.Sherlock.ActivityChooserView">
+    <style name="Widget.Sherlock.Light.ActivityChooserView" parent="Widget.Sherlock.ActivityChooserView">
         <item name="android:background">@drawable/abs__ab_share_pack_holo_light</item>
     </style>
     <style name="Widget.Sherlock.Light.Button.Small" parent="Widget">
@@ -814,8 +607,7 @@
         <item name="android:minHeight">48dip</item>
         <item name="android:minWidth">48dip</item>
     </style>
-    <style name="Widget.Sherlock.Light.DropDownItem.Spinner"
-        parent="Sherlock.__Widget.Holo.DropDownItem" />
+    <style name="Widget.Sherlock.Light.DropDownItem.Spinner" parent="Sherlock.__Widget.Holo.DropDownItem"/>
     <style name="Widget.Sherlock.Light.ListPopupWindow" parent="Widget">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
@@ -827,22 +619,19 @@
         <item name="android:divider">@drawable/abs__list_divider_holo_light</item>
         <item name="android:listSelector">@drawable/abs__list_selector_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.PopupMenu" parent="Widget.Sherlock.Light.ListPopupWindow" />
+    <style name="Widget.Sherlock.Light.PopupMenu" parent="Widget.Sherlock.Light.ListPopupWindow"/>
     <style name="Widget.Sherlock.Light.PopupWindow.ActionMode" parent="Widget">
         <item name="android:popupBackground">@android:color/white</item>
     </style>
-    <style name="Widget.Sherlock.Light.ProgressBar" parent="Widget.Sherlock.ProgressBar" />
-    <style name="Widget.Sherlock.Light.ProgressBar.Horizontal"
-        parent="Widget.Sherlock.ProgressBar.Horizontal">
+    <style name="Widget.Sherlock.Light.ProgressBar" parent="Widget.Sherlock.ProgressBar"/>
+    <style name="Widget.Sherlock.Light.ProgressBar.Horizontal" parent="Widget.Sherlock.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/abs__progress_horizontal_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.SearchAutoCompleteTextView"
-        parent="Sherlock.__Widget.SearchAutoCompleteTextView">
+    <style name="Widget.Sherlock.Light.SearchAutoCompleteTextView" parent="Sherlock.__Widget.SearchAutoCompleteTextView">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
     </style>
-    <style name="Widget.Sherlock.Light.Spinner.DropDown.ActionBar"
-        parent="Sherlock.__Widget.Holo.Spinner">
+    <style name="Widget.Sherlock.Light.Spinner.DropDown.ActionBar" parent="Sherlock.__Widget.Holo.Spinner">
         <item name="android:background">@drawable/abs__spinner_ab_holo_light</item>
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_light</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_light</item>
@@ -854,27 +643,24 @@
         <item name="android:dropDownHorizontalOffset">0dip</item>
         <item name="android:dropDownWidth">wrap_content</item>
     </style>
-    <style name="Widget.Sherlock.ListView.DropDown" parent="Sherlock.__Widget.Holo.ListView" />
-    <style name="Widget.Sherlock.PopupMenu" parent="Widget.Sherlock.ListPopupWindow" />
-    <style name="Widget.Sherlock.PopupWindow.ActionMode" parent="Widget" />
+    <style name="Widget.Sherlock.ListView.DropDown" parent="Sherlock.__Widget.Holo.ListView"/>
+    <style name="Widget.Sherlock.PopupMenu" parent="Widget.Sherlock.ListPopupWindow"/>
+    <style name="Widget.Sherlock.PopupWindow.ActionMode" parent="Widget"/>
     <style name="Widget.Sherlock.ProgressBar" parent="android:Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@drawable/abs__progress_medium_holo</item>
         <item name="android:animationResolution">33</item>
     </style>
-    <style name="Widget.Sherlock.ProgressBar.Horizontal"
-        parent="android:Widget.ProgressBar.Horizontal">
+    <style name="Widget.Sherlock.ProgressBar.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/abs__progress_horizontal_holo_dark</item>
         <!--item name="android:indeterminateDrawable">@drawable/abs__progress_indeterminate_horizontal_holo</item-->
         <item name="android:minHeight">16dip</item>
         <item name="android:maxHeight">16dip</item>
     </style>
-    <style name="Widget.Sherlock.SearchAutoCompleteTextView"
-        parent="Sherlock.__Widget.SearchAutoCompleteTextView">
+    <style name="Widget.Sherlock.SearchAutoCompleteTextView" parent="Sherlock.__Widget.SearchAutoCompleteTextView">
         <item name="android:dropDownSelector">@drawable/abs__list_selector_holo_dark</item>
         <item name="android:popupBackground">@drawable/abs__menu_dropdown_panel_holo_dark</item>
     </style>
-    <style name="Widget.Sherlock.Spinner.DropDown.ActionBar"
-        parent="Sherlock.__Widget.Holo.Spinner">
+    <style name="Widget.Sherlock.Spinner.DropDown.ActionBar" parent="Sherlock.__Widget.Holo.Spinner">
         <item name="android:background">@drawable/abs__spinner_ab_holo_dark</item>
     </style>
     <style name="Widget.Sherlock.TextView.SpinnerItem" parent="Widget">

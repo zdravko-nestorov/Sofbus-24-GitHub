@@ -72,6 +72,39 @@ public class HistoryEntity implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+
+        int hashCode = 13;
+        hashCode = 17 * hashCode + this.historyValue.hashCode();
+        hashCode = 19 * hashCode + this.historyType.hashCode();
+
+        return hashCode;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+
+        // Check if the object exists and is instance of HistoryEntity
+        if (object == null || !(object instanceof HistoryEntity)) {
+            return false;
+        }
+
+        // Check if this is the current object
+        if (object == this) {
+            return true;
+        }
+
+        HistoryEntity historyEntity = (HistoryEntity) object;
+
+        // We should not check the HistoryEntity date, because it will be different for each search
+        // (it is accurate to a second)
+        boolean result = this.getHistoryValue().equals(historyEntity.getHistoryValue()) &&
+                this.getHistoryType().equals(historyEntity.getHistoryType());
+
+        return result;
+    }
+
+    @Override
     public String toString() {
         return getClass().getName() + " {\n\thistoryValue: " + historyValue
                 + "\n\thistoryDate: " + historyDate + "\n\thistoryType: "

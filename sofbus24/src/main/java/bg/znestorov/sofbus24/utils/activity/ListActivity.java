@@ -176,6 +176,7 @@ import android.widget.ListView;
  * @see android.widget.ListView
  */
 @SuppressLint("Registered")
+@SuppressWarnings("deprecation")
 public class ListActivity extends FragmentActivity {
     private final Handler mHandler = new Handler();
     private final AdapterView.OnItemClickListener mOnClickListener = new AdapterView.OnItemClickListener() {

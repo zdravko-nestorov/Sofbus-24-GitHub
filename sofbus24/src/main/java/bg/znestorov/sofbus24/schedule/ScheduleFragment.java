@@ -147,7 +147,7 @@ public class ScheduleFragment extends SherlockFragment {
      *
      * @param textViewBus     bus tab (TextView)
      * @param textViewTrolley trolley tab (TextView)
-     * @param textViewTram tram tab (TextView)
+     * @param textViewTram    tram tab (TextView)
      */
     private void actionsOverDirectionsTextViews(final TextView textViewBus,
                                                 final TextView textViewTrolley, final TextView textViewTram) {
@@ -230,7 +230,7 @@ public class ScheduleFragment extends SherlockFragment {
      * @param tabNumber       the number of the direction
      * @param textViewBus     bus tab (TextView)
      * @param textViewTrolley trolley tab (TextView)
-     * @param textViewTram tram tab (TextView)
+     * @param textViewTram    tram tab (TextView)
      */
     private void setActiveFragment(int tabNumber, TextView textViewBus,
                                    TextView textViewTrolley, TextView textViewTram) {

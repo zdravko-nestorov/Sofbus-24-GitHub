@@ -93,7 +93,7 @@ public class Configuration {
                 newConfig.getMetroPosition());
         edit.putInt(Constants.CONFIGURATION_PREF_SOFBUS24_KEY,
                 newConfig.getSofbus24DbVersion());
-        edit.commit();
+        edit.apply();
     }
 
     /**
@@ -124,7 +124,7 @@ public class Configuration {
         Editor edit = sharedPreferences.edit();
         edit.putString(Constants.CONFIGURATION_PREF_SOFBUS24_KEY,
                 sofbus24DbVersion + "");
-        edit.commit();
+        edit.apply();
     }
 
     /**
@@ -156,7 +156,7 @@ public class Configuration {
                 newConfig.isMetroVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_METRO_POSITION_KEY,
                 newConfig.getMetroPosition());
-        edit.commit();
+        edit.apply();
     }
 
 }

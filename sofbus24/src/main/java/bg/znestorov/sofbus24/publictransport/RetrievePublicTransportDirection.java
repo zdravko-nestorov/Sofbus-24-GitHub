@@ -40,6 +40,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressWarnings("deprecation")
 public class RetrievePublicTransportDirection extends
         AsyncTask<Void, Void, DirectionsEntity> {
 
@@ -135,7 +136,7 @@ public class RetrievePublicTransportDirection extends
                 dialogFragment.show(fragmentManager, "dialog");
             } catch (Exception e) {
                 /*
-				 * Strange bug reported in GooglePlay - may be the orientation
+                 * Strange bug reported in GooglePlay - may be the orientation
 				 * is released before the dialog fragment is shown. In this case
 				 * the app crashes because the dialog tries to show after
 				 * savedInstanceState() method is called.

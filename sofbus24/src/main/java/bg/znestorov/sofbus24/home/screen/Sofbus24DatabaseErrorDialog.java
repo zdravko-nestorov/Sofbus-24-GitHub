@@ -53,7 +53,7 @@ public class Sofbus24DatabaseErrorDialog extends DialogFragment {
         OnClickListener negativeOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                ((OnRecreateDatabaseListener) onRecreateDatabaseListener)
+                onRecreateDatabaseListener
                         .onRecreateDatabaseClicked();
             }
         };

@@ -25,6 +25,7 @@ public class Preferences extends FragmentActivity implements
     private GlobalEntity globalContext;
 
     @Override
+    @SuppressWarnings("deprecation")
     protected void onCreate(Bundle savedInstanceState) {
         ThemeChange.selectTheme(this);
         super.onCreate(savedInstanceState);

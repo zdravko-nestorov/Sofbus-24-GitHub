@@ -110,6 +110,7 @@ public class MetroSchedule extends SherlockFragmentActivity implements
      * Initialize the layout fields (ActionBar, ViewPager and
      * SectionsPagerAdapter)
      */
+    @SuppressWarnings("deprecation")
     private void initLayoutFields() {
         // Create the fragments list
         createFragmentsList();

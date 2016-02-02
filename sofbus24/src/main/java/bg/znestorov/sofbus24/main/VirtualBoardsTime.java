@@ -189,7 +189,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
         // Get StreetView views
         vbTimeStreetView = (ImageView) findViewById(R.id.vb_time_street_view_image);
         vbTimeStreetViewLoading = (ProgressBar) findViewById(R.id.vb_time_street_view_progress);
-        vbTimeBar = (View) findViewById(R.id.vb_time_bar);
+        vbTimeBar = findViewById(R.id.vb_time_bar);
         vbTimeStationCaption = (TextView) findViewById(R.id.vb_time_station_caption);
         vbTimeCurrentTime = (TextView) findViewById(R.id.vb_time_current_time);
         vbTimeStreetViewButton = (ImageButton) findViewById(R.id.vb_time_street_view_button);

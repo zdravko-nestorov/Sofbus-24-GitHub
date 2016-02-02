@@ -308,6 +308,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
      * Initialize the layout fields (ActionBar, ViewPager and
      * SectionsPagerAdapter)
      */
+    @SuppressWarnings("deprecation")
     private void initLayoutFields(View fragmentView) {
 
         // Set the tabs to the ActionBar

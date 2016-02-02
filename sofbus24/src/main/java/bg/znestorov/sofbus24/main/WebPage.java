@@ -159,6 +159,7 @@ public class WebPage extends SherlockActivity {
     /**
      * Initialize the web view and set the appropriate options
      */
+    @SuppressWarnings("deprecation")
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebView() {
 

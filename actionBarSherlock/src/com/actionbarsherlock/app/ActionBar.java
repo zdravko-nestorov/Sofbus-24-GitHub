@@ -56,6 +56,7 @@ import android.widget.SpinnerAdapter;
  * Bar</a> developer guide.</p>
  * </div>
  */
+@SuppressWarnings("deprecation")
 public abstract class ActionBar {
     /**
      * Standard navigation mode. Consists of either a logo or icon
@@ -487,7 +488,7 @@ public abstract class ActionBar {
      * Create and return a new {@link Tab}.
      * This tab will not be included in the action bar until it is added.
      * <p/>
-     * <p>Very often tabs will be used to switch between {@link Fragment}
+     * <p>Very often tabs will be used to switch between {@link android.support.v4.app.Fragment}
      * objects.  Here is a typical implementation of such tabs:</p>
      * <p/>
      * {@sample development/samples/ApiDemos/src/com/example/android/apis/app/FragmentTabs.java
@@ -672,7 +673,7 @@ public abstract class ActionBar {
          * @param itemId       ID of the item clicked.
          * @return True if the event was handled, false otherwise.
          */
-        public boolean onNavigationItemSelected(int itemPosition, long itemId);
+        boolean onNavigationItemSelected(int itemPosition, long itemId);
     }
 
     /**
@@ -687,7 +688,7 @@ public abstract class ActionBar {
          * @param isVisible True if an action bar menu is now visible, false if no action bar
          *                  menus are visible.
          */
-        public void onMenuVisibilityChanged(boolean isVisible);
+        void onMenuVisibilityChanged(boolean isVisible);
     }
 
     /**
@@ -703,7 +704,7 @@ public abstract class ActionBar {
          *            executed in a single transaction. This FragmentTransaction does not support
          *            being added to the back stack.
          */
-        public void onTabSelected(Tab tab, FragmentTransaction ft);
+        void onTabSelected(Tab tab, FragmentTransaction ft);
 
         /**
          * Called when a tab exits the selected state.
@@ -714,7 +715,7 @@ public abstract class ActionBar {
          *            will be executed in a single transaction. This FragmentTransaction does not
          *            support being added to the back stack.
          */
-        public void onTabUnselected(Tab tab, FragmentTransaction ft);
+        void onTabUnselected(Tab tab, FragmentTransaction ft);
 
         /**
          * Called when a tab that is already selected is chosen again by the user.
@@ -725,7 +726,7 @@ public abstract class ActionBar {
          *            once this method returns. This FragmentTransaction does not support
          *            being added to the back stack.
          */
-        public void onTabReselected(Tab tab, FragmentTransaction ft);
+        void onTabReselected(Tab tab, FragmentTransaction ft);
     }
 
     /**

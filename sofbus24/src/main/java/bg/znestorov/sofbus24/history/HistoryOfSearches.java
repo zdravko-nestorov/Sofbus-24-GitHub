@@ -62,6 +62,18 @@ public class HistoryOfSearches {
     }
 
     /**
+     * Get the last search number from the preferences file
+     *
+     * @return the current search number
+     */
+    public int getLastSearchNumber() {
+        int lastSearchNumber = getNextSearchNumber() - 1;
+        lastSearchNumber = lastSearchNumber == 0 ? Constants.TOTAL_HISTORY_COUNT : lastSearchNumber;
+
+        return lastSearchNumber;
+    }
+
+    /**
      * Change the next search number in the History object and put the new value
      * in the shared preferences file
      *
@@ -78,7 +90,7 @@ public class HistoryOfSearches {
         Editor editor = historyPreferences.edit();
         editor.putInt(Constants.HISTORY_PREFERENCES_NEXT_SEARCH_NUMBER,
                 nextSearchNumber);
-        editor.commit();
+        editor.apply();
     }
 
     /**
@@ -93,8 +105,8 @@ public class HistoryOfSearches {
      * @param hasToTranslate   indicates if the value should be translated according to the
      *                         app language
      */
-    public void putFiledInPreferences(Activity context, String preferenceKey,
-                                      int preferenceNumber, String preferenceValue, boolean hasToTranslate) {
+    private void putFiledInPreferences(Activity context, String preferenceKey,
+                                       int preferenceNumber, String preferenceValue, boolean hasToTranslate) {
         if (preferenceNumber > Constants.TOTAL_HISTORY_COUNT) {
             preferenceNumber = preferenceNumber % Constants.TOTAL_HISTORY_COUNT;
         }
@@ -104,7 +116,7 @@ public class HistoryOfSearches {
                 preferenceKey + preferenceNumber,
                 hasToTranslate ? TranslatorLatinToCyrillic.translate(context,
                         preferenceValue) : preferenceValue);
-        editor.commit();
+        editor.apply();
 
         // Check if the value is not already set (it will be set if a field for
         // this search is set - value or date). This way we prevent to increase
@@ -114,16 +126,81 @@ public class HistoryOfSearches {
         }
     }
 
+    public void putHistoryEntityInPreferences(Activity context, int preferenceNumber,
+                                              HistoryEntity historyEntity) {
+
+        putFiledInPreferences(context, Constants.HISTORY_PREFERENCES_SEARCH_VALUE, preferenceNumber,
+                historyEntity.getHistoryValue(), true);
+        putFiledInPreferences(context, Constants.HISTORY_PREFERENCES_SEARCH_DATE, preferenceNumber,
+                historyEntity.getHistoryDate(), true);
+        putFiledInPreferences(context, Constants.HISTORY_PREFERENCES_SEARCH_TYPE, preferenceNumber,
+                historyEntity.getHistoryType().name(), false);
+    }
+
     /**
      * Remove all values from the preferences
      */
     public void clearHistoryOfSearches() {
         Editor editor = historyPreferences.edit();
         editor.clear();
-        editor.commit();
+        editor.apply();
 
         // Set the nextSearchNumber to the default value
         putNextSearchNumberInPreferences(1);
+    }
+
+    /**
+     * Get the last history entity from the History preferences file
+     *
+     * @param context the current Activity context
+     * @return the last history entity from the History preferences file
+     */
+    public HistoryEntity getLastHistoryEntity(Activity context) {
+
+        String language = LanguageChange.getUserLocale(context);
+        int lastSearchNumber = getLastSearchNumber();
+
+        if (historyPreferences.contains(Constants.HISTORY_PREFERENCES_SEARCH_VALUE + lastSearchNumber)) {
+
+            // Get the history search name
+            String historyName = historyPreferences.getString(
+                    Constants.HISTORY_PREFERENCES_SEARCH_VALUE + lastSearchNumber, null);
+            if (!"bg".equals(language)) {
+                historyName = TranslatorCyrillicToLatin.translate(context,
+                        historyName);
+            }
+
+            // Get the history search date
+            String historyDate = historyPreferences.getString(
+                    Constants.HISTORY_PREFERENCES_SEARCH_DATE + lastSearchNumber, null);
+
+            // Get the history search type
+            String historyTypeString = historyPreferences.getString(
+                    Constants.HISTORY_PREFERENCES_SEARCH_TYPE + lastSearchNumber, null);
+            historyTypeString = TranslatorCyrillicToLatin.translate(context,
+                    historyTypeString);
+
+            // Strange case when the vehicle type written in the preferences
+            // file is empty or not a valid one (GooglePlay bug:
+            // IllegalArgumentException)
+            VehicleTypeEnum historyType;
+            try {
+                historyType = VehicleTypeEnum.valueOf(historyTypeString);
+            } catch (Exception e) {
+                historyType = VehicleTypeEnum.BTT;
+            }
+
+            // Special case - when the vehicle search was added before the last
+            // update and the number of the BUS is recorded as 22
+            if (historyType == VehicleTypeEnum.BUS
+                    && historyName.contains("(22)")) {
+                historyName = historyName.replaceAll("\\(22\\)", "\\(21-22\\)");
+            }
+
+            return new HistoryEntity(historyName, historyDate, historyType);
+        }
+
+        return null;
     }
 
     /**

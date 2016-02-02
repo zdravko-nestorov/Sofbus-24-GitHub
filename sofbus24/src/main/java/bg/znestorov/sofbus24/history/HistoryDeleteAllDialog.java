@@ -50,7 +50,7 @@ public class HistoryDeleteAllDialog extends DialogFragment {
         OnClickListener positiveOnClickListener = new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                ((OnDeleteAllHistoryListener) onDeleteAllHistoryListener)
+                onDeleteAllHistoryListener
                         .onDeleteAllHistoryClicked();
             }
         };

@@ -78,6 +78,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @version 1.0
  */
 @SuppressLint("DefaultLocale")
+@SuppressWarnings("deprecation")
 public class RetrieveVirtualBoards {
 
     private static final String NDK_TUNNEL = "НДКТУНЕЛ";
@@ -178,7 +179,7 @@ public class RetrieveVirtualBoards {
                     cookie.getPath());
             i++;
         }
-        edit.commit();
+        edit.apply();
     }
 
     /**
@@ -241,7 +242,7 @@ public class RetrieveVirtualBoards {
                 edit.putString(Constants.VB_PREFERENCES_SUMC_HIDDEN_KEY, key);
                 edit.putString(Constants.VB_PREFERENCES_SUMC_HIDDEN_VALUE,
                         value);
-                edit.commit();
+                edit.apply();
 
                 hiddenVariablesList.add(new BasicNameValuePair(key, value));
 

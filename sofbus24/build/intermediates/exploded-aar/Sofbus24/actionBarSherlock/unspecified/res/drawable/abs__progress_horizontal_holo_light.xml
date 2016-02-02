@@ -15,17 +15,20 @@
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@android:id/background"
+    <item
+        android:id="@android:id/background"
         android:drawable="@drawable/abs__progress_bg_holo_light" />
 
     <item android:id="@android:id/secondaryProgress">
-        <scale android:drawable="@drawable/abs__progress_secondary_holo_light"
+        <scale
+            android:drawable="@drawable/abs__progress_secondary_holo_light"
             android:scaleWidth="100%" />
     </item>
 
     <item android:id="@android:id/progress">
-        <scale android:drawable="@drawable/abs__progress_primary_holo_light"
+        <scale
+            android:drawable="@drawable/abs__progress_primary_holo_light"
             android:scaleWidth="100%" />
     </item>
 
-</layer-list><!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/drawable/abs__progress_horizontal_holo_light.xml -->
+</layer-list>

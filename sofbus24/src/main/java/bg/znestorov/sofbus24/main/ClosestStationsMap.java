@@ -80,6 +80,7 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressWarnings("deprecation")
 public class ClosestStationsMap extends SherlockFragmentActivity {
 
     public static final String BUNDLE_IS_CS_MAP_HOME_SCREEN = "IS CLOSEST STATIONS MAP HOME SCREEN";
@@ -423,7 +424,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                 handler.postDelayed(myRunnable, isCSMapHomeScreen ? 1000 : 3000);
             } catch (Exception e) {
                 /*
-				 * Strange bug from GooglePlayConsole (Last reported: 9 Jan
+                 * Strange bug from GooglePlayConsole (Last reported: 9 Jan
 				 * 15:57):
 				 * 
 				 * java.lang.NullPointerException at
@@ -1058,7 +1059,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
         mDrawerList = (ListView) findViewById(R.id.navigation_drawer_listview);
         mMenuAdapter = new NavDrawerArrayAdapter(context, navigationItems);
         mDrawerList.setAdapter(mMenuAdapter);
-        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context,
+        mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, null,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
 

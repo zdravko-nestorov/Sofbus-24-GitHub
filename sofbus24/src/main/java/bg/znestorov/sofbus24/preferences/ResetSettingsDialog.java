@@ -44,7 +44,7 @@ public class ResetSettingsDialog extends DialogFragment {
                         .getDefaultSharedPreferences(context);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
 
                 // Check if the user wants to restart the application
                 ((GlobalEntity) context.getApplicationContext())

@@ -122,10 +122,10 @@ public final class R {
 		public static final int abs__bright_foreground_disabled_holo_light = 0x7f0c0003;
 		public static final int abs__bright_foreground_holo_dark = 0x7f0c0004;
 		public static final int abs__bright_foreground_holo_light = 0x7f0c0005;
-		public static final int abs__primary_text_disable_only_holo_dark = 0x7f0c0029;
-		public static final int abs__primary_text_disable_only_holo_light = 0x7f0c002a;
-		public static final int abs__primary_text_holo_dark = 0x7f0c002b;
-		public static final int abs__primary_text_holo_light = 0x7f0c002c;
+		public static final int abs__primary_text_disable_only_holo_dark = 0x7f0c002a;
+		public static final int abs__primary_text_disable_only_holo_light = 0x7f0c002b;
+		public static final int abs__primary_text_holo_dark = 0x7f0c002c;
+		public static final int abs__primary_text_holo_light = 0x7f0c002d;
 	}
 	public static final class dimen {
 		public static final int abs__action_bar_default_height = 0x7f080000;
@@ -335,23 +335,23 @@ public final class R {
 		public static final int abs__search_dropdown_item_icons_2line = 0x7f030012;
 		public static final int abs__search_view = 0x7f030013;
 		public static final int abs__simple_dropdown_hint = 0x7f030014;
-		public static final int sherlock_spinner_dropdown_item = 0x7f030047;
-		public static final int sherlock_spinner_item = 0x7f030048;
+		public static final int sherlock_spinner_dropdown_item = 0x7f03004a;
+		public static final int sherlock_spinner_item = 0x7f03004b;
 	}
 	public static final class string {
-		public static final int abs__action_bar_home_description = 0x7f06017b;
-		public static final int abs__action_bar_up_description = 0x7f06017c;
-		public static final int abs__action_menu_overflow_description = 0x7f06017d;
-		public static final int abs__action_mode_done = 0x7f06017e;
-		public static final int abs__activity_chooser_view_see_all = 0x7f06017f;
-		public static final int abs__activitychooserview_choose_application = 0x7f060180;
-		public static final int abs__searchview_description_clear = 0x7f060181;
-		public static final int abs__searchview_description_query = 0x7f060182;
-		public static final int abs__searchview_description_search = 0x7f060183;
-		public static final int abs__searchview_description_submit = 0x7f060184;
-		public static final int abs__searchview_description_voice = 0x7f060185;
-		public static final int abs__shareactionprovider_share_with = 0x7f060186;
-		public static final int abs__shareactionprovider_share_with_application = 0x7f060187;
+		public static final int abs__action_bar_home_description = 0x7f06018e;
+		public static final int abs__action_bar_up_description = 0x7f06018f;
+		public static final int abs__action_menu_overflow_description = 0x7f060190;
+		public static final int abs__action_mode_done = 0x7f060191;
+		public static final int abs__activity_chooser_view_see_all = 0x7f060192;
+		public static final int abs__activitychooserview_choose_application = 0x7f060193;
+		public static final int abs__searchview_description_clear = 0x7f060194;
+		public static final int abs__searchview_description_query = 0x7f060195;
+		public static final int abs__searchview_description_search = 0x7f060196;
+		public static final int abs__searchview_description_submit = 0x7f060197;
+		public static final int abs__searchview_description_voice = 0x7f060198;
+		public static final int abs__shareactionprovider_share_with = 0x7f060199;
+		public static final int abs__shareactionprovider_share_with_application = 0x7f06019a;
 	}
 	public static final class style {
 		public static final int Sherlock___TextAppearance_Small = 0x7f0b0041;

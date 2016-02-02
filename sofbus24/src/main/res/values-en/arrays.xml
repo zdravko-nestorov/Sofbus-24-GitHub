@@ -53,4 +53,10 @@
         <item name="2600">2600 meters</item>
     </string-array>
 
+    <!-- Backup Choose Dialog -->
+    <string-array name="backupChooseItems">
+        <item name="backup_import_choice">Import data</item>
+        <item name="backup_export_choice">Export data</item>
+    </string-array>
+
 </resources>

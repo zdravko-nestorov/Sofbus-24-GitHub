@@ -31,7 +31,7 @@ public class NavDrawerHomeScreenPreferences {
 
         Editor editor = homeScreenPreferences.edit();
         editor.putInt(HOME_SCREEN_PREFERENCES_USER_CHOICE, userChoice);
-        editor.commit();
+        editor.apply();
     }
 
 }

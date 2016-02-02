@@ -71,6 +71,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     protected void onPreExecute() {
         super.onPreExecute();
         createLoadingView();

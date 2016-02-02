@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 
 import org.w3c.dom.Document;
 
@@ -30,12 +32,14 @@ public class RetrieveAppConfiguration extends
         AsyncTask<Void, Void, ConfigEntity> {
 
     private final FragmentActivity context;
+    private final Fragment fragment;
     private final ProgressDialog progressDialog;
     private final boolean updateApp;
 
-    public RetrieveAppConfiguration(FragmentActivity context,
+    public RetrieveAppConfiguration(FragmentActivity context, Fragment fragment,
                                     ProgressDialog progressDialog, boolean updateApp) {
         this.context = context;
+        this.fragment = fragment;
         this.progressDialog = progressDialog;
         this.updateApp = updateApp;
     }
@@ -135,17 +139,24 @@ public class RetrieveAppConfiguration extends
 
         // Check if new application version is available
         DialogFragment dialogFragment;
+        FragmentManager fragmentManager;
+        if (fragment == null) {
+            fragmentManager = context.getSupportFragmentManager();
+        } else {
+            fragmentManager = fragment.getChildFragmentManager();
+        }
+
         if (currentConfig.getVersionCode() < newConfig.getVersionCode()) {
             dialogFragment = UpdateApplicationDialog.newInstance(String.format(
                     context.getString(R.string.about_update_app_new),
                     newConfig.getVersionName()));
-            dialogFragment.show(context.getSupportFragmentManager(),
+            dialogFragment.show(fragmentManager,
                     "dialogFragment");
         } else {
             dialogFragment = UpdateInformationDialog.newInstance(String.format(
                     context.getString(R.string.about_update_app_last),
                     currentConfig.getVersionName()));
-            dialogFragment.show(context.getSupportFragmentManager(),
+            dialogFragment.show(fragmentManager,
                     "dialogFragment");
         }
     }

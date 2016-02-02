@@ -24,6 +24,7 @@ public class Constants {
     public static final BigDecimal GLOBAL_PARAM_CLOSEST_STATION_DISTANCE = new BigDecimal(
             100000);
     public static final int GLOBAL_PARAM_HOME_TABS_COUNT = 4;
+    public static final String GLOBAL_PARAM_BACKUP_EXTENSION = ".sofbus24";
 
     /**
      * Bundle keys
@@ -243,9 +244,9 @@ public class Constants {
     public static final String ROUTE_CHANGES_REGEX = "<a\\s+href=\\\"routechanges\\S+id=(\\d+)\\\">(.*?)[|](.*?)<\\/a>[^^]*?<span\\s+style=\".*?\">(.*?)<\\/span>";
     public static final String ROUTE_CHANGES_FROM = "from";
     public static final String ROUTE_CHANGES_NEWS_URL_ADDRESS = "http://forum.sofiatraffic.bg/forum/routechanges.php?id=%s";
-    public static final String ROUTE_CHANGES_NEWS_REGEX_1 = "<div class=\"txtBlockContent\"><p>([^^]*?)<\\/p><br\\s+\\/>";
-    public static final String ROUTE_CHANGES_NEWS_REGEX_2 = "<div class=\"txtBlockContent\"><p>([^^]*?)<\\/p><\\/div>";
-    public static final String ROUTE_CHANGES_NEWS_REGEX_3 = "<div class=\"txtBlockContent\"><h.*?>([^^]*?)<\\/h\\d><\\/div>";
+    public static final String ROUTE_CHANGES_NEWS_REGEX = "<div class=\"txtBlockContent\">([^^]*?)<div class=\"subnav subnavBottom\">";
+    public static final String ROUTE_CHANGES_IMAGE_REGEX = "<a href=.*?>.*?<\\/a>(<br.*?>)?";
+    public static final String ROUTE_CHANGES_NEW_LINES_REGEX = "(<br.*?>){2,}";
 
     /**
      * Google Cloud Messaging

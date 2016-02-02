@@ -100,14 +100,14 @@ public class MetroStationFragment extends SherlockListFragment implements
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        StationEntity station = (StationEntity) ((MetroStationAdapter) getListAdapter())
+        StationEntity station = ((MetroStationAdapter) getListAdapter())
                 .getItem(position);
         onListItemClick(station);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-        StationEntity station = (StationEntity) ((MetroStationAdapter) gridViewMetroStation
+        StationEntity station = ((MetroStationAdapter) gridViewMetroStation
                 .getAdapter()).getItem(position);
         onListItemClick(station);
     }

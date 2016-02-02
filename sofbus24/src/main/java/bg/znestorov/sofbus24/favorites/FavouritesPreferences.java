@@ -54,6 +54,6 @@ class FavouritesPreferences {
         Editor editor = favouritesPreferences.edit();
         editor.putString(Constants.FAVOURITES_ORDER_PREFERENCES_TYPE,
                 sortType.toString());
-        editor.commit();
+        editor.apply();
     }
 }

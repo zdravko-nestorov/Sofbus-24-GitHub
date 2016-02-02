@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/Workspaces/AndroidStudioProjects/Sofbus24/actionBarSherlock/res/values-v11/abs__themes.xml -->
-    <eat-comment />
     <style name="Sherlock.__Theme" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>

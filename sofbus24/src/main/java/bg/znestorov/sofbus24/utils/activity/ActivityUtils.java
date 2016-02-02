@@ -481,6 +481,46 @@ public class ActivityUtils {
     }
 
     /**
+     * Create an input filter to limit characters in an EditText (when used for a filename)
+     *
+     * @return an input filter
+     */
+    public static InputFilter createFileInputFilter() {
+        InputFilter inputFilter = new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end,
+                                       Spanned dest, int dstart, int dend) {
+
+                // InputFilters are a little complicated in Android versions
+                // that display dictionary suggestions. You sometimes get a
+                // SpannableStringBuilder, sometimes a plain String in the
+                // source parameter
+                if (source instanceof SpannableStringBuilder) {
+                    SpannableStringBuilder sourceAsSpannableBuilder = (SpannableStringBuilder) source;
+                    for (int i = end - 1; i >= start; i--) {
+                        char currentChar = source.charAt(i);
+                        if (!isFileCharAllowed(currentChar)) {
+                            sourceAsSpannableBuilder.delete(i, i + 1);
+                        }
+                    }
+                    return source;
+                } else {
+                    StringBuilder filteredStringBuilder = new StringBuilder();
+                    for (int i = start; i < end; i++) {
+                        char currentChar = source.charAt(i);
+                        if (isFileCharAllowed(currentChar)) {
+                            filteredStringBuilder.append(currentChar);
+                        }
+                    }
+                    return filteredStringBuilder.toString();
+                }
+            }
+        };
+
+        return inputFilter;
+    }
+
+    /**
      * Check if a character is allowed (if it is a valid input)
      *
      * @param currentChar the entered char
@@ -492,6 +532,23 @@ public class ActivityUtils {
         if (Character.isLetterOrDigit(currentChar)
                 || Character.isSpaceChar(currentChar) || currentChar == '-'
                 || currentChar == '.') {
+            isCharAllowed = true;
+        }
+
+        return isCharAllowed;
+    }
+
+    /**
+     * Check if a character is allowed in a filename (if it is a valid input)
+     *
+     * @param currentChar the entered char
+     * @return if it is allowed or not to be used in a filename
+     */
+    private static boolean isFileCharAllowed(char currentChar) {
+        boolean isCharAllowed = false;
+
+        String reservedChars = "?:\"*|/\\<>";
+        if (reservedChars.indexOf(currentChar) == -1) {
             isCharAllowed = true;
         }
 
@@ -615,7 +672,7 @@ public class ActivityUtils {
         params.dimAmount = 0.5f;
 
         activity.getWindow().setAttributes(
-                (android.view.WindowManager.LayoutParams) params);
+                params);
     }
 
     /**
@@ -787,6 +844,17 @@ public class ActivityUtils {
     public static void showLongToast(Activity context, String message) {
 
         showLongToast(context, Html.fromHtml(message), 3000, 1000);
+    }
+
+    /**
+     * Show a long toast which is 1.5 times Toast.LENGTH_LONG
+     *
+     * @param context the current activity context
+     * @param message the message
+     */
+    public static void showMiddleToast(Activity context, String message) {
+
+        showLongToast(context, Html.fromHtml(message), 2000, 1000);
     }
 
     /**
@@ -963,6 +1031,7 @@ public class ActivityUtils {
      *
      * @return new ResponseHandler that falls back to UTF-8 encoding
      */
+    @SuppressWarnings("deprecation")
     public static ResponseHandler<String> getUtfResponseHandler() {
 
         return new ResponseHandler<String>() {

@@ -115,6 +115,7 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
      * @param routeUrl the google apis route url
      * @return string representation of the JSON result
      */
+    @SuppressWarnings("deprecation")
     private String getJSONFromUrl(String routeUrl) {
         InputStream is = null;
         String jsonString;
