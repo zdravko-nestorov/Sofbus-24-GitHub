@@ -285,9 +285,9 @@ public class ScheduleVehicleInfo {
         directionsNames.add(translateString("Зоопарка - Хотел Хилтън"));
         stationsList = new ArrayList<StationEntity>();
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
-                "0749", translateString("Зоопарка"), "16359"));
+                "2764", translateString("Зоопарка"), "16353"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
-                "0977", translateString("КП Бенакс"), "16353"));
+                "0977", translateString("КП Бенакс"), "16343"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
                 "2314", translateString("Хлебозавода"), "16335"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
@@ -321,7 +321,7 @@ public class ScheduleVehicleInfo {
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
                 "0343", translateString("Бул.Никола Вапцаров"), "25751"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
-                "2655", translateString("Кв.Хладилника"), "17311"));
+                "2655", translateString("Кв.Хладилника"), "17305"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,
                 "0912", translateString("Кв.Хладилника"), "13084"));
         stationsList.add(createPublicTransportStation(VehicleTypeEnum.BUS,

@@ -705,6 +705,12 @@ public class Utils {
                     "ул\\. Генерал Гурко");
         }
 
+        // BUS #14
+        if (directionName.contains("Автостанция Изток Гара Искър")) {
+            directionName = directionName.replaceAll("Автостанция Изток Гара Искър",
+                    "Автостанция Изток - Гара Искър");
+        }
+
         // BUS #23
         if (directionName.contains("ГАРА КУРИЛО")) {
             directionName = directionName.replaceAll("ГАРА КУРИЛО",
