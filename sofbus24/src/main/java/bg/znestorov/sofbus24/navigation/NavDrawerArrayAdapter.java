@@ -3,6 +3,7 @@ package bg.znestorov.sofbus24.navigation;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,6 +127,8 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
                         .findViewById(R.id.navigation_drawer_list_text);
                 viewHolder.navDrawerCheckedImg = (ImageView) rowView
                         .findViewById(R.id.navigation_drawer_list_home_img);
+                viewHolder.navDrawerListDivider = rowView.
+                        findViewById(R.id.navigation_drawer_list_divider);
                 rowView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) rowView.getTag();
@@ -177,6 +180,11 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
 
         switch (position) {
             case 1:
+                // This is made because of a bug with the dividers between disabled items
+                // (not clickable) in ListView for Android previous to Lollipop
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    viewHolder.navDrawerListDivider.setVisibility(View.VISIBLE);
+                }
             case 2:
             case 3:
                 viewHolder.navDrawerLayout
@@ -247,6 +255,7 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
         ImageView navDrawerImg;
         TextView navDrawerText;
         ImageView navDrawerCheckedImg;
+        View navDrawerListDivider;
     }
 
 }
