@@ -68,11 +68,16 @@
         android:theme="@style/AppThemeLight"
         tools:replace="label">
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_2_map_release_home" />
+
+        <!-- Place this at the end of your manifest, after your Map API key meta-data tag. This is needed because we check for GPlayServices availability firstly:
+             * Exception: java.lang.RuntimeException: Unable to start activity ComponentInfo{...} android.view.InflateException:
+                          Binary XML file line #6: Error inflating class fragment
+             * Solution: http://stackoverflow.com/questions/19724113/google-play-services-update/19744484#19744484 -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <!-- HomeScreen Select -->
         <activity

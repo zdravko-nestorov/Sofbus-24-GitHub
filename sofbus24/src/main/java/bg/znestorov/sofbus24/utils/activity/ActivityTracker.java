@@ -7,6 +7,7 @@ import com.google.android.gms.analytics.StandardExceptionParser;
 import com.google.android.gms.analytics.Tracker;
 
 import bg.znestorov.sofbus24.entity.AppThemeEnum;
+import bg.znestorov.sofbus24.entity.FileDialogActionEnum;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.GlobalEntity.TrackerName;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
@@ -219,6 +220,69 @@ public class ActivityTracker {
                 .setCategory("Change Theme [" + appThemeEnum + "]")
                 .setAction("changedApplicationTheme")
                 .setLabel("changedApplicationTheme").build());
+    }
+
+    /**
+     * Send an event to GoogleAnalytics on "importing/exporting user data"
+     * action (from the NavigationDrawer slide menu)
+     *
+     * @param context          the current activity context
+     * @param fileDialogAction the chosen backup action - import/export
+     */
+    public static void backupApplication(Activity context,
+                                         FileDialogActionEnum fileDialogAction) {
+
+        // Get tracker
+        Tracker tracker = ((GlobalEntity) context.getApplicationContext())
+                .getTracker(TrackerName.APP_TRACKER);
+
+        // Build and send an Event
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Backup Application [" + fileDialogAction + "]")
+                .setAction("backupApplication")
+                .setLabel("backupApplication").build());
+    }
+
+    /**
+     * Send an event to GoogleAnalytics on "importing/exporting user data"
+     * success action (from the NavigationDrawer slide menu)
+     *
+     * @param context          the current activity context
+     * @param fileDialogAction the chosen backup action - import/export
+     */
+    public static void backupApplicationSuccess(Activity context,
+                                                FileDialogActionEnum fileDialogAction) {
+
+        // Get tracker
+        Tracker tracker = ((GlobalEntity) context.getApplicationContext())
+                .getTracker(TrackerName.APP_TRACKER);
+
+        // Build and send an Event
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Backup Application Success [" + fileDialogAction + "]")
+                .setAction("backupApplicationSuccess")
+                .setLabel("backupApplicationSuccess").build());
+    }
+
+    /**
+     * Send an event to GoogleAnalytics on "importing/exporting user data"
+     * failed action (from the NavigationDrawer slide menu)
+     *
+     * @param context          the current activity context
+     * @param fileDialogAction the chosen backup action - import/export
+     */
+    public static void backupApplicationFailed(Activity context,
+                                               FileDialogActionEnum fileDialogAction) {
+
+        // Get tracker
+        Tracker tracker = ((GlobalEntity) context.getApplicationContext())
+                .getTracker(TrackerName.APP_TRACKER);
+
+        // Build and send an Event
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Backup Application Failed [" + fileDialogAction + "]")
+                .setAction("backupApplicationFailed")
+                .setLabel("backupApplicationFailed").build());
     }
 
     /**

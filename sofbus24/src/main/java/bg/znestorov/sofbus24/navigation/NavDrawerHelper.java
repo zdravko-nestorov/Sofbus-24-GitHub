@@ -228,7 +228,7 @@ public class NavDrawerHelper {
                 .getString(R.string.app_loading_current_location));
 
         RetrieveCurrentLocation retrieveCurrentLocation = new RetrieveCurrentLocation(
-                context, context.getSupportFragmentManager(), progressDialog,
+                context, fragment.getChildFragmentManager(), progressDialog,
                 RetrieveCurrentLocationTypeEnum.CS_LIST_INIT);
         retrieveCurrentLocation.execute();
         RetrieveCurrentLocationTimeout retrieveCurrentLocationTimeout = new RetrieveCurrentLocationTimeout(

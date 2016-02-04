@@ -310,6 +310,12 @@ public class DroidTransDataSource {
 
     /**
      * Get the stations for the current vehicle in the desired location
+     * <br/><br/>
+     * <b>[Exception - GooglePlay]</b> Caused by: android.database.sqlite.SQLiteDatabaseCorruptException:
+     * database disk image is malformed (code 11);
+     * <br/>
+     * <b>[Answer - StackOverflow]</b> This seems to be all 'low-level' issues. Its not something I can do from the code. This means that
+     * something or someone (app killer) my be killing my app at some point so then the db is corrupted;
      *
      * @param vehicleType      the vehicle type
      * @param vehicleNumber    the vehicle number

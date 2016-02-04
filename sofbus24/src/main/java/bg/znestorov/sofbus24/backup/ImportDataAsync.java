@@ -5,7 +5,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 
+import bg.znestorov.sofbus24.entity.FileDialogActionEnum;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 /**
@@ -45,6 +47,9 @@ public class ImportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
         // Check what is the status of importing the data and show the appropriate message
         if (isImportSuccessful) {
+
+            // Send an information to the GoogleAnalytics and show a toast
+            ActivityTracker.backupApplicationSuccess(context, FileDialogActionEnum.IMPORT);
             ActivityUtils.showMiddleToast(context, context.getString(R.string.backup_import_success));
 
             // Wait for the toast to disappear and restart the application
@@ -55,6 +60,8 @@ public class ImportDataAsync extends AsyncTask<Void, Void, Boolean> {
                 }
             }, 3000);
         } else {
+            // Send an information to the GoogleAnalytics and show a toast
+            ActivityTracker.backupApplicationFailed(context, FileDialogActionEnum.IMPORT);
             ActivityUtils.showMiddleToast(context, context.getString(R.string.backup_import_failed));
         }
     }
