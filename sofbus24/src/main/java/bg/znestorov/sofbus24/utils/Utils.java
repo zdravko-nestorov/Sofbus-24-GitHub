@@ -859,7 +859,7 @@ public class Utils {
         // the same as the current one (in case of refresh or something similar to this).
         // According to an user (Gmail - Deyan Viktorov), only the time of the history search
         // should be updated
-        if (lastHistoryEntity.equals(nextHistoryEntity)) {
+        if (lastHistoryEntity != null && lastHistoryEntity.equals(nextHistoryEntity)) {
             history.putHistoryEntityInPreferences(context, lastSearchNumber, nextHistoryEntity);
         } else {
             history.putHistoryEntityInPreferences(context, nextSearchNumber, nextHistoryEntity);

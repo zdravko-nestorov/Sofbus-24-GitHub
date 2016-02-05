@@ -37,7 +37,7 @@ public class ImportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(Void... params) {
-        return BackupData.importSofbus24Data(sourceLocation);
+        return new BackupData(context).importSofbus24Data(sourceLocation);
     }
 
     @Override

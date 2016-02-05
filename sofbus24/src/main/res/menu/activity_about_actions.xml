@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Update database -->
     <item
         android:id="@+id/action_about_update_db"
         android:icon="@drawable/ic_action_storage"
         android:showAsAction="always"
-        android:title="@string/action_about_update_db" />
+        android:title="@string/action_about_update_db"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Check for updates (GooglePlay updates) -->
     <item
         android:id="@+id/action_about_update_app"
         android:icon="@drawable/ic_action_download"
         android:showAsAction="always"
-        android:title="@string/action_about_update_app" />
+        android:title="@string/action_about_update_app"
+        tools:ignore="AlwaysShowAction" />
 
 </menu>

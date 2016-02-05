@@ -1,8 +1,10 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -26,6 +28,7 @@ public class Preferences extends FragmentActivity implements
 
     @Override
     @SuppressWarnings("deprecation")
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     protected void onCreate(Bundle savedInstanceState) {
         ThemeChange.selectTheme(this);
         super.onCreate(savedInstanceState);

@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.backup;
 
+import android.app.Activity;
+
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
@@ -8,6 +10,7 @@ import net.lingala.zip4j.util.Zip4jConstants;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import bg.znestorov.sofbus24.utils.Utils;
@@ -20,15 +23,31 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 class BackupData {
 
-    private static final String SOFBUS_24_PATH = "//data//data//bg.znestorov.sofbus24.main//";
-    private static final String SOFBUS_24_PATH_BACKUP = "//data//data//bg.znestorov.sofbus24.main.backup//";
-
-    private static final String SOFBUS_24_PACKAGE_FOLDER_NAME = "bg.znestorov.sofbus24.main";
+    /**
+     * Locations of the files that MUST be excluded when making the backup:
+     * -> "/data/data/bg.znestorov.sofbus24.main/databases"
+     * -> "/data/data/bg.znestorov.sofbus24.main/databases/sofbus24.db"
+     * -> "/data/data/bg.znestorov.sofbus24.main/databases/sofbus24.db-journal"
+     * -> "/data/data/bg.znestorov.sofbus24.main/databases/google_analytics_v4.db"
+     * -> "/data/data/bg.znestorov.sofbus24.main/databases/google_analytics_v4.db-journal"
+     * -> "/data/data/bg.znestorov.sofbus24.main/shared_prefs/application_gcm.xml"
+     * -> "/data/data/bg.znestorov.sofbus24.main/files/gaClientId"
+     */
     private static final String SOFBUS_24_DB_FOLDER_NAME = "databases";
     private static final String SOFBUS_24_DB_FILE = "sofbus24.db";
     private static final String SOFBUS_24_DB_JOURNAL_FILE = "sofbus24.db-journal";
-
+    private static final String SOFBUS_24_DB_GA_FILE = "google_analytics_v4.db";
+    private static final String SOFBUS_24_DB_GA_JOURNAL_FILE = "google_analytics_v4.db-journal";
+    private static final String SOFBUS_24_PREF_GCM_FILE = "application_gcm.xml";
+    private static final String SOFBUS_24_FILES_GA_CLIENT_FILE = "gaClientId";
     private static final String SOFBUS_24_BACKUP_PASSWORD = "U09GQlVTXzI0X0JBQ0tVUF9QQVNTV09SRF9aRFJBVktPX05FU1RPUk9W";
+    private final String sofbus24Path;
+    private final String sofbus24PackageFolderName;
+
+    public BackupData(Activity context) {
+        this.sofbus24Path = context.getFilesDir().getParent() + File.separator;
+        this.sofbus24PackageFolderName = context.getPackageName();
+    }
 
     /**
      * Export the Sofbus 24 data to a zip file, encrypted with a password. The data contains all user data
@@ -38,13 +57,12 @@ class BackupData {
      *                       The param should contain the path, the name of the zip file and its extension
      * @return if the export of the data is successful or not
      */
-
-    public static boolean exportSofbus24Data(String targetLocation) {
+    public boolean exportSofbus24Data(String targetLocation) {
 
         boolean exportResult = true;
         try {
             new File(targetLocation).delete();
-            createPasswordProtectedZipFile(SOFBUS_24_PATH, targetLocation);
+            createPasswordProtectedZipFile(sofbus24Path, targetLocation);
         } catch (Exception e) {
             exportResult = false;
         }
@@ -60,11 +78,11 @@ class BackupData {
      *                       The param should contain the path, the name of the zip file and its extension
      * @return if the import of the data is successful or not
      */
-    public static boolean importSofbus24Data(String sourceLocation) {
+    public boolean importSofbus24Data(String sourceLocation) {
 
         boolean importResult = true;
         try {
-            copyPasswordProtectedZipFileContent(sourceLocation, SOFBUS_24_PATH);
+            copyPasswordProtectedZipFileContent(sourceLocation, sofbus24Path);
         } catch (Exception e) {
             importResult = false;
         }
@@ -79,7 +97,7 @@ class BackupData {
      * @param targetLocation the target location (location of the zip file)
      * @throws ZipException signals that a Zip exception of some sort has occurred.
      */
-    private static void createPasswordProtectedZipFile(String sourceLocation, String targetLocation) throws ZipException {
+    private void createPasswordProtectedZipFile(String sourceLocation, String targetLocation) throws Exception {
 
         // Create ZipParameters and configure them
         ZipParameters zipParameters = new ZipParameters();
@@ -92,11 +110,70 @@ class BackupData {
 
         // Create the ZIP file
         ZipFile zipFile = new ZipFile(targetLocation);
-        zipFile.addFolder(sourceLocation, zipParameters);
+        List<File> sourceLocationChildrenFiles = getChildrenFolders(sourceLocation);
+
+        // This case should never been reached, because the source folder is created
+        // when the application is installed (/data/data/bg.znestorov.sofbus24.main/)
+        if (sourceLocationChildrenFiles.isEmpty()) {
+            throw new Exception("The Sofbus 24 data folder doesn't exist. It seems that this is a major installation bug.");
+        }
+
+        // Add all not-empty folders located in the application data folder into the ZipFile
+        for (File child : sourceLocationChildrenFiles) {
+            zipFile.addFolder(child, zipParameters);
+        }
 
         // Remove the stations database from the ZIP file
         removeZipEntryFile(zipFile, SOFBUS_24_DB_FILE);
         removeZipEntryFile(zipFile, SOFBUS_24_DB_JOURNAL_FILE);
+
+        // Remove the GoogleAnalytics database from the ZIP file
+        removeZipEntryFile(zipFile, SOFBUS_24_DB_GA_FILE);
+        removeZipEntryFile(zipFile, SOFBUS_24_DB_GA_JOURNAL_FILE);
+
+        // Remove the GCM file, which contains the GCM ID and some other specific user information
+        removeZipEntryFile(zipFile, SOFBUS_24_PREF_GCM_FILE);
+        removeZipEntryFile(zipFile, SOFBUS_24_FILES_GA_CLIENT_FILE);
+    }
+
+    /**
+     * Get the children files located in the fileLocation. All files that don't exist
+     * (system files) or can't be read are excluded
+     *
+     * @param fileLocation the source file/directory location (will be zipped)
+     * @return a list with all children files that can be copied
+     */
+    private List<File> getChildrenFolders(String fileLocation) {
+
+        List<File> sofbus24DataFolders = new ArrayList<File>();
+
+        // Check if the source location is not empty
+        if (Utils.isEmpty(fileLocation)) {
+            return sofbus24DataFolders;
+        }
+
+        // Check if the file from this source location exists
+        File sourceFile = new File(fileLocation);
+        if (!sourceFile.exists()) {
+            return sofbus24DataFolders;
+        }
+
+        // Check if the source location contains any files or folders inside
+        File[] sourceFileChildrenArray = sourceFile.listFiles();
+        if (sourceFileChildrenArray == null || sourceFileChildrenArray.length == 0) {
+            return sofbus24DataFolders;
+        }
+
+        // Iterate over all children of the source location and get only the existing ones, which are not empty.
+        // It is possible that the array contains files that do not exists - they are system files.
+        // For example: "/data/data/bg.znestorov.sofbus24.main/lib"
+        for (File child : sourceFileChildrenArray) {
+            if (child.exists() && child.canRead() && child.isDirectory() && child.listFiles() != null && child.listFiles().length > 0) {
+                sofbus24DataFolders.add(child);
+            }
+        }
+
+        return sofbus24DataFolders;
     }
 
     /**
@@ -106,7 +183,7 @@ class BackupData {
      * @param zipFileHeaderName the name of the ZipEntry that will be deleted
      * @throws ZipException
      */
-    private static void removeZipEntryFile(ZipFile zipFile, String zipFileHeaderName) throws ZipException {
+    private void removeZipEntryFile(ZipFile zipFile, String zipFileHeaderName) throws ZipException {
 
         FileHeader zipFileHeader = null;
         List zipFileHeaders = zipFile.getFileHeaders();
@@ -133,51 +210,31 @@ class BackupData {
      * Extract the password protected file to the same directory, copies the current DB files, delete the current user configuration and
      * replace it with the one from the file
      *
-     * @param sourceLocation the source file/directory location (the location of the zip file)
-     * @param targetLocation the target location (location to unzip the file)
+     * @param zipSourceLocation the source file/directory location (the location of the zip file)
+     * @param targetLocation    the target location (location to unzip the file)
      * @throws ZipException
      * @throws IOException
      */
-    private static void copyPasswordProtectedZipFileContent(String sourceLocation, String targetLocation) throws Exception {
+    private void copyPasswordProtectedZipFileContent(String zipSourceLocation, String targetLocation) throws Exception {
 
         // Get the location path of the ZipFile and the name of the folder after extracting the ZipFile
-        String sourceLocationPath = Utils.getParentPathFromPath(sourceLocation);
-        String newlySourceLocationPath = sourceLocationPath + SOFBUS_24_PACKAGE_FOLDER_NAME + File.separator;
+        String zipExtractLocationPath = Utils.getParentPathFromPath(zipSourceLocation) + sofbus24PackageFolderName + File.separator;
 
         try {
             // Unzip the ZipFile with the backup to the same folder
-            unzipPasswordProtectedZipFile(sourceLocation, sourceLocationPath);
+            unzipPasswordProtectedZipFile(zipSourceLocation, zipExtractLocationPath);
 
             // Get the newly created directory (after extracting the ZipFile) and copy the current DB files into it
-            copyCurrentDb(newlySourceLocationPath, SOFBUS_24_DB_FILE);
-            copyCurrentDb(newlySourceLocationPath, SOFBUS_24_DB_JOURNAL_FILE);
+            copyCurrentDb(zipExtractLocationPath, SOFBUS_24_DB_FILE);
+            copyCurrentDb(zipExtractLocationPath, SOFBUS_24_DB_JOURNAL_FILE);
 
             // Copy the newly created directory (after extracting the ZipFile) with the current DBs into the Android data folder
-            Utils.copyAndReplaceFileOrDirectory(newlySourceLocationPath, SOFBUS_24_PATH);
+            Utils.copyAndReplaceFileOrDirectory(zipExtractLocationPath, sofbus24Path);
 
         } finally {
             // Delete the newly created directory (located in the same directory as the ZipFile)
-            Utils.deleteFileOrDirectory(newlySourceLocationPath);
+            Utils.deleteFileOrDirectory(zipExtractLocationPath);
         }
-    }
-
-    private static boolean renameBackupFolder() {
-        return new File(SOFBUS_24_PATH_BACKUP).renameTo(new File(SOFBUS_24_PATH));
-    }
-
-    /**
-     * Copy the current DB files to a some location
-     *
-     * @param sourceLocation the source file/directory location
-     * @param dbFilename     the name of the DB file
-     * @throws IOException
-     */
-    private static void copyCurrentDb(String sourceLocation, String dbFilename) throws IOException {
-
-        String sofbus24SourceDbFilePath = SOFBUS_24_PATH + SOFBUS_24_DB_FOLDER_NAME + File.separator + dbFilename;
-        String sofbus24TargetDbFilePath = sourceLocation + SOFBUS_24_DB_FOLDER_NAME + File.separator + dbFilename;
-
-        Utils.copyAndReplaceFileOrDirectory(sofbus24SourceDbFilePath, sofbus24TargetDbFilePath);
     }
 
     /**
@@ -187,7 +244,7 @@ class BackupData {
      * @param targetLocation the target location (location to unzip the file)
      * @throws ZipException signals that a Zip exception of some sort has occurred.
      */
-    private static void unzipPasswordProtectedZipFile(String sourceLocation, String targetLocation) throws ZipException {
+    private void unzipPasswordProtectedZipFile(String sourceLocation, String targetLocation) throws ZipException {
 
         ZipFile zipFile = new ZipFile(sourceLocation);
 
@@ -198,6 +255,21 @@ class BackupData {
 
         // Extract the ZIP file
         zipFile.extractAll(targetLocation);
+    }
+
+    /**
+     * Copy the current DB files to a some location
+     *
+     * @param sourceLocation the source file/directory location
+     * @param dbFilename     the name of the DB file
+     * @throws IOException
+     */
+    private void copyCurrentDb(String sourceLocation, String dbFilename) throws IOException {
+
+        String sofbus24SourceDbFilePath = sofbus24Path + SOFBUS_24_DB_FOLDER_NAME + File.separator + dbFilename;
+        String sofbus24TargetDbFilePath = sourceLocation + SOFBUS_24_DB_FOLDER_NAME + File.separator + dbFilename;
+
+        Utils.copyAndReplaceFileOrDirectory(sofbus24SourceDbFilePath, sofbus24TargetDbFilePath);
     }
 
 }

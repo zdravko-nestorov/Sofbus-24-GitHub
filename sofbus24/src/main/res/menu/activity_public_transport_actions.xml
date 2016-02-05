@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Clear Cache -->
     <item
         android:id="@+id/action_pt_clear_schedule_cache"
         android:icon="@drawable/ic_menu_clear_schedule_cache"
         android:showAsAction="always"
-        android:title="@string/action_clear_schedule_cache" />
+        android:title="@string/action_clear_schedule_cache"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- SUMC Site -->
     <item
         android:id="@+id/action_pt_site"
         android:icon="@drawable/ic_menu_webpage"
         android:showAsAction="always"
-        android:title="@string/action_pt_site" />
+        android:title="@string/action_pt_site"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Map Route -->
     <item
         android:id="@+id/action_pt_route_map"
         android:icon="@drawable/ic_menu_mapmode"
         android:showAsAction="always"
-        android:title="@string/action_pt_route_map" />
+        android:title="@string/action_pt_route_map"
+        tools:ignore="AlwaysShowAction" />
 
 </menu>

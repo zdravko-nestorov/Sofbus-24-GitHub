@@ -51,7 +51,8 @@
             android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
 
         <ImageView
             android:id="@+id/pt_schedule_favourite"
@@ -140,7 +141,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:textColor="#FF6600"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="InconsistentLayout" />
             </TableRow>
 
             <TableRow
@@ -170,7 +172,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:textColor="#FF6600"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="InconsistentLayout" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>

@@ -36,7 +36,7 @@ public class ExportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(Void... params) {
-        return BackupData.exportSofbus24Data(sourceLocation);
+        return new BackupData(context).exportSofbus24Data(sourceLocation);
     }
 
     @Override

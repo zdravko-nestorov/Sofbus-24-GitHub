@@ -76,13 +76,22 @@ public class NavDrawerHelper {
         mDrawerList.setItemChecked(position, true);
         mDrawerLayout.closeDrawer(mDrawerList);
 
+        // Get the appropriate fragment manager (in case of Activity or a Fragment)
+        FragmentManager fragmentManager;
+        if (fragment == null) {
+            fragmentManager = context.getSupportFragmentManager();
+        } else {
+            fragmentManager = fragment.getChildFragmentManager();
+        }
+
+        // Check the user choice
         switch (position) {
             case 0:
                 break;
             case 1:
             case 2:
             case 3:
-                if (isHomeScreenChanged(userHomeScreen, position)) {
+                if (isHomeScreenChanged(fragmentManager, userHomeScreen, position)) {
                     NavDrawerHomeScreenPreferences.setUserChoice(context,
                             position - 1);
 
@@ -92,7 +101,7 @@ public class NavDrawerHelper {
 
                 break;
             case 4:
-                startClosestStationsList(progressDialog);
+                startClosestStationsList(fragmentManager, progressDialog);
                 break;
             case 5:
                 if (ActivityUtils.haveNetworkConnection(context)) {
@@ -159,13 +168,6 @@ public class NavDrawerHelper {
                 }
                 break;
             case 10:
-                FragmentManager fragmentManager;
-                if (fragment == null) {
-                    fragmentManager = context.getSupportFragmentManager();
-                } else {
-                    fragmentManager = fragment.getChildFragmentManager();
-                }
-
                 DialogFragment chooseBackupDialog = ChooseBackupDialog.newInstance();
                 chooseBackupDialog.show(fragmentManager, "dialogFragment");
                 break;
@@ -184,7 +186,7 @@ public class NavDrawerHelper {
      * @param userChoice     the user choice
      * @return if the home screen can be changed
      */
-    private boolean isHomeScreenChanged(int userHomeScreen, int userChoice) {
+    private boolean isHomeScreenChanged(FragmentManager fragmentManager, int userHomeScreen, int userChoice) {
 
         boolean isHomeScreenChanged = true;
         String homeScreenName = navigationItems.get(userChoice);
@@ -196,7 +198,7 @@ public class NavDrawerHelper {
                                     R.string.navigation_drawer_home_screen_error,
                                     context.getString(R.string.navigation_drawer_home_map)));
             googlePlayServicesErrorDialog.show(
-                    context.getSupportFragmentManager(),
+                    fragmentManager,
                     "GooglePlayServicesHomeScreenErrorDialog");
 
             isHomeScreenChanged = false;
@@ -223,12 +225,12 @@ public class NavDrawerHelper {
      *
      * @param progressDialog the progress dialog
      */
-    private void startClosestStationsList(ProgressDialog progressDialog) {
+    private void startClosestStationsList(FragmentManager fragmentManager, ProgressDialog progressDialog) {
         progressDialog.setMessage(context
                 .getString(R.string.app_loading_current_location));
 
         RetrieveCurrentLocation retrieveCurrentLocation = new RetrieveCurrentLocation(
-                context, fragment.getChildFragmentManager(), progressDialog,
+                context, fragmentManager, progressDialog,
                 RetrieveCurrentLocationTypeEnum.CS_LIST_INIT);
         retrieveCurrentLocation.execute();
         RetrieveCurrentLocationTimeout retrieveCurrentLocationTimeout = new RetrieveCurrentLocationTimeout(

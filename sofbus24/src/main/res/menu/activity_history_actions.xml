@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Back to top -->
     <item
         android:id="@+id/action_history_top"
         android:icon="@drawable/ic_action_ms_reset"
         android:showAsAction="always"
-        android:title="@string/action_history_top" />
+        android:title="@string/action_history_top"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Delete All -->
     <item
         android:id="@+id/action_history_delete_all"
         android:icon="@drawable/ic_menu_clear_list"
         android:showAsAction="always"
-        android:title="@string/action_history_delete_all" />
+        android:title="@string/action_history_delete_all"
+        tools:ignore="AlwaysShowAction" />
 
 </menu>

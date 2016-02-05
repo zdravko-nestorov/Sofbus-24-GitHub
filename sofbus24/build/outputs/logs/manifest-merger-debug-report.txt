@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:2:1-213:12
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:2:1-218:12
 	xmlns:tools
 		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:3:5-51
 	xmlns:android
@@ -135,7 +135,7 @@ ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\Androi
 	android:name
 		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:60:9-49
 application
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:63:5-211:19
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:63:5-216:19
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
@@ -258,269 +258,269 @@ MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioP
 		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:69:9-30
 	android:name
 		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:64:9-65
-meta-data#com.google.android.gms.version
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:70:9-72:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
-	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:71:13-58
-	android:value
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:72:13-66
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:73:9-75:74
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:70:9-72:74
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:74:13-62
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:71:13-62
 	android:value
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:75:13-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:72:13-71
+meta-data#com.google.android.gms.version
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:78:9-80:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+	android:name
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:79:13-58
+	android:value
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:80:13-66
 activity#bg.znestorov.sofbus24.main.HomeScreenSelect
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:78:9-89:20
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:83:9-94:20
 	android:windowSoftInputMode
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:83:13-52
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:88:13-52
 	android:screenOrientation
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:81:13-47
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:86:13-47
 	android:label
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:80:13-45
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:85:13-45
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:82:13-68
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:87:13-68
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:79:13-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:84:13-71
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:84:13-88:29
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:89:13-93:29
 action#android.intent.action.MAIN
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:85:17-69
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:90:17-69
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:85:25-66
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:90:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:87:17-77
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:92:17-77
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:87:27-74
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:92:27-74
 activity#bg.znestorov.sofbus24.main.Sofbus24
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:92:9-72
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:97:9-72
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:92:19-69
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:97:19-69
 activity#bg.znestorov.sofbus24.main.History
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:95:9-71
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:100:9-71
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:95:19-68
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:100:19-68
 activity#bg.znestorov.sofbus24.main.HistoryDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:96:9-98:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:101:9-103:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:98:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:103:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:97:13-68
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:102:13-68
 activity#bg.znestorov.sofbus24.main.ClosestStationsList
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:101:9-103:67
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:106:9-108:67
 	android:windowSoftInputMode
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:103:13-64
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:108:13-64
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:102:13-74
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:107:13-74
 activity#bg.znestorov.sofbus24.main.ClosestStationsListDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:104:9-107:67
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:109:9-112:67
 	android:windowSoftInputMode
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:107:13-64
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:112:13-64
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:106:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:111:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:105:13-80
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:110:13-80
 activity#bg.znestorov.sofbus24.main.ClosestStationsMap
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:110:9-113:46
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:115:9-118:46
 	android:uiOptions
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:112:13-57
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:117:13-57
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:111:13-73
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:116:13-73
 	tools:ignore
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:113:13-43
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:118:13-43
 activity#bg.znestorov.sofbus24.main.Preferences
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:116:9-75
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:121:9-75
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:116:19-72
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:121:19-72
 activity#bg.znestorov.sofbus24.main.PreferencesPreHoneycomb
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:117:9-87
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:122:9-87
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:117:19-84
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:122:19-84
 activity#bg.znestorov.sofbus24.main.PreferencesDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:118:9-120:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:123:9-125:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:120:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:125:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:119:13-72
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:124:13-72
 activity#bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:121:9-123:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:126:9-128:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:123:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:128:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:122:13-84
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:127:13-84
 activity#bg.znestorov.sofbus24.main.PreferencesHidden
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:124:9-126:55
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:129:9-131:55
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:126:13-52
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:131:13-52
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:125:13-72
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:130:13-72
 activity#bg.znestorov.sofbus24.main.EditTabs
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:129:9-72
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:134:9-72
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:129:19-69
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:134:19-69
 activity#bg.znestorov.sofbus24.main.EditTabsDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:130:9-132:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:135:9-137:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:132:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:137:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:131:13-69
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:136:13-69
 activity#bg.znestorov.sofbus24.main.About
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:135:9-69
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:140:9-69
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:135:19-66
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:140:19-66
 activity#bg.znestorov.sofbus24.main.AboutDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:136:9-138:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:141:9-143:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:138:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:143:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:137:13-66
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:142:13-66
 activity#bg.znestorov.sofbus24.main.StationRouteMap
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:141:9-79
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:146:9-79
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:141:19-76
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:146:19-76
 activity#bg.znestorov.sofbus24.main.VirtualBoardsTime
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:144:9-81
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:149:9-81
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:144:19-78
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:149:19-78
 activity#bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:145:9-147:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:150:9-152:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:147:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:152:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:146:13-78
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:151:13-78
 activity#bg.znestorov.sofbus24.main.PublicTransport
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:150:9-152:67
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:155:9-157:67
 	android:windowSoftInputMode
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:152:13-64
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:157:13-64
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:151:13-70
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:156:13-70
 activity#bg.znestorov.sofbus24.main.PublicTransportDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:153:9-156:67
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:158:9-161:67
 	android:windowSoftInputMode
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:156:13-64
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:161:13-64
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:155:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:160:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:154:13-76
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:159:13-76
 activity#bg.znestorov.sofbus24.main.PublicTransportSchedule
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:159:9-87
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:164:9-87
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:159:19-84
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:164:19-84
 activity#bg.znestorov.sofbus24.main.PublicTransportScheduleDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:160:9-162:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:165:9-167:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:162:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:167:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:161:13-84
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:166:13-84
 activity#bg.znestorov.sofbus24.main.StationMap
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:165:9-74
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:170:9-74
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:165:19-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:170:19-71
 activity#bg.znestorov.sofbus24.main.MetroSchedule
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:168:9-77
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:173:9-77
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:168:19-74
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:173:19-74
 activity#bg.znestorov.sofbus24.main.MetroScheduleDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:169:9-171:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:174:9-176:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:171:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:176:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:170:13-74
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:175:13-74
 activity#bg.znestorov.sofbus24.main.DroidTrans
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:174:9-74
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:179:9-74
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:174:19-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:179:19-71
 activity#bg.znestorov.sofbus24.main.DroidTransDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:175:9-177:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:180:9-182:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:177:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:182:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:176:13-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:181:13-71
 activity#bg.znestorov.sofbus24.main.Favourites
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:180:9-74
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:185:9-74
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:180:19-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:185:19-71
 activity#bg.znestorov.sofbus24.main.FavouritesDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:181:9-183:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:186:9-188:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:183:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:188:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:182:13-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:187:13-71
 activity#bg.znestorov.sofbus24.main.WebPage
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:186:9-71
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:191:9-71
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:186:19-68
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:191:19-68
 activity#bg.znestorov.sofbus24.main.RouteChanges
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:189:9-76
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:194:9-76
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:189:19-73
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:194:19-73
 activity#bg.znestorov.sofbus24.main.RouteChangesDialog
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:190:9-192:49
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:195:9-197:49
 	android:theme
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:192:13-46
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:197:13-46
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:191:13-73
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:196:13-73
 activity#bg.znestorov.sofbus24.main.RouteChangesNews
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:195:9-197:77
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:200:9-202:77
 	android:configChanges
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:197:13-74
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:202:13-74
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:196:13-71
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:201:13-71
 receiver#bg.znestorov.sofbus24.main.GcmBroadcastReceiver
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:200:9-208:20
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:205:9-213:20
 	android:permission
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:202:13-73
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:207:13-73
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:201:13-75
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:206:13-75
 intent-filter#bg.znestorov.sofbus24.main+com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:203:13-207:29
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:208:13-212:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:204:17-81
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:209:17-81
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:204:25-78
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:209:25-78
 category#bg.znestorov.sofbus24.main
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:206:17-71
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:211:17-71
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:206:27-68
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:211:27-68
 service#bg.znestorov.sofbus24.main.GcmMessageHandler
-ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:210:9-80
+ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:215:9-80
 	android:name
-		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:210:18-77
+		ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:215:18-77
 uses-sdk
 INJECTED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [Sofbus24:dragSortListView:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\dragSortListView\unspecified\AndroidManifest.xml:7:5-9:41
@@ -684,7 +684,7 @@ MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\Workspaces\Andro
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:30:19-91
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:2:1-213:12 reason: com.google.android.gms.maps requested WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:2:1-218:12 reason: com.google.android.gms.maps requested WRITE_EXTERNAL_STORAGE
 provider#com.google.android.gms.measurement.AppMeasurementContentProvider
 ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:28:7-31:37
 	android:exported

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Global labels -->
     <string name="app_name" translatable="false">Софбус 24</string>
@@ -28,7 +28,7 @@
     <string name="app_dialog_title_rate">Оценете приложението</string>
     <string name="app_database_error" formatted="false"><![CDATA[Възникна неочакван проблем при стартирането на <b><i>Софбус 24</i></b>. Моля опитайте отново като <b><i>рестартирате</i></b> приложението. Ако грешката продължава да се появява, моля свържете се с мен чрез <b><i>имейл бутона</i></b> отдолу.]]></string>
     <string name="app_internet_error">Възникна грешка при извличането на информацията. Моля проверете вашата интернет връзка и опитайте отново.</string>
-    <string name="app_info_error" formatted="false"><![CDATA[В момента сайтът за градска мобилност не предоставя информация за <b>%s</b>. Моля опитайте пак по-късно.]]></string>
+    <string name="app_info_error" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[В момента сайтът за градска мобилност не предоставя информация за <b>%s</b>. Моля опитайте пак по-късно.]]></string>
     <string name="app_captcha_error" formatted="false"><![CDATA[Трябва да въведете символите от изображението (<b>captcha код</b>), за да преминете теста за сигурност на <b>СКГТ</b> и да извлечете нужната информация.]]></string>
     <string name="app_internet_or_info_error">В момента няма намерена информация. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
     <string name="app_loading_current_location" formatted="false"><![CDATA[Локализиране на текущото местоположение…]]></string>
@@ -43,15 +43,15 @@
     <string name="app_location_timeout_map_error">Намирането на текущото местоположение продължи твърде дълго. Картата ще бъде позиционирана върху центъра на София, докато бъдете локализирани.</string>
     <string name="app_coordinates_error">Спирката не може да бъде визуализирана (не са намерени нейните координати в базата от данни).</string>
     <string name="app_no_station_selected_error">Моля изберете спирка от картата, за да бъде визуализирана чрез режима Google Street View.</string>
-    <string name="app_distance" formatted="false">Разстояние: ~%s</string>
+    <string name="app_distance" formatted="false" tools:ignore="StringFormatInvalid">Разстояние: ~%s</string>
     <string name="app_distance_none">Разстояние: ∞ (изчислява се&#8230;)</string>
     <string name="app_distance_meters">м</string>
     <string name="app_distance_kilometers">км&#160;</string>
     <string name="app_remaining_minutes">м</string>
     <string name="app_remaining_hours">ч</string>
-    <string name="app_toast_add_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
-    <string name="app_toast_remove_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
-    <string name="app_toast_rename_favourites" formatted="false"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
+    <string name="app_toast_add_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
+    <string name="app_toast_remove_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
+    <string name="app_toast_rename_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
     <string name="app_google_play_title">Услуги за Google Play</string>
     <string name="app_google_play_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_street_view_title">Google Street View</string>
@@ -147,7 +147,7 @@
 
     <!-- Closest Stations Map -->
     <string name="cs_map_title">Google Maps</string>
-    <string name="cs_map_subtitle" formatted="false">Спирки в радиус от %s метра: %s</string>
+    <string name="cs_map_subtitle" formatted="false" tools:ignore="StringFormatInvalid">Спирки в радиус от %s метра: %s</string>
     <string name="cs_map_type_btt">Градски Транспорт</string>
     <string name="cs_map_type_bus">Автобуси</string>
     <string name="cs_map_type_trolley">Тролеи</string>
@@ -235,16 +235,16 @@
     <string name="edit_tabs_not_saved_msg">Направили сте промяна на началния екран. Сигурни ли сте, че искате да продължите без да запаметите промените.</string>
 
     <!-- About -->
-    <string name="about_subtitle" formatted="false"><![CDATA[Версия %s]]></string>
-    <string name="about_information" formatted="false">
+    <string name="about_subtitle" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Версия %s]]></string>
+    <string name="about_information" formatted="false" tools:ignore="StringFormatInvalid">
 <![CDATA[<b>%s версия %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>Android системата предоставя подробна информация, 
 		свързана с използването на градския транспорт в София, като часове на пристигане в реално време, разписания на превозните средства, 
 		разположения на спирките на територията на София, както и локализиране на най-близките спирки, в зависимост от текущото местоположение.<br><br>
 		<i>Данните се извличат от: <b><a href="http://m.sumc.bg">http://m.sumc.bg</a></b></i>]]>
     </string>
     <string name="about_update_app" formatted="false"><![CDATA[Проверка за нова версия на приложението…]]></string>
-    <string name="about_update_app_last" formatted="false"><![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>
-    <string name="about_update_app_new" formatted="false"><![CDATA[Налична е нова версия - <b>Софбус 24 - версия %s</b>. Бихте ли желали да обновите приложението?]]></string>
+    <string name="about_update_app_last" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>
+    <string name="about_update_app_new" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Налична е нова версия - <b>Софбус 24 - версия %s</b>. Бихте ли желали да обновите приложението?]]></string>
     <string name="about_update_db" formatted="false"><![CDATA[Проверка за обновление на спирките…]]></string>
     <string name="about_update_db_last">В момента няма налично обновление на спирките. Моля опитайте по-късно.</string>
     <string name="about_update_db_new">Налично е обновление на спирките. Бихте ли желали да добавите новите спирки?</string>
@@ -253,14 +253,14 @@
 
     <!-- Favourites Fragment -->
     <string name="fav_search_hint">Търсене по име или номер</string>
-    <string name="fav_item_station_number_text" formatted="false">Спирка номер: %s</string>
-    <string name="fav_item_metro_station_number_text" formatted="false">Метростанция номер: %s</string>
+    <string name="fav_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
+    <string name="fav_item_metro_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="fav_item_rename_title">Преименувай</string>
-    <string name="fav_item_rename_msg" formatted="false"><![CDATA[Промени името на спирка <b><i>%s (%s)</i></b> на:]]></string>
+    <string name="fav_item_rename_msg" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Промени името на спирка <b><i>%s (%s)</i></b> на:]]></string>
     <string name="fav_item_rename_hint">Въведи ново име</string>
     <string name="fav_item_empty_list" formatted="false"><![CDATA[Няма намерени спирки в секцията <b>Любими</b>. За да добавите спирката, която търсите, намерете я в някой от останалите табове и маркирайте звездата пред нея.]]></string>
     <string name="fav_item_remove_title">Премахни</string>
-    <string name="fav_item_remove_confirmation" formatted="false"><![CDATA[Сигурни ли сте, че искате да премахнете спирка <b><i>%s (%s)</i></b> от <b>Любими?</b>]]></string>
+    <string name="fav_item_remove_confirmation" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Сигурни ли сте, че искате да премахнете спирка <b><i>%s (%s)</i></b> от <b>Любими?</b>]]></string>
     <string name="fav_menu_remove_all_confirmation" formatted="false"><![CDATA[Сигурни ли сте, че искате да премахнете всички спирки от <b>Любими?</b>]]></string>
     <string name="fav_menu_remove_all_toast" formatted="false"><![CDATA[Всички спирки бяха премахнати от секцията <b>Любими.</b>]]></string>
     <string name="fav_menu_remove_all_empty_toast" formatted="false"><![CDATA[Няма добавени спирки в секцията <b>Любими.</b>]]></string>
@@ -288,13 +288,13 @@
 
     <!-- Virtual Boards Fragment -->
     <string name="vb_search_hint">Търсене по име или номер</string>
-    <string name="vb_item_station_number_text" formatted="false">Спирка номер: %s</string>
+    <string name="vb_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
     <string name="vb_item_search_list" formatted="false"><![CDATA[Моля въведете вашите критерии за търсене (<b>номер - четирицифрен код (пр. 0013)</b> или <b>име (цифра/и или букви на кирилица или латиница)</b> на спирката). Ако търсите по име е нужно да въведете <b>поне 3 символа</b>.]]></string>
-    <string name="vb_item_empty_list" formatted="false"><![CDATA[Няма намерени спирки за <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string name="vb_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени спирки за <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
 
     <!-- Virtual Boards Time Fragment -->
     <string name="vb_time_title">Виртуални табла</string>
-    <string name="vb_time_current_time" formatted="false">Информация към %s</string>
+    <string name="vb_time_current_time" formatted="false" tools:ignore="StringFormatInvalid">Информация към %s</string>
     <string name="vb_time_bus" formatted="false">Автобус №%s</string>
     <string name="vb_time_trolley" formatted="false">Тролей №%s</string>
     <string name="vb_time_tram" formatted="false">Трамвай №%s</string>
@@ -302,40 +302,40 @@
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[Проверка на CAPTCHA изображението…]]></string>
     <string name="vb_time_sumc_captcha">Тест за сигурност</string>
     <string name="vb_time_sumc_captcha_msg">Моля въведете символите от изображението (на кирилица или латиница):</string>
-    <string name="vb_time_item_remaining_time" formatted="false"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
-    <string name="vb_time_item_time_of_arrival" formatted="false"><![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
-    <string name="vb_time_item_both" formatted="false"><![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
+    <string name="vb_time_item_remaining_time" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
+    <string name="vb_time_item_time_of_arrival" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
+    <string name="vb_time_item_both" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
 
     <!-- Schedule Fragment -->
     <string name="sch_search_hint">Търсене по име или номер</string>
     <string name="sch_search_tab_bus">Автобуси</string>
     <string name="sch_search_tab_trolley">Тролеи</string>
     <string name="sch_search_tab_tram">Трамваи</string>
-    <string name="sch_item_bus" formatted="false">Автобус №%s</string>
-    <string name="sch_item_trolley" formatted="false">Тролей №%s</string>
-    <string name="sch_item_tram" formatted="false">Трамвай №%s</string>
-    <string name="sch_item_empty_list" formatted="false"><![CDATA[Няма намерени резултати за <b>%s</b> в секция <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string name="sch_item_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
+    <string name="sch_item_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
+    <string name="sch_item_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="sch_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени резултати за <b>%s</b> в секция <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="sch_item_direction_choice">Изберете направление</string>
 
     <!-- Public Transport -->
     <string name="pt_title">Разписание</string>
     <string name="pt_search_hint">Търсене по име или номер</string>
-    <string name="pt_bus" formatted="false">Автобус №%s</string>
-    <string name="pt_trolley" formatted="false">Тролей №%s</string>
-    <string name="pt_tram" formatted="false">Трамвай №%s</string>
-    <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>…]]></string>
-    <string name="pt_item_station_number_text" formatted="false">Спирка номер: %s</string>
+    <string name="pt_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
+    <string name="pt_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
+    <string name="pt_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="pt_item_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>…]]></string>
+    <string name="pt_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
     <string name="pt_item_station_number_text_sign" formatted="false">Спирка №%s</string>
-    <string name="pt_empty_list" formatted="false"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string name="pt_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_settings" formatted="false"><![CDATA[Вие изключихте използването на локалното разписание на колите на Градския Транспорт. Искате ли да премахнете запазената досега информация?]]></string>
     <string name="pt_menu_clear_all_schedule_cache_toast" formatted="false"><![CDATA[Локалното разписание на колите на Градския Транспорт беше успешно изтрито.]]></string>
     <string name="pt_menu_clear_all_schedule_cache_empty_toast" formatted="false"><![CDATA[В момента не е налично локално разписание на колите на Градския Транспорт. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
-    <string name="pt_menu_clear_schedule_cache" formatted="false"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание за <b>%s</b>?]]></string>
-    <string name="pt_menu_clear_schedule_cache_toast" formatted="false"><![CDATA[Локалното разписание за <b>%s</b> беше успешно изтрито.]]></string>
-    <string name="pt_menu_clear_schedule_cache_empty_toast" formatted="false"><![CDATA[В момента не е налично локално разписание за <b>%s</b>. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
-    <string name="pt_schedule_cache_loaded" formatted="false"><![CDATA[Възникна грешка при извличането на информацията за <b>%s</b>. Беше заредено локалното разписание от <b>%s</b>.]]></string>
+    <string name="pt_menu_clear_schedule_cache" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание за <b>%s</b>?]]></string>
+    <string name="pt_menu_clear_schedule_cache_toast" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Локалното разписание за <b>%s</b> беше успешно изтрито.]]></string>
+    <string name="pt_menu_clear_schedule_cache_empty_toast" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[В момента не е налично локално разписание за <b>%s</b>. За да използвате офлайн разписанието, поне веднъж трябва да сте го заредили от сайта на СКГТ.]]></string>
+    <string name="pt_schedule_cache_loaded" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Възникна грешка при извличането на информацията за <b>%s</b>. Беше заредено локалното разписание от <b>%s</b>.]]></string>
 
     <!-- Public Transport Schedule -->
     <string name="pt_schedule_first">Първа кола</string>
@@ -345,11 +345,11 @@
     <string name="metro_search_hint">Търсене по име или номер</string>
     <string name="metro_search_tab_direction1">Маршрут 1</string>
     <string name="metro_search_tab_direction2">Маршрут 2</string>
-    <string name="metro_item_station_number_text" formatted="false">Метростанция номер: %s</string>
+    <string name="metro_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="metro_item_station_number_text_sign" formatted="false">Станция №%s</string>
-    <string name="metro_item_empty_list" formatted="false"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
+    <string name="metro_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
-    <string name="metro_loading_schedule" formatted="false"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>…]]></string>
+    <string name="metro_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>…]]></string>
 
     <!-- Metro Schedule -->
     <string name="metro_schedule_first">Първи влак</string>
@@ -361,7 +361,7 @@
     <!-- Station Route Map Fragment -->
     <string name="metro_search_tab_line1">Линия 1</string>
     <string name="metro_search_tab_line2">Линия 2</string>
-    <string name="pt_time_retrieval_choice" formatted="false"><![CDATA[Информация за \"%s\"]]></string>
+    <string name="pt_time_retrieval_choice" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Информация за \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Разписание</string>
     <string name="pt_time_retrieval_virtual_boards">Времена на пристигане</string>
 
@@ -376,12 +376,12 @@
     <string name="history_type_bus">Автобус</string>
     <string name="history_type_trolley">Тролей</string>
     <string name="history_type_tram">Трамвай</string>
-    <string name="history_title_bus" formatted="false">Автобус №%s</string>
-    <string name="history_title_trolley" formatted="false">Тролей №%s</string>
-    <string name="history_title_tram" formatted="false">Трамвай №%s</string>
-    <string name="history_item_station_number" formatted="false">Спирка номер: %s</string>
-    <string name="history_item_metro_station_number_text" formatted="false">Метростанция номер: %s</string>
-    <string name="history_item_search_date" formatted="false"><![CDATA[<i><font color="#FF4747">[%s] Търсене от %s</font></i>]]></string>
+    <string name="history_title_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
+    <string name="history_title_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
+    <string name="history_title_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="history_item_station_number" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
+    <string name="history_item_metro_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
+    <string name="history_item_search_date" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<i><font color="#FF4747">[%s] Търсене от %s</font></i>]]></string>
 
     <!-- DroidTrans -->
     <string name="droid_trans_title">Коли на СКГТ</string>
@@ -406,9 +406,9 @@
     <string name="navigation_drawer_update">Актуализация</string>
     <string name="navigation_drawer_backup">Бекъп на данни</string>
     <string name="navigation_drawer_exit">Изход</string>
-    <string name="navigation_drawer_home_screen_error" formatted="false"><![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
-    <string name="navigation_drawer_home_screen_remains" formatted="false"><![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
-    <string name="navigation_drawer_home_screen_changed" formatted="false"><![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
+    <string name="navigation_drawer_home_screen_error" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
+    <string name="navigation_drawer_home_screen_remains" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
+    <string name="navigation_drawer_home_screen_changed" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
 
     <!-- Home Screen Select -->
     <string name="home_screen_copyright">Copyright © Софбус 24 2012. All rights reserved</string>
@@ -421,11 +421,11 @@
 
     <!-- Route Changes -->
     <string name="route_changes_title">Маршрутни промени</string>
-    <string name="route_changes_label_creation_date" formatted="false"><![CDATA[Качена на: %s]]></string>
-    <string name="route_changes_label_valid_from" formatted="false"><![CDATA[Валидна от: %s]]></string>
+    <string name="route_changes_label_creation_date" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Качена на: %s]]></string>
+    <string name="route_changes_label_valid_from" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Валидна от: %s]]></string>
     <string name="route_changes_loading" formatted="false"><![CDATA[Търсене на маршрутни промени…]]></string>
     <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на колите на Градския Транспорт в София.</string>
-    <string name="route_changes_news_loading" formatted="false"><![CDATA[Зареждане на <b><i>%s</i></b>…]]></string>
+    <string name="route_changes_news_loading" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Зареждане на <b><i>%s</i></b>…]]></string>
     <string name="route_changes_news_copy_link">Линкът е копиран</string>
     <string name="route_changes_news_choose_browser">Изберете браузър</string>
 
@@ -433,14 +433,14 @@
     <string name="gcm_dialog_message_rate">Ако приложението Ви харесва, моля отделете минутка, за да го оцените (извинете, ако вече сте го направили). За мен вашият глас е от съществено значение. Благодаря Ви за подкрепата!</string>
 
     <!-- File Explorer -->
-    <string name="file_explorer_large_file" formatted="false"><![CDATA[Надвишен е максималният размер за файл - %s MB.]]></string>
+    <string name="file_explorer_large_file" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Надвишен е максималният размер за файл - %s MB.]]></string>
     <string name="file_explorer_file">1 обект</string>
-    <string name="file_explorer_files" formatted="false"><![CDATA[%s обекта]]></string>
+    <string name="file_explorer_files" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[%s обекта]]></string>
     <string name="file_explorer_hint" formatted="false"><![CDATA[Име на backup файла]]></string>
-    <string name="file_explorer_b" formatted="false" translatable="false"><![CDATA[%s B]]></string>
-    <string name="file_explorer_kb" formatted="false" translatable="false"><![CDATA[%s kB]]></string>
-    <string name="file_explorer_mb" formatted="false" translatable="false"><![CDATA[%s MB]]></string>
-    <string name="file_explorer_gb" formatted="false" translatable="false"><![CDATA[%s GB]]></string>
+    <string name="file_explorer_b" formatted="false" translatable="false" tools:ignore="StringFormatInvalid"><![CDATA[%s B]]></string>
+    <string name="file_explorer_kb" formatted="false" translatable="false" tools:ignore="StringFormatInvalid"><![CDATA[%s kB]]></string>
+    <string name="file_explorer_mb" formatted="false" translatable="false" tools:ignore="StringFormatInvalid"><![CDATA[%s MB]]></string>
+    <string name="file_explorer_gb" formatted="false" translatable="false" tools:ignore="StringFormatInvalid"><![CDATA[%s GB]]></string>
 
     <!-- Backup -->
     <string name="backup_import_export_choice">Избор на бекъп</string>
@@ -448,14 +448,14 @@
     <string name="backup_import_success">Вашите настройки бяха възстановени успешно. Приложението ще се рестартира автоматично, за да има резултат от направените промени.</string>
     <string name="backup_import_failed">Възникна проблем при възстановяването на вашите настройки. Моля опитайте отново.</string>
     <string name="backup_import_confirm_title">Потвърждение</string>
-    <string name="backup_import_confirm_msg" formatted="false"><![CDATA[Сигурни ли сте, че искате да презапишете потребителските си настройки с тези от файла <b><i>%s</i></b>?]]></string>
+    <string name="backup_import_confirm_msg" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Сигурни ли сте, че искате да презапишете потребителските си настройки с тези от файла <b><i>%s</i></b>?]]></string>
     <string name="backup_export_loading" formatted="false"><![CDATA[Запазване на потребителските настройки…]]></string>
-    <string name="backup_export_success" formatted="false"><![CDATA[Вашите настройки бяха запазени успешно - <b>%s</b>. Те могат да бъдат възстановени по всяко време.]]></string>
+    <string name="backup_export_success" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Вашите настройки бяха запазени успешно - <b>%s</b>. Те могат да бъдат възстановени по всяко време.]]></string>
     <string name="backup_export_failed">Възникна проблем при запазването на вашите настройки. Моля опитайте отново.</string>
     <string name="backup_export_backup_name" formatted="false"><![CDATA[Името на файла не може да е празно или да съдържа някой от символите: \\\/:*?\"<>|]]></string>
     <string name="backup_export_write_permission">Нямате права за запис в тази директория!</string>
     <string name="backup_export_file_size">Файлът, който се опитвате да запишете е по-голям от наличното прострсранство. Моля освободете място и опитайте отново.</string>
     <string name="backup_export_duplicate_title">Дублиращ се файл</string>
-    <string name="backup_export_duplicate_msg" formatted="false"><![CDATA[Файлът <b><i>%s</i></b> вече съществува. Бихте ли желали да го презапишете?]]></string>
+    <string name="backup_export_duplicate_msg" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Файлът <b><i>%s</i></b> вече съществува. Бихте ли желали да го презапишете?]]></string>
 
 </resources>

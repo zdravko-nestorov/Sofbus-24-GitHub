@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -58,6 +59,7 @@ public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
     }
 
     @Override
+    @SuppressLint("MissingSuperCall")
     public void onResume() {
         super.onStop();
         getPreferenceScreen().getSharedPreferences()

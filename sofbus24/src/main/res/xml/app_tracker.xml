@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- The Google Analytics tracking ID to which to send your data. Dashes in the ID must be unencoded. -->
-    <string name="ga_trackingId">UA-57143452-1</string>
+    <string
+        name="ga_trackingId"
+        tools:ignore="UnusedResources">UA-57143452-1
+    </string>
 
     <!-- If true, views (Activities) will be tracked automatically. -->
-    <bool name="ga_autoActivityTracking">true</bool>
+    <bool
+        name="ga_autoActivityTracking"
+        tools:ignore="UnusedResources">true
+    </bool>
 
     <!-- Automatically track an Exception each time an uncaught exception is thrown in your application. -->
-    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <bool
+        name="ga_reportUncaughtExceptions"
+        tools:ignore="UnusedResources">true
+    </bool>
 
 </resources>

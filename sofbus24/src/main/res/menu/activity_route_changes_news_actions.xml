@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- More -->
     <item
         android:id="@+id/action_more"
         android:icon="@drawable/ic_menu_more"
         android:showAsAction="always"
-        android:title="@string/action_more">
+        android:title="@string/action_more"
+        tools:ignore="AlwaysShowAction">
         <menu>
             <item
                 android:id="@+id/action_route_changes_copy_link"

@@ -1,9 +1,11 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
@@ -60,6 +62,7 @@ public class RouteChangesNews extends SherlockFragmentActivity {
 
     @Override
     @SuppressWarnings("deprecation")
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public boolean onOptionsItemSelected(MenuItem item) {
 
         // Select the current locale - we need to put this here, as this

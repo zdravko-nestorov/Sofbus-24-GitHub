@@ -39,7 +39,7 @@
                 android:text="@string/metro_search_tab_line1"
                 android:textColor="#FF0000"
                 android:textSize="11sp"
-                tools:ignore="SmallSp" />
+                tools:ignore="RtlSymmetry,SmallSp" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,7 +62,7 @@
                 android:text="@string/metro_search_tab_line2"
                 android:textColor="#0000FF"
                 android:textSize="11sp"
-                tools:ignore="SmallSp" />
+                tools:ignore="RtlSymmetry,SmallSp" />
         </LinearLayout>
     </LinearLayout>
 

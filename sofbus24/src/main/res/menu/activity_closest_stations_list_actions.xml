@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Refresh -->
     <item
         android:id="@+id/action_cs_list_refresh"
         android:icon="@drawable/ic_action_ms_refresh"
         android:showAsAction="always"
-        android:title="@string/action_cs_list_refresh" />
+        android:title="@string/action_cs_list_refresh"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Map -->
     <item
         android:id="@+id/action_cs_list_map"
         android:icon="@drawable/ic_action_ms_map"
         android:showAsAction="always"
-        android:title="@string/action_cs_list_map" />
+        android:title="@string/action_cs_list_map"
+        tools:ignore="AlwaysShowAction" />
 
 </menu>

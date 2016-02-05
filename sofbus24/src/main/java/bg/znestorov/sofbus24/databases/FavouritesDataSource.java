@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.databases;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -201,7 +202,7 @@ public class FavouritesDataSource {
      */
     private int getLastPosition() {
         int nextPosition = 1;
-        Cursor cursor = database
+        @SuppressLint("Recycle") Cursor cursor = database
                 .query(FavouritesSQLite.TABLE_FAVOURITES, new String[]{"MAX("
                                 + FavouritesSQLite.COLUMN_POSITION + ")"}, null, null,
                         null, null, null);

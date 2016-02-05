@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Favourites -->
     <item
@@ -20,35 +21,40 @@
         android:id="@+id/action_gm_map_clear"
         android:icon="@drawable/ic_menu_map_clear"
         android:showAsAction="always"
-        android:title="@string/action_gm_map_clear" />
+        android:title="@string/action_gm_map_clear"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Draw route -->
     <item
         android:id="@+id/action_gm_map_route"
         android:icon="@drawable/ic_menu_directions"
         android:showAsAction="always"
-        android:title="@string/action_gm_map_route" />
+        android:title="@string/action_gm_map_route"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Google Street View -->
     <item
         android:id="@+id/action_gm_map_gsv"
         android:icon="@drawable/ic_menu_map_street_view"
         android:showAsAction="always"
-        android:title="@string/action_gm_map_gsv" />
+        android:title="@string/action_gm_map_gsv"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Enable Traffic -->
     <item
         android:id="@+id/action_gm_map_traffic"
         android:icon="@drawable/ic_menu_map_traffic"
         android:showAsAction="always"
-        android:title="@string/action_gm_map_traffic" />
+        android:title="@string/action_gm_map_traffic"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Map mode -->
     <item
         android:id="@+id/action_gm_map_mode"
         android:icon="@drawable/ic_menu_map_layers"
         android:showAsAction="always"
-        android:title="@string/action_gm_map_mode">
+        android:title="@string/action_gm_map_mode"
+        tools:ignore="AlwaysShowAction">
         <menu>
 
             <!-- Normal map mode -->

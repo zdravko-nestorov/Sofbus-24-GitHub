@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- DroidTrans -->
     <item
         android:id="@+id/action_droidtrans"
         android:icon="@drawable/ic_menu_droidtrans"
         android:showAsAction="always"
-        android:title="@string/action_droidtrans" />
+        android:title="@string/action_droidtrans"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- Closest stations Map -->
     <item
         android:id="@+id/action_closest_stations_map"
         android:icon="@drawable/ic_menu_mapmode"
         android:showAsAction="always"
-        android:title="@string/action_closest_stations_map" />
+        android:title="@string/action_closest_stations_map"
+        tools:ignore="AlwaysShowAction" />
 
     <!-- More -->
     <item
         android:id="@+id/action_more"
         android:icon="@drawable/ic_menu_more"
         android:showAsAction="always"
-        android:title="@string/action_more">
+        android:title="@string/action_more"
+        tools:ignore="AlwaysShowAction">
         <menu>
             <item
                 android:id="@+id/action_favourites_sort"

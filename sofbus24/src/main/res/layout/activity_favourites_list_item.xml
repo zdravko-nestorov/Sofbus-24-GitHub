@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/favourites_item_frame_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -33,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10sp"
-            android:background="#60000000">
+            android:background="#60000000"
+            tools:ignore="UselessParent">
 
             <ImageButton
                 android:id="@+id/favourites_item_expand"
