@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="bg.znestorov.sofbus24.main" android:installLocation="auto" android:versionCode="30"
-    android:versionName="2.6">
+    package="bg.znestorov.sofbus24.main"
+    android:installLocation="auto"
+    android:versionCode="30"
+    android:versionName="2.6" >
 
-    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="22" />
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="22" />
 
     <!-- Google Maps related permissions -->
-    <permission android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE"
+    <permission
+        android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="bg.znestorov.sofbus24.main.permission.MAPS_RECEIVE" />
 
     <!-- Prevent other Android applications from registering and receiving the Android application's messages -->
-    <permission android:name="bg.znestorov.sofbus24.main.permission.C2D_MESSAGE"
+    <permission
+        android:name="bg.znestorov.sofbus24.main.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="bg.znestorov.sofbus24.main.permission.C2D_MESSAGE" />
 
     <!-- Maps API needs OpenGL ES 2.0. -->
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <!-- Network connectivity permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -45,18 +53,29 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <!-- Allows the APP to be installed (also visible in GooglePlay) on tablets without ACCESS_COARSE_LOCATION and ACCESS_FINE_LOCATION -->
-    <uses-feature android:name="android.hardware.location.network" android:required="false" />
-    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
-    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
 
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-    <application android:name="bg.znestorov.sofbus24.entity.GlobalEntity" android:allowBackup="true"
-        android:icon="@drawable/ic_launcher" android:label="@string/app_name"
-        android:theme="@style/AppThemeLight">
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
+    <application
+        android:name="bg.znestorov.sofbus24.entity.GlobalEntity"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/AppThemeLight" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_2_map_release_home" />
 
         <!--
@@ -65,18 +84,31 @@
                           Binary XML file line #6: Error inflating class fragment
              * Solution: http://stackoverflow.com/questions/19724113/google-play-services-update/19744484#19744484
         -->
-        <meta-data android:name="com.google.android.gms.version"
+        <meta-data
+            android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <!-- HomeScreen Select -->
-        <activity android:name="bg.znestorov.sofbus24.main.HomeScreenSelect"
-            android:label="@string/app_name" android:screenOrientation="locked"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.HomeScreenSelect"
+            android:label="@string/app_name"
+            android:screenOrientation="locked"
             android:theme="@style/Theme.Sherlock.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="www.facebook.com/zdravko.nestorov" />
             </intent-filter>
         </activity>
 
@@ -85,37 +117,47 @@
 
         <!-- History -->
         <activity android:name="bg.znestorov.sofbus24.main.History" />
-        <activity android:name="bg.znestorov.sofbus24.main.HistoryDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.HistoryDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- Closest Stations List -->
-        <activity android:name="bg.znestorov.sofbus24.main.ClosestStationsList"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsList"
             android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity android:name="bg.znestorov.sofbus24.main.ClosestStationsListDialog"
-            android:theme="@style/PopupTheme" android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsListDialog"
+            android:theme="@style/PopupTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- Closest Stations Map -->
-        <activity android:name="bg.znestorov.sofbus24.main.ClosestStationsMap"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.ClosestStationsMap"
             android:uiOptions="splitActionBarWhenNarrow" />
 
         <!-- Preferences -->
         <activity android:name="bg.znestorov.sofbus24.main.Preferences" />
         <activity android:name="bg.znestorov.sofbus24.main.PreferencesPreHoneycomb" />
-        <activity android:name="bg.znestorov.sofbus24.main.PreferencesDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesDialog"
             android:theme="@style/PopupTheme" />
-        <activity android:name="bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog"
             android:theme="@style/PopupTheme" />
-        <activity android:name="bg.znestorov.sofbus24.main.PreferencesHidden"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PreferencesHidden"
             android:theme="@style/TransparentTheme" />
 
         <!-- Edit Tabs -->
         <activity android:name="bg.znestorov.sofbus24.main.EditTabs" />
-        <activity android:name="bg.znestorov.sofbus24.main.EditTabsDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.EditTabsDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- About -->
         <activity android:name="bg.znestorov.sofbus24.main.About" />
-        <activity android:name="bg.znestorov.sofbus24.main.AboutDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.AboutDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- Station Route Map -->
@@ -123,18 +165,23 @@
 
         <!-- Virtual Boards Time -->
         <activity android:name="bg.znestorov.sofbus24.main.VirtualBoardsTime" />
-        <activity android:name="bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- Public Transport -->
-        <activity android:name="bg.znestorov.sofbus24.main.PublicTransport"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransport"
             android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity android:name="bg.znestorov.sofbus24.main.PublicTransportDialog"
-            android:theme="@style/PopupTheme" android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransportDialog"
+            android:theme="@style/PopupTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- Public Transport Schedule -->
         <activity android:name="bg.znestorov.sofbus24.main.PublicTransportSchedule" />
-        <activity android:name="bg.znestorov.sofbus24.main.PublicTransportScheduleDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.PublicTransportScheduleDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- Station Map -->
@@ -142,17 +189,20 @@
 
         <!-- Metro Schedule -->
         <activity android:name="bg.znestorov.sofbus24.main.MetroSchedule" />
-        <activity android:name="bg.znestorov.sofbus24.main.MetroScheduleDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.MetroScheduleDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- DroidTrans -->
         <activity android:name="bg.znestorov.sofbus24.main.DroidTrans" />
-        <activity android:name="bg.znestorov.sofbus24.main.DroidTransDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.DroidTransDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- Favourites -->
         <activity android:name="bg.znestorov.sofbus24.main.Favourites" />
-        <activity android:name="bg.znestorov.sofbus24.main.FavouritesDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.FavouritesDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- WebPage -->
@@ -160,16 +210,19 @@
 
         <!-- RouteChanges -->
         <activity android:name="bg.znestorov.sofbus24.main.RouteChanges" />
-        <activity android:name="bg.znestorov.sofbus24.main.RouteChangesDialog"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.RouteChangesDialog"
             android:theme="@style/PopupTheme" />
 
         <!-- RouteChangesNews -->
-        <activity android:name="bg.znestorov.sofbus24.main.RouteChangesNews"
+        <activity
+            android:name="bg.znestorov.sofbus24.main.RouteChangesNews"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <!-- Google Cloud Messaging -->
-        <receiver android:name="bg.znestorov.sofbus24.main.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+        <receiver
+            android:name="bg.znestorov.sofbus24.main.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
@@ -179,25 +232,31 @@
 
         <service android:name="bg.znestorov.sofbus24.main.GcmMessageHandler" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-        <activity android:name="com.google.android.gms.ads.AdActivity"
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+        <activity
+            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
             android:theme="@style/Theme.IAPTheme" />
 
-        <provider android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
+        <provider
+            android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
             android:authorities="bg.znestorov.sofbus24.main.google_measurement_service"
             android:exported="false" />
 
-        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-            android:enabled="true">
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true" >
             <intent-filter>
                 <action android:name="com.google.android.gms.measurement.UPLOAD" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.google.android.gms.measurement.AppMeasurementService"
-            android:enabled="true" android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

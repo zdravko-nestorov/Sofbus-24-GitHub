@@ -1,6 +1,7 @@
 package bg.znestorov.sofbus24.backup;
 
 import android.app.Activity;
+import android.util.Base64;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -134,6 +135,9 @@ class BackupData {
         // Remove the GCM file, which contains the GCM ID and some other specific user information
         removeZipEntryFile(zipFile, SOFBUS_24_PREF_GCM_FILE);
         removeZipEntryFile(zipFile, SOFBUS_24_FILES_GA_CLIENT_FILE);
+
+        // Create the Backup file as a Base64-encoded ZipFile
+        createBase64File(targetLocation);
     }
 
     /**
@@ -207,46 +211,84 @@ class BackupData {
     }
 
     /**
+     * Creates a Base64-encoded file using the data from the ZipFile
+     *
+     * @param zipSourceLocation the source file/directory location (the location of the zip file)
+     * @throws IOException
+     */
+    private void createBase64File(String zipSourceLocation) throws Exception {
+
+        try {
+            // Base64-encode the ZipFile and return a newly allocated byte[] with the result
+            byte[] zipFileInBase64 = Base64.encode(Utils.getBytesFromFile(zipSourceLocation), Base64.DEFAULT);
+
+            // Overwrite the ZipFile with the Base64 encoded data
+            Utils.writeBytesToFile(zipSourceLocation, zipFileInBase64);
+        } catch (IOException e) {
+            // Delete the ZipFile (in this case a strange error occurred while converting the file to Base64)
+            Utils.deleteFileOrDirectory(zipSourceLocation);
+        }
+    }
+
+    /**
      * Extract the password protected file to the same directory, copies the current DB files, delete the current user configuration and
      * replace it with the one from the file
      *
-     * @param zipSourceLocation the source file/directory location (the location of the zip file)
-     * @param targetLocation    the target location (location to unzip the file)
+     * @param backupSourceLocation the source file/directory location (the location of the backup file)
+     * @param targetLocation       the target location (location to unzip the file)
      * @throws ZipException
      * @throws IOException
      */
-    private void copyPasswordProtectedZipFileContent(String zipSourceLocation, String targetLocation) throws Exception {
+    private void copyPasswordProtectedZipFileContent(String backupSourceLocation, String targetLocation) throws Exception {
 
         // Get the location path of the ZipFile and the name of the folder after extracting the ZipFile
-        String zipExtractLocationPath = Utils.getParentPathFromPath(zipSourceLocation) + sofbus24PackageFolderName + File.separator;
+        String zipSourceLocation = backupSourceLocation + "_TEMP";
+        String zipExtractLocation = Utils.getParentPathFromPath(backupSourceLocation) + sofbus24PackageFolderName + File.separator;
 
         try {
             // Unzip the ZipFile with the backup to the same folder
-            unzipPasswordProtectedZipFile(zipSourceLocation, zipExtractLocationPath);
+            createZipFileFromBase64(backupSourceLocation, zipSourceLocation);
+            unzipPasswordProtectedZipFile(zipSourceLocation, zipExtractLocation);
 
             // Get the newly created directory (after extracting the ZipFile) and copy the current DB files into it
-            copyCurrentDb(zipExtractLocationPath, SOFBUS_24_DB_FILE);
-            copyCurrentDb(zipExtractLocationPath, SOFBUS_24_DB_JOURNAL_FILE);
+            copyCurrentDb(zipExtractLocation, SOFBUS_24_DB_FILE);
+            copyCurrentDb(zipExtractLocation, SOFBUS_24_DB_JOURNAL_FILE);
 
             // Copy the newly created directory (after extracting the ZipFile) with the current DBs into the Android data folder
-            Utils.copyAndReplaceFileOrDirectory(zipExtractLocationPath, sofbus24Path);
+            Utils.copyAndReplaceFileOrDirectory(zipExtractLocation, sofbus24Path);
 
         } finally {
-            // Delete the newly created directory (located in the same directory as the ZipFile)
-            Utils.deleteFileOrDirectory(zipExtractLocationPath);
+            // Delete the newly created ZipFile (located in the same directory as the Backup)
+            Utils.deleteFileOrDirectory(zipSourceLocation);
+
+            // Delete the newly created directory (located in the same directory as the Backup)
+            Utils.deleteFileOrDirectory(zipExtractLocation);
         }
+    }
+
+    /**
+     * Creates a ZipFile from the Backup Base64-encoded file
+     *
+     * @param backupSourceLocation the source file/directory location (the location of the backup file)
+     * @throws IOException
+     */
+    private void createZipFileFromBase64(String backupSourceLocation, String zipSourceLocation) throws Exception {
+
+        byte[] zipFileInBase64 = Utils.getBytesFromFile(backupSourceLocation);
+        byte[] zipFileBytes = Base64.decode(zipFileInBase64, Base64.DEFAULT);
+        Utils.writeBytesToFile(zipSourceLocation, zipFileBytes);
     }
 
     /**
      * Unzip password protected zip file
      *
-     * @param sourceLocation the source file/directory location (the location of the zip file)
-     * @param targetLocation the target location (location to unzip the file)
+     * @param zipSourceLocation the source file/directory location (the location of the zip file)
+     * @param targetLocation    the target location (location to unzip the file)
      * @throws ZipException signals that a Zip exception of some sort has occurred.
      */
-    private void unzipPasswordProtectedZipFile(String sourceLocation, String targetLocation) throws ZipException {
+    private void unzipPasswordProtectedZipFile(String zipSourceLocation, String targetLocation) throws ZipException {
 
-        ZipFile zipFile = new ZipFile(sourceLocation);
+        ZipFile zipFile = new ZipFile(zipSourceLocation);
 
         // Check if the file was encrypted. If so - decrypt it using using password
         if (zipFile.isEncrypted()) {
