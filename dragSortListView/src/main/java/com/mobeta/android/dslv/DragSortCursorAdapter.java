@@ -25,6 +25,7 @@ import java.util.ArrayList;
  * interface, it is automatically set as the DragSortListener for
  * the DragSortListView instance.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "JavadocReference"})
 public abstract class DragSortCursorAdapter extends CursorAdapter implements DragSortListView.DragSortListener {
 
     public static final int REMOVED = -1;

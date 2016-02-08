@@ -31,6 +31,7 @@ import android.view.ViewGroup;
  * to switch to the framework's implementation.  See the framework SDK
  * documentation for a class overview.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "JavadocReference"})
 public abstract class ResourceDragSortCursorAdapter extends DragSortCursorAdapter {
     private int mLayout;
 

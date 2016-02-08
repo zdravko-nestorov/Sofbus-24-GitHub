@@ -34,7 +34,7 @@ import android.widget.TextView;
  * Binding occurs in two phases. First, if a
  * {@link android.widget.SimpleCursorAdapter.ViewBinder} is available,
  * {@link ViewBinder#setViewValue(android.view.View, android.database.Cursor, int)}
- * is invoked. If the returned value is true, binding has occured. If the
+ * is invoked. If the returned value is true, binding has occurred. If the
  * returned value is false and the view to bind is a TextView,
  * {@link #setViewText(TextView, String)} is invoked. If the returned value
  * is false and the view to bind is an ImageView,
@@ -49,6 +49,7 @@ import android.widget.TextView;
  * {@link #convertToString(android.database.Cursor)} and
  * {@link #runQueryOnBackgroundThread(CharSequence)} for more information.
  */
+@SuppressWarnings({"WeakerAccess", "JavaDoc", "JavadocReference", "deprecation"})
 public class SimpleDragSortCursorAdapter extends ResourceDragSortCursorAdapter {
     /**
      * A list of columns containing the data to bind to the UI.
@@ -117,7 +118,7 @@ public class SimpleDragSortCursorAdapter extends ResourceDragSortCursorAdapter {
      * Binding occurs in two phases. First, if a
      * {@link android.widget.SimpleCursorAdapter.ViewBinder} is available,
      * {@link ViewBinder#setViewValue(android.view.View, android.database.Cursor, int)}
-     * is invoked. If the returned value is true, binding has occured. If the
+     * is invoked. If the returned value is true, binding has occurred. If the
      * returned value is false and the view to bind is a TextView,
      * {@link #setViewText(TextView, String)} is invoked. If the returned value is
      * false and the view to bind is an ImageView,
@@ -374,6 +375,7 @@ public class SimpleDragSortCursorAdapter extends ResourceDragSortCursorAdapter {
      * @see SimpleCursorAdapter#setViewImage(ImageView, String)
      * @see SimpleCursorAdapter#setViewText(TextView, String)
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public static interface ViewBinder {
         /**
          * Binds the Cursor column defined by the specified index to the specified view.
@@ -396,6 +398,7 @@ public class SimpleDragSortCursorAdapter extends ResourceDragSortCursorAdapter {
      *
      * @see android.widget.CursorAdapter#convertToString(android.database.Cursor)
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public static interface CursorToStringConverter {
         /**
          * Returns a CharSequence representing the specified Cursor.

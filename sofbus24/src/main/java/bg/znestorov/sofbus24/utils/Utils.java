@@ -1303,7 +1303,7 @@ public class Utils {
      * @return if the filename is valid or not
      */
     public static boolean isFilenameValid(String filename) {
-        if (isEmpty(filename)) {
+        if (isEmpty(filename) || filename.equals(Constants.GLOBAL_PARAM_BACKUP_EXTENSION)) {
             return false;
         }
 

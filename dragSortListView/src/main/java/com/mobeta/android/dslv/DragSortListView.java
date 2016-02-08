@@ -55,6 +55,7 @@ import java.util.ArrayList;
  *
  * @author heycosmo
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "WeakerAccess", "CanBeFinal", "FieldCanBeLocal"})
 @SuppressLint("Recycle")
 public class DragSortListView extends ListView {
 
@@ -339,7 +340,7 @@ public class DragSortListView extends ListView {
     private float mSlideFrac = 0.0f;
     /**
      * Wraps the user-provided ListAdapter. This is used to wrap each
-     * item View given by the user inside another View (currenly
+     * item View given by the user inside another View (currently
      * a RelativeLayout) which
      * expands and collapses to simulate the item shuffling.
      */
@@ -1795,11 +1796,7 @@ public class DragSortListView extends ListView {
 
         View v = mFloatViewManager.onCreateFloatView(position);
 
-        if (v == null) {
-            return false;
-        } else {
-            return startDrag(position, v, dragFlags, deltaX, deltaY);
-        }
+        return v != null && startDrag(position, v, dragFlags, deltaX, deltaY);
 
     }
 
@@ -2199,6 +2196,7 @@ public class DragSortListView extends ListView {
      * your own is not passed, the default {@link SimpleFloatViewManager}
      * implementation is used.
      */
+    @SuppressWarnings({"JavaDoc", "JavadocReference"})
     public interface FloatViewManager {
         /**
          * Return the floating View for item at <code>position</code>.
@@ -2214,7 +2212,7 @@ public class DragSortListView extends ListView {
          *                 to add {@link ListView#getHeaderViewsCount()} to the index).
          * @return The View you wish to display as the floating View.
          */
-        public View onCreateFloatView(int position);
+        View onCreateFloatView(int position);
 
         /**
          * Called whenever the floating View is dragged. Float View
@@ -2231,7 +2229,7 @@ public class DragSortListView extends ListView {
          *                      top-left).
          * @param pendingScroll
          */
-        public void onDragFloatView(View floatView, Point location, Point touch);
+        void onDragFloatView(View floatView, Point location, Point touch);
 
         /**
          * Called when the float View is dropped; lets you perform
@@ -2241,11 +2239,11 @@ public class DragSortListView extends ListView {
          * @param floatView The floating View passed to
          *                  {@link #onCreateFloatView(int)}.
          */
-        public void onDestroyFloatView(View floatView);
+        void onDestroyFloatView(View floatView);
     }
 
     public interface DragListener {
-        public void drag(int from, int to);
+        void drag(int from, int to);
     }
 
     /**
@@ -2257,7 +2255,7 @@ public class DragSortListView extends ListView {
      * @author heycosmo
      */
     public interface DropListener {
-        public void drop(int from, int to);
+        void drop(int from, int to);
     }
 
     /**
@@ -2268,7 +2266,7 @@ public class DragSortListView extends ListView {
      * @author heycosmo
      */
     public interface RemoveListener {
-        public void remove(int which);
+        void remove(int which);
     }
 
     public interface DragSortListener extends DropListener, DragListener, RemoveListener {
@@ -2296,6 +2294,7 @@ public class DragSortListView extends ListView {
         float getSpeed(float w, long t);
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class AdapterWrapper extends BaseAdapter {
         private ListAdapter mAdapter;
 
@@ -2406,6 +2405,7 @@ public class DragSortListView extends ListView {
         }
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class HeightCache {
 
         private SparseIntArray mMap;
@@ -2449,6 +2449,7 @@ public class DragSortListView extends ListView {
 
     }
 
+    @SuppressWarnings({"WeakerAccess", "CanBeFinal"})
     private class SmoothAnimator implements Runnable {
         protected long mStartTime;
 
@@ -2820,7 +2821,7 @@ public class DragSortListView extends ListView {
             // means user is scrolling up (list item moves down the screen,
             // remember
             // y=0 is at top of View).
-            dy = (int) Math.round(mScrollSpeed * dt);
+            dy = Math.round(mScrollSpeed * dt);
 
             int movePos;
             if (dy >= 0) {
@@ -2857,6 +2858,7 @@ public class DragSortListView extends ListView {
         }
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class DragSortTracker {
         StringBuilder mBuilder = new StringBuilder();
 

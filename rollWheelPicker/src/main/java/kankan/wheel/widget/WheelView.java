@@ -43,6 +43,7 @@ import kankan.wheel.widget.adapters.WheelViewAdapter;
  *
  * @author Yuri Kanivets
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "deprecation"})
 public class WheelView extends View {
 
     /**
@@ -714,8 +715,8 @@ public class WheelView extends View {
     /**
      * Scroll the wheel
      *
-     * @param itemsToSkip items to scroll
-     * @param time        scrolling duration
+     * @param itemsToScroll items to scroll
+     * @param time          scrolling duration
      */
     public void scroll(int itemsToScroll, int time) {
         int distance = itemsToScroll * getItemHeight() - scrollingOffset;

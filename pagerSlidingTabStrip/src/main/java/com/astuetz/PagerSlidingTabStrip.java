@@ -43,6 +43,7 @@ import com.astuetz.pagerslidingtabstrip.R;
 
 import java.util.Locale;
 
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "deprecation", "FieldCanBeLocal"})
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     // @formatter:off
@@ -512,13 +513,13 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     }
 
     public interface IconTabProvider {
-        public int getPageIconResId(int position);
+        int getPageIconResId(int position);
     }
 
     public interface IconTitleProvider {
-        public CharSequence getPageTitle(int position);
+        CharSequence getPageTitle(int position);
 
-        public int getPageIconResId(int position);
+        int getPageIconResId(int position);
     }
 
     static class SavedState extends BaseSavedState {

@@ -8,6 +8,9 @@ android {
     defaultConfig {
         applicationId "bg.znestorov.sofbus24.main"
         minSdkVersion 9
+        // If a higher version is used, there is a problem with GooglePlay services and some other stuff
+        // Let it remain at the higher possible - Android SDK 22
+        //noinspection OldTargetApi
         targetSdkVersion 22
     }
 

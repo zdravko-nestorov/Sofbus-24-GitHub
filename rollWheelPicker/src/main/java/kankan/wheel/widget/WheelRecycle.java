@@ -28,6 +28,7 @@ import java.util.List;
 /**
  * Recycle stores wheel items to reuse.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public class WheelRecycle {
     // Cached items
     private List<View> items;

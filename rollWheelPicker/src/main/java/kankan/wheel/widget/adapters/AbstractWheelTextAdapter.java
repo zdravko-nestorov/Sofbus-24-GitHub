@@ -27,6 +27,7 @@ import android.widget.TextView;
 /**
  * Abstract wheel adapter provides common functionality for adapters.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
 
     /**

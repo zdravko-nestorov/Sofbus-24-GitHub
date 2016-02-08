@@ -25,6 +25,7 @@ import kankan.wheel.widget.WheelAdapter;
  *
  * @deprecated Will be removed soon
  */
+@SuppressWarnings({"deprecation", "CanBeFinal"})
 public class AdapterWheel extends AbstractWheelTextAdapter {
 
     // Source adapter

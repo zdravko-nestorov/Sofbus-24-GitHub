@@ -21,6 +21,7 @@ import android.content.Context;
 /**
  * Numeric Wheel adapter.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public class NumericWheelAdapter extends AbstractWheelTextAdapter {
 
     /**

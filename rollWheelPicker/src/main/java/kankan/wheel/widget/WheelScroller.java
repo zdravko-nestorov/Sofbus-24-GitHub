@@ -19,6 +19,7 @@
 
 package kankan.wheel.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -31,6 +32,7 @@ import android.widget.Scroller;
 /**
  * Scroller class handles scrolling events and updates the
  */
+@SuppressWarnings({"WeakerAccess", "FieldCanBeLocal", "CanBeFinal"})
 public class WheelScroller {
     /**
      * Minimum delta for scrolling
@@ -54,6 +56,7 @@ public class WheelScroller {
     private float lastTouchedY;
     private boolean isScrollingPerformed;
     // animation handler
+    @SuppressLint("HandlerLeak")
     private Handler animationHandler = new Handler() {
         public void handleMessage(Message msg) {
             scroller.computeScrollOffset();
@@ -151,7 +154,7 @@ public class WheelScroller {
      * Handles Touch event
      *
      * @param event the motion event
-     * @return
+     * @return TRUE
      */
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {

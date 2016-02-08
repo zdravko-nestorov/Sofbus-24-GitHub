@@ -12,6 +12,7 @@ import android.widget.ListView;
  * Simple implementation of the FloatViewManager class. Uses list
  * items as they appear in the ListView to create the floating View.
  */
+@SuppressWarnings("CanBeFinal")
 public class SimpleFloatViewManager implements DragSortListView.FloatViewManager {
 
     private Bitmap mFloatBitmap;

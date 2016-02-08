@@ -6,6 +6,9 @@ android {
 
     defaultConfig {
         minSdkVersion 7
+        // If a higher version is used, there is a problem with GooglePlay services and some other stuff
+        // Let it remain at the higher possible - Android SDK 22
+        //noinspection OldTargetApi
         targetSdkVersion 22
     }
 
@@ -18,5 +21,6 @@ android {
 }
 
 dependencies {
+    //noinspection GradleDependency
     compile 'com.android.support:support-v4:22.2.0'
 }

@@ -22,6 +22,7 @@ import android.content.Context;
  *
  * @param <T> the element type
  */
+@SuppressWarnings("CanBeFinal")
 public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
 
     // items
