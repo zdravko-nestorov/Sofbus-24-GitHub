@@ -137,7 +137,7 @@ ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\Androi
 application
 ADDED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:63:5-227:19
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:9:5-20
+MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:10:5-20
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\AndroidManifest.xml:11:5-57
 MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\actionBarSherlock\unspecified\AndroidManifest.xml:11:5-20
@@ -545,7 +545,7 @@ uses-sdk
 INJECTED from D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [Sofbus24:dragSortListView:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\dragSortListView\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:5:5-7:41
+MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:support-v4:22.2.0] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
 MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\actionBarSherlock\unspecified\AndroidManifest.xml:7:5-9:41

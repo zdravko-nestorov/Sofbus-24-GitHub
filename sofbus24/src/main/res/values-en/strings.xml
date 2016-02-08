@@ -438,7 +438,7 @@
     <string name="backup_export_loading" formatted="false"><![CDATA[Saving your settings and data…]]></string>
     <string name="backup_export_success" formatted="false"><![CDATA[Your settings were successfully saved - <b>%s</b>. They can be restored at any time.]]></string>
     <string name="backup_export_failed">A problem occurred while saving your settings. Please try again.</string>
-    <string name="backup_export_backup_name" formatted="false"><![CDATA[A file name can\'t be empty or contain any of the following characters: \\\/:*?\"<>|]]></string>
+    <string name="backup_export_backup_name">A file name can\'t be empty.</string>
     <string name="backup_export_write_permission">You don\'t have permissions to save in this folder!</string>
     <string name="backup_export_file_size">The file to save is bigger than the space available. Please free up some space and try again.</string>
     <string name="backup_export_duplicate_title">Duplicate file</string>

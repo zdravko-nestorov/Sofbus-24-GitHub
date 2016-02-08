@@ -452,7 +452,7 @@
     <string name="backup_export_loading" formatted="false"><![CDATA[Запазване на потребителските настройки…]]></string>
     <string name="backup_export_success" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Вашите настройки бяха запазени успешно - <b>%s</b>. Те могат да бъдат възстановени по всяко време.]]></string>
     <string name="backup_export_failed">Възникна проблем при запазването на вашите настройки. Моля опитайте отново.</string>
-    <string name="backup_export_backup_name" formatted="false"><![CDATA[Името на файла не може да е празно или да съдържа някой от символите: \\\/:*?\"<>|]]></string>
+    <string name="backup_export_backup_name">Името на файла не може да е празно.</string>
     <string name="backup_export_write_permission">Нямате права за запис в тази директория!</string>
     <string name="backup_export_file_size">Файлът, който се опитвате да запишете е по-голям от наличното прострсранство. Моля освободете място и опитайте отново.</string>
     <string name="backup_export_duplicate_title">Дублиращ се файл</string>
