@@ -49,6 +49,7 @@ public abstract class Window extends android.view.Window {
     }
 
 
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface Callback {
         /**
          * Called when a panel's menu item has been selected by the user.

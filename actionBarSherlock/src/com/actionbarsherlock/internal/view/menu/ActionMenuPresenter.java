@@ -46,6 +46,7 @@ import static com.actionbarsherlock.internal.ResourcesCompat.getResources_getInt
 /**
  * MenuPresenter for building action menus as seen in the action bar and action modes.
  */
+@SuppressWarnings({"WeakerAccess", "SimplifiableIfStatement"})
 public class ActionMenuPresenter extends BaseMenuPresenter
         implements ActionProvider.SubUiVisibilityListener {
     //UNUSED private static final String TAG = "ActionMenuPresenter";
@@ -675,6 +676,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter
         }
     }
 
+    @SuppressWarnings("RedundantCast")
     private class PopupPresenterCallback implements MenuPresenter.Callback {
 
         @Override
@@ -693,6 +695,7 @@ public class ActionMenuPresenter extends BaseMenuPresenter
         }
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class OpenOverflowRunnable implements Runnable {
         private OverflowPopup mPopup;
 

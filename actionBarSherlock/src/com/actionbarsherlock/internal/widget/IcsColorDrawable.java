@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 /**
  * A version of {@link android.graphics.drawable.ColorDrawable} that respects bounds.
  */
+@SuppressWarnings("WeakerAccess")
 public class IcsColorDrawable extends Drawable {
     private final Paint paint = new Paint();
     private int color;

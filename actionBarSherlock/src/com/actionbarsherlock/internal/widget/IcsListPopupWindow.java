@@ -27,6 +27,7 @@ import com.actionbarsherlock.R;
 /**
  * A proxy between pre- and post-Honeycomb implementations of this class.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "FieldCanBeLocal"})
 public class IcsListPopupWindow {
     public static final int POSITION_PROMPT_ABOVE = 0;
     public static final int POSITION_PROMPT_BELOW = 1;
@@ -511,6 +512,7 @@ public class IcsListPopupWindow {
         child.measure(childWidthSpec, childHeightSpec);
     }
 
+    @SuppressWarnings("CanBeFinal")
     private static class DropDownListView extends ListView {
         /*
          * WARNING: This is a workaround for a touch mode issue.

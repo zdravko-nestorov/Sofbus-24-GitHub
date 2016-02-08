@@ -33,6 +33,7 @@ import java.util.List;
 /**
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "SimplifiableIfStatement", "JavaDoc"})
 public class ActionMenu implements Menu {
     private Context mContext;
 

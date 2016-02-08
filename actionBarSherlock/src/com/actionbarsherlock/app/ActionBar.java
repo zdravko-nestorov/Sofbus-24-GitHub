@@ -56,7 +56,7 @@ import android.widget.SpinnerAdapter;
  * Bar</a> developer guide.</p>
  * </div>
  */
-@SuppressWarnings("deprecation")
+@SuppressWarnings({"deprecation", "JavaDoc", "JavadocReference"})
 public abstract class ActionBar {
     /**
      * Standard navigation mode. Consists of either a logo or icon

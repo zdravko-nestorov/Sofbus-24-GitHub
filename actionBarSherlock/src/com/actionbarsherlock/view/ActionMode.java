@@ -24,6 +24,7 @@ import android.view.View;
  * modal interactions with content and replace parts of the normal UI until finished.
  * Examples of good action modes include selection modes, search, content editing, etc.
  */
+@SuppressWarnings("JavaDoc")
 public abstract class ActionMode {
     private Object mTag;
 
@@ -180,6 +181,7 @@ public abstract class ActionMode {
      * is closed</li>
      * </ul>
      */
+    @SuppressWarnings({"UnnecessaryInterfaceModifier", "JavadocReference"})
     public interface Callback {
         /**
          * Called when action mode is first created. The menu supplied will be used to

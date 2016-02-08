@@ -58,6 +58,7 @@ import android.view.View;
  * @see MenuItem#setActionProvider(ActionProvider)
  * @see MenuItem#getActionProvider()
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "WeakerAccess"})
 public abstract class ActionProvider {
     private SubUiVisibilityListener mSubUiVisibilityListener;
 
@@ -164,6 +165,7 @@ public abstract class ActionProvider {
     /**
      * @hide Internal use only
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface SubUiVisibilityListener {
         public void onSubUiVisibilityChanged(boolean isVisible);
     }

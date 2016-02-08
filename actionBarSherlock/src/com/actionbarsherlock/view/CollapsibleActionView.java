@@ -24,6 +24,7 @@ package com.actionbarsherlock.view;
  * <p>See {@link MenuItem} for more information about action views.
  * See {@link android.app.ActionBar} for more information about the action bar.
  */
+@SuppressWarnings({"UnnecessaryInterfaceModifier", "JavadocReference"})
 public interface CollapsibleActionView {
     /**
      * Called when this view is expanded as an action view.

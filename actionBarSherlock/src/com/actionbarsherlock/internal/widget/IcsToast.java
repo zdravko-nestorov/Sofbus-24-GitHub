@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.R;
 
+@SuppressWarnings("WeakerAccess")
 public class IcsToast extends Toast {
     public static final int LENGTH_LONG = Toast.LENGTH_LONG;
     public static final int LENGTH_SHORT = Toast.LENGTH_SHORT;

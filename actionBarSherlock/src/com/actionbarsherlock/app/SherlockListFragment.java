@@ -13,6 +13,7 @@ import static android.support.v4.app.Watson.OnCreateOptionsMenuListener;
 import static android.support.v4.app.Watson.OnOptionsItemSelectedListener;
 import static android.support.v4.app.Watson.OnPrepareOptionsMenuListener;
 
+@SuppressWarnings("WeakerAccess")
 public class SherlockListFragment extends ListFragment implements OnCreateOptionsMenuListener, OnPrepareOptionsMenuListener, OnOptionsItemSelectedListener {
     private SherlockFragmentActivity mActivity;
 

@@ -41,6 +41,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
  *
  * @author Jake Wharton <jakewharton@gmail.com>
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "WeakerAccess"})
 public abstract class ActionBarSherlock {
     public static final boolean DEBUG = false;
     /**
@@ -754,6 +755,7 @@ public abstract class ActionBarSherlock {
      * <p>Denotes an implementation of ActionBarSherlock which provides an
      * action bar-enhanced experience.</p>
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.RUNTIME)
     public @interface Implementation {
@@ -768,6 +770,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu creation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnCreatePanelMenuListener {
         public boolean onCreatePanelMenu(int featureId, Menu menu);
     }
@@ -775,6 +778,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu creation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnCreateOptionsMenuListener {
         public boolean onCreateOptionsMenu(Menu menu);
     }
@@ -782,6 +786,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu item selection callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnMenuItemSelectedListener {
         public boolean onMenuItemSelected(int featureId, MenuItem item);
     }
@@ -789,6 +794,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu item selection callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnOptionsItemSelectedListener {
         public boolean onOptionsItemSelected(MenuItem item);
     }
@@ -796,6 +802,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu preparation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnPreparePanelListener {
         public boolean onPreparePanel(int featureId, View view, Menu menu);
     }
@@ -803,6 +810,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for menu preparation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnPrepareOptionsMenuListener {
         public boolean onPrepareOptionsMenu(Menu menu);
     }
@@ -810,6 +818,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for action mode finished callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnActionModeFinishedListener {
         public void onActionModeFinished(ActionMode mode);
     }
@@ -817,6 +826,7 @@ public abstract class ActionBarSherlock {
     /**
      * Activity interface for action mode started callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnActionModeStartedListener {
         public void onActionModeStarted(ActionMode mode);
     }

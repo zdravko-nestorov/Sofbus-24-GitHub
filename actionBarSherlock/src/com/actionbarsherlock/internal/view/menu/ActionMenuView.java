@@ -31,6 +31,7 @@ import com.actionbarsherlock.internal.widget.IcsLinearLayout;
 /**
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "JavaDoc"})
 public class ActionMenuView extends IcsLinearLayout implements MenuBuilder.ItemInvoker, MenuView {
     static final int MIN_CELL_SIZE = 56; // dips
     static final int GENERATED_ITEM_PADDING = 4; // dips
@@ -538,12 +539,14 @@ public class ActionMenuView extends IcsLinearLayout implements MenuBuilder.ItemI
         return false;
     }
 
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface ActionMenuChildView {
         public boolean needsDividerBefore();
 
         public boolean needsDividerAfter();
     }
 
+    @SuppressWarnings("RedundantCast")
     public static class LayoutParams extends LinearLayout.LayoutParams {
         public boolean isOverflowButton;
         public int cellsUsed;

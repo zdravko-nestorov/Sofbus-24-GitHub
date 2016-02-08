@@ -45,6 +45,7 @@ import java.util.ArrayList;
  *
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "JavaDoc"})
 public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.OnKeyListener,
         ViewTreeObserver.OnGlobalLayoutListener, PopupWindow.OnDismissListener,
         View_OnAttachStateChangeListener, MenuPresenter {
@@ -314,6 +315,7 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     public void onRestoreInstanceState(Parcelable state) {
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class MenuAdapter extends BaseAdapter {
         private MenuBuilder mAdapterMenu;
         private int mExpandedIndex = -1;

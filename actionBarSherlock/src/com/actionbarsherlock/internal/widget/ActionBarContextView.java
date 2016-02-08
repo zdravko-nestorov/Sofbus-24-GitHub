@@ -15,6 +15,7 @@
  */
 package com.actionbarsherlock.internal.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -43,6 +44,7 @@ import com.actionbarsherlock.view.ActionMode;
 /**
  * @hide
  */
+@SuppressWarnings({"StatementWithEmptyBody", "WeakerAccess", "CanBeFinal", "SimplifiableIfStatement", "JavaDoc"})
 public class ActionBarContextView extends AbsActionBarView implements AnimatorListener {
     //UNUSED private static final String TAG = "ActionBarContextView";
 
@@ -503,6 +505,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         return false;
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {

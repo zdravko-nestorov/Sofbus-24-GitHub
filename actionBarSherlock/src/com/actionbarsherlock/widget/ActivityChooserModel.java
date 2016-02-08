@@ -93,6 +93,7 @@ import java.util.concurrent.Executors;
  *
  * @hide
  */
+@SuppressWarnings({"JavadocReference", "WeakerAccess", "JavaDoc"})
 class ActivityChooserModel extends DataSetObservable {
 
     /**
@@ -637,6 +638,7 @@ class ActivityChooserModel extends DataSetObservable {
     /**
      * Client that utilizes an {@link ActivityChooserModel}.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface ActivityChooserModelClient {
 
         /**
@@ -651,6 +653,7 @@ class ActivityChooserModel extends DataSetObservable {
      * Defines a sorter that is responsible for sorting the activities
      * based on the provided historical choices and an intent.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface ActivitySorter {
 
         /**
@@ -670,6 +673,7 @@ class ActivityChooserModel extends DataSetObservable {
     /**
      * Listener for choosing an activity.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnChooseActivityListener {
 
         /**
@@ -693,6 +697,7 @@ class ActivityChooserModel extends DataSetObservable {
     /**
      * Represents a record in the history.
      */
+    @SuppressWarnings("RedundantIfStatement")
     public final static class HistoricalRecord {
 
         /**
@@ -787,6 +792,7 @@ class ActivityChooserModel extends DataSetObservable {
     /**
      * Represents an activity.
      */
+    @SuppressWarnings("RedundantIfStatement")
     public final class ActivityResolveInfo implements Comparable<ActivityResolveInfo> {
 
         /**

@@ -48,6 +48,7 @@ import android.view.KeyEvent;
  * <a href="{@docRoot}guide/topics/ui/menus.html">Menus</a> developer guide.</p>
  * </div>
  */
+@SuppressWarnings({"JavaDoc", "UnnecessaryInterfaceModifier", "JavadocReference"})
 public interface Menu {
 
     /**

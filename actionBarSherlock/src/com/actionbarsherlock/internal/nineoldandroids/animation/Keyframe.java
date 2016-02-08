@@ -35,7 +35,7 @@ import android.view.animation.Interpolator;
  * of {@link TypeEvaluator}), you should stick to using float and int as animations using those
  * types have lower runtime overhead than other types.</p>
  */
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "JavaDoc", "WeakerAccess", "JavadocReference"})
 public abstract class Keyframe implements Cloneable {
     /**
      * The time at which mValue will hold true.
@@ -237,6 +237,7 @@ public abstract class Keyframe implements Cloneable {
     /**
      * This internal subclass is used for all types which are not int or float.
      */
+    @SuppressWarnings("CloneDoesntCallSuperClone")
     static class ObjectKeyframe extends Keyframe {
 
         /**
@@ -271,6 +272,7 @@ public abstract class Keyframe implements Cloneable {
     /**
      * Internal subclass used when the keyframe value is of type int.
      */
+    @SuppressWarnings({"UnnecessaryUnboxing", "CloneDoesntCallSuperClone"})
     static class IntKeyframe extends Keyframe {
 
         /**
@@ -316,6 +318,7 @@ public abstract class Keyframe implements Cloneable {
     /**
      * Internal subclass used when the keyframe value is of type float.
      */
+    @SuppressWarnings({"UnnecessaryUnboxing", "CloneDoesntCallSuperClone"})
     static class FloatKeyframe extends Keyframe {
         /**
          * The value of the animation at the time mFraction.

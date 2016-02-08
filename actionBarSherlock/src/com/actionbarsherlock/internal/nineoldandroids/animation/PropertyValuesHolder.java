@@ -34,7 +34,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * animations with ValueAnimator or ObjectAnimator that operate on several different properties
  * in parallel.
  */
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings({"rawtypes", "unchecked", "ManualArrayCopy", "JavaDoc", "WeakerAccess", "CanBeFinal"})
 public class PropertyValuesHolder implements Cloneable {
 
     // type evaluators for the primitive types handled by this implementation

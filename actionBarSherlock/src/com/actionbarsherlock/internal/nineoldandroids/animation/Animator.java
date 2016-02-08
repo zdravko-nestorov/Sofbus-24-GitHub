@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * This is the superclass for classes which provide basic support for animations which can be
  * started, ended, and have <code>AnimatorListeners</code> added to them.
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "WeakerAccess"})
 public abstract class Animator implements Cloneable {
 
 
@@ -242,6 +243,7 @@ public abstract class Animator implements Cloneable {
      * Notifications indicate animation related events, such as the end or the
      * repetition of the animation.</p>
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public static interface AnimatorListener {
         /**
          * <p>Notifies the start of the animation.</p>

@@ -37,6 +37,7 @@ import com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout;
  *
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "JavaDoc"})
 public class ActionBarContainer extends NineFrameLayout {
     private boolean mIsTransitioning;
     private View mTabContainer;

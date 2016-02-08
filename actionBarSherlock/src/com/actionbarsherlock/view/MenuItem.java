@@ -35,6 +35,7 @@ import android.view.View;
  * <a href="{@docRoot}guide/topics/ui/menus.html">Menus</a> developer guide.</p>
  * </div>
  */
+@SuppressWarnings({"JavadocReference", "UnnecessaryInterfaceModifier"})
 public interface MenuItem {
     /*
      * These should be kept in sync with attrs.xml enum constants for showAsAction
@@ -549,6 +550,7 @@ public interface MenuItem {
      * @see Activity#onContextItemSelected(MenuItem)
      * @see Activity#onOptionsItemSelected(MenuItem)
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnMenuItemClickListener {
         /**
          * Called when a menu item has been invoked.  This is the first code
@@ -571,6 +573,7 @@ public interface MenuItem {
      * @see MenuItem#collapseActionView()
      * @see MenuItem#setShowAsActionFlags(int)
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnActionExpandListener {
         /**
          * Called when a menu item with {@link MenuItem#SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW}

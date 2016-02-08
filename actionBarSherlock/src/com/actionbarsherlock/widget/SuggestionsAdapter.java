@@ -56,6 +56,7 @@ import java.util.WeakHashMap;
  *
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "UnnecessaryReturnStatement", "deprecation", "FieldCanBeLocal", "JavaDoc"})
 class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListener {
 
     static final int REFINE_NONE = 0;

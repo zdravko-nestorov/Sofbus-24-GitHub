@@ -16,6 +16,7 @@
 
 package com.actionbarsherlock.internal.widget;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -65,6 +66,7 @@ import static com.actionbarsherlock.internal.ResourcesCompat.getResources_getBoo
 /**
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "deprecation", "FieldCanBeLocal", "JavaDoc"})
 public class ActionBarView extends AbsActionBarView {
     /**
      * Display options applied by default
@@ -1230,6 +1232,7 @@ public class ActionBarView extends AbsActionBarView {
             return onHoverEvent(event);
         }
 
+        @SuppressLint("MissingSuperCall")
         @Override
         protected void onFinishInflate() {
             mUpView = findViewById(R.id.abs__up);

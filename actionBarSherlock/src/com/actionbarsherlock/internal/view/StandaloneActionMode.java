@@ -30,6 +30,7 @@ import com.actionbarsherlock.view.MenuItem;
 
 import java.lang.ref.WeakReference;
 
+@SuppressWarnings("CanBeFinal")
 public class StandaloneActionMode extends ActionMode implements MenuBuilder.Callback {
     private Context mContext;
     private ActionBarContextView mContextView;

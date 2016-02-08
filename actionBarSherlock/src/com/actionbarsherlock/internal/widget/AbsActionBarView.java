@@ -34,6 +34,7 @@ import com.actionbarsherlock.internal.view.menu.ActionMenuView;
 
 import static com.actionbarsherlock.internal.ResourcesCompat.getResources_getBoolean;
 
+@SuppressWarnings({"WeakerAccess", "SimplifiableIfStatement"})
 public abstract class AbsActionBarView extends NineViewGroup {
     private static final /*Time*/ Interpolator sAlphaInterpolator = new DecelerateInterpolator();
     private static final int FADE_DURATION = 200;

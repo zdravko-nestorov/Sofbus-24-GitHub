@@ -175,6 +175,7 @@ import android.widget.ListView;
  * @see #setListAdapter
  * @see android.widget.ListView
  */
+@SuppressWarnings({"JavaDoc", "WeakerAccess", "CanBeFinal", "deprecation"})
 public class ListActivity extends FragmentActivity {
     /**
      * This field should be made private, so it is hidden from the SDK.

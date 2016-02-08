@@ -5,6 +5,7 @@ import android.widget.HorizontalScrollView;
 
 import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
 
+@SuppressWarnings("WeakerAccess")
 public class NineHorizontalScrollView extends HorizontalScrollView {
     private final AnimatorProxy mProxy;
 

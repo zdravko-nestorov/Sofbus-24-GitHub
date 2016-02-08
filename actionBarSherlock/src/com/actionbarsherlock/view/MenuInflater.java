@@ -46,6 +46,7 @@ import java.lang.reflect.Method;
  * it only works with an XmlPullParser returned from a compiled resource (R.
  * <em>something</em> file.)
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "IfCanBeSwitch", "CanBeFinal"})
 public class MenuInflater {
     private static final String LOG_TAG = "MenuInflater";
 
@@ -211,6 +212,7 @@ public class MenuInflater {
         }
     }
 
+    @SuppressWarnings("CanBeFinal")
     private static class InflatedOnMenuItemClickListener
             implements MenuItem.OnMenuItemClickListener {
         private static final Class<?>[] PARAM_TYPES = new Class[]{MenuItem.class};
@@ -252,6 +254,7 @@ public class MenuInflater {
      * Groups can not be nested unless there is another menu (which will have
      * its state class).
      */
+    @SuppressWarnings({"RedundantCast", "CanBeFinal"})
     private class MenuState {
         private static final int defaultGroupId = NO_ID;
         private static final int defaultItemId = NO_ID;

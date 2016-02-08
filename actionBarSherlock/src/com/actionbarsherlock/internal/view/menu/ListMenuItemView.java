@@ -35,6 +35,7 @@ import com.actionbarsherlock.R;
 /**
  * The item view for each item in the ListView-based MenuViews.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public class ListMenuItemView extends LinearLayout implements MenuView.ItemView {
     final Context mContext;
     private MenuItemImpl mItemData;

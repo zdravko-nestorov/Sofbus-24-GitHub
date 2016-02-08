@@ -2,6 +2,7 @@ package com.actionbarsherlock.internal.widget;
 
 import android.view.View;
 
+@SuppressWarnings("JavadocReference")
 final class IcsView {
     //No instances
     private IcsView() {

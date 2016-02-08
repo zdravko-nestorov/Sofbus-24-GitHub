@@ -12,6 +12,7 @@ import com.actionbarsherlock.view.CollapsibleActionView;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
+@SuppressWarnings("SimplifiableIfStatement")
 public class MenuItemWrapper implements MenuItem, android.view.MenuItem.OnMenuItemClickListener {
     private final android.view.MenuItem mNativeItem;
     private SubMenu mSubMenu = null;

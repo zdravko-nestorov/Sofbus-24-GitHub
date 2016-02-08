@@ -50,6 +50,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Implementation of the {@link android.view.Menu} interface for creating a
  * standard menu UI.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "deprecation"})
 public class MenuBuilder implements Menu {
     //UNUSED private static final String TAG = "MenuBuilder";
 
@@ -1321,6 +1322,7 @@ public class MenuBuilder implements Menu {
     /**
      * Called by menu to notify of close and selection changes.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface Callback {
         /**
          * Called when a menu item is selected.
@@ -1342,6 +1344,7 @@ public class MenuBuilder implements Menu {
     /**
      * Called by menu items to execute their associated action
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface ItemInvoker {
         public boolean invokeItem(MenuItemImpl item);
     }

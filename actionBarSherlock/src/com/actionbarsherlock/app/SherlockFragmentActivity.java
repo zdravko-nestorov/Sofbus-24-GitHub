@@ -1,5 +1,6 @@
 package com.actionbarsherlock.app;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Watson;
@@ -21,6 +22,7 @@ import static com.actionbarsherlock.ActionBarSherlock.OnActionModeStartedListene
 /**
  * @see {@link android.support.v4.app.Watson}
  */
+@SuppressWarnings({"WeakerAccess", "SimplifiableIfStatement"})
 public class SherlockFragmentActivity extends Watson implements OnActionModeStartedListener, OnActionModeFinishedListener {
     private static final String TAG = "SherlockFragmentActivity";
 
@@ -142,24 +144,28 @@ public class SherlockFragmentActivity extends Watson implements OnActionModeStar
     // Native menu handling
     ///////////////////////////////////////////////////////////////////////////
 
+    @SuppressLint("LongLogTag")
     public MenuInflater getSupportMenuInflater() {
         if (ActionBarSherlock.DEBUG) Log.d(TAG, "[getSupportMenuInflater]");
 
         return getSherlock().getMenuInflater();
     }
 
+    @SuppressLint("LongLogTag")
     public void invalidateOptionsMenu() {
         if (ActionBarSherlock.DEBUG) Log.d(TAG, "[invalidateOptionsMenu]");
 
         getSherlock().dispatchInvalidateOptionsMenu();
     }
 
+    @SuppressLint("LongLogTag")
     public void supportInvalidateOptionsMenu() {
         if (ActionBarSherlock.DEBUG) Log.d(TAG, "[supportInvalidateOptionsMenu]");
 
         invalidateOptionsMenu();
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public final boolean onCreatePanelMenu(int featureId, android.view.Menu menu) {
         if (ActionBarSherlock.DEBUG)
@@ -181,6 +187,7 @@ public class SherlockFragmentActivity extends Watson implements OnActionModeStar
         return true;
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public final boolean onPreparePanel(int featureId, View view, android.view.Menu menu) {
         if (ActionBarSherlock.DEBUG)
@@ -202,6 +209,7 @@ public class SherlockFragmentActivity extends Watson implements OnActionModeStar
         return true;
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public final boolean onMenuItemSelected(int featureId, android.view.MenuItem item) {
         if (ActionBarSherlock.DEBUG)

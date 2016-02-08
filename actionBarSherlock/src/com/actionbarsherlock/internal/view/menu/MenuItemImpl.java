@@ -34,6 +34,7 @@ import com.actionbarsherlock.view.SubMenu;
 /**
  * @hide
  */
+@SuppressWarnings({"JavaDoc", "JavadocReference", "WeakerAccess", "CanBeFinal", "RedundantIfStatement", "SimplifiableIfStatement", "deprecation", "PointlessBitwiseExpression"})
 public final class MenuItemImpl implements MenuItem {
     /**
      * Used for the icon resource ID if this item does not have an icon

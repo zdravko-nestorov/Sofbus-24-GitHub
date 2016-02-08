@@ -18,6 +18,7 @@ import com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout;
  * same orientation as the layout you should wrap the child in a simple
  * {@link android.widget.FrameLayout} so it can receive the margin.
  */
+@SuppressWarnings({"JavaDoc", "WeakerAccess"})
 public class IcsLinearLayout extends NineLinearLayout {
     /**
      * Don't show any dividers.

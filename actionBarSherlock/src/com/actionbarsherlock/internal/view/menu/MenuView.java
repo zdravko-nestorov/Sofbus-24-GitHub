@@ -24,6 +24,7 @@ import android.graphics.drawable.Drawable;
  *
  * @hide
  */
+@SuppressWarnings({"UnnecessaryInterfaceModifier", "JavaDoc"})
 public interface MenuView {
     /**
      * Initializes the menu to the given menu. This should be called after the
@@ -44,6 +45,7 @@ public interface MenuView {
      * Minimal interface for a menu item view.  {@link #initialize(MenuItemImpl, int)} must be called
      * for the item to be functional.
      */
+    @SuppressWarnings({"JavadocReference", "UnnecessaryInterfaceModifier"})
     public interface ItemView {
         /**
          * Initializes with the provided MenuItemData.  This should be called after the view is

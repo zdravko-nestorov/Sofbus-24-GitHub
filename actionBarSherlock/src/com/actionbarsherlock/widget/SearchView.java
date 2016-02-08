@@ -101,6 +101,7 @@ import static com.actionbarsherlock.widget.SuggestionsAdapter.getColumnString;
  * @attr ref android.R.styleable#SearchView_queryHint
  * @see android.view.MenuItem#SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
  */
+@SuppressWarnings({"StatementWithEmptyBody", "JavaDoc", "JavadocReference", "WeakerAccess", "CanBeFinal", "deprecation", "FieldCanBeLocal"})
 public class SearchView extends LinearLayout implements CollapsibleActionView {
 
     private static final boolean DBG = false;

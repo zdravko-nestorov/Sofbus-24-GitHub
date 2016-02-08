@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 
 import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
 
+@SuppressWarnings("WeakerAccess")
 public abstract class NineViewGroup extends ViewGroup {
     private final AnimatorProxy mProxy;
 

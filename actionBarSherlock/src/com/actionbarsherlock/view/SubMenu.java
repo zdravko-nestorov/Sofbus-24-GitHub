@@ -31,6 +31,7 @@ import android.view.View;
  * </div>
  */
 
+@SuppressWarnings("UnnecessaryInterfaceModifier")
 public interface SubMenu extends Menu {
     /**
      * Sets the submenu header's title to the title given in <var>titleRes</var>

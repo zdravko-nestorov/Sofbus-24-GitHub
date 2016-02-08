@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 
 import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
 
+@SuppressWarnings("WeakerAccess")
 public class NineLinearLayout extends LinearLayout {
     private final AnimatorProxy mProxy;
 

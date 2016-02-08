@@ -1,5 +1,6 @@
 package com.actionbarsherlock.internal.app;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import com.actionbarsherlock.app.ActionBar;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings({"CanBeFinal", "deprecation"})
 public class ActionBarWrapper extends ActionBar implements android.app.ActionBar.OnNavigationListener, android.app.ActionBar.OnMenuVisibilityListener {
     private final Activity mActivity;
     private final android.app.ActionBar mActionBar;
@@ -320,6 +322,7 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
         }
     }
 
+    @SuppressWarnings("deprecation")
     public class TabWrapper extends ActionBar.Tab implements android.app.ActionBar.TabListener {
         final android.app.ActionBar.Tab mNativeTab;
         private Object mTag;
@@ -426,6 +429,7 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
             return mNativeTab.getContentDescription();
         }
 
+        @SuppressLint("CommitTransaction")
         @Override
         public void onTabReselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             if (mListener != null) {
@@ -443,6 +447,7 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
             }
         }
 
+        @SuppressLint("CommitTransaction")
         @Override
         public void onTabSelected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             if (mListener != null) {
@@ -463,6 +468,7 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
             }
         }
 
+        @SuppressLint("CommitTransaction")
         @Override
         public void onTabUnselected(android.app.ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             if (mListener != null) {

@@ -35,6 +35,7 @@ import java.lang.reflect.Field;
  * again cause the listener to leak.
  * </ul>
  */
+@SuppressWarnings("WeakerAccess")
 public class PopupWindowCompat extends PopupWindow {
 
     private static final Field superListenerField;

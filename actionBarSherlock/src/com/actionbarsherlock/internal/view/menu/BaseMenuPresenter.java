@@ -29,6 +29,7 @@ import java.util.ArrayList;
  * views. Behaves similarly to an AdapterView in that existing item views will
  * be reused if possible when items change.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "SimplifiableIfStatement"})
 public abstract class BaseMenuPresenter implements MenuPresenter {
     private static final boolean IS_HONEYCOMB = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
 

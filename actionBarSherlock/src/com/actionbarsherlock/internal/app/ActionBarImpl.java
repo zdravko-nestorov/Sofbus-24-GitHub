@@ -16,6 +16,7 @@
 
 package com.actionbarsherlock.internal.app;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -66,6 +67,7 @@ import static com.actionbarsherlock.internal.ResourcesCompat.getResources_getBoo
  * the top of the screen and a horizontal LinearLayout at the bottom
  * which is normally hidden.
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal"})
 public class ActionBarImpl extends ActionBar {
     //UNUSED private static final String TAG = "ActionBarImpl";
 
@@ -523,6 +525,7 @@ public class ActionBarImpl extends ActionBar {
         }
     }
 
+    @SuppressLint("CommitTransaction")
     @Override
     public void selectTab(Tab tab) {
         if (getNavigationMode() != NAVIGATION_MODE_TABS) {
@@ -745,6 +748,7 @@ public class ActionBarImpl extends ActionBar {
     /**
      * @hide
      */
+    @SuppressWarnings({"CanBeFinal", "SimplifiableIfStatement", "JavaDoc"})
     public class ActionModeImpl extends ActionMode implements MenuBuilder.Callback {
         private ActionMode.Callback mCallback;
         private MenuBuilder mMenu;
@@ -897,6 +901,7 @@ public class ActionBarImpl extends ActionBar {
     /**
      * @hide
      */
+    @SuppressWarnings({"deprecation", "JavaDoc"})
     public class TabImpl extends ActionBar.Tab {
         private ActionBar.TabListener mCallback;
         private Object mTag;

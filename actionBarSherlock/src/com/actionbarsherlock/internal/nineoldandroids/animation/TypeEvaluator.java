@@ -24,6 +24,7 @@ package com.actionbarsherlock.internal.nineoldandroids.animation;
  *
  * @see ValueAnimator#setEvaluator(TypeEvaluator)
  */
+@SuppressWarnings({"UnnecessaryInterfaceModifier", "WeakerAccess"})
 public interface TypeEvaluator<T> {
 
     /**

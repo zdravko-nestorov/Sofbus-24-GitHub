@@ -67,6 +67,7 @@ import com.actionbarsherlock.widget.ActivityChooserModel.ActivityChooserModelCli
  *
  * @hide
  */
+@SuppressWarnings({"JavaDoc", "WeakerAccess"})
 class ActivityChooserView extends ViewGroup implements ActivityChooserModelClient {
 
     private static final boolean IS_HONEYCOMB = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;

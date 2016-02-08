@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
+@SuppressWarnings("JavaDoc")
 public class TabsLinearLayout extends IcsLinearLayout {
     private static final int[] R_styleable_LinearLayout = new int[]{
             /* 0 */ android.R.attr.measureWithLargestChild,

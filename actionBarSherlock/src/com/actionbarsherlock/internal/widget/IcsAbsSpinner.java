@@ -34,6 +34,7 @@ import android.widget.SpinnerAdapter;
  *
  * @attr ref android.R.styleable#AbsSpinner_entries
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "JavaDoc"})
 public abstract class IcsAbsSpinner extends IcsAdapterView<SpinnerAdapter> {
     private static final boolean IS_HONEYCOMB = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
     final Rect mSpinnerPadding = new Rect();
@@ -395,6 +396,7 @@ public abstract class IcsAbsSpinner extends IcsAdapterView<SpinnerAdapter> {
         }
     }
 
+    @SuppressWarnings("JavadocReference")
     static class SavedState extends BaseSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
@@ -441,6 +443,7 @@ public abstract class IcsAbsSpinner extends IcsAdapterView<SpinnerAdapter> {
         }
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     class RecycleBin {
         private final SparseArray<View> mScrapHeap = new SparseArray<View>();
 

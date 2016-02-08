@@ -50,6 +50,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  *
  * @attr ref android.R.styleable#Spinner_prompt
  */
+@SuppressWarnings({"JavaDoc", "WeakerAccess", "CanBeFinal", "JavadocReference"})
 public class IcsSpinner extends IcsAbsSpinner implements OnClickListener {
     //private static final String TAG = "Spinner";
 
@@ -470,6 +471,7 @@ public class IcsSpinner extends IcsAbsSpinner implements OnClickListener {
      * Implements some sort of popup selection interface for selecting a spinner option.
      * Allows for different spinner modes.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     private interface SpinnerPopup {
         public void setAdapter(ListAdapter adapter);
 
@@ -503,6 +505,7 @@ public class IcsSpinner extends IcsAbsSpinner implements OnClickListener {
      * <p>Wrapper class for an Adapter. Transforms the embedded Adapter instance
      * into a ListAdapter.</p>
      */
+    @SuppressWarnings({"CanBeFinal", "SimplifiableIfStatement"})
     private static class DropDownAdapter implements ListAdapter, SpinnerAdapter {
         private SpinnerAdapter mAdapter;
         private ListAdapter mListAdapter;

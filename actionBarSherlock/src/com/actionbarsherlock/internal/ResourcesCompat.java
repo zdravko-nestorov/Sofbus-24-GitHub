@@ -13,6 +13,7 @@ import com.actionbarsherlock.R;
 
 import org.xmlpull.v1.XmlPullParser;
 
+@SuppressWarnings({"UnnecessaryUnboxing", "RedundantIfStatement"})
 public final class ResourcesCompat {
     private static final String TAG = "ResourcesCompat";
 

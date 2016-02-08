@@ -29,6 +29,7 @@ import com.actionbarsherlock.view.SubMenu;
 /**
  * @hide
  */
+@SuppressWarnings({"CanBeFinal", "deprecation", "JavaDoc"})
 public class ActionMenuItem implements MenuItem {
     private static final int CHECKABLE = 0x00000001;
     private static final int CHECKED = 0x00000002;

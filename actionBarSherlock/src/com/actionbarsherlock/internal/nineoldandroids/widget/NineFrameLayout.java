@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 
 import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
 
+@SuppressWarnings("WeakerAccess")
 public class NineFrameLayout extends FrameLayout {
     private final AnimatorProxy mProxy;
 

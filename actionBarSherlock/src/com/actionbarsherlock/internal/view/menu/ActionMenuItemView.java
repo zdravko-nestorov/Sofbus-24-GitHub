@@ -16,6 +16,7 @@
 
 package com.actionbarsherlock.internal.view.menu;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -45,6 +46,7 @@ import static com.actionbarsherlock.internal.ResourcesCompat.getResources_getBoo
 /**
  * @hide
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "SimplifiableIfStatement", "FieldCanBeLocal", "JavaDoc"})
 public class ActionMenuItemView extends LinearLayout
         implements MenuView.ItemView, View.OnClickListener, View.OnLongClickListener,
         ActionMenuView.ActionMenuChildView, View_HasStateListenerSupport {
@@ -106,6 +108,7 @@ public class ActionMenuItemView extends LinearLayout
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onFinishInflate() {
 

@@ -40,7 +40,7 @@ import java.util.HashMap;
  * out of an animation. This behavior can be changed by calling
  * {@link ValueAnimator#setInterpolator(TimeInterpolator)}.</p>
  */
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings({"rawtypes", "unchecked", "RedundantArrayCreation", "RedundantCast", "JavaDoc", "JavadocReference", "ForLoopReplaceableByForEach", "WeakerAccess", "CanBeFinal", "RedundantConditionalExpression"})
 public class ValueAnimator extends Animator {
 
     /**
@@ -1105,6 +1105,7 @@ public class ValueAnimator extends Animator {
      * frame, after the current frame's values have been calculated for that
      * <code>ValueAnimator</code>.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public static interface AnimatorUpdateListener {
         /**
          * <p>Notifies the occurrence of another frame of the animation.</p>

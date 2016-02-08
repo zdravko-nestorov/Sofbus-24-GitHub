@@ -30,7 +30,7 @@ import java.util.Arrays;
  * values between those keyframes for a given animation. The class internal to the animation
  * package because it is an implementation detail of how Keyframes are stored and used.
  */
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings({"rawtypes", "unchecked", "ForLoopReplaceableByForEach", "WeakerAccess", "CanBeFinal", "CloneDoesntCallSuperClone"})
 class KeyframeSet {
 
     int mNumKeyframes;

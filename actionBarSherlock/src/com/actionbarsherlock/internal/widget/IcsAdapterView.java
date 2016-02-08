@@ -47,6 +47,7 @@ import android.widget.ListView;
  * <a href="{@docRoot}guide/topics/ui/binding.html">Binding to Data with AdapterView</a>
  * developer guide.</p></div>
  */
+@SuppressWarnings({"EqualsBetweenInconvertibleTypes", "WeakerAccess", "CanBeFinal", "RedundantIfStatement", "JavadocReference"})
 public abstract class IcsAdapterView<T extends Adapter> extends ViewGroup {
 
     /**
@@ -1029,6 +1030,7 @@ public abstract class IcsAdapterView<T extends Adapter> extends ViewGroup {
      * {@link android.view.View.OnCreateContextMenuListener#onCreateContextMenu(ContextMenu, View, ContextMenuInfo) }
      * callback when a context menu is brought up for this AdapterView.
      */
+    @SuppressWarnings({"CanBeFinal", "JavadocReference"})
     public static class AdapterContextMenuInfo implements ContextMenu.ContextMenuInfo {
 
         /**

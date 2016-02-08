@@ -42,7 +42,7 @@ import java.util.List;
  * circular dependencies do not make logical sense anyway), circular dependencies
  * should be avoided, and the dependency flow of animations should only be in one direction.
  */
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "RedundantCast", "WeakerAccess"})
 public final class AnimatorSet extends Animator {
 
     /**
@@ -689,6 +689,7 @@ public final class AnimatorSet extends Animator {
      * animations. If an animation has multiple dependencies on other animations, then
      * all dependencies must be satisfied before the animation is started.
      */
+    @SuppressWarnings("CanBeFinal")
     private static class DependencyListener implements AnimatorListener {
 
         private AnimatorSet mAnimatorSet;
@@ -777,6 +778,7 @@ public final class AnimatorSet extends Animator {
      * Dependency holds information about the node that some other node is
      * dependent upon and the nature of that dependency.
      */
+    @SuppressWarnings("CanBeFinal")
     private static class Dependency {
         static final int WITH = 0; // dependent node must start with this dependency node
         static final int AFTER = 1; // dependent node must start when this dependency node finishes
@@ -799,6 +801,7 @@ public final class AnimatorSet extends Animator {
      * both dependencies upon other nodes (in the dependencies list) as
      * well as dependencies of other nodes upon this (in the nodeDependents list).
      */
+    @SuppressWarnings("JavaDoc")
     private static class Node implements Cloneable {
         public Animator animation;
 
@@ -886,6 +889,7 @@ public final class AnimatorSet extends Animator {
         }
     }
 
+    @SuppressWarnings("CanBeFinal")
     private class AnimatorSetListener implements AnimatorListener {
 
         private AnimatorSet mAnimatorSet;

@@ -71,6 +71,7 @@ import com.actionbarsherlock.widget.ActivityChooserModel.OnChooseActivityListene
  *
  * @see ActionProvider
  */
+@SuppressWarnings({"WeakerAccess", "CanBeFinal", "deprecation", "FieldCanBeLocal"})
 public class ShareActionProvider extends ActionProvider {
 
     /**
@@ -258,6 +259,7 @@ public class ShareActionProvider extends ActionProvider {
     /**
      * Listener for the event of selecting a share target.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnShareTargetSelectedListener {
 
         /**
@@ -296,6 +298,7 @@ public class ShareActionProvider extends ActionProvider {
     /**
      * Policy that delegates to the {@link OnShareTargetSelectedListener}, if such.
      */
+    @SuppressWarnings("SimplifiableIfStatement")
     private class ShareAcitivityChooserModelPolicy implements OnChooseActivityListener {
         @Override
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent) {

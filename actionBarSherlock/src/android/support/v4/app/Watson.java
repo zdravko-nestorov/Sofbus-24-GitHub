@@ -17,6 +17,7 @@ import java.util.ArrayList;
 /**
  * I'm in ur package. Stealing ur variables.
  */
+@SuppressWarnings("WeakerAccess")
 public abstract class Watson extends FragmentActivity implements OnCreatePanelMenuListener, OnPreparePanelListener, OnMenuItemSelectedListener {
     private static final String TAG = "Watson";
     private ArrayList<Fragment> mCreatedMenus;
@@ -141,6 +142,7 @@ public abstract class Watson extends FragmentActivity implements OnCreatePanelMe
     /**
      * Fragment interface for menu creation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnCreateOptionsMenuListener {
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater);
     }
@@ -148,6 +150,7 @@ public abstract class Watson extends FragmentActivity implements OnCreatePanelMe
     /**
      * Fragment interface for menu preparation callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnPrepareOptionsMenuListener {
         public void onPrepareOptionsMenu(Menu menu);
     }
@@ -155,6 +158,7 @@ public abstract class Watson extends FragmentActivity implements OnCreatePanelMe
     /**
      * Fragment interface for menu item selection callback.
      */
+    @SuppressWarnings("UnnecessaryInterfaceModifier")
     public interface OnOptionsItemSelectedListener {
         public boolean onOptionsItemSelected(MenuItem item);
     }
