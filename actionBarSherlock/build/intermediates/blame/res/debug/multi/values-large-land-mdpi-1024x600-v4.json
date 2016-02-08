@@ -1,0 +1,121 @@
+[
+    {
+        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\values-large-land-mdpi-1024x600-v4\\values-large-land-mdpi-1024x600-v4.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 62,
+                    "endOffset": 113
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 774,
+                        "endColumn": 62,
+                        "endOffset": 832
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 118,
+                    "endColumn": 68,
+                    "endOffset": 182
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 892,
+                        "endColumn": 68,
+                        "endOffset": 956
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 187,
+                    "endColumn": 69,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1351,
+                        "endColumn": 69,
+                        "endOffset": 1416
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 257,
+                    "endColumn": 65,
+                    "endOffset": 318
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1117,
+                        "endColumn": 65,
+                        "endOffset": 1178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 323,
+                    "endColumn": 66,
+                    "endOffset": 385
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1232,
+                        "endColumn": 66,
+                        "endOffset": 1294
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 390,
+                    "endColumn": 62,
+                    "endOffset": 448
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-large-land-mdpi-1024x600\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1006,
+                        "endColumn": 62,
+                        "endOffset": 1064
+                    }
+                }
+            }
+        ]
+    }
+]

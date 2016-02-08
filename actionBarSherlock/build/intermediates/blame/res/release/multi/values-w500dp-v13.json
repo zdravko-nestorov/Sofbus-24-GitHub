@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w500dp\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 728,
+                        "endColumn": 55,
+                        "endOffset": 779
+                    }
+                }
+            }
+        ]
+    }
+]

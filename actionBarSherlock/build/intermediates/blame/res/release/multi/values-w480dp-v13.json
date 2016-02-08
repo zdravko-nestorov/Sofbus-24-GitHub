@@ -1,0 +1,64 @@
+[
+    {
+        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-w480dp-v13\\values-w480dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 55,
+                    "endOffset": 106
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 678,
+                        "endColumn": 55,
+                        "endOffset": 729
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 111,
+                    "endColumn": 72,
+                    "endOffset": 179
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__config.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 985,
+                        "endColumn": 72,
+                        "endOffset": 1053
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 184,
+                    "endColumn": 61,
+                    "endOffset": 241
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 734,
+                        "endColumn": 61,
+                        "endOffset": 791
+                    }
+                }
+            }
+        ]
+    }
+]

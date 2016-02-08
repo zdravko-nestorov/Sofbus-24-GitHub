@@ -1,0 +1,2801 @@
+[
+    {
+        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 54,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 167,
+                        "endColumn": 55,
+                        "endOffset": 218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 59,
+                    "endOffset": 215
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 223,
+                        "endColumn": 60,
+                        "endOffset": 279
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 220,
+                    "endColumn": 45,
+                    "endOffset": 261
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 330,
+                        "endColumn": 46,
+                        "endOffset": 372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 266,
+                    "endColumn": 44,
+                    "endOffset": 306
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 284,
+                        "endColumn": 45,
+                        "endOffset": 325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 311,
+                    "endColumn": 55,
+                    "endOffset": 362
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 110,
+                        "endColumn": 56,
+                        "endOffset": 162
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 367,
+                    "endColumn": 52,
+                    "endOffset": 415
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__attrs.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 53,
+                        "endOffset": 105
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 420,
+                    "endColumn": 56,
+                    "endOffset": 472
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__bools.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 686,
+                        "endColumn": 56,
+                        "endOffset": 738
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 477,
+                    "endColumn": 76,
+                    "endOffset": 549
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__bools.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 804,
+                        "endColumn": 76,
+                        "endOffset": 876
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 554,
+                    "endColumn": 62,
+                    "endOffset": 612
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__config.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 1488,
+                        "endColumn": 62,
+                        "endOffset": 1546
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 617,
+                    "endColumn": 73,
+                    "endOffset": 686
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__config.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 1729,
+                        "endColumn": 73,
+                        "endOffset": 1798
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 691,
+                    "endColumn": 78,
+                    "endOffset": 765
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__config.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1196,
+                        "endColumn": 78,
+                        "endOffset": 1270
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 770,
+                    "endColumn": 60,
+                    "endOffset": 826
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__bools.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 743,
+                        "endColumn": 60,
+                        "endOffset": 799
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 831,
+                    "endColumn": 61,
+                    "endOffset": 888
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 686,
+                        "endColumn": 61,
+                        "endOffset": 743
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 893,
+                    "endColumn": 62,
+                    "endOffset": 951
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 748,
+                        "endColumn": 62,
+                        "endOffset": 806
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 956,
+                    "endColumn": 77,
+                    "endOffset": 1029
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 997,
+                        "endColumn": 77,
+                        "endOffset": 1070
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1034,
+                    "endColumn": 78,
+                    "endOffset": 1108
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1075,
+                        "endColumn": 78,
+                        "endOffset": 1149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1113,
+                    "endColumn": 92,
+                    "endOffset": 1201
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 811,
+                        "endColumn": 92,
+                        "endOffset": 899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1206,
+                    "endColumn": 92,
+                    "endOffset": 1294
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__colors.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 92,
+                        "endOffset": 992
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 8910,
+                    "endColumn": 62,
+                    "endOffset": 8968
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 774,
+                        "endColumn": 62,
+                        "endOffset": 832
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 8973,
+                    "endColumn": 68,
+                    "endOffset": 9037
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 892,
+                        "endColumn": 68,
+                        "endOffset": 956
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 9042,
+                    "endColumn": 69,
+                    "endOffset": 9107
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1351,
+                        "endColumn": 69,
+                        "endOffset": 1416
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 9112,
+                    "endColumn": 65,
+                    "endOffset": 9173
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1117,
+                        "endColumn": 65,
+                        "endOffset": 1178
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 9178,
+                    "endColumn": 66,
+                    "endOffset": 9240
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1232,
+                        "endColumn": 66,
+                        "endOffset": 1294
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 9245,
+                    "endColumn": 62,
+                    "endOffset": 9303
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1006,
+                        "endColumn": 62,
+                        "endOffset": 1064
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 9308,
+                    "endColumn": 60,
+                    "endOffset": 9364
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1561,
+                        "endColumn": 60,
+                        "endOffset": 1617
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 9369,
+                    "endColumn": 59,
+                    "endOffset": 9424
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__config.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1022,
+                        "endColumn": 59,
+                        "endOffset": 1077
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 9429,
+                    "endColumn": 60,
+                    "endOffset": 9485
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 1901,
+                        "endColumn": 60,
+                        "endOffset": 1957
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 9490,
+                    "endColumn": 66,
+                    "endOffset": 9552
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 1669,
+                        "endColumn": 66,
+                        "endOffset": 1731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 9557,
+                    "endColumn": 67,
+                    "endOffset": 9620
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 1782,
+                        "endColumn": 67,
+                        "endOffset": 1845
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 9625,
+                    "endColumn": 65,
+                    "endOffset": 9686
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 2142,
+                        "endColumn": 65,
+                        "endOffset": 2203
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 9691,
+                    "endColumn": 64,
+                    "endOffset": 9751
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 2027,
+                        "endColumn": 64,
+                        "endOffset": 2087
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 9756,
+                    "endColumn": 53,
+                    "endOffset": 9805
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 756,
+                        "endColumn": 54,
+                        "endOffset": 806
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 9810,
+                    "endColumn": 55,
+                    "endOffset": 9861
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 811,
+                        "endColumn": 56,
+                        "endOffset": 863
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 9866,
+                    "endColumn": 38,
+                    "endOffset": 9900
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 678,
+                        "endColumn": 39,
+                        "endOffset": 713
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 9905,
+                    "endColumn": 51,
+                    "endOffset": 9952
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 868,
+                        "endColumn": 52,
+                        "endOffset": 916
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 9957,
+                    "endColumn": 53,
+                    "endOffset": 10006
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 921,
+                        "endColumn": 54,
+                        "endOffset": 971
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 10011,
+                    "endColumn": 36,
+                    "endOffset": 10043
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__ids.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 718,
+                        "endColumn": 37,
+                        "endOffset": 751
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 10048,
+                    "endColumn": 55,
+                    "endOffset": 10099
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__dimens.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1422,
+                        "endColumn": 55,
+                        "endOffset": 1473
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 10104,
+                    "endColumn": 74,
+                    "endOffset": 10174
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 819,
+                        "endColumn": 74,
+                        "endOffset": 889
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 10179,
+                    "endColumn": 70,
+                    "endOffset": 10245
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 981,
+                        "endColumn": 70,
+                        "endOffset": 1047
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 10250,
+                    "endColumn": 78,
+                    "endOffset": 10324
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1140,
+                        "endColumn": 78,
+                        "endOffset": 1214
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 10329,
+                    "endColumn": 54,
+                    "endOffset": 10379
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1302,
+                        "endColumn": 54,
+                        "endOffset": 1352
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 10384,
+                    "endColumn": 73,
+                    "endOffset": 10453
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1462,
+                        "endColumn": 73,
+                        "endOffset": 1531
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 10458,
+                    "endColumn": 93,
+                    "endOffset": 10547
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1644,
+                        "endColumn": 93,
+                        "endOffset": 1733
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 10552,
+                    "endColumn": 73,
+                    "endOffset": 10621
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2632,
+                        "endColumn": 73,
+                        "endOffset": 2701
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 10626,
+                    "endColumn": 74,
+                    "endOffset": 10696
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 2472,
+                        "endColumn": 74,
+                        "endOffset": 2542
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 10701,
+                    "endColumn": 69,
+                    "endOffset": 10766
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 2312,
+                        "endColumn": 69,
+                        "endOffset": 2377
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 60,
+                    "startColumn": 4,
+                    "startOffset": 10771,
+                    "endColumn": 75,
+                    "endOffset": 10842
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 2792,
+                        "endColumn": 75,
+                        "endOffset": 2863
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 10847,
+                    "endColumn": 74,
+                    "endOffset": 10917
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2953,
+                        "endColumn": 74,
+                        "endOffset": 3023
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 10922,
+                    "endColumn": 74,
+                    "endOffset": 10992
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 1846,
+                        "endColumn": 74,
+                        "endOffset": 1916
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 10997,
+                    "endColumn": 146,
+                    "endOffset": 11139
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__strings.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 2074,
+                        "endColumn": 150,
+                        "endOffset": 2220
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 11144,
+                    "endLine": 67,
+                    "endColumn": 12,
+                    "endOffset": 11348
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 410,
+                        "startColumn": 4,
+                        "startOffset": 21178,
+                        "endLine": 413,
+                        "endColumn": 12,
+                        "endOffset": 21382
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 68,
+                    "startColumn": 4,
+                    "startOffset": 11353,
+                    "endLine": 70,
+                    "endColumn": 12,
+                    "endOffset": 11494
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endLine": 6,
+                        "endColumn": 12,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 11499,
+                    "endColumn": 80,
+                    "endOffset": 11575
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 363,
+                        "endColumn": 87,
+                        "endOffset": 446
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 11580,
+                    "endLine": 74,
+                    "endColumn": 12,
+                    "endOffset": 11733
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 204,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 357
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 75,
+                    "startColumn": 4,
+                    "startOffset": 11738,
+                    "endLine": 83,
+                    "endColumn": 12,
+                    "endOffset": 12216
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 92,
+                        "endLine": 14,
+                        "endColumn": 12,
+                        "endOffset": 570
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 12221,
+                    "endLine": 88,
+                    "endColumn": 12,
+                    "endOffset": 12490
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 154,
+                        "startColumn": 4,
+                        "startOffset": 8174,
+                        "endLine": 158,
+                        "endColumn": 12,
+                        "endOffset": 8443
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 89,
+                    "startColumn": 4,
+                    "startOffset": 12495,
+                    "endLine": 96,
+                    "endColumn": 12,
+                    "endOffset": 12957
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 202,
+                        "startColumn": 4,
+                        "startOffset": 10570,
+                        "endLine": 209,
+                        "endColumn": 12,
+                        "endOffset": 11032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 97,
+                    "startColumn": 4,
+                    "startOffset": 12962,
+                    "endLine": 103,
+                    "endColumn": 12,
+                    "endOffset": 13317
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 265,
+                        "startColumn": 4,
+                        "startOffset": 13930,
+                        "endLine": 271,
+                        "endColumn": 12,
+                        "endOffset": 14285
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 104,
+                    "startColumn": 4,
+                    "startOffset": 13322,
+                    "endLine": 107,
+                    "endColumn": 12,
+                    "endOffset": 13584
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 253,
+                        "startColumn": 4,
+                        "startOffset": 13273,
+                        "endLine": 256,
+                        "endColumn": 12,
+                        "endOffset": 13535
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 108,
+                    "startColumn": 4,
+                    "startOffset": 13589,
+                    "endLine": 117,
+                    "endColumn": 12,
+                    "endOffset": 14218
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 232,
+                        "startColumn": 4,
+                        "startOffset": 12042,
+                        "endLine": 241,
+                        "endColumn": 12,
+                        "endOffset": 12671
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 118,
+                    "startColumn": 4,
+                    "startOffset": 14223,
+                    "endLine": 128,
+                    "endColumn": 12,
+                    "endOffset": 14907
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 312,
+                        "startColumn": 4,
+                        "startOffset": 16105,
+                        "endLine": 322,
+                        "endColumn": 12,
+                        "endOffset": 16789
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 14912,
+                    "endColumn": 82,
+                    "endOffset": 14990
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 424,
+                        "startColumn": 4,
+                        "startOffset": 21797,
+                        "endColumn": 83,
+                        "endOffset": 21876
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 130,
+                    "startColumn": 4,
+                    "startOffset": 14995,
+                    "endColumn": 108,
+                    "endOffset": 15099
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 441,
+                        "startColumn": 4,
+                        "startOffset": 22494,
+                        "endColumn": 109,
+                        "endOffset": 22599
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 131,
+                    "startColumn": 4,
+                    "startOffset": 15104,
+                    "endLine": 134,
+                    "endColumn": 12,
+                    "endOffset": 15312
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 447,
+                        "startColumn": 4,
+                        "startOffset": 22737,
+                        "endLine": 450,
+                        "endColumn": 12,
+                        "endOffset": 22945
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 135,
+                    "startColumn": 4,
+                    "startOffset": 15317,
+                    "endLine": 137,
+                    "endColumn": 12,
+                    "endOffset": 15443
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 443,
+                        "startColumn": 4,
+                        "startOffset": 22605,
+                        "endLine": 445,
+                        "endColumn": 12,
+                        "endOffset": 22731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 138,
+                    "startColumn": 4,
+                    "startOffset": 15448,
+                    "endColumn": 94,
+                    "endOffset": 15538
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 417,
+                        "startColumn": 4,
+                        "startOffset": 21487,
+                        "endColumn": 101,
+                        "endOffset": 21584
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 139,
+                    "startColumn": 4,
+                    "startOffset": 15543,
+                    "endColumn": 128,
+                    "endOffset": 15667
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 390,
+                        "startColumn": 4,
+                        "startOffset": 20235,
+                        "endColumn": 135,
+                        "endOffset": 20366
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 140,
+                    "startColumn": 4,
+                    "startOffset": 15672,
+                    "endColumn": 128,
+                    "endOffset": 15796
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 396,
+                        "startColumn": 4,
+                        "startOffset": 20502,
+                        "endColumn": 135,
+                        "endOffset": 20633
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 141,
+                    "startColumn": 4,
+                    "startOffset": 15801,
+                    "endLine": 145,
+                    "endColumn": 12,
+                    "endOffset": 16073
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 426,
+                        "startColumn": 4,
+                        "startOffset": 21882,
+                        "endLine": 430,
+                        "endColumn": 12,
+                        "endOffset": 22154
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 146,
+                    "startColumn": 4,
+                    "startOffset": 16078,
+                    "endLine": 149,
+                    "endColumn": 12,
+                    "endOffset": 16280
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 436,
+                        "startColumn": 4,
+                        "startOffset": 22286,
+                        "endLine": 439,
+                        "endColumn": 12,
+                        "endOffset": 22488
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 150,
+                    "startColumn": 4,
+                    "startOffset": 16285,
+                    "endLine": 152,
+                    "endColumn": 12,
+                    "endOffset": 16405
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 432,
+                        "startColumn": 4,
+                        "startOffset": 22160,
+                        "endLine": 434,
+                        "endColumn": 12,
+                        "endOffset": 22280
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 153,
+                    "startColumn": 4,
+                    "startOffset": 16410,
+                    "endColumn": 90,
+                    "endOffset": 16496
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 415,
+                        "startColumn": 4,
+                        "startOffset": 21388,
+                        "endColumn": 97,
+                        "endOffset": 21481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 154,
+                    "startColumn": 4,
+                    "startOffset": 16501,
+                    "endLine": 159,
+                    "endColumn": 12,
+                    "endOffset": 16851
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 335,
+                        "startColumn": 4,
+                        "startOffset": 17442,
+                        "endLine": 340,
+                        "endColumn": 12,
+                        "endOffset": 17792
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 160,
+                    "startColumn": 4,
+                    "startOffset": 16856,
+                    "endLine": 163,
+                    "endColumn": 12,
+                    "endOffset": 17115
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 352,
+                        "startColumn": 4,
+                        "startOffset": 18327,
+                        "endLine": 355,
+                        "endColumn": 12,
+                        "endOffset": 18586
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 164,
+                    "startColumn": 4,
+                    "startOffset": 17120,
+                    "endLine": 167,
+                    "endColumn": 12,
+                    "endOffset": 17392
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 357,
+                        "startColumn": 4,
+                        "startOffset": 18592,
+                        "endLine": 360,
+                        "endColumn": 12,
+                        "endOffset": 18864
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 168,
+                    "startColumn": 4,
+                    "startOffset": 17397,
+                    "endLine": 171,
+                    "endColumn": 12,
+                    "endOffset": 17648
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 342,
+                        "startColumn": 4,
+                        "startOffset": 17798,
+                        "endLine": 345,
+                        "endColumn": 12,
+                        "endOffset": 18049
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 172,
+                    "startColumn": 4,
+                    "startOffset": 17653,
+                    "endLine": 175,
+                    "endColumn": 12,
+                    "endOffset": 17919
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 347,
+                        "startColumn": 4,
+                        "startOffset": 18055,
+                        "endLine": 350,
+                        "endColumn": 12,
+                        "endOffset": 18321
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 176,
+                    "startColumn": 4,
+                    "startOffset": 17924,
+                    "endLine": 179,
+                    "endColumn": 12,
+                    "endOffset": 18184
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 372,
+                        "startColumn": 4,
+                        "startOffset": 19401,
+                        "endLine": 375,
+                        "endColumn": 12,
+                        "endOffset": 19661
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 180,
+                    "startColumn": 4,
+                    "startOffset": 18189,
+                    "endLine": 183,
+                    "endColumn": 12,
+                    "endOffset": 18462
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 377,
+                        "startColumn": 4,
+                        "startOffset": 19667,
+                        "endLine": 380,
+                        "endColumn": 12,
+                        "endOffset": 19940
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 184,
+                    "startColumn": 4,
+                    "startOffset": 18467,
+                    "endLine": 187,
+                    "endColumn": 12,
+                    "endOffset": 18719
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 362,
+                        "startColumn": 4,
+                        "startOffset": 18870,
+                        "endLine": 365,
+                        "endColumn": 12,
+                        "endOffset": 19122
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 188,
+                    "startColumn": 4,
+                    "startOffset": 18724,
+                    "endLine": 191,
+                    "endColumn": 12,
+                    "endOffset": 18991
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 367,
+                        "startColumn": 4,
+                        "startOffset": 19128,
+                        "endLine": 370,
+                        "endColumn": 12,
+                        "endOffset": 19395
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 192,
+                    "startColumn": 4,
+                    "startOffset": 18996,
+                    "endLine": 195,
+                    "endColumn": 12,
+                    "endOffset": 19197
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 419,
+                        "startColumn": 4,
+                        "startOffset": 21590,
+                        "endLine": 422,
+                        "endColumn": 12,
+                        "endOffset": 21791
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 196,
+                    "startColumn": 4,
+                    "startOffset": 19202,
+                    "endLine": 200,
+                    "endColumn": 12,
+                    "endOffset": 19467
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 404,
+                        "startColumn": 4,
+                        "startOffset": 20907,
+                        "endLine": 408,
+                        "endColumn": 12,
+                        "endOffset": 21172
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 201,
+                    "startColumn": 4,
+                    "startOffset": 19472,
+                    "endLine": 203,
+                    "endColumn": 12,
+                    "endOffset": 19625
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 382,
+                        "startColumn": 4,
+                        "startOffset": 19946,
+                        "endLine": 384,
+                        "endColumn": 12,
+                        "endOffset": 20099
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 204,
+                    "startColumn": 4,
+                    "startOffset": 19630,
+                    "endLine": 206,
+                    "endColumn": 12,
+                    "endOffset": 19754
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 386,
+                        "startColumn": 4,
+                        "startOffset": 20105,
+                        "endLine": 388,
+                        "endColumn": 12,
+                        "endOffset": 20229
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 207,
+                    "startColumn": 4,
+                    "startOffset": 19759,
+                    "endLine": 209,
+                    "endColumn": 12,
+                    "endOffset": 19883
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 392,
+                        "startColumn": 4,
+                        "startOffset": 20372,
+                        "endLine": 394,
+                        "endColumn": 12,
+                        "endOffset": 20496
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 210,
+                    "startColumn": 4,
+                    "startOffset": 19888,
+                    "endLine": 214,
+                    "endColumn": 12,
+                    "endOffset": 20150
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 398,
+                        "startColumn": 4,
+                        "startOffset": 20639,
+                        "endLine": 402,
+                        "endColumn": 12,
+                        "endOffset": 20901
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 215,
+                    "startColumn": 4,
+                    "startOffset": 20155,
+                    "endLine": 305,
+                    "endColumn": 12,
+                    "endOffset": 25457
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 452,
+                        "endLine": 104,
+                        "endColumn": 12,
+                        "endOffset": 5754
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 306,
+                    "startColumn": 4,
+                    "startOffset": 25462,
+                    "endLine": 406,
+                    "endColumn": 12,
+                    "endOffset": 31092
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 5760,
+                        "endLine": 206,
+                        "endColumn": 12,
+                        "endOffset": 11390
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 407,
+                    "startColumn": 4,
+                    "startOffset": 31097,
+                    "endLine": 447,
+                    "endColumn": 12,
+                    "endOffset": 34033
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 208,
+                        "startColumn": 4,
+                        "startOffset": 11396,
+                        "endLine": 248,
+                        "endColumn": 12,
+                        "endOffset": 14332
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 448,
+                    "startColumn": 4,
+                    "startOffset": 34038,
+                    "endLine": 451,
+                    "endColumn": 12,
+                    "endOffset": 34195
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 256,
+                        "startColumn": 4,
+                        "startOffset": 14496,
+                        "endLine": 259,
+                        "endColumn": 12,
+                        "endOffset": 14653
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 452,
+                    "startColumn": 4,
+                    "startOffset": 34200,
+                    "endLine": 455,
+                    "endColumn": 12,
+                    "endOffset": 34351
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__themes.xml",
+                    "position": {
+                        "startLine": 251,
+                        "startColumn": 4,
+                        "startOffset": 14339,
+                        "endLine": 254,
+                        "endColumn": 12,
+                        "endOffset": 14490
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 456,
+                    "startColumn": 4,
+                    "startOffset": 34356,
+                    "endColumn": 26,
+                    "endOffset": 34378
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 33,
+                        "endOffset": 86
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 457,
+                    "startColumn": 4,
+                    "startOffset": 34383,
+                    "endLine": 469,
+                    "endColumn": 12,
+                    "endOffset": 35283
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 576,
+                        "endLine": 28,
+                        "endColumn": 12,
+                        "endOffset": 1476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 470,
+                    "startColumn": 4,
+                    "startOffset": 35288,
+                    "endLine": 482,
+                    "endColumn": 12,
+                    "endOffset": 36176
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1482,
+                        "endLine": 42,
+                        "endColumn": 12,
+                        "endOffset": 2370
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 483,
+                    "startColumn": 4,
+                    "startOffset": 36181,
+                    "endLine": 487,
+                    "endColumn": 12,
+                    "endOffset": 36437
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 97,
+                        "startColumn": 4,
+                        "startOffset": 5559,
+                        "endLine": 101,
+                        "endColumn": 12,
+                        "endOffset": 5815
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 488,
+                    "startColumn": 4,
+                    "startOffset": 36442,
+                    "endLine": 496,
+                    "endColumn": 12,
+                    "endOffset": 36900
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 107,
+                        "startColumn": 4,
+                        "startOffset": 6005,
+                        "endLine": 115,
+                        "endColumn": 12,
+                        "endOffset": 6463
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 497,
+                    "startColumn": 4,
+                    "startOffset": 36905,
+                    "endLine": 502,
+                    "endColumn": 12,
+                    "endOffset": 37237
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 5034,
+                        "endLine": 91,
+                        "endColumn": 12,
+                        "endOffset": 5366
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 503,
+                    "startColumn": 4,
+                    "startOffset": 37242,
+                    "endLine": 512,
+                    "endColumn": 12,
+                    "endOffset": 37752
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 123,
+                        "startColumn": 4,
+                        "startOffset": 6737,
+                        "endLine": 132,
+                        "endColumn": 12,
+                        "endOffset": 7247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 513,
+                    "startColumn": 4,
+                    "startOffset": 37757,
+                    "endLine": 515,
+                    "endColumn": 12,
+                    "endOffset": 37908
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 136,
+                        "startColumn": 4,
+                        "startOffset": 7354,
+                        "endLine": 138,
+                        "endColumn": 12,
+                        "endOffset": 7505
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 516,
+                    "startColumn": 4,
+                    "startOffset": 37913,
+                    "endLine": 520,
+                    "endColumn": 12,
+                    "endOffset": 38242
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 144,
+                        "startColumn": 4,
+                        "startOffset": 7675,
+                        "endLine": 148,
+                        "endColumn": 12,
+                        "endOffset": 8004
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 521,
+                    "startColumn": 4,
+                    "startOffset": 38247,
+                    "endLine": 525,
+                    "endColumn": 12,
+                    "endOffset": 38550
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 160,
+                        "startColumn": 4,
+                        "startOffset": 8449,
+                        "endLine": 164,
+                        "endColumn": 12,
+                        "endOffset": 8752
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 526,
+                    "startColumn": 4,
+                    "startOffset": 38555,
+                    "endColumn": 102,
+                    "endOffset": 38653
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 211,
+                        "startColumn": 4,
+                        "startOffset": 11038,
+                        "endColumn": 109,
+                        "endOffset": 11143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 527,
+                    "startColumn": 4,
+                    "startOffset": 38658,
+                    "endLine": 532,
+                    "endColumn": 12,
+                    "endOffset": 38991
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 217,
+                        "startColumn": 4,
+                        "startOffset": 11356,
+                        "endLine": 222,
+                        "endColumn": 12,
+                        "endOffset": 11689
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 533,
+                    "startColumn": 4,
+                    "startOffset": 38996,
+                    "endColumn": 101,
+                    "endOffset": 39093
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 273,
+                        "startColumn": 4,
+                        "startOffset": 14291,
+                        "endColumn": 108,
+                        "endOffset": 14395
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 534,
+                    "startColumn": 4,
+                    "startOffset": 39098,
+                    "endLine": 544,
+                    "endColumn": 12,
+                    "endOffset": 39944
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 2376,
+                        "endLine": 54,
+                        "endColumn": 12,
+                        "endOffset": 3222
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 545,
+                    "startColumn": 4,
+                    "startOffset": 39949,
+                    "endLine": 557,
+                    "endColumn": 12,
+                    "endOffset": 40821
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 3228,
+                        "endLine": 68,
+                        "endColumn": 12,
+                        "endOffset": 4100
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 558,
+                    "startColumn": 4,
+                    "startOffset": 40826,
+                    "endLine": 572,
+                    "endColumn": 12,
+                    "endOffset": 41748
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 4106,
+                        "endLine": 84,
+                        "endColumn": 12,
+                        "endOffset": 5028
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 573,
+                    "startColumn": 4,
+                    "startOffset": 41753,
+                    "endColumn": 100,
+                    "endOffset": 41849
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 103,
+                        "startColumn": 4,
+                        "startOffset": 5821,
+                        "endColumn": 107,
+                        "endOffset": 5924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 574,
+                    "startColumn": 4,
+                    "startOffset": 41854,
+                    "endColumn": 66,
+                    "endOffset": 41916
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 105,
+                        "startColumn": 4,
+                        "startOffset": 5930,
+                        "endColumn": 73,
+                        "endOffset": 5999
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 575,
+                    "startColumn": 4,
+                    "startOffset": 41921,
+                    "endColumn": 102,
+                    "endOffset": 42019
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 117,
+                        "startColumn": 4,
+                        "startOffset": 6469,
+                        "endColumn": 109,
+                        "endOffset": 6574
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 576,
+                    "startColumn": 4,
+                    "startOffset": 42024,
+                    "endLine": 578,
+                    "endColumn": 12,
+                    "endOffset": 42175
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 119,
+                        "startColumn": 4,
+                        "startOffset": 6580,
+                        "endLine": 121,
+                        "endColumn": 12,
+                        "endOffset": 6731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 579,
+                    "startColumn": 4,
+                    "startOffset": 42180,
+                    "endColumn": 102,
+                    "endOffset": 42278
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 93,
+                        "startColumn": 4,
+                        "startOffset": 5372,
+                        "endColumn": 109,
+                        "endOffset": 5477
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 580,
+                    "startColumn": 4,
+                    "startOffset": 42283,
+                    "endColumn": 67,
+                    "endOffset": 42346
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 5483,
+                        "endColumn": 74,
+                        "endOffset": 5553
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 581,
+                    "startColumn": 4,
+                    "startOffset": 42351,
+                    "endColumn": 92,
+                    "endOffset": 42439
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 134,
+                        "startColumn": 4,
+                        "startOffset": 7253,
+                        "endColumn": 99,
+                        "endOffset": 7348
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 582,
+                    "startColumn": 4,
+                    "startOffset": 42444,
+                    "endLine": 584,
+                    "endColumn": 12,
+                    "endOffset": 42602
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 140,
+                        "startColumn": 4,
+                        "startOffset": 7511,
+                        "endLine": 142,
+                        "endColumn": 12,
+                        "endOffset": 7669
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 585,
+                    "startColumn": 4,
+                    "startOffset": 42607,
+                    "endLine": 587,
+                    "endColumn": 12,
+                    "endOffset": 42765
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 150,
+                        "startColumn": 4,
+                        "startOffset": 8010,
+                        "endLine": 152,
+                        "endColumn": 12,
+                        "endOffset": 8168
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 588,
+                    "startColumn": 4,
+                    "startOffset": 42770,
+                    "endLine": 592,
+                    "endColumn": 12,
+                    "endOffset": 43077
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 166,
+                        "startColumn": 4,
+                        "startOffset": 8758,
+                        "endLine": 170,
+                        "endColumn": 12,
+                        "endOffset": 9065
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 593,
+                    "startColumn": 4,
+                    "startOffset": 43082,
+                    "endLine": 599,
+                    "endColumn": 12,
+                    "endOffset": 43437
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 172,
+                        "startColumn": 4,
+                        "startOffset": 9071,
+                        "endLine": 178,
+                        "endColumn": 12,
+                        "endOffset": 9426
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 600,
+                    "startColumn": 4,
+                    "startOffset": 43442,
+                    "endLine": 602,
+                    "endColumn": 12,
+                    "endOffset": 43643
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 213,
+                        "startColumn": 4,
+                        "startOffset": 11149,
+                        "endLine": 215,
+                        "endColumn": 12,
+                        "endOffset": 11350
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 603,
+                    "startColumn": 4,
+                    "startOffset": 43648,
+                    "endLine": 608,
+                    "endColumn": 12,
+                    "endOffset": 43988
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 224,
+                        "startColumn": 4,
+                        "startOffset": 11695,
+                        "endLine": 229,
+                        "endColumn": 12,
+                        "endOffset": 12035
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 609,
+                    "startColumn": 4,
+                    "startOffset": 43993,
+                    "endColumn": 107,
+                    "endOffset": 44096
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 275,
+                        "startColumn": 4,
+                        "startOffset": 14401,
+                        "endColumn": 114,
+                        "endOffset": 14511
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 610,
+                    "startColumn": 4,
+                    "startOffset": 44101,
+                    "endLine": 616,
+                    "endColumn": 12,
+                    "endOffset": 44566
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 189,
+                        "startColumn": 4,
+                        "startOffset": 9896,
+                        "endLine": 195,
+                        "endColumn": 12,
+                        "endOffset": 10361
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 617,
+                    "startColumn": 4,
+                    "startOffset": 44571,
+                    "endLine": 620,
+                    "endColumn": 12,
+                    "endOffset": 44851
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 260,
+                        "startColumn": 4,
+                        "startOffset": 13644,
+                        "endLine": 263,
+                        "endColumn": 12,
+                        "endOffset": 13924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 621,
+                    "startColumn": 4,
+                    "startOffset": 44856,
+                    "endColumn": 98,
+                    "endOffset": 44950
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 199,
+                        "startColumn": 4,
+                        "startOffset": 10462,
+                        "endColumn": 105,
+                        "endOffset": 10563
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 622,
+                    "startColumn": 4,
+                    "startOffset": 44955,
+                    "endLine": 624,
+                    "endColumn": 12,
+                    "endOffset": 45116
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 279,
+                        "startColumn": 4,
+                        "startOffset": 14600,
+                        "endLine": 281,
+                        "endColumn": 12,
+                        "endOffset": 14761
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 625,
+                    "startColumn": 4,
+                    "startOffset": 45121,
+                    "endColumn": 90,
+                    "endOffset": 45207
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 289,
+                        "startColumn": 4,
+                        "startOffset": 15018,
+                        "endColumn": 97,
+                        "endOffset": 15111
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 626,
+                    "startColumn": 4,
+                    "startOffset": 45212,
+                    "endLine": 628,
+                    "endColumn": 12,
+                    "endOffset": 45431
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 298,
+                        "startColumn": 4,
+                        "startOffset": 15555,
+                        "endLine": 300,
+                        "endColumn": 12,
+                        "endOffset": 15774
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 629,
+                    "startColumn": 4,
+                    "startOffset": 45436,
+                    "endLine": 632,
+                    "endColumn": 12,
+                    "endOffset": 45757
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 329,
+                        "startColumn": 4,
+                        "startOffset": 17114,
+                        "endLine": 332,
+                        "endColumn": 12,
+                        "endOffset": 17435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 633,
+                    "startColumn": 4,
+                    "startOffset": 45762,
+                    "endLine": 637,
+                    "endColumn": 12,
+                    "endOffset": 46153
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 247,
+                        "startColumn": 4,
+                        "startOffset": 12876,
+                        "endLine": 251,
+                        "endColumn": 12,
+                        "endOffset": 13267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 638,
+                    "startColumn": 4,
+                    "startOffset": 46158,
+                    "endLine": 644,
+                    "endColumn": 12,
+                    "endOffset": 46615
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 181,
+                        "startColumn": 4,
+                        "startOffset": 9433,
+                        "endLine": 187,
+                        "endColumn": 12,
+                        "endOffset": 9890
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 645,
+                    "startColumn": 4,
+                    "startOffset": 46620,
+                    "endColumn": 94,
+                    "endOffset": 46710
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 258,
+                        "startColumn": 4,
+                        "startOffset": 13541,
+                        "endColumn": 101,
+                        "endOffset": 13638
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 646,
+                    "startColumn": 4,
+                    "startOffset": 46715,
+                    "endColumn": 86,
+                    "endOffset": 46797
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 197,
+                        "startColumn": 4,
+                        "startOffset": 10367,
+                        "endColumn": 93,
+                        "endOffset": 10456
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 647,
+                    "startColumn": 4,
+                    "startOffset": 46802,
+                    "endColumn": 74,
+                    "endOffset": 46872
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 277,
+                        "startColumn": 4,
+                        "startOffset": 14517,
+                        "endColumn": 81,
+                        "endOffset": 14594
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 648,
+                    "startColumn": 4,
+                    "startOffset": 46877,
+                    "endLine": 651,
+                    "endColumn": 12,
+                    "endOffset": 47121
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 284,
+                        "startColumn": 4,
+                        "startOffset": 14768,
+                        "endLine": 287,
+                        "endColumn": 12,
+                        "endOffset": 15012
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 652,
+                    "startColumn": 4,
+                    "startOffset": 47126,
+                    "endLine": 657,
+                    "endColumn": 12,
+                    "endOffset": 47558
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 291,
+                        "startColumn": 4,
+                        "startOffset": 15117,
+                        "endLine": 296,
+                        "endColumn": 12,
+                        "endOffset": 15549
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 658,
+                    "startColumn": 4,
+                    "startOffset": 47563,
+                    "endLine": 661,
+                    "endColumn": 12,
+                    "endOffset": 47876
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 324,
+                        "startColumn": 4,
+                        "startOffset": 16795,
+                        "endLine": 327,
+                        "endColumn": 12,
+                        "endOffset": 17108
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 662,
+                    "startColumn": 4,
+                    "startOffset": 47881,
+                    "endLine": 664,
+                    "endColumn": 12,
+                    "endOffset": 48074
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 243,
+                        "startColumn": 4,
+                        "startOffset": 12677,
+                        "endLine": 245,
+                        "endColumn": 12,
+                        "endOffset": 12870
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 665,
+                    "startColumn": 4,
+                    "startOffset": 48079,
+                    "endLine": 671,
+                    "endColumn": 12,
+                    "endOffset": 48396
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values\\abs__styles.xml",
+                    "position": {
+                        "startLine": 303,
+                        "startColumn": 4,
+                        "startOffset": 15781,
+                        "endLine": 309,
+                        "endColumn": 12,
+                        "endOffset": 16098
+                    }
+                }
+            }
+        ]
+    }
+]

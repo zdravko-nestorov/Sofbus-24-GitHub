@@ -1,0 +1,49 @@
+[
+    {
+        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 5,
+                    "endColumn": 12,
+                    "endOffset": 240
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endLine": 7,
+                        "endColumn": 12,
+                        "endOffset": 242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 245,
+                    "endLine": 9,
+                    "endColumn": 12,
+                    "endOffset": 442
+                },
+                "from": {
+                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 248,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 445
+                    }
+                }
+            }
+        ]
+    }
+]
