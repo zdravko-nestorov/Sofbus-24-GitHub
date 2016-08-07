@@ -296,12 +296,12 @@
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\drawable-hdpi\\abs__list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abs__progress_primary_holo_dark.9.png",
-        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\drawable-hdpi\\abs__progress_primary_holo_dark.9.png"
-    },
-    {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abs__ic_search.png",
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\drawable-hdpi\\abs__ic_search.png"
+    },
+    {
+        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abs__progress_primary_holo_dark.9.png",
+        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\drawable-hdpi\\abs__progress_primary_holo_dark.9.png"
     },
     {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abs__ab_solid_shadow_holo.9.png",

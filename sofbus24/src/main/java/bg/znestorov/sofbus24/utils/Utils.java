@@ -271,7 +271,7 @@ public class Utils {
 
         try {
             input = String.format(formatType, Integer.parseInt(input));
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         return input;
@@ -287,7 +287,7 @@ public class Utils {
     public static String removeLeadingZeroes(String input) {
         try {
             input = input.replaceFirst("^0+(?!$)", "");
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
         return input;
@@ -349,8 +349,8 @@ public class Utils {
     public static String getTimeDifference(Activity context, String afterTime,
                                            String currTime) {
         String diff = "";
-        int afterTimeMillis = 0;
-        int currTimeMillis = 0;
+        int afterTimeMillis;
+        int currTimeMillis;
 
         // Format the times in case there is additional information (HH:MM|...)
         // - in case of metro schedule
@@ -377,7 +377,7 @@ public class Utils {
             } else {
                 diff = "---";
             }
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
 
@@ -759,6 +759,11 @@ public class Utils {
                     "СУ СВ\\.КЛИМЕНТ ОХРИДСКИ", "СУ Свети Климент Охридски");
         }
 
+        // BUS #111
+        if ("Жк. Младост 1".equals(directionName)) {
+            directionName = "ж.к. Младост -1 - ж.к. Люлин 1,2";
+        }
+
         // BUS #117
         if (directionName.contains("Автостанция Изток Град Бухово")) {
             directionName = directionName.replaceAll(
@@ -807,9 +812,14 @@ public class Utils {
                     "ж\\.к\\. Борово");
         }
 
+        // TRAM #18
+        if ("пл. Журналист - н - з Надежда".equals(directionName)) {
+            directionName = "пл. Журналист - н-з Надежда";
+        }
+
         // TRAM #19
         if ("кв. Княжево Гара София север".equals(directionName)) {
-            directionName = "кв\\. Княжево - Гара София север";
+            directionName = "кв. Княжево - Гара София север";
         }
 
         return directionName;
