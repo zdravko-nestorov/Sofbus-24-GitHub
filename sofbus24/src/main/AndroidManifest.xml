@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="30"
-    android:versionName="2.6">
+    android:versionCode="31"
+    android:versionName="2.6.1">
 
     <!-- Google Maps related permissions -->
     <permission

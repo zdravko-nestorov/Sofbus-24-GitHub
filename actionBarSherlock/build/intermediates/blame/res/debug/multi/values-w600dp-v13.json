@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\values-w600dp-v13\\values-w600dp-v13.xml",
+        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\debug\\values-w600dp-v13\\values-w600dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w600dp\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w600dp\\abs__dimens.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 728,
+                        "startOffset": 747,
                         "endColumn": 55,
-                        "endOffset": 779
+                        "endOffset": 798
                     }
                 }
             }

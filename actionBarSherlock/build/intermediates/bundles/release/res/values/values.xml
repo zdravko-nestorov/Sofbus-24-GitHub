@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:ns1="http://schemas.android.com/tools" xmlns:ns2="urn:oasis:names:tc:xliff:document:1.2">
     <attr format="reference|color" name="background"/>
     <attr format="reference|color" name="backgroundSplit"/>
     <attr format="reference" name="divider"/>
@@ -49,19 +49,19 @@
     <item name="abs__progress_horizontal" type="id"/>
     <item name="abs__up" type="id"/>
     <integer name="abs__max_action_buttons">2</integer>
-    <string name="abs__action_bar_home_description">Navigate home</string>
-    <string name="abs__action_bar_up_description">Navigate up</string>
-    <string name="abs__action_menu_overflow_description">More options</string>
-    <string name="abs__action_mode_done">Done</string>
-    <string name="abs__activity_chooser_view_see_all">See all...</string>
-    <string name="abs__activitychooserview_choose_application">Choose an application</string>
-    <string name="abs__searchview_description_clear">Clear query</string>
-    <string name="abs__searchview_description_query">Search query</string>
-    <string name="abs__searchview_description_search">Search</string>
-    <string name="abs__searchview_description_submit">Submit query</string>
-    <string name="abs__searchview_description_voice">Voice search</string>
-    <string name="abs__shareactionprovider_share_with">Share with</string>
-    <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g example="Bluetooth" id="application_name">%s</ns1:g></string>
+    <string name="abs__action_bar_home_description" ns1:ignore="MissingTranslation">Navigate home</string>
+    <string name="abs__action_bar_up_description" ns1:ignore="MissingTranslation">Navigate up</string>
+    <string name="abs__action_menu_overflow_description" ns1:ignore="MissingTranslation">More options</string>
+    <string name="abs__action_mode_done" ns1:ignore="MissingTranslation">Done</string>
+    <string name="abs__activity_chooser_view_see_all" ns1:ignore="MissingTranslation">See all...</string>
+    <string name="abs__activitychooserview_choose_application" ns1:ignore="MissingTranslation">Choose an application</string>
+    <string name="abs__searchview_description_clear" ns1:ignore="MissingTranslation">Clear query</string>
+    <string name="abs__searchview_description_query" ns1:ignore="MissingTranslation">Search query</string>
+    <string name="abs__searchview_description_search" ns1:ignore="MissingTranslation">Search</string>
+    <string name="abs__searchview_description_submit" ns1:ignore="MissingTranslation">Submit query</string>
+    <string name="abs__searchview_description_voice" ns1:ignore="MissingTranslation">Voice search</string>
+    <string name="abs__shareactionprovider_share_with" ns1:ignore="MissingTranslation">Share with</string>
+    <string name="abs__shareactionprovider_share_with_application" ns1:ignore="MissingTranslation">Share with <ns2:g example="Bluetooth" id="application_name">%s</ns2:g></string>
     <style name="Sherlock.__TextAppearance.Small" parent="Widget">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>

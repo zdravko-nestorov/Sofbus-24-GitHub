@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-w480dp-v13\\values-w480dp-v13.xml",
+        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-w480dp-v13\\values-w480dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 678,
+                        "startOffset": 696,
                         "endColumn": 55,
-                        "endOffset": 729
+                        "endOffset": 747
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 179
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__config.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__config.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 4,
-                        "startOffset": 985,
+                        "startOffset": 1010,
                         "endColumn": 72,
-                        "endOffset": 1053
+                        "endOffset": 1078
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 241
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-w480dp\\abs__bools.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 734,
+                        "startOffset": 753,
                         "endColumn": 61,
-                        "endOffset": 791
+                        "endOffset": 810
                     }
                 }
             }

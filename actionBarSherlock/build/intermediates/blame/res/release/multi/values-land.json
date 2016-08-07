@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-land\\values-land.xml",
+        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\release\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 113
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 774,
+                        "startOffset": 794,
                         "endColumn": 62,
-                        "endOffset": 832
+                        "endOffset": 852
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 182
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 892,
+                        "startOffset": 914,
                         "endColumn": 68,
-                        "endOffset": 956
+                        "endOffset": 978
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 252
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 1351,
+                        "startOffset": 1381,
                         "endColumn": 69,
-                        "endOffset": 1416
+                        "endOffset": 1446
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 318
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
-                        "startOffset": 1117,
+                        "startOffset": 1143,
                         "endColumn": 65,
-                        "endOffset": 1178
+                        "endOffset": 1204
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 1232,
+                        "startOffset": 1260,
                         "endColumn": 66,
-                        "endOffset": 1294
+                        "endOffset": 1322
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 448
                 },
                 "from": {
-                    "file": "D:\\Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-land\\abs__dimens.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
-                        "startOffset": 1006,
+                        "startOffset": 1030,
                         "endColumn": 62,
-                        "endOffset": 1064
+                        "endOffset": 1088
                     }
                 }
             }

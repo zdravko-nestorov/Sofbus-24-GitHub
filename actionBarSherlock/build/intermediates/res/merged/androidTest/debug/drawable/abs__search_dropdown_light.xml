@@ -13,6 +13,7 @@
      limitations under the License.
 -->
 
+<!--suppress AndroidUnknownAttribute -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="#F0FFFFFF" />
     <stroke
