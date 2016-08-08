@@ -812,6 +812,11 @@ public class Utils {
                     "ж\\.к\\. Борово");
         }
 
+        // TRAM #3
+        if ("Площад Централна гара Гара Захарна фабрика".equals(directionName)) {
+            directionName = "Площад Централна гара - Гара Захарна фабрика";
+        }
+
         // TRAM #18
         if ("пл. Журналист - н - з Надежда".equals(directionName)) {
             directionName = "пл. Журналист - н-з Надежда";
