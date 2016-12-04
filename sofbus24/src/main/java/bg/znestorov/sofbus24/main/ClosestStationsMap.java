@@ -291,7 +291,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      */
     private void setActionBarSubTitle(int closestStationsCount) {
         actionBar.setSubtitle(getString(R.string.cs_map_subtitle,
-                stationsRadius, closestStationsCount));
+                stationsRadius, closestStationsCount + ""));
     }
 
     /**

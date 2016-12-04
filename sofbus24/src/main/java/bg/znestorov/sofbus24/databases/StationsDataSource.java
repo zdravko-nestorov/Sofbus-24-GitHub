@@ -415,8 +415,11 @@ public class StationsDataSource {
         while (!cursor.isAfterLast()) {
             StationEntity foundStation = cursorToStation(cursor);
 
-            // Check if the station has coordinates in the database
-            if (foundStation.hasCoordinates()) {
+            // Check if the station has coordinates in the database. Also we should check
+            // if the map distance between the locations is not "∞" (which means that a
+            // strange case occurred (reported in GooglePlay)
+            if (foundStation.hasCoordinates() &&
+                    !"∞".equals(MapUtils.getMapDistance(currentPosition, foundStation))) {
 
                 // Get the distance to the current station
                 BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
@@ -721,7 +724,16 @@ public class StationsDataSource {
         station.setName(stationName);
         station.setLat(cursor.getString(3));
         station.setLon(cursor.getString(4));
-        station.setType(VehicleTypeEnum.valueOf(cursor.getString(5)));
+
+        // GooglePlay reported a strange error where the type of vehicle is null.
+        // Handle this case by setting the vehicle type a default value of BUS
+        VehicleTypeEnum vehicleType;
+        try {
+            vehicleType = VehicleTypeEnum.valueOf(cursor.getString(5));
+        } catch (Exception e) {
+            vehicleType = VehicleTypeEnum.BUS;
+        }
+        station.setType(vehicleType);
         station.setCustomField(getCustomField(station));
 
         return station;

@@ -303,6 +303,16 @@ public class FavouritesDataSource {
      */
     public void updateStationInfo(StationEntity station) {
         station = getStation(station);
+
+        /*
+         * Very rare case, reported in GooglePlay (it seems that sometimes there is
+         * some delay when the user deletes a station, but click it very fast
+         * before it disappears from the Favourites ListView)
+         */
+        if (station == null) {
+            return;
+        }
+
         station.setDateLastAccess(Utils.getCurrentDateTime());
         station.setUsageCount(station.getUsageCount() + 1);
 

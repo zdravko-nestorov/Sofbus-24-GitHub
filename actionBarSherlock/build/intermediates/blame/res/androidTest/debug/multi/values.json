@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -346,324 +346,20 @@
             },
             {
                 "to": {
-                    "startLine": 31,
-                    "startColumn": 4,
-                    "startOffset": 8955,
-                    "endColumn": 62,
-                    "endOffset": 9013
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 31,
-                        "startColumn": 4,
-                        "startOffset": 8955,
-                        "endColumn": 62,
-                        "endOffset": 9013
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 32,
-                    "startColumn": 4,
-                    "startOffset": 9018,
-                    "endColumn": 68,
-                    "endOffset": 9082
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 32,
-                        "startColumn": 4,
-                        "startOffset": 9018,
-                        "endColumn": 68,
-                        "endOffset": 9082
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 33,
-                    "startColumn": 4,
-                    "startOffset": 9087,
-                    "endColumn": 69,
-                    "endOffset": 9152
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 33,
-                        "startColumn": 4,
-                        "startOffset": 9087,
-                        "endColumn": 69,
-                        "endOffset": 9152
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 34,
-                    "startColumn": 4,
-                    "startOffset": 9157,
-                    "endColumn": 65,
-                    "endOffset": 9218
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 34,
-                        "startColumn": 4,
-                        "startOffset": 9157,
-                        "endColumn": 65,
-                        "endOffset": 9218
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 35,
-                    "startColumn": 4,
-                    "startOffset": 9223,
-                    "endColumn": 66,
-                    "endOffset": 9285
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 35,
-                        "startColumn": 4,
-                        "startOffset": 9223,
-                        "endColumn": 66,
-                        "endOffset": 9285
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 36,
-                    "startColumn": 4,
-                    "startOffset": 9290,
-                    "endColumn": 62,
-                    "endOffset": 9348
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 36,
-                        "startColumn": 4,
-                        "startOffset": 9290,
-                        "endColumn": 62,
-                        "endOffset": 9348
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 37,
-                    "startColumn": 4,
-                    "startOffset": 9353,
-                    "endColumn": 60,
-                    "endOffset": 9409
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 37,
-                        "startColumn": 4,
-                        "startOffset": 9353,
-                        "endColumn": 60,
-                        "endOffset": 9409
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 38,
-                    "startColumn": 4,
-                    "startOffset": 9414,
-                    "endColumn": 59,
-                    "endOffset": 9469
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 38,
-                        "startColumn": 4,
-                        "startOffset": 9414,
-                        "endColumn": 59,
-                        "endOffset": 9469
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 39,
-                    "startColumn": 4,
-                    "startOffset": 9474,
-                    "endColumn": 60,
-                    "endOffset": 9530
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 39,
-                        "startColumn": 4,
-                        "startOffset": 9474,
-                        "endColumn": 60,
-                        "endOffset": 9530
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 40,
-                    "startColumn": 4,
-                    "startOffset": 9535,
-                    "endColumn": 66,
-                    "endOffset": 9597
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 40,
-                        "startColumn": 4,
-                        "startOffset": 9535,
-                        "endColumn": 66,
-                        "endOffset": 9597
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 41,
-                    "startColumn": 4,
-                    "startOffset": 9602,
-                    "endColumn": 67,
-                    "endOffset": 9665
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 41,
-                        "startColumn": 4,
-                        "startOffset": 9602,
-                        "endColumn": 67,
-                        "endOffset": 9665
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 42,
-                    "startColumn": 4,
-                    "startOffset": 9670,
-                    "endColumn": 65,
-                    "endOffset": 9731
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 42,
-                        "startColumn": 4,
-                        "startOffset": 9670,
-                        "endColumn": 65,
-                        "endOffset": 9731
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 43,
-                    "startColumn": 4,
-                    "startOffset": 9736,
-                    "endColumn": 64,
-                    "endOffset": 9796
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 43,
-                        "startColumn": 4,
-                        "startOffset": 9736,
-                        "endColumn": 64,
-                        "endOffset": 9796
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 44,
-                    "startColumn": 4,
-                    "startOffset": 9801,
-                    "endColumn": 53,
-                    "endOffset": 9850
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 44,
-                        "startColumn": 4,
-                        "startOffset": 9801,
-                        "endColumn": 53,
-                        "endOffset": 9850
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 45,
-                    "startColumn": 4,
-                    "startOffset": 9855,
-                    "endColumn": 55,
-                    "endOffset": 9906
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 45,
-                        "startColumn": 4,
-                        "startOffset": 9855,
-                        "endColumn": 55,
-                        "endOffset": 9906
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 46,
-                    "startColumn": 4,
-                    "startOffset": 9911,
-                    "endColumn": 38,
-                    "endOffset": 9945
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 46,
-                        "startColumn": 4,
-                        "startOffset": 9911,
-                        "endColumn": 38,
-                        "endOffset": 9945
-                    }
-                }
-            },
-            {
-                "to": {
                     "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 9950,
-                    "endColumn": 51,
-                    "endOffset": 9997
+                    "startOffset": 9151,
+                    "endColumn": 62,
+                    "endOffset": 9209
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
-                        "startOffset": 9950,
-                        "endColumn": 51,
-                        "endOffset": 9997
+                        "startOffset": 9151,
+                        "endColumn": 62,
+                        "endOffset": 9209
                     }
                 }
             },
@@ -671,18 +367,18 @@
                 "to": {
                     "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 10002,
-                    "endColumn": 53,
-                    "endOffset": 10051
+                    "startOffset": 9214,
+                    "endColumn": 68,
+                    "endOffset": 9278
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
-                        "startOffset": 10002,
-                        "endColumn": 53,
-                        "endOffset": 10051
+                        "startOffset": 9214,
+                        "endColumn": 68,
+                        "endOffset": 9278
                     }
                 }
             },
@@ -690,18 +386,18 @@
                 "to": {
                     "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 10056,
-                    "endColumn": 36,
-                    "endOffset": 10088
+                    "startOffset": 9283,
+                    "endColumn": 69,
+                    "endOffset": 9348
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 49,
                         "startColumn": 4,
-                        "startOffset": 10056,
-                        "endColumn": 36,
-                        "endOffset": 10088
+                        "startOffset": 9283,
+                        "endColumn": 69,
+                        "endOffset": 9348
                     }
                 }
             },
@@ -709,18 +405,18 @@
                 "to": {
                     "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 10093,
-                    "endColumn": 55,
-                    "endOffset": 10144
+                    "startOffset": 9353,
+                    "endColumn": 65,
+                    "endOffset": 9414
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 50,
                         "startColumn": 4,
-                        "startOffset": 10093,
-                        "endColumn": 55,
-                        "endOffset": 10144
+                        "startOffset": 9353,
+                        "endColumn": 65,
+                        "endOffset": 9414
                     }
                 }
             },
@@ -728,18 +424,18 @@
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 10149,
-                    "endColumn": 106,
-                    "endOffset": 10251
+                    "startOffset": 9419,
+                    "endColumn": 66,
+                    "endOffset": 9481
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,
-                        "startOffset": 10149,
-                        "endColumn": 106,
-                        "endOffset": 10251
+                        "startOffset": 9419,
+                        "endColumn": 66,
+                        "endOffset": 9481
                     }
                 }
             },
@@ -747,18 +443,18 @@
                 "to": {
                     "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 10256,
-                    "endColumn": 102,
-                    "endOffset": 10354
+                    "startOffset": 9486,
+                    "endColumn": 62,
+                    "endOffset": 9544
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 52,
                         "startColumn": 4,
-                        "startOffset": 10256,
-                        "endColumn": 102,
-                        "endOffset": 10354
+                        "startOffset": 9486,
+                        "endColumn": 62,
+                        "endOffset": 9544
                     }
                 }
             },
@@ -766,18 +462,18 @@
                 "to": {
                     "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 10359,
-                    "endColumn": 110,
-                    "endOffset": 10465
+                    "startOffset": 9549,
+                    "endColumn": 60,
+                    "endOffset": 9605
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 53,
                         "startColumn": 4,
-                        "startOffset": 10359,
-                        "endColumn": 110,
-                        "endOffset": 10465
+                        "startOffset": 9549,
+                        "endColumn": 60,
+                        "endOffset": 9605
                     }
                 }
             },
@@ -785,18 +481,18 @@
                 "to": {
                     "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 10470,
-                    "endColumn": 86,
-                    "endOffset": 10552
+                    "startOffset": 9610,
+                    "endColumn": 59,
+                    "endOffset": 9665
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
-                        "startOffset": 10470,
-                        "endColumn": 86,
-                        "endOffset": 10552
+                        "startOffset": 9610,
+                        "endColumn": 59,
+                        "endOffset": 9665
                     }
                 }
             },
@@ -804,18 +500,18 @@
                 "to": {
                     "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 10557,
-                    "endColumn": 105,
-                    "endOffset": 10658
+                    "startOffset": 9670,
+                    "endColumn": 60,
+                    "endOffset": 9726
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 55,
                         "startColumn": 4,
-                        "startOffset": 10557,
-                        "endColumn": 105,
-                        "endOffset": 10658
+                        "startOffset": 9670,
+                        "endColumn": 60,
+                        "endOffset": 9726
                     }
                 }
             },
@@ -823,18 +519,18 @@
                 "to": {
                     "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 10663,
-                    "endColumn": 125,
-                    "endOffset": 10784
+                    "startOffset": 9731,
+                    "endColumn": 66,
+                    "endOffset": 9793
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
-                        "startOffset": 10663,
-                        "endColumn": 125,
-                        "endOffset": 10784
+                        "startOffset": 9731,
+                        "endColumn": 66,
+                        "endOffset": 9793
                     }
                 }
             },
@@ -842,18 +538,18 @@
                 "to": {
                     "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 10789,
-                    "endColumn": 105,
-                    "endOffset": 10890
+                    "startOffset": 9798,
+                    "endColumn": 67,
+                    "endOffset": 9861
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 57,
                         "startColumn": 4,
-                        "startOffset": 10789,
-                        "endColumn": 105,
-                        "endOffset": 10890
+                        "startOffset": 9798,
+                        "endColumn": 67,
+                        "endOffset": 9861
                     }
                 }
             },
@@ -861,18 +557,18 @@
                 "to": {
                     "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 10895,
-                    "endColumn": 106,
-                    "endOffset": 10997
+                    "startOffset": 9866,
+                    "endColumn": 65,
+                    "endOffset": 9927
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 58,
                         "startColumn": 4,
-                        "startOffset": 10895,
-                        "endColumn": 106,
-                        "endOffset": 10997
+                        "startOffset": 9866,
+                        "endColumn": 65,
+                        "endOffset": 9927
                     }
                 }
             },
@@ -880,18 +576,18 @@
                 "to": {
                     "startLine": 59,
                     "startColumn": 4,
-                    "startOffset": 11002,
-                    "endColumn": 101,
-                    "endOffset": 11099
+                    "startOffset": 9932,
+                    "endColumn": 64,
+                    "endOffset": 9992
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 59,
                         "startColumn": 4,
-                        "startOffset": 11002,
-                        "endColumn": 101,
-                        "endOffset": 11099
+                        "startOffset": 9932,
+                        "endColumn": 64,
+                        "endOffset": 9992
                     }
                 }
             },
@@ -899,18 +595,18 @@
                 "to": {
                     "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 11104,
-                    "endColumn": 107,
-                    "endOffset": 11207
+                    "startOffset": 9997,
+                    "endColumn": 53,
+                    "endOffset": 10046
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 60,
                         "startColumn": 4,
-                        "startOffset": 11104,
-                        "endColumn": 107,
-                        "endOffset": 11207
+                        "startOffset": 9997,
+                        "endColumn": 53,
+                        "endOffset": 10046
                     }
                 }
             },
@@ -918,18 +614,18 @@
                 "to": {
                     "startLine": 61,
                     "startColumn": 4,
-                    "startOffset": 11212,
-                    "endColumn": 106,
-                    "endOffset": 11314
+                    "startOffset": 10051,
+                    "endColumn": 55,
+                    "endOffset": 10102
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 61,
                         "startColumn": 4,
-                        "startOffset": 11212,
-                        "endColumn": 106,
-                        "endOffset": 11314
+                        "startOffset": 10051,
+                        "endColumn": 55,
+                        "endOffset": 10102
                     }
                 }
             },
@@ -937,18 +633,18 @@
                 "to": {
                     "startLine": 62,
                     "startColumn": 4,
-                    "startOffset": 11319,
-                    "endColumn": 106,
-                    "endOffset": 11421
+                    "startOffset": 10107,
+                    "endColumn": 38,
+                    "endOffset": 10141
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 62,
                         "startColumn": 4,
-                        "startOffset": 11319,
-                        "endColumn": 106,
-                        "endOffset": 11421
+                        "startOffset": 10107,
+                        "endColumn": 38,
+                        "endOffset": 10141
                     }
                 }
             },
@@ -956,18 +652,18 @@
                 "to": {
                     "startLine": 63,
                     "startColumn": 4,
-                    "startOffset": 11426,
-                    "endColumn": 178,
-                    "endOffset": 11600
+                    "startOffset": 10146,
+                    "endColumn": 51,
+                    "endOffset": 10193
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 63,
                         "startColumn": 4,
-                        "startOffset": 11426,
-                        "endColumn": 178,
-                        "endOffset": 11600
+                        "startOffset": 10146,
+                        "endColumn": 51,
+                        "endOffset": 10193
                     }
                 }
             },
@@ -975,20 +671,75 @@
                 "to": {
                     "startLine": 64,
                     "startColumn": 4,
-                    "startOffset": 11605,
-                    "endLine": 67,
-                    "endColumn": 12,
-                    "endOffset": 11809
+                    "startOffset": 10198,
+                    "endColumn": 53,
+                    "endOffset": 10247
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 64,
                         "startColumn": 4,
-                        "startOffset": 11605,
-                        "endLine": 67,
-                        "endColumn": 12,
-                        "endOffset": 11809
+                        "startOffset": 10198,
+                        "endColumn": 53,
+                        "endOffset": 10247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 10252,
+                    "endColumn": 36,
+                    "endOffset": 10284
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 65,
+                        "startColumn": 4,
+                        "startOffset": 10252,
+                        "endColumn": 36,
+                        "endOffset": 10284
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 10289,
+                    "endColumn": 55,
+                    "endOffset": 10340
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 10289,
+                        "endColumn": 55,
+                        "endOffset": 10340
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 10345,
+                    "endColumn": 106,
+                    "endOffset": 10447
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 10345,
+                        "endColumn": 106,
+                        "endOffset": 10447
                     }
                 }
             },
@@ -996,20 +747,56 @@
                 "to": {
                     "startLine": 68,
                     "startColumn": 4,
-                    "startOffset": 11814,
-                    "endLine": 70,
-                    "endColumn": 12,
-                    "endOffset": 11955
+                    "startOffset": 10452,
+                    "endColumn": 102,
+                    "endOffset": 10550
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 68,
                         "startColumn": 4,
-                        "startOffset": 11814,
-                        "endLine": 70,
-                        "endColumn": 12,
-                        "endOffset": 11955
+                        "startOffset": 10452,
+                        "endColumn": 102,
+                        "endOffset": 10550
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 69,
+                    "startColumn": 4,
+                    "startOffset": 10555,
+                    "endColumn": 110,
+                    "endOffset": 10661
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 10555,
+                        "endColumn": 110,
+                        "endOffset": 10661
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 10666,
+                    "endColumn": 86,
+                    "endOffset": 10748
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 10666,
+                        "endColumn": 86,
+                        "endOffset": 10748
                     }
                 }
             },
@@ -1017,18 +804,18 @@
                 "to": {
                     "startLine": 71,
                     "startColumn": 4,
-                    "startOffset": 11960,
-                    "endColumn": 80,
-                    "endOffset": 12036
+                    "startOffset": 10753,
+                    "endColumn": 105,
+                    "endOffset": 10854
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 71,
                         "startColumn": 4,
-                        "startOffset": 11960,
-                        "endColumn": 80,
-                        "endOffset": 12036
+                        "startOffset": 10753,
+                        "endColumn": 105,
+                        "endOffset": 10854
                     }
                 }
             },
@@ -1036,20 +823,56 @@
                 "to": {
                     "startLine": 72,
                     "startColumn": 4,
-                    "startOffset": 12041,
-                    "endLine": 74,
-                    "endColumn": 12,
-                    "endOffset": 12194
+                    "startOffset": 10859,
+                    "endColumn": 125,
+                    "endOffset": 10980
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 72,
                         "startColumn": 4,
-                        "startOffset": 12041,
-                        "endLine": 74,
-                        "endColumn": 12,
-                        "endOffset": 12194
+                        "startOffset": 10859,
+                        "endColumn": 125,
+                        "endOffset": 10980
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 73,
+                    "startColumn": 4,
+                    "startOffset": 10985,
+                    "endColumn": 105,
+                    "endOffset": 11086
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 4,
+                        "startOffset": 10985,
+                        "endColumn": 105,
+                        "endOffset": 11086
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 11091,
+                    "endColumn": 106,
+                    "endOffset": 11193
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 11091,
+                        "endColumn": 106,
+                        "endOffset": 11193
                     }
                 }
             },
@@ -1057,20 +880,115 @@
                 "to": {
                     "startLine": 75,
                     "startColumn": 4,
-                    "startOffset": 12199,
-                    "endLine": 83,
-                    "endColumn": 12,
-                    "endOffset": 12677
+                    "startOffset": 11198,
+                    "endColumn": 101,
+                    "endOffset": 11295
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 75,
                         "startColumn": 4,
-                        "startOffset": 12199,
+                        "startOffset": 11198,
+                        "endColumn": 101,
+                        "endOffset": 11295
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 11300,
+                    "endColumn": 107,
+                    "endOffset": 11403
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 76,
+                        "startColumn": 4,
+                        "startOffset": 11300,
+                        "endColumn": 107,
+                        "endOffset": 11403
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 11408,
+                    "endColumn": 106,
+                    "endOffset": 11510
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 11408,
+                        "endColumn": 106,
+                        "endOffset": 11510
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 11515,
+                    "endColumn": 106,
+                    "endOffset": 11617
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 78,
+                        "startColumn": 4,
+                        "startOffset": 11515,
+                        "endColumn": 106,
+                        "endOffset": 11617
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 11622,
+                    "endColumn": 178,
+                    "endOffset": 11796
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 11622,
+                        "endColumn": 178,
+                        "endOffset": 11796
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 11801,
+                    "endLine": 83,
+                    "endColumn": 12,
+                    "endOffset": 12005
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 80,
+                        "startColumn": 4,
+                        "startOffset": 11801,
                         "endLine": 83,
                         "endColumn": 12,
-                        "endOffset": 12677
+                        "endOffset": 12005
                     }
                 }
             },
@@ -1078,283 +996,226 @@
                 "to": {
                     "startLine": 84,
                     "startColumn": 4,
-                    "startOffset": 12682,
-                    "endLine": 88,
+                    "startOffset": 12010,
+                    "endLine": 86,
                     "endColumn": 12,
-                    "endOffset": 12951
+                    "endOffset": 12151
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 84,
                         "startColumn": 4,
-                        "startOffset": 12682,
-                        "endLine": 88,
+                        "startOffset": 12010,
+                        "endLine": 86,
                         "endColumn": 12,
-                        "endOffset": 12951
+                        "endOffset": 12151
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 89,
+                    "startLine": 87,
                     "startColumn": 4,
-                    "startOffset": 12956,
-                    "endLine": 96,
-                    "endColumn": 12,
-                    "endOffset": 13418
+                    "startOffset": 12156,
+                    "endColumn": 80,
+                    "endOffset": 12232
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 89,
+                        "startLine": 87,
                         "startColumn": 4,
-                        "startOffset": 12956,
-                        "endLine": 96,
-                        "endColumn": 12,
-                        "endOffset": 13418
+                        "startOffset": 12156,
+                        "endColumn": 80,
+                        "endOffset": 12232
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 97,
+                    "startLine": 88,
                     "startColumn": 4,
-                    "startOffset": 13423,
-                    "endLine": 103,
+                    "startOffset": 12237,
+                    "endLine": 90,
                     "endColumn": 12,
-                    "endOffset": 13778
+                    "endOffset": 12390
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 97,
+                        "startLine": 88,
                         "startColumn": 4,
-                        "startOffset": 13423,
-                        "endLine": 103,
+                        "startOffset": 12237,
+                        "endLine": 90,
                         "endColumn": 12,
-                        "endOffset": 13778
+                        "endOffset": 12390
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 104,
+                    "startLine": 91,
                     "startColumn": 4,
-                    "startOffset": 13783,
-                    "endLine": 107,
+                    "startOffset": 12395,
+                    "endLine": 99,
                     "endColumn": 12,
-                    "endOffset": 14045
+                    "endOffset": 12873
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 104,
+                        "startLine": 91,
                         "startColumn": 4,
-                        "startOffset": 13783,
-                        "endLine": 107,
+                        "startOffset": 12395,
+                        "endLine": 99,
                         "endColumn": 12,
-                        "endOffset": 14045
+                        "endOffset": 12873
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 108,
+                    "startLine": 100,
                     "startColumn": 4,
-                    "startOffset": 14050,
-                    "endLine": 117,
+                    "startOffset": 12878,
+                    "endLine": 104,
                     "endColumn": 12,
-                    "endOffset": 14679
+                    "endOffset": 13147
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 108,
+                        "startLine": 100,
                         "startColumn": 4,
-                        "startOffset": 14050,
-                        "endLine": 117,
+                        "startOffset": 12878,
+                        "endLine": 104,
                         "endColumn": 12,
-                        "endOffset": 14679
+                        "endOffset": 13147
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 118,
+                    "startLine": 105,
                     "startColumn": 4,
-                    "startOffset": 14684,
-                    "endLine": 128,
+                    "startOffset": 13152,
+                    "endLine": 112,
                     "endColumn": 12,
-                    "endOffset": 15368
+                    "endOffset": 13614
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 118,
+                        "startLine": 105,
                         "startColumn": 4,
-                        "startOffset": 14684,
-                        "endLine": 128,
+                        "startOffset": 13152,
+                        "endLine": 112,
                         "endColumn": 12,
-                        "endOffset": 15368
+                        "endOffset": 13614
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 129,
+                    "startLine": 113,
                     "startColumn": 4,
-                    "startOffset": 15373,
+                    "startOffset": 13619,
+                    "endLine": 119,
+                    "endColumn": 12,
+                    "endOffset": 13974
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 113,
+                        "startColumn": 4,
+                        "startOffset": 13619,
+                        "endLine": 119,
+                        "endColumn": 12,
+                        "endOffset": 13974
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 120,
+                    "startColumn": 4,
+                    "startOffset": 13979,
+                    "endLine": 123,
+                    "endColumn": 12,
+                    "endOffset": 14241
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 120,
+                        "startColumn": 4,
+                        "startOffset": 13979,
+                        "endLine": 123,
+                        "endColumn": 12,
+                        "endOffset": 14241
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 124,
+                    "startColumn": 4,
+                    "startOffset": 14246,
+                    "endLine": 133,
+                    "endColumn": 12,
+                    "endOffset": 14875
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 124,
+                        "startColumn": 4,
+                        "startOffset": 14246,
+                        "endLine": 133,
+                        "endColumn": 12,
+                        "endOffset": 14875
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 134,
+                    "startColumn": 4,
+                    "startOffset": 14880,
+                    "endLine": 144,
+                    "endColumn": 12,
+                    "endOffset": 15564
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 134,
+                        "startColumn": 4,
+                        "startOffset": 14880,
+                        "endLine": 144,
+                        "endColumn": 12,
+                        "endOffset": 15564
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 145,
+                    "startColumn": 4,
+                    "startOffset": 15569,
                     "endColumn": 82,
-                    "endOffset": 15451
+                    "endOffset": 15647
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 129,
+                        "startLine": 145,
                         "startColumn": 4,
-                        "startOffset": 15373,
+                        "startOffset": 15569,
                         "endColumn": 82,
-                        "endOffset": 15451
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 130,
-                    "startColumn": 4,
-                    "startOffset": 15456,
-                    "endColumn": 108,
-                    "endOffset": 15560
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 130,
-                        "startColumn": 4,
-                        "startOffset": 15456,
-                        "endColumn": 108,
-                        "endOffset": 15560
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 131,
-                    "startColumn": 4,
-                    "startOffset": 15565,
-                    "endLine": 134,
-                    "endColumn": 12,
-                    "endOffset": 15773
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 131,
-                        "startColumn": 4,
-                        "startOffset": 15565,
-                        "endLine": 134,
-                        "endColumn": 12,
-                        "endOffset": 15773
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 135,
-                    "startColumn": 4,
-                    "startOffset": 15778,
-                    "endLine": 137,
-                    "endColumn": 12,
-                    "endOffset": 15904
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 135,
-                        "startColumn": 4,
-                        "startOffset": 15778,
-                        "endLine": 137,
-                        "endColumn": 12,
-                        "endOffset": 15904
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 138,
-                    "startColumn": 4,
-                    "startOffset": 15909,
-                    "endColumn": 94,
-                    "endOffset": 15999
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 138,
-                        "startColumn": 4,
-                        "startOffset": 15909,
-                        "endColumn": 94,
-                        "endOffset": 15999
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 139,
-                    "startColumn": 4,
-                    "startOffset": 16004,
-                    "endColumn": 128,
-                    "endOffset": 16128
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 139,
-                        "startColumn": 4,
-                        "startOffset": 16004,
-                        "endColumn": 128,
-                        "endOffset": 16128
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 140,
-                    "startColumn": 4,
-                    "startOffset": 16133,
-                    "endColumn": 128,
-                    "endOffset": 16257
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 140,
-                        "startColumn": 4,
-                        "startOffset": 16133,
-                        "endColumn": 128,
-                        "endOffset": 16257
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 141,
-                    "startColumn": 4,
-                    "startOffset": 16262,
-                    "endLine": 145,
-                    "endColumn": 12,
-                    "endOffset": 16534
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 141,
-                        "startColumn": 4,
-                        "startOffset": 16262,
-                        "endLine": 145,
-                        "endColumn": 12,
-                        "endOffset": 16534
+                        "endOffset": 15647
                     }
                 }
             },
@@ -1362,60 +1223,60 @@
                 "to": {
                     "startLine": 146,
                     "startColumn": 4,
-                    "startOffset": 16539,
-                    "endLine": 149,
-                    "endColumn": 12,
-                    "endOffset": 16741
+                    "startOffset": 15652,
+                    "endColumn": 108,
+                    "endOffset": 15756
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 146,
                         "startColumn": 4,
-                        "startOffset": 16539,
-                        "endLine": 149,
-                        "endColumn": 12,
-                        "endOffset": 16741
+                        "startOffset": 15652,
+                        "endColumn": 108,
+                        "endOffset": 15756
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 150,
+                    "startLine": 147,
                     "startColumn": 4,
-                    "startOffset": 16746,
-                    "endLine": 152,
+                    "startOffset": 15761,
+                    "endLine": 150,
                     "endColumn": 12,
-                    "endOffset": 16866
+                    "endOffset": 15969
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 150,
+                        "startLine": 147,
                         "startColumn": 4,
-                        "startOffset": 16746,
-                        "endLine": 152,
+                        "startOffset": 15761,
+                        "endLine": 150,
                         "endColumn": 12,
-                        "endOffset": 16866
+                        "endOffset": 15969
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 153,
+                    "startLine": 151,
                     "startColumn": 4,
-                    "startOffset": 16871,
-                    "endColumn": 90,
-                    "endOffset": 16957
+                    "startOffset": 15974,
+                    "endLine": 153,
+                    "endColumn": 12,
+                    "endOffset": 16100
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 153,
+                        "startLine": 151,
                         "startColumn": 4,
-                        "startOffset": 16871,
-                        "endColumn": 90,
-                        "endOffset": 16957
+                        "startOffset": 15974,
+                        "endLine": 153,
+                        "endColumn": 12,
+                        "endOffset": 16100
                     }
                 }
             },
@@ -1423,104 +1284,159 @@
                 "to": {
                     "startLine": 154,
                     "startColumn": 4,
-                    "startOffset": 16962,
-                    "endLine": 159,
-                    "endColumn": 12,
-                    "endOffset": 17312
+                    "startOffset": 16105,
+                    "endColumn": 94,
+                    "endOffset": 16195
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 154,
                         "startColumn": 4,
-                        "startOffset": 16962,
-                        "endLine": 159,
-                        "endColumn": 12,
-                        "endOffset": 17312
+                        "startOffset": 16105,
+                        "endColumn": 94,
+                        "endOffset": 16195
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 160,
+                    "startLine": 155,
                     "startColumn": 4,
-                    "startOffset": 17317,
-                    "endLine": 163,
-                    "endColumn": 12,
-                    "endOffset": 17576
+                    "startOffset": 16200,
+                    "endColumn": 128,
+                    "endOffset": 16324
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 160,
+                        "startLine": 155,
                         "startColumn": 4,
-                        "startOffset": 17317,
-                        "endLine": 163,
-                        "endColumn": 12,
-                        "endOffset": 17576
+                        "startOffset": 16200,
+                        "endColumn": 128,
+                        "endOffset": 16324
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 164,
+                    "startLine": 156,
                     "startColumn": 4,
-                    "startOffset": 17581,
-                    "endLine": 167,
-                    "endColumn": 12,
-                    "endOffset": 17853
+                    "startOffset": 16329,
+                    "endColumn": 128,
+                    "endOffset": 16453
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 164,
+                        "startLine": 156,
                         "startColumn": 4,
-                        "startOffset": 17581,
-                        "endLine": 167,
-                        "endColumn": 12,
-                        "endOffset": 17853
+                        "startOffset": 16329,
+                        "endColumn": 128,
+                        "endOffset": 16453
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 168,
+                    "startLine": 157,
                     "startColumn": 4,
-                    "startOffset": 17858,
-                    "endLine": 171,
+                    "startOffset": 16458,
+                    "endLine": 161,
                     "endColumn": 12,
-                    "endOffset": 18109
+                    "endOffset": 16730
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 168,
+                        "startLine": 157,
                         "startColumn": 4,
-                        "startOffset": 17858,
-                        "endLine": 171,
+                        "startOffset": 16458,
+                        "endLine": 161,
                         "endColumn": 12,
-                        "endOffset": 18109
+                        "endOffset": 16730
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 172,
+                    "startLine": 162,
                     "startColumn": 4,
-                    "startOffset": 18114,
+                    "startOffset": 16735,
+                    "endLine": 165,
+                    "endColumn": 12,
+                    "endOffset": 16937
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 162,
+                        "startColumn": 4,
+                        "startOffset": 16735,
+                        "endLine": 165,
+                        "endColumn": 12,
+                        "endOffset": 16937
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 166,
+                    "startColumn": 4,
+                    "startOffset": 16942,
+                    "endLine": 168,
+                    "endColumn": 12,
+                    "endOffset": 17062
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 166,
+                        "startColumn": 4,
+                        "startOffset": 16942,
+                        "endLine": 168,
+                        "endColumn": 12,
+                        "endOffset": 17062
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 169,
+                    "startColumn": 4,
+                    "startOffset": 17067,
+                    "endColumn": 90,
+                    "endOffset": 17153
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 169,
+                        "startColumn": 4,
+                        "startOffset": 17067,
+                        "endColumn": 90,
+                        "endOffset": 17153
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 170,
+                    "startColumn": 4,
+                    "startOffset": 17158,
                     "endLine": 175,
                     "endColumn": 12,
-                    "endOffset": 18380
+                    "endOffset": 17508
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 172,
+                        "startLine": 170,
                         "startColumn": 4,
-                        "startOffset": 18114,
+                        "startOffset": 17158,
                         "endLine": 175,
                         "endColumn": 12,
-                        "endOffset": 18380
+                        "endOffset": 17508
                     }
                 }
             },
@@ -1528,20 +1444,20 @@
                 "to": {
                     "startLine": 176,
                     "startColumn": 4,
-                    "startOffset": 18385,
+                    "startOffset": 17513,
                     "endLine": 179,
                     "endColumn": 12,
-                    "endOffset": 18645
+                    "endOffset": 17772
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 176,
                         "startColumn": 4,
-                        "startOffset": 18385,
+                        "startOffset": 17513,
                         "endLine": 179,
                         "endColumn": 12,
-                        "endOffset": 18645
+                        "endOffset": 17772
                     }
                 }
             },
@@ -1549,20 +1465,20 @@
                 "to": {
                     "startLine": 180,
                     "startColumn": 4,
-                    "startOffset": 18650,
+                    "startOffset": 17777,
                     "endLine": 183,
                     "endColumn": 12,
-                    "endOffset": 18923
+                    "endOffset": 18049
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 180,
                         "startColumn": 4,
-                        "startOffset": 18650,
+                        "startOffset": 17777,
                         "endLine": 183,
                         "endColumn": 12,
-                        "endOffset": 18923
+                        "endOffset": 18049
                     }
                 }
             },
@@ -1570,20 +1486,20 @@
                 "to": {
                     "startLine": 184,
                     "startColumn": 4,
-                    "startOffset": 18928,
+                    "startOffset": 18054,
                     "endLine": 187,
                     "endColumn": 12,
-                    "endOffset": 19180
+                    "endOffset": 18305
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 184,
                         "startColumn": 4,
-                        "startOffset": 18928,
+                        "startOffset": 18054,
                         "endLine": 187,
                         "endColumn": 12,
-                        "endOffset": 19180
+                        "endOffset": 18305
                     }
                 }
             },
@@ -1591,20 +1507,20 @@
                 "to": {
                     "startLine": 188,
                     "startColumn": 4,
-                    "startOffset": 19185,
+                    "startOffset": 18310,
                     "endLine": 191,
                     "endColumn": 12,
-                    "endOffset": 19452
+                    "endOffset": 18576
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 188,
                         "startColumn": 4,
-                        "startOffset": 19185,
+                        "startOffset": 18310,
                         "endLine": 191,
                         "endColumn": 12,
-                        "endOffset": 19452
+                        "endOffset": 18576
                     }
                 }
             },
@@ -1612,20 +1528,20 @@
                 "to": {
                     "startLine": 192,
                     "startColumn": 4,
-                    "startOffset": 19457,
+                    "startOffset": 18581,
                     "endLine": 195,
                     "endColumn": 12,
-                    "endOffset": 19658
+                    "endOffset": 18841
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 192,
                         "startColumn": 4,
-                        "startOffset": 19457,
+                        "startOffset": 18581,
                         "endLine": 195,
                         "endColumn": 12,
-                        "endOffset": 19658
+                        "endOffset": 18841
                     }
                 }
             },
@@ -1633,41 +1549,41 @@
                 "to": {
                     "startLine": 196,
                     "startColumn": 4,
-                    "startOffset": 19663,
-                    "endLine": 200,
+                    "startOffset": 18846,
+                    "endLine": 199,
                     "endColumn": 12,
-                    "endOffset": 19928
+                    "endOffset": 19119
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 196,
                         "startColumn": 4,
-                        "startOffset": 19663,
-                        "endLine": 200,
+                        "startOffset": 18846,
+                        "endLine": 199,
                         "endColumn": 12,
-                        "endOffset": 19928
+                        "endOffset": 19119
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 201,
+                    "startLine": 200,
                     "startColumn": 4,
-                    "startOffset": 19933,
+                    "startOffset": 19124,
                     "endLine": 203,
                     "endColumn": 12,
-                    "endOffset": 20086
+                    "endOffset": 19376
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 201,
+                        "startLine": 200,
                         "startColumn": 4,
-                        "startOffset": 19933,
+                        "startOffset": 19124,
                         "endLine": 203,
                         "endColumn": 12,
-                        "endOffset": 20086
+                        "endOffset": 19376
                     }
                 }
             },
@@ -1675,312 +1591,354 @@
                 "to": {
                     "startLine": 204,
                     "startColumn": 4,
-                    "startOffset": 20091,
-                    "endLine": 206,
+                    "startOffset": 19381,
+                    "endLine": 207,
                     "endColumn": 12,
-                    "endOffset": 20215
+                    "endOffset": 19648
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 204,
                         "startColumn": 4,
-                        "startOffset": 20091,
-                        "endLine": 206,
+                        "startOffset": 19381,
+                        "endLine": 207,
                         "endColumn": 12,
-                        "endOffset": 20215
+                        "endOffset": 19648
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 207,
+                    "startLine": 208,
                     "startColumn": 4,
-                    "startOffset": 20220,
-                    "endLine": 209,
+                    "startOffset": 19653,
+                    "endLine": 211,
                     "endColumn": 12,
-                    "endOffset": 20344
+                    "endOffset": 19854
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 207,
+                        "startLine": 208,
                         "startColumn": 4,
-                        "startOffset": 20220,
-                        "endLine": 209,
+                        "startOffset": 19653,
+                        "endLine": 211,
                         "endColumn": 12,
-                        "endOffset": 20344
+                        "endOffset": 19854
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 210,
+                    "startLine": 212,
                     "startColumn": 4,
-                    "startOffset": 20349,
-                    "endLine": 214,
+                    "startOffset": 19859,
+                    "endLine": 216,
                     "endColumn": 12,
-                    "endOffset": 20611
+                    "endOffset": 20124
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 210,
+                        "startLine": 212,
                         "startColumn": 4,
-                        "startOffset": 20349,
-                        "endLine": 214,
+                        "startOffset": 19859,
+                        "endLine": 216,
                         "endColumn": 12,
-                        "endOffset": 20611
+                        "endOffset": 20124
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 215,
+                    "startLine": 217,
                     "startColumn": 4,
-                    "startOffset": 20616,
-                    "endLine": 305,
+                    "startOffset": 20129,
+                    "endLine": 219,
                     "endColumn": 12,
-                    "endOffset": 25918
+                    "endOffset": 20282
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 215,
+                        "startLine": 217,
                         "startColumn": 4,
-                        "startOffset": 20616,
-                        "endLine": 305,
+                        "startOffset": 20129,
+                        "endLine": 219,
                         "endColumn": 12,
-                        "endOffset": 25918
+                        "endOffset": 20282
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 306,
+                    "startLine": 220,
                     "startColumn": 4,
-                    "startOffset": 25923,
-                    "endLine": 406,
+                    "startOffset": 20287,
+                    "endLine": 222,
                     "endColumn": 12,
-                    "endOffset": 31553
+                    "endOffset": 20411
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 306,
+                        "startLine": 220,
                         "startColumn": 4,
-                        "startOffset": 25923,
-                        "endLine": 406,
+                        "startOffset": 20287,
+                        "endLine": 222,
                         "endColumn": 12,
-                        "endOffset": 31553
+                        "endOffset": 20411
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 407,
+                    "startLine": 223,
                     "startColumn": 4,
-                    "startOffset": 31558,
-                    "endLine": 447,
+                    "startOffset": 20416,
+                    "endLine": 225,
                     "endColumn": 12,
-                    "endOffset": 34494
+                    "endOffset": 20540
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 407,
+                        "startLine": 223,
                         "startColumn": 4,
-                        "startOffset": 31558,
-                        "endLine": 447,
+                        "startOffset": 20416,
+                        "endLine": 225,
                         "endColumn": 12,
-                        "endOffset": 34494
+                        "endOffset": 20540
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 448,
+                    "startLine": 226,
                     "startColumn": 4,
-                    "startOffset": 34499,
-                    "endLine": 451,
+                    "startOffset": 20545,
+                    "endLine": 230,
                     "endColumn": 12,
-                    "endOffset": 34656
+                    "endOffset": 20807
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 448,
+                        "startLine": 226,
                         "startColumn": 4,
-                        "startOffset": 34499,
-                        "endLine": 451,
+                        "startOffset": 20545,
+                        "endLine": 230,
                         "endColumn": 12,
-                        "endOffset": 34656
+                        "endOffset": 20807
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 452,
+                    "startLine": 231,
                     "startColumn": 4,
-                    "startOffset": 34661,
-                    "endLine": 455,
+                    "startOffset": 20812,
+                    "endLine": 321,
                     "endColumn": 12,
-                    "endOffset": 34812
+                    "endOffset": 26114
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 452,
+                        "startLine": 231,
                         "startColumn": 4,
-                        "startOffset": 34661,
-                        "endLine": 455,
+                        "startOffset": 20812,
+                        "endLine": 321,
                         "endColumn": 12,
-                        "endOffset": 34812
+                        "endOffset": 26114
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 456,
+                    "startLine": 322,
                     "startColumn": 4,
-                    "startOffset": 34817,
+                    "startOffset": 26119,
+                    "endLine": 422,
+                    "endColumn": 12,
+                    "endOffset": 31749
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 322,
+                        "startColumn": 4,
+                        "startOffset": 26119,
+                        "endLine": 422,
+                        "endColumn": 12,
+                        "endOffset": 31749
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 423,
+                    "startColumn": 4,
+                    "startOffset": 31754,
+                    "endLine": 463,
+                    "endColumn": 12,
+                    "endOffset": 34690
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 423,
+                        "startColumn": 4,
+                        "startOffset": 31754,
+                        "endLine": 463,
+                        "endColumn": 12,
+                        "endOffset": 34690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 464,
+                    "startColumn": 4,
+                    "startOffset": 34695,
+                    "endLine": 467,
+                    "endColumn": 12,
+                    "endOffset": 34852
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 464,
+                        "startColumn": 4,
+                        "startOffset": 34695,
+                        "endLine": 467,
+                        "endColumn": 12,
+                        "endOffset": 34852
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 468,
+                    "startColumn": 4,
+                    "startOffset": 34857,
+                    "endLine": 471,
+                    "endColumn": 12,
+                    "endOffset": 35008
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 468,
+                        "startColumn": 4,
+                        "startOffset": 34857,
+                        "endLine": 471,
+                        "endColumn": 12,
+                        "endOffset": 35008
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 472,
+                    "startColumn": 4,
+                    "startOffset": 35013,
                     "endColumn": 26,
-                    "endOffset": 34839
+                    "endOffset": 35035
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 456,
+                        "startLine": 472,
                         "startColumn": 4,
-                        "startOffset": 34817,
+                        "startOffset": 35013,
                         "endColumn": 26,
-                        "endOffset": 34839
+                        "endOffset": 35035
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 457,
+                    "startLine": 473,
                     "startColumn": 4,
-                    "startOffset": 34844,
-                    "endLine": 469,
+                    "startOffset": 35040,
+                    "endLine": 485,
                     "endColumn": 12,
-                    "endOffset": 35744
+                    "endOffset": 35940
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 457,
+                        "startLine": 473,
                         "startColumn": 4,
-                        "startOffset": 34844,
-                        "endLine": 469,
+                        "startOffset": 35040,
+                        "endLine": 485,
                         "endColumn": 12,
-                        "endOffset": 35744
+                        "endOffset": 35940
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 470,
+                    "startLine": 486,
                     "startColumn": 4,
-                    "startOffset": 35749,
-                    "endLine": 482,
+                    "startOffset": 35945,
+                    "endLine": 498,
                     "endColumn": 12,
-                    "endOffset": 36637
+                    "endOffset": 36833
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 470,
+                        "startLine": 486,
                         "startColumn": 4,
-                        "startOffset": 35749,
-                        "endLine": 482,
+                        "startOffset": 35945,
+                        "endLine": 498,
                         "endColumn": 12,
-                        "endOffset": 36637
+                        "endOffset": 36833
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 483,
+                    "startLine": 499,
                     "startColumn": 4,
-                    "startOffset": 36642,
-                    "endLine": 487,
+                    "startOffset": 36838,
+                    "endLine": 503,
                     "endColumn": 12,
-                    "endOffset": 36898
+                    "endOffset": 37094
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 483,
+                        "startLine": 499,
                         "startColumn": 4,
-                        "startOffset": 36642,
-                        "endLine": 487,
+                        "startOffset": 36838,
+                        "endLine": 503,
                         "endColumn": 12,
-                        "endOffset": 36898
+                        "endOffset": 37094
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 488,
+                    "startLine": 504,
                     "startColumn": 4,
-                    "startOffset": 36903,
-                    "endLine": 496,
-                    "endColumn": 12,
-                    "endOffset": 37361
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 488,
-                        "startColumn": 4,
-                        "startOffset": 36903,
-                        "endLine": 496,
-                        "endColumn": 12,
-                        "endOffset": 37361
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 497,
-                    "startColumn": 4,
-                    "startOffset": 37366,
-                    "endLine": 502,
-                    "endColumn": 12,
-                    "endOffset": 37698
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 497,
-                        "startColumn": 4,
-                        "startOffset": 37366,
-                        "endLine": 502,
-                        "endColumn": 12,
-                        "endOffset": 37698
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 503,
-                    "startColumn": 4,
-                    "startOffset": 37703,
+                    "startOffset": 37099,
                     "endLine": 512,
                     "endColumn": 12,
-                    "endOffset": 38213
+                    "endOffset": 37557
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 503,
+                        "startLine": 504,
                         "startColumn": 4,
-                        "startOffset": 37703,
+                        "startOffset": 37099,
                         "endLine": 512,
                         "endColumn": 12,
-                        "endOffset": 38213
+                        "endOffset": 37557
                     }
                 }
             },
@@ -1988,203 +1946,205 @@
                 "to": {
                     "startLine": 513,
                     "startColumn": 4,
-                    "startOffset": 38218,
-                    "endLine": 515,
+                    "startOffset": 37562,
+                    "endLine": 518,
                     "endColumn": 12,
-                    "endOffset": 38369
+                    "endOffset": 37894
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 513,
                         "startColumn": 4,
-                        "startOffset": 38218,
-                        "endLine": 515,
+                        "startOffset": 37562,
+                        "endLine": 518,
                         "endColumn": 12,
-                        "endOffset": 38369
+                        "endOffset": 37894
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 516,
+                    "startLine": 519,
                     "startColumn": 4,
-                    "startOffset": 38374,
-                    "endLine": 520,
+                    "startOffset": 37899,
+                    "endLine": 528,
                     "endColumn": 12,
-                    "endOffset": 38703
+                    "endOffset": 38409
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 516,
+                        "startLine": 519,
                         "startColumn": 4,
-                        "startOffset": 38374,
-                        "endLine": 520,
+                        "startOffset": 37899,
+                        "endLine": 528,
                         "endColumn": 12,
-                        "endOffset": 38703
+                        "endOffset": 38409
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 521,
+                    "startLine": 529,
                     "startColumn": 4,
-                    "startOffset": 38708,
-                    "endLine": 525,
+                    "startOffset": 38414,
+                    "endLine": 531,
                     "endColumn": 12,
-                    "endOffset": 39011
+                    "endOffset": 38565
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 521,
+                        "startLine": 529,
                         "startColumn": 4,
-                        "startOffset": 38708,
-                        "endLine": 525,
+                        "startOffset": 38414,
+                        "endLine": 531,
                         "endColumn": 12,
-                        "endOffset": 39011
+                        "endOffset": 38565
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 526,
+                    "startLine": 532,
                     "startColumn": 4,
-                    "startOffset": 39016,
+                    "startOffset": 38570,
+                    "endLine": 536,
+                    "endColumn": 12,
+                    "endOffset": 38899
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 532,
+                        "startColumn": 4,
+                        "startOffset": 38570,
+                        "endLine": 536,
+                        "endColumn": 12,
+                        "endOffset": 38899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 537,
+                    "startColumn": 4,
+                    "startOffset": 38904,
+                    "endLine": 541,
+                    "endColumn": 12,
+                    "endOffset": 39207
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 537,
+                        "startColumn": 4,
+                        "startOffset": 38904,
+                        "endLine": 541,
+                        "endColumn": 12,
+                        "endOffset": 39207
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 542,
+                    "startColumn": 4,
+                    "startOffset": 39212,
                     "endColumn": 102,
-                    "endOffset": 39114
+                    "endOffset": 39310
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 526,
+                        "startLine": 542,
                         "startColumn": 4,
-                        "startOffset": 39016,
+                        "startOffset": 39212,
                         "endColumn": 102,
-                        "endOffset": 39114
+                        "endOffset": 39310
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 527,
+                    "startLine": 543,
                     "startColumn": 4,
-                    "startOffset": 39119,
-                    "endLine": 532,
+                    "startOffset": 39315,
+                    "endLine": 548,
                     "endColumn": 12,
-                    "endOffset": 39452
+                    "endOffset": 39648
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 527,
+                        "startLine": 543,
                         "startColumn": 4,
-                        "startOffset": 39119,
-                        "endLine": 532,
+                        "startOffset": 39315,
+                        "endLine": 548,
                         "endColumn": 12,
-                        "endOffset": 39452
+                        "endOffset": 39648
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 533,
+                    "startLine": 549,
                     "startColumn": 4,
-                    "startOffset": 39457,
+                    "startOffset": 39653,
                     "endColumn": 101,
-                    "endOffset": 39554
+                    "endOffset": 39750
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 533,
+                        "startLine": 549,
                         "startColumn": 4,
-                        "startOffset": 39457,
+                        "startOffset": 39653,
                         "endColumn": 101,
-                        "endOffset": 39554
+                        "endOffset": 39750
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 534,
+                    "startLine": 550,
                     "startColumn": 4,
-                    "startOffset": 39559,
-                    "endLine": 544,
+                    "startOffset": 39755,
+                    "endLine": 560,
                     "endColumn": 12,
-                    "endOffset": 40405
+                    "endOffset": 40601
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 534,
+                        "startLine": 550,
                         "startColumn": 4,
-                        "startOffset": 39559,
-                        "endLine": 544,
+                        "startOffset": 39755,
+                        "endLine": 560,
                         "endColumn": 12,
-                        "endOffset": 40405
+                        "endOffset": 40601
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 545,
+                    "startLine": 561,
                     "startColumn": 4,
-                    "startOffset": 40410,
-                    "endLine": 557,
+                    "startOffset": 40606,
+                    "endLine": 573,
                     "endColumn": 12,
-                    "endOffset": 41282
+                    "endOffset": 41478
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 545,
+                        "startLine": 561,
                         "startColumn": 4,
-                        "startOffset": 40410,
-                        "endLine": 557,
+                        "startOffset": 40606,
+                        "endLine": 573,
                         "endColumn": 12,
-                        "endOffset": 41282
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 558,
-                    "startColumn": 4,
-                    "startOffset": 41287,
-                    "endLine": 572,
-                    "endColumn": 12,
-                    "endOffset": 42209
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 558,
-                        "startColumn": 4,
-                        "startOffset": 41287,
-                        "endLine": 572,
-                        "endColumn": 12,
-                        "endOffset": 42209
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 573,
-                    "startColumn": 4,
-                    "startOffset": 42214,
-                    "endColumn": 100,
-                    "endOffset": 42310
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 573,
-                        "startColumn": 4,
-                        "startOffset": 42214,
-                        "endColumn": 100,
-                        "endOffset": 42310
+                        "endOffset": 41478
                     }
                 }
             },
@@ -2192,241 +2152,218 @@
                 "to": {
                     "startLine": 574,
                     "startColumn": 4,
-                    "startOffset": 42315,
-                    "endColumn": 66,
-                    "endOffset": 42377
+                    "startOffset": 41483,
+                    "endLine": 588,
+                    "endColumn": 12,
+                    "endOffset": 42405
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 574,
                         "startColumn": 4,
-                        "startOffset": 42315,
+                        "startOffset": 41483,
+                        "endLine": 588,
+                        "endColumn": 12,
+                        "endOffset": 42405
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 589,
+                    "startColumn": 4,
+                    "startOffset": 42410,
+                    "endColumn": 100,
+                    "endOffset": 42506
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 589,
+                        "startColumn": 4,
+                        "startOffset": 42410,
+                        "endColumn": 100,
+                        "endOffset": 42506
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 590,
+                    "startColumn": 4,
+                    "startOffset": 42511,
+                    "endColumn": 66,
+                    "endOffset": 42573
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 590,
+                        "startColumn": 4,
+                        "startOffset": 42511,
                         "endColumn": 66,
-                        "endOffset": 42377
+                        "endOffset": 42573
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 575,
+                    "startLine": 591,
                     "startColumn": 4,
-                    "startOffset": 42382,
+                    "startOffset": 42578,
                     "endColumn": 102,
-                    "endOffset": 42480
+                    "endOffset": 42676
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 575,
+                        "startLine": 591,
                         "startColumn": 4,
-                        "startOffset": 42382,
+                        "startOffset": 42578,
                         "endColumn": 102,
-                        "endOffset": 42480
+                        "endOffset": 42676
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 576,
+                    "startLine": 592,
                     "startColumn": 4,
-                    "startOffset": 42485,
-                    "endLine": 578,
+                    "startOffset": 42681,
+                    "endLine": 594,
                     "endColumn": 12,
-                    "endOffset": 42636
+                    "endOffset": 42832
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 576,
+                        "startLine": 592,
                         "startColumn": 4,
-                        "startOffset": 42485,
-                        "endLine": 578,
+                        "startOffset": 42681,
+                        "endLine": 594,
                         "endColumn": 12,
-                        "endOffset": 42636
+                        "endOffset": 42832
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 579,
+                    "startLine": 595,
                     "startColumn": 4,
-                    "startOffset": 42641,
+                    "startOffset": 42837,
                     "endColumn": 102,
-                    "endOffset": 42739
+                    "endOffset": 42935
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 579,
+                        "startLine": 595,
                         "startColumn": 4,
-                        "startOffset": 42641,
+                        "startOffset": 42837,
                         "endColumn": 102,
-                        "endOffset": 42739
+                        "endOffset": 42935
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 580,
+                    "startLine": 596,
                     "startColumn": 4,
-                    "startOffset": 42744,
+                    "startOffset": 42940,
                     "endColumn": 67,
-                    "endOffset": 42807
+                    "endOffset": 43003
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 580,
+                        "startLine": 596,
                         "startColumn": 4,
-                        "startOffset": 42744,
+                        "startOffset": 42940,
                         "endColumn": 67,
-                        "endOffset": 42807
+                        "endOffset": 43003
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 581,
+                    "startLine": 597,
                     "startColumn": 4,
-                    "startOffset": 42812,
+                    "startOffset": 43008,
                     "endColumn": 92,
-                    "endOffset": 42900
+                    "endOffset": 43096
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 581,
+                        "startLine": 597,
                         "startColumn": 4,
-                        "startOffset": 42812,
+                        "startOffset": 43008,
                         "endColumn": 92,
-                        "endOffset": 42900
+                        "endOffset": 43096
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 582,
+                    "startLine": 598,
                     "startColumn": 4,
-                    "startOffset": 42905,
-                    "endLine": 584,
+                    "startOffset": 43101,
+                    "endLine": 600,
                     "endColumn": 12,
-                    "endOffset": 43063
+                    "endOffset": 43259
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 582,
+                        "startLine": 598,
                         "startColumn": 4,
-                        "startOffset": 42905,
-                        "endLine": 584,
+                        "startOffset": 43101,
+                        "endLine": 600,
                         "endColumn": 12,
-                        "endOffset": 43063
+                        "endOffset": 43259
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 585,
+                    "startLine": 601,
                     "startColumn": 4,
-                    "startOffset": 43068,
-                    "endLine": 587,
+                    "startOffset": 43264,
+                    "endLine": 603,
                     "endColumn": 12,
-                    "endOffset": 43226
+                    "endOffset": 43422
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 585,
+                        "startLine": 601,
                         "startColumn": 4,
-                        "startOffset": 43068,
-                        "endLine": 587,
+                        "startOffset": 43264,
+                        "endLine": 603,
                         "endColumn": 12,
-                        "endOffset": 43226
+                        "endOffset": 43422
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 588,
+                    "startLine": 604,
                     "startColumn": 4,
-                    "startOffset": 43231,
-                    "endLine": 592,
-                    "endColumn": 12,
-                    "endOffset": 43538
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 588,
-                        "startColumn": 4,
-                        "startOffset": 43231,
-                        "endLine": 592,
-                        "endColumn": 12,
-                        "endOffset": 43538
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 593,
-                    "startColumn": 4,
-                    "startOffset": 43543,
-                    "endLine": 599,
-                    "endColumn": 12,
-                    "endOffset": 43898
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 593,
-                        "startColumn": 4,
-                        "startOffset": 43543,
-                        "endLine": 599,
-                        "endColumn": 12,
-                        "endOffset": 43898
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 600,
-                    "startColumn": 4,
-                    "startOffset": 43903,
-                    "endLine": 602,
-                    "endColumn": 12,
-                    "endOffset": 44104
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 600,
-                        "startColumn": 4,
-                        "startOffset": 43903,
-                        "endLine": 602,
-                        "endColumn": 12,
-                        "endOffset": 44104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 603,
-                    "startColumn": 4,
-                    "startOffset": 44109,
+                    "startOffset": 43427,
                     "endLine": 608,
                     "endColumn": 12,
-                    "endOffset": 44449
+                    "endOffset": 43734
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 603,
+                        "startLine": 604,
                         "startColumn": 4,
-                        "startOffset": 44109,
+                        "startOffset": 43427,
                         "endLine": 608,
                         "endColumn": 12,
-                        "endOffset": 44449
+                        "endOffset": 43734
                     }
                 }
             },
@@ -2434,100 +2371,62 @@
                 "to": {
                     "startLine": 609,
                     "startColumn": 4,
-                    "startOffset": 44454,
-                    "endColumn": 107,
-                    "endOffset": 44557
+                    "startOffset": 43739,
+                    "endLine": 615,
+                    "endColumn": 12,
+                    "endOffset": 44094
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 609,
                         "startColumn": 4,
-                        "startOffset": 44454,
-                        "endColumn": 107,
-                        "endOffset": 44557
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 610,
-                    "startColumn": 4,
-                    "startOffset": 44562,
-                    "endLine": 616,
-                    "endColumn": 12,
-                    "endOffset": 45027
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 610,
-                        "startColumn": 4,
-                        "startOffset": 44562,
-                        "endLine": 616,
+                        "startOffset": 43739,
+                        "endLine": 615,
                         "endColumn": 12,
-                        "endOffset": 45027
+                        "endOffset": 44094
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 617,
+                    "startLine": 616,
                     "startColumn": 4,
-                    "startOffset": 45032,
-                    "endLine": 620,
+                    "startOffset": 44099,
+                    "endLine": 618,
                     "endColumn": 12,
-                    "endOffset": 45312
+                    "endOffset": 44300
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 617,
+                        "startLine": 616,
                         "startColumn": 4,
-                        "startOffset": 45032,
-                        "endLine": 620,
+                        "startOffset": 44099,
+                        "endLine": 618,
                         "endColumn": 12,
-                        "endOffset": 45312
+                        "endOffset": 44300
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 621,
+                    "startLine": 619,
                     "startColumn": 4,
-                    "startOffset": 45317,
-                    "endColumn": 98,
-                    "endOffset": 45411
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 621,
-                        "startColumn": 4,
-                        "startOffset": 45317,
-                        "endColumn": 98,
-                        "endOffset": 45411
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 622,
-                    "startColumn": 4,
-                    "startOffset": 45416,
+                    "startOffset": 44305,
                     "endLine": 624,
                     "endColumn": 12,
-                    "endOffset": 45577
+                    "endOffset": 44645
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 622,
+                        "startLine": 619,
                         "startColumn": 4,
-                        "startOffset": 45416,
+                        "startOffset": 44305,
                         "endLine": 624,
                         "endColumn": 12,
-                        "endOffset": 45577
+                        "endOffset": 44645
                     }
                 }
             },
@@ -2535,18 +2434,18 @@
                 "to": {
                     "startLine": 625,
                     "startColumn": 4,
-                    "startOffset": 45582,
-                    "endColumn": 90,
-                    "endOffset": 45668
+                    "startOffset": 44650,
+                    "endColumn": 107,
+                    "endOffset": 44753
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 625,
                         "startColumn": 4,
-                        "startOffset": 45582,
-                        "endColumn": 90,
-                        "endOffset": 45668
+                        "startOffset": 44650,
+                        "endColumn": 107,
+                        "endOffset": 44753
                     }
                 }
             },
@@ -2554,41 +2453,20 @@
                 "to": {
                     "startLine": 626,
                     "startColumn": 4,
-                    "startOffset": 45673,
-                    "endLine": 628,
+                    "startOffset": 44758,
+                    "endLine": 632,
                     "endColumn": 12,
-                    "endOffset": 45892
+                    "endOffset": 45223
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 626,
                         "startColumn": 4,
-                        "startOffset": 45673,
-                        "endLine": 628,
-                        "endColumn": 12,
-                        "endOffset": 45892
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 629,
-                    "startColumn": 4,
-                    "startOffset": 45897,
-                    "endLine": 632,
-                    "endColumn": 12,
-                    "endOffset": 46218
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 629,
-                        "startColumn": 4,
-                        "startOffset": 45897,
+                        "startOffset": 44758,
                         "endLine": 632,
                         "endColumn": 12,
-                        "endOffset": 46218
+                        "endOffset": 45223
                     }
                 }
             },
@@ -2596,20 +2474,39 @@
                 "to": {
                     "startLine": 633,
                     "startColumn": 4,
-                    "startOffset": 46223,
-                    "endLine": 637,
+                    "startOffset": 45228,
+                    "endLine": 636,
                     "endColumn": 12,
-                    "endOffset": 46614
+                    "endOffset": 45508
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 633,
                         "startColumn": 4,
-                        "startOffset": 46223,
-                        "endLine": 637,
+                        "startOffset": 45228,
+                        "endLine": 636,
                         "endColumn": 12,
-                        "endOffset": 46614
+                        "endOffset": 45508
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 637,
+                    "startColumn": 4,
+                    "startOffset": 45513,
+                    "endColumn": 98,
+                    "endOffset": 45607
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 637,
+                        "startColumn": 4,
+                        "startOffset": 45513,
+                        "endColumn": 98,
+                        "endOffset": 45607
                     }
                 }
             },
@@ -2617,20 +2514,60 @@
                 "to": {
                     "startLine": 638,
                     "startColumn": 4,
-                    "startOffset": 46619,
-                    "endLine": 644,
+                    "startOffset": 45612,
+                    "endLine": 640,
                     "endColumn": 12,
-                    "endOffset": 47076
+                    "endOffset": 45773
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 638,
                         "startColumn": 4,
-                        "startOffset": 46619,
+                        "startOffset": 45612,
+                        "endLine": 640,
+                        "endColumn": 12,
+                        "endOffset": 45773
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 641,
+                    "startColumn": 4,
+                    "startOffset": 45778,
+                    "endColumn": 90,
+                    "endOffset": 45864
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 641,
+                        "startColumn": 4,
+                        "startOffset": 45778,
+                        "endColumn": 90,
+                        "endOffset": 45864
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 642,
+                    "startColumn": 4,
+                    "startOffset": 45869,
+                    "endLine": 644,
+                    "endColumn": 12,
+                    "endOffset": 46088
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 642,
+                        "startColumn": 4,
+                        "startOffset": 45869,
                         "endLine": 644,
                         "endColumn": 12,
-                        "endOffset": 47076
+                        "endOffset": 46088
                     }
                 }
             },
@@ -2638,119 +2575,81 @@
                 "to": {
                     "startLine": 645,
                     "startColumn": 4,
-                    "startOffset": 47081,
-                    "endColumn": 94,
-                    "endOffset": 47171
+                    "startOffset": 46093,
+                    "endLine": 648,
+                    "endColumn": 12,
+                    "endOffset": 46414
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 645,
                         "startColumn": 4,
-                        "startOffset": 47081,
+                        "startOffset": 46093,
+                        "endLine": 648,
+                        "endColumn": 12,
+                        "endOffset": 46414
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 649,
+                    "startColumn": 4,
+                    "startOffset": 46419,
+                    "endLine": 653,
+                    "endColumn": 12,
+                    "endOffset": 46810
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 649,
+                        "startColumn": 4,
+                        "startOffset": 46419,
+                        "endLine": 653,
+                        "endColumn": 12,
+                        "endOffset": 46810
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 654,
+                    "startColumn": 4,
+                    "startOffset": 46815,
+                    "endLine": 660,
+                    "endColumn": 12,
+                    "endOffset": 47272
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 654,
+                        "startColumn": 4,
+                        "startOffset": 46815,
+                        "endLine": 660,
+                        "endColumn": 12,
+                        "endOffset": 47272
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 661,
+                    "startColumn": 4,
+                    "startOffset": 47277,
+                    "endColumn": 94,
+                    "endOffset": 47367
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 661,
+                        "startColumn": 4,
+                        "startOffset": 47277,
                         "endColumn": 94,
-                        "endOffset": 47171
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 646,
-                    "startColumn": 4,
-                    "startOffset": 47176,
-                    "endColumn": 86,
-                    "endOffset": 47258
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 646,
-                        "startColumn": 4,
-                        "startOffset": 47176,
-                        "endColumn": 86,
-                        "endOffset": 47258
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 647,
-                    "startColumn": 4,
-                    "startOffset": 47263,
-                    "endColumn": 74,
-                    "endOffset": 47333
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 647,
-                        "startColumn": 4,
-                        "startOffset": 47263,
-                        "endColumn": 74,
-                        "endOffset": 47333
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 648,
-                    "startColumn": 4,
-                    "startOffset": 47338,
-                    "endLine": 651,
-                    "endColumn": 12,
-                    "endOffset": 47582
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 648,
-                        "startColumn": 4,
-                        "startOffset": 47338,
-                        "endLine": 651,
-                        "endColumn": 12,
-                        "endOffset": 47582
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 652,
-                    "startColumn": 4,
-                    "startOffset": 47587,
-                    "endLine": 657,
-                    "endColumn": 12,
-                    "endOffset": 48019
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 652,
-                        "startColumn": 4,
-                        "startOffset": 47587,
-                        "endLine": 657,
-                        "endColumn": 12,
-                        "endOffset": 48019
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 658,
-                    "startColumn": 4,
-                    "startOffset": 48024,
-                    "endLine": 661,
-                    "endColumn": 12,
-                    "endOffset": 48337
-                },
-                "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 658,
-                        "startColumn": 4,
-                        "startOffset": 48024,
-                        "endLine": 661,
-                        "endColumn": 12,
-                        "endOffset": 48337
+                        "endOffset": 47367
                     }
                 }
             },
@@ -2758,41 +2657,142 @@
                 "to": {
                     "startLine": 662,
                     "startColumn": 4,
-                    "startOffset": 48342,
-                    "endLine": 664,
-                    "endColumn": 12,
-                    "endOffset": 48535
+                    "startOffset": 47372,
+                    "endColumn": 86,
+                    "endOffset": 47454
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 662,
                         "startColumn": 4,
-                        "startOffset": 48342,
-                        "endLine": 664,
-                        "endColumn": 12,
-                        "endOffset": 48535
+                        "startOffset": 47372,
+                        "endColumn": 86,
+                        "endOffset": 47454
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 665,
+                    "startLine": 663,
                     "startColumn": 4,
-                    "startOffset": 48540,
-                    "endLine": 671,
-                    "endColumn": 12,
-                    "endOffset": 48857
+                    "startOffset": 47459,
+                    "endColumn": 74,
+                    "endOffset": 47529
                 },
                 "from": {
                     "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
-                        "startLine": 665,
+                        "startLine": 663,
                         "startColumn": 4,
-                        "startOffset": 48540,
-                        "endLine": 671,
+                        "startOffset": 47459,
+                        "endColumn": 74,
+                        "endOffset": 47529
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 664,
+                    "startColumn": 4,
+                    "startOffset": 47534,
+                    "endLine": 667,
+                    "endColumn": 12,
+                    "endOffset": 47778
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 664,
+                        "startColumn": 4,
+                        "startOffset": 47534,
+                        "endLine": 667,
                         "endColumn": 12,
-                        "endOffset": 48857
+                        "endOffset": 47778
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 668,
+                    "startColumn": 4,
+                    "startOffset": 47783,
+                    "endLine": 673,
+                    "endColumn": 12,
+                    "endOffset": 48215
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 668,
+                        "startColumn": 4,
+                        "startOffset": 47783,
+                        "endLine": 673,
+                        "endColumn": 12,
+                        "endOffset": 48215
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 674,
+                    "startColumn": 4,
+                    "startOffset": 48220,
+                    "endLine": 677,
+                    "endColumn": 12,
+                    "endOffset": 48533
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 674,
+                        "startColumn": 4,
+                        "startOffset": 48220,
+                        "endLine": 677,
+                        "endColumn": 12,
+                        "endOffset": 48533
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 678,
+                    "startColumn": 4,
+                    "startOffset": 48538,
+                    "endLine": 680,
+                    "endColumn": 12,
+                    "endOffset": 48731
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 678,
+                        "startColumn": 4,
+                        "startOffset": 48538,
+                        "endLine": 680,
+                        "endColumn": 12,
+                        "endOffset": 48731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 681,
+                    "startColumn": 4,
+                    "startOffset": 48736,
+                    "endLine": 687,
+                    "endColumn": 12,
+                    "endOffset": 49053
+                },
+                "from": {
+                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 681,
+                        "startColumn": 4,
+                        "startOffset": 48736,
+                        "endLine": 687,
+                        "endColumn": 12,
+                        "endOffset": 49053
                     }
                 }
             }

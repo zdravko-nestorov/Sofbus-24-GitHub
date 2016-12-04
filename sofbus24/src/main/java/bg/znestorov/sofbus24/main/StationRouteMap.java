@@ -440,7 +440,14 @@ public class StationRouteMap extends SherlockFragmentActivity {
                 Marker marker = stationMap.addMarker(stationMarkerOptions);
 
                 // Associate the marker and the station
-                PublicTransportStationEntity ptStation = (PublicTransportStationEntity) station;
+                PublicTransportStationEntity ptStation;
+                try {
+                    ptStation = (PublicTransportStationEntity) station;
+                } catch (Exception e) {
+                    // A GooglePlay used logged an issue with ClassCastException. If the
+                    // received object is not the desired type, create it
+                    ptStation = new PublicTransportStationEntity(station);
+                }
                 ptStation.setDirection(ptDirectionName);
                 markersAndStations.put(marker.getId(), ptStation);
             }

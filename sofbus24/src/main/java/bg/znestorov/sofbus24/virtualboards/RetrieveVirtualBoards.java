@@ -958,10 +958,7 @@ public class RetrieveVirtualBoards {
 
                 break;
             default:
-                errorDialogMsg = String.format(
-                        context.getString(R.string.app_internet_error),
-                        String.format(station.getName() + " (%s)",
-                                station.getNumber()));
+                errorDialogMsg = context.getString(R.string.app_internet_error);
                 break;
         }
 

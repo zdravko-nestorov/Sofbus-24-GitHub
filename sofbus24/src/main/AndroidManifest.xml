@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="31"
-    android:versionName="2.6.1">
+    android:versionCode="32"
+    android:versionName="2.6.2">
 
     <!-- Google Maps related permissions -->
     <permission
@@ -31,6 +31,9 @@
 
     <!-- Access Google based webservices -->
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- Before API level 19, this permission is not enforced and all apps still have access to read from external storage -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- External storage for caching. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
