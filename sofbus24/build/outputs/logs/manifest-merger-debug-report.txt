@@ -41,29 +41,29 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:21:22-86
 uses-feature#0x00020000
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:24:5-26:35
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:23:5-25:33
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:23:5-25:33
 	android:glEsVersion
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:25:9-41
 	android:required
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:26:9-32
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:29:5-79
-MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-analytics:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-nearby:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics:8.1.0] C:\Users\zanio\.android\build-cache\00f4be63e02c829c29ff2f9521aa938176d07934\output\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-nearby:8.1.0] C:\Users\zanio\.android\build-cache\80132f7433658c066b730bf481786fb0a5758edb\output\AndroidManifest.xml:19:5-79
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:20:5-78
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:29:22-76
 uses-permission#android.permission.INTERNET
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:30:5-67
-MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-analytics:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\AndroidManifest.xml:21:5-67
-MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\AndroidManifest.xml:19:5-67
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-gcm:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:21:5-67
-MERGED from [com.google.android.gms:play-services-wallet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] C:\Users\zanio\.android\build-cache\6164d9252e4898dd112efe07315ed980013713d7\output\AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-gcm:8.1.0] C:\Users\zanio\.android\build-cache\fe43263a69f86f56f85cde20bc5e51f7e56a32b9\output\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics:8.1.0] C:\Users\zanio\.android\build-cache\00f4be63e02c829c29ff2f9521aa938176d07934\output\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-wallet:8.1.0] C:\Users\zanio\.android\build-cache\661108acf7d9a0f148414e83457f5c13f93adfd5\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:21:5-66
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:30:22-64
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
@@ -76,7 +76,7 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:36:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:39:5-81
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:22:5-80
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:22:5-80
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:39:22-78
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
@@ -89,17 +89,17 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:43:22-76
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:47:5-82
-MERGED from [com.google.android.gms:play-services-gcm:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-gcm:8.1.0] C:\Users\zanio\.android\build-cache\fe43263a69f86f56f85cde20bc5e51f7e56a32b9\output\AndroidManifest.xml:21:5-82
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:47:22-79
 uses-permission#android.permission.WAKE_LOCK
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:50:5-68
-MERGED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:50:22-65
 uses-permission#android.permission.GET_ACCOUNTS
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:53:5-71
-MERGED from [com.google.android.gms:play-services-wallet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:21:5-70
+MERGED from [com.google.android.gms:play-services-wallet:8.1.0] C:\Users\zanio\.android\build-cache\661108acf7d9a0f148414e83457f5c13f93adfd5\output\AndroidManifest.xml:21:5-70
 	android:name
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:53:22-68
 uses-feature#android.hardware.location.network
@@ -122,35 +122,35 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:63:9-49
 application
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:66:5-230:19
-MERGED from [com.android.support:support-v4:22.2.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:10:5-20
-MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\AndroidManifest.xml:11:5-57
-MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\actionBarSherlock\unspecified\AndroidManifest.xml:11:5-20
-MERGED from [com.google.android.gms:play-services:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:24:5-32:19
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-analytics:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\AndroidManifest.xml:20:5-20
-MERGED from [com.google.android.gms:play-services-appstate:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-cast:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-drive:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-fitness:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-location:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:28:5-20
-MERGED from [com.google.android.gms:play-services-games:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-gcm:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-identity:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:26:5-46:19
-MERGED from [com.google.android.gms:play-services-nearby:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\AndroidManifest.xml:20:5-20
-MERGED from [com.google.android.gms:play-services-panorama:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-plus:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-safetynet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-vision:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-wearable:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\AndroidManifest.xml:19:5-20
+MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\pagerSlidingTabStrip\build\intermediates\bundles\default\AndroidManifest.xml:10:5-20
+MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\default\AndroidManifest.xml:11:5-57
+MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\actionBarSherlock\build\intermediates\bundles\default\AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.gms:play-services:8.1.0] C:\Users\zanio\.android\build-cache\a227c260142862c442a5459a6c3814a9a82a4acd\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] C:\Users\zanio\.android\build-cache\6164d9252e4898dd112efe07315ed980013713d7\output\AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-appstate:8.1.0] C:\Users\zanio\.android\build-cache\af4d5e49c3d49bacfc31db1413aa723ba801b5d1\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:8.1.0] C:\Users\zanio\.android\build-cache\1d86f6487397afaec67f0261b9bbd97a40a1501b\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:8.1.0] C:\Users\zanio\.android\build-cache\d634a4abbb0517c06aaa3e25f56010fe9bdd7fce\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-games:8.1.0] C:\Users\zanio\.android\build-cache\9a5fe097798a5e779660c21651f0726156d14909\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:8.1.0] C:\Users\zanio\.android\build-cache\868cd876a8759c1860793f65589877c463b71942\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gcm:8.1.0] C:\Users\zanio\.android\build-cache\fe43263a69f86f56f85cde20bc5e51f7e56a32b9\output\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-location:8.1.0] C:\Users\zanio\.android\build-cache\9edac78cd2e1bae0cd39f191e4312e9f3144e99f\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:26:5-46:19
+MERGED from [com.google.android.gms:play-services-analytics:8.1.0] C:\Users\zanio\.android\build-cache\00f4be63e02c829c29ff2f9521aa938176d07934\output\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\zanio\.android\build-cache\aad64428f0cdbe8fdf3a6e22b0f2f0241db2d583\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-nearby:8.1.0] C:\Users\zanio\.android\build-cache\80132f7433658c066b730bf481786fb0a5758edb\output\AndroidManifest.xml:20:5-20
+MERGED from [com.google.android.gms:play-services-panorama:8.1.0] C:\Users\zanio\.android\build-cache\df5885b18faf5c670e0981a1267151f7a3578416\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:8.1.0] C:\Users\zanio\.android\build-cache\ad5d734b7fea91b90c5011e78ff5a4d222b199a7\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:8.1.0] C:\Users\zanio\.android\build-cache\92dbd5d646c466df92d87fb2f539f52140f13ad9\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-vision:8.1.0] C:\Users\zanio\.android\build-cache\9548897753bd60a2ca03492c35ee4cce7e89c4ef\output\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-identity:8.1.0] C:\Users\zanio\.android\build-cache\f481f40eb8ea26f806b36b4ce1999044d71fa574\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:28:5-20
+MERGED from [com.google.android.gms:play-services-wearable:8.1.0] C:\Users\zanio\.android\build-cache\3a830d4e1a6507395aa4a7cb3001100ba2779f6e\output\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\zanio\.android\build-cache\7e77d1cd71d0b93b7ba35056af15f237f213849e\output\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\zanio\.android\build-cache\bdc8d18958f33259f54e076fd706b749e98c1c58\output\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:70:9-41
-		REJECTED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\AndroidManifest.xml:11:18-54
+		REJECTED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\default\AndroidManifest.xml:11:18-54
 	android:supportsRtl
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:71:9-36
 	android:allowBackup
@@ -171,7 +171,7 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:75:13-62
 meta-data#com.google.android.gms.version
 ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:82:9-84:69
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\zanio\.android\build-cache\7e77d1cd71d0b93b7ba35056af15f237f213849e\output\AndroidManifest.xml:21:9-23:69
 	android:value
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:84:13-66
 	android:name
@@ -412,84 +412,84 @@ ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\sr
 		ADDED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml:229:18-77
 uses-sdk
 INJECTED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [Sofbus24:dragSortListView:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\dragSortListView\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:22.2.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\pagerSlidingTabStrip\unspecified\AndroidManifest.xml:6:5-8:41
-MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\rollWheelPicker\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\Sofbus24\actionBarSherlock\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:23:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-analytics:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-appstate:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-cast:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-drive:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-fitness:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-location:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:27:5-42
-MERGED from [com.google.android.gms:play-services-games:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-gcm:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-identity:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-nearby:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-panorama:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-plus:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-safetynet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-vision:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\AndroidManifest.xml:4:5-42
-MERGED from [com.google.android.gms:play-services-wallet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:19:5-42
-MERGED from [com.google.android.gms:play-services-wearable:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\AndroidManifest.xml:18:5-42
+MERGED from [Sofbus24:dragSortListView:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\dragSortListView\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Sofbus24:pagerSlidingTabStrip:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\pagerSlidingTabStrip\build\intermediates\bundles\default\AndroidManifest.xml:6:5-8:41
+MERGED from [Sofbus24:rollWheelPicker:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\rollWheelPicker\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Sofbus24:actionBarSherlock:unspecified] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\actionBarSherlock\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services:8.1.0] C:\Users\zanio\.android\build-cache\a227c260142862c442a5459a6c3814a9a82a4acd\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:8.1.0] C:\Users\zanio\.android\build-cache\6164d9252e4898dd112efe07315ed980013713d7\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appstate:8.1.0] C:\Users\zanio\.android\build-cache\af4d5e49c3d49bacfc31db1413aa723ba801b5d1\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:8.1.0] C:\Users\zanio\.android\build-cache\1d86f6487397afaec67f0261b9bbd97a40a1501b\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:8.1.0] C:\Users\zanio\.android\build-cache\d634a4abbb0517c06aaa3e25f56010fe9bdd7fce\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-games:8.1.0] C:\Users\zanio\.android\build-cache\9a5fe097798a5e779660c21651f0726156d14909\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:8.1.0] C:\Users\zanio\.android\build-cache\868cd876a8759c1860793f65589877c463b71942\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:8.1.0] C:\Users\zanio\.android\build-cache\fe43263a69f86f56f85cde20bc5e51f7e56a32b9\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:8.1.0] C:\Users\zanio\.android\build-cache\9edac78cd2e1bae0cd39f191e4312e9f3144e99f\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics:8.1.0] C:\Users\zanio\.android\build-cache\00f4be63e02c829c29ff2f9521aa938176d07934\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] C:\Users\zanio\.android\build-cache\aad64428f0cdbe8fdf3a6e22b0f2f0241db2d583\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-nearby:8.1.0] C:\Users\zanio\.android\build-cache\80132f7433658c066b730bf481786fb0a5758edb\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:8.1.0] C:\Users\zanio\.android\build-cache\df5885b18faf5c670e0981a1267151f7a3578416\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:8.1.0] C:\Users\zanio\.android\build-cache\ad5d734b7fea91b90c5011e78ff5a4d222b199a7\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:8.1.0] C:\Users\zanio\.android\build-cache\92dbd5d646c466df92d87fb2f539f52140f13ad9\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-vision:8.1.0] C:\Users\zanio\.android\build-cache\9548897753bd60a2ca03492c35ee4cce7e89c4ef\output\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-wallet:8.1.0] C:\Users\zanio\.android\build-cache\661108acf7d9a0f148414e83457f5c13f93adfd5\output\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-identity:8.1.0] C:\Users\zanio\.android\build-cache\f481f40eb8ea26f806b36b4ce1999044d71fa574\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\zanio\.android\build-cache\cd9dd3cc1176ce35eb44aa77ff993cc3a9611083\output\AndroidManifest.xml:27:5-42
+MERGED from [com.google.android.gms:play-services-wearable:8.1.0] C:\Users\zanio\.android\build-cache\3a830d4e1a6507395aa4a7cb3001100ba2779f6e\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.1.0] C:\Users\zanio\.android\build-cache\be835c2d6bbe72dcc72e3f81af5c16497f20f4ab\output\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] C:\Users\zanio\.android\build-cache\7e77d1cd71d0b93b7ba35056af15f237f213849e\output\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\zanio\.android\build-cache\bdc8d18958f33259f54e076fd706b749e98c1c58\output\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml
 		INJECTED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml
 		INJECTED from D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\src\main\AndroidManifest.xml
-activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:26:9-29:64
-	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:28:13-122
-	android:theme
-		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:29:13-61
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:27:13-65
-activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
-ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:30:9-31:52
-	android:theme
-		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:31:13-50
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:30:19-91
 provider#com.google.android.gms.measurement.AppMeasurementContentProvider
-ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:28:7-31:37
+ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:28:7-31:37
 	android:authorities
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:29:11-76
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:29:11-76
 	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:31:11-35
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:31:11-35
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:30:11-90
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:30:11-90
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:33:7-39:18
+ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:33:7-39:18
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:35:11-33
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:35:11-33
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:34:11-83
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:34:11-83
 intent-filter#com.google.android.gms.measurement.UPLOAD
-ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:36:9-38:25
+ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:36:9-38:25
 action#com.google.android.gms.measurement.UPLOAD
-ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:37:11-77
+ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:37:11-77
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:37:19-75
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:37:19-75
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:41:7-44:37
+ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:41:7-44:37
 	android:enabled
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:43:11-33
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:43:11-33
 	android:exported
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:44:11-35
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:44:11-35
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\AndroidManifest.xml:42:11-82
+		ADDED from [com.google.android.gms:play-services-measurement:8.1.0] C:\Users\zanio\.android\build-cache\e8dd25d192608ccfb8a282f5854678b757e368d8\output\AndroidManifest.xml:42:11-82
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:26:9-29:64
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:28:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:29:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:27:13-65
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:30:9-31:52
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:31:13-50
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads:8.1.0] C:\Users\zanio\.android\build-cache\6e817ab5cb7101b7ba3dfd36a8b9b37c64e84954\output\AndroidManifest.xml:30:19-91
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from [com.google.android.gms:play-services-wallet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:22:5-73
+ADDED from [com.google.android.gms:play-services-wallet:8.1.0] C:\Users\zanio\.android\build-cache\661108acf7d9a0f148414e83457f5c13f93adfd5\output\AndroidManifest.xml:22:5-73
 	android:name
-		ADDED from [com.google.android.gms:play-services-wallet:8.1.0] D:\My Things\My Workspaces\AndroidStudioProjects\Sofbus24\sofbus24\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:22:22-71
+		ADDED from [com.google.android.gms:play-services-wallet:8.1.0] C:\Users\zanio\.android\build-cache\661108acf7d9a0f148414e83457f5c13f93adfd5\output\AndroidManifest.xml:22:22-71

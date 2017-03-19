@@ -28,16 +28,16 @@
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__list_selector_background_transition_holo_light.xml",
-        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__list_selector_background_transition_holo_light.xml"
+        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__activated_background_holo_dark.xml",
+        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__activated_background_holo_dark.xml"
     },
     {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__ic_clear.xml",
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__ic_clear.xml"
     },
     {
-        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__activated_background_holo_dark.xml",
-        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__activated_background_holo_dark.xml"
+        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__list_selector_background_transition_holo_light.xml",
+        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable\\abs__list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\abs__textfield_searchview_right_holo_light.xml",

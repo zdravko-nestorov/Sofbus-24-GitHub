@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="play-services-cast-8.1.0">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/res" />
-      <root url="jar://$PROJECT_DIR$/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/1d86f6487397afaec67f0261b9bbd97a40a1501b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/1d86f6487397afaec67f0261b9bbd97a40a1501b/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

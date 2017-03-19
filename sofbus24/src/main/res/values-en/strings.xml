@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Global labels -->
     <string name="app_sofbus24">Sofbus 24</string>
-    <string name="app_img_empty_content_description" tools:ignore="ExtraTranslation" />
     <string name="app_button_ok">OK</string>
     <string name="app_button_save">Save</string>
     <string name="app_button_cancel">Cancel</string>

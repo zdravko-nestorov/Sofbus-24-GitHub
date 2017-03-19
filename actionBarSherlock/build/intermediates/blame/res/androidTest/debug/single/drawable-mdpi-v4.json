@@ -32,12 +32,12 @@
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\abs__list_longpressed_holo.9.png"
     },
     {
-        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png",
-        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png"
-    },
-    {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__progress_bg_holo_light.9.png",
         "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\abs__progress_bg_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png",
+        "source": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\abs__ic_ab_back_holo_light.png"
     },
     {
         "merged": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abs__ab_solid_light_holo.9.png",

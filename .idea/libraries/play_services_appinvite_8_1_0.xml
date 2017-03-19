@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="play-services-appinvite-8.1.0">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/res" />
-      <root url="jar://$PROJECT_DIR$/sofbus24/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/6164d9252e4898dd112efe07315ed980013713d7/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/6164d9252e4898dd112efe07315ed980013713d7/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
