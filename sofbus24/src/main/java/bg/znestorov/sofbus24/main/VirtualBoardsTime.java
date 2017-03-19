@@ -1,6 +1,7 @@
 package bg.znestorov.sofbus24.main;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -225,9 +226,16 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
                                             + vbTimeStation.getLat() + ","
                                             + vbTimeStation.getLon()
                                             + "&cbp=1,90,,0,1.0&mz=20");
-                            Intent streetViewIntent = new Intent(
-                                    Intent.ACTION_VIEW, streetViewUri);
-                            startActivity(streetViewIntent);
+
+                            // Workaround because of a known bug in GPS (fixed in
+                            // later version, which we can't use)
+                            try {
+                                Intent streetViewIntent = new Intent(
+                                        Intent.ACTION_VIEW, streetViewUri);
+                                startActivity(streetViewIntent);
+                            } catch (ActivityNotFoundException anfe) {
+                                ActivityUtils.showNoCoordinatesToast(context);
+                            }
                         } else {
                             ActivityUtils.showNoCoordinatesToast(context);
                         }
