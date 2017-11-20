@@ -7,11 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +20,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Array Adapted user for set each row a station from the SKGT site
@@ -246,8 +242,8 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
         // Add onClickListener over the VirtualBoards ImageButton
         viewHolder.stationVBTime.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                        context, null, station,
+                RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                        context, null, station, null,
                         HtmlRequestCodesEnum.SINGLE_RESULT);
                 retrieveVirtualBoards.getSumcInformation();
             }

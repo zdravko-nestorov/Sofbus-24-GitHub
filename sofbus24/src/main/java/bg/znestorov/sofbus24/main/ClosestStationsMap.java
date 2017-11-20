@@ -36,13 +36,7 @@ import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.*;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,11 +51,7 @@ import bg.znestorov.sofbus24.closest.stations.map.GoogleMapsRoute;
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
-import bg.znestorov.sofbus24.entity.GlobalEntity;
-import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
-import bg.znestorov.sofbus24.entity.SortTypeEnum;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
@@ -72,7 +62,7 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Activity visualizing the google maps with all stations
@@ -1019,8 +1009,8 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
 
         // Check if the type of the station - BTT or METRO
         if (!stationCustomField.equals(metroCustomField)) {
-            RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                    context, null, station, HtmlRequestCodesEnum.SINGLE_RESULT);
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
             retrieveVirtualBoards.getSumcInformation();
         } else {
             ProgressDialog progressDialog = new ProgressDialog(context);

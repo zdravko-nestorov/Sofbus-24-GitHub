@@ -14,15 +14,19 @@ import bg.znestorov.sofbus24.entity.DirectionsEntity;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.main.R;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Dialog offering a choice about what time to be retrieved - schedule or virtual
  * boards
+ * <p>
+ * IMPORTANT: Code changes because of the SKGT API (the schedule is now deprecated) -
+ * NOT LONGER NEEDED
  *
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@Deprecated
 public class ChooseTimeRetrievalDialog extends DialogFragment {
 
     private static final String BUNDLE_PT_DIRECTION_ENTITY = "PT DIRECTION ENTITY";
@@ -78,8 +82,8 @@ public class ChooseTimeRetrievalDialog extends DialogFragment {
                         break;
                     default:
                         // Getting the real time
-                        RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                                context, this, ptStation,
+                        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                                context, this, ptStation, null,
                                 HtmlRequestCodesEnum.SINGLE_RESULT);
                         retrieveVirtualBoards.getSumcInformation();
                         break;

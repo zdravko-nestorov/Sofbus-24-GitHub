@@ -33,13 +33,7 @@ import bg.znestorov.sofbus24.databases.DroidTransDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
 import bg.znestorov.sofbus24.droidtrans.DroidTransLoadInfo;
-import bg.znestorov.sofbus24.entity.GlobalEntity;
-import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
-import bg.znestorov.sofbus24.entity.RetrieveCurrentLocationTypeEnum;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
-import bg.znestorov.sofbus24.entity.WheelStateEntity;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
@@ -51,7 +45,7 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.OnWheelScrollListener;
 import kankan.wheel.widget.WheelView;
@@ -767,8 +761,8 @@ public class DroidTrans extends SherlockFragmentActivity {
                             retrieveMetroSchedule.execute();
                             break;
                         default:
-                            RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                                    context, this, station,
+                            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                                    context, this, station, null,
                                     HtmlRequestCodesEnum.SINGLE_RESULT);
                             retrieveVirtualBoards.getSumcInformation();
                             break;

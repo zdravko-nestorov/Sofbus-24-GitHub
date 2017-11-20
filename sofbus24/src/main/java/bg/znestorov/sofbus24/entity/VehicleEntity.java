@@ -3,6 +3,8 @@ package bg.znestorov.sofbus24.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import bg.znestorov.sofbus24.utils.Utils;
+
 /**
  * Class representing a vehicle structure with all common fields (implements
  * Serializable, so can be transferred between activities)
@@ -18,6 +20,9 @@ public class VehicleEntity implements Serializable {
     private VehicleTypeEnum type;
     private String direction;
     private ArrayList<String> arrivalTimes;
+    private ArrayList<Boolean> hasAirConditioning;
+    private ArrayList<Boolean> isWheelchairAccessible;
+    private ArrayList<Boolean> hasWifi;
 
     private int stop = -1;
     private int lid = -1;
@@ -36,7 +41,7 @@ public class VehicleEntity implements Serializable {
 
         this.number = number;
         this.type = type;
-        this.direction = direction;
+        this.direction = Utils.isEmpty(direction) ? "---" : direction;
         this.arrivalTimes = new ArrayList<String>();
     }
 
@@ -139,6 +144,30 @@ public class VehicleEntity implements Serializable {
         this.rid = rid;
     }
 
+    public ArrayList<Boolean> getHasAirConditioning() {
+        return hasAirConditioning;
+    }
+
+    public void setHasAirConditioning(ArrayList<Boolean> hasAirConditioning) {
+        this.hasAirConditioning = hasAirConditioning;
+    }
+
+    public ArrayList<Boolean> getIsWheelchairAccessible() {
+        return isWheelchairAccessible;
+    }
+
+    public void setIsWheelchairAccessible(ArrayList<Boolean> isWheelchairAccessible) {
+        this.isWheelchairAccessible = isWheelchairAccessible;
+    }
+
+    public ArrayList<Boolean> getHasWifi() {
+        return hasWifi;
+    }
+
+    public void setHasWifi(ArrayList<Boolean> hasWifi) {
+        this.hasWifi = hasWifi;
+    }
+
     /**
      * Indicates if the vehicle entity has a schedule URL
      *
@@ -154,10 +183,19 @@ public class VehicleEntity implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getName() + " {\n\tnumber: " + number + "\n\ttype: "
-                + type + "\n\tdirection: " + direction + "\n\tarrivalTimes: "
-                + arrivalTimes + "\n\tstop: " + stop + "\n\tlid: " + lid
-                + "\n\tvt: " + vt + "\n\trid: " + rid + "\n}";
+        return "VehicleEntity{" +
+                "number='" + number + '\'' +
+                ", type=" + type +
+                ", direction='" + direction + '\'' +
+                ", arrivalTimes=" + arrivalTimes +
+                ", hasAirConditioning=" + hasAirConditioning +
+                ", isWheelchairAccessible=" + isWheelchairAccessible +
+                ", hasWifi=" + hasWifi +
+                ", stop=" + stop +
+                ", lid=" + lid +
+                ", vt=" + vt +
+                ", rid=" + rid +
+                '}';
     }
 
 }

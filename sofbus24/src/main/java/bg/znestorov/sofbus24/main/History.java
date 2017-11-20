@@ -36,7 +36,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * History activity containing information about the searches
@@ -157,8 +157,8 @@ public class History extends SherlockListActivity implements
                 // Check what action to be taken - to retrieve METRO or PT
                 // information
                 if (historyType == VehicleTypeEnum.BTT) {
-                    RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                            context, null, station,
+                    RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                            context, null, station, null,
                             HtmlRequestCodesEnum.SINGLE_RESULT);
                     retrieveVirtualBoards.getSumcInformation();
                 } else {

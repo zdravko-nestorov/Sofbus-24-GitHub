@@ -16,12 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.ArrayAdapter;
-import android.widget.Filter;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
@@ -36,26 +31,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
-import bg.znestorov.sofbus24.entity.GlobalEntity;
-import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
-import bg.znestorov.sofbus24.entity.MetroStationEntity;
-import bg.znestorov.sofbus24.entity.PositionTypeEnum;
-import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
-import bg.znestorov.sofbus24.entity.SortTypeEnum;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.StationMap;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
-import bg.znestorov.sofbus24.utils.Constants;
-import bg.znestorov.sofbus24.utils.LanguageChange;
-import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
-import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
-import bg.znestorov.sofbus24.utils.Utils;
+import bg.znestorov.sofbus24.utils.*;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 import bg.znestorov.sofbus24.utils.activity.PopupMenu;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Array Adapted user for set each row a station from the Favorites DB
@@ -595,8 +579,8 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         // Check if the type of the station - BTT or METRO
         if (!stationCustomField.equals(metroCustomField)) {
-            RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                    context, null, station, HtmlRequestCodesEnum.FAVOURITES);
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, null, station, null, HtmlRequestCodesEnum.FAVOURITES);
             retrieveVirtualBoards.getSumcInformation();
         } else {
             ProgressDialog progressDialog = new ProgressDialog(context);

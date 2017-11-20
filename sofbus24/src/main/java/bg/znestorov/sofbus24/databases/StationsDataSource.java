@@ -17,6 +17,7 @@ import java.util.Locale;
 
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
@@ -318,7 +319,7 @@ public class StationsDataSource {
                         Constants.METRO_STATION_URL, foundStation.getNumber()));
             }
 
-            stations.add(foundStation);
+            stations.add(new VirtualBoardsStationEntity(foundStation));
             cursor.moveToNext();
         }
 

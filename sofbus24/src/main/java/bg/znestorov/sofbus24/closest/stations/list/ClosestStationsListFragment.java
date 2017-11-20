@@ -5,11 +5,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.text.Editable;
-import android.text.Html;
-import android.text.InputFilter;
-import android.text.InputType;
-import android.text.TextWatcher;
+import android.text.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -34,7 +30,7 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.DrawableClickListener;
 import bg.znestorov.sofbus24.utils.activity.SearchEditText;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Fragment used to show all closest stations to the current location. It shows
@@ -212,8 +208,8 @@ public class ClosestStationsListFragment extends ListFragment implements
 
         // Check if the type of the station - BTT or METRO
         if (!stationCustomField.equals(metroCustomField)) {
-            RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                    context, null, station, HtmlRequestCodesEnum.SINGLE_RESULT);
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
             retrieveVirtualBoards.getSumcInformation();
         } else {
             ProgressDialog progressDialog = new ProgressDialog(context);

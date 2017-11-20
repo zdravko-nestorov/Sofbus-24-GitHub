@@ -11,11 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import bg.znestorov.sofbus24.entity.DirectionsEntity;
-import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
-import bg.znestorov.sofbus24.entity.RefreshableListFragment;
-import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.publictransport.RetrievePublicTransportStation;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -94,6 +90,14 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
+        /**
+         * Code changes because of the SKGT API (the schedule is now deprecated)
+         *
+         * The row is added to the ListView of all XML layouts (activity_virtual_boards_time_fragment):
+         * android:listSelector="@android:color/transparent"
+         * This changes the on-clicked color to same as when it is not clicked and it appears as
+         * if it is plain text
+         *
         VehicleEntity stationVehicle = (VehicleEntity) getListAdapter()
                 .getItem(position);
 
@@ -111,6 +115,7 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
         RetrievePublicTransportStation retrievePublicTransportStation = new RetrievePublicTransportStation(
                 context, progressDialog, ptStationEntity, directionEntity);
         retrievePublicTransportStation.execute();
+         */
     }
 
     @Override

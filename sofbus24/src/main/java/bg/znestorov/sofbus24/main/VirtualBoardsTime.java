@@ -33,7 +33,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
-import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoards;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 import bg.znestorov.sofbus24.virtualboards.VirtualBoardsTimeFragment;
 
 public class VirtualBoardsTime extends SherlockFragmentActivity {
@@ -159,8 +159,8 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
         vbTimeLoading.setVisibility(View.VISIBLE);
 
         // Retrieve the refreshed information from SKGT site
-        RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                context, this, vbTimeStation, HtmlRequestCodesEnum.REFRESH);
+        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                context, this, vbTimeStation, null, HtmlRequestCodesEnum.REFRESH);
         retrieveVirtualBoards.getSumcInformation();
     }
 

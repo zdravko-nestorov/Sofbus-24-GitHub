@@ -349,6 +349,7 @@ public class DroidTransDataSource {
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             StationEntity station = cursorToStation(cursor);
+            station.setType(vehicleType);
             vehicleStations.add(station);
             cursor.moveToNext();
         }

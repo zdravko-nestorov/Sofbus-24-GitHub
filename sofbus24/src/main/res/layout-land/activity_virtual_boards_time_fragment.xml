@@ -12,7 +12,8 @@
         android:divider="@drawable/list_divider"
         android:dividerHeight="1sp"
         android:fastScrollEnabled="true"
-        android:focusable="true" />
+        android:focusable="true"
+        android:listSelector="@android:color/transparent" />
 
     <RelativeLayout
         android:id="@android:id/empty"

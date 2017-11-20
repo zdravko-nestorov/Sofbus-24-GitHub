@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.view.View;
 import android.widget.Toast;
@@ -23,32 +22,17 @@ import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import bg.znestorov.sofbus24.databases.StationsDataSource;
-import bg.znestorov.sofbus24.entity.DirectionsEntity;
-import bg.znestorov.sofbus24.entity.GlobalEntity;
-import bg.znestorov.sofbus24.entity.MetroStationEntity;
-import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
-import bg.znestorov.sofbus24.publictransport.ChooseTimeRetrievalDialog;
-import bg.znestorov.sofbus24.utils.Constants;
-import bg.znestorov.sofbus24.utils.LanguageChange;
-import bg.znestorov.sofbus24.utils.MapUtils;
-import bg.znestorov.sofbus24.utils.ThemeChange;
-import bg.znestorov.sofbus24.utils.Utils;
+import bg.znestorov.sofbus24.utils.*;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 public class StationRouteMap extends SherlockFragmentActivity {
 
@@ -465,12 +449,16 @@ public class StationRouteMap extends SherlockFragmentActivity {
                         PublicTransportStationEntity ptStation = markersAndStations
                                 .get(marker.getId());
 
-                        // Getting the PublicTransport schedule from the station
-                        // URL address
-                        DialogFragment dialogFragment = ChooseTimeRetrievalDialog
-                                .newInstance(directionsEntity, ptStation);
-                        dialogFragment.show(getSupportFragmentManager(),
-                                "chooseTimeRetrievalDialog");
+                        // Code changes because of the SKGT API (the schedule is now deprecated)
+                        // Getting the PublicTransport schedule from the station URL address
+                        // DialogFragment dialogFragment = ChooseTimeRetrievalDialog.newInstance(directionsEntity, ptStation);
+                        // dialogFragment.show(getSupportFragmentManager(), "chooseTimeRetrievalDialog");
+
+                        // Getting the real time (there is no need of ChooserDialog now)
+                        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                                context, this, ptStation, null,
+                                HtmlRequestCodesEnum.SINGLE_RESULT);
+                        retrieveVirtualBoards.getSumcInformation();
                     }
                 });
     }

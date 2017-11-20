@@ -9,15 +9,11 @@ import android.text.Html;
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.databases.StationsDataSource;
-import bg.znestorov.sofbus24.entity.DirectionsEntity;
-import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.main.History;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.publictransport.ChooseDirectionDialog;
-import bg.znestorov.sofbus24.publictransport.RetrievePublicTransportDirection;
+import bg.znestorov.sofbus24.publictransport.RetrievePublicTransportDirectionApi;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 
@@ -1006,8 +1002,8 @@ public class ScheduleVehicleInfo {
         progressDialog.setMessage(Html.fromHtml(String.format(
                 context.getString(R.string.pt_item_loading_schedule),
                 rowCaption)));
-        RetrievePublicTransportDirection retrievePublicTransportDirection = new RetrievePublicTransportDirection(
-                context, callerInstance, progressDialog, vehicle);
+        RetrievePublicTransportDirectionApi retrievePublicTransportDirection =
+                new RetrievePublicTransportDirectionApi(context, callerInstance, progressDialog, vehicle);
         retrievePublicTransportDirection.execute();
     }
 

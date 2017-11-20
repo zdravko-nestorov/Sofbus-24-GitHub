@@ -2,25 +2,15 @@ package bg.znestorov.sofbus24.virtualboards;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.Html;
-import android.text.InputFilter;
-import android.text.InputType;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextWatcher;
+import android.text.*;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.actionbarsherlock.app.SherlockListFragment;
@@ -112,8 +102,8 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
      * @param station selected station
      */
     private void onListItemClick(StationEntity station) {
-        RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                context, this, station, HtmlRequestCodesEnum.SINGLE_RESULT);
+        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                context, this, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
         retrieveVirtualBoards.getSumcInformation();
     }
 
@@ -322,8 +312,8 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
             StationEntity station = new StationEntity();
             station.setNumberUnformatted(vbSearchText);
 
-            RetrieveVirtualBoards retrieveVirtualBoards = new RetrieveVirtualBoards(
-                    context, this, station,
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, this, station, null,
                     HtmlRequestCodesEnum.MULTIPLE_RESULTS);
             retrieveVirtualBoards.getSumcInformation();
         } else {

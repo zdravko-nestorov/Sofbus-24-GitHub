@@ -19,6 +19,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.entity.DirectionsEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.main.R;
@@ -26,6 +27,7 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.DrawableClickListener;
 import bg.znestorov.sofbus24.utils.activity.SearchEditText;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Public Transport Fragment containing information about the stations
@@ -144,9 +146,12 @@ public class PublicTransportFragment extends ListFragment {
                 getString(R.string.pt_item_loading_schedule),
                 String.format(ptStation.getName() + " (%s)",
                         ptStation.getNumber()))));
-        RetrievePublicTransportStation retrievePublicTransportStation = new RetrievePublicTransportStation(
-                context, progressDialog, ptStation, ptDirectionsEntity);
-        retrievePublicTransportStation.execute();
+
+        // Code changes because of the SKGT API (the schedule is now deprecated)
+        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                context, this, ptStation, ptDirectionsEntity.getVehicle(),
+                HtmlRequestCodesEnum.SINGLE_RESULT);
+        retrieveVirtualBoards.getSumcInformation();
     }
 
     /**

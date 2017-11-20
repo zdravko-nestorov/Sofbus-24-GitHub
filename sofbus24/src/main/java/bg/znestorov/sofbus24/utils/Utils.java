@@ -16,29 +16,18 @@ import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import com.google.gson.JsonObject;
+
+import java.io.*;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Locale;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
-import bg.znestorov.sofbus24.entity.GlobalEntity;
-import bg.znestorov.sofbus24.entity.StationEntity;
-import bg.znestorov.sofbus24.entity.UpdateTypeEnum;
-import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.*;
 import bg.znestorov.sofbus24.history.HistoryEntity;
 import bg.znestorov.sofbus24.history.HistoryOfSearches;
 import bg.znestorov.sofbus24.main.R;
@@ -1656,6 +1645,63 @@ public class Utils {
         FileOutputStream fileOutputStream = new FileOutputStream(fileLocation);
         fileOutputStream.write(data);
         fileOutputStream.close();
+    }
+
+    /**
+     * Read a given URL and get the information in TEXT format
+     *
+     * @param urlString the URL that will be read
+     * @return the content of the URL address
+     */
+    public static String readUrl(String urlString, Object... params) throws Exception {
+
+        // Create a new scanner to download the URL content
+        Scanner scanner = new Scanner(new URL(String.format(urlString, params)).openStream(), "UTF-8");
+
+        // The regular expression "\\A" matches the beginning of input. This tells Scanner
+        // to tokenize the entire stream, from beginning to (illogical) next beginning
+        return scanner.useDelimiter("\\A").next();
+    }
+
+    /**
+     * Convenience method to get this element as a string value by checking for NULL
+     *
+     * @param jsonObject {@link JsonObject} element used to search in it
+     * @param jsonKey    the Json key used for searching
+     * @return the Json String value
+     */
+    public static String getAsJsonString(JsonObject jsonObject, String jsonKey) {
+        return jsonObject.get(jsonKey).isJsonNull() ? "" : jsonObject.get(jsonKey).getAsString();
+    }
+
+    /**
+     * Convenience method to get this element as a boolean value by checking for NULL
+     *
+     * @param jsonObject {@link JsonObject} element used to search in it
+     * @param jsonKey    the Json key used for searching
+     * @return the Json boolean value
+     */
+    public static boolean getAsJsonBoolean(JsonObject jsonObject, String jsonKey) {
+        return !jsonObject.get(jsonKey).isJsonNull() && jsonObject.get(jsonKey).getAsBoolean();
+    }
+
+    /**
+     * Transforms the SKGT date time to a standard Sofbus 24 date
+     *
+     * @param skgtTime the skgt time get from the API request
+     * @return the SKGT time in Sofbus 24 format
+     */
+    public static String transformSkgtStringDateToDate(String skgtTime) {
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date skgtDate;
+        try {
+            skgtDate = format.parse(skgtTime);
+        } catch (ParseException e) {
+            skgtDate = new Date();
+        }
+
+        return DateFormat.format("dd.MM.yyy, kk:mm", skgtDate).toString();
     }
 
 }
