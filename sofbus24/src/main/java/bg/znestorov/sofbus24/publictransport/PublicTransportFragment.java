@@ -4,11 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.text.Editable;
-import android.text.Html;
-import android.text.InputFilter;
-import android.text.InputType;
-import android.text.TextWatcher;
+import android.text.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -95,7 +91,7 @@ public class PublicTransportFragment extends ListFragment {
         ArrayList<StationEntity> directionList = ptDirectionsEntity
                 .getDirectionsList().get(activeDirection);
         ptAdapter = new PublicTransportAdapter(context, emptyList,
-                directionName, directionList);
+                ptDirectionsEntity.getVehicle(), directionName, directionList);
 
         // Set the ListAdapter
         setListAdapter(ptAdapter);
@@ -149,8 +145,7 @@ public class PublicTransportFragment extends ListFragment {
 
         // Code changes because of the SKGT API (the schedule is now deprecated)
         RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                context, this, ptStation, ptDirectionsEntity.getVehicle(),
-                HtmlRequestCodesEnum.SINGLE_RESULT);
+                context, this, ptStation, null, HtmlRequestCodesEnum.SINGLE_RESULT);
         retrieveVirtualBoards.getSumcInformation();
     }
 

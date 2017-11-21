@@ -18,11 +18,7 @@ import java.util.Locale;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
-import bg.znestorov.sofbus24.utils.Constants;
-import bg.znestorov.sofbus24.utils.LanguageChange;
-import bg.znestorov.sofbus24.utils.MapUtils;
-import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
-import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
+import bg.znestorov.sofbus24.utils.*;
 
 /**
  * Stations data source class, responsible for all interactions with the
@@ -267,8 +263,11 @@ public class StationsDataSource {
             cursor.moveToNext();
         }
 
-        // Closing the cursor
+        // Closing the cursor and sorting the stations in correct order (both directions
+        // should be sorted in ASC way, as the MetroLoadStations class is reversing the
+        // second direction)
         cursor.close();
+        Utils.sortStationList(stations, true);
 
         return stations;
     }

@@ -15,6 +15,7 @@ import java.util.List;
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
@@ -35,6 +36,7 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
     private final FavouritesDataSource favouritesDatasource;
 
     private final TextView emptyList;
+    private final VehicleEntity vehicle;
     private final String directionName;
 
     private final List<StationEntity> originalStations;
@@ -42,7 +44,7 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
     private List<StationEntity> filteredStations;
     private Filter stationsFilter;
 
-    public PublicTransportAdapter(Activity context, TextView emptyList,
+    public PublicTransportAdapter(Activity context, TextView emptyList, VehicleEntity vehicle,
                                   String directionName, List<StationEntity> stations) {
         super(context, R.layout.activity_public_transport_list_item, stations);
 
@@ -51,6 +53,7 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
         this.language = LanguageChange.getUserLocale(context);
 
         this.emptyList = emptyList;
+        this.vehicle = vehicle;
         this.directionName = directionName;
 
         this.originalStations = stations;
@@ -243,8 +246,7 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
         viewHolder.stationVBTime.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                        context, null, station, null,
-                        HtmlRequestCodesEnum.SINGLE_RESULT);
+                        context, null, station, vehicle, HtmlRequestCodesEnum.SINGLE_RESULT);
                 retrieveVirtualBoards.getSumcInformation();
             }
         });

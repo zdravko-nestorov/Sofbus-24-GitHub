@@ -259,10 +259,8 @@ public class DroidTransDataSource {
                         vehicleDirection);
             }
 
-            vehiclesDirections.add(vehicleDirection.replace("-", " - ")
-                    .replaceAll(" +", " "));
-            vehiclesDirections.add(getOppositeDirection(vehicleDirection)
-                    .replace("-", " - ").replaceAll(" +", " "));
+            vehiclesDirections.add(vehicleDirection.replaceAll(" +", " "));
+            vehiclesDirections.add(getOppositeDirection(vehicleDirection).replaceAll(" +", " "));
         }
 
         // Closing the cursor
@@ -281,7 +279,7 @@ public class DroidTransDataSource {
 
         String oppositeDirection;
         String directionSeparator = " - ";
-        String[] directionParts = direction.split("-");
+        String[] directionParts = direction.split(" - ");
 
         switch (directionParts.length) {
             case 0:

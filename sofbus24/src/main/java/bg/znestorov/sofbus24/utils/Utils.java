@@ -1704,4 +1704,23 @@ public class Utils {
         return DateFormat.format("dd.MM.yyy, kk:mm", skgtDate).toString();
     }
 
+    /**
+     * Sorting alphabetically a list of stations in ASCENDING or DESCENDING way
+     *
+     * @param stationList list with {@link StationEntity} objects
+     * @param ascending   indicates if the sorting is ASC or DESC
+     */
+    public static void sortStationList(List<StationEntity> stationList, final boolean ascending) {
+
+        Collections.sort(stationList, new Comparator<StationEntity>() {
+
+            @Override
+            public int compare(StationEntity station1, StationEntity station2) {
+                return ascending ?
+                        station1.getFormattedNumber().compareTo(station2.getFormattedNumber()) :
+                        station2.getFormattedNumber().compareTo(station1.getFormattedNumber());
+            }
+        });
+    }
+
 }
