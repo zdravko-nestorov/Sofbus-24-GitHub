@@ -1660,11 +1660,15 @@ public class Utils {
     public static String readUrl(String urlString, Object... params) throws Exception {
 
         // Create a new scanner to download the URL content
-        Scanner scanner = new Scanner(new URL(String.format(urlString, params)).openStream(), "UTF-8");
+        try {
+            Scanner scanner = new Scanner(new URL(String.format(urlString, params)).openStream(), "UTF-8");
 
-        // The regular expression "\\A" matches the beginning of input. This tells Scanner
-        // to tokenize the entire stream, from beginning to (illogical) next beginning
-        return scanner.useDelimiter("\\A").next();
+            // The regular expression "\\A" matches the beginning of input. This tells Scanner
+            // to tokenize the entire stream, from beginning to (illogical) next beginning
+            return scanner.useDelimiter("\\A").next();
+        } catch (FileNotFoundException fnfe) {
+            return "{}";
+        }
     }
 
     /**
