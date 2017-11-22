@@ -842,7 +842,8 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                 Polyline polyline = googleMap.addPolyline(new PolylineOptions()
                         .add(new LatLng(src.latitude, src.longitude),
                                 new LatLng(dest.latitude, dest.longitude))
-                        .width(2).color(Color.BLUE).geodesic(true));
+                        .width(getResources().getInteger(R.integer.google_map_route_line_width))
+                        .color(Color.BLUE).geodesic(true));
 
                 // Add the point to the route list
                 routePolylineList.add(polyline);

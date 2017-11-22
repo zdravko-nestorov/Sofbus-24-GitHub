@@ -50,6 +50,6 @@
     <dimen name="home_screen_subtitle_txt_size">14sp</dimen>
 
     <!-- GoogleMapsRoute -->
-    <integer name="google_map_route_line_width">5</integer>
+    <integer name="google_map_route_line_width">7</integer>
 
 </resources>

@@ -59,12 +59,16 @@ public class Utils {
     static {
         DAYS_FOR_APP_UPDATE = new LinkedHashSet<Integer>();
         DAYS_FOR_APP_UPDATE.add(1);
+        DAYS_FOR_APP_UPDATE.add(15);
     }
 
     static {
         DAYS_FOR_DB_UPDATE = new LinkedHashSet<Integer>();
         DAYS_FOR_DB_UPDATE.add(1);
-        DAYS_FOR_DB_UPDATE.add(15);
+        DAYS_FOR_DB_UPDATE.add(7);
+        DAYS_FOR_DB_UPDATE.add(13);
+        DAYS_FOR_DB_UPDATE.add(19);
+        DAYS_FOR_DB_UPDATE.add(25);
     }
 
     /**
