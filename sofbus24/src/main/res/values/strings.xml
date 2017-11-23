@@ -207,7 +207,7 @@
     <string name="pref_category_map_position_summary">Позициониране на картата при промяна на текущото местоположение</string>
     <string name="pref_category_more">ДОПЪЛНИТЕЛНИ НАСТРОЙКИ</string>
     <string name="pref_category_more_automatic_update_title">Автоматично обновление на спирките</string>
-    <string name="pref_category_more_automatic_update_summary">Автоматична обновление при наличие на нови спирки и коли на СКГТ (два пъти месечно)</string>
+    <string name="pref_category_more_automatic_update_summary">Автоматична обновление при наличие на нови спирки и коли на СКГТ (няколко пъти месечно)</string>
     <string name="pref_category_more_google_analytics_title">Помощ за развитието на Софбус 24</string>
     <string name="pref_category_more_google_analytics_summary">Споделяне на анонимна информация за използването на приложението</string>
 
@@ -240,7 +240,7 @@
 <![CDATA[<b>%s версия %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>Android системата предоставя подробна информация, 
 		свързана с използването на градския транспорт в София, като часове на пристигане в реално време, разписания на превозните средства, 
 		разположения на спирките на територията на София, както и локализиране на най-близките спирки, в зависимост от текущото местоположение.<br><br>
-		<i>Данните се извличат от: <b><a href="http://m.sumc.bg">http://m.sumc.bg</a></b></i>]]>
+		<i>Данните се извличат от: <b><a href="http://www.sofiatraffic.bg">http://www.sofiatraffic.bg</a></b></i>]]>
     </string>
     <string name="about_update_app" formatted="false"><![CDATA[Проверка за нова версия на приложението…]]></string>
     <string name="about_update_app_last" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[В момента използвате последната версия на приложението - <b>Софбус 24 - версия %s</b>. Моля опитайте по-късно.]]></string>

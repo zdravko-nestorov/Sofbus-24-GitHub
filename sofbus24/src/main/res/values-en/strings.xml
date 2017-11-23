@@ -203,7 +203,7 @@
     <string name="pref_category_map_position_summary">Focus Google Map when the current location change</string>
     <string name="pref_category_more">OTHER</string>
     <string name="pref_category_more_automatic_update_title">Automatic station update</string>
-    <string name="pref_category_more_automatic_update_summary">Automatic update when new stations or SKGT cars are available (twice monthly - only if available)</string>
+    <string name="pref_category_more_automatic_update_summary">Automatic update when new stations or SKGT cars are available (a few times each month)</string>
     <string name="pref_category_more_google_analytics_title">Help developing Sofbus 24</string>
     <string name="pref_category_more_google_analytics_summary">Sharing anonymous information about the use of the application</string>
 
@@ -229,7 +229,7 @@
 <![CDATA[<b>%s version %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>An Android application, giving an information about the public
 		transport in Sofia, as the time of arrival in real time, the schedule of the vehicles, the position of the stations, as well as locating the 
 		closest stations, depending on the current location.<br><br>
-		<i>The data is extracted from: <b><u><a href="http://m.sumc.bg">http://m.sumc.bg</a></u></b></i>]]>
+		<i>The data is extracted from: <b><u><a href="http://www.sofiatraffic.bg">http://www.sofiatraffic.bg</a></u></b></i>]]>
     </string>
     <string name="about_update_app" formatted="false"><![CDATA[Checking for a new version of the application…]]></string>
     <string name="about_update_app_last" formatted="false"><![CDATA[You are using the latest version of the application - <b>Sofbus 24 - version %s</b>. Please try again later.]]></string>
