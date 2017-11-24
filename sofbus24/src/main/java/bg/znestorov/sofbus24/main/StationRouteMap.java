@@ -22,15 +22,31 @@ import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.*;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import bg.znestorov.sofbus24.databases.StationsDataSource;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.DirectionsEntity;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.MetroStationEntity;
+import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
-import bg.znestorov.sofbus24.utils.*;
+import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
+import bg.znestorov.sofbus24.utils.ThemeChange;
+import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
@@ -265,18 +281,19 @@ public class StationRouteMap extends SherlockFragmentActivity {
                 .getDirectionsList().get(metroActiveDirection);
 
         // Create an object consisted of a set of all points of the route
-        PolylineOptions metroRouteOptionsM11 = new PolylineOptions().width(
-                getResources()
-                        .getInteger(R.integer.google_map_route_line_width))
-                .color(Color.RED);
-        PolylineOptions metroRouteOptionsM12 = new PolylineOptions().width(
-                getResources()
-                        .getInteger(R.integer.google_map_route_line_width))
-                .color(Color.RED);
-        PolylineOptions metroRouteOptionsM2 = new PolylineOptions().width(
-                getResources()
-                        .getInteger(R.integer.google_map_route_line_width))
-                .color(Color.BLUE);
+        int lineWidth = getResources().getInteger(R.integer.google_map_route_line_width);
+        PolylineOptions metroRouteOptionsM1 = new PolylineOptions()
+                .width(lineWidth)
+                .color(Color.RED); // Slivnitsa - Business Park (THIN RED)
+        PolylineOptions metroRouteOptionsM21 = new PolylineOptions()
+                .width(lineWidth)
+                .color(Color.BLUE); // Vitosha - Slivnitsa (THIN 1 BLUE)
+        PolylineOptions metroRouteOptionsM22 = new PolylineOptions()
+                .width(lineWidth)
+                .color(Color.BLUE); // Mladost 1 - Sofia Airport (THIN 2 BLUE)
+        PolylineOptions metroRouteOptionsM23 = new PolylineOptions()
+                .width(lineWidth * 2)
+                .color(Color.BLUE); // Slivnitsa - Mladost 1 (THICK BLUE)
 
         // Process all stations of the metro route
         for (int i = 0; i < metroDirectionStations.size(); i++) {
@@ -291,21 +308,42 @@ public class StationRouteMap extends SherlockFragmentActivity {
 
                 // Add the msLocation to the appropriate route options object
                 int stationNumber = Integer.parseInt(station.getNumber());
-                if (stationNumber < 2999) {
-                    metroRouteOptionsM2.add(msLocation);
-                } else if (stationNumber > 3000) {
-                    if (stationNumber == 3025 || stationNumber == 3026) {
-                        metroRouteOptionsM11.add(msLocation);
-                        metroRouteOptionsM12.add(msLocation);
-                        metroRouteOptionsM12.add(mladostStationLocation);
+
+                if (stationNumber < 3001) {
+                    // Vitosha - Slivnitsa (THIN BLUE)
+                    metroRouteOptionsM21.add(msLocation);
+
+                } else if (stationNumber == 3001 || stationNumber == 3002) {
+                    // Slivnitsa (THIN 1/THICK BLUE and RED)
+                    metroRouteOptionsM1.add(msLocation);
+                    metroRouteOptionsM21.add(msLocation);
+                    metroRouteOptionsM23.add(msLocation);
+
+                } else if (stationNumber > 3002) {
+
+                    // Slivnitsa - Sofia Airport/Business Park
+                    if (stationNumber < 3025) {
+                        // Slivnitsa - Mladost 1 (RED and THICK BLUE)
+                        metroRouteOptionsM1.add(msLocation);
+                        metroRouteOptionsM23.add(msLocation);
+
+                    } else if (stationNumber == 3025 || stationNumber == 3026) {
+                        // Mladost 1 (RED and THICK/THIN 2 BLUE)
+                        metroRouteOptionsM1.add(msLocation);
+                        metroRouteOptionsM1.add(mladostStationLocation);
+
+                        metroRouteOptionsM22.add(msLocation);
+                        metroRouteOptionsM23.add(msLocation);
+
+                    } else if (stationNumber > 3026 && stationNumber < 3039) {
+
+                        // Mladost 1 - Sofia Airport (THIN BLUE)
+                        metroRouteOptionsM22.add(msLocation);
                     } else if (stationNumber >= 3039) {
-                        metroRouteOptionsM12.add(msLocation);
-                    } else {
-                        metroRouteOptionsM11.add(msLocation);
+
+                        // Alexandar Malinov - Business Park (RED)
+                        metroRouteOptionsM1.add(msLocation);
                     }
-                } else {
-                    metroRouteOptionsM11.add(msLocation);
-                    metroRouteOptionsM2.add(msLocation);
                 }
 
                 // Create a marker on the msLocation and set some options
@@ -352,10 +390,12 @@ public class StationRouteMap extends SherlockFragmentActivity {
                     }
                 });
 
-        // Draw a line between all the markers
-        stationMap.addPolyline(metroRouteOptionsM11);
-        stationMap.addPolyline(metroRouteOptionsM12);
-        stationMap.addPolyline(metroRouteOptionsM2);
+        // Draw a line between all the markers (RED route MUST be last, because it should
+        // appear above the THICK BLUE)
+        stationMap.addPolyline(metroRouteOptionsM21);
+        stationMap.addPolyline(metroRouteOptionsM22);
+        stationMap.addPolyline(metroRouteOptionsM23);
+        stationMap.addPolyline(metroRouteOptionsM1);
     }
 
     /**
@@ -614,4 +654,5 @@ public class StationRouteMap extends SherlockFragmentActivity {
 
         return station;
     }
+
 }
