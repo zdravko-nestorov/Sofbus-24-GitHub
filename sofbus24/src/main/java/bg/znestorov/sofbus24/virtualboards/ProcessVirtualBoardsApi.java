@@ -9,12 +9,11 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
+import bg.znestorov.sofbus24.databases.DroidTransDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
 import bg.znestorov.sofbus24.entity.StationEntity;
@@ -26,8 +25,21 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
 
-import static bg.znestorov.sofbus24.utils.Constants.*;
-import static bg.znestorov.sofbus24.utils.Utils.*;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_CODE_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_LINES_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_NAME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_SKGT_TIME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_AIR_CONDITIONING_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ARRIVALS_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DIRECTION_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_NAME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TIME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TYPE_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_WHEELCHAIR_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_WIFI_API;
+import static bg.znestorov.sofbus24.utils.Utils.getAsJsonBoolean;
+import static bg.znestorov.sofbus24.utils.Utils.getAsJsonString;
+import static bg.znestorov.sofbus24.utils.Utils.transformSkgtStringDateToDate;
 
 /**
  * Process the html result, retrieved from the SKGT site in an appropriate
@@ -42,6 +54,7 @@ class ProcessVirtualBoardsApi {
     private Activity context;
     private StationsDataSource stationsDatasource;
     private VehiclesDataSource vehicleDatasource;
+    private DroidTransDataSource droidTransDatasource;
     private String jsonResult;
 
     private final String language;
@@ -50,6 +63,7 @@ class ProcessVirtualBoardsApi {
         this.context = context;
         this.stationsDatasource = new StationsDataSource(context);
         this.vehicleDatasource = new VehiclesDataSource(context);
+        this.droidTransDatasource = new DroidTransDataSource(context);
         this.jsonResult = jsonResult;
         this.language = LanguageChange.getUserLocale(context);
     }
@@ -69,7 +83,7 @@ class ProcessVirtualBoardsApi {
                 getAsJsonString(stationJsonObject, VB_STATION_SKGT_TIME_API));
 
         // Init the list of vehicles for this station
-        ArrayList<VehicleEntity> stationVehicles = getStationVehicles(stationJsonObject);
+        ArrayList<VehicleEntity> stationVehicles = getStationVehicles(stationJsonObject, station);
 
         // Form the VirtualBoardsStationEntity using all data from the SKGT site
         return new VirtualBoardsStationEntity(station, skgtTime, stationVehicles);
@@ -109,9 +123,11 @@ class ProcessVirtualBoardsApi {
      * Create a list with all Vehicles that passes through this Station
      *
      * @param stationJsonObject {@link JsonObject} with the station and vehicles information
+     * @param station           {@link StationEntity} object from the DB for the current request
      * @return a list of the passing vehicles through this station
      */
-    private ArrayList<VehicleEntity> getStationVehicles(JsonObject stationJsonObject) {
+    private ArrayList<VehicleEntity> getStationVehicles(JsonObject stationJsonObject,
+                                                        StationEntity station) {
 
         ArrayList<VehicleEntity> stationVehicles = new ArrayList<>();
 
@@ -122,7 +138,7 @@ class ProcessVirtualBoardsApi {
             JsonObject linesJsonObject = lineJsonElement.getAsJsonObject();
 
             // Get the vehicle from the DB/SKGT and assign it all arrival information
-            VehicleEntity vehicle = getVehicle(linesJsonObject);
+            VehicleEntity vehicle = getVehicle(linesJsonObject, station);
             setVehicleInfo(vehicle, linesJsonObject);
 
             // Add the vehicle to the list of station vehicles
@@ -139,9 +155,10 @@ class ProcessVirtualBoardsApi {
      *
      * @param linesJsonObject JSON object containing the station vehicles passing
      *                        through this station
+     * @param station         {@link StationEntity} object from the DB for the current request
      * @return a {@link VehicleEntity} object from the DB/SKGT for the current request
      */
-    private VehicleEntity getVehicle(JsonObject linesJsonObject) {
+    private VehicleEntity getVehicle(JsonObject linesJsonObject, StationEntity station) {
 
         // Get the Vehicle name from the current request in the appropriate language
         String name = getAsJsonString(linesJsonObject, VB_VEHICLE_NAME_API);
@@ -178,6 +195,12 @@ class ProcessVirtualBoardsApi {
         } else {
             vehicle = new VehicleEntity(name, type, direction);
         }
+
+        // Correct the vehicle direction (if needed) - depends on the station number
+        droidTransDatasource.open();
+        vehicle.setDirection(droidTransDatasource.getVehicleDirectionViaStationNumber(
+                vehicle.getDirection(), vehicle.getNumber(), station.getNumber()));
+        droidTransDatasource.close();
 
         return vehicle;
     }

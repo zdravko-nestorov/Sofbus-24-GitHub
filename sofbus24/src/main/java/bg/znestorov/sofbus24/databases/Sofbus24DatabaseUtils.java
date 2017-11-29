@@ -23,7 +23,7 @@ public class Sofbus24DatabaseUtils {
      * the automatic application update (it may be one version up - all is up to
      * you)
      */
-    public static final Integer DB_STATIONS_VERSION = 19;
+    public static final Integer DB_STATIONS_VERSION = 20;
     private static final String DB_PATH = "//data//data//bg.znestorov.sofbus24.main//databases//";
     private static final String DB_STATIONS_NAME = "stations.db";
     private static final String DB_STATIONS_JOURNAL_NAME = "stations.db-journal";

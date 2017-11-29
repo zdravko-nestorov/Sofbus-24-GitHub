@@ -250,7 +250,7 @@ public class DroidTransDataSource {
                     new Locale(LanguageChange.getUserLocale(context)));
 
             if (vehicleType == VehicleTypeEnum.METRO) {
-                vehicleDirection = vehicleDirection.replaceAll("-.*-", "-");
+                vehicleDirection = vehicleDirection.replaceAll("-.*-", " - ");
             }
 
             // Translate to Latin if the language is different from BG
@@ -304,6 +304,56 @@ public class DroidTransDataSource {
         }
 
         return oppositeDirection;
+    }
+
+    /**
+     * Get the direction for the desired vehicle based on the current station number
+     * (the direction is based on the current vehicle and station numbers)
+     *
+     * @param vehicleDirection the desired location
+     * @param vehicleNumber    the vehicle number
+     * @param stationNumber    the station number
+     * @return the correct direction for this vehicle
+     */
+    public String getVehicleDirectionViaStationNumber(String vehicleDirection, String vehicleNumber,
+                                                      String stationNumber) {
+
+        StringBuilder query = new StringBuilder();
+        query.append(" SELECT VEST_DIRECTION	                                    	\n");
+        query.append(" FROM SOF_STAT													\n");
+        query.append(" 		JOIN SOF_VEST												\n");
+        query.append(" 			ON SOF_VEST.FK_VEST_STAT_ID = SOF_STAT.PK_STAT_ID		\n");
+        query.append(" 		JOIN SOF_VEHI												\n");
+        query.append(" 			ON SOF_VEHI.PK_VEHI_ID = SOF_VEST.FK_VEST_VEHI_ID		\n");
+        query.append(" 			AND SOF_VEHI.VEHI_NUMBER LIKE '" + vehicleNumber
+                + "'																	\n");
+        query.append(" WHERE SOF_STAT.STAT_NUMBER = " + stationNumber
+                + "																		\n");
+
+        // Selecting the row that contains the vehicles direction
+        Cursor cursor = database.rawQuery(query.toString(), null);
+
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+
+            // Get the vehicle direction number from the database and base on this decide
+            // which direction to show (if 1 - current one, 2 - the opposite)
+            Integer vehicleDirectionNumber = cursor.getInt(0);
+            if (vehicleDirectionNumber != 1) {
+                vehicleDirection = getOppositeDirection(vehicleDirection);
+            }
+
+            // Translate to Latin if the language is different from BG
+            if (!"bg".equals(language)) {
+                vehicleDirection = TranslatorCyrillicToLatin.translate(context,
+                        vehicleDirection);
+            }
+        }
+
+        // Closing the cursor
+        cursor.close();
+
+        return vehicleDirection;
     }
 
     /**
