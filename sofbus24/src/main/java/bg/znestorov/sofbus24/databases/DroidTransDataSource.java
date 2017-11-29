@@ -250,7 +250,7 @@ public class DroidTransDataSource {
                     new Locale(LanguageChange.getUserLocale(context)));
 
             if (vehicleType == VehicleTypeEnum.METRO) {
-                vehicleDirection = vehicleDirection.replaceAll("-.*-", " - ");
+                vehicleDirection = vehicleDirection.replaceAll(" - .* - ", " - ");
             }
 
             // Translate to Latin if the language is different from BG
