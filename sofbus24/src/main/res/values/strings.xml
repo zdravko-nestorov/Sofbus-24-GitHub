@@ -423,6 +423,7 @@
     <string name="route_changes_title">Маршрутни промени</string>
     <string name="route_changes_label_creation_date" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Качена на: %s]]></string>
     <string name="route_changes_label_valid_from" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Валидна от: %s]]></string>
+    <string name="route_changes_label_modified_from" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Променена на: %s]]></string>
     <string name="route_changes_loading" formatted="false"><![CDATA[Търсене на маршрутни промени…]]></string>
     <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на колите на Градския Транспорт в София.</string>
     <string name="route_changes_news_loading" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Зареждане на <b><i>%s</i></b>…]]></string>

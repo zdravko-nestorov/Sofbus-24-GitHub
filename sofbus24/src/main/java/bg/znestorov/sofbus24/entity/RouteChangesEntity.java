@@ -3,6 +3,7 @@ package bg.znestorov.sofbus24.entity;
 import java.io.Serializable;
 
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Used to represent the route changes of the public transport in Sofia
@@ -17,6 +18,7 @@ public class RouteChangesEntity implements Serializable {
     private String id;
     private String title;
     private String validFromDate;
+    private String modifiedDate;
     private String creationDate;
     private String url;
     private String articleBody;
@@ -25,9 +27,11 @@ public class RouteChangesEntity implements Serializable {
                               String creationDate) {
         this.id = id;
         this.title = title;
-        this.validFromDate = validFromDate;
-        this.creationDate = creationDate;
-        this.url = String.format(Constants.ROUTE_CHANGES_NEWS_URL_ADDRESS, id);
+        this.validFromDate = Utils.transformStringDate(validFromDate,
+                "yyyy-MM-dd HH:mm:ss", "dd.MM.yyy");
+        this.creationDate = Utils.transformStringDate(creationDate,
+                "yyyy-MM-dd HH:mm:ss", "dd.MM.yyy kk:mm");
+        this.url = String.format(Constants.ROUTE_CHANGES_NEWS_API_URL_ADDRESS, id);
     }
 
     public String getId() {
@@ -52,6 +56,14 @@ public class RouteChangesEntity implements Serializable {
 
     public void setValidFromDate(String validFromDate) {
         this.validFromDate = validFromDate;
+    }
+
+    public String getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
     public String getCreationDate() {
@@ -80,10 +92,15 @@ public class RouteChangesEntity implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getName() + " {\n\tid: " + id + "\n\ttitle: " + title
-                + "\n\tvalidFromDate: " + validFromDate + "\n\tcreationDate: "
-                + creationDate + "\n\turl: " + url + "\n\tarticleBody: "
-                + articleBody + "\n}";
+        return "RouteChangesEntity{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", validFromDate='" + validFromDate + '\'' +
+                ", creationDate='" + creationDate + '\'' +
+                ", modifiedDate='" + modifiedDate + '\'' +
+                ", url='" + url + '\'' +
+                ", articleBody='" + articleBody + '\'' +
+                '}';
     }
 
 }

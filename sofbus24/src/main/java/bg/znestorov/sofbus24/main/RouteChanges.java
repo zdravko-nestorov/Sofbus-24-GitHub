@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.entity.LoadTypeEnum;
 import bg.znestorov.sofbus24.entity.RouteChangesEntity;
-import bg.znestorov.sofbus24.route.changes.RetrieveRouteChanges;
-import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesNews;
+import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
+import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesNewsApi;
 import bg.znestorov.sofbus24.route.changes.RouteChangesAdapter;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
@@ -114,9 +114,9 @@ public class RouteChanges extends SherlockListActivity {
                     R.string.route_changes_news_loading,
                     routeChanges.getTitle())));
 
-            RetrieveRouteChangesNews retrieveRouteChangesNews = new RetrieveRouteChangesNews(
+            RetrieveRouteChangesNewsApi retrieveRouteChangesNewsApi = new RetrieveRouteChangesNewsApi(
                     context, progressDialog, routeChanges);
-            retrieveRouteChangesNews.execute();
+            retrieveRouteChangesNewsApi.execute();
         } else {
             ActivityUtils.showNoInternetToast(context);
         }
@@ -160,9 +160,9 @@ public class RouteChanges extends SherlockListActivity {
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage(getString(R.string.route_changes_loading));
 
-        RetrieveRouteChanges retrieveRouteChanges = new RetrieveRouteChanges(
+        RetrieveRouteChangesApi retrieveRouteChangesApi = new RetrieveRouteChangesApi(
                 context, progressDialog, LoadTypeEnum.REFRESH);
-        retrieveRouteChanges.execute();
+        retrieveRouteChangesApi.execute();
     }
 
     /**

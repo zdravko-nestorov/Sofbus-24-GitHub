@@ -268,6 +268,18 @@ public class Constants {
     public static final String ROUTE_CHANGES_NEW_LINES_REGEX = "(<br.*?>){2,}";
 
     /**
+     * Route Changes API
+     */
+    public static final String ROUTE_CHANGES_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/route-changes/?page=%s";
+    public static final String ROUTE_CHANGES_NEWS_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/articles/%s/";
+    public static final String ROUTE_CHANGES_NEWS_API_RESULTS = "results";
+    public static final String ROUTE_CHANGES_NEWS_API_ID = "article_id";
+    public static final String ROUTE_CHANGES_NEWS_API_TITLE = "title";
+    public static final String ROUTE_CHANGES_NEWS_API_DATE_PUBLISHED = "article_date_published";
+    public static final String ROUTE_CHANGES_NEWS_API_DATE_MODIFIED = "date_last_modified";
+    public static final String ROUTE_CHANGES_NEWS_API_CONTENT = "content";
+
+    /**
      * Google Cloud Messaging
      */
     public static final String GCM_PROJECT_ID = "968618561001";

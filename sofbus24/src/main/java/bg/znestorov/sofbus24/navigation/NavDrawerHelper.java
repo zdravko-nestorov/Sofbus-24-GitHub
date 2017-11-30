@@ -31,7 +31,7 @@ import bg.znestorov.sofbus24.main.PreferencesDialog;
 import bg.znestorov.sofbus24.main.PreferencesPreHoneycomb;
 import bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog;
 import bg.znestorov.sofbus24.main.R;
-import bg.znestorov.sofbus24.route.changes.RetrieveRouteChanges;
+import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
@@ -108,10 +108,10 @@ public class NavDrawerHelper {
                     progressDialog.setMessage(context
                             .getString(R.string.route_changes_loading));
 
-                    RetrieveRouteChanges retrieveRouteChanges;
-                    retrieveRouteChanges = new RetrieveRouteChanges(context,
+                    RetrieveRouteChangesApi retrieveRouteChangesApi;
+                    retrieveRouteChangesApi = new RetrieveRouteChangesApi(context,
                             progressDialog, LoadTypeEnum.INIT);
-                    retrieveRouteChanges.execute();
+                    retrieveRouteChangesApi.execute();
                 } else {
                     ActivityUtils.showNoInternetToast(context);
                 }

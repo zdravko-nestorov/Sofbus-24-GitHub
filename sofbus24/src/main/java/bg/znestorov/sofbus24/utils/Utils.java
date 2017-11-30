@@ -1715,6 +1715,28 @@ public class Utils {
     }
 
     /**
+     * Transforms a SKGT string date time to a string date in another format
+     *
+     * @param time          the skgt time get from the API request
+     * @param inputPattern  input date pattern
+     * @param outputPattern output date pattern
+     * @return the SKGT time in Sofbus 24 format
+     */
+    public static String transformStringDate(String time, String inputPattern, String outputPattern) {
+
+        SimpleDateFormat format = new SimpleDateFormat(inputPattern);
+        Date skgtDate;
+        try {
+            time = time.replace('T', ' ');
+            skgtDate = format.parse(time);
+        } catch (ParseException e) {
+            skgtDate = new Date();
+        }
+
+        return DateFormat.format(outputPattern, skgtDate).toString();
+    }
+
+    /**
      * Sorting alphabetically a list of stations in ASCENDING or DESCENDING way
      *
      * @param stationList list with {@link StationEntity} objects
