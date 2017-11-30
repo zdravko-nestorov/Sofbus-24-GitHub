@@ -272,6 +272,7 @@ public class Constants {
      */
     public static final String ROUTE_CHANGES_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/route-changes/?page=%s";
     public static final String ROUTE_CHANGES_NEWS_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/articles/%s/";
+    public static final String ROUTE_CHANGES_NEWS_API_URL_BROWSER_ADDRESS = "https://www.sofiatraffic.bg/bg/transport/routeChanges/%s/";
     public static final String ROUTE_CHANGES_NEWS_API_RESULTS = "results";
     public static final String ROUTE_CHANGES_NEWS_API_ID = "article_id";
     public static final String ROUTE_CHANGES_NEWS_API_TITLE = "title";

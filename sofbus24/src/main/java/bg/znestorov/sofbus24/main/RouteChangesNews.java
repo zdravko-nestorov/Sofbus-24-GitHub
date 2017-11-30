@@ -17,6 +17,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 
 import bg.znestorov.sofbus24.entity.RouteChangesEntity;
+import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 
@@ -70,7 +71,8 @@ public class RouteChangesNews extends SherlockFragmentActivity {
         LanguageChange.selectLocale(this);
 
         // Get the URL address and the device Android version
-        String urlAddress = routeChanges.getUrl();
+        String urlAddress = String.format(Constants.ROUTE_CHANGES_NEWS_API_URL_BROWSER_ADDRESS,
+                routeChanges.getId());
         int deviceSDK = android.os.Build.VERSION.SDK_INT;
 
         switch (item.getItemId()) {
