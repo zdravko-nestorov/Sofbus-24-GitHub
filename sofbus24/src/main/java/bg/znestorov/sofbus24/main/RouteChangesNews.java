@@ -139,14 +139,15 @@ public class RouteChangesNews extends SherlockFragmentActivity {
         TextView routeChangesNewsTitle = (TextView) findViewById(R.id.route_changes_news_title);
         routeChangesNewsTitle.setText(Html.fromHtml(routeChanges.getTitle()));
 
-        TextView routeChangesNewsValidDate = (TextView) findViewById(R.id.route_changes_news_valid_date);
-        routeChangesNewsValidDate.setText(Html.fromHtml(getString(
+        TextView routeChangesNewsValidFromDate = (TextView) findViewById(R.id.route_changes_news_valid_from_date);
+        routeChangesNewsValidFromDate.setText(Html.fromHtml(getString(
                 R.string.route_changes_label_valid_from,
                 routeChanges.getValidFromDate())));
 
-        TextView routeChangesNewsCreationDate = (TextView) findViewById(R.id.route_changes_news_creation_date);
-        routeChangesNewsCreationDate.setText(Html.fromHtml(routeChanges
-                .getCreationDate()));
+        TextView routeChangesNewsValidToDate = (TextView) findViewById(R.id.route_changes_news_valid_to_date);
+        routeChangesNewsValidToDate.setText(Html.fromHtml(getString(
+                R.string.route_changes_label_valid_to,
+                routeChanges.getValidToDate())));
 
         TextView routeChangesNewsArticleBody = (TextView) findViewById(R.id.route_changes_news_article_body);
         routeChangesNewsArticleBody.setText(Html.fromHtml(routeChanges

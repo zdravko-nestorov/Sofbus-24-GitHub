@@ -73,7 +73,7 @@
     <string name="action_edit_tabs">Начален екран</string>
     <string name="action_clear_schedule_cache">Изчисти кеша</string>
     <!-- Google Maps -->
-    <string name="action_gm_map_favorites">Фаворити</string>
+    <string name="action_gm_map_favorites">Любими</string>
     <string name="action_gm_map_droidtrans">Коли на СКГТ</string>
     <string name="action_gm_map_clear">Изчисти</string>
     <string name="action_gm_map_route">Маршрут</string>
@@ -117,7 +117,7 @@
     <string name="action_history_top">Най-отгоре</string>
     <string name="action_history_delete_all">Изтрий всички</string>
     <!-- DroidTrans -->
-    <string name="action_droidtrans_favourites">Фаворити</string>
+    <string name="action_droidtrans_favourites">Любими</string>
     <string name="action_droidtrans_reset">Локализирай</string>
     <!-- WebPage -->
     <string name="action_web_page_home">Начало</string>
@@ -180,8 +180,8 @@
     <string name="pref_category_common_theme_title">Тема</string>
     <string name="pref_category_common_theme_summary">Избор на облик на приложението</string>
     <string name="pref_category_visual">ВИЗУАЛНИ</string>
-    <string name="pref_category_visual_fav_title">Фаворити</string>
-    <string name="pref_category_visual_fav_summary">Визуализиране на фаворитите чрез Google Street View (начален екран)</string>
+    <string name="pref_category_visual_fav_title">Любими</string>
+    <string name="pref_category_visual_fav_summary">Визуализиране на "любими" чрез Google Street View (начален екран)</string>
     <string name="pref_category_visual_hs_tabs_title">Начален екран</string>
     <string name="pref_category_visual_hs_tabs_summary">Визуализиране на табовете на началния екран (изображение и/или текст)</string>
     <string name="pref_category_stations">ИНФОРМАЦИЯ ЗА СПИРКИ</string>
@@ -212,16 +212,16 @@
     <string name="pref_category_more_google_analytics_summary">Споделяне на анонимна информация за използването на приложението</string>
 
     <!-- Sofbus 24 Fragment -->
-    <string name="sofbus24_favourites_title">Фаворити</string>
+    <string name="sofbus24_favourites_title">Любими</string>
     <string name="sofbus24_search_title">Търсене</string>
     <string name="sofbus24_schedule_title">Разписание</string>
     <string name="sofbus24_metro_title">Метро</string>
 
     <!-- Edit Tabs Fragment -->
     <string name="edit_tabs_title">Начален екран</string>
-    <string name="edit_tabs_favourites">Фаворити</string>
-    <string name="edit_tabs_favourites_orientation" translatable="false">Фаворити</string>
-    <string name="edit_tabs_favourites_pre_honeycomb" translatable="false">Фаворити</string>
+    <string name="edit_tabs_favourites">Любими</string>
+    <string name="edit_tabs_favourites_orientation" translatable="false">Любими</string>
+    <string name="edit_tabs_favourites_pre_honeycomb" translatable="false">Любими</string>
     <string name="edit_tabs_search">Търсене</string>
     <string name="edit_tabs_search_orientation" translatable="false">Търсене</string>
     <string name="edit_tabs_search_pre_honeycomb" translatable="false">Търсене</string>
@@ -280,11 +280,11 @@
     <string name="fav_menu_sort_order_last">Най-отдолу</string>
     <string name="fav_menu_sort_success" formatted="false"><![CDATA[Секцията <b>Любими</b> беше успешно сортирана.]]></string>
     <string name="fav_info_real_name">Оригинално име</string>
-    <string name="fav_info_favourites_name">Име във Фаворити</string>
+    <string name="fav_info_favourites_name">Име в Любими</string>
     <string name="fav_info_date_added">Дата на добавяне</string>
     <string name="fav_info_date_last_access">Последно използване</string>
     <string name="fav_info_usage_count">Брой използвания</string>
-    <string name="fav_info_position">Позиция във Фаворити</string>
+    <string name="fav_info_position">Позиция в Любими</string>
 
     <!-- Virtual Boards Fragment -->
     <string name="vb_search_hint">Търсене по име или номер</string>
@@ -421,9 +421,8 @@
 
     <!-- Route Changes -->
     <string name="route_changes_title">Маршрутни промени</string>
-    <string name="route_changes_label_creation_date" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Качена на: %s]]></string>
     <string name="route_changes_label_valid_from" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Валидна от: %s]]></string>
-    <string name="route_changes_label_modified_from" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Променена на: %s]]></string>
+    <string name="route_changes_label_valid_to" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Валидна до: %s]]></string>
     <string name="route_changes_loading" formatted="false"><![CDATA[Търсене на маршрутни промени…]]></string>
     <string name="route_changes_list_empty_text">В момента няма обявени промени на маршрутите на колите на Градския Транспорт в София.</string>
     <string name="route_changes_news_loading" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Зареждане на <b><i>%s</i></b>…]]></string>

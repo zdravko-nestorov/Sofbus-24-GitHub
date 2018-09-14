@@ -16,18 +16,38 @@ import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
 
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.UpdateTypeEnum;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.history.HistoryEntity;
 import bg.znestorov.sofbus24.history.HistoryOfSearches;
 import bg.znestorov.sofbus24.main.R;
@@ -1717,23 +1737,21 @@ public class Utils {
     /**
      * Transforms a SKGT string date time to a string date in another format
      *
-     * @param time          the skgt time get from the API request
-     * @param inputPattern  input date pattern
-     * @param outputPattern output date pattern
+     * @param time             the skgt time get from the API request
+     * @param inputPattern     input date pattern
+     * @param outputPattern    output date pattern
+     * @param isInfiniteFuture if the date is invalid, get the current symbol to pass
      * @return the SKGT time in Sofbus 24 format
      */
-    public static String transformStringDate(String time, String inputPattern, String outputPattern) {
-
-        SimpleDateFormat format = new SimpleDateFormat(inputPattern);
-        Date skgtDate;
+    public static String transformStringDate(String time, String inputPattern, String outputPattern,
+                                             boolean isInfiniteFuture) {
         try {
+            SimpleDateFormat format = new SimpleDateFormat(inputPattern);
             time = time.replace('T', ' ');
-            skgtDate = format.parse(time);
-        } catch (ParseException e) {
-            skgtDate = new Date();
+            return DateFormat.format(outputPattern, format.parse(time)).toString();
+        } catch (Exception e) {
+            return !isInfiniteFuture ? "---" : "∞";
         }
-
-        return DateFormat.format(outputPattern, skgtDate).toString();
     }
 
     /**
@@ -1753,6 +1771,20 @@ public class Utils {
                         station2.getFormattedNumber().compareTo(station1.getFormattedNumber());
             }
         });
+    }
+
+    /**
+     * Convert a {@link JsonElement} to a string. In case of a NULL, return NULL object
+     *
+     * @param jsonElement the {@link JsonElement} input parameter
+     * @return the {@link JsonElement} in string format
+     */
+    public static String getJsonElementAsString(JsonElement jsonElement) {
+        try {
+            return jsonElement.getAsString();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }

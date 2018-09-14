@@ -109,10 +109,6 @@ public class RetrieveRouteChangesNewsApi extends AsyncTask<Void, Void, String> {
         try {
             articleJsonObject = new JsonParser().parse(jsonResult).getAsJsonObject();
 
-            // Set the article modified date
-            routeChanges.setModifiedDate(
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_DATE_MODIFIED).getAsString());
-
             // Set the article body
             String articleBody = articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_CONTENT).getAsString();
             articleBody = articleBody.replaceAll("&nbsp;", "");

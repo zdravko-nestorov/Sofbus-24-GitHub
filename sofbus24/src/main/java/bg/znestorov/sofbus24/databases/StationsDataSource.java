@@ -293,12 +293,21 @@ public class StationsDataSource {
         searchText = searchText.toLowerCase(currentLocale);
         searchText = TranslatorLatinToCyrillic.translate(context, searchText);
 
+        // Special case of search - for example: "0764"
+        String searchNumber = searchText;
+        if (Utils.isInteger(searchText) && searchText.length() == 4 && Utils.removeLeadingZeroes(searchText).length() < 4) {
+            searchNumber = Utils.removeLeadingZeroes(searchNumber);
+            searchNumber = "'" + searchNumber + "'";
+        } else {
+            searchNumber = "'%" + searchNumber + "%'";
+        }
+
         StringBuilder query = new StringBuilder();
         query.append(" SELECT * 											\n");
         query.append(" FROM " + Sofbus24SQLite.TABLE_SOF_STAT + "			\n");
         query.append(" WHERE ( 												\n");
         query.append(" 		lower(CAST(" + Sofbus24SQLite.COLUMN_STAT_NUMBER
-                + " AS TEXT)) LIKE '%" + searchText + "%'					\n");
+                + " AS TEXT)) LIKE " + searchNumber + "   					\n");
         query.append(" OR 													\n");
         query.append(" 		lower(" + Sofbus24SQLite.COLUMN_STAT_NAME
                 + ") LIKE '%" + searchText + "%'		 					\n");

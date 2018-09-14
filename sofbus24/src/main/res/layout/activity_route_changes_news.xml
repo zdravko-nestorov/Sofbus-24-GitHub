@@ -39,7 +39,7 @@
                 android:src="@drawable/ic_route_changes_valid_from" />
 
             <TextView
-                android:id="@+id/route_changes_news_valid_date"
+                android:id="@+id/route_changes_news_valid_from_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
@@ -62,10 +62,10 @@
                 android:layout_marginRight="7dp"
                 android:contentDescription="@string/app_img_empty_content_description"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_route_changes_creation_date" />
+                android:src="@drawable/ic_route_changes_valid_to" />
 
             <TextView
-                android:id="@+id/route_changes_news_creation_date"
+                android:id="@+id/route_changes_news_valid_to_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"

@@ -200,10 +200,10 @@ public class RetrieveRouteChangesApi extends
 
             JsonObject articleJsonObject = articleJsonElement.getAsJsonObject();
             routeChangesList.add(new RouteChangesEntity(
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_ID).getAsString(),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_TITLE).getAsString(),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_DATE_PUBLISHED).getAsString(),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_DATE_PUBLISHED).getAsString()));
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_ID),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_TITLE),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_FROM_DATE),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_TO_DATE)));
         }
 
         return routeChangesList;

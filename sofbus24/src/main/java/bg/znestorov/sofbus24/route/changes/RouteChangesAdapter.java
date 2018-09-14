@@ -57,8 +57,8 @@ public class RouteChangesAdapter extends ArrayAdapter<RouteChangesEntity>
                     .findViewById(R.id.route_changes_item_title);
             viewHolder.roadChangesValidFromDate = (TextView) rowView
                     .findViewById(R.id.route_changes_item_valid_from_date);
-            viewHolder.roadChangesCreationDate = (TextView) rowView
-                    .findViewById(R.id.route_changes_item_creation_date);
+            viewHolder.roadChangesValidToDate = (TextView) rowView
+                    .findViewById(R.id.route_changes_item_valid_to_date);
             rowView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rowView.getTag();
@@ -72,9 +72,9 @@ public class RouteChangesAdapter extends ArrayAdapter<RouteChangesEntity>
         viewHolder.roadChangesValidFromDate.setText(context.getString(
                 R.string.route_changes_label_valid_from,
                 routeChanges.getValidFromDate()));
-        viewHolder.roadChangesCreationDate.setText(context.getString(
-                R.string.route_changes_label_creation_date,
-                routeChanges.getCreationDate()));
+        viewHolder.roadChangesValidToDate.setText(context.getString(
+                R.string.route_changes_label_valid_to,
+                routeChanges.getValidToDate()));
 
         return rowView;
     }
@@ -83,7 +83,7 @@ public class RouteChangesAdapter extends ArrayAdapter<RouteChangesEntity>
     static class ViewHolder {
         TextView roadChangesTitle;
         TextView roadChangesValidFromDate;
-        TextView roadChangesCreationDate;
+        TextView roadChangesValidToDate;
     }
 
 }

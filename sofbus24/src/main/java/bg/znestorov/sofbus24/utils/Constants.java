@@ -271,13 +271,13 @@ public class Constants {
      * Route Changes API
      */
     public static final String ROUTE_CHANGES_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/route-changes/?page=%s";
-    public static final String ROUTE_CHANGES_NEWS_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/articles/%s/";
+    public static final String ROUTE_CHANGES_NEWS_API_URL_ADDRESS = "https://www.sofiatraffic.bg/bg/api/v1/cms/route-changes/%s/";
     public static final String ROUTE_CHANGES_NEWS_API_URL_BROWSER_ADDRESS = "https://www.sofiatraffic.bg/bg/transport/routeChanges/%s/";
     public static final String ROUTE_CHANGES_NEWS_API_RESULTS = "results";
-    public static final String ROUTE_CHANGES_NEWS_API_ID = "article_id";
+    public static final String ROUTE_CHANGES_NEWS_API_ID = "id";
     public static final String ROUTE_CHANGES_NEWS_API_TITLE = "title";
-    public static final String ROUTE_CHANGES_NEWS_API_DATE_PUBLISHED = "article_date_published";
-    public static final String ROUTE_CHANGES_NEWS_API_DATE_MODIFIED = "date_last_modified";
+    public static final String ROUTE_CHANGES_NEWS_VALID_FROM_DATE = "valid_from";
+    public static final String ROUTE_CHANGES_NEWS_VALID_TO_DATE = "valid_to";
     public static final String ROUTE_CHANGES_NEWS_API_CONTENT = "content";
 
     /**

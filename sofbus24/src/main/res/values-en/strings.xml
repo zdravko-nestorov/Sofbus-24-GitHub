@@ -410,9 +410,8 @@
 
     <!-- Route Changes -->
     <string name="route_changes_title">Route Changes</string>
-    <string name="route_changes_label_creation_date" formatted="false"><![CDATA[Uploaded on: %s]]></string>
     <string name="route_changes_label_valid_from" formatted="false"><![CDATA[Valid from: %s]]></string>
-    <string name="route_changes_label_modified_from" formatted="false"><![CDATA[Modified on: %s]]></string>
+    <string name="route_changes_label_valid_to" formatted="false"><![CDATA[Valid to: %s]]></string>
     <string name="route_changes_loading" formatted="false"><![CDATA[Looking for a route changes…]]></string>
     <string name="route_changes_list_empty_text">No changes of the Sofia Public Transport routes are announced.</string>
     <string name="route_changes_news_loading" formatted="false"><![CDATA[Loading information about <b><i>%s</i></b>…]]></string>
