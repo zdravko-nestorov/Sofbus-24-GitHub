@@ -49,6 +49,10 @@ public class ScheduleVehicleInfo {
      */
     public void onListItemClick(VehicleEntity vehicle, String vehicleTitle) {
 
+        proceedStandardCase(vehicle, vehicleTitle);
+
+        /* Disable the special processing of the vehicles numbers. Using the API,
+         * everything is available directly through the API service
         String vehicleNumber = vehicle.getNumber();
         if ("1-ТБ".equals(vehicleNumber)) {
             proceedSpecialCase(createDirectionEntity1TB(vehicle));
@@ -73,6 +77,7 @@ public class ScheduleVehicleInfo {
         } else {
             proceedStandardCase(vehicle, vehicleTitle);
         }
+        */
     }
 
     /**
