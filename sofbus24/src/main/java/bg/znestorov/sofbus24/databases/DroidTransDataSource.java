@@ -22,14 +22,19 @@ import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
  */
 public class DroidTransDataSource {
 
-    private final Sofbus24SQLite dbHelper;
-    private final String[] vehiColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
-            Sofbus24SQLite.COLUMN_VEHI_NUMBER, Sofbus24SQLite.COLUMN_VEHI_TYPE,
-            Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
     private final Activity context;
     private final String language;
+
     // Database fields
     private SQLiteDatabase database;
+    private final Sofbus24SQLite dbHelper;
+
+    // Columns of the VEHI Table
+    private final String[] vehiColumns = {
+            Sofbus24SQLite.COLUMN_PK_VEHI_ID,
+            Sofbus24SQLite.COLUMN_VEHI_NUMBER,
+            Sofbus24SQLite.COLUMN_VEHI_TYPE,
+            Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
 
     public DroidTransDataSource(Activity context) {
         this.context = context;
@@ -38,11 +43,11 @@ public class DroidTransDataSource {
     }
 
     public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
+        database = Sofbus24DatabaseUtils.openDb(dbHelper, database);
     }
 
     public void close() {
-        dbHelper.close();
+        Sofbus24DatabaseUtils.closeDb(dbHelper, database);
     }
 
     /**

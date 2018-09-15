@@ -14,51 +14,43 @@ import android.database.sqlite.SQLiteDatabase;
  */
 class Sofbus24DataSource {
 
+    // Database fields
+    private SQLiteDatabase database;
     private final Sofbus24SQLite dbHelper;
-    private final String[] stationsColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
-            Sofbus24SQLite.COLUMN_STAT_NUMBER, Sofbus24SQLite.COLUMN_STAT_NAME,
+
+    // Columns of the STATIONS Table
+    private final String[] stationsColumns = {
+            Sofbus24SQLite.COLUMN_PK_STAT_ID,
+            Sofbus24SQLite.COLUMN_STAT_NUMBER,
+            Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-    private final String[] vehiclesColumns = {Sofbus24SQLite.COLUMN_PK_VEHI_ID,
-            Sofbus24SQLite.COLUMN_VEHI_NUMBER, Sofbus24SQLite.COLUMN_VEHI_TYPE,
+
+    // Columns of the VEHICLES Table
+    private final String[] vehiclesColumns = {
+            Sofbus24SQLite.COLUMN_PK_VEHI_ID,
+            Sofbus24SQLite.COLUMN_VEHI_NUMBER,
+            Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
-    private final String[] droidTransColumns = {Sofbus24SQLite.COLUMN_PK_VEST_ID,
+
+    // Columns of the DROID TRANS Table
+    private final String[] droidTransColumns = {
+            Sofbus24SQLite.COLUMN_PK_VEST_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_VEHI_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_STAT_ID,
             Sofbus24SQLite.COLUMN_VEST_DIRECTION};
-    // Database fields
-    private SQLiteDatabase database;
 
     public Sofbus24DataSource(Activity context) {
         dbHelper = new Sofbus24SQLite(context);
     }
 
-    /**
-     * A strange error occurs sometimes - {android.database.sqlite.SQLiteDiskIOException:
-     * disk I/O error}. The exception itself is generated in the native sqlite code, and
-     * while I haven't looked up the C/C++ part of the JNI interface, this should come
-     * directly from the underlying sqlite3_open call. For non obvious reasons the actual
-     * error code is not included in the thrown exception, so you are basically out of luck
-     * here to find the root cause.
-     * As this comes directly from the native layer it's some kind of filesystem/hardware problem.
-     * The card may be broken, the card socket may be broken/dirty/whatever or anything in between
-     * could be messed up (most likely physically).
-     * <p/>
-     * For more information, StackOverflow posts:<br/>
-     * {http://stackoverflow.com/questions/20189026/contentprovider-throws-
-     * sqlitecantopendatabaseexception-unable-to-open-database}<br/>
-     * {http://stackoverflow.com/questions/4651797/database-handling-stoped-
-     * working-on-android-2-2-1-desire-hd-1-72-405-3/4828540#4828540}
-     *
-     * @throws SQLException
-     */
     private void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
+        database = Sofbus24DatabaseUtils.openDb(dbHelper, database);
     }
 
     private void close() {
-        dbHelper.close();
+        Sofbus24DatabaseUtils.closeDb(dbHelper, database);
     }
 
     /**
@@ -69,10 +61,17 @@ class Sofbus24DataSource {
      */
     public boolean isSofbus24ValidDatabase() {
 
-        open();
-        boolean isSofbus24ValidDatabase = isStationsTableValid()
-                && isVehiclesTableValid() && isDroidTransTableValid();
-        close();
+        boolean isSofbus24ValidDatabase;
+
+        try {
+            open();
+            isSofbus24ValidDatabase = isStationsTableValid() && isVehiclesTableValid()
+                    && isDroidTransTableValid();
+        } catch (Exception e) {
+            isSofbus24ValidDatabase = false;
+        } finally {
+            close();
+        }
 
         return isSofbus24ValidDatabase;
     }
@@ -88,8 +87,7 @@ class Sofbus24DataSource {
 
         for (String stationsColumn : stationsColumns) {
             String stationsTableName = Sofbus24SQLite.TABLE_SOF_STAT;
-            isStationsTabledValid = isStationsTabledValid
-                    && existsColumnInTable(database, stationsTableName,
+            isStationsTabledValid = existsColumnInTable(database, stationsTableName,
                     stationsColumn);
 
             // In case there is an error - stop the loop
@@ -112,8 +110,7 @@ class Sofbus24DataSource {
 
         for (String vehiclesColumn : vehiclesColumns) {
             String vehiclesTableName = Sofbus24SQLite.TABLE_SOF_VEHI;
-            isVehiclesTabledValid = isVehiclesTabledValid
-                    && existsColumnInTable(database, vehiclesTableName,
+            isVehiclesTabledValid = existsColumnInTable(database, vehiclesTableName,
                     vehiclesColumn);
 
             // In case there is an error - stop the loop
@@ -137,8 +134,7 @@ class Sofbus24DataSource {
 
         for (String droidTransColumn : droidTransColumns) {
             String droidTransTableName = Sofbus24SQLite.TABLE_SOF_VEST;
-            isDroidTransTabledValid = isDroidTransTabledValid
-                    && existsColumnInTable(database, droidTransTableName,
+            isDroidTransTabledValid = existsColumnInTable(database, droidTransTableName,
                     droidTransColumn);
 
             // In case there is an error - stop the loop

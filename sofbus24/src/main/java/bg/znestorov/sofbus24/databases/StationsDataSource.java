@@ -29,18 +29,24 @@ import bg.znestorov.sofbus24.utils.*;
  */
 public class StationsDataSource {
 
-    // Number of nearest stations
-    public static int nearestStationsCount = 8;
+    private final Context context;
+    private final String language;
+
+    // Database fields
+    private SQLiteDatabase database;
     private final Sofbus24SQLite dbHelper;
-    private final String[] allColumns = {Sofbus24SQLite.COLUMN_PK_STAT_ID,
-            Sofbus24SQLite.COLUMN_STAT_NUMBER, Sofbus24SQLite.COLUMN_STAT_NAME,
+
+    // Columns of the STATIONS Table
+    private final String[] allColumns = {
+            Sofbus24SQLite.COLUMN_PK_STAT_ID,
+            Sofbus24SQLite.COLUMN_STAT_NUMBER,
+            Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-    private final Context context;
-    private final String language;
-    // Database fields
-    private SQLiteDatabase database;
+
+    // Number of nearest stations
+    public static int nearestStationsCount = 8;
 
     public StationsDataSource(Activity context) {
         this.context = context;
@@ -49,11 +55,11 @@ public class StationsDataSource {
     }
 
     public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
+        database = Sofbus24DatabaseUtils.openDb(dbHelper, database);
     }
 
     public void close() {
-        dbHelper.close();
+        Sofbus24DatabaseUtils.closeDb(dbHelper, database);
     }
 
     /**

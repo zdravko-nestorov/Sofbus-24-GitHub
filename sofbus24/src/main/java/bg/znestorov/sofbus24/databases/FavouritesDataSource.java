@@ -30,18 +30,24 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 public class FavouritesDataSource {
 
-    private final String[] allColumns = {FavouritesSQLite.COLUMN_NUMBER,
-            FavouritesSQLite.COLUMN_NAME, FavouritesSQLite.COLUMN_LAT,
-            FavouritesSQLite.COLUMN_LON, FavouritesSQLite.COLUMN_CUSTOM_FIELD,
+    private final Activity context;
+    private final String language;
+
+    // Database fields
+    private SQLiteDatabase database;
+    private FavouritesSQLite dbHelper;
+
+    // Columns of the FAVOURITES Table
+    private final String[] allColumns = {
+            FavouritesSQLite.COLUMN_NUMBER,
+            FavouritesSQLite.COLUMN_NAME,
+            FavouritesSQLite.COLUMN_LAT,
+            FavouritesSQLite.COLUMN_LON,
+            FavouritesSQLite.COLUMN_CUSTOM_FIELD,
             FavouritesSQLite.COLUMN_DATE_ADDED,
             FavouritesSQLite.COLUMN_DATE_LAST_ACCESS,
             FavouritesSQLite.COLUMN_USAGE_COUNT,
             FavouritesSQLite.COLUMN_POSITION};
-    private final Activity context;
-    private final String language;
-    // Database fields
-    private SQLiteDatabase database;
-    private FavouritesSQLite dbHelper;
 
     public FavouritesDataSource(Activity context) {
         this.context = context;
@@ -56,11 +62,11 @@ public class FavouritesDataSource {
     }
 
     public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
+        database = FavouritesDatabaseUtils.openFavouritesDb(dbHelper, database);
     }
 
     public void close() {
-        dbHelper.close();
+        FavouritesDatabaseUtils.closeFavouritesDb(dbHelper, database);
     }
 
     /**

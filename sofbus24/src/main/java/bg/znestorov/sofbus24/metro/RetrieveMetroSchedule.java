@@ -66,10 +66,17 @@ public class RetrieveMetroSchedule extends
     @Override
     protected MetroScheduleEntity doInBackground(Void... params) {
 
-        MetroScheduleEntity metroSchedule = getMetroScheduleEntity();
+        // Handle the case when the metro schedule is not retrieve correctly and
+        // show user friendly error (get from GDC error)
+        MetroScheduleEntity metroSchedule;
+        try {
+            metroSchedule = getMetroScheduleEntity();
+        } catch (Exception e) {
+            metroSchedule = null;
+        }
 
         try {
-            for (int i = 0; i < metroSchedule.getMetroStationsSize(); i++) {
+            for (int i = 0; i < (metroSchedule != null ? metroSchedule.getMetroStationsSize() : 0); i++) {
                 MetroStationEntity metroStation = metroSchedule
                         .getStationEntity(i);
 

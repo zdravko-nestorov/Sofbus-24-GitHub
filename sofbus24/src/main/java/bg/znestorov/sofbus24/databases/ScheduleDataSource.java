@@ -20,27 +20,31 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 class ScheduleDataSource {
 
-    private static final String EMPTY_COLUMN = "-";
+    // Database fields
+    private SQLiteDatabase database;
     private final ScheduleSQLite dbHelper;
-    private final String[] scheduleColumns = {ScheduleSQLite.COLUMN_PK_SCHE_ID,
+
+    // Columns of the SCHEDULE Table
+    private final String[] scheduleColumns = {
+            ScheduleSQLite.COLUMN_PK_SCHE_ID,
             ScheduleSQLite.COLUMN_SCHE_TYPE,
             ScheduleSQLite.COLUMN_SCHE_VEHICLE_NUMBER,
             ScheduleSQLite.COLUMN_SCHE_STATION_NUMBER,
             ScheduleSQLite.COLUMN_SCHE_DATA,
             ScheduleSQLite.COLUMN_SCHE_TIMESTAMP};
-    // Database fields
-    private SQLiteDatabase database;
+
+    private static final String EMPTY_COLUMN = "-";
 
     public ScheduleDataSource(Activity context) {
         this.dbHelper = new ScheduleSQLite(context);
     }
 
     public void open() throws SQLException {
-        database = dbHelper.getWritableDatabase();
+        database = ScheduleDatabaseUtils.openScheduleDb(dbHelper, database);
     }
 
     public void close() {
-        dbHelper.close();
+        ScheduleDatabaseUtils.closeScheduleDb(dbHelper, database);
     }
 
     /**

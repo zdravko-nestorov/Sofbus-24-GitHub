@@ -173,14 +173,26 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
              */
         }
 
-        if (locationManager != null) {
-            if (myNetworkLocationListener != null) {
-                locationManager.removeUpdates(myNetworkLocationListener);
-            }
+        try {
+            if (locationManager != null) {
+                if (myNetworkLocationListener != null) {
+                    locationManager.removeUpdates(myNetworkLocationListener);
+                }
 
-            if (myGPSLocationListener != null) {
-                locationManager.removeUpdates(myGPSLocationListener);
+                if (myGPSLocationListener != null) {
+                    locationManager.removeUpdates(myGPSLocationListener);
+                }
             }
+        } catch (Exception e) {
+            /**
+             * Fixing a strange error that is happening sometimes when the
+             * dialog is dismissed. It produces a NullPointerException, which
+             * should not be possible, based on the checks above. I guess that
+             * if we reach this error again, all seems to be finished already,
+             * so no error is needed
+             *
+             * java.lang.NullPointerException: at ...(RetrieveCurrentLocation.java:182)
+             */
         }
 
         ActivityUtils.unlockScreenOrientation(context);
