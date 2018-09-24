@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+        "outputFile": "D:\\My Things\\My Workspaces\\AndroidWorkspace\\Sofbus24\\actionBarSherlock\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 240
                 },
                 "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidWorkspace\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 442
                 },
                 "from": {
-                    "file": "D:\\My Things\\My Workspaces\\AndroidStudioProjects\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
+                    "file": "D:\\My Things\\My Workspaces\\AndroidWorkspace\\Sofbus24\\actionBarSherlock\\res\\values-v11\\abs__themes.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
