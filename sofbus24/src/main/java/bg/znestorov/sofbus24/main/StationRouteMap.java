@@ -327,10 +327,18 @@ public class StationRouteMap extends SherlockFragmentActivity {
                         metroRouteOptionsM1.add(msLocation);
                         metroRouteOptionsM23.add(msLocation);
 
-                    } else if (stationNumber == 3025 || stationNumber == 3026) {
+                    } else if (stationNumber == 3025) {
                         // Mladost 1 (RED and THICK/THIN 2 BLUE)
                         metroRouteOptionsM1.add(msLocation);
                         metroRouteOptionsM1.add(mladostStationLocation);
+
+                        metroRouteOptionsM22.add(msLocation);
+                        metroRouteOptionsM23.add(msLocation);
+
+                    } else if (stationNumber == 3026) { // reverse station order
+                        // Mladost 1 (RED and THICK/THIN 2 BLUE)
+                        metroRouteOptionsM1.add(mladostStationLocation);
+                        metroRouteOptionsM1.add(msLocation);
 
                         metroRouteOptionsM22.add(msLocation);
                         metroRouteOptionsM23.add(msLocation);
