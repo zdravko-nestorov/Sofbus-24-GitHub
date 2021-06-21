@@ -102,19 +102,19 @@ public interface MenuItem {
     public int getOrder();
 
     /**
+     * Retrieve the current title of the item.
+     *
+     * @return The title.
+     */
+    public CharSequence getTitle();
+
+    /**
      * Change the title associated with this item.
      *
      * @param title The new text to be displayed.
      * @return This Item so additional setters can be called.
      */
     public MenuItem setTitle(CharSequence title);
-
-    /**
-     * Retrieve the current title of the item.
-     *
-     * @return The title.
-     */
-    public CharSequence getTitle();
 
     /**
      * Change the title associated with this item.
@@ -150,6 +150,14 @@ public interface MenuItem {
     public MenuItem setTitleCondensed(CharSequence title);
 
     /**
+     * Returns the icon for this item as a Drawable (getting it from resources if it hasn't been
+     * loaded before).
+     *
+     * @return The icon as a Drawable.
+     */
+    public Drawable getIcon();
+
+    /**
      * Change the icon associated with this item. This icon will not always be
      * shown, so the title should be sufficient in describing this item. See
      * {@link Menu} for the menu types that support icons.
@@ -158,14 +166,6 @@ public interface MenuItem {
      * @return This Item so additional setters can be called.
      */
     public MenuItem setIcon(Drawable icon);
-
-    /**
-     * Returns the icon for this item as a Drawable (getting it from resources if it hasn't been
-     * loaded before).
-     *
-     * @return The icon as a Drawable.
-     */
-    public Drawable getIcon();
 
     /**
      * Change the icon associated with this item. This icon will not always be
@@ -434,6 +434,15 @@ public interface MenuItem {
     public MenuItem setShowAsActionFlags(int actionEnum);
 
     /**
+     * Returns the currently set action view for this menu item.
+     *
+     * @return This item's action view
+     * @see #setActionView(View)
+     * @see #setShowAsAction(int)
+     */
+    public View getActionView();
+
+    /**
      * Set an action view for this menu item. An action view will be displayed in place
      * of an automatically generated menu item element in the UI when this item is shown
      * as an action within a parent.
@@ -447,15 +456,6 @@ public interface MenuItem {
      * @see #setShowAsAction(int)
      */
     public MenuItem setActionView(View view);
-
-    /**
-     * Returns the currently set action view for this menu item.
-     *
-     * @return This item's action view
-     * @see #setActionView(View)
-     * @see #setShowAsAction(int)
-     */
-    public View getActionView();
 
     /**
      * Set an action view for this menu item. An action view will be displayed in place

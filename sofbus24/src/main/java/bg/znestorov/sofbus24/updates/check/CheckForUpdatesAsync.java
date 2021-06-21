@@ -2,8 +2,9 @@ package bg.znestorov.sofbus24.updates.check;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 
 import org.w3c.dom.Document;
 

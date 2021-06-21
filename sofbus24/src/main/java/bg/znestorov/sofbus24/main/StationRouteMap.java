@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -8,19 +9,20 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -50,12 +52,13 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
-public class StationRouteMap extends SherlockFragmentActivity {
+public class StationRouteMap extends FragmentActivity implements OnMapReadyCallback {
 
     private final LatLng mladostStationLocation = new LatLng(
             Constants.GLOBAL_PARAM_MLADOST_1_LATITUDE,
             Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
     private Activity context;
+    private ActionBar actionBar;
     private GlobalEntity globalContext;
     private DirectionsEntity directionsEntity;
     private GoogleMap stationMap;
@@ -107,12 +110,21 @@ public class StationRouteMap extends SherlockFragmentActivity {
         globalContext = (GlobalEntity) getApplicationContext();
 
         // Set up the action bar
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Get the station map fragment and the lines view
-        stationMap = ((SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.station_route_map)).getMap();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.station_route_map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
+
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        stationMap = map;
         stationRouteLines = findViewById(R.id.station_route_lines);
 
         // Check if the station map is found
@@ -164,8 +176,7 @@ public class StationRouteMap extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(R.menu.activity_map_station_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_map_station_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

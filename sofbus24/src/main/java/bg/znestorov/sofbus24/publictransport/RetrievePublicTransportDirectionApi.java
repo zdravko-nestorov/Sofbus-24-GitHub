@@ -4,22 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
 import android.text.Html;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.List;
 
 import bg.znestorov.sofbus24.databases.DroidTransDataSource;
 import bg.znestorov.sofbus24.databases.ScheduleDatabaseUtils;
@@ -27,12 +18,10 @@ import bg.znestorov.sofbus24.entity.DirectionsEntity;
 import bg.znestorov.sofbus24.entity.ScheduleCacheEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.main.DroidTrans;
 import bg.znestorov.sofbus24.main.History;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.schedule.ScheduleCachePreferences;
 import bg.znestorov.sofbus24.schedule.ScheduleVehicleFragment;
-import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
@@ -151,13 +140,13 @@ public class RetrievePublicTransportDirectionApi extends
             } catch (Exception e) {
                 /*
                  * Strange bug reported in GooglePlay - may be the orientation
-				 * is released before the dialog fragment is shown. In this case
-				 * the app crashes because the dialog tries to show after
-				 * savedInstanceState() method is called.
-				 * 
-				 * GooglePlayError: java.lang.IllegalStateException: Can not
-				 * perform this action after onSaveInstanceState
-				 */
+                 * is released before the dialog fragment is shown. In this case
+                 * the app crashes because the dialog tries to show after
+                 * savedInstanceState() method is called.
+                 *
+                 * GooglePlayError: java.lang.IllegalStateException: Can not
+                 * perform this action after onSaveInstanceState
+                 */
             }
 
             // In case of loading the schedule from the local cache (and if the

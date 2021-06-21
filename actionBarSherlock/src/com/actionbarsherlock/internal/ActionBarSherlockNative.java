@@ -284,16 +284,6 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
         }
 
         @Override
-        public void setTitle(CharSequence title) {
-            mActionMode.setTitle(title);
-        }
-
-        @Override
-        public void setSubtitle(CharSequence subtitle) {
-            mActionMode.setSubtitle(subtitle);
-        }
-
-        @Override
         public void invalidate() {
             mActionMode.invalidate();
             if (mMenu != null) mMenu.invalidate();
@@ -318,6 +308,11 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
         }
 
         @Override
+        public void setTitle(CharSequence title) {
+            mActionMode.setTitle(title);
+        }
+
+        @Override
         public void setTitle(int resId) {
             mActionMode.setTitle(resId);
         }
@@ -325,6 +320,11 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
         @Override
         public CharSequence getSubtitle() {
             return mActionMode.getSubtitle();
+        }
+
+        @Override
+        public void setSubtitle(CharSequence subtitle) {
+            mActionMode.setSubtitle(subtitle);
         }
 
         @Override

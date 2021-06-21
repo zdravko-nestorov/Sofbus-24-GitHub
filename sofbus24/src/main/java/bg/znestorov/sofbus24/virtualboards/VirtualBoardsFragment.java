@@ -2,18 +2,28 @@ package bg.znestorov.sofbus24.virtualboards;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.*;
+import android.text.Editable;
+import android.text.Html;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.*;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.actionbarsherlock.app.SherlockListFragment;
+import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
 
@@ -32,7 +42,7 @@ import bg.znestorov.sofbus24.utils.activity.SearchEditText;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class VirtualBoardsFragment extends SherlockListFragment implements
+public class VirtualBoardsFragment extends ListFragment implements
         FragmentLifecycle, OnItemClickListener {
 
     private static final String BUNDLE_VB_SEARCH_TEXT = "VB SEARCH TEXT";
@@ -56,7 +66,7 @@ public class VirtualBoardsFragment extends SherlockListFragment implements
                 R.layout.activity_virtual_boards_fragment, container, false);
 
         // Set the context (activity) associated with this fragment
-        context = getSherlockActivity();
+        context = getActivity();
 
         // Actions over the layout fields
         initBundleInfo(savedInstanceState);

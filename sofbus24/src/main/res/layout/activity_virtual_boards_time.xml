@@ -31,8 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/vb_time_street_view_image"
-            android:layout_marginBottom="12sp"
             android:layout_marginLeft="9sp"
+            android:layout_marginBottom="12sp"
             android:orientation="vertical">
 
             <TextView
@@ -69,8 +69,8 @@
             android:id="@+id/vb_time_street_view_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/vb_time_street_view_image"
             android:layout_alignRight="@+id/vb_time_street_view_image"
+            android:layout_alignBottom="@+id/vb_time_street_view_image"
             android:background="@drawable/selectable_item_background"
             android:contentDescription="@string/app_img_empty_content_description"
             android:src="@drawable/ic_google_street_view" />

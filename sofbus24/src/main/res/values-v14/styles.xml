@@ -4,8 +4,6 @@
     <!-- It seems that they occur when the application is run on devices with Android version between v11 and v13 (included). When we -->
     <!-- move them to a folder "values-v14", the target changes to Android 4.0+, which prevent the error (see the links below) -->
 
-    <!-- GooglePlay market error: java.lang.IllegalStateException: You must use Theme.Sherlock, Theme.Sherlock.Light, Theme.Sherlock.Light.DarkActionBar, or a derivative. -->
-    <!-- Theme.Sherlock problem: http://stackoverflow.com/questions/12030039/android-actionbarsherlock-gone-wrong-on-honeycomb-galaxy-tab -->
     <!-- Android folders with versions (values-xx): http://stackoverflow.com/questions/16624317/styles-and-themes-on-values-values-v11-and-values-v14-folders -->
 
     <!-- ANDROID LIGHT THEME -->

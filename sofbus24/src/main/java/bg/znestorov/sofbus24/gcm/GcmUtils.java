@@ -1,9 +1,10 @@
 package bg.znestorov.sofbus24.gcm;
 
 import android.app.Activity;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;

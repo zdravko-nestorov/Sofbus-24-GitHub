@@ -1,23 +1,22 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
@@ -36,7 +35,7 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
-public class PublicTransport extends SherlockFragmentActivity implements
+public class PublicTransport extends FragmentActivity implements
         ActionBar.TabListener {
 
     private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
@@ -85,8 +84,7 @@ public class PublicTransport extends SherlockFragmentActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_public_transport_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_public_transport_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -140,16 +138,16 @@ public class PublicTransport extends SherlockFragmentActivity implements
     }
 
     @Override
-    public void onTabReselected(Tab tab, FragmentTransaction ft) {
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
     }
 
     @Override
-    public void onTabSelected(Tab tab, FragmentTransaction ft) {
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
         mViewPager.setCurrentItem(tab.getPosition());
     }
 
     @Override
-    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
     }
 
     /**
@@ -170,7 +168,7 @@ public class PublicTransport extends SherlockFragmentActivity implements
     private void initLayoutFields() {
 
         // Set up the ActionBar
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setTitle(getString(R.string.pt_title));
         actionBar.setSubtitle(ActivityUtils.getVehicleTitle(context,
                 ptDirectionsEntity.getVehicle()));

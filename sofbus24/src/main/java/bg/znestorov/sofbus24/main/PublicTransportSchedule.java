@@ -1,12 +1,14 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.format.DateFormat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -14,10 +16,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
-public class PublicTransportSchedule extends SherlockFragmentActivity {
+public class PublicTransportSchedule extends FragmentActivity {
 
     private static final String SAVED_STATE_KEY = "Current Schedule Hour Index";
     private static final String FRAGMENT_TAG_NAME = "PublicTransport Schedule Fragment";
@@ -102,8 +102,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_public_transport_schedule_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_public_transport_schedule_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -203,7 +202,7 @@ public class PublicTransportSchedule extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
 

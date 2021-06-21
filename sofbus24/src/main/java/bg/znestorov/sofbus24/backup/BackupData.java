@@ -3,11 +3,14 @@ package bg.znestorov.sofbus24.backup;
 import android.app.Activity;
 import android.util.Base64;
 
-import net.lingala.zip4j.core.ZipFile;
+import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
 import net.lingala.zip4j.model.ZipParameters;
-import net.lingala.zip4j.util.Zip4jConstants;
+import net.lingala.zip4j.model.enums.AesKeyStrength;
+import net.lingala.zip4j.model.enums.CompressionLevel;
+import net.lingala.zip4j.model.enums.CompressionMethod;
+import net.lingala.zip4j.model.enums.EncryptionMethod;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,7 +44,7 @@ class BackupData {
     private static final String SOFBUS_24_DB_GA_JOURNAL_FILE = "google_analytics_v4.db-journal";
     private static final String SOFBUS_24_PREF_GCM_FILE = "application_gcm.xml";
     private static final String SOFBUS_24_FILES_GA_CLIENT_FILE = "gaClientId";
-    private static final String SOFBUS_24_BACKUP_PASSWORD = "U09GQlVTXzI0X0JBQ0tVUF9QQVNTV09SRF9aRFJBVktPX05FU1RPUk9W";
+    private static final char[] SOFBUS_24_BACKUP_PASSWORD = "U09GQlVTXzI0X0JBQ0tVUF9QQVNTV09SRF9aRFJBVktPX05FU1RPUk9W".toCharArray();
     private final String sofbus24Path;
     private final String sofbus24PackageFolderName;
 
@@ -102,15 +105,15 @@ class BackupData {
 
         // Create ZipParameters and configure them
         ZipParameters zipParameters = new ZipParameters();
-        zipParameters.setCompressionMethod(Zip4jConstants.COMP_DEFLATE);
-        zipParameters.setCompressionLevel(Zip4jConstants.DEFLATE_LEVEL_NORMAL);
+        zipParameters.setCompressionMethod(CompressionMethod.DEFLATE);
+        zipParameters.setCompressionLevel(CompressionLevel.NORMAL);
         zipParameters.setEncryptFiles(true);
-        zipParameters.setEncryptionMethod(Zip4jConstants.ENC_METHOD_AES);
-        zipParameters.setAesKeyStrength(Zip4jConstants.AES_STRENGTH_256);
-        zipParameters.setPassword(SOFBUS_24_BACKUP_PASSWORD);
+        zipParameters.setEncryptionMethod(EncryptionMethod.AES);
+        zipParameters.setAesKeyStrength(AesKeyStrength.KEY_STRENGTH_256);
 
         // Create the ZIP file
         ZipFile zipFile = new ZipFile(targetLocation);
+        zipFile.setPassword(SOFBUS_24_BACKUP_PASSWORD);
         List<File> sourceLocationChildrenFiles = getChildrenFolders(sourceLocation);
 
         // This case should never been reached, because the source folder is created

@@ -16,7 +16,12 @@ import java.util.List;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.HtmlResultCodesEnum;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.VirtualBoardsTime;
 import bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog;
@@ -37,15 +42,12 @@ public class RetrieveVirtualBoardsApi {
     private final Activity context;
     private final GlobalEntity globalContext;
     private final Object callerInstance;
-
+    private final HtmlRequestCodesEnum htmlRequestCode;
+    private final StationsDataSource stationsDatasource;
+    private final FavouritesDataSource favouriteDatasource;
     private StationEntity station;
     private VehicleEntity vehicle;
     private HtmlResultCodesEnum htmlResultCode;
-
-    private final HtmlRequestCodesEnum htmlRequestCode;
-
-    private final StationsDataSource stationsDatasource;
-    private final FavouritesDataSource favouriteDatasource;
 
     public RetrieveVirtualBoardsApi(Activity context, Object callerInstance, StationEntity station,
                                     VehicleEntity vehicle, HtmlRequestCodesEnum htmlRequestCode) {
@@ -331,7 +333,7 @@ public class RetrieveVirtualBoardsApi {
                     if (vehicle != null) {
                         jsonResult = Utils.readUrl(Constants.VB_URL_VEHICLE_API,
                                 station.getFormattedNumber(), vehicle.getNumber(),
-                                vehicle.getType().toString().toLowerCase());
+                                vehicle.getType().toString().toLowerCase(Constants.LOCALE_BG));
                     } else {
                         jsonResult = Utils.readUrl(Constants.VB_URL_STATION_API,
                                 station.getFormattedNumber());

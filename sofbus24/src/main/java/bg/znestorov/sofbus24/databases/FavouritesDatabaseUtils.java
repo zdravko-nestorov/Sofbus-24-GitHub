@@ -14,17 +14,16 @@ import android.database.sqlite.SQLiteDatabase;
 public class FavouritesDatabaseUtils {
 
     /**
+     * Acquire a synchronization when open/close the database
+     */
+    private static final Object FAVOURITES_DB_LOCK = new Object();
+    /**
      * Check how many times the database is open, so close the DB when it is really needed.
      * For example if the counter is ZERO, this means that there are no open connections
      * to it and will try to close something that is not really open. This way we will save
      * time and do what is needed only when it is needed
      */
     private static volatile int favouritesDbCounter;
-
-    /**
-     * Acquire a synchronization when open/close the database
-     */
-    private static final Object FAVOURITES_DB_LOCK = new Object();
 
     /**
      * Delete all records from the Favorites DB (the DB remains empty - it is

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -15,8 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.appcompat.widget.PopupMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,6 @@ import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
-import bg.znestorov.sofbus24.utils.activity.PopupMenu;
 
 /**
  * Array Adapted user for set each row a station from the Vehicles DB

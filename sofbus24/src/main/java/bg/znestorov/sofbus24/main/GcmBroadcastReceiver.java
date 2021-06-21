@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.content.WakefulBroadcastReceiver;
+
+import androidx.legacy.content.WakefulBroadcastReceiver;
 
 /**
  * This class will receive the GCM message & pass it to the GcmMessageHandler.

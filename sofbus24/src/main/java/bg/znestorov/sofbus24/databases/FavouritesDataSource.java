@@ -32,11 +32,6 @@ public class FavouritesDataSource {
 
     private final Activity context;
     private final String language;
-
-    // Database fields
-    private SQLiteDatabase database;
-    private FavouritesSQLite dbHelper;
-
     // Columns of the FAVOURITES Table
     private final String[] allColumns = {
             FavouritesSQLite.COLUMN_NUMBER,
@@ -48,6 +43,9 @@ public class FavouritesDataSource {
             FavouritesSQLite.COLUMN_DATE_LAST_ACCESS,
             FavouritesSQLite.COLUMN_USAGE_COUNT,
             FavouritesSQLite.COLUMN_POSITION};
+    // Database fields
+    private SQLiteDatabase database;
+    private FavouritesSQLite dbHelper;
 
     public FavouritesDataSource(Activity context) {
         this.context = context;

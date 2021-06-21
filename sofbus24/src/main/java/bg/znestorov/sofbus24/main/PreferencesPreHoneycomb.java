@@ -1,6 +1,7 @@
 package bg.znestorov.sofbus24.main;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,14 +10,13 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 import com.google.android.gms.analytics.GoogleAnalytics;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -30,7 +30,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 @SuppressWarnings("deprecation")
-public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
+public class PreferencesPreHoneycomb extends PreferenceActivity
         implements OnSharedPreferenceChangeListener {
 
     private Activity context;
@@ -76,8 +76,7 @@ public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(R.menu.activity_preferences_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_preferences_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -167,7 +166,7 @@ public class PreferencesPreHoneycomb extends SherlockPreferenceActivity
      * Initialize the action bar
      */
     private void initActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.pref_title));

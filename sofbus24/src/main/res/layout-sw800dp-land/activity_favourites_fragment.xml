@@ -14,8 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="2sp"
         android:drawableLeft="@drawable/ic_menu_search"
-        android:drawablePadding="5sp"
         android:drawableRight="@drawable/ic_menu_close_clear_cancel"
+        android:drawablePadding="5sp"
         android:hint="@string/fav_search_hint"
         android:maxLines="1" />
 

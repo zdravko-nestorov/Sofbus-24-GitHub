@@ -37,10 +37,10 @@
             android:layout_height="36dip"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:paddingBottom="2dip"
             android:paddingLeft="12dip"
-            android:paddingRight="12dip"
             android:paddingTop="2dip"
+            android:paddingRight="12dip"
+            android:paddingBottom="2dip"
             android:scaleType="fitCenter" />
 
     </FrameLayout>
@@ -60,10 +60,10 @@
             android:layout_height="36dip"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:paddingBottom="2dip"
             android:paddingLeft="12dip"
-            android:paddingRight="12dip"
             android:paddingTop="2dip"
+            android:paddingRight="12dip"
+            android:paddingBottom="2dip"
             android:scaleType="fitCenter" />
 
     </FrameLayout>

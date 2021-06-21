@@ -1,20 +1,22 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -35,9 +37,10 @@ import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
-public class StationMap extends SherlockFragmentActivity {
+public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
     private Activity context;
+    private ActionBar actionBar;
     private GlobalEntity globalContext;
 
     private VehiclesDataSource vehiclesDatasource;
@@ -61,12 +64,20 @@ public class StationMap extends SherlockFragmentActivity {
         vehiclesDatasource = new VehiclesDataSource(context);
 
         // Set up the action bar
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Get the station map fragment
-        stationMap = ((SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.station_map)).getMap();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.station_map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        stationMap = map;
 
         // Check if the station map is found
         if (stationMap != null) {
@@ -114,8 +125,7 @@ public class StationMap extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(R.menu.activity_map_station_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_map_station_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

@@ -1,12 +1,12 @@
 package bg.znestorov.sofbus24.route.changes;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
@@ -38,13 +38,13 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class RetrieveRouteChangesApi extends
         AsyncTask<Void, Void, ArrayList<RouteChangesEntity>> {
 
-    private final FragmentActivity context;
+    private final Activity context;
     private final GlobalEntity globalContext;
 
     private final ProgressDialog progressDialog;
     private final LoadTypeEnum loadType;
 
-    public RetrieveRouteChangesApi(FragmentActivity context,
+    public RetrieveRouteChangesApi(Activity context,
                                    ProgressDialog progressDialog, LoadTypeEnum loadType) {
 
         this.context = context;
@@ -52,6 +52,39 @@ public class RetrieveRouteChangesApi extends
 
         this.progressDialog = progressDialog;
         this.loadType = loadType;
+    }
+
+    /**
+     * Processing the route changes JSON result, so take the needed data in an array list
+     *
+     * @param jsonResult the JSON result retrieved from the SKGT site
+     * @return a list with all articles retrieved from the given JSON input
+     */
+    private static ArrayList<RouteChangesEntity> getRouteChangesList(String jsonResult) {
+
+        ArrayList<RouteChangesEntity> routeChangesList = new ArrayList<>();
+
+        // Get all articles from this Articles page
+        JsonArray articleJsonArray;
+        try {
+            articleJsonArray = new JsonParser().parse(jsonResult).getAsJsonObject()
+                    .getAsJsonArray(Constants.ROUTE_CHANGES_NEWS_API_RESULTS);
+        } catch (Exception e) {
+            return routeChangesList;
+        }
+
+        // Iterate the JSON Array and create Java objects
+        for (JsonElement articleJsonElement : articleJsonArray) {
+
+            JsonObject articleJsonObject = articleJsonElement.getAsJsonObject();
+            routeChangesList.add(new RouteChangesEntity(
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_ID),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_TITLE),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_FROM_DATE),
+                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_TO_DATE)));
+        }
+
+        return routeChangesList;
     }
 
     @Override
@@ -174,39 +207,6 @@ public class RetrieveRouteChangesApi extends
         }
 
         ActivityUtils.unlockScreenOrientation(context);
-    }
-
-    /**
-     * Processing the route changes JSON result, so take the needed data in an array list
-     *
-     * @param jsonResult the JSON result retrieved from the SKGT site
-     * @return a list with all articles retrieved from the given JSON input
-     */
-    private static ArrayList<RouteChangesEntity> getRouteChangesList(String jsonResult) {
-
-        ArrayList<RouteChangesEntity> routeChangesList = new ArrayList<>();
-
-        // Get all articles from this Articles page
-        JsonArray articleJsonArray;
-        try {
-            articleJsonArray = new JsonParser().parse(jsonResult).getAsJsonObject()
-                    .getAsJsonArray(Constants.ROUTE_CHANGES_NEWS_API_RESULTS);
-        } catch (Exception e) {
-            return routeChangesList;
-        }
-
-        // Iterate the JSON Array and create Java objects
-        for (JsonElement articleJsonElement : articleJsonArray) {
-
-            JsonObject articleJsonObject = articleJsonElement.getAsJsonObject();
-            routeChangesList.add(new RouteChangesEntity(
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_ID),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_API_TITLE),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_FROM_DATE),
-                    articleJsonObject.get(Constants.ROUTE_CHANGES_NEWS_VALID_TO_DATE)));
-        }
-
-        return routeChangesList;
     }
 
 }

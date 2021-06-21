@@ -2,7 +2,6 @@ package bg.znestorov.sofbus24.schedule;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -17,7 +16,8 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockListFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ import bg.znestorov.sofbus24.utils.activity.SearchEditText;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class ScheduleVehicleFragment extends SherlockListFragment implements
+public class ScheduleVehicleFragment extends ListFragment implements
         OnItemClickListener {
 
     private static final String BUNDLE_SEARCH_TEXT = "SEARCH TEXT";

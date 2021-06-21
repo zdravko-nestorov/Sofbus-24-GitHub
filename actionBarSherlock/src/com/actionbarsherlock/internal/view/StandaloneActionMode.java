@@ -53,16 +53,6 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
     }
 
     @Override
-    public void setTitle(CharSequence title) {
-        mContextView.setTitle(title);
-    }
-
-    @Override
-    public void setSubtitle(CharSequence subtitle) {
-        mContextView.setSubtitle(subtitle);
-    }
-
-    @Override
     public void invalidate() {
         mCallback.onPrepareActionMode(this, mMenu);
     }
@@ -89,6 +79,11 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
     }
 
     @Override
+    public void setTitle(CharSequence title) {
+        mContextView.setTitle(title);
+    }
+
+    @Override
     public void setTitle(int resId) {
         setTitle(mContext.getString(resId));
     }
@@ -96,6 +91,11 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
     @Override
     public CharSequence getSubtitle() {
         return mContextView.getSubtitle();
+    }
+
+    @Override
+    public void setSubtitle(CharSequence subtitle) {
+        mContextView.setSubtitle(subtitle);
     }
 
     @Override

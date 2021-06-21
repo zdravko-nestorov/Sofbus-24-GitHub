@@ -10,10 +10,10 @@
         android:id="@+id/schedule_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3sp"
         android:layout_marginLeft="100sp"
-        android:layout_marginRight="100sp"
         android:layout_marginTop="15sp"
+        android:layout_marginRight="100sp"
+        android:layout_marginBottom="3sp"
         android:gravity="center"
         android:orientation="horizontal">
 

@@ -1,15 +1,14 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -18,10 +17,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -33,7 +33,13 @@ import bg.znestorov.sofbus24.databases.DroidTransDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
 import bg.znestorov.sofbus24.droidtrans.DroidTransLoadInfo;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.RetrieveCurrentLocationTypeEnum;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.entity.WheelStateEntity;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
@@ -64,7 +70,7 @@ import kankan.wheel.widget.adapters.ArrayWheelAdapter;
  * @version 1.0
  */
 @SuppressWarnings("deprecation")
-public class DroidTrans extends SherlockFragmentActivity {
+public class DroidTrans extends FragmentActivity {
 
     public static final String BUNDLE_IS_DROID_TRANS_HOME_SCREEN = "IS DROID TRANS HOME SCREEN";
     private static final String BUNDLE_USER_LOCATION_LAT = "BUNDLE USER LOCATION LAT";
@@ -155,8 +161,7 @@ public class DroidTrans extends SherlockFragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.activity_droidtrans_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_droidtrans_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -314,7 +319,7 @@ public class DroidTrans extends SherlockFragmentActivity {
      * Set up the action bar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.droid_trans_title));
     }
@@ -835,7 +840,7 @@ public class DroidTrans extends SherlockFragmentActivity {
      */
     private void initNavigationDrawer() {
 
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
         actionBar.setSubtitle(getString(R.string.droid_trans_title));
 
@@ -869,8 +874,7 @@ public class DroidTrans extends SherlockFragmentActivity {
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
         mDrawerToggle = new ActionBarDrawerToggle(context, mDrawerLayout,
-                R.drawable.ic_drawer, R.string.app_navigation_drawer_open,
-                R.string.app_navigation_drawer_close) {
+                R.string.app_navigation_drawer_open, R.string.app_navigation_drawer_close) {
 
             @Override
             public void onDrawerClosed(View view) {

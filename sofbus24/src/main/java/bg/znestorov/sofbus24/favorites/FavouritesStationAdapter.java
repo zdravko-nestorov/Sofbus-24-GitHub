@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.text.Html;
@@ -16,10 +15,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -31,14 +33,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.MetroStationEntity;
+import bg.znestorov.sofbus24.entity.PositionTypeEnum;
+import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
+import bg.znestorov.sofbus24.entity.SortTypeEnum;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.StationMap;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
-import bg.znestorov.sofbus24.utils.*;
+import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
+import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
+import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
-import bg.znestorov.sofbus24.utils.activity.PopupMenu;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
@@ -607,80 +619,41 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.favourites_item_settings:
-                        // Implement different types of Popup menu, because the
-                        // implementation is different for HONEYCOMB and others
-                        // higher than it
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                            android.widget.PopupMenu popup = new android.widget.PopupMenu(
-                                    context, v);
-                            android.view.Menu menu = popup.getMenu();
-                            popup.getMenuInflater().inflate(
-                                    R.menu.activity_favourites_context_menu, menu);
+                        android.widget.PopupMenu popup = new android.widget.PopupMenu(
+                                context, v);
+                        android.view.Menu menu = popup.getMenu();
+                        popup.getMenuInflater().inflate(
+                                R.menu.activity_favourites_context_menu, menu);
 
-                            // Force the context menu to show icons
-                            try {
-                                Field[] fields = popup.getClass()
-                                        .getDeclaredFields();
-                                for (Field field : fields) {
-                                    if ("mPopup".equals(field.getName())) {
-                                        field.setAccessible(true);
-                                        Object menuPopupHelper = field.get(popup);
-                                        Class<?> classPopupHelper = Class
-                                                .forName(menuPopupHelper.getClass()
-                                                        .getName());
-                                        Method setForceIcons = classPopupHelper
-                                                .getMethod("setForceShowIcon",
-                                                        boolean.class);
-                                        setForceIcons.invoke(menuPopupHelper, true);
-                                        break;
-                                    }
+                        // Force the context menu to show icons
+                        try {
+                            Field[] fields = popup.getClass()
+                                    .getDeclaredFields();
+                            for (Field field : fields) {
+                                if ("mPopup".equals(field.getName())) {
+                                    field.setAccessible(true);
+                                    Object menuPopupHelper = field.get(popup);
+                                    Class<?> classPopupHelper = Class
+                                            .forName(menuPopupHelper.getClass()
+                                                    .getName());
+                                    Method setForceIcons = classPopupHelper
+                                            .getMethod("setForceShowIcon",
+                                                    boolean.class);
+                                    setForceIcons.invoke(menuPopupHelper, true);
+                                    break;
                                 }
-                            } catch (Exception e) {
                             }
-                            popup.show();
-
-                            popup.setOnMenuItemClickListener(new android.widget.PopupMenu.OnMenuItemClickListener() {
-                                @Override
-                                public boolean onMenuItemClick(
-                                        android.view.MenuItem item) {
-                                    return menuItemClicks(item.getItemId(), station);
-                                }
-                            });
-                        } else {
-                            PopupMenu popup = new PopupMenu(context, v);
-                            Menu menu = popup.getMenu();
-                            popup.getMenuInflater().inflate(
-                                    R.menu.activity_favourites_context_menu, menu);
-
-                            // Force the context menu to show icons
-                            try {
-                                Field[] fields = popup.getClass()
-                                        .getDeclaredFields();
-                                for (Field field : fields) {
-                                    if ("mPopup".equals(field.getName())) {
-                                        field.setAccessible(true);
-                                        Object menuPopupHelper = field.get(popup);
-                                        Class<?> classPopupHelper = Class
-                                                .forName(menuPopupHelper.getClass()
-                                                        .getName());
-                                        Method setForceIcons = classPopupHelper
-                                                .getMethod("setForceShowIcon",
-                                                        boolean.class);
-                                        setForceIcons.invoke(menuPopupHelper, true);
-                                        break;
-                                    }
-                                }
-                            } catch (Exception e) {
-                            }
-                            popup.show();
-
-                            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                                @Override
-                                public boolean onMenuItemClick(MenuItem item) {
-                                    return menuItemClicks(item.getItemId(), station);
-                                }
-                            });
+                        } catch (Exception e) {
                         }
+                        popup.show();
+
+                        popup.setOnMenuItemClickListener(new android.widget.PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(
+                                    android.view.MenuItem item) {
+                                return menuItemClicks(item.getItemId(), station);
+                            }
+                        });
                 }
             }
         });

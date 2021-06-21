@@ -12,11 +12,11 @@
         android:id="@+id/history_item_image_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1sp"
         android:layout_marginLeft="2sp"
         android:layout_marginRight="12sp"
-        android:minHeight="37sp"
-        android:minWidth="37sp">
+        android:layout_marginBottom="1sp"
+        android:minWidth="37sp"
+        android:minHeight="37sp">
 
         <ImageView
             android:id="@+id/history_item_favourite"
@@ -54,8 +54,8 @@
         android:id="@+id/history_item_search_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/history_item_image_layout"
         android:layout_below="@+id/history_item_image_layout"
+        android:layout_alignLeft="@+id/history_item_image_layout"
         android:layout_marginRight="2sp"
         android:singleLine="false"
         android:textAppearance="?android:attr/textAppearanceSmall"

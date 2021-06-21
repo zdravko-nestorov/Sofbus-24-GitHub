@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -14,19 +15,18 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,8 +35,15 @@ import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.*;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,7 +58,11 @@ import bg.znestorov.sofbus24.closest.stations.map.GoogleMapsRoute;
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.SortTypeEnum;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
@@ -71,7 +82,7 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
  * @version 1.0
  */
 @SuppressWarnings("deprecation")
-public class ClosestStationsMap extends SherlockFragmentActivity {
+public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCallback {
 
     public static final String BUNDLE_IS_CS_MAP_HOME_SCREEN = "IS CLOSEST STATIONS MAP HOME SCREEN";
     private static final String GPS_PROVIDER = LocationManager.GPS_PROVIDER;
@@ -220,6 +231,131 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
     }
 
     @Override
+    public void onMapReady(GoogleMap map) {
+        googleMap = map;
+
+        // Enabling MyLocation Layer of Google Map and the corresponding
+        // buttons
+        googleMap.setMyLocationEnabled(true);
+        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        googleMap.getUiSettings().setCompassEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+
+        // Enable the GoogleMap listeners
+        googleMap.setOnMapClickListener(onMapClickListener);
+        googleMap.setOnMapLongClickListener(onMapLongClickListener);
+
+        // Activate my location, set a location button that center the map
+        // over a point and start a LocationChangeListener
+        googleMap.setMyLocationEnabled(true);
+        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        googleMap
+                .setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+                    @Override
+                    public void onMyLocationChange(Location currentLocation) {
+                        // Check if there is any found location and if the
+                        // distance between it and previous one (if exists)
+                        // is more than 20 meters
+                        if (currentLocation != null
+                                && (previousLocation == null || previousLocation
+                                .distanceTo(currentLocation) > 20f)) {
+                            // Get the current location as previous now
+                            previousLocation = currentLocation;
+
+                            // Proceed with all needed actions when a new
+                            // location is found
+                            onLocationChanged(currentLocation);
+                        }
+                    }
+                });
+
+        // Start a new thread - just to wait 3 sec and if no location is
+        // found to display the last known location
+        Handler handler = new Handler();
+
+        try {
+            Runnable myRunnable = new Runnable() {
+                public void run() {
+                    try {
+                        if (previousLocation == null) {
+                            // Getting LocationManager object from System
+                            // Service LOCATION_SERVICE
+                            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+                            // Getting Current Location
+                            Location location = locationManager
+                                    .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
+                                    .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
+                                    : locationManager
+                                    .getLastKnownLocation(NETWORK_PROVIDER)
+                                    : locationManager
+                                    .getLastKnownLocation(GPS_PROVIDER);
+
+                            // Check if any location is found. If no - just
+                            // center the map over the center of Sofia
+                            if (location != null) {
+                                // Assign a value to the previous location
+                                previousLocation = location;
+
+                                // Showing the current location and zoom it
+                                // in
+                                // GoogleMaps
+                                animateMapFocus(location, 16);
+
+                                // Visualize the closest stations to the new
+                                // location
+                                new LoadStationsFromDb(context,
+                                        vehiclesDatasource, location, null)
+                                        .execute();
+                            } else {
+                                // Sofia center location
+                                Location centerStationLocation = new Location(
+                                        "no_location");
+                                centerStationLocation
+                                        .setLatitude(Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE);
+                                centerStationLocation
+                                        .setLongitude(Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
+
+                                // Assign a value to the previous location
+                                previousLocation = centerStationLocation;
+
+                                // Showing the Sofia center location and
+                                // zoom it
+                                // in GoogleMaps
+                                animateMapFocus(centerStationLocation, 14);
+
+                                // Visualize the closest stations to the
+                                // Sofia
+                                // center location
+                                new LoadStationsFromDb(context,
+                                        vehiclesDatasource,
+                                        centerStationLocation, null)
+                                        .execute();
+                            }
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+            };
+
+            handler.postDelayed(myRunnable, isCSMapHomeScreen ? 1000 : 3000);
+        } catch (Exception e) {
+            /*
+             * Strange bug from GooglePlayConsole (Last reported: 9 Jan
+             * 15:57):
+             *
+             * java.lang.NullPointerException at
+             * bg.znestorov.sofbus24.main.ClosestStationsMap
+             * .onOptionsItemSelected(ClosestStationsMap.java:352)
+             */
+        }
+
+        // Visualize the favorites stations on the map
+        new LoadStationsFromDb(context, vehiclesDatasource, null, null)
+                .execute();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -269,7 +405,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      * Set up the action bar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.cs_map_title));
     }
@@ -305,135 +441,16 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
                     .findFragmentById(R.id.closest_stations_map);
 
             // Getting GoogleMap object from the fragment
-            googleMap = fm.getMap();
-
-            // Enabling MyLocation Layer of Google Map and the corresponding
-            // buttons
-            googleMap.setMyLocationEnabled(true);
-            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-            googleMap.getUiSettings().setCompassEnabled(true);
-            googleMap.getUiSettings().setZoomControlsEnabled(true);
-
-            // Enable the GoogleMap listeners
-            googleMap.setOnMapClickListener(onMapClickListener);
-            googleMap.setOnMapLongClickListener(onMapLongClickListener);
-
-            // Activate my location, set a location button that center the map
-            // over a point and start a LocationChangeListener
-            googleMap.setMyLocationEnabled(true);
-            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-            googleMap
-                    .setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
-                        @Override
-                        public void onMyLocationChange(Location currentLocation) {
-                            // Check if there is any found location and if the
-                            // distance between it and previous one (if exists)
-                            // is more than 20 meters
-                            if (currentLocation != null
-                                    && (previousLocation == null || previousLocation
-                                    .distanceTo(currentLocation) > 20f)) {
-                                // Get the current location as previous now
-                                previousLocation = currentLocation;
-
-                                // Proceed with all needed actions when a new
-                                // location is found
-                                onLocationChanged(currentLocation);
-                            }
-                        }
-                    });
-
-            // Start a new thread - just to wait 3 sec and if no location is
-            // found to display the last known location
-            Handler handler = new Handler();
-
-            try {
-                Runnable myRunnable = new Runnable() {
-                    public void run() {
-                        try {
-                            if (previousLocation == null) {
-                                // Getting LocationManager object from System
-                                // Service LOCATION_SERVICE
-                                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-                                // Getting Current Location
-                                Location location = locationManager
-                                        .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
-                                        .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
-                                        : locationManager
-                                        .getLastKnownLocation(NETWORK_PROVIDER)
-                                        : locationManager
-                                        .getLastKnownLocation(GPS_PROVIDER);
-
-                                // Check if any location is found. If no - just
-                                // center the map over the center of Sofia
-                                if (location != null) {
-                                    // Assign a value to the previous location
-                                    previousLocation = location;
-
-                                    // Showing the current location and zoom it
-                                    // in
-                                    // GoogleMaps
-                                    animateMapFocus(location, 16);
-
-                                    // Visualize the closest stations to the new
-                                    // location
-                                    new LoadStationsFromDb(context,
-                                            vehiclesDatasource, location, null)
-                                            .execute();
-                                } else {
-                                    // Sofia center location
-                                    Location centerStationLocation = new Location(
-                                            "no_location");
-                                    centerStationLocation
-                                            .setLatitude(Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE);
-                                    centerStationLocation
-                                            .setLongitude(Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
-
-                                    // Assign a value to the previous location
-                                    previousLocation = centerStationLocation;
-
-                                    // Showing the Sofia center location and
-                                    // zoom it
-                                    // in GoogleMaps
-                                    animateMapFocus(centerStationLocation, 14);
-
-                                    // Visualize the closest stations to the
-                                    // Sofia
-                                    // center location
-                                    new LoadStationsFromDb(context,
-                                            vehiclesDatasource,
-                                            centerStationLocation, null)
-                                            .execute();
-                                }
-                            }
-                        } catch (Exception e) {
-                        }
-                    }
-                };
-
-                handler.postDelayed(myRunnable, isCSMapHomeScreen ? 1000 : 3000);
-            } catch (Exception e) {
-                /*
-                 * Strange bug from GooglePlayConsole (Last reported: 9 Jan
-				 * 15:57):
-				 * 
-				 * java.lang.NullPointerException at
-				 * bg.znestorov.sofbus24.main.ClosestStationsMap
-				 * .onOptionsItemSelected(ClosestStationsMap.java:352)
-				 */
+            if (fm != null) {
+                fm.getMapAsync(this);
             }
-
-            // Visualize the favorites stations on the map
-            new LoadStationsFromDb(context, vehiclesDatasource, null, null)
-                    .execute();
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_closest_stations_maps_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_closest_stations_maps_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -1029,7 +1046,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
      */
     private void initNavigationDrawer() {
 
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
         actionBar.setSubtitle(getString(R.string.cs_map_title));
 
@@ -1063,8 +1080,7 @@ public class ClosestStationsMap extends SherlockFragmentActivity {
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
         mDrawerToggle = new ActionBarDrawerToggle(context, mDrawerLayout,
-                R.drawable.ic_drawer, R.string.app_navigation_drawer_open,
-                R.string.app_navigation_drawer_close) {
+                R.string.app_navigation_drawer_open, R.string.app_navigation_drawer_close) {
 
             @Override
             public void onDrawerClosed(View view) {

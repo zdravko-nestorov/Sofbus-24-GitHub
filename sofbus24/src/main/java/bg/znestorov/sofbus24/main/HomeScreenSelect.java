@@ -4,15 +4,15 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.analytics.GoogleAnalytics;
 
 import bg.znestorov.sofbus24.about.Configuration;
@@ -55,7 +55,7 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
  *
  * @author Zdravko Nestorov
  */
-public class HomeScreenSelect extends SherlockFragmentActivity implements
+public class HomeScreenSelect extends FragmentActivity implements
         OnRecreateDatabaseListener {
 
     public static final int REQUEST_CODE_HOME_SCREEN_SELECT = 0;
@@ -528,14 +528,14 @@ public class HomeScreenSelect extends SherlockFragmentActivity implements
                 DroidTransLoadInfo.getInstance(context);
             }
 
-			/*
+            /*
              * Workaround used to prevent a GooglePlay exception to be thrown
-			 * (the problem is that the instance of the Singleton is not created
-			 * on first application startup)
-			 *
-			 * android.database.sqlite.SQLiteException: unable to close due to
-			 * unfinalised statements
-			 */
+             * (the problem is that the instance of the Singleton is not created
+             * on first application startup)
+             *
+             * android.database.sqlite.SQLiteException: unable to close due to
+             * unfinalised statements
+             */
             if (!ScheduleLoadVehicles.isInstanceCreated()
                     || !MetroLoadStations.isInstanceCreated()
                     || !DroidTransLoadInfo.isInstanceCreated()) {

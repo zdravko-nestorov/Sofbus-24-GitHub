@@ -223,8 +223,8 @@ public class IcsSpinner extends IcsAbsSpinner implements OnClickListener {
         if (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
             final int measuredWidth = getMeasuredWidth();
             setMeasuredDimension(Math.min(Math.max(measuredWidth,
-                                    measureContentWidth(getAdapter(), getBackground())),
-                            MeasureSpec.getSize(widthMeasureSpec)),
+                    measureContentWidth(getAdapter(), getBackground())),
+                    MeasureSpec.getSize(widthMeasureSpec)),
                     getMeasuredHeight());
         }
     }

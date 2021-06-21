@@ -37,9 +37,9 @@ public class IcsLinearLayout extends NineLinearLayout {
      */
     public static final int SHOW_DIVIDER_END = 4;
     private static final int[] R_styleable_LinearLayout = new int[]{
-        /* 0 */ android.R.attr.divider,
-        /* 2 */ android.R.attr.showDividers,
-        /* 3 */ android.R.attr.dividerPadding,
+            /* 0 */ android.R.attr.divider,
+            /* 2 */ android.R.attr.showDividers,
+            /* 3 */ android.R.attr.dividerPadding,
     };
     private static final int LinearLayout_divider = 0;
     private static final int LinearLayout_showDividers = 1;

@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="7sp"
     android:paddingLeft="10sp"
+    android:paddingTop="5sp"
     android:paddingRight="7sp"
-    android:paddingTop="5sp">
+    android:paddingBottom="7sp">
 
     <TextView
         android:id="@+id/route_changes_item_title"

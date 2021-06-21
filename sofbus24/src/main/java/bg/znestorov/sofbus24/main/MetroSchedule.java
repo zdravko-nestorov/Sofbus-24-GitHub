@@ -1,19 +1,18 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
@@ -24,7 +23,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 
-public class MetroSchedule extends SherlockFragmentActivity implements
+public class MetroSchedule extends FragmentActivity implements
         ActionBar.TabListener {
 
     private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
@@ -54,8 +53,7 @@ public class MetroSchedule extends SherlockFragmentActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_metro_schedule_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_metro_schedule_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -72,17 +70,17 @@ public class MetroSchedule extends SherlockFragmentActivity implements
     }
 
     @Override
-    public void onTabReselected(Tab tab, FragmentTransaction ft) {
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
     }
 
     @Override
-    public void onTabSelected(Tab tab, FragmentTransaction ft) {
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
         mViewPager.setCurrentItem(tab.getPosition());
         mSectionsPagerAdapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
     }
 
     /**
@@ -99,7 +97,7 @@ public class MetroSchedule extends SherlockFragmentActivity implements
      * Set up the action bar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(Utils.getValueAfter(metroSchedule.getStationName(),

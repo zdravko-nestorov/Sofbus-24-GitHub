@@ -1,15 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
-        minSdkVersion 7
-        // If a higher version is used, there is a problem with GooglePlay services and some other stuff
-        // Let it remain at the higher possible - Android SDK 22
-        //noinspection OldTargetApi
-        targetSdkVersion 22
+        minSdkVersion 19
+        targetSdkVersion 30
     }
 
     buildTypes {
@@ -21,6 +18,5 @@ android {
 }
 
 dependencies {
-    //noinspection GradleDependency
-    compile 'com.android.support:support-v4:22.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

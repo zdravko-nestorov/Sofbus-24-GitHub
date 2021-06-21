@@ -55,26 +55,6 @@ public abstract class ActionMode {
     }
 
     /**
-     * Set the title of the action mode. This method will have no visible effect if
-     * a custom view has been set.
-     *
-     * @param title Title string to set
-     * @see #setTitle(int)
-     * @see #setCustomView(View)
-     */
-    public abstract void setTitle(CharSequence title);
-
-    /**
-     * Set the subtitle of the action mode. This method will have no visible effect if
-     * a custom view has been set.
-     *
-     * @param subtitle Subtitle string to set
-     * @see #setSubtitle(int)
-     * @see #setCustomView(View)
-     */
-    public abstract void setSubtitle(CharSequence subtitle);
-
-    /**
      * Invalidate the action mode and refresh menu content. The mode's
      * {@link ActionMode.Callback} will have its
      * {@link Callback#onPrepareActionMode(ActionMode, Menu)} method called.
@@ -107,6 +87,16 @@ public abstract class ActionMode {
      * Set the title of the action mode. This method will have no visible effect if
      * a custom view has been set.
      *
+     * @param title Title string to set
+     * @see #setTitle(int)
+     * @see #setCustomView(View)
+     */
+    public abstract void setTitle(CharSequence title);
+
+    /**
+     * Set the title of the action mode. This method will have no visible effect if
+     * a custom view has been set.
+     *
      * @param resId Resource ID of a string to set as the title
      * @see #setTitle(CharSequence)
      * @see #setCustomView(View)
@@ -119,6 +109,16 @@ public abstract class ActionMode {
      * @return Subtitle text
      */
     public abstract CharSequence getSubtitle();
+
+    /**
+     * Set the subtitle of the action mode. This method will have no visible effect if
+     * a custom view has been set.
+     *
+     * @param subtitle Subtitle string to set
+     * @see #setSubtitle(int)
+     * @see #setCustomView(View)
+     */
+    public abstract void setSubtitle(CharSequence subtitle);
 
     /**
      * Set the subtitle of the action mode. This method will have no visible effect if

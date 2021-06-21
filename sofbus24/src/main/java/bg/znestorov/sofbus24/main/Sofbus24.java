@@ -1,17 +1,16 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 @SuppressWarnings("deprecation")
-public class Sofbus24 extends SherlockFragmentActivity {
+public class Sofbus24 extends FragmentActivity {
 
     private static final String TAG_SOFBUS_24_FRAGMENT = "SOFBUS_24_FRAGMENT";
     private FragmentActivity context;
@@ -142,7 +141,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
      */
     private void initNavigationDrawer(Sofbus24Fragment sofbus24Fragment) {
 
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
 
         // Enable ActionBar app icon to behave as action to toggle nav
@@ -175,8 +174,7 @@ public class Sofbus24 extends SherlockFragmentActivity {
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
         mDrawerToggle = new ActionBarDrawerToggle(context, mDrawerLayout,
-                R.drawable.ic_drawer, R.string.app_navigation_drawer_open,
-                R.string.app_navigation_drawer_close) {
+                R.string.app_navigation_drawer_open, R.string.app_navigation_drawer_close) {
 
             @Override
             public void onDrawerClosed(View view) {

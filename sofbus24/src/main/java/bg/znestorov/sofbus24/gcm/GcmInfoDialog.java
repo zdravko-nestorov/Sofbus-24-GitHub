@@ -4,9 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.text.Spanned;
+
+import androidx.fragment.app.DialogFragment;
 
 import bg.znestorov.sofbus24.main.R;
 

@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+.idea
+.gradle
+
+# Build
+build
+release
+*.apk
+
+# Android
+local.properties

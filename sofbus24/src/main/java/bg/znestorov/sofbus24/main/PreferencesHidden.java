@@ -1,14 +1,14 @@
 package bg.znestorov.sofbus24.main;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.schedule.ScheduleCacheDeleteSettingsDialog;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 
-public class PreferencesHidden extends SherlockFragmentActivity {
+public class PreferencesHidden extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

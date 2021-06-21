@@ -1,18 +1,18 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.favorites.FavouritesStationFragment;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 
-public class Favourites extends SherlockFragmentActivity {
+public class Favourites extends FragmentActivity {
 
     private static final String TAG_FAVOURITES_FRAGMENT = "FAVOURITES_FRAGMENT";
 
@@ -39,8 +39,7 @@ public class Favourites extends SherlockFragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.activity_favourites_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_favourites_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -60,7 +59,7 @@ public class Favourites extends SherlockFragmentActivity {
      * Initialize the ActionBar drawer
      */
     private void initActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setTitle(getString(R.string.edit_tabs_favourites));
         actionBar.setDisplayHomeAsUpEnabled(true);
     }

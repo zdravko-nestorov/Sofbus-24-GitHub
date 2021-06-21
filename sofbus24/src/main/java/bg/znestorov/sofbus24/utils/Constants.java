@@ -3,6 +3,7 @@ package bg.znestorov.sofbus24.utils;
 import android.graphics.Color;
 
 import java.math.BigDecimal;
+import java.util.Locale;
 
 /**
  * Static class with the constant variables
@@ -15,6 +16,7 @@ public class Constants {
     /**
      * Global parameters
      */
+    public static final Locale LOCALE_BG = new Locale("bg", "BG");
     public static final Integer GLOBAL_TAB_COUNT = 4;
     public static final String GLOBAL_PARAM_EMPTY = "EMPTY";
     public static final Double GLOBAL_PARAM_SOFIA_CENTER_LATITUDE = 42.696492;

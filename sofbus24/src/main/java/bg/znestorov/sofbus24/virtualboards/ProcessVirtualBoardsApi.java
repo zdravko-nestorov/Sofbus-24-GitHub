@@ -51,13 +51,12 @@ import static bg.znestorov.sofbus24.utils.Utils.transformSkgtStringDateToDate;
 @SuppressLint("DefaultLocale")
 class ProcessVirtualBoardsApi {
 
+    private final String language;
     private Activity context;
     private StationsDataSource stationsDatasource;
     private VehiclesDataSource vehicleDatasource;
     private DroidTransDataSource droidTransDatasource;
     private String jsonResult;
-
-    private final String language;
 
     ProcessVirtualBoardsApi(Activity context, String jsonResult) {
         this.context = context;

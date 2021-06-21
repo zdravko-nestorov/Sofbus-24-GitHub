@@ -21,7 +21,10 @@ public class ScheduleDatabaseUtils {
 
     private static final String METRO_NUMBER = "1";
     private static final VehicleTypeEnum METRO_TYPE = VehicleTypeEnum.METRO;
-
+    /**
+     * Acquire a synchronization when open/close the database
+     */
+    private static final Object SCHEDULE_DB_LOCK = new Object();
     /**
      * Check how many times the database is open, so close the DB when it is really needed.
      * For example if the counter is ZERO, this means that there are no open connections
@@ -29,11 +32,6 @@ public class ScheduleDatabaseUtils {
      * time and do what is needed only when it is needed
      */
     private static volatile int scheduleDbCounter;
-
-    /**
-     * Acquire a synchronization when open/close the database
-     */
-    private static final Object SCHEDULE_DB_LOCK = new Object();
 
     /**
      * Delete the files in the cache after the maximum number of days have

@@ -1,29 +1,28 @@
 package bg.znestorov.sofbus24.home.screen;
 
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.app.SherlockListFragment;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.ListFragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.astuetz.PagerSlidingTabStrip;
 import com.astuetz.PagerSlidingTabStrip.IconTitleProvider;
 
@@ -55,11 +54,11 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.virtualboards.VirtualBoardsFragment;
 
-public class Sofbus24Fragment extends SherlockFragment implements
+public class Sofbus24Fragment extends Fragment implements
         ActionBar.TabListener {
 
     private final List<Fragment> fragmentsList = new ArrayList<Fragment>();
-    private SherlockFragmentActivity context;
+    private FragmentActivity context;
     private GlobalEntity globalContext;
     private ActionBar actionBar;
     private ViewPager mViewPager;
@@ -74,7 +73,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
                 R.layout.activity_sofbus24_fragment, container, false);
 
         // Get the application and current context;
-        context = getSherlockActivity();
+        context = getActivity();
         globalContext = (GlobalEntity) context.getApplicationContext();
         LanguageChange.selectLocale(context);
 
@@ -264,13 +263,13 @@ public class Sofbus24Fragment extends SherlockFragment implements
 
                         // Check the type of the fragment
                         if (currentFragment != null) {
-                            if (currentFragment instanceof SherlockFragment) {
-                                ((SherlockFragment) currentFragment)
+                            if (currentFragment instanceof Fragment) {
+                                ((Fragment) currentFragment)
                                         .onOptionsItemSelected(item);
                             }
 
-                            if (currentFragment instanceof SherlockListFragment) {
-                                ((SherlockListFragment) currentFragment)
+                            if (currentFragment instanceof ListFragment) {
+                                ((ListFragment) currentFragment)
                                         .onOptionsItemSelected(item);
                             }
                         }
@@ -312,7 +311,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
     private void initLayoutFields(View fragmentView) {
 
         // Set the tabs to the ActionBar
-        actionBar = context.getSupportActionBar();
+        actionBar = context.getActionBar();
         actionBar.setTitle(getString(R.string.app_sofbus24));
 
         // Create the fragments list
@@ -381,7 +380,7 @@ public class Sofbus24Fragment extends SherlockFragment implements
         // example phone in landscape mode
         for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
 
-            Tab actionBarTab = actionBar.newTab();
+            ActionBar.Tab actionBarTab = actionBar.newTab();
 
             // Check the page title that has to be set to the tab
             CharSequence pageTitle = getPageTitle(mSectionsPagerAdapter

@@ -46,8 +46,8 @@
             android:id="@+id/abs__shortcut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_below="@id/abs__title"
+            android:layout_alignParentLeft="true"
             android:duplicateParentState="true"
             android:singleLine="true"
             android:textAppearance="?attr/textAppearanceSmallPopupMenu" />

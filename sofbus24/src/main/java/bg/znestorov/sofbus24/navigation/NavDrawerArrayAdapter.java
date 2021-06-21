@@ -103,11 +103,11 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
             // Reuse views
             if (rowView == null) {
 
-				/*
+                /*
                  * Just a workaround because of a exception in the GooglePlay
-				 * console (java.lang.NullPointerException) - Last reported on 7
-				 * Feb 2015 at 19:15
-				 */
+                 * console (java.lang.NullPointerException) - Last reported on 7
+                 * Feb 2015 at 19:15
+                 */
                 LayoutInflater inflater = (LayoutInflater) context
                         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 if (inflater == null) {

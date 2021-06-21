@@ -2,14 +2,19 @@ package bg.znestorov.sofbus24.schedule;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
 import android.text.Html;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.databases.StationsDataSource;
-import bg.znestorov.sofbus24.entity.*;
+import bg.znestorov.sofbus24.entity.DirectionsEntity;
+import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
+import bg.znestorov.sofbus24.entity.StationEntity;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.History;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.publictransport.ChooseDirectionDialog;

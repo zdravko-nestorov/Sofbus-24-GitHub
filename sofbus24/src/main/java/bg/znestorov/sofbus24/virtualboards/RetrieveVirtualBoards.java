@@ -754,19 +754,19 @@ public class RetrieveVirtualBoards {
         ProcessVirtualBoards processVirtualBoards = new ProcessVirtualBoards(
                 context, htmlResult);
 
-		/*
+        /*
          * Revert the original station info (if needed) - it should be placed
-		 * here (before processing the result), so take effect in all cases
-		 */
+         * here (before processing the result), so take effect in all cases
+         */
         revertSpecialCaseFixes(station);
 
-		/*
+        /*
          * If it is not a special case, but the searched text matches some of
-		 * the special stations ([1137, 1138 - НДК-тунел], [1139 - НДК-Графити])
-		 * and there was no problem with the request, we should add them to the
-		 * result (just change the htmlResultCode to MULTIPLE_RESULTS and after
-		 * that add the stations in the list)
-		 */
+         * the special stations ([1137, 1138 - НДК-тунел], [1139 - НДК-Графити])
+         * and there was no problem with the request, we should add them to the
+         * result (just change the htmlResultCode to MULTIPLE_RESULTS and after
+         * that add the stations in the list)
+         */
         String formattedSearchedText = getFormattedSearchedText();
         boolean isSpecialStation = NDK_GRAFITTI.contains(formattedSearchedText)
                 || NDK_TUNNEL.contains(formattedSearchedText);

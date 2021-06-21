@@ -8,7 +8,8 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
+
+import androidx.fragment.app.DialogFragment;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.main.PreferencesPreHoneycomb;

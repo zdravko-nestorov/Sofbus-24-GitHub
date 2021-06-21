@@ -20,8 +20,7 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 class ScheduleDataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
+    private static final String EMPTY_COLUMN = "-";
     private final ScheduleSQLite dbHelper;
 
     // Columns of the SCHEDULE Table
@@ -32,8 +31,8 @@ class ScheduleDataSource {
             ScheduleSQLite.COLUMN_SCHE_STATION_NUMBER,
             ScheduleSQLite.COLUMN_SCHE_DATA,
             ScheduleSQLite.COLUMN_SCHE_TIMESTAMP};
-
-    private static final String EMPTY_COLUMN = "-";
+    // Database fields
+    private SQLiteDatabase database;
 
     public ScheduleDataSource(Activity context) {
         this.dbHelper = new ScheduleSQLite(context);

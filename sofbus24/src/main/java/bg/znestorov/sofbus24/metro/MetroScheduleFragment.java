@@ -2,10 +2,11 @@ package bg.znestorov.sofbus24.metro;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.ListFragment;
 
 import bg.znestorov.sofbus24.entity.ScheduleEntity;
 import bg.znestorov.sofbus24.main.R;

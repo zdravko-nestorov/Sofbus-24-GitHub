@@ -1,13 +1,13 @@
 <resources>
 
     <!-- ANDROID LIGHT THEME -->
-    <style name="AppBaseThemeLight" parent="Theme.Sherlock.Light" />
+    <style name="AppBaseThemeLight" parent="Theme.AppCompat.Light" />
 
     <style name="AppThemeLight" parent="AppBaseThemeLight">
         <item name="actionBarStyle">@style/MyTheme.ActionBarStyle</item>
     </style>
 
-    <style name="MyTheme.ActionBarStyle" parent="Widget.Sherlock.Light.ActionBar">
+    <style name="MyTheme.ActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
         <item name="titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
     </style>
 
@@ -17,14 +17,14 @@
     </style>
 
     <!-- ANDROID DARK THEME -->
-    <style name="AppBaseThemeDark" parent="Theme.Sherlock.Light" />
+    <style name="AppBaseThemeDark" parent="Theme.AppCompat.Light" />
 
     <style name="AppThemeDark" parent="AppBaseThemeDark">
         <item name="actionBarStyle">@style/MyTheme.ActionBarStyleDark</item>
         <item name="android:windowBackground">@color/app_dark_theme_background</item>
     </style>
 
-    <style name="MyTheme.ActionBarStyleDark" parent="Widget.Sherlock.Light.ActionBar">
+    <style name="MyTheme.ActionBarStyleDark" parent="Widget.AppCompat.Light.ActionBar">
         <item name="android:background">@color/app_dark_theme_action_bar</item>
         <item name="titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
     </style>
@@ -32,20 +32,20 @@
     <!-- ANDROID DIALOG THEME -->
     <style name="PopupTheme" parent="@android:style/Theme.Dialog">
         <item name="android:windowIsFloating">false</item>
-        <item name="windowContentOverlay">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <!-- ANDROID TRANSPARENT THEME -->
-    <style name="TransparentTheme" parent="Theme.Sherlock.Light">
+    <style name="TransparentTheme" parent="Theme.AppCompat.Light">
         <item name="windowNoTitle">true</item>
         <item name="background">@android:color/transparent</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
 
 </resources>

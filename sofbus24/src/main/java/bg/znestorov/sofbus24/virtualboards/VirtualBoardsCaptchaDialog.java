@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -18,6 +17,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+
+import androidx.fragment.app.DialogFragment;
 
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Utils;

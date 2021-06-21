@@ -1,16 +1,16 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.about.Configuration;
 import bg.znestorov.sofbus24.edit.tabs.EditTabsFragment;
@@ -19,7 +19,7 @@ import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 
-public class EditTabs extends SherlockFragmentActivity {
+public class EditTabs extends FragmentActivity {
 
     private static final String FRAGMENT_TAG_NAME = "EditTabs Fragment";
     private Activity context;
@@ -65,8 +65,7 @@ public class EditTabs extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(R.menu.activity_edit_tabs_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_edit_tabs_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -90,7 +89,7 @@ public class EditTabs extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.edit_tabs_title));

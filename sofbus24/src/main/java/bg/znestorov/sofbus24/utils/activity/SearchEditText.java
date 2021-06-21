@@ -144,23 +144,23 @@ public class SearchEditText extends EditText {
                  */
                 x = getWidth() - x;
 
-				/*
+                /*
                  * x can be negative if user taps at x co-ordinate just near the
-				 * width. e.g views width = 300 and user taps 290. Then as per
-				 * previous calculation 290 + 13 = 303. So subtract X from
-				 * getWidth() will result in negative value. So to avoid this
-				 * add the value previous added when x goes negative.
-				 */
+                 * width. e.g views width = 300 and user taps 290. Then as per
+                 * previous calculation 290 + 13 = 303. So subtract X from
+                 * getWidth() will result in negative value. So to avoid this
+                 * add the value previous added when x goes negative.
+                 */
 
                 if (x <= 0) {
                     x += extraTapArea;
                 }
 
-				/*
+                /*
                  * If result after calculating for extra tappable area is
-				 * negative. assign the original value so that after subtracting
-				 * extra tapping area value doesn't go into negative value.
-				 */
+                 * negative. assign the original value so that after subtracting
+                 * extra tapping area value doesn't go into negative value.
+                 */
 
                 if (y <= 0)
                     y = actionY;

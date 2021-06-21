@@ -18,7 +18,12 @@ import java.util.Locale;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
-import bg.znestorov.sofbus24.utils.*;
+import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
+import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
+import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Stations data source class, responsible for all interactions with the
@@ -29,11 +34,10 @@ import bg.znestorov.sofbus24.utils.*;
  */
 public class StationsDataSource {
 
+    // Number of nearest stations
+    public static int nearestStationsCount = 8;
     private final Context context;
     private final String language;
-
-    // Database fields
-    private SQLiteDatabase database;
     private final Sofbus24SQLite dbHelper;
 
     // Columns of the STATIONS Table
@@ -44,9 +48,8 @@ public class StationsDataSource {
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-
-    // Number of nearest stations
-    public static int nearestStationsCount = 8;
+    // Database fields
+    private SQLiteDatabase database;
 
     public StationsDataSource(Activity context) {
         this.context = context;

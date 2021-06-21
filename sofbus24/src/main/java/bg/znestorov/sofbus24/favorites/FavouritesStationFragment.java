@@ -2,13 +2,13 @@ package bg.znestorov.sofbus24.favorites;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.Html;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
@@ -18,8 +18,8 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.SherlockListFragment;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ import bg.znestorov.sofbus24.utils.activity.SearchEditText;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class FavouritesStationFragment extends SherlockListFragment implements
+public class FavouritesStationFragment extends ListFragment implements
         FragmentLifecycle, OnDeleteAllFavouritesListener,
         OnRenameFavouritesListener, OnRemoveFavouritesListener,
         OnOrderChoiceListener, OnSortChoiceListener, OnSortTypeChoiceListener {

@@ -14,10 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
  */
 class Sofbus24DataSource {
 
-    // Database fields
-    private SQLiteDatabase database;
     private final Sofbus24SQLite dbHelper;
-
     // Columns of the STATIONS Table
     private final String[] stationsColumns = {
             Sofbus24SQLite.COLUMN_PK_STAT_ID,
@@ -26,20 +23,20 @@ class Sofbus24DataSource {
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
             Sofbus24SQLite.COLUMN_STAT_TYPE};
-
     // Columns of the VEHICLES Table
     private final String[] vehiclesColumns = {
             Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER,
             Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
-
     // Columns of the DROID TRANS Table
     private final String[] droidTransColumns = {
             Sofbus24SQLite.COLUMN_PK_VEST_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_VEHI_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_STAT_ID,
             Sofbus24SQLite.COLUMN_VEST_DIRECTION};
+    // Database fields
+    private SQLiteDatabase database;
 
     public Sofbus24DataSource(Activity context) {
         dbHelper = new Sofbus24SQLite(context);

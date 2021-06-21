@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2sp"
         android:layout_marginRight="12sp"
-        android:minHeight="40sp"
-        android:minWidth="40sp">
+        android:minWidth="40sp"
+        android:minHeight="40sp">
 
         <ImageView
             android:id="@+id/metro_item_station_icon"
@@ -52,8 +52,8 @@
         android:id="@+id/metro_item_settings_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
         android:layout_marginLeft="12sp"
         android:layout_marginRight="2sp">
 

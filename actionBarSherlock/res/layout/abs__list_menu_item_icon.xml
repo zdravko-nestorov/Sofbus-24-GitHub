@@ -18,10 +18,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
-    android:layout_marginBottom="8dip"
     android:layout_marginLeft="8dip"
-    android:layout_marginRight="-8dip"
     android:layout_marginTop="8dip"
+    android:layout_marginRight="-8dip"
+    android:layout_marginBottom="8dip"
     android:duplicateParentState="true"
     android:scaleType="centerInside" />
 

@@ -23,17 +23,17 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="15sp"
         android:contentDescription="@string/app_img_empty_content_description"
-        android:minHeight="@dimen/about_image_height"
         android:minWidth="@dimen/about_image_width"
+        android:minHeight="@dimen/about_image_height"
         android:src="@drawable/ic_about" />
 
     <TextView
         android:id="@+id/about_information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15sp"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
+        android:layout_marginBottom="15sp"
         android:autoLink="web"
         android:gravity="center_horizontal"
         android:linksClickable="true"

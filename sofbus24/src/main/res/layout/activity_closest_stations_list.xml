@@ -30,8 +30,8 @@
             android:id="@+id/cs_list_street_view_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/cs_list_street_view_image"
             android:layout_alignRight="@+id/cs_list_street_view_image"
+            android:layout_alignBottom="@+id/cs_list_street_view_image"
             android:background="@drawable/selectable_item_background"
             android:contentDescription="@string/app_img_empty_content_description"
             android:src="@drawable/ic_google_street_view" />
@@ -44,8 +44,8 @@
         android:layout_below="@+id/cs_list_street_view"
         android:layout_marginTop="2sp"
         android:drawableLeft="@drawable/ic_menu_search"
-        android:drawablePadding="5sp"
         android:drawableRight="@drawable/ic_menu_close_clear_cancel"
+        android:drawablePadding="5sp"
         android:hint="@string/cs_list_search_hint"
         android:maxLines="1" />
 

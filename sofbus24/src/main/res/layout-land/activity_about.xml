@@ -27,10 +27,10 @@
         android:autoLink="web"
         android:gravity="center"
         android:linksClickable="true"
-        android:paddingBottom="10sp"
         android:paddingLeft="20sp"
-        android:paddingRight="20sp"
         android:paddingTop="10sp"
+        android:paddingRight="20sp"
+        android:paddingBottom="10sp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="14sp" />
 

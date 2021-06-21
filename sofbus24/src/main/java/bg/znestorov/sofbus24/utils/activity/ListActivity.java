@@ -20,11 +20,12 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import androidx.fragment.app.FragmentActivity;
 
 /**
  * An activity that displays a list of items by binding to a data source such as
@@ -210,7 +211,7 @@ public class ListActivity extends FragmentActivity {
      * @param position The position of the view in the list
      * @param id       The row id of the item that was clicked
      */
-    private void onListItemClick(ListView l, View v, int position, long id) {
+    protected void onListItemClick(ListView l, View v, int position, long id) {
     }
 
     /**
@@ -294,7 +295,7 @@ public class ListActivity extends FragmentActivity {
     /**
      * Provide the cursor for the list view.
      */
-    private void setListAdapter(ListAdapter adapter) {
+    public void setListAdapter(ListAdapter adapter) {
         synchronized (this) {
             ensureList();
             mAdapter = adapter;

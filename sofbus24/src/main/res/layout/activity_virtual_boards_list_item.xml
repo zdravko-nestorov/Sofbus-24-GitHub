@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2sp"
         android:layout_marginRight="12sp"
-        android:minHeight="@dimen/vb_image_height"
-        android:minWidth="@dimen/vb_image_width">
+        android:minWidth="@dimen/vb_image_width"
+        android:minHeight="@dimen/vb_image_height">
 
         <ImageView
             android:id="@+id/vb_item_favourite"

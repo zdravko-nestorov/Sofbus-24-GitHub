@@ -28,17 +28,15 @@ public class VehiclesDataSource {
 
     private final Activity context;
     private final String language;
-
-    // Database fields
-    private SQLiteDatabase database;
     private final Sofbus24SQLite dbHelper;
-
     // Columns of the VEHICLES Table
     private final String[] allColumns = {
             Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER,
             Sofbus24SQLite.COLUMN_VEHI_TYPE,
             Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
+    // Database fields
+    private SQLiteDatabase database;
 
     public VehiclesDataSource(Activity context) {
         this.context = context;

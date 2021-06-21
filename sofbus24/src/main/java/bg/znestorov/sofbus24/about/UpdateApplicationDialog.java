@@ -8,9 +8,10 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.text.Spanned;
+
+import androidx.fragment.app.DialogFragment;
 
 import bg.znestorov.sofbus24.main.R;
 

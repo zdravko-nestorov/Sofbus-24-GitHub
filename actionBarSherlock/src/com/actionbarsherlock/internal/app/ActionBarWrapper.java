@@ -47,11 +47,6 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
     }
 
     @Override
-    public void setCustomView(View view) {
-        mActionBar.setCustomView(view);
-    }
-
-    @Override
     public void setCustomView(View view, LayoutParams layoutParams) {
         android.app.ActionBar.LayoutParams lp = new android.app.ActionBar.LayoutParams(layoutParams);
         lp.gravity = layoutParams.gravity;
@@ -111,16 +106,6 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
     }
 
     @Override
-    public void setTitle(CharSequence title) {
-        mActionBar.setTitle(title);
-    }
-
-    @Override
-    public void setSubtitle(CharSequence subtitle) {
-        mActionBar.setSubtitle(subtitle);
-    }
-
-    @Override
     public void setDisplayOptions(int options, int mask) {
         mActionBar.setDisplayOptions(options, mask);
 
@@ -176,6 +161,11 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
     }
 
     @Override
+    public void setCustomView(View view) {
+        mActionBar.setCustomView(view);
+    }
+
+    @Override
     public void setCustomView(int resId) {
         mActionBar.setCustomView(resId);
     }
@@ -186,6 +176,11 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
     }
 
     @Override
+    public void setTitle(CharSequence title) {
+        mActionBar.setTitle(title);
+    }
+
+    @Override
     public void setTitle(int resId) {
         mActionBar.setTitle(resId);
     }
@@ -193,6 +188,11 @@ public class ActionBarWrapper extends ActionBar implements android.app.ActionBar
     @Override
     public CharSequence getSubtitle() {
         return mActionBar.getSubtitle();
+    }
+
+    @Override
+    public void setSubtitle(CharSequence subtitle) {
+        mActionBar.setSubtitle(subtitle);
     }
 
     @Override

@@ -137,20 +137,6 @@ public abstract class ActionBar {
      * Set the action bar into custom navigation mode, supplying a view
      * for custom navigation.
      * <p/>
-     * Custom navigation views appear between the application icon and
-     * any action buttons and may use any space available there. Common
-     * use cases for custom navigation views might include an auto-suggesting
-     * address bar for a browser or other navigation mechanisms that do not
-     * translate well to provided navigation modes.
-     *
-     * @param view Custom navigation view to place in the ActionBar.
-     */
-    public abstract void setCustomView(View view);
-
-    /**
-     * Set the action bar into custom navigation mode, supplying a view
-     * for custom navigation.
-     * <p/>
      * <p>Custom navigation views appear between the application icon and
      * any action buttons and may use any space available there. Common
      * use cases for custom navigation views might include an auto-suggesting
@@ -260,27 +246,6 @@ public abstract class ActionBar {
      * @return Number of navigation items.
      */
     public abstract int getNavigationItemCount();
-
-    /**
-     * Set the action bar's title. This will only be displayed if
-     * {@link #DISPLAY_SHOW_TITLE} is set.
-     *
-     * @param title Title to set
-     * @see #setTitle(int)
-     * @see #setDisplayOptions(int, int)
-     */
-    public abstract void setTitle(CharSequence title);
-
-    /**
-     * Set the action bar's subtitle. This will only be displayed if
-     * {@link #DISPLAY_SHOW_TITLE} is set. Set to null to disable the
-     * subtitle entirely.
-     *
-     * @param subtitle Subtitle to set
-     * @see #setSubtitle(int)
-     * @see #setDisplayOptions(int, int)
-     */
-    public abstract void setSubtitle(CharSequence subtitle);
 
     /**
      * Set selected display options. Only the options specified by mask will be changed.
@@ -396,6 +361,20 @@ public abstract class ActionBar {
      * Set the action bar into custom navigation mode, supplying a view
      * for custom navigation.
      * <p/>
+     * Custom navigation views appear between the application icon and
+     * any action buttons and may use any space available there. Common
+     * use cases for custom navigation views might include an auto-suggesting
+     * address bar for a browser or other navigation mechanisms that do not
+     * translate well to provided navigation modes.
+     *
+     * @param view Custom navigation view to place in the ActionBar.
+     */
+    public abstract void setCustomView(View view);
+
+    /**
+     * Set the action bar into custom navigation mode, supplying a view
+     * for custom navigation.
+     * <p/>
      * <p>Custom navigation views appear between the application icon and
      * any action buttons and may use any space available there. Common
      * use cases for custom navigation views might include an auto-suggesting
@@ -423,6 +402,16 @@ public abstract class ActionBar {
      * Set the action bar's title. This will only be displayed if
      * {@link #DISPLAY_SHOW_TITLE} is set.
      *
+     * @param title Title to set
+     * @see #setTitle(int)
+     * @see #setDisplayOptions(int, int)
+     */
+    public abstract void setTitle(CharSequence title);
+
+    /**
+     * Set the action bar's title. This will only be displayed if
+     * {@link #DISPLAY_SHOW_TITLE} is set.
+     *
      * @param resId Resource ID of title string to set
      * @see #setTitle(CharSequence)
      * @see #setDisplayOptions(int, int)
@@ -437,6 +426,17 @@ public abstract class ActionBar {
      * @return The current ActionBar subtitle or null.
      */
     public abstract CharSequence getSubtitle();
+
+    /**
+     * Set the action bar's subtitle. This will only be displayed if
+     * {@link #DISPLAY_SHOW_TITLE} is set. Set to null to disable the
+     * subtitle entirely.
+     *
+     * @param subtitle Subtitle to set
+     * @see #setSubtitle(int)
+     * @see #setDisplayOptions(int, int)
+     */
+    public abstract void setSubtitle(CharSequence subtitle);
 
     /**
      * Set the action bar's subtitle. This will only be displayed if
@@ -799,6 +799,13 @@ public abstract class ActionBar {
         public abstract Tab setText(CharSequence text);
 
         /**
+         * Retrieve a previously set custom view for this tab.
+         *
+         * @return The custom view set by {@link #setCustomView(View)}.
+         */
+        public abstract View getCustomView();
+
+        /**
          * Set a custom view to be used for this tab. This overrides values set by
          * {@link #setText(CharSequence)} and {@link #setIcon(Drawable)}.
          *
@@ -806,13 +813,6 @@ public abstract class ActionBar {
          * @return The current instance for call chaining
          */
         public abstract Tab setCustomView(View view);
-
-        /**
-         * Retrieve a previously set custom view for this tab.
-         *
-         * @return The custom view set by {@link #setCustomView(View)}.
-         */
-        public abstract View getCustomView();
 
         /**
          * Set a custom view to be used for this tab. This overrides values set by
@@ -851,6 +851,15 @@ public abstract class ActionBar {
         public abstract void select();
 
         /**
+         * Gets a brief description of this tab's content for use in accessibility support.
+         *
+         * @return Description of this tab's content
+         * @see #setContentDescription(CharSequence)
+         * @see #setContentDescription(int)
+         */
+        public abstract CharSequence getContentDescription();
+
+        /**
          * Set a description of this tab's content for use in accessibility support.
          * If no content description is provided the title will be used.
          *
@@ -860,15 +869,6 @@ public abstract class ActionBar {
          * @see #getContentDescription()
          */
         public abstract Tab setContentDescription(int resId);
-
-        /**
-         * Gets a brief description of this tab's content for use in accessibility support.
-         *
-         * @return Description of this tab's content
-         * @see #setContentDescription(CharSequence)
-         * @see #setContentDescription(int)
-         */
-        public abstract CharSequence getContentDescription();
 
         /**
          * Set a description of this tab's content for use in accessibility support.

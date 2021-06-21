@@ -4,8 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 
 import java.io.FileOutputStream;
 import java.io.InputStream;

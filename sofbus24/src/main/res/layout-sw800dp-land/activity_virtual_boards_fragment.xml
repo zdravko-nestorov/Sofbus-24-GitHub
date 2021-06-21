@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2sp"
         android:drawableLeft="@drawable/ic_menu_search"
-        android:drawablePadding="5sp"
         android:drawableRight="@drawable/ic_menu_close_clear_cancel"
+        android:drawablePadding="5sp"
         android:hint="@string/vb_search_hint"
         android:imeOptions="actionSearch"
         android:maxLines="1" />

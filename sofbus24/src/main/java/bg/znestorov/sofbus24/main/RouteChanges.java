@@ -1,17 +1,15 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockListActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -24,6 +22,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.ListActivity;
 
 /**
  * RouteChanges activity containing information about the changes in the public
@@ -32,10 +31,10 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class RouteChanges extends SherlockListActivity {
+public class RouteChanges extends ListActivity {
 
     public static final String BUNDLE_ROUTE_CHANGES_NEWS_LIST = "ROUTE CHANGES NEWS LIST";
-    private FragmentActivity context;
+    private Activity context;
     private ProgressBar loadingRouteChanges;
     private View routeChangesContent;
     private RouteChangesAdapter routeChangesAdapter;
@@ -81,8 +80,7 @@ public class RouteChanges extends SherlockListActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.activity_route_changes_actions,
-                menu);
+        getMenuInflater().inflate(R.menu.activity_route_changes_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -126,7 +124,7 @@ public class RouteChanges extends SherlockListActivity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.route_changes_title));

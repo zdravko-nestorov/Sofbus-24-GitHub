@@ -1,12 +1,14 @@
 package bg.znestorov.sofbus24.metro;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -15,11 +17,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.ArrayList;
 
@@ -36,12 +35,12 @@ import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
-public class MetroScheduleWrapperFragment extends SherlockFragment {
+public class MetroScheduleWrapperFragment extends Fragment {
 
     private static final String BUNDLE_METRO_SCHEDULE = "Metro Schedule";
     private static final String BUNDLE_SAVED_STATE_KEY = "Current Schedule Hour Index";
     private static final String BUNDLE_FRAGMENT_TAG_NAME = "Metro Schedule Fragment";
-    private SherlockFragmentActivity context;
+    private FragmentActivity context;
     private GlobalEntity globalContext;
     private Bundle savedInstanceState;
     private FavouritesDataSource favouritesDatasource;
@@ -80,7 +79,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
 
         // Get the current context and create a FavouritesDatasource and
         // a SavedInstanceState objects
-        context = getSherlockActivity();
+        context = getActivity();
         globalContext = (GlobalEntity) context.getApplicationContext();
         favouritesDatasource = new FavouritesDataSource(context);
         this.savedInstanceState = savedInstanceState;
@@ -199,7 +198,7 @@ public class MetroScheduleWrapperFragment extends SherlockFragment {
      */
     private void initLayoutFields(View fragmentView) {
         // Get the Action Bar
-        actionBar = context.getSupportActionBar();
+        actionBar = context.getActionBar();
 
         // Get the Favorite ImageView and the Arrow ImageButtons
         addToFavourites = (ImageView) fragmentView

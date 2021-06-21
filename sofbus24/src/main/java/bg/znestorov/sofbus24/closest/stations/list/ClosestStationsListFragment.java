@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.text.*;
+import android.text.Editable;
+import android.text.Html;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -14,6 +17,8 @@ import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import androidx.fragment.app.ListFragment;
 
 import com.google.android.gms.maps.model.LatLng;
 

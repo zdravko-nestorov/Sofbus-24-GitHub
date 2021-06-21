@@ -1,13 +1,15 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -15,10 +17,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -36,7 +37,7 @@ import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 import bg.znestorov.sofbus24.virtualboards.VirtualBoardsTimeFragment;
 
-public class VirtualBoardsTime extends SherlockFragmentActivity {
+public class VirtualBoardsTime extends FragmentActivity {
 
     private static final String FRAGMENT_TAG_NAME = "Virtual Boards Time Fragment";
     private Activity context;
@@ -92,8 +93,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_virtual_boards_time_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_virtual_boards_time_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -178,7 +178,7 @@ public class VirtualBoardsTime extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.vb_time_title));

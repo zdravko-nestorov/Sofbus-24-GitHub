@@ -1,7 +1,7 @@
 /*
  *  Android Wheel Control.
  *  https://code.google.com/p/android-wheel/
- *  
+ *
  *  Copyright 2011 Yuri Kanivets
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");

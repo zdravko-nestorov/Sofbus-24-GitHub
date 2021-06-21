@@ -39,10 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#D0D0D0"
-        android:paddingBottom="5sp"
         android:paddingLeft="15sp"
+        android:paddingTop="5sp"
         android:paddingRight="20sp"
-        android:paddingTop="5sp">
+        android:paddingBottom="5sp">
 
         <TextView
             android:id="@+id/metro_schedule_time"
@@ -88,8 +88,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="13sp"
             android:contentDescription="@string/app_img_empty_content_description"
-            android:minHeight="75sp"
             android:minWidth="50sp"
+            android:minHeight="75sp"
             android:src="@drawable/ic_previous" />
 
         <ImageButton
@@ -100,8 +100,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="13sp"
             android:contentDescription="@string/app_img_empty_content_description"
-            android:minHeight="75sp"
             android:minWidth="50sp"
+            android:minHeight="75sp"
             android:src="@drawable/ic_next" />
 
         <TextView
@@ -111,8 +111,8 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/metro_schedule_border"
             android:gravity="center"
-            android:paddingBottom="3sp"
             android:paddingTop="3sp"
+            android:paddingBottom="3sp"
             android:textSize="@dimen/metro_schedule_legend_size"
             android:textStyle="bold"
             tools:ignore="SmallSp" />

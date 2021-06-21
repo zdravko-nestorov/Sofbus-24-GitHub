@@ -10,7 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.List;
 
@@ -26,10 +26,10 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 class EditTabsAdapter extends ArrayAdapter<HomeTabEntity> {
 
-    private final SherlockFragmentActivity context;
+    private final FragmentActivity context;
     private final List<HomeTabEntity> editTabsList;
 
-    public EditTabsAdapter(SherlockFragmentActivity context,
+    public EditTabsAdapter(FragmentActivity context,
                            List<HomeTabEntity> editTabsList) {
         super(context, R.layout.activity_sofbus24_edit_tabs_fragment_item,
                 editTabsList);

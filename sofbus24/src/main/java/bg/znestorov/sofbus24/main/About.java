@@ -1,24 +1,24 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.about.RetrieveAppConfiguration;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
-public class About extends SherlockFragmentActivity {
+public class About extends FragmentActivity {
 
-    private SherlockFragmentActivity context;
+    private FragmentActivity context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class About extends SherlockFragmentActivity {
                 getString(R.string.app_name), appVersion)));
 
         // Set up the action bar
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setSubtitle(String.format(getString(R.string.about_subtitle),
                 appVersion));
@@ -56,7 +56,7 @@ public class About extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(R.menu.activity_about_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_about_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

@@ -966,7 +966,7 @@ public class ActionBarView extends AbsActionBarView {
 
         if (mProgressView != null && mProgressView.getVisibility() != GONE) {
             mProgressView.measure(MeasureSpec.makeMeasureSpec(
-                            contentWidth - mProgressBarPadding * 2, MeasureSpec.EXACTLY),
+                    contentWidth - mProgressBarPadding * 2, MeasureSpec.EXACTLY),
                     MeasureSpec.makeMeasureSpec(getMeasuredHeight(), MeasureSpec.AT_MOST));
         }
     }

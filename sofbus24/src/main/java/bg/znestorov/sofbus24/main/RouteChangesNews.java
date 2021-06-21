@@ -1,6 +1,7 @@
 package bg.znestorov.sofbus24.main;
 
 import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -8,13 +9,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.entity.RouteChangesEntity;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -27,7 +27,7 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class RouteChangesNews extends SherlockFragmentActivity {
+public class RouteChangesNews extends FragmentActivity {
 
     public static final String BUNDLE_ROUTE_CHANGES_NEWS = "ROUTE CHANGES NEWS";
     private Activity context;
@@ -55,8 +55,7 @@ public class RouteChangesNews extends SherlockFragmentActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(
-                R.menu.activity_route_changes_news_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_route_changes_news_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -125,7 +124,7 @@ public class RouteChangesNews extends SherlockFragmentActivity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.route_changes_title));

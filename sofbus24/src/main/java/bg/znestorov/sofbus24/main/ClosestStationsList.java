@@ -1,19 +1,20 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.model.LatLng;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -30,10 +31,10 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
-public class ClosestStationsList extends SherlockFragmentActivity {
+public class ClosestStationsList extends FragmentActivity {
 
     private static final String FRAGMENT_TAG_NAME = "Closest Stations List Fragment";
-    private SherlockFragmentActivity context;
+    private FragmentActivity context;
     private GlobalEntity globalContext;
     private Bundle savedInstanceState;
     private View csListFragment;
@@ -64,8 +65,7 @@ public class ClosestStationsList extends SherlockFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater().inflate(
-                R.menu.activity_closest_stations_list_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_closest_stations_list_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -125,7 +125,7 @@ public class ClosestStationsList extends SherlockFragmentActivity {
      */
     private void initLayoutFields() {
         // Get the Action Bar
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.cs_list_title));

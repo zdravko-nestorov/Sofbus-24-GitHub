@@ -167,9 +167,9 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     private SearchableInfo mSearchable;
     private Bundle mAppSearchData;
     /*
-    * SearchView can be set expanded before the IME is ready to be shown during
-    * initial UI setup. The show operation is asynchronous to account for this.
-    */
+     * SearchView can be set expanded before the IME is ready to be shown during
+     * initial UI setup. The show operation is asynchronous to account for this.
+     */
     private Runnable mShowImeRunnable = new Runnable() {
         public void run() {
             InputMethodManager imm = (InputMethodManager)

@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2sp"
         android:layout_marginRight="12sp"
-        android:minHeight="@dimen/schedule_image_vehicle_type_height"
-        android:minWidth="@dimen/schedule_image_vehicle_type_width">
+        android:minWidth="@dimen/schedule_image_vehicle_type_width"
+        android:minHeight="@dimen/schedule_image_vehicle_type_height">
 
         <ImageView
             android:id="@+id/schedule_item_vehicle_type"

@@ -6,9 +6,10 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Html;
 import android.widget.ArrayAdapter;
+
+import androidx.fragment.app.DialogFragment;
 
 import bg.znestorov.sofbus24.entity.DirectionsEntity;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;

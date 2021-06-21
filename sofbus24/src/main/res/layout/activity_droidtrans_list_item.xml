@@ -11,10 +11,10 @@
         android:layout_gravity="center_vertical"
         android:contentDescription="@string/app_img_empty_content_description"
         android:cropToPadding="true"
-        android:paddingBottom="1dp"
         android:paddingLeft="3dp"
-        android:paddingRight="1dp"
         android:paddingTop="1dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="1dp"
         android:scaleType="fitXY" />
 
     <TextView

@@ -265,11 +265,6 @@ public class ActionBarImpl extends ActionBar {
     }
 
     @Override
-    public void setCustomView(int resId) {
-        setCustomView(LayoutInflater.from(getThemedContext()).inflate(resId, mActionView, false));
-    }
-
-    @Override
     public void setDisplayUseLogoEnabled(boolean useLogo) {
         setDisplayOptions(useLogo ? DISPLAY_USE_LOGO : 0, DISPLAY_USE_LOGO);
     }
@@ -297,16 +292,6 @@ public class ActionBarImpl extends ActionBar {
     @Override
     public void setHomeButtonEnabled(boolean enable) {
         mActionView.setHomeButtonEnabled(enable);
-    }
-
-    @Override
-    public void setTitle(int resId) {
-        setTitle(mContext.getString(resId));
-    }
-
-    @Override
-    public void setSubtitle(int resId) {
-        setSubtitle(mContext.getString(resId));
     }
 
     public void setSelectedNavigationItem(int position) {
@@ -362,6 +347,11 @@ public class ActionBarImpl extends ActionBar {
     }
 
     @Override
+    public void setCustomView(int resId) {
+        setCustomView(LayoutInflater.from(getThemedContext()).inflate(resId, mActionView, false));
+    }
+
+    @Override
     public void setCustomView(View view) {
         mActionView.setCustomNavigationView(view);
     }
@@ -370,12 +360,22 @@ public class ActionBarImpl extends ActionBar {
         return mActionView.getTitle();
     }
 
+    @Override
+    public void setTitle(int resId) {
+        setTitle(mContext.getString(resId));
+    }
+
     public void setTitle(CharSequence title) {
         mActionView.setTitle(title);
     }
 
     public CharSequence getSubtitle() {
         return mActionView.getSubtitle();
+    }
+
+    @Override
+    public void setSubtitle(int resId) {
+        setSubtitle(mContext.getString(resId));
     }
 
     public void setSubtitle(CharSequence subtitle) {
@@ -822,18 +822,13 @@ public class ActionBarImpl extends ActionBar {
         }
 
         @Override
-        public void setSubtitle(CharSequence subtitle) {
-            mContextView.setSubtitle(subtitle);
+        public CharSequence getTitle() {
+            return mContextView.getTitle();
         }
 
         @Override
         public void setTitle(CharSequence title) {
             mContextView.setTitle(title);
-        }
-
-        @Override
-        public CharSequence getTitle() {
-            return mContextView.getTitle();
         }
 
         @Override
@@ -844,6 +839,11 @@ public class ActionBarImpl extends ActionBar {
         @Override
         public CharSequence getSubtitle() {
             return mContextView.getSubtitle();
+        }
+
+        @Override
+        public void setSubtitle(CharSequence subtitle) {
+            mContextView.setSubtitle(subtitle);
         }
 
         @Override

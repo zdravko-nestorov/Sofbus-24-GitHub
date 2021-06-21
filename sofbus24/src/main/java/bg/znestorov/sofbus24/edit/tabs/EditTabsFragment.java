@@ -3,15 +3,16 @@ package bg.znestorov.sofbus24.edit.tabs;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.actionbarsherlock.app.SherlockListFragment;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.ListFragment;
+
 import com.mobeta.android.dslv.DragSortController;
 import com.mobeta.android.dslv.DragSortListView;
 import com.mobeta.android.dslv.SimpleFloatViewManager;
@@ -29,12 +30,12 @@ import bg.znestorov.sofbus24.utils.Constants;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class EditTabsFragment extends SherlockListFragment {
+public class EditTabsFragment extends ListFragment {
 
     private static final int DRAG_START_MODE = DragSortController.ON_DOWN;
     private static final boolean REMOVE_ENABLED = false;
     private static final boolean DRAG_ENABLED = true;
-    private SherlockFragmentActivity context;
+    private FragmentActivity context;
     private ConfigEntity config;
     private boolean isReset;
     private EditTabsAdapter editTabsAdapter;
@@ -73,7 +74,7 @@ public class EditTabsFragment extends SherlockListFragment {
                         container, false);
 
         // Set the context (activity) associated with this fragment
-        context = getSherlockActivity();
+        context = getActivity();
 
         // Get the configuration object and if the Fragment is started or
         // reset from the Bundle or SavedInstanceState

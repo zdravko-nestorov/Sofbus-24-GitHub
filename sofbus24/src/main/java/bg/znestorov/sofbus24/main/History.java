@@ -1,21 +1,20 @@
 package bg.znestorov.sofbus24.main;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockListActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.DialogFragment;
 
 import java.util.ArrayList;
 
@@ -36,6 +35,7 @@ import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.ListActivity;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
@@ -44,7 +44,7 @@ import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class History extends SherlockListActivity implements
+public class History extends ListActivity implements
         OnDeleteAllHistoryListener {
 
     private final ArrayList<HistoryEntity> historyList = new ArrayList<HistoryEntity>();
@@ -82,7 +82,7 @@ public class History extends SherlockListActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.activity_history_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_history_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -193,7 +193,7 @@ public class History extends SherlockListActivity implements
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(getString(R.string.history_title));

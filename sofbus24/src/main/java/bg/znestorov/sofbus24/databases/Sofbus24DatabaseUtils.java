@@ -32,7 +32,10 @@ public class Sofbus24DatabaseUtils {
 
     private static final String DB_VEHICLES_NAME = "vehicles.db";
     private static final String DB_VEHICLES_JOURNAL_NAME = "vehicles.db-journal";
-
+    /**
+     * Acquire a synchronization when open/close the database
+     */
+    private static final Object DB_LOCK = new Object();
     /**
      * Check how many times the database is open, so close the DB when it is really needed.
      * For example if the counter is ZERO, this means that there are no open connections
@@ -40,11 +43,6 @@ public class Sofbus24DatabaseUtils {
      * time and do what is needed only when it is needed
      */
     private static volatile int dbCounter;
-
-    /**
-     * Acquire a synchronization when open/close the database
-     */
-    private static final Object DB_LOCK = new Object();
 
     /**
      * Delete the old databases (stations.db and vehicles.db) and create an

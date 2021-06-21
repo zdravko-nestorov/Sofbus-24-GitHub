@@ -12,6 +12,7 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
@@ -21,8 +22,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockListFragment;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ import bg.znestorov.sofbus24.utils.activity.SearchEditText;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class MetroStationFragment extends SherlockListFragment implements
+public class MetroStationFragment extends ListFragment implements
         OnItemClickListener {
 
     private static final String BUNDLE_SEARCH_TEXT = "SEARCH TEXT";

@@ -1,4 +1,3 @@
-include ':actionBarSherlock'
 include ':dragSortListView'
 include ':pagerSlidingTabStrip'
 include ':rollWheelPicker'

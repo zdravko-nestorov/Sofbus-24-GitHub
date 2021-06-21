@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="3sp"
         android:layout_marginRight="12sp"
-        android:minHeight="@dimen/vb_time_image_vehicle_height"
-        android:minWidth="@dimen/vb_time_image_vehicle_width">
+        android:minWidth="@dimen/vb_time_image_vehicle_width"
+        android:minHeight="@dimen/vb_time_image_vehicle_height">
 
         <ImageView
             android:id="@+id/vb_time_item_image_vehicle"
@@ -51,8 +51,8 @@
         android:id="@+id/cs_list_item_vehicle_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/vb_time_item_image_vehicle_layout"
         android:layout_below="@+id/vb_time_item_image_vehicle_layout"
+        android:layout_alignLeft="@+id/vb_time_item_image_vehicle_layout"
         android:singleLine="false"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="13sp"

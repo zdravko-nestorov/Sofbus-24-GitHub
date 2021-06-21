@@ -12,9 +12,10 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.StatFs;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

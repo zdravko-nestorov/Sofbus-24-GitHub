@@ -2,18 +2,17 @@ package bg.znestorov.sofbus24.metro;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.view.MenuItem;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ import bg.znestorov.sofbus24.utils.activity.NonSwipeableViewPager;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class MetroFragment extends SherlockFragment {
+public class MetroFragment extends Fragment {
 
     private static final String BUNDLE_CURRENT_DIRECTION = "CURRENT DIRECTION";
     private final ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();

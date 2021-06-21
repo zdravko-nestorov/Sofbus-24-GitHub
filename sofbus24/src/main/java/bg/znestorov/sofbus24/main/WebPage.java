@@ -1,11 +1,14 @@
 package bg.znestorov.sofbus24.main;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.RenderPriority;
@@ -13,11 +16,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -32,7 +30,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class WebPage extends SherlockActivity {
+public class WebPage extends Activity {
 
     public static final String BUNDLE_VEHICLE = "VEHICLE";
     private Activity context;
@@ -91,8 +89,7 @@ public class WebPage extends SherlockActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
-        getSupportMenuInflater()
-                .inflate(R.menu.activity_web_page_actions, menu);
+        getMenuInflater().inflate(R.menu.activity_web_page_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -123,7 +120,7 @@ public class WebPage extends SherlockActivity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
-        actionBar = getSupportActionBar();
+        actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);
         setActionBarTitles();

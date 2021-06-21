@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2sp"
         android:layout_marginRight="12sp"
-        android:minHeight="@dimen/cs_list_image_favourite_height"
-        android:minWidth="@dimen/cs_list_image_favourite_width">
+        android:minWidth="@dimen/cs_list_image_favourite_width"
+        android:minHeight="@dimen/cs_list_image_favourite_height">
 
         <ImageView
             android:id="@+id/cs_list_item_favourite"

@@ -3,7 +3,8 @@ package bg.znestorov.sofbus24.backup;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 
 import bg.znestorov.sofbus24.entity.FileDialogActionEnum;
 import bg.znestorov.sofbus24.main.R;
