@@ -7,14 +7,16 @@
         android:id="@+id/action_gm_map_favorites"
         android:icon="@drawable/ic_menu_star"
         android:showAsAction="never"
-        android:title="@string/action_gm_map_favorites" />
+        android:title="@string/action_gm_map_favorites"
+        tools:ignore="AppCompatResource" />
 
     <!-- Droidtrans -->
     <item
         android:id="@+id/action_gm_map_droidtrans"
         android:icon="@drawable/ic_menu_droidtrans"
         android:showAsAction="never"
-        android:title="@string/action_gm_map_droidtrans" />
+        android:title="@string/action_gm_map_droidtrans"
+        tools:ignore="AppCompatResource" />
 
     <!-- Clear map -->
     <item
@@ -22,7 +24,7 @@
         android:icon="@drawable/ic_menu_map_clear"
         android:showAsAction="always"
         android:title="@string/action_gm_map_clear"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Draw route -->
     <item
@@ -30,7 +32,7 @@
         android:icon="@drawable/ic_menu_directions"
         android:showAsAction="always"
         android:title="@string/action_gm_map_route"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Google Street View -->
     <item
@@ -38,7 +40,7 @@
         android:icon="@drawable/ic_menu_map_street_view"
         android:showAsAction="always"
         android:title="@string/action_gm_map_gsv"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Enable Traffic -->
     <item
@@ -46,7 +48,7 @@
         android:icon="@drawable/ic_menu_map_traffic"
         android:showAsAction="always"
         android:title="@string/action_gm_map_traffic"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map mode -->
     <item
@@ -54,7 +56,7 @@
         android:icon="@drawable/ic_menu_map_layers"
         android:showAsAction="always"
         android:title="@string/action_gm_map_mode"
-        tools:ignore="AlwaysShowAction">
+        tools:ignore="AlwaysShowAction,AppCompatResource">
         <menu>
 
             <!-- Normal map mode -->

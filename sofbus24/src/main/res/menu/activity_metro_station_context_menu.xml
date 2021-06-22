@@ -7,20 +7,20 @@
         android:id="@+id/menu_metro_station_add"
         android:showAsAction="always"
         android:title="@string/menu_metro_station_add"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Remove from Favorites -->
     <item
         android:id="@+id/menu_metro_station_remove"
         android:showAsAction="always"
         android:title="@string/menu_metro_station_remove"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- See on the map -->
     <item
         android:id="@+id/menu_metro_station_map"
         android:showAsAction="always"
         android:title="@string/menu_metro_station_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

@@ -61,7 +61,6 @@ public class RouteChangesNews extends FragmentActivity {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -72,7 +71,6 @@ public class RouteChangesNews extends FragmentActivity {
         // Get the URL address and the device Android version
         String urlAddress = String.format(Constants.ROUTE_CHANGES_NEWS_API_URL_BROWSER_ADDRESS,
                 routeChanges.getId());
-        int deviceSDK = android.os.Build.VERSION.SDK_INT;
 
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -80,15 +78,11 @@ public class RouteChangesNews extends FragmentActivity {
                 return true;
             case R.id.action_route_changes_copy_link:
 
-                if (deviceSDK < android.os.Build.VERSION_CODES.HONEYCOMB) {
-                    android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    clipboard.setText(urlAddress);
-                } else {
-                    android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    android.content.ClipData clip = android.content.ClipData
-                            .newPlainText(urlAddress, urlAddress);
-                    clipboard.setPrimaryClip(clip);
-                }
+                android.content.ClipboardManager clipboard = (android.content.ClipboardManager)
+                        getSystemService(Context.CLIPBOARD_SERVICE);
+                android.content.ClipData clip = android.content.ClipData
+                        .newPlainText(urlAddress, urlAddress);
+                clipboard.setPrimaryClip(clip);
 
                 Toast.makeText(context,
                         getString(R.string.route_changes_news_copy_link),
@@ -103,14 +97,7 @@ public class RouteChangesNews extends FragmentActivity {
                 }
 
                 Intent browserIntent;
-                if (deviceSDK < android.os.Build.VERSION_CODES.HONEYCOMB) {
-                    browserIntent = new Intent(Intent.ACTION_VIEW).setData(Uri
-                            .parse(urlAddress));
-                } else {
-                    browserIntent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(urlAddress));
-                }
-
+                browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlAddress));
                 startActivity(Intent.createChooser(browserIntent,
                         getString(R.string.route_changes_news_choose_browser)));
 

@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.about;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,6 +27,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("StaticFieldLeak")
 class RetrieveDatabases extends
         AsyncTask<Void, Void, HashMap<String, InputStream>> {
 

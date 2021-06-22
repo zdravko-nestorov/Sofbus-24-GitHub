@@ -1209,15 +1209,6 @@ public class Utils {
     }
 
     /**
-     * Check if the version is before HONEYCOMB
-     *
-     * @return if the version is before HONEYCOMB
-     */
-    public static boolean isPreHoneycomb() {
-        return Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB;
-    }
-
-    /**
      * Decode drawable to a Bitmap (save the allocated memory, but doesn't
      * really help)
      *
@@ -1413,18 +1404,13 @@ public class Utils {
      * @param filePath the file path to check
      * @return if there is enough space to save the file
      */
-    @SuppressWarnings("deprecation")
     public static float getAvailableSpaceInBytes(String filePath) {
         if (isEmpty(filePath)) {
             return 0.f;
         }
 
         StatFs stat = new StatFs(filePath);
-
-        long bytesAvailable;
-        bytesAvailable = Build.VERSION.SDK_INT >= 18 ? getAvailableSpaceInBytes(stat) : (long) stat.getBlockSize() * (long) stat.getAvailableBlocks();
-
-        return bytesAvailable;
+        return getAvailableSpaceInBytes(stat);
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
@@ -1724,7 +1710,7 @@ public class Utils {
      */
     public static String transformSkgtStringDateToDate(String skgtTime) {
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         Date skgtDate;
         try {
             skgtDate = format.parse(skgtTime);
@@ -1747,7 +1733,7 @@ public class Utils {
     public static String transformStringDate(String time, String inputPattern, String outputPattern,
                                              boolean isInfiniteFuture) {
         try {
-            SimpleDateFormat format = new SimpleDateFormat(inputPattern);
+            SimpleDateFormat format = new SimpleDateFormat(inputPattern, Locale.getDefault());
             time = time.replace('T', ' ');
             return DateFormat.format(outputPattern, format.parse(time)).toString();
         } catch (Exception e) {

@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -282,6 +283,7 @@ public class History extends ListActivity implements
         return vehicleCaption;
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class RetrieveHistoryOfSearches extends
             AsyncTask<Void, Void, ArrayList<HistoryEntity>> {
 

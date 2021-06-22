@@ -15,6 +15,7 @@
 
         <Button
             android:id="@+id/sofbus_24_edit_tabs_cancel"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -22,6 +23,7 @@
 
         <Button
             android:id="@+id/sofbus_24_edit_tabs_save"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Refresh -->
     <item
         android:id="@+id/action_route_changes_refresh"
         android:icon="@drawable/ic_menu_refresh"
         android:showAsAction="always"
-        android:title="@string/action_route_changes_refresh" />
+        android:title="@string/action_route_changes_refresh"
+        tools:ignore="AppCompatResource" />
 
 </menu>

@@ -65,7 +65,7 @@ public class PreferencesFragment extends PreferenceFragment implements
 
     @Override
     public void onResume() {
-        super.onStop();
+        super.onResume();
         preferencesScreen.getSharedPreferences()
                 .registerOnSharedPreferenceChangeListener(this);
     }

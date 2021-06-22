@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.metro;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -288,6 +289,7 @@ public class MetroStationFragment extends ListFragment implements
      *
      * @author Zdravko Nestorov
      */
+    @SuppressLint("StaticFieldLeak")
     public class RetrieveMetroRoute extends AsyncTask<Void, Void, Intent> {
 
         private final Activity context;

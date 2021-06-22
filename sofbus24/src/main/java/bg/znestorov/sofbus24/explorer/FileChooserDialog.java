@@ -549,6 +549,7 @@ public class FileChooserDialog extends DialogFragment implements FileReplaceDial
     /**
      * Class responsible fore retrieving the information for the current directory. Get all files/folders in the current directory, filter them and show to the user
      */
+    @SuppressLint("StaticFieldLeak")
     public class RetrieveSubDirectoriesAsync extends AsyncTask<Void, Void, ArrayList<File>> {
 
         private final Activity context;

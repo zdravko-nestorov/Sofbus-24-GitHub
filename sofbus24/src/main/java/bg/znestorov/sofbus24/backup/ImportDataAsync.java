@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.backup;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -17,6 +18,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("StaticFieldLeak")
 public class ImportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
     private final FragmentActivity context;

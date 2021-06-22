@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_menu_droidtrans"
         android:showAsAction="always"
         android:title="@string/action_droidtrans"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Closest stations Map -->
     <item
@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_menu_mapmode"
         android:showAsAction="always"
         android:title="@string/action_closest_stations_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- More -->
     <item
@@ -24,7 +24,7 @@
         android:icon="@drawable/ic_menu_more"
         android:showAsAction="always"
         android:title="@string/action_more"
-        tools:ignore="AlwaysShowAction">
+        tools:ignore="AlwaysShowAction,AppCompatResource">
         <menu>
             <item
                 android:id="@+id/action_favourites_sort"

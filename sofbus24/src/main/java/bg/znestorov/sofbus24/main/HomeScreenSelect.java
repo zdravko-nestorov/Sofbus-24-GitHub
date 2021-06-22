@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -414,6 +415,7 @@ public class HomeScreenSelect extends FragmentActivity implements
      * @author Zdravko Nestorov
      * @version 1.0
      */
+    @SuppressLint("StaticFieldLeak")
     public class CreateDatabases extends AsyncTask<Void, Void, Boolean> {
 
         private final FragmentActivity context;
@@ -489,6 +491,7 @@ public class HomeScreenSelect extends FragmentActivity implements
      * @author Zdravko Nestorov
      * @version 1.0
      */
+    @SuppressLint("StaticFieldLeak")
     public class LoadStartingData extends AsyncTask<Void, Void, Void> {
 
         private final FragmentActivity context;

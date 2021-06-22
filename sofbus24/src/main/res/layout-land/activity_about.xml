@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="true"
@@ -11,13 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="@dimen/about_image_land_padding"
-        android:drawableBottom="@drawable/ic_about"
         android:drawablePadding="15sp"
         android:gravity="center"
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="27sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:drawableBottomCompat="@drawable/ic_about" />
 
     <TextView
         android:id="@+id/about_information"

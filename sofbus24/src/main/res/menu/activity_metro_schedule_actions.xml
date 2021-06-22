@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_action_ms_reset"
         android:showAsAction="always"
         android:title="@string/action_ms_reset"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Refresh -->
     <item
@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_action_ms_refresh"
         android:showAsAction="always"
         android:title="@string/action_ms_refresh"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map -->
     <item
@@ -24,6 +24,6 @@
         android:icon="@drawable/ic_action_ms_map"
         android:showAsAction="always"
         android:title="@string/action_ms_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

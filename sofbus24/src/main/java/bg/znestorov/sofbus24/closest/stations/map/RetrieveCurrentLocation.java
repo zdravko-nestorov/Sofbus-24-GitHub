@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.closest.stations.map;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,6 +36,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("StaticFieldLeak")
 public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
     // Different location providers

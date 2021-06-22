@@ -149,41 +149,22 @@ public class ActivityUtils {
         File cacheDir = StorageUtils.getCacheDirectory(context);
 
         ImageLoaderConfiguration config;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            config = new ImageLoaderConfiguration.Builder(context)
-                    .taskExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
-                    .taskExecutorForCachedImages(AsyncTask.THREAD_POOL_EXECUTOR)
-                    .threadPoolSize(3)
-                    .threadPriority(Thread.NORM_PRIORITY - 1)
-                    .tasksProcessingOrder(QueueProcessingType.FIFO)
-                    .denyCacheImageMultipleSizesInMemory()
-                    .memoryCache(
-                            new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
-                    .memoryCacheSize(2 * 1024 * 1024)
-                    .discCache(new UnlimitedDiscCache(cacheDir))
-                    .discCacheSize(50 * 1024 * 1024)
-                    .discCacheFileCount(100)
-                    .discCacheFileNameGenerator(new HashCodeFileNameGenerator())
-                    .imageDownloader(new BaseImageDownloader(context))
-                    .defaultDisplayImageOptions(
-                            DisplayImageOptions.createSimple()).build();
-        } else {
-            config = new ImageLoaderConfiguration.Builder(context)
-                    .threadPoolSize(3)
-                    .threadPriority(Thread.NORM_PRIORITY - 1)
-                    .tasksProcessingOrder(QueueProcessingType.FIFO)
-                    .denyCacheImageMultipleSizesInMemory()
-                    .memoryCache(
-                            new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
-                    .memoryCacheSize(2 * 1024 * 1024)
-                    .discCache(new UnlimitedDiscCache(cacheDir))
-                    .discCacheSize(50 * 1024 * 1024)
-                    .discCacheFileCount(100)
-                    .discCacheFileNameGenerator(new HashCodeFileNameGenerator())
-                    .imageDownloader(new BaseImageDownloader(context))
-                    .defaultDisplayImageOptions(
-                            DisplayImageOptions.createSimple()).build();
-        }
+        config = new ImageLoaderConfiguration.Builder(context)
+                .taskExecutor(AsyncTask.THREAD_POOL_EXECUTOR)
+                .taskExecutorForCachedImages(AsyncTask.THREAD_POOL_EXECUTOR)
+                .threadPoolSize(3)
+                .threadPriority(Thread.NORM_PRIORITY - 1)
+                .tasksProcessingOrder(QueueProcessingType.FIFO)
+                .denyCacheImageMultipleSizesInMemory()
+                .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
+                .memoryCacheSize(2 * 1024 * 1024)
+                .discCache(new UnlimitedDiscCache(cacheDir))
+                .discCacheSize(50 * 1024 * 1024)
+                .discCacheFileCount(100)
+                .discCacheFileNameGenerator(new HashCodeFileNameGenerator())
+                .imageDownloader(new BaseImageDownloader(context))
+                .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+                .build();
 
         return config;
     }
@@ -561,6 +542,7 @@ public class ActivityUtils {
      *
      * @param context the current Activity context
      */
+    @SuppressLint("SourceLockedOrientationActivity")
     public static void lockScreenOrientation(Activity context) {
         int currentOrientation = context.getResources().getConfiguration().orientation;
         if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -1060,12 +1042,7 @@ public class ActivityUtils {
      * @param webView the WebView with a default background
      */
     public static void setWebViewTransparentBackground(WebView webView) {
-
-        if (android.os.Build.VERSION.SDK_INT < 16) {
-            webView.setBackgroundColor(0x00000000);
-        } else {
-            webView.setBackgroundColor(Color.argb(1, 0, 0, 0));
-        }
+        webView.setBackgroundColor(Color.argb(1, 0, 0, 0));
     }
 
     /**

@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.route.changes;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -29,6 +30,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @version 1.0
  */
 @SuppressWarnings("deprecation")
+@SuppressLint("StaticFieldLeak")
 public class RetrieveRouteChangesNews extends AsyncTask<Void, Void, String> {
 
     private final Activity context;

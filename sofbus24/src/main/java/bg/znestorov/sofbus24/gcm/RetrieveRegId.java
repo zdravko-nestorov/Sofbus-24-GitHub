@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.gcm;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
 
@@ -19,6 +20,7 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("StaticFieldLeak")
 public class RetrieveRegId extends AsyncTask<Void, Void, String> {
 
     private static final Integer MAX_REGISTRATION_ATTEMPTS = 2;

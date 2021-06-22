@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.publictransport;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -43,6 +44,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @version 1.0
  */
 @SuppressWarnings("deprecation")
+@SuppressLint("StaticFieldLeak")
 public class RetrievePublicTransportStation extends
         AsyncTask<Void, Void, PublicTransportStationEntity> {
 

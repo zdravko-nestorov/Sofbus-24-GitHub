@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -275,6 +276,7 @@ public class PublicTransport extends FragmentActivity implements
      *
      * @author Zdravko Nestorov
      */
+    @SuppressLint("StaticFieldLeak")
     public class RetrievePTRoute extends AsyncTask<Void, Void, Intent> {
 
         private final Activity context;

@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.databases;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -195,6 +196,7 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
      *
      * @throws IOException
      */
+    @SuppressLint("WrongConstant")
     private void copyDataBase(InputStream is) throws IOException {
 
         // Open the local DB as the input stream

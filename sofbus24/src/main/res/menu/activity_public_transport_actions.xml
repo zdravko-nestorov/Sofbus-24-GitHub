@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_menu_clear_schedule_cache"
         android:showAsAction="always"
         android:title="@string/action_clear_schedule_cache"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- SUMC Site -->
     <item
@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_menu_webpage"
         android:showAsAction="always"
         android:title="@string/action_pt_site"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map Route -->
     <item
@@ -24,6 +24,6 @@
         android:icon="@drawable/ic_menu_mapmode"
         android:showAsAction="always"
         android:title="@string/action_pt_route_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

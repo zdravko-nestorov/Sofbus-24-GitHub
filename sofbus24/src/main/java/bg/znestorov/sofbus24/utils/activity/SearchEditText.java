@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.DrawableClickListener.DrawablePosition;
 
 /**
@@ -193,10 +192,6 @@ public class SearchEditText extends EditText {
         } else {
             this.setCompoundDrawablesWithIntrinsicBounds(drawableLeft, null,
                     null, null);
-        }
-
-        if (Utils.isPreHoneycomb()) {
-            this.setCompoundDrawablePadding(2);
         }
     }
 

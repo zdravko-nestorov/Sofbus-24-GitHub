@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_menu_more"
         android:showAsAction="always"
         android:title="@string/action_more"
-        tools:ignore="AlwaysShowAction">
+        tools:ignore="AlwaysShowAction,AppCompatResource">
         <menu>
             <item
                 android:id="@+id/action_route_changes_copy_link"

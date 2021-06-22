@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.closest.stations.map;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -30,6 +31,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("StaticFieldLeak")
 public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
 
     private final Activity context;

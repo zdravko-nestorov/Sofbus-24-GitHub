@@ -3,7 +3,6 @@ package bg.znestorov.sofbus24.metro;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,9 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
-
-import androidx.appcompat.widget.PopupMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -267,75 +265,39 @@ class MetroStationAdapter extends ArrayAdapter<StationEntity> {
                         // Implement different types of Popup menu, because the
                         // implementation is different for HONEYCOMB and others
                         // higher than it
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                            android.widget.PopupMenu popup = new android.widget.PopupMenu(
-                                    context, v);
-                            android.view.Menu menu = popup.getMenu();
-                            popup.getMenuInflater().inflate(
-                                    R.menu.activity_metro_station_context_menu,
-                                    menu);
-                            popup.show();
+                        PopupMenu popup = new PopupMenu(context, v);
+                        Menu menu = popup.getMenu();
+                        popup.getMenuInflater().inflate(
+                                R.menu.activity_metro_station_context_menu,
+                                menu);
+                        popup.show();
 
-                            // Find the add/remove menu items
-                            android.view.MenuItem favouritesAdd = menu
-                                    .findItem(R.id.menu_metro_station_add);
-                            android.view.MenuItem favouritesRemove = menu
-                                    .findItem(R.id.menu_metro_station_remove);
+                        // Find the add/remove menu items
+                        MenuItem favouritesAdd = menu
+                                .findItem(R.id.menu_metro_station_add);
+                        MenuItem favouritesRemove = menu
+                                .findItem(R.id.menu_metro_station_remove);
 
-                            // Check which menu item to be visible
-                            favouritesDatasource.open();
-                            StationEntity favouritesStation = favouritesDatasource
-                                    .getStation(station);
-                            if (favouritesStation != null) {
-                                favouritesAdd.setVisible(false);
-                                favouritesRemove.setVisible(true);
-                            } else {
-                                favouritesAdd.setVisible(true);
-                                favouritesRemove.setVisible(false);
-                            }
-                            favouritesDatasource.close();
-
-                            popup.setOnMenuItemClickListener(new android.widget.PopupMenu.OnMenuItemClickListener() {
-                                @Override
-                                public boolean onMenuItemClick(
-                                        android.view.MenuItem item) {
-                                    return menuItemClicks(item.getItemId(), station);
-                                }
-                            });
+                        // Check which menu item to be visible
+                        favouritesDatasource.open();
+                        StationEntity favouritesStation = favouritesDatasource
+                                .getStation(station);
+                        if (favouritesStation != null) {
+                            favouritesAdd.setVisible(false);
+                            favouritesRemove.setVisible(true);
                         } else {
-                            PopupMenu popup = new PopupMenu(context, v);
-                            Menu menu = popup.getMenu();
-                            popup.getMenuInflater().inflate(
-                                    R.menu.activity_metro_station_context_menu,
-                                    menu);
-                            popup.show();
-
-                            // Find the add/remove menu items
-                            MenuItem favouritesAdd = menu
-                                    .findItem(R.id.menu_metro_station_add);
-                            MenuItem favouritesRemove = menu
-                                    .findItem(R.id.menu_metro_station_remove);
-
-                            // Check which menu item to be visible
-                            favouritesDatasource.open();
-                            StationEntity favouritesStation = favouritesDatasource
-                                    .getStation(station);
-                            if (favouritesStation != null) {
-                                favouritesAdd.setVisible(false);
-                                favouritesRemove.setVisible(true);
-                            } else {
-                                favouritesAdd.setVisible(true);
-                                favouritesRemove.setVisible(false);
-                            }
-                            favouritesDatasource.close();
-
-                            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                                @Override
-                                public boolean onMenuItemClick(MenuItem item) {
-                                    return menuItemClicks(item.getItemId(), station);
-                                }
-                            });
+                            favouritesAdd.setVisible(true);
+                            favouritesRemove.setVisible(false);
                         }
+                        favouritesDatasource.close();
+
+                        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                            @Override
+                            public boolean onMenuItemClick(
+                                    MenuItem item) {
+                                return menuItemClicks(item.getItemId(), station);
+                            }
+                        });
                 }
             }
         });

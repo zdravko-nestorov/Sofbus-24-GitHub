@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.metro;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -38,8 +39,8 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 2.0
  */
-public class RetrieveMetroSchedule extends
-        AsyncTask<Void, Void, MetroScheduleEntity> {
+@SuppressLint("StaticFieldLeak")
+public class RetrieveMetroSchedule extends AsyncTask<Void, Void, MetroScheduleEntity> {
 
     private final Activity context;
     private final GlobalEntity globalContext;

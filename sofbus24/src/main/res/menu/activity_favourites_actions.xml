@@ -7,12 +7,12 @@
         android:icon="@drawable/ic_menu_sort_alphabetically"
         android:showAsAction="always"
         android:title="@string/action_favourites_sort"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
     <item
         android:id="@+id/action_favourites_remove_all"
         android:icon="@drawable/ic_menu_clear_list"
         android:showAsAction="always"
         android:title="@string/action_favourites_remove_all"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

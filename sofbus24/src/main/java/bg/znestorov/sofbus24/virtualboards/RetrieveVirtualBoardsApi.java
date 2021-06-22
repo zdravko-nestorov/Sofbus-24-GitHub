@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
@@ -333,7 +334,7 @@ public class RetrieveVirtualBoardsApi {
                     if (vehicle != null) {
                         jsonResult = Utils.readUrl(Constants.VB_URL_VEHICLE_API,
                                 station.getFormattedNumber(), vehicle.getNumber(),
-                                vehicle.getType().toString().toLowerCase(Constants.LOCALE_BG));
+                                vehicle.getType().toString().toLowerCase(Locale.getDefault()));
                     } else {
                         jsonResult = Utils.readUrl(Constants.VB_URL_STATION_API,
                                 station.getFormattedNumber());

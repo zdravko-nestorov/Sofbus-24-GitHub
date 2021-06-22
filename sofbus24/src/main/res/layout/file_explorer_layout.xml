@@ -92,7 +92,8 @@
             android:maxLines="1"
             android:scrollHorizontally="true"
             android:textSize="13sp"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:autofillHints="sofbus24-yyyyMMdd" />
     </LinearLayout>
 
 </RelativeLayout>

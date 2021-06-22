@@ -21,6 +21,10 @@ android {
     }
 
     lintOptions {
+        disable 'UnsafeExperimentalUsageError', 'UnsafeExperimentalUsageWarning', // Lint
+                'FragmentTagUsage', 'NonConstantResourceId', // Correctness
+                'ObsoleteSdkInt', // Performance
+                'IconColors', 'IconDipSize', 'IconDuplicatesConfig', 'IconLocation' // Icons
         showAll true
         htmlReport true
     }

@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.about;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -29,8 +30,8 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class RetrieveAppConfiguration extends
-        AsyncTask<Void, Void, ConfigEntity> {
+@SuppressLint("StaticFieldLeak")
+public class RetrieveAppConfiguration extends AsyncTask<Void, Void, ConfigEntity> {
 
     private final FragmentActivity context;
     private final Fragment fragment;

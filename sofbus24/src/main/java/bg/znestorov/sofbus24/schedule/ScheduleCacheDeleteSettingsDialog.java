@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.schedule;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -33,6 +34,7 @@ public class ScheduleCacheDeleteSettingsDialog extends DialogFragment {
     }
 
     @Override
+    @SuppressLint("StaticFieldLeak")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         context = getActivity();

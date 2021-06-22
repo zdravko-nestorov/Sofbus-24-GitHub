@@ -71,6 +71,7 @@ public class ClosestStationsListFragment extends ListFragment implements
     }
 
     @Override
+    @SuppressWarnings("StaticFieldLeak")
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -102,11 +103,8 @@ public class ClosestStationsListFragment extends ListFragment implements
                             protected List<StationEntity> doInBackground(
                                     Void... params) {
                                 int pageToLoad = (totalItemCount + 10) / 10;
-                                List<StationEntity> closestStations = loadStationsList(
-                                        true, pageToLoad,
+                                return loadStationsList(true, pageToLoad,
                                         closestStationsSearchText);
-
-                                return closestStations;
                             }
 
                             @Override

@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_action_ms_refresh"
         android:showAsAction="always"
         android:title="@string/action_cs_list_refresh"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map -->
     <item
@@ -16,6 +16,6 @@
         android:icon="@drawable/ic_action_ms_map"
         android:showAsAction="always"
         android:title="@string/action_cs_list_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

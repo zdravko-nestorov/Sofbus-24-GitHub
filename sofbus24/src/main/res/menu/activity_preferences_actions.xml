@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_menu_rotate"
         android:showAsAction="always"
         android:title="@string/action_pref_reset"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Information -->
     <item
@@ -16,6 +16,6 @@
         android:icon="@drawable/ic_menu_info_details"
         android:showAsAction="always"
         android:title="@string/action_pref_info_details"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

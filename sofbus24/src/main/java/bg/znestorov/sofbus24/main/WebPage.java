@@ -306,12 +306,6 @@ public class WebPage extends Activity {
             view.loadUrl("javascript:document.getElementsByClassName(\"tooltip preview\")["
                     + i + "].setAttribute(\"style\", \"display:none;\");");
         }
-
-        // Removing the help button on older devices (not doing good with
-        // JavaScript)
-        if (Utils.isPreHoneycomb()) {
-            view.loadUrl("javascript:document.getElementsByClassName(\"tooltip\")[0].setAttribute(\"style\", \"display:none;\");");
-        }
     }
 
     /**

@@ -8,7 +8,7 @@
         android:icon="@drawable/ic_menu_map_street_view"
         android:showAsAction="always"
         android:title="@string/action_sm_google_street_view"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map mode -->
     <item
@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_menu_map_layers"
         android:showAsAction="always"
         android:title="@string/action_sm_map_mode"
-        tools:ignore="AlwaysShowAction">
+        tools:ignore="AlwaysShowAction,AppCompatResource">
         <menu>
 
             <!-- Normal map mode -->

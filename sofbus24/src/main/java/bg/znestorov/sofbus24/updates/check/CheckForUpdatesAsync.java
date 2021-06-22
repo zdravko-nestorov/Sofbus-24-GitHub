@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.updates.check;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -35,6 +36,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
  */
 public class CheckForUpdatesAsync extends AsyncTask<Void, Void, ConfigEntity> {
 
+    @SuppressLint("StaticFieldLeak")
     private final FragmentActivity context;
     private final UpdateTypeEnum updateType;
 

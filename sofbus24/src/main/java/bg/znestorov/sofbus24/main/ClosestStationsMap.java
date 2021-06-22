@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
@@ -1124,6 +1125,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      * @author Zdravko Nestorov
      * @version 1.0
      */
+    @SuppressLint("StaticFieldLeak")
     public class LoadStationsFromDb extends
             AsyncTask<Void, Void, List<StationEntity>> {
 

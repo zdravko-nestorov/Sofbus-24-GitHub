@@ -7,7 +7,7 @@
         android:id="@+id/action_vb_time_favourites"
         android:showAsAction="always"
         android:title="@string/action_vb_time_favourites"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Refresh -->
     <item
@@ -15,7 +15,7 @@
         android:icon="@drawable/ic_action_ms_refresh"
         android:showAsAction="always"
         android:title="@string/action_vb_time_refresh"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
     <!-- Map -->
     <item
@@ -23,6 +23,6 @@
         android:icon="@drawable/ic_action_ms_map"
         android:showAsAction="always"
         android:title="@string/action_vb_time_map"
-        tools:ignore="AlwaysShowAction" />
+        tools:ignore="AlwaysShowAction,AppCompatResource" />
 
 </menu>

@@ -733,6 +733,7 @@ public class RetrieveVirtualBoards {
      * @param htmlResult The response text, prepared from the HTTP request to the SUMC
      *                   server
      */
+    @SuppressWarnings("StaticFieldLeak")
     private void processHtmlResult(String htmlResult) {
         saveCookiesToPreferences();
         saveHiddenVariablesToPreferences(htmlResult);
@@ -1098,6 +1099,7 @@ public class RetrieveVirtualBoards {
      * @author Zdravko Nestorov
      * @version 1.0
      */
+    @SuppressLint("StaticFieldLeak")
     private class RetrieveSumcInformation extends AsyncTask<Void, Void, String> {
 
         private final ProgressDialog progressDialog;
@@ -1358,8 +1360,8 @@ public class RetrieveVirtualBoards {
      * @author Zdravko Nestorov
      * @version 1.0
      */
-    private class RetrieveCaptchaInformation extends
-            AsyncTask<Void, Void, Bitmap> {
+    @SuppressLint("StaticFieldLeak")
+    private class RetrieveCaptchaInformation extends AsyncTask<Void, Void, Bitmap> {
 
         private final ProgressDialog progressDialog;
         private final String captchaId;

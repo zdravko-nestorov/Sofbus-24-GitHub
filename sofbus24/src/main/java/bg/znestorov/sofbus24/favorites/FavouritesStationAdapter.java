@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -619,8 +620,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.favourites_item_settings:
-                        android.widget.PopupMenu popup = new android.widget.PopupMenu(
-                                context, v);
+                        PopupMenu popup = new PopupMenu(context, v);
                         android.view.Menu menu = popup.getMenu();
                         popup.getMenuInflater().inflate(
                                 R.menu.activity_favourites_context_menu, menu);
@@ -647,7 +647,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
                         }
                         popup.show();
 
-                        popup.setOnMenuItemClickListener(new android.widget.PopupMenu.OnMenuItemClickListener() {
+                        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(
                                     android.view.MenuItem item) {

@@ -2,7 +2,6 @@ package bg.znestorov.sofbus24.navigation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -29,8 +28,6 @@ import bg.znestorov.sofbus24.main.HistoryDialog;
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.Preferences;
 import bg.znestorov.sofbus24.main.PreferencesDialog;
-import bg.znestorov.sofbus24.main.PreferencesPreHoneycomb;
-import bg.znestorov.sofbus24.main.PreferencesPreHoneycombDialog;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
@@ -129,20 +126,9 @@ public class NavDrawerHelper {
             case 7:
                 Intent preferencesIntent;
                 if (globalContext.isPhoneDevice()) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                        preferencesIntent = new Intent(context, Preferences.class);
-                    } else {
-                        preferencesIntent = new Intent(context,
-                                PreferencesPreHoneycomb.class);
-                    }
+                    preferencesIntent = new Intent(context, Preferences.class);
                 } else {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                        preferencesIntent = new Intent(context,
-                                PreferencesDialog.class);
-                    } else {
-                        preferencesIntent = new Intent(context,
-                                PreferencesPreHoneycombDialog.class);
-                    }
+                    preferencesIntent = new Intent(context, PreferencesDialog.class);
                 }
                 context.startActivity(preferencesIntent);
                 break;

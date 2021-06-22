@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.entity.TabTypeEnum;
@@ -58,29 +57,6 @@ public class ScheduleFragment extends Fragment {
         super.onSaveInstanceState(savedInstanceState);
 
         savedInstanceState.putInt(BUNDLE_CURRENT_VEHICLE, currentVehicle);
-    }
-
-    /**
-     * This seems to be a bug in the newly added support for nested fragments.
-     * Basically, the child FragmentManager ends up with a broken internal state
-     * when it is detached from the activity. A short-term workaround that fixed
-     * it for me is to add the following to onDetach() of every Fragment which
-     * you call getChildFragmentManager() on:
-     * www.stackoverflow.com/questions/18977923/viewpager-with-nested-fragments
-     */
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        try {
-            Field childFragmentManager = Fragment.class
-                    .getDeclaredField("mChildFragmentManager");
-            childFragmentManager.setAccessible(true);
-            childFragmentManager.set(this, null);
-        } catch (NoSuchFieldException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     /**
