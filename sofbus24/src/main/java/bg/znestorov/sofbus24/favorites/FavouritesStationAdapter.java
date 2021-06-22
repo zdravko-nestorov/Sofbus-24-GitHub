@@ -789,7 +789,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         FavouritesInfoDialog favouritesInfoDialog = FavouritesInfoDialog
                 .newInstance(station);
-        favouritesInfoDialog.setTargetFragment(favouritesInfoDialog, 0);
+        favouritesInfoDialog.setTargetFragment(favouritesInfoDialog.getParentFragment(), 0);
         favouritesInfoDialog.show(
                 favouritesStationFragment.getFragmentManager(), "dialog");
     }

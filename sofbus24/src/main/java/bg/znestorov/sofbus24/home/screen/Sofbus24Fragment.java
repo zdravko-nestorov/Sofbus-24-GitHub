@@ -262,20 +262,18 @@ public class Sofbus24Fragment extends Fragment implements
 
                         // Check the type of the fragment
                         if (currentFragment != null) {
-                            if (currentFragment instanceof Fragment) {
-                                ((Fragment) currentFragment)
-                                        .onOptionsItemSelected(item);
-                            }
-
                             if (currentFragment instanceof ListFragment) {
                                 ((ListFragment) currentFragment)
+                                        .onOptionsItemSelected(item);
+                            } else {
+                                ((Fragment) currentFragment)
                                         .onOptionsItemSelected(item);
                             }
                         }
                     }
                 }
 
-                return super.onOptionsItemSelected(item);
+                return true;
         }
     }
 
