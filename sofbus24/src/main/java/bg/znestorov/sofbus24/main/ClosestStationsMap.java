@@ -68,12 +68,15 @@ import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
@@ -106,6 +109,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         }
     };
     private GlobalEntity globalContext;
+    private AppLifecycleListener observer;
     private boolean isCSMapHomeScreen;
     private StationsDataSource stationsDatasource;
     private VehiclesDataSource vehiclesDatasource;
@@ -231,6 +235,16 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        PermissionsUtils.removeLifecycleObserver(observer);
+    }
+
+    /**
+     * Permission is handled via <code>ActivityResultLauncher</code>.
+     */
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap map) {
         googleMap = map;
@@ -437,14 +451,18 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     requestCode);
             dialog.show();
         } else {
-            // Getting reference to the SupportMapFragment of activity layout
-            SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.closest_stations_map);
+            // Register lifecycle observer, request location permissions retrieve the GoogleMap
+            observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.LOCATION, () -> {
 
-            // Getting GoogleMap object from the fragment
-            if (fm != null) {
-                fm.getMapAsync(this);
-            }
+                // Getting reference to the SupportMapFragment of activity layout
+                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                        .findFragmentById(R.id.closest_stations_map);
+
+                // Getting GoogleMap object from the fragment
+                if (mapFragment != null) {
+                    mapFragment.getMapAsync(this);
+                }
+            });
         }
     }
 

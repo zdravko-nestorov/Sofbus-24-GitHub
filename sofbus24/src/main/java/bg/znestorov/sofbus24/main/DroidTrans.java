@@ -45,12 +45,15 @@ import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.OnWheelScrollListener;
@@ -78,6 +81,7 @@ public class DroidTrans extends FragmentActivity {
     private static final String BUNDLE_WHEEL_STATE = "BUNDLE WHEEL STATE";
     private FragmentActivity context;
     private GlobalEntity globalContext;
+    private AppLifecycleListener observer;
     private DroidTransLoadInfo droidtransLoadInfo;
     private StationsDataSource stationsDatasource;
     private VehiclesDataSource vehiclesDatasource;
@@ -127,6 +131,15 @@ public class DroidTrans extends FragmentActivity {
                         "DroidTrans (Home Screen)");
             }
         }
+
+        // Register minimize/maximize observer
+        observer = PermissionsUtils.addLifecycleObserver(context, AppPermissions.LOCATION, null);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        PermissionsUtils.removeLifecycleObserver(observer);
     }
 
     @Override

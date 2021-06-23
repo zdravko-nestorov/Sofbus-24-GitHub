@@ -555,6 +555,7 @@ public class HomeScreenSelect extends FragmentActivity implements
 
             // Check for updates (only when the application is started for the
             // first time and everything is visualized)
+            Utils.checkForUpdate(context, UpdateTypeEnum.APP);
             Utils.checkForUpdate(context, UpdateTypeEnum.DB);
         }
 

@@ -17,17 +17,21 @@ import java.util.ArrayList;
 import bg.znestorov.sofbus24.home.screen.Sofbus24Fragment;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 
 @SuppressWarnings("deprecation")
 public class Sofbus24 extends FragmentActivity {
 
     private static final String TAG_SOFBUS_24_FRAGMENT = "SOFBUS_24_FRAGMENT";
     private FragmentActivity context;
+    private AppLifecycleListener observer;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -65,6 +69,15 @@ public class Sofbus24 extends FragmentActivity {
             // Utils.checkForUpdate(context, UpdateTypeEnum.APP);
             ActivityTracker.homeScreenUsed(context, "Sofbus 24 (Home Screen)");
         }
+
+        // Register minimize/maximize observer
+        observer = PermissionsUtils.addLifecycleObserver(context, AppPermissions.LOCATION, null);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        PermissionsUtils.removeLifecycleObserver(observer);
     }
 
     @Override

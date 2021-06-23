@@ -86,14 +86,14 @@
             android:id="@+id/file_explorer_backup_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="sofbus24-yyyyMMdd"
             android:ellipsize="end"
             android:hint="@string/file_explorer_hint"
             android:inputType="text"
             android:maxLines="1"
             android:scrollHorizontally="true"
             android:textSize="13sp"
-            android:visibility="gone"
-            android:autofillHints="sofbus24-yyyyMMdd" />
+            android:visibility="gone" />
     </LinearLayout>
 
 </RelativeLayout>

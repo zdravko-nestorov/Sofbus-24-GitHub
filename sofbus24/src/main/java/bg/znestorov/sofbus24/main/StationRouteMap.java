@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -44,12 +45,15 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 public class StationRouteMap extends FragmentActivity implements OnMapReadyCallback {
@@ -57,13 +61,17 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
     private final LatLng mladostStationLocation = new LatLng(
             Constants.GLOBAL_PARAM_MLADOST_1_LATITUDE,
             Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
+
     private Activity context;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
+    private AppLifecycleListener observer;
+
     private DirectionsEntity directionsEntity;
     private GoogleMap stationMap;
     private View stationRouteLines;
     private boolean isCurrentLocationFocused = false;
+
     private LatLng centerStationLocation = new LatLng(
             Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE,
             Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
@@ -113,15 +121,30 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // Get the station map fragment and the lines view
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.station_route_map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+        // Register lifecycle observer, request location permissions retrieve the GoogleMap
+        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.LOCATION, () -> {
 
+            // Getting reference to the SupportMapFragment of activity layout
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.station_route_map);
+
+            // Getting GoogleMap object from the fragment
+            if (mapFragment != null) {
+                mapFragment.getMapAsync(this);
+            }
+        });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        PermissionsUtils.removeLifecycleObserver(observer);
+    }
+
+    /**
+     * Permission is handled via <code>ActivityResultLauncher</code>.
+     */
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap map) {
         stationMap = map;
@@ -160,16 +183,12 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             // over a point and start a LocationChangeListener
             stationMap.setMyLocationEnabled(true);
             stationMap.getUiSettings().setMyLocationButtonEnabled(true);
-            stationMap
-                    .setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
-                        @Override
-                        public void onMyLocationChange(Location currentLocation) {
-                            if (currentLocation != null) {
-                                stationMap.clear();
-                                initGoogleMaps(stationType, currentLocation);
-                            }
-                        }
-                    });
+            stationMap.setOnMyLocationChangeListener(currentLocation -> {
+                if (currentLocation != null) {
+                    stationMap.clear();
+                    initGoogleMaps(stationType, currentLocation);
+                }
+            });
         }
     }
 

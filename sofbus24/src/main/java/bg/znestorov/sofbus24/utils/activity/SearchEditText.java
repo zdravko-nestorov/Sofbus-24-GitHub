@@ -18,6 +18,7 @@ import bg.znestorov.sofbus24.utils.activity.DrawableClickListener.DrawablePositi
  * @author Zdravko Nestorov
  * @version 1.0
  */
+@SuppressLint("AppCompatCustomView")
 public class SearchEditText extends EditText {
 
     private Drawable drawableRight;

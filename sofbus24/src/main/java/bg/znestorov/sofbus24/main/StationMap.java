@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.main;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -31,17 +32,21 @@ import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
+import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 
 public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
     private Activity context;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
+    private AppLifecycleListener observer;
 
     private VehiclesDataSource vehiclesDatasource;
 
@@ -67,14 +72,30 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // Get the station map fragment
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.station_map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+        // Register lifecycle observer, request location permissions retrieve the GoogleMap
+        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.LOCATION, () -> {
+
+            // Getting reference to the SupportMapFragment of activity layout
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.station_map);
+
+            // Getting GoogleMap object from the fragment
+            if (mapFragment != null) {
+                mapFragment.getMapAsync(this);
+            }
+        });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        PermissionsUtils.removeLifecycleObserver(observer);
+    }
+
+    /**
+     * Permission is handled via <code>ActivityResultLauncher</code>.
+     */
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap map) {
         stationMap = map;

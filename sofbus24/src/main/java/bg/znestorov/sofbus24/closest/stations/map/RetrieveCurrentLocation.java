@@ -202,8 +202,11 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     }
 
     /**
-     * Check if any of the providers is enabled
+     * Check if any of the providers is enabled.
+     * <p>
+     * N.B. Permission is handled via <code>ActivityResultLauncher</code> in calling activities.
      */
+    @SuppressLint("MissingPermission")
     private void registerForLocationUpdates() {
 
         if (locationManager != null) {
@@ -391,8 +394,11 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     }
 
     /**
-     * Actions on cancelled the async task
+     * Actions on cancelled the async task.
+     * <p>
+     * N.B. Permission is handled via <code>ActivityResultLauncher</code> in calling activities.
      */
+    @SuppressLint("MissingPermission")
     private void actionsOnCancelled() {
 
         Location lastKnownLocation = null;
