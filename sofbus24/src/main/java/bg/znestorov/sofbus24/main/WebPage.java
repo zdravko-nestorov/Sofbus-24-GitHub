@@ -120,6 +120,10 @@ public class WebPage extends Activity {
      * Initialize the ActionBar
      */
     private void initActionBar() {
+        // Explicitly set the default locale before initializing the action bar
+        // Otherwise the locale is incorrectly retrieved
+        LanguageChange.selectLocale(this);
+
         actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayHomeAsUpEnabled(true);

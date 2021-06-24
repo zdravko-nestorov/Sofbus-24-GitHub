@@ -224,7 +224,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
             if (isAnyProviderEnabled) {
                 if (isNetworkEnabled) {
                     if (myNetworkLocationListener == null) {
-                        myNetworkLocationListener = new MyLocationListener();
+                        myNetworkLocationListener = new MyLocationListener(NETWORK_PROVIDER);
 
                         locationManager.requestLocationUpdates(
                                 NETWORK_PROVIDER, MIN_TIME_BETWEEN_UPDATES,
@@ -241,7 +241,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
                 if (isGPSEnabled) {
                     if (myGPSLocationListener == null) {
-                        myGPSLocationListener = new MyLocationListener();
+                        myGPSLocationListener = new MyLocationListener(GPS_PROVIDER);
 
                         locationManager.requestLocationUpdates(GPS_PROVIDER,
                                 MIN_TIME_BETWEEN_UPDATES,
@@ -558,12 +558,29 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
     private class MyLocationListener implements LocationListener {
 
+        private final String provider;
+        private boolean isValidLocation;
+
+        public MyLocationListener(String provider) {
+            this.provider = provider;
+        }
+
         @Override
         public void onLocationChanged(Location location) {
-            if (location != null) {
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
+            if (location == null) {
+                return;
             }
+
+            // Ignore the first network location and use the second one
+            // https://stackoverflow.com/a/36071894
+            if (NETWORK_PROVIDER.equals(provider) && !isValidLocation) {
+                this.isValidLocation = true;
+                return;
+            }
+
+            this.isValidLocation = true;
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
         }
 
         @Override

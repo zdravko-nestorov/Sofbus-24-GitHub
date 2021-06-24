@@ -16,7 +16,8 @@
         android:layout_margin="9sp"
         android:background="@drawable/metro_lines_round_corners"
         android:orientation="vertical"
-        android:padding="7sp">
+        android:padding="7sp"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="wrap_content"

@@ -16,6 +16,7 @@ import java.util.List;
 import bg.znestorov.sofbus24.entity.FileDialogActionEnum;
 import bg.znestorov.sofbus24.explorer.FileChooserDialog;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 
 /**
@@ -37,6 +38,10 @@ public class ChooseBackupDialog extends DialogFragment {
 
         final FragmentActivity context = getActivity();
         fragmentManager = getFragmentManager();
+
+        // Explicitly set the default locale before initializing the the dialog content
+        // Otherwise the locale is incorrectly retrieved
+        LanguageChange.selectLocale(context);
 
         String title = getString(R.string.backup_import_export_choice);
         List<String> chooseBackupItems = Arrays.asList(getResources().getStringArray(R.array.backupChooseItems));

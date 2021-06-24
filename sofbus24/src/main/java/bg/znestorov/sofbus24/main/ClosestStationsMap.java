@@ -452,17 +452,12 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             dialog.show();
         } else {
             // Register lifecycle observer, request location permissions retrieve the GoogleMap
-            observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
-
-                // Getting reference to the SupportMapFragment of activity layout
-                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.closest_stations_map);
-
-                // Getting GoogleMap object from the fragment
-                if (mapFragment != null) {
-                    mapFragment.getMapAsync(this);
-                }
-            });
+            if (observer == null) {
+                observer = PermissionsUtils.addLifecycleObserver(
+                        this, AppPermissions.HOME_SCREEN, this::getMapAsync);
+            } else {
+                getMapAsync();
+            }
         }
     }
 
@@ -621,6 +616,17 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void getMapAsync() {
+        // Getting reference to the SupportMapFragment of activity layout
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.closest_stations_map);
+
+        // Getting GoogleMap object from the fragment
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
         }
     }
 
