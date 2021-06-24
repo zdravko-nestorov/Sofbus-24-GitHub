@@ -73,7 +73,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         // Register lifecycle observer, request location permissions retrieve the GoogleMap
-        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.LOCATION, () -> {
+        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
 
             // Getting reference to the SupportMapFragment of activity layout
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

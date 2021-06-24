@@ -133,7 +133,7 @@ public class DroidTrans extends FragmentActivity {
         }
 
         // Register minimize/maximize observer
-        observer = PermissionsUtils.addLifecycleObserver(context, AppPermissions.LOCATION, null);
+        observer = PermissionsUtils.addLifecycleObserver(context, AppPermissions.HOME_SCREEN, null);
     }
 
     @Override
