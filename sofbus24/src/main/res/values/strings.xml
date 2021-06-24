@@ -361,6 +361,8 @@
     <!-- Station Route Map Fragment -->
     <string name="metro_search_tab_line1">Линия 1</string>
     <string name="metro_search_tab_line2">Линия 2</string>
+    <string name="metro_search_tab_line3">Линия 3</string>
+    <string name="metro_search_tab_line4">Линия 4</string>
     <string name="pt_time_retrieval_choice" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Информация за \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Разписание</string>
     <string name="pt_time_retrieval_virtual_boards">Времена на пристигане</string>

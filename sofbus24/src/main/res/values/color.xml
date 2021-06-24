@@ -19,4 +19,10 @@
     <color name="inner_tab_grey">#8B8B8B</color>
     <color name="line_delimiter_gray">#D1D1D1</color>
 
+    <!-- Metro lines colors -->
+    <color name="metro_line_1">#FF0000</color>
+    <color name="metro_line_2">#0000FF</color>
+    <color name="metro_line_3">#339900</color>
+    <color name="metro_line_4">#FFBF00</color>
+
 </resources>

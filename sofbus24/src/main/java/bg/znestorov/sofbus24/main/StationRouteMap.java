@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -312,18 +313,27 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Create an object consisted of a set of all points of the route
         int lineWidth = getResources().getInteger(R.integer.google_map_route_line_width);
-        PolylineOptions metroRouteOptionsM1 = new PolylineOptions()
-                .width(lineWidth)
-                .color(Color.RED); // Slivnitsa - Business Park (THIN RED)
-        PolylineOptions metroRouteOptionsM21 = new PolylineOptions()
-                .width(lineWidth)
-                .color(Color.BLUE); // Vitosha - Slivnitsa (THIN 1 BLUE)
-        PolylineOptions metroRouteOptionsM22 = new PolylineOptions()
-                .width(lineWidth)
-                .color(Color.BLUE); // Mladost 1 - Sofia Airport (THIN 2 BLUE)
-        PolylineOptions metroRouteOptionsM23 = new PolylineOptions()
+
+        int metroRouteColor1 = ContextCompat.getColor(context, R.color.metro_line_1);
+        int metroRouteColor2 = ContextCompat.getColor(context, R.color.metro_line_2);
+        int metroRouteColor3 = ContextCompat.getColor(context, R.color.metro_line_3);
+        int metroRouteColor4 = ContextCompat.getColor(context, R.color.metro_line_4);
+
+        PolylineOptions metroRouteOptionsM11 = new PolylineOptions()
                 .width(lineWidth * 2)
-                .color(Color.BLUE); // Slivnitsa - Mladost 1 (THICK BLUE)
+                .color(metroRouteColor1); // Slivnitsa - Business Park (THICK 1.1 RED)
+        PolylineOptions metroRouteOptionsM12 = new PolylineOptions()
+                .width(lineWidth)
+                .color(metroRouteColor1); // Slivnitsa - Mladost 1 (THIN 1.2 RED)
+        PolylineOptions metroRouteOptionsM2 = new PolylineOptions()
+                .width(lineWidth)
+                .color(metroRouteColor2); // Vitosha - Obelya (THIN 2 BLUE)
+        PolylineOptions metroRouteOptionsM3 = new PolylineOptions()
+                .width(lineWidth)
+                .color(metroRouteColor3); // Hadzhi Dimitar - Gorna Banya (THIN 3 GREEN)
+        PolylineOptions metroRouteOptionsM4 = new PolylineOptions()
+                .width(lineWidth)
+                .color(metroRouteColor4); // Obelya - Sofia Airport (THIN 4 YELLOW)
 
         // Process all stations of the metro route
         for (int i = 0; i < metroDirectionStations.size(); i++) {
@@ -339,48 +349,58 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 // Add the msLocation to the appropriate route options object
                 int stationNumber = Integer.parseInt(station.getNumber());
 
-                if (stationNumber < 3001) {
-                    // Vitosha - Slivnitsa (THIN BLUE)
-                    metroRouteOptionsM21.add(msLocation);
+                if (stationNumber < 2999) {
+                    // Vitosha - Obelya (THIN 2 BLUE)
+                    metroRouteOptionsM2.add(msLocation);
+
+                } else if (stationNumber == 2999 || stationNumber == 3000) {
+                    // Obelya (THIN 2 BLUE/THIN 4 YELLOW)
+                    metroRouteOptionsM2.add(msLocation);
+                    metroRouteOptionsM4.add(msLocation);
 
                 } else if (stationNumber == 3001 || stationNumber == 3002) {
-                    // Slivnitsa (THIN 1/THICK BLUE and RED)
-                    metroRouteOptionsM1.add(msLocation);
-                    metroRouteOptionsM21.add(msLocation);
-                    metroRouteOptionsM23.add(msLocation);
+                    // Slivnitsa (THIN 11/THICK 12 RED/THIN 4 YELLOW)
+                    metroRouteOptionsM11.add(msLocation);
+                    metroRouteOptionsM12.add(msLocation);
+                    metroRouteOptionsM4.add(msLocation);
 
                 } else if (stationNumber > 3002) {
 
                     // Slivnitsa - Sofia Airport/Business Park
                     if (stationNumber < 3025) {
-                        // Slivnitsa - Mladost 1 (RED and THICK BLUE)
-                        metroRouteOptionsM1.add(msLocation);
-                        metroRouteOptionsM23.add(msLocation);
+                        // Slivnitsa - Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
+                        metroRouteOptionsM11.add(msLocation);
+                        metroRouteOptionsM12.add(msLocation);
+                        metroRouteOptionsM4.add(msLocation);
 
                     } else if (stationNumber == 3025) {
-                        // Mladost 1 (RED and THICK/THIN 2 BLUE)
-                        metroRouteOptionsM1.add(msLocation);
-                        metroRouteOptionsM1.add(mladostStationLocation);
+                        // Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
+                        metroRouteOptionsM11.add(msLocation);
+                        metroRouteOptionsM12.add(msLocation);
+                        metroRouteOptionsM12.add(mladostStationLocation);
 
-                        metroRouteOptionsM22.add(msLocation);
-                        metroRouteOptionsM23.add(msLocation);
+                        metroRouteOptionsM4.add(msLocation);
 
                     } else if (stationNumber == 3026) { // reverse station order
-                        // Mladost 1 (RED and THICK/THIN 2 BLUE)
-                        metroRouteOptionsM1.add(mladostStationLocation);
-                        metroRouteOptionsM1.add(msLocation);
+                        // Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
+                        metroRouteOptionsM11.add(msLocation);
+                        metroRouteOptionsM12.add(mladostStationLocation);
+                        metroRouteOptionsM12.add(msLocation);
 
-                        metroRouteOptionsM22.add(msLocation);
-                        metroRouteOptionsM23.add(msLocation);
+                        metroRouteOptionsM4.add(msLocation);
 
                     } else if (stationNumber > 3026 && stationNumber < 3039) {
 
-                        // Mladost 1 - Sofia Airport (THIN BLUE)
-                        metroRouteOptionsM22.add(msLocation);
-                    } else if (stationNumber >= 3039) {
+                        // Mladost 1 - Sofia Airport (THIN 4 YELLOW)
+                        metroRouteOptionsM4.add(msLocation);
+                    } else if (stationNumber >= 3039 && stationNumber < 3100) {
 
-                        // Alexandar Malinov - Business Park (RED)
-                        metroRouteOptionsM1.add(msLocation);
+                        // Alexandar Malinov - Business Park (THIN 1 RED)
+                        metroRouteOptionsM12.add(msLocation);
+                    } else if (stationNumber >= 3100) {
+
+                        // Hadzhi Dimitar - Gorna Banya (THIN 3 GREEN)
+                        metroRouteOptionsM3.add(msLocation);
                     }
                 }
 
@@ -430,10 +450,11 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Draw a line between all the markers (RED route MUST be last, because it should
         // appear above the THICK BLUE)
-        stationMap.addPolyline(metroRouteOptionsM21);
-        stationMap.addPolyline(metroRouteOptionsM22);
-        stationMap.addPolyline(metroRouteOptionsM23);
-        stationMap.addPolyline(metroRouteOptionsM1);
+        stationMap.addPolyline(metroRouteOptionsM11);
+        stationMap.addPolyline(metroRouteOptionsM12);
+        stationMap.addPolyline(metroRouteOptionsM2);
+        stationMap.addPolyline(metroRouteOptionsM3);
+        stationMap.addPolyline(metroRouteOptionsM4);
     }
 
     /**

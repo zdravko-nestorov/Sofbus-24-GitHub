@@ -350,6 +350,8 @@
     <!-- Station Route Map Fragment -->
     <string name="metro_search_tab_line1">Line 1</string>
     <string name="metro_search_tab_line2">Line 2</string>
+    <string name="metro_search_tab_line3">Line 3</string>
+    <string name="metro_search_tab_line4">Line 4</string>
     <string name="pt_time_retrieval_choice" formatted="false"><![CDATA[Information for \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Schedule</string>
     <string name="pt_time_retrieval_virtual_boards">Virtual Boards</string>
