@@ -137,6 +137,16 @@ public class Utils {
     }
 
     /**
+     * Tests if the supplied collection is NULL or 0-length.
+     *
+     * @param input the input collection
+     * @return boolean TRUE if empty, otherwise FALSE
+     */
+    public static <T> boolean isEmpty(List<T> input) {
+        return input == null || input.size() == 0;
+    }
+
+    /**
      * Function that extracts only digits from a given String. In case of an
      * empty string - return "".
      *

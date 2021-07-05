@@ -9,6 +9,7 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import bg.znestorov.sofbus24.entity.NotificationEntity;
 import bg.znestorov.sofbus24.gcm.GcmPreferences;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 
 public class GcmMessageHandler extends IntentService {
 
@@ -26,6 +27,9 @@ public class GcmMessageHandler extends IntentService {
 
         // Get the current service context
         Context context = GcmMessageHandler.this;
+        if (HmsUtils.isHms()) {
+            return;
+        }
 
         // The getMessageType() intent parameter must be the intent you received
         // in your BroadcastReceiver

@@ -31,6 +31,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -55,6 +58,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Set screen name
         tracker.setScreenName(screenName);
@@ -77,6 +83,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send exception
         tracker.send(new HitBuilders.ExceptionBuilder()
@@ -102,6 +111,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -122,6 +134,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         String label = "queryVirtualBoards" + htmlRequestCode;
@@ -140,6 +155,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -157,6 +175,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -175,6 +196,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -193,6 +217,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -214,6 +241,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -235,6 +265,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -256,6 +289,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -277,6 +313,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()
@@ -296,6 +335,9 @@ public class ActivityTracker {
         // Get tracker
         Tracker tracker = ((GlobalEntity) context.getApplicationContext())
                 .getTracker(TrackerName.APP_TRACKER);
+        if (tracker == null) {
+            return;
+        }
 
         // Build and send an Event
         tracker.send(new HitBuilders.EventBuilder()

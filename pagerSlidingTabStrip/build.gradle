@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.huawei.agconnect'
+apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
     compileSdkVersion 30
@@ -18,5 +20,11 @@ android {
 }
 
 dependencies {
+    // HMS projects
+    implementation project(':xmsadapter')
+    implementation project(':xmsadapter:xmsaux')
+    compileOnly project(':xmsadapter:xmsaux:xapi')
+
+    // AndroidX libraries
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

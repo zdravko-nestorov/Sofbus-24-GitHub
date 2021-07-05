@@ -8,16 +8,16 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.xms.g.maps.model.LatLng;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 import bg.znestorov.sofbus24.main.ClosestStationsMap;
 import bg.znestorov.sofbus24.main.R;
@@ -67,7 +67,7 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String jsonResult) {
         super.onPostExecute(jsonResult);
 
-        if (jsonResult != null && !"".equals(jsonResult)) {
+        if (jsonResult != null && !"".equals(jsonResult) && !jsonResult.contains("REQUEST_DENIED")) {
             ((ClosestStationsMap) callerInstance).visualizeRoute(jsonResult);
 
             Toast.makeText(context, distance, Toast.LENGTH_SHORT).show();
@@ -88,7 +88,10 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
 
     /**
      * Create google apis route url containing the points between the current
-     * location and the selected station
+     * location and the selected station.
+     * <p>
+     * N.B. This Google Apis Route URL could not be used anymore:
+     * https://stackoverflow.com/a/57229885
      *
      * @param currentLocation the current location
      * @param latLng          the selected LatLng
@@ -96,16 +99,17 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
      */
     private String createRouteUrl(Location currentLocation, LatLng latLng) {
         StringBuilder routeUrl = new StringBuilder();
-        routeUrl.append("http://maps.googleapis.com/maps/api/directions/json");
+        routeUrl.append("https://maps.googleapis.com/maps/api/directions/json");
         routeUrl.append("?origin=");// from
         routeUrl.append(currentLocation.getLatitude());
         routeUrl.append(",");
         routeUrl.append(currentLocation.getLongitude());
         routeUrl.append("&destination=");// to
-        routeUrl.append(latLng.latitude);
+        routeUrl.append(latLng.getLatitude());
         routeUrl.append(",");
-        routeUrl.append(latLng.longitude);
-        routeUrl.append("&sensor=false&mode=driving&alternatives=true");
+        routeUrl.append(latLng.getLongitude());
+        routeUrl.append("&sensor=false&mode=driving&alternatives=true&key=");
+        routeUrl.append(context.getString(R.string.google_maps_api_2_map_release_home));
 
         return routeUrl.toString();
     }
@@ -133,7 +137,7 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
 
             // Converting the result to a string object
             BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    is, "ISO-8859-1"), 8);
+                    is, StandardCharsets.ISO_8859_1), 8);
             StringBuilder sb = new StringBuilder();
             String line = null;
 

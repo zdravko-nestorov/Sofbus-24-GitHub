@@ -8,7 +8,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 
-import com.google.android.gms.maps.model.LatLng;
+import org.xms.g.maps.model.LatLng;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -402,7 +402,7 @@ public class StationsDataSource {
 
         // IMPORTANT: Used for correct ordering
         Double fudge = Math.pow(
-                Math.cos(Math.toRadians(currentPosition.latitude)), 2);
+                Math.cos(Math.toRadians(currentPosition.getLatitude())), 2);
 
         StringBuilder query = new StringBuilder();
         query.append(" SELECT * 											\n");
@@ -410,16 +410,16 @@ public class StationsDataSource {
         query.append(" ORDER BY												\n");
         query.append(" 		( (												\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) + (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
         Cursor cursor = database.rawQuery(query.toString(), null);
@@ -557,7 +557,7 @@ public class StationsDataSource {
 
         // IMPORTANT: Used for correct ordering
         Double fudge = Math.pow(
-                Math.cos(Math.toRadians(currentPosition.latitude)), 2);
+                Math.cos(Math.toRadians(currentPosition.getLatitude())), 2);
 
         StringBuilder query = new StringBuilder();
         query.append(" SELECT * 											\n");
@@ -572,16 +572,16 @@ public class StationsDataSource {
         query.append(" ORDER BY												\n");
         query.append(" 		( (												\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) + (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
         Cursor cursor = database.rawQuery(query.toString(), null);
@@ -647,7 +647,7 @@ public class StationsDataSource {
 
         // IMPORTANT: Used for correct ordering
         Double fudge = Math.pow(
-                Math.cos(Math.toRadians(currentPosition.latitude)), 2);
+                Math.cos(Math.toRadians(currentPosition.getLatitude())), 2);
 
         StringBuilder query = new StringBuilder();
         query.append(" SELECT * 											\n");
@@ -662,16 +662,16 @@ public class StationsDataSource {
         query.append(" ORDER BY												\n");
         query.append(" 		( (												\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LATITUDE + " - "
-                + currentPosition.latitude);
+                + currentPosition.getLatitude());
         query.append(" 		) + (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * (											\n");
         query.append(Sofbus24SQLite.COLUMN_STAT_LONGITUDE + " - "
-                + currentPosition.longitude);
+                + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
         Cursor cursor = database.rawQuery(query.toString(), null);

@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.huawei.agconnect'
+apply from: '../xmsadapter/scripts/productFlavor.gradle'
+
 android {
     compileSdkVersion 30
     buildToolsVersion '30.0.3'

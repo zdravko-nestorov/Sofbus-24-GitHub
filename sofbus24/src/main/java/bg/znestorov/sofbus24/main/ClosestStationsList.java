@@ -15,11 +15,12 @@ import android.widget.ProgressBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+
+import org.xms.g.maps.model.LatLng;
 
 import bg.znestorov.sofbus24.closest.stations.list.ClosestStationsListFragment;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
@@ -129,8 +130,8 @@ public class ClosestStationsList extends FragmentActivity {
      */
     private void initBundleInfo() {
         Bundle extras = getIntent().getExtras();
-        currentLocation = (LatLng) extras
-                .get(Constants.BUNDLE_CLOSEST_STATIONS_LIST);
+        currentLocation = LatLng.dynamicCast(extras
+                .get(Constants.BUNDLE_CLOSEST_STATIONS_LIST));
     }
 
     /**
@@ -172,9 +173,9 @@ public class ClosestStationsList extends FragmentActivity {
                             if (globalContext.isGoogleStreetViewAvailable()) {
                                 Uri streetViewUri = Uri
                                         .parse("google.streetview:cbll="
-                                                + currentLocation.latitude
+                                                + currentLocation.getLatitude()
                                                 + ","
-                                                + currentLocation.longitude
+                                                + currentLocation.getLongitude()
                                                 + "&cbp=1,90,,0,1.0&mz=20");
                                 Intent streetViewIntent = new Intent(
                                         Intent.ACTION_VIEW, streetViewUri);
@@ -247,7 +248,7 @@ public class ClosestStationsList extends FragmentActivity {
                 .displayImageOptions();
 
         String imageUrl = String.format(Constants.FAVOURITES_IMAGE_URL,
-                currentLocation.latitude + "", currentLocation.longitude + "");
+                currentLocation.getLatitude() + "", currentLocation.getLongitude() + "");
         imageLoader.displayImage(imageUrl, streetView, displayImageOptions,
                 new SimpleImageLoadingListener() {
                     @Override

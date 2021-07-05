@@ -31,6 +31,7 @@ import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.navigation.NavDrawerHomeScreenPreferences;
 import bg.znestorov.sofbus24.schedule.ScheduleLoadVehicles;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -365,7 +366,7 @@ public class HomeScreenSelect extends FragmentActivity implements
     private void registerGCM() {
 
         String regId = GcmPreferences.getRegistrationId(context);
-        if (Utils.isEmpty(regId)) {
+        if (HmsUtils.isGms() && Utils.isEmpty(regId)) {
             RetrieveRegId retrieveRegId = new RetrieveRegId(context, 1);
             retrieveRegId.execute();
         }
@@ -383,8 +384,10 @@ public class HomeScreenSelect extends FragmentActivity implements
 
         // Set the opposite value of the user choice to the AppOptOut (so
         // enable/disable automatic tracking)
-        GoogleAnalytics.getInstance(getApplicationContext()).setAppOptOut(
-                !googleAnalytics);
+        if (HmsUtils.isGms()) {
+            GoogleAnalytics.getInstance(getApplicationContext()).setAppOptOut(
+                    !googleAnalytics);
+        }
     }
 
     @Override

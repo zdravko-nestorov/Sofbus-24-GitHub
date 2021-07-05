@@ -20,7 +20,7 @@ import android.widget.ListView;
 
 import androidx.fragment.app.ListFragment;
 
-import com.google.android.gms.maps.model.LatLng;
+import org.xms.g.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,8 +146,8 @@ public class ClosestStationsListFragment extends ListFragment implements
 
         // Get Bundle arguments
         Bundle bundle = getArguments();
-        currentLocation = (LatLng) bundle
-                .get(Constants.BUNDLE_CLOSEST_STATIONS_LIST);
+        currentLocation = LatLng.dynamicCast(bundle
+                .get(Constants.BUNDLE_CLOSEST_STATIONS_LIST));
 
         // Get the already loaded stations (in case of orientation change)
         if (savedInstanceState != null) {
@@ -184,7 +184,7 @@ public class ClosestStationsListFragment extends ListFragment implements
     @Override
     public void onFragmentRefresh(Object obj, String emptyText) {
         closestStationsCount = 10;
-        currentLocation = (LatLng) obj;
+        currentLocation = LatLng.dynamicCast(obj);
 
         setListFragmentAdapter();
     }

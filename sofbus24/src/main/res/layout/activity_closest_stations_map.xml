@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/closest_stations_map"
-        class="com.google.android.gms.maps.SupportMapFragment"
+        class="org.xms.g.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

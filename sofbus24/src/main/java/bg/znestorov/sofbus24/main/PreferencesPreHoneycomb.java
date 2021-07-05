@@ -24,6 +24,7 @@ import bg.znestorov.sofbus24.navigation.NavDrawerHomeScreenPreferences;
 import bg.znestorov.sofbus24.preferences.ResetSettingsDialog;
 import bg.znestorov.sofbus24.preferences.RestartApplicationDialog;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -151,7 +152,8 @@ public class PreferencesPreHoneycomb extends PreferenceActivity
             globalContext.setHasToRestart(true);
         }
 
-        if (key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
+        if (HmsUtils.isGms()
+                && key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
             GoogleAnalytics
                     .getInstance(globalContext)
                     .setAppOptOut(

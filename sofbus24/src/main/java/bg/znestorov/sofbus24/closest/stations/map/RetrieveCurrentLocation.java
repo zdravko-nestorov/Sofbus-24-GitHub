@@ -16,7 +16,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.google.android.gms.maps.model.LatLng;
+import org.xms.g.maps.model.LatLng;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.RetrieveCurrentLocationTypeEnum;

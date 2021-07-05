@@ -22,7 +22,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.model.LatLng;
+import org.xms.g.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -297,15 +297,15 @@ public class DroidTrans extends FragmentActivity {
 
         // Get the wheels state
         if (savedInstanceState == null) {
-            LatLng bundleLocation = bundle != null ? (LatLng) bundle
-                    .get(Constants.BUNDLE_DROID_TRANS) : null;
+            LatLng bundleLocation = bundle != null ? LatLng.dynamicCast(bundle
+                    .get(Constants.BUNDLE_DROID_TRANS)) : null;
 
             if (bundleLocation == null) {
                 userLocation = null;
             } else {
                 userLocation = new Location("");
-                userLocation.setLatitude(bundleLocation.latitude);
-                userLocation.setLongitude(bundleLocation.longitude);
+                userLocation.setLatitude(bundleLocation.getLatitude());
+                userLocation.setLongitude(bundleLocation.getLongitude());
             }
 
             wheelState = new WheelStateEntity();

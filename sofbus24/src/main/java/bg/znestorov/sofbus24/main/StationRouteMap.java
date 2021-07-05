@@ -18,20 +18,22 @@ import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
+import org.xms.g.location.FusedLocationProviderClient;
+import org.xms.g.location.LocationCallback;
+import org.xms.g.maps.CameraUpdateFactory;
+import org.xms.g.maps.ExtensionMap;
+import org.xms.g.maps.ExtensionMap.OnInfoWindowClickListener;
+import org.xms.g.maps.ExtensionMap.OnMapClickListener;
+import org.xms.g.maps.ExtensionMap.OnMarkerClickListener;
+import org.xms.g.maps.ExtensionMap.OnMyLocationButtonClickListener;
+import org.xms.g.maps.OnMapReadyCallback;
+import org.xms.g.maps.SupportMapFragment;
+import org.xms.g.maps.model.BitmapDescriptorFactory;
+import org.xms.g.maps.model.CameraPosition;
+import org.xms.g.maps.model.LatLng;
+import org.xms.g.maps.model.Marker;
+import org.xms.g.maps.model.MarkerOptions;
+import org.xms.g.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,7 +71,9 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
     private AppLifecycleListener observer;
 
     private DirectionsEntity directionsEntity;
-    private GoogleMap stationMap;
+    private ExtensionMap stationMap;
+    private FusedLocationProviderClient locationProviderClient;
+    private LocationCallback locationCallback;
     private View stationRouteLines;
     private boolean isCurrentLocationFocused = false;
 
@@ -126,8 +130,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
 
             // Getting reference to the SupportMapFragment of activity layout
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.station_route_map);
+            SupportMapFragment mapFragment = SupportMapFragment.dynamicCast(getSupportFragmentManager()
+                    .findFragmentById(R.id.station_route_map));
 
             // Getting GoogleMap object from the fragment
             if (mapFragment != null) {
@@ -137,9 +141,22 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         PermissionsUtils.removeLifecycleObserver(observer);
+        MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
     /**
@@ -147,7 +164,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
      */
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(ExtensionMap map) {
         stationMap = map;
         stationRouteLines = findViewById(R.id.station_route_lines);
 
@@ -184,12 +201,17 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             // over a point and start a LocationChangeListener
             stationMap.setMyLocationEnabled(true);
             stationMap.getUiSettings().setMyLocationButtonEnabled(true);
-            stationMap.setOnMyLocationChangeListener(currentLocation -> {
+
+            // Register for location updates
+            locationProviderClient = MapUtils.getLocationProviderClient(context);
+            locationCallback = MapUtils.getLocationCallback((currentLocation) -> {
                 if (currentLocation != null) {
                     stationMap.clear();
                     initGoogleMaps(stationType, currentLocation);
                 }
+                return null;
             });
+            MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
         }
     }
 
@@ -211,8 +233,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     if (currentMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                                + currentMarkerLatLng.latitude + ","
-                                + currentMarkerLatLng.longitude
+                                + currentMarkerLatLng.getLatitude() + ","
+                                + currentMarkerLatLng.getLongitude()
                                 + "&cbp=1,90,,0,1.0&mz=20");
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
@@ -228,25 +250,25 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 }
                 return true;
             case R.id.action_sm_map_mode_normal:
-                stationMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                stationMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_terrain:
-                stationMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                stationMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_satellite:
-                stationMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                stationMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_hybrid:
-                stationMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                stationMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
@@ -290,7 +312,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 });
 
         // Remove the locationChangeListener
-        stationMap.setOnMyLocationChangeListener(null);
+        MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
     /**

@@ -28,27 +28,28 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xms.g.common.ConnectionResult;
+import org.xms.g.common.ExtensionPlayServicesUtil;
+import org.xms.g.location.FusedLocationProviderClient;
+import org.xms.g.location.LocationCallback;
+import org.xms.g.maps.CameraUpdateFactory;
+import org.xms.g.maps.ExtensionMap;
+import org.xms.g.maps.ExtensionMap.OnInfoWindowClickListener;
+import org.xms.g.maps.ExtensionMap.OnMapClickListener;
+import org.xms.g.maps.ExtensionMap.OnMapLongClickListener;
+import org.xms.g.maps.ExtensionMap.OnMarkerClickListener;
+import org.xms.g.maps.OnMapReadyCallback;
+import org.xms.g.maps.SupportMapFragment;
+import org.xms.g.maps.model.BitmapDescriptorFactory;
+import org.xms.g.maps.model.CameraPosition;
+import org.xms.g.maps.model.LatLng;
+import org.xms.g.maps.model.Marker;
+import org.xms.g.maps.model.MarkerOptions;
+import org.xms.g.maps.model.Polyline;
+import org.xms.g.maps.model.PolylineOptions;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -72,6 +73,7 @@ import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -119,7 +121,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     private String markerOptions;
     private boolean positionFocus;
     private BigDecimal stationsRadius;
-    private GoogleMap googleMap;
+    private ExtensionMap googleMap;
+    private FusedLocationProviderClient locationProviderClient;
+    private LocationCallback locationCallback;
     private Location previousLocation;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
@@ -196,7 +200,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         ThemeChange.selectTheme(this);
         super.onCreate(savedInstanceState);
 
@@ -236,9 +240,33 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+
+        if (globalContext.isHasToRestart()) {
+            context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_RESTART);
+            context.finish();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH, new Intent());
+        finish();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         PermissionsUtils.removeLifecycleObserver(observer);
+        MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
     /**
@@ -246,7 +274,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      */
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(ExtensionMap map) {
         googleMap = map;
 
         // Enabling MyLocation Layer of Google Map and the corresponding
@@ -264,25 +292,26 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         // over a point and start a LocationChangeListener
         googleMap.setMyLocationEnabled(true);
         googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-        googleMap
-                .setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
-                    @Override
-                    public void onMyLocationChange(Location currentLocation) {
-                        // Check if there is any found location and if the
-                        // distance between it and previous one (if exists)
-                        // is more than 20 meters
-                        if (currentLocation != null
-                                && (previousLocation == null || previousLocation
-                                .distanceTo(currentLocation) > 20f)) {
-                            // Get the current location as previous now
-                            previousLocation = currentLocation;
 
-                            // Proceed with all needed actions when a new
-                            // location is found
-                            onLocationChanged(currentLocation);
-                        }
-                    }
-                });
+        // Register for location updates
+        locationProviderClient = MapUtils.getLocationProviderClient(context);
+        locationCallback = MapUtils.getLocationCallback((currentLocation) -> {
+            // Check if there is any found location and if the
+            // distance between it and previous one (if exists)
+            // is more than 20 meters
+            if (currentLocation != null
+                    && (previousLocation == null || previousLocation
+                    .distanceTo(currentLocation) > 20f)) {
+                // Get the current location as previous now
+                previousLocation = currentLocation;
+
+                // Proceed with all needed actions when a new
+                // location is found
+                onLocationChanged(currentLocation);
+            }
+            return null;
+        });
+        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
 
         // Start a new thread - just to wait 3 sec and if no location is
         // found to display the last known location
@@ -370,22 +399,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 .execute();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (globalContext.isHasToRestart()) {
-            context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_RESTART);
-            context.finish();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH, new Intent());
-        finish();
-    }
-
     /**
      * Get the values from the SharedPreferences file (positionFocus and
      * stationsRadius)
@@ -441,13 +454,13 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     private void initGoogleMaps() {
         // Verify that the Google Play services APK is available and up-to-date
         // on this device
-        int status = GooglePlayServicesUtil
+        int status = ExtensionPlayServicesUtil
                 .isGooglePlayServicesAvailable(context);
 
         // Check if Google Play Services are available or not
-        if (status != ConnectionResult.SUCCESS) {
+        if (status != ConnectionResult.getSUCCESS()) {
             int requestCode = 10;
-            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this,
+            Dialog dialog = ExtensionPlayServicesUtil.getErrorDialog(status, this,
                     requestCode);
             dialog.show();
         } else {
@@ -537,10 +550,10 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             case R.id.action_gm_map_route:
                 deleteRoute();
 
-                if (googleMap.getMyLocation() != null) {
+                if (previousLocation != null) {
                     if (selectedMarkerLatLng != null) {
                         GoogleMapsRoute googleMapsRoute = new GoogleMapsRoute(
-                                context, this, googleMap.getMyLocation(),
+                                context, this, previousLocation,
                                 selectedMarkerLatLng);
                         googleMapsRoute.execute();
                     } else {
@@ -559,8 +572,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     if (selectedMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                                + selectedMarkerLatLng.latitude + ","
-                                + selectedMarkerLatLng.longitude
+                                + selectedMarkerLatLng.getLatitude() + ","
+                                + selectedMarkerLatLng.getLongitude()
                                 + "&cbp=1,90,,0,1.0&mz=20");
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
@@ -591,25 +604,25 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 return true;
             case R.id.action_gm_map_mode_normal:
-                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                googleMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_gm_map_mode_terrain:
-                googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                googleMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_gm_map_mode_satellite:
-                googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                googleMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_gm_map_mode_hybrid:
-                googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                googleMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
@@ -655,8 +668,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
         // Create a location object according to the tapped position
         Location tapLocation = new Location("");
-        tapLocation.setLatitude(point.latitude);
-        tapLocation.setLongitude(point.longitude);
+        tapLocation.setLatitude(point.getLatitude());
+        tapLocation.setLongitude(point.getLongitude());
 
         // Showing the current location and zoom it in GoogleMaps
         animateMapFocus(tapLocation, true);
@@ -696,7 +709,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 cameraPosition = new CameraPosition.Builder()
                         .target(new LatLng(location.getLatitude(), location
                                 .getLongitude()))
-                        .zoom(googleMap.getCameraPosition().zoom).build();
+                        .zoom(googleMap.getCameraPosition().getZoom()).build();
             }
 
             googleMap.animateCamera(CameraUpdateFactory
@@ -882,8 +895,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 // Add the point to the map
                 Polyline polyline = googleMap.addPolyline(new PolylineOptions()
-                        .add(new LatLng(src.latitude, src.longitude),
-                                new LatLng(dest.latitude, dest.longitude))
+                        .add(new LatLng(src.getLatitude(), src.getLongitude()),
+                                new LatLng(dest.getLatitude(), dest.getLongitude()))
                         .width(getResources().getInteger(R.integer.google_map_route_line_width))
                         .color(Color.BLUE).geodesic(true));
 

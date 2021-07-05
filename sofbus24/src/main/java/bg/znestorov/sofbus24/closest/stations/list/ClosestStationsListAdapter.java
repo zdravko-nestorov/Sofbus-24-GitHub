@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.model.LatLng;
+import org.xms.g.maps.model.LatLng;
 
 import java.util.List;
 

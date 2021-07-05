@@ -5,12 +5,14 @@ import android.content.pm.PackageManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+
+import org.xms.g.common.ConnectionResult;
+import org.xms.g.common.ExtensionPlayServicesUtil;
 
 import java.util.HashMap;
 
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 
 /**
  * Global class that extends Application and save state across several
@@ -41,6 +43,12 @@ public class GlobalEntity extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Initialize HMS prerequisites (isHms property)
+        org.xms.g.utils.GlobalEnvSetting.init(this, null);
+        org.xms.adapter.utils.XLoader.init(this);
+
+        // Initialize Sofbus 24 prerequisites
         initialize();
     }
 
@@ -123,6 +131,9 @@ public class GlobalEntity extends Application {
      * @return the tracker
      */
     public synchronized Tracker getTracker(TrackerName trackerId) {
+        if (HmsUtils.isHms()) {
+            return null;
+        }
 
         if (!mTrackers.containsKey(trackerId)) {
 
@@ -170,13 +181,17 @@ public class GlobalEntity extends Application {
         isLargeTablet = getResources().getBoolean(R.bool.isLargeTablet);
 
         try {
-            getPackageManager().getApplicationInfo("com.google.android.gms", 0);
+            if (HmsUtils.isGms()) {
+                getPackageManager().getApplicationInfo("com.google.android.gms", 0);
+            } else {
+                getPackageManager().getApplicationInfo("com.huawei.hms", 0);
+            }
 
             // (GooglePlay error on old devices - Android 2.2-3.0) Additional
             // check that verifies that Google Play services is installed and
             // enabled on this device, and that the version installed on this
             // device is no older than the one required by this client
-            areServicesAvailable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS;
+            areServicesAvailable = ExtensionPlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.getSUCCESS();
         } catch (PackageManager.NameNotFoundException e) {
             areServicesAvailable = false;
         }

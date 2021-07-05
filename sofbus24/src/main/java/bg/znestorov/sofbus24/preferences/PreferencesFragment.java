@@ -19,6 +19,7 @@ import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.navigation.NavDrawerHomeScreenPreferences;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -111,7 +112,8 @@ public class PreferencesFragment extends PreferenceFragment implements
             globalContext.setHasToRestart(true);
         }
 
-        if (key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
+        if (HmsUtils.isGms()
+                && key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
             GoogleAnalytics
                     .getInstance(globalContext)
                     .setAppOptOut(
