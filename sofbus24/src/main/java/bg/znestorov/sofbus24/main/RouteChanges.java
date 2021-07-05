@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.entity.LoadTypeEnum;
@@ -37,6 +39,7 @@ public class RouteChanges extends ListActivity {
     private Activity context;
     private ProgressBar loadingRouteChanges;
     private View routeChangesContent;
+    private SwipeRefreshLayout routeChangesSwipeRefresh;
     private RouteChangesAdapter routeChangesAdapter;
     private ArrayList<RouteChangesEntity> routeChangesList = new ArrayList<RouteChangesEntity>();
 
@@ -93,7 +96,10 @@ public class RouteChanges extends ListActivity {
                 finish();
                 return true;
             case R.id.action_route_changes_refresh:
-                actionsOnRefresh();
+                routeChangesSwipeRefresh.post(() -> {
+                    routeChangesSwipeRefresh.setRefreshing(true);
+                    actionsOnRefresh(); // call the method directly (not automatically triggered)
+                });
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -137,6 +143,10 @@ public class RouteChanges extends ListActivity {
     private void initLayoutFields() {
         loadingRouteChanges = (ProgressBar) findViewById(R.id.route_changes_loading);
         routeChangesContent = findViewById(R.id.route_changes_content);
+
+        // Configure the SwipeRefresh layout
+        routeChangesSwipeRefresh = findViewById(R.id.route_changes_swipe_refresh);
+        routeChangesSwipeRefresh.setOnRefreshListener(this::actionsOnRefresh);
     }
 
     /**
@@ -152,8 +162,8 @@ public class RouteChanges extends ListActivity {
      */
     private void actionsOnRefresh() {
 
-        loadingRouteChanges.setVisibility(View.VISIBLE);
-        routeChangesContent.setVisibility(View.GONE);
+        // loadingRouteChanges.setVisibility(View.VISIBLE);
+        // routeChangesContent.setVisibility(View.GONE);
 
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage(getString(R.string.route_changes_loading));
@@ -190,6 +200,9 @@ public class RouteChanges extends ListActivity {
                 listView.setSelectionFromTop(0, 0);
             }
         }
+
+        // Notify the widget that refresh has stopped
+        routeChangesSwipeRefresh.setRefreshing(false);
     }
 
 }

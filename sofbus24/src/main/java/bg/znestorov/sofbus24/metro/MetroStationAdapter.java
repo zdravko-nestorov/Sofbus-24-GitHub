@@ -235,17 +235,34 @@ class MetroStationAdapter extends ArrayAdapter<StationEntity> {
      * @param station the station on the current row
      * @return the station image id
      */
+    @SuppressWarnings({"ConstantConditions", "IfStatementWithIdenticalBranches"})
     private Integer getMetroImage(StationEntity station) {
-        Integer favouriteImage;
         Integer stationNumber = Integer.parseInt(station.getNumber());
 
-        if (stationNumber <= 3000) {
-            favouriteImage = R.drawable.ic_metro_2;
-        } else {
-            favouriteImage = R.drawable.ic_metro_1;
+        // Metro line 1 (RED) & 4 (YELLOW)
+        if (stationNumber >= 3001 && stationNumber <= 3026) { // RED & YELLOW
+            return R.drawable.ic_metro_1_3;
+        } else if (stationNumber >= 3039 && stationNumber <= 3044) { // RED
+            return R.drawable.ic_metro_1;
         }
 
-        return favouriteImage;
+        // Metro line 2 (BLUE)
+        if (stationNumber <= 3000) {
+            return R.drawable.ic_metro_2;
+        }
+
+        // Metro line 3 (GREEN)
+        if (stationNumber >= 3200) {
+            return R.drawable.ic_metro_3;
+        }
+
+        // Metro line 4 (YELLOW)
+        if (stationNumber >= 3027 && stationNumber <= 3038) {
+            return R.drawable.ic_metro_4;
+        }
+
+        // Default image (RED)
+        return R.drawable.ic_metro_1;
     }
 
     /**

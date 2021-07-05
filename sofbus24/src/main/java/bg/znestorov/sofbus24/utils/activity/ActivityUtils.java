@@ -44,7 +44,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -158,7 +158,7 @@ public class ActivityUtils {
                 .denyCacheImageMultipleSizesInMemory()
                 .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
                 .memoryCacheSize(2 * 1024 * 1024)
-                .discCache(new UnlimitedDiscCache(cacheDir))
+                .discCache(new UnlimitedDiskCache(cacheDir))
                 .discCacheSize(50 * 1024 * 1024)
                 .discCacheFileCount(100)
                 .discCacheFileNameGenerator(new HashCodeFileNameGenerator())

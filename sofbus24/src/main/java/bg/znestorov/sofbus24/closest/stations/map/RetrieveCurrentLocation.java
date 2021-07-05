@@ -333,22 +333,14 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
      * Refresh the ClosestStationsList activity
      */
     private void refreshClosestStationsListActivity() {
-        ((ClosestStationsList) context).refreshClosestStationsListFragment();
+        LatLng currentLocation = getCurrentLocation();
+        ((ClosestStationsList) context).refreshClosestStationsListFragment(currentLocation);
     }
 
     /**
      * Start the DroidTrans activity with all needed information
      */
     private void startDroidTransActivity() {
-
-        LatLng currentLocation = null;
-        if (this.latitude != 0.0 || this.longitude != 0.0) {
-            currentLocation = new LatLng(this.latitude, this.longitude);
-        } else {
-            currentLocation = new LatLng(
-                    Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE,
-                    Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
-        }
 
         Intent droidTransIntent;
         if (globalContext.isPhoneDevice()) {
@@ -357,6 +349,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
             droidTransIntent = new Intent(context, DroidTransDialog.class);
         }
 
+        LatLng currentLocation = getCurrentLocation();
         switch (retrieveCurrentLocationType) {
             case DT_HOME_SCREEN:
                 droidTransIntent.putExtra(
@@ -373,6 +366,21 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
                 context.startActivity(droidTransIntent);
                 break;
+        }
+    }
+
+    /**
+     * Get current location based on the retrieved latitude and longitude.
+     *
+     * @return current location
+     */
+    private LatLng getCurrentLocation() {
+        if (this.latitude != 0.0 || this.longitude != 0.0) {
+            return new LatLng(this.latitude, this.longitude);
+        } else {
+            return new LatLng(
+                    Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE,
+                    Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE);
         }
     }
 

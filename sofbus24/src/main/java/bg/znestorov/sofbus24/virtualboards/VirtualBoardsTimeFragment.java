@@ -10,7 +10,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.fragment.app.ListFragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.RefreshableListFragment;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
@@ -28,6 +30,7 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
 
     private static final String BUNDLE_VB_TIME_EMPTY_TEXT = "BUNDLE VB TIME EMPTY TEXT";
     private Activity context;
+    private SwipeRefreshLayout vbListSwipeRefresh;
     private VirtualBoardsStationEntity vbTimeStation;
     private String vbTimeEmptyText;
     private TextView vbListEmptyTextView;
@@ -55,6 +58,15 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
 
         // Set the context (activity) associated with this fragment
         context = getActivity();
+
+        // Configure the SwipeRefresh layout
+        vbListSwipeRefresh = myFragmentView.findViewById(R.id.vb_list_swipe_refresh);
+        vbListSwipeRefresh.setOnRefreshListener(() -> {
+            // Retrieve the refreshed information from SKGT site
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, context, vbTimeStation, null, HtmlRequestCodesEnum.REFRESH);
+            retrieveVirtualBoards.getSumcInformation();
+        });
 
         // Get the empty list TextView
         vbListEmptyTextView = (TextView) myFragmentView
@@ -124,6 +136,20 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
         vbTimeStation.setVirtualBoardsTimeStation(newVBTimeStation);
 
         setListAdapter(vbTimeEmptyText);
+
+        // Notify the widget that refresh has stopped
+        if (vbListSwipeRefresh != null) {
+            vbListSwipeRefresh.setRefreshing(false);
+        }
+    }
+
+    /**
+     * Trigger the {@link SwipeRefreshLayout} programmatically.
+     */
+    public void refreshFragment() {
+        if (vbListSwipeRefresh != null) {
+            vbListSwipeRefresh.post(() -> vbListSwipeRefresh.setRefreshing(true));
+        }
     }
 
     /**

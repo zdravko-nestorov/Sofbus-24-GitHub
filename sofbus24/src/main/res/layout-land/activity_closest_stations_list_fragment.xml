@@ -6,14 +6,21 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@android:id/list"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/cs_list_swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@drawable/list_divider"
-        android:dividerHeight="1sp"
-        android:fastScrollEnabled="true"
-        android:focusable="true" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="1sp"
+            android:fastScrollEnabled="true"
+            android:focusable="true" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <RelativeLayout
         android:id="@android:id/empty"

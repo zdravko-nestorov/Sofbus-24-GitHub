@@ -19,15 +19,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.fragment.app.ListFragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.xms.g.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.RefreshableListFragment;
+import bg.znestorov.sofbus24.entity.RetrieveCurrentLocationTypeEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
@@ -51,6 +54,7 @@ public class ClosestStationsListFragment extends ListFragment implements
     private static final String SAVED_STATE_SEARCH_TEXT_KEY = "Closest Stations Search Text";
     private final List<StationEntity> searchStationList = new ArrayList<StationEntity>();
     private Activity context;
+    private SwipeRefreshLayout csListSwipeRefresh;
     private LatLng currentLocation;
     private StationsDataSource stationsDatasource;
     private int closestStationsCount;
@@ -140,6 +144,16 @@ public class ClosestStationsListFragment extends ListFragment implements
         // Set the context (activity) associated with this fragment
         context = getActivity();
 
+        // Configure the SwipeRefresh layout
+        csListSwipeRefresh = myFragmentView.findViewById(R.id.cs_list_swipe_refresh);
+        csListSwipeRefresh.setOnRefreshListener(() -> {
+            // Retrieve the current position
+            RetrieveCurrentLocation retrieveCurrentLocation = new RetrieveCurrentLocation(
+                    getActivity(), this.getParentFragmentManager(), null,
+                    RetrieveCurrentLocationTypeEnum.CS_LIST_REFRESH);
+            retrieveCurrentLocation.execute();
+        });
+
         // Find the SearchEditText in the layout
         SearchEditText searchEditText = (SearchEditText) context
                 .findViewById(R.id.cs_list_search);
@@ -187,6 +201,11 @@ public class ClosestStationsListFragment extends ListFragment implements
         currentLocation = LatLng.dynamicCast(obj);
 
         setListFragmentAdapter();
+
+        // Notify the widget that refresh has stopped
+        if (csListSwipeRefresh != null) {
+            csListSwipeRefresh.setRefreshing(false);
+        }
     }
 
     @Override
@@ -222,6 +241,15 @@ public class ClosestStationsListFragment extends ListFragment implements
             RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
                     context, progressDialog, station);
             retrieveMetroSchedule.execute();
+        }
+    }
+
+    /**
+     * Trigger the {@link SwipeRefreshLayout} programmatically.
+     */
+    public void refreshFragment() {
+        if (csListSwipeRefresh != null) {
+            csListSwipeRefresh.post(() -> csListSwipeRefresh.setRefreshing(true));
         }
     }
 

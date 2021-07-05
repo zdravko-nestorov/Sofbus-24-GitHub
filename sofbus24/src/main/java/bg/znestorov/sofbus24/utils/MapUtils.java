@@ -44,8 +44,8 @@ public class MapUtils {
      */
     public static LocationRequest getLocationRequest() {
         return LocationRequest.create()
-                .setInterval(15_000)
-                .setFastestInterval(10_000)
+                .setInterval(10_000)
+                .setFastestInterval(5_000)
                 .setPriority(LocationRequest.getPRIORITY_BALANCED_POWER_ACCURACY());
     }
 

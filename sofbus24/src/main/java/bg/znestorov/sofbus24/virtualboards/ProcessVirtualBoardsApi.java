@@ -10,7 +10,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import bg.znestorov.sofbus24.databases.DroidTransDataSource;
@@ -20,7 +19,6 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
-import bg.znestorov.sofbus24.utils.AlphanumComparator;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
@@ -237,8 +235,8 @@ class ProcessVirtualBoardsApi {
             }
         }
 
-        // Sort the arrival times (sometimes the times are not ordered)
-        Collections.sort(arrivalTimes, new AlphanumComparator());
+        // The API always returns times of arrival sorted list
+        // Collections.sort(arrivalTimes, new AlphanumComparator());
 
         // Add al fields to the Vehicle object
         vehicle.setArrivalTimes(arrivalTimes);

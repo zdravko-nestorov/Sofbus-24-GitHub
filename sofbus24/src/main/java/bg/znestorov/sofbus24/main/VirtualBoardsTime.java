@@ -23,7 +23,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -154,9 +154,18 @@ public class VirtualBoardsTime extends FragmentActivity {
      * Initialize the refresh by loading the information from SKGT site
      */
     private void initRefreshFragmentInformation() {
-        // Show the loading ProgressBar
-        vbTimeFragment.setVisibility(View.GONE);
-        vbTimeLoading.setVisibility(View.VISIBLE);
+
+        // Refresh the VirtualBoardsTime fragment
+        VirtualBoardsTimeFragment vbTimeFragmentInstance = ((VirtualBoardsTimeFragment) getSupportFragmentManager()
+                .findFragmentByTag(FRAGMENT_TAG_NAME));
+        if (vbTimeFragmentInstance != null) {
+            // Use the SwipeRefresh layout
+            vbTimeFragmentInstance.refreshFragment();
+        } else {
+            // Show the loading ProgressBar
+            vbTimeFragment.setVisibility(View.GONE);
+            vbTimeLoading.setVisibility(View.VISIBLE);
+        }
 
         // Retrieve the refreshed information from SKGT site
         RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(

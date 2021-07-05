@@ -55,6 +55,7 @@ public class MetroScheduleWrapperFragment extends Fragment {
     private TextView metroScheduleFirst;
     private TextView metroScheduleLast;
     private View metroScheduleFragment;
+    private MetroScheduleFragment metroScheduleFragmentInstance;
     private ProgressBar metroScheduleLoading;
     private MetroStationEntity ms;
     private ArrayList<ArrayList<String>> scheduleHourList;
@@ -149,9 +150,15 @@ public class MetroScheduleWrapperFragment extends Fragment {
         // This is needed, because the fragment should be restarted
         savedInstanceState = null;
 
-        // Show the loading ProgressBar
-        metroScheduleFragment.setVisibility(View.GONE);
-        metroScheduleLoading.setVisibility(View.VISIBLE);
+        // Refresh the MetroSchedule fragment
+        if (metroScheduleFragmentInstance != null) {
+            // Use the SwipeRefresh layout
+            metroScheduleFragmentInstance.refreshFragment();
+        } else {
+            // Show the loading ProgressBar
+            metroScheduleFragment.setVisibility(View.GONE);
+            metroScheduleLoading.setVisibility(View.VISIBLE);
+        }
 
         // Start a new thread - just to wait 500 ms
         Handler handler = new Handler();
@@ -164,6 +171,9 @@ public class MetroScheduleWrapperFragment extends Fragment {
                     // Initialize the fragment content
                     initFragmentContent();
                 } catch (Exception e) {
+                    // Swallow the exception and continue with the flow
+                } finally {
+                    metroScheduleFragmentInstance.refreshFragment();
                 }
             }
         };
@@ -401,20 +411,19 @@ public class MetroScheduleWrapperFragment extends Fragment {
      */
     private void startFragment(ArrayList<String> formattedScheduleList,
                                boolean isActive, int scheduleIndex) {
-        Fragment fragment;
 
         if (savedInstanceState == null) {
             ScheduleEntity metroScheduleEntity = new ScheduleEntity(
                     formattedScheduleList, isActive, scheduleIndex);
-            fragment = MetroScheduleFragment.newInstance(metroScheduleEntity);
+            metroScheduleFragmentInstance = MetroScheduleFragment.newInstance(metroScheduleEntity);
         } else {
-            fragment = getChildFragmentManager().findFragmentByTag(
-                    BUNDLE_FRAGMENT_TAG_NAME);
+            metroScheduleFragmentInstance = (MetroScheduleFragment) getChildFragmentManager()
+                    .findFragmentByTag(BUNDLE_FRAGMENT_TAG_NAME);
         }
 
         getChildFragmentManager()
                 .beginTransaction()
-                .replace(R.id.metro_schedule_fragment, fragment,
+                .replace(R.id.metro_schedule_fragment, metroScheduleFragmentInstance,
                         BUNDLE_FRAGMENT_TAG_NAME).commit();
 
         actionsOnFragmentChange();

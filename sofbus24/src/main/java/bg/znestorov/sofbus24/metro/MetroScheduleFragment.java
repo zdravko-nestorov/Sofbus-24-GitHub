@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.ListFragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import bg.znestorov.sofbus24.entity.RefreshableListFragment;
 import bg.znestorov.sofbus24.entity.ScheduleEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -19,8 +21,10 @@ import bg.znestorov.sofbus24.utils.Constants;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class MetroScheduleFragment extends ListFragment {
+public class MetroScheduleFragment extends ListFragment implements
+        RefreshableListFragment {
 
+    private SwipeRefreshLayout metroScheduleSwipeRefresh;
     private ScheduleEntity metroScheduleEntity;
 
     public static MetroScheduleFragment newInstance(
@@ -62,6 +66,12 @@ public class MetroScheduleFragment extends ListFragment {
         // Set the context (activity) associated with this fragment
         Activity context = getActivity();
 
+        // Configure the SwipeRefresh layout
+        metroScheduleSwipeRefresh = myFragmentView.findViewById(R.id.metro_schedule_swipe_refresh);
+        metroScheduleSwipeRefresh.setOnRefreshListener(() -> {
+            ((MetroScheduleWrapperFragment) this.getParentFragment()).initRefresh(500);
+        });
+
         // Get the Fragment position and MetroStation object from the Bundle
         metroScheduleEntity = (ScheduleEntity) getArguments().getSerializable(
                 Constants.BUNDLE_METRO_SCHEDULE);
@@ -74,5 +84,21 @@ public class MetroScheduleFragment extends ListFragment {
         setListAdapter(metroArrayAdapter);
 
         return myFragmentView;
+    }
+
+    @Override
+    public void onFragmentRefresh(Object obj, String emptyText) {
+        if (metroScheduleSwipeRefresh != null) {
+            metroScheduleSwipeRefresh.setRefreshing(false);
+        }
+    }
+
+    /**
+     * Trigger the {@link SwipeRefreshLayout} programmatically.
+     */
+    public void refreshFragment() {
+        if (metroScheduleSwipeRefresh != null) {
+            metroScheduleSwipeRefresh.post(() -> metroScheduleSwipeRefresh.setRefreshing(true));
+        }
     }
 }

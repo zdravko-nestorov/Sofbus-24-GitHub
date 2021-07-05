@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
+import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 
 import org.xms.g.maps.model.LatLng;
 
@@ -114,9 +114,18 @@ public class ClosestStationsList extends FragmentActivity {
      * Initialize the refresh by putting a 500 ms delay
      */
     private void initRefresh() {
-        // Show the loading ProgressBar
-        csListFragment.setVisibility(View.GONE);
-        csListLoading.setVisibility(View.VISIBLE);
+
+        // Refresh the ClosestStationsList fragment
+        ClosestStationsListFragment csListFragmentInstance = ((ClosestStationsListFragment) getSupportFragmentManager()
+                .findFragmentByTag(FRAGMENT_TAG_NAME));
+        if (csListFragmentInstance != null) {
+            // Use the SwipeRefresh layout
+            csListFragmentInstance.refreshFragment();
+        } else {
+            // Show the loading ProgressBar
+            csListFragment.setVisibility(View.GONE);
+            csListLoading.setVisibility(View.VISIBLE);
+        }
 
         // Retrieve the current position
         RetrieveCurrentLocation retrieveCurrentLocation = new RetrieveCurrentLocation(
@@ -192,8 +201,13 @@ public class ClosestStationsList extends FragmentActivity {
     /**
      * Used to refresh the content of the ClosestStationsListFragment according
      * to the newly retrieved location
+     *
+     * @param newCurrentLocation newly retrieved current location
      */
-    public void refreshClosestStationsListFragment() {
+    public void refreshClosestStationsListFragment(LatLng newCurrentLocation) {
+        // Reassign the current location
+        currentLocation = newCurrentLocation;
+
         // Refresh the fragment
         ClosestStationsListFragment csListFragment = ((ClosestStationsListFragment) getSupportFragmentManager()
                 .findFragmentByTag(FRAGMENT_TAG_NAME));
