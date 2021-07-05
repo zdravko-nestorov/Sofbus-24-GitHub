@@ -1,0 +1,20 @@
+package org.xms.g.utils;
+
+/**
+ * interface for XGettable
+ */
+public interface XGettable extends XInterface {
+    /**
+     * org.xms.g.utils.XGettable.getGInstance() get gms instance.<br/>
+     *
+     * @return gms object
+     */
+    Object getGInstance();
+
+    /**
+     * org.xms.g.utils.XGettable.getHInstance() get hms instance.<br/>
+     *
+     * @return hms object
+     */
+    Object getHInstance();
+}
