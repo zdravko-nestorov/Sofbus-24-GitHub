@@ -5,9 +5,10 @@ import android.content.pm.PackageManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.xms.g.common.ConnectionResult;
-import org.xms.g.common.ExtensionPlayServicesUtil;
 
 import java.util.HashMap;
 
@@ -180,27 +181,25 @@ public class GlobalEntity extends Application {
         isPhoneDevice = getResources().getBoolean(R.bool.isPhone);
         isLargeTablet = getResources().getBoolean(R.bool.isLargeTablet);
 
-        try {
-            if (HmsUtils.isGms()) {
-                getPackageManager().getApplicationInfo("com.google.android.gms", 0);
-            } else {
-                getPackageManager().getApplicationInfo("com.huawei.hms", 0);
+        if (HmsUtils.isGms()) {
+            // Google Mobile Services
+            areServicesAvailable = GoogleApiAvailability.getInstance()
+                    .isGooglePlayServicesAvailable(this) == ConnectionResult.getSUCCESS();
+
+            // Google Street View
+            try {
+                getPackageManager().getApplicationInfo("com.google.android.street", 0);
+                isGoogleStreetViewAvailable = true;
+            } catch (PackageManager.NameNotFoundException e) {
+                isGoogleStreetViewAvailable = false;
             }
 
-            // (GooglePlay error on old devices - Android 2.2-3.0) Additional
-            // check that verifies that Google Play services is installed and
-            // enabled on this device, and that the version installed on this
-            // device is no older than the one required by this client
-            areServicesAvailable = ExtensionPlayServicesUtil.isGooglePlayServicesAvailable(this) == ConnectionResult.getSUCCESS();
-        } catch (PackageManager.NameNotFoundException e) {
-            areServicesAvailable = false;
-        }
+        } else {
+            // Huawei Mobile Services
+            areServicesAvailable = HuaweiApiAvailability.getInstance()
+                    .isHuaweiMobileServicesAvailable(this) == ConnectionResult.getSUCCESS();
 
-        try {
-            getPackageManager().getApplicationInfo("com.google.android.street",
-                    0);
-            isGoogleStreetViewAvailable = true;
-        } catch (PackageManager.NameNotFoundException e) {
+            // Google Street View
             isGoogleStreetViewAvailable = false;
         }
 

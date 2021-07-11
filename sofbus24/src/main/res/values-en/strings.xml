@@ -49,7 +49,7 @@
     <string name="app_toast_remove_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully removed from <b>Favorites</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully renamed to <b><i>%s (%s)</b></i>.]]></string>
     <string name="app_google_play_title">Google Play services</string>
-    <string name="app_google_play_msg">Google Play services, which Sofbus 24 uses to show the Google Maps, are not supported by your device. Please install them to move on.</string>
+    <string name="app_google_play_msg">Services, which Sofbus 24 uses to show the map, are not supported by your device. Please install them to move on.</string>
     <string name="app_google_street_view_title">Google Street View</string>
     <string name="app_google_street_view_msg">Google Play services, which Sofbus 24 uses to show the Google Street View, are not supported by your device. Please install them to move on.</string>
     <string name="app_send_email_subject">Sofbus 24 startup problem</string>
@@ -60,7 +60,7 @@
     <!-- Action Bar -->
     <!-- Sofbus24 -->
     <string name="action_droidtrans">SKGT Cars</string>
-    <string name="action_closest_stations_map">Google Maps</string>
+    <string name="action_closest_stations_map">Map</string>
     <string name="action_more">More</string>
     <string name="action_favourites_sort">Sort</string>
     <string name="action_favourites_remove_all">Delete All</string>
@@ -83,7 +83,7 @@
     <!-- Metro Schedule -->
     <string name="action_ms_reset">Reset</string>
     <string name="action_ms_refresh">Refresh</string>
-    <string name="action_ms_map">Google Maps</string>
+    <string name="action_ms_map">Map</string>
     <!-- Station Map -->
     <string name="action_sm_google_street_view">Street View</string>
     <string name="action_sm_map_mode">Map Mode</string>
@@ -101,11 +101,11 @@
     <string name="action_about_update_app">Check for a New Version</string>
     <!-- Closest Stations -->
     <string name="action_cs_list_refresh">Refresh</string>
-    <string name="action_cs_list_map">Google Maps</string>
+    <string name="action_cs_list_map">Map</string>
     <!-- Virtual Boards Time -->
     <string name="action_vb_time_favourites">Add to Favorites</string>
     <string name="action_vb_time_refresh">Refresh</string>
-    <string name="action_vb_time_map">Google Maps</string>
+    <string name="action_vb_time_map">Map</string>
     <!-- Public Transport -->
     <string name="action_pt_route_map">Route</string>
     <string name="action_pt_site">SKGT Schedule</string>
@@ -128,7 +128,7 @@
     <!-- Favourites -->
     <string name="menu_fav_rename">Rename</string>
     <string name="menu_fav_remove">Remove</string>
-    <string name="menu_fav_google_maps">Google Maps</string>
+    <string name="menu_fav_google_maps">Map</string>
     <string name="menu_fav_google_street_view">Street View</string>
     <string name="menu_fav_information">Information</string>
     <!-- Metro Station -->
@@ -142,7 +142,7 @@
     <string name="cs_list_item_empty_list">There are no stations found within 100 km radius for this search. Please try other criteria or be come closer to Sofia.</string>
 
     <!-- Closest Stations Map -->
-    <string name="cs_map_title">Google Maps</string>
+    <string name="cs_map_title">Map</string>
     <string name="cs_map_subtitle" formatted="false">Stations within %s meters radius: %s</string>
     <string name="cs_map_type_btt">Public Transport</string>
     <string name="cs_map_type_bus">Buses</string>
@@ -159,8 +159,8 @@
     <string name="cs_map_fetch_route_error">There was a problem with drawing the route. Please check your Internet connection or try again later.</string>
     <string name="cs_map_route_error">Please select a station from the map to draw a route to it.</string>
     <string name="cs_map_clear_info">The map was reset to default.</string>
-    <string name="cs_map_traffic_on_info">The layer showing the traffic on Google Maps was activated.</string>
-    <string name="cs_map_traffic_off_info">The layer showing the traffic on Google Maps was deactivated.</string>
+    <string name="cs_map_traffic_on_info">The layer showing the traffic on the map was activated.</string>
+    <string name="cs_map_traffic_off_info">The layer showing the traffic on the map was deactivated.</string>
     <string name="cs_map_normal" formatted="false"><![CDATA[The layer <b><i>Normal</i></b> was activated.]]></string>
     <string name="cs_map_terrain" formatted="false"><![CDATA[The layer <b><i>Terrain</i></b> was activated.]]></string>
     <string name="cs_map_satellite" formatted="false"><![CDATA[The layer <b><i>Satellite</i></b> was activated.]]></string>
@@ -192,15 +192,15 @@
     <string name="pref_category_schedule_cache_numberOfDays_summary">Files older than the maximum number of days will be automatically removed from the cache</string>
     <string name="pref_category_schedule_cache_showCacheToast_title">Show a toast notification</string>
     <string name="pref_category_schedule_cache_showCacheToast_summary">Show a toast notification when loading the local schedule from the cache</string>
-    <string name="pref_category_map">GOOGLE MAP</string>
-    <string name="pref_category_map_marker_type_title">Google Maps marker type</string>
+    <string name="pref_category_map">MAP</string>
+    <string name="pref_category_map_marker_type_title">Map marker type</string>
     <string name="pref_category_map_marker_type_summary">Determine the marker picture that will be shown on the map</string>
-    <string name="pref_category_map_marker_title">Google Maps marker</string>
+    <string name="pref_category_map_marker_title">Map marker</string>
     <string name="pref_category_map_marker_summary">Visualize an information snippet for the selected station or retrieve the times of arrival (closest stations)</string>
     <string name="pref_category_map_radius_title">Current location radius</string>
     <string name="pref_category_map_radius_summary">The size of the current location or a selected point radius in which the stations have to be displayed</string>
     <string name="pref_category_map_position_title">Focus current position</string>
-    <string name="pref_category_map_position_summary">Focus Google Map when the current location change</string>
+    <string name="pref_category_map_position_summary">Focus the map when the current location change</string>
     <string name="pref_category_more">OTHER</string>
     <string name="pref_category_more_automatic_update_title">Automatic station update</string>
     <string name="pref_category_more_automatic_update_summary">Automatic update when new stations or SKGT cars are available (a few times each month)</string>
@@ -387,7 +387,7 @@
     <!-- Navigation Drawer -->
     <string name="navigation_drawer_home">Home screen</string>
     <string name="navigation_drawer_home_standard">Standard</string>
-    <string name="navigation_drawer_home_map">Google Map</string>
+    <string name="navigation_drawer_home_map">Map</string>
     <string name="navigation_drawer_home_cars">SKGT vehicles</string>
     <string name="navigation_drawer_cs">Closest stations</string>
     <string name="navigation_drawer_route_changes">Route changes</string>
@@ -397,7 +397,7 @@
     <string name="navigation_drawer_update">Check for update</string>
     <string name="navigation_drawer_backup">Backup data</string>
     <string name="navigation_drawer_exit">Exit</string>
-    <string name="navigation_drawer_home_screen_error" formatted="false"><![CDATA[Google Play services, which Sofbus 24 uses to show the Google Maps, are not supported by your device. Please install them so you can choose <b><i>%s</i></b> as a home screen.]]></string>
+    <string name="navigation_drawer_home_screen_error" formatted="false"><![CDATA[Services, which Sofbus 24 uses to show the map, are not supported by your device. Please install them so you can choose <b><i>%s</i></b> as a home screen.]]></string>
     <string name="navigation_drawer_home_screen_remains" formatted="false"><![CDATA[The home screen remains the same - <b><i>%s</i></b>. It will be visualized on every application startup until it is changed again.]]></string>
     <string name="navigation_drawer_home_screen_changed" formatted="false"><![CDATA[The home screen has been changed to <b><i>%s</i></b>. It will be visualized on every application startup until it is changed again.]]></string>
 

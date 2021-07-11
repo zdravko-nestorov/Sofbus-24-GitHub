@@ -53,7 +53,7 @@
     <string name="app_toast_remove_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
     <string name="app_google_play_title">Услуги за Google Play</string>
-    <string name="app_google_play_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
+    <string name="app_google_play_msg">Услугите, на които разчита Софбус 24 за показване на картата, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_street_view_title">Google Street View</string>
     <string name="app_google_street_view_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на Google Street View, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_send_email_subject">Проблем при стартирането на Софбус 24</string>
@@ -132,7 +132,7 @@
     <!-- Favourites -->
     <string name="menu_fav_rename">Преименувай</string>
     <string name="menu_fav_remove">Премахни</string>
-    <string name="menu_fav_google_maps">Google Maps</string>
+    <string name="menu_fav_google_maps">Карта</string>
     <string name="menu_fav_google_street_view">Street View</string>
     <string name="menu_fav_information">Информация</string>
     <!-- Metro Station -->
@@ -146,7 +146,7 @@
     <string name="cs_list_item_empty_list">Няма намерени спирки в радиус от 100 км. за това търсене. Моля опитайте с други критерии или се приближете до София.</string>
 
     <!-- Closest Stations Map -->
-    <string name="cs_map_title">Google Maps</string>
+    <string name="cs_map_title">Карта</string>
     <string name="cs_map_subtitle" formatted="false" tools:ignore="StringFormatInvalid">Спирки в радиус от %s метра: %s</string>
     <string name="cs_map_type_btt">Градски Транспорт</string>
     <string name="cs_map_type_bus">Автобуси</string>
@@ -163,8 +163,8 @@
     <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
     <string name="cs_map_route_error">Моля изберете спирка от картата, за да бъде визуализиран маршрута до нея.</string>
     <string name="cs_map_clear_info">Картата беше върната в начално си положение.</string>
-    <string name="cs_map_traffic_on_info">Слоят, показващ трафика върху картата Google Maps, беше активиран.</string>
-    <string name="cs_map_traffic_off_info">Слоят, показващ трафика върху картата Google Maps, беше деактивиран.</string>
+    <string name="cs_map_traffic_on_info">Слоят, показващ трафика върху картата, беше активиран.</string>
+    <string name="cs_map_traffic_off_info">Слоят, показващ трафика върху картата, беше деактивиран.</string>
     <string name="cs_map_normal" formatted="false"><![CDATA[Слоят <b><i>Normal</i></b> беше активиран.]]></string>
     <string name="cs_map_terrain" formatted="false"><![CDATA[Слоят <b><i>Terrain</i></b> беше активиран.]]></string>
     <string name="cs_map_satellite" formatted="false"><![CDATA[Слоят <b><i>Satellite</i></b> беше активиран.]]></string>
@@ -408,7 +408,7 @@
     <string name="navigation_drawer_update">Актуализация</string>
     <string name="navigation_drawer_backup">Бекъп на данни</string>
     <string name="navigation_drawer_exit">Изход</string>
-    <string name="navigation_drawer_home_screen_error" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Услугите за Google Play, на които разчита Софбус 24 за показване на картата на Google Maps, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
+    <string name="navigation_drawer_home_screen_error" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Услугите, на които разчита Софбус 24 за показване на картата на картата, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да може да изберете за начален екран <b><i>%s</i></b>.]]></string>
     <string name="navigation_drawer_home_screen_remains" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Началният екран остава непроменен - <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
     <string name="navigation_drawer_home_screen_changed" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Началният екран беше променен на <b><i>%s</i></b>. Той ще бъде визуализиран при всяко следващо стартиране на приложението, докато не бъде отново променен.]]></string>
 

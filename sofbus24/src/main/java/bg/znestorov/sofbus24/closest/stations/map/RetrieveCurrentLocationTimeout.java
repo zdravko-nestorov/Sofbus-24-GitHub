@@ -13,10 +13,10 @@ import android.os.Handler;
  */
 public class RetrieveCurrentLocationTimeout implements Runnable {
 
-    public static final Integer TIMEOUT_CS_MAP_INIT = 6000;
-    public static final Integer TIMEOUT_CS_LIST = 6000;
-    public static final Integer TIMEOUT_DT_HOME_SCREEN = 2000;
-    public static final Integer TIMEOUT_DT = 4000;
+    public static final Integer TIMEOUT_CS_MAP_INIT = 8000;
+    public static final Integer TIMEOUT_CS_LIST = 8000;
+    public static final Integer TIMEOUT_DT_HOME_SCREEN = 3000;
+    public static final Integer TIMEOUT_DT = 6000;
     private final Handler mHandler = new Handler();
     private final AsyncTask<Void, Void, Void> retrieveCurrentLocation;
     private final Runnable runnable = new Runnable() {
