@@ -160,7 +160,7 @@
     <string name="cs_map_closest_stations" formatted="false"><![CDATA[Визуализиране на най-близките спирки…]]></string>
     <string name="cs_map_fetch_route" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="cs_map_location_error">Моля изчакайте да бъде локализирано текущото ви местоположение.</string>
-    <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля проверете вашата интернет връзка или опитайте по-късно.</string>
+    <string name="cs_map_fetch_route_error">Възникна проблем с изчертаването на маршрута. Моля, инсталирайте приложение за навигация, за да продължите.</string>
     <string name="cs_map_route_error">Моля изберете спирка от картата, за да бъде визуализиран маршрута до нея.</string>
     <string name="cs_map_clear_info">Картата беше върната в начално си положение.</string>
     <string name="cs_map_traffic_on_info">Слоят, показващ трафика върху картата, беше активиран.</string>

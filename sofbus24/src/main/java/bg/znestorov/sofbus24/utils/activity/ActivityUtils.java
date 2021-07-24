@@ -78,7 +78,9 @@ import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.PreferencesHidden;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.WebPage;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.Utils;
 
 /**
@@ -89,6 +91,28 @@ import bg.znestorov.sofbus24.utils.Utils;
  */
 @SuppressLint("InlinedApi")
 public class ActivityUtils {
+
+    /**
+     * Cause this Activity to be recreated with a new instance. This results in essentially
+     * the same flow as when the Activity is created due to a configuration change - the
+     * current instance will go through its lifecycle.
+     *
+     * @param context      Context of the current activity
+     * @param isHomeScreen if the current activity is a home screen
+     */
+    public static void recreateActivity(Activity context, boolean isHomeScreen) {
+        context.finish();
+        context.overridePendingTransition(0, 0);
+        if (isHomeScreen) {
+            HomeScreenSelect hssContext = ((GlobalEntity) context.getApplicationContext())
+                    .getHssContext();
+            hssContext.startActivityForResult(context.getIntent(),
+                    HomeScreenSelect.REQUEST_CODE_HOME_SCREEN_SELECT);
+        } else {
+            context.startActivity(context.getIntent());
+        }
+        context.overridePendingTransition(0, 0);
+    }
 
     /**
      * Request the focus and show a keyboard on EditText field
@@ -888,6 +912,14 @@ public class ActivityUtils {
                     "GooglePlayServicesErrorDialog");
         } else {
             if (isDirectStart) {
+                // In case of a Huawei tablet, firstly check if the GPS is enabled
+                // This is required because of a problem with these devices
+                if (HmsUtils.isHms() && !globalContext.isPhoneDevice()
+                        && !MapUtils.areLocationServicesAvailable(context)) {
+                    MapUtils.showLocationSourceDialog(fragmentManager);
+                    return;
+                }
+
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(
                         ClosestStationsMap.BUNDLE_IS_CS_MAP_HOME_SCREEN, true);

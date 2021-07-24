@@ -3,7 +3,12 @@ package bg.znestorov.sofbus24.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Looper;
+import android.provider.Settings;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import org.xms.g.location.FusedLocationProviderClient;
 import org.xms.g.location.LocationCallback;
@@ -15,6 +20,7 @@ import org.xms.g.utils.Function;
 
 import java.math.BigDecimal;
 
+import bg.znestorov.sofbus24.closest.stations.map.LocationSourceDialog;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.main.R;
 
@@ -26,6 +32,40 @@ import bg.znestorov.sofbus24.main.R;
  */
 @SuppressWarnings("ConstantConditions")
 public class MapUtils {
+
+    /**
+     * Check if any of the location services is available.
+     *
+     * @param context the current activity context
+     * @return if any of the location services is available
+     */
+    @SuppressWarnings("deprecation")
+    public static boolean areLocationServicesAvailable(Context context) {
+        String locationProviders = Settings.Secure.getString(
+                context.getContentResolver(),
+                Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
+        return locationProviders
+                .contains(LocationManager.NETWORK_PROVIDER)
+                || locationProviders.contains(LocationManager.GPS_PROVIDER);
+    }
+
+    /**
+     * Show a location source error dialog
+     */
+    public static void showLocationSourceDialog(FragmentManager fragmentManager) {
+        try {
+            DialogFragment dialogFragment = new LocationSourceDialog();
+            dialogFragment.show(fragmentManager, "dialogFragment");
+        } catch (Exception e) {
+            /**
+             * Fixing a strange error that is happening sometimes when the
+             * dialog is created. I guess sometimes the activity gets destroyed
+             * before the dialog successfully be shown.
+             *
+             * java.lang.IllegalStateException: Activity has been destroyed
+             */
+        }
+    }
 
     /**
      * Create a current location provider client.
@@ -205,6 +245,19 @@ public class MapUtils {
         } catch (Exception e) {
             return "∞";
         }
+    }
+
+    /**
+     * Check if the provided {@code lat} and {@code lon} are NOT the default Map location
+     * (no location is currently found).
+     *
+     * @param lat current latitude
+     * @param lon current longitude
+     * @return if the provided coordinates are NOT the default Map location.
+     */
+    public static boolean isNotDefaultMapLocation(double lat, double lon) {
+        return lat != 0.0 && lat != Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE
+                && lon != 0.0 && lon != Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE;
     }
 
     /**

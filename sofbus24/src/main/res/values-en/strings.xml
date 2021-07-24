@@ -156,7 +156,7 @@
     <string name="cs_map_closest_stations" formatted="false"><![CDATA[Visualization of the nearest stations…]]></string>
     <string name="cs_map_fetch_route" formatted="false"><![CDATA[Drawing the route…]]></string>
     <string name="cs_map_location_error">Please wait to be located.</string>
-    <string name="cs_map_fetch_route_error">There was a problem with drawing the route. Please check your Internet connection or try again later.</string>
+    <string name="cs_map_fetch_route_error">There was a problem with drawing the route. Please install a navigation app in order to continue.</string>
     <string name="cs_map_route_error">Please select a station from the map to draw a route to it.</string>
     <string name="cs_map_clear_info">The map was reset to default.</string>
     <string name="cs_map_traffic_on_info">The layer showing the traffic on the map was activated.</string>

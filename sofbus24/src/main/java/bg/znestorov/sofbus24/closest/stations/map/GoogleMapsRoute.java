@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 
 import bg.znestorov.sofbus24.main.ClosestStationsMap;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
@@ -37,6 +40,7 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
     private final Activity context;
     private final Object callerInstance;
     private final String routeUrl;
+    private final String routeUrlMapsApp;
     private final String distance;
     private ProgressDialog progressDialog;
 
@@ -46,6 +50,7 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
         this.callerInstance = callerInstance;
 
         this.routeUrl = createRouteUrl(currentLocation, latLng);
+        this.routeUrlMapsApp = createRouteUrlMapsApp(currentLocation, latLng);
         this.distance = String.format(context.getString(R.string.app_distance),
                 MapUtils.getMapDistance(context,
                         new LatLng(currentLocation.getLatitude(),
@@ -67,14 +72,23 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String jsonResult) {
         super.onPostExecute(jsonResult);
 
+        // Check if inline directions navigation is available
         if (jsonResult != null && !"".equals(jsonResult) && !jsonResult.contains("REQUEST_DENIED")) {
             ((ClosestStationsMap) callerInstance).visualizeRoute(jsonResult);
-
             Toast.makeText(context, distance, Toast.LENGTH_SHORT).show();
+
         } else {
-            Toast.makeText(context,
-                    context.getString(R.string.cs_map_fetch_route_error),
-                    Toast.LENGTH_LONG).show();
+            // Check if maps directions navigation is available (GoogleMaps or PetalMaps)
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(routeUrlMapsApp));
+            if (intent.resolveActivity(context.getPackageManager()) != null) {
+                context.startActivity(intent);
+                Toast.makeText(context, distance, Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(context,
+                        context.getString(R.string.cs_map_fetch_route_error),
+                        Toast.LENGTH_LONG).show();
+            }
         }
 
         dismissLoadingView();
@@ -98,20 +112,47 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
      * @return a google apis route url
      */
     private String createRouteUrl(Location currentLocation, LatLng latLng) {
-        StringBuilder routeUrl = new StringBuilder();
-        routeUrl.append("https://maps.googleapis.com/maps/api/directions/json");
-        routeUrl.append("?origin=");// from
-        routeUrl.append(currentLocation.getLatitude());
-        routeUrl.append(",");
-        routeUrl.append(currentLocation.getLongitude());
-        routeUrl.append("&destination=");// to
-        routeUrl.append(latLng.getLatitude());
-        routeUrl.append(",");
-        routeUrl.append(latLng.getLongitude());
-        routeUrl.append("&sensor=false&mode=driving&alternatives=true&key=");
-        routeUrl.append(context.getString(R.string.google_maps_api_2_map_release_home));
+        return "https://maps.googleapis.com/maps/api/directions/json" +
+                "?origin=" + // from
+                currentLocation.getLatitude() +
+                "," +
+                currentLocation.getLongitude() +
+                "&destination=" + // to
+                latLng.getLatitude() +
+                "," +
+                latLng.getLongitude() +
+                "&sensor=false&mode=walking&alternatives=true&key=" +
+                context.getString(R.string.google_maps_api_2_map_release_home);
+    }
 
-        return routeUrl.toString();
+    /**
+     * Create google maps app route url containing the origin and destination points between
+     * the current location and the selected station.
+     *
+     * @param currentLocation the current location
+     * @param latLng          the selected LatLng
+     * @return a google apis route url
+     */
+    private String createRouteUrlMapsApp(Location currentLocation, LatLng latLng) {
+        if (HmsUtils.isGms()) {
+            // GoogleMaps Navigation:
+            // https://developers.google.com/maps/documentation/urls/get-started#directions-action
+            return "https://www.google.com/maps/dir/?api=1" +
+                    "&destination=" + // to
+                    latLng.getLatitude() +
+                    "," +
+                    latLng.getLongitude() +
+                    "&travelmode=walking";
+        } else {
+            // MapKit Navigation:
+            // https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/petal-maps-application-navigation-0000001060038018
+            return "mapapp://navigation" +
+                    "?daddr=" + // to
+                    latLng.getLatitude() +
+                    "," +
+                    latLng.getLongitude() +
+                    "&type=walk";
+        }
     }
 
     /**

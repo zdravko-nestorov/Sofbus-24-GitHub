@@ -72,6 +72,7 @@ import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
 import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
@@ -302,6 +303,12 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             if (currentLocation != null
                     && (previousLocation == null || previousLocation
                     .distanceTo(currentLocation) > 20f)) {
+
+                // If the distance is more than 50km, mark that my location is not focused yet
+                if (previousLocation != null && previousLocation.distanceTo(currentLocation) > 50_000f) {
+                    isMyLocationAlreadyFocused = false;
+                }
+
                 // Get the current location as previous now
                 previousLocation = currentLocation;
 
@@ -452,6 +459,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      * Initialize the GoogleMaps and show the current location to the user
      */
     private void initGoogleMaps() {
+        // Check if any of the location services is available
+        checkForLocationServicesAvailable();
+
         // Verify that the Google Play services APK is available and up-to-date
         // on this device
         int status = ExtensionPlayServicesUtil
@@ -537,12 +547,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 return true;
             case R.id.action_gm_map_clear:
-                googleMap.clear();
-                isMyLocationAlreadyFocused = false;
-                selectedMarkerLatLng = null;
-                previousLocation = null;
-
-                initGoogleMaps();
+                ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                 Toast.makeText(context, getString(R.string.cs_map_clear_info),
                         Toast.LENGTH_SHORT).show();
 
@@ -550,7 +555,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             case R.id.action_gm_map_route:
                 deleteRoute();
 
-                if (previousLocation != null) {
+                if (previousLocation != null
+                        && MapUtils.isNotDefaultMapLocation(previousLocation.getLatitude(), previousLocation.getLongitude())) {
                     if (selectedMarkerLatLng != null) {
                         GoogleMapsRoute googleMapsRoute = new GoogleMapsRoute(
                                 context, this, previousLocation,
@@ -590,6 +596,11 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 return true;
             case R.id.action_gm_map_traffic:
+                if (googleMap == null) {
+                    ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
+                    return true;
+                }
+
                 if (googleMap.isTrafficEnabled()) {
                     googleMap.setTrafficEnabled(false);
                     Toast.makeText(context,
@@ -603,30 +614,55 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 }
 
                 return true;
+
             case R.id.action_gm_map_mode_normal:
+                if (googleMap == null) {
+                    ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
+                    return true;
+                }
+
                 googleMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
                 return true;
+
             case R.id.action_gm_map_mode_terrain:
+                if (googleMap == null) {
+                    ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
+                    return true;
+                }
+
                 googleMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
                 return true;
+
             case R.id.action_gm_map_mode_satellite:
+                if (googleMap == null) {
+                    ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
+                    return true;
+                }
+
                 googleMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
                 return true;
+
             case R.id.action_gm_map_mode_hybrid:
+                if (googleMap == null) {
+                    ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
+                    return true;
+                }
+
                 googleMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -691,8 +727,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         // Check if the map should be focused over the new location
         if (positionFocus || isPressed || !isMyLocationAlreadyFocused) {
 
-            // Check if the current location was already focused
-            if (!isMyLocationAlreadyFocused) {
+            // Check if the current location was already focused and not a map click
+            if (!isMyLocationAlreadyFocused && !isPressed) {
                 isMyLocationAlreadyFocused = true;
             }
 
@@ -1133,6 +1169,15 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
+
+    /**
+     * Check if any of the location services is available, in case this is the home screen.
+     */
+    private void checkForLocationServicesAvailable() {
+        if (isCSMapHomeScreen && HmsUtils.isGms() && !MapUtils.areLocationServicesAvailable(context)) {
+            MapUtils.showLocationSourceDialog(context.getSupportFragmentManager());
+        }
     }
 
     @Override

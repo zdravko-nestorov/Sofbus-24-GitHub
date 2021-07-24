@@ -12,6 +12,7 @@ import android.text.Spanned;
 
 import androidx.fragment.app.DialogFragment;
 
+import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 
 /**
@@ -34,6 +35,14 @@ public class LocationSourceDialog extends DialogFragment {
         String negativeBtn = getString(R.string.app_button_later);
         String positiveBtn = getString(R.string.app_button_activate);
 
+        OnClickListener negativeOnClickListener = new OnClickListener() {
+            public void onClick(DialogInterface dialog, int i) {
+                if (context instanceof HomeScreenSelect) {
+                    context.finish();
+                }
+            }
+        };
+
         OnClickListener positiveOnClickListener = new OnClickListener() {
             public void onClick(DialogInterface dialog, int i) {
                 Intent intent = new Intent(
@@ -41,12 +50,11 @@ public class LocationSourceDialog extends DialogFragment {
                 context.startActivity(intent);
                 dismiss();
             }
-
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setIcon(icon).setTitle(title).setMessage(message)
-                .setNegativeButton(negativeBtn, null)
+                .setNegativeButton(negativeBtn, negativeOnClickListener)
                 .setPositiveButton(positiveBtn, positiveOnClickListener);
 
         return builder.create();

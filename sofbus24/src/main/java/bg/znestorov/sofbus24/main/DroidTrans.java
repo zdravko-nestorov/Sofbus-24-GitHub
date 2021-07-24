@@ -49,6 +49,7 @@ import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -117,6 +118,7 @@ public class DroidTrans extends FragmentActivity {
         initBundleInfo(savedInstanceState);
         initActionBar();
         initLayoutFields();
+        checkForLocationServicesAvailable();
 
         if (isDroidTransHomeScreen) {
             initNavigationDrawer();
@@ -276,6 +278,15 @@ public class DroidTrans extends FragmentActivity {
         stationsDatasource = new StationsDataSource(context);
         vehiclesDatasource = new VehiclesDataSource(context);
         droidtransDatasource = new DroidTransDataSource(context);
+    }
+
+    /**
+     * Check if any of the location services is available, in case this is the home screen.
+     */
+    private void checkForLocationServicesAvailable() {
+        if (isDroidTransHomeScreen && !MapUtils.areLocationServicesAvailable(context)) {
+            MapUtils.showLocationSourceDialog(context.getSupportFragmentManager());
+        }
     }
 
     /**

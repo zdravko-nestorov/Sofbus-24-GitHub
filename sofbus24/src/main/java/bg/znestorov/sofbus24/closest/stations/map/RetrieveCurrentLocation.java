@@ -10,9 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
 
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
@@ -28,6 +26,7 @@ import bg.znestorov.sofbus24.main.DroidTransDialog;
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 /**
@@ -74,17 +73,11 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     protected void onPreExecute() {
         super.onPreExecute();
         createLoadingView();
 
-        String locationProviders = Settings.Secure.getString(
-                context.getContentResolver(),
-                Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
-        areLocationServicesAvailable = locationProviders
-                .contains(LocationManager.NETWORK_PROVIDER)
-                || locationProviders.contains(LocationManager.GPS_PROVIDER);
+        areLocationServicesAvailable = MapUtils.areLocationServicesAvailable(context);
 
         try {
             if (areLocationServicesAvailable) {
@@ -295,7 +288,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                     break;
             }
         } else {
-            showLocationSourceDialog();
+            MapUtils.showLocationSourceDialog(fragmentManager);
         }
     }
 
@@ -433,7 +426,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                                     ClosestStationsMap.class);
                             context.startActivity(closestStationsMapIntent);
                         } else {
-                            showLocationSourceDialog();
+                            MapUtils.showLocationSourceDialog(fragmentManager);
                         }
                     }
 
@@ -445,7 +438,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                         if (areLocationServicesAvailable) {
                             showLocationErrorToast();
                         } else {
-                            showLocationSourceDialog();
+                            MapUtils.showLocationSourceDialog(fragmentManager);
                         }
                     }
 
@@ -457,7 +450,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                         showLongToast(context
                                 .getString(R.string.app_location_modules_timeout_error));
                     } else {
-                        showLocationSourceDialog();
+                        MapUtils.showLocationSourceDialog(fragmentManager);
                     }
 
                     ((ClosestStationsList) context)
@@ -477,7 +470,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                                     .getString(R.string.app_nearest_station_init_error));
                             startDroidTransActivity();
                         } else {
-                            showLocationSourceDialog();
+                            MapUtils.showLocationSourceDialog(fragmentManager);
                         }
                     }
 
@@ -493,7 +486,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                             showNearestStationErrorToast();
                             refreshDroidTransActivity();
                         } else {
-                            showLocationSourceDialog();
+                            MapUtils.showLocationSourceDialog(fragmentManager);
                         }
                     }
 
@@ -543,24 +536,6 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
         } else {
             showLongToast(context
                     .getString(R.string.app_nearest_station_timeout_error));
-        }
-    }
-
-    /**
-     * Show a location source error dialog
-     */
-    private void showLocationSourceDialog() {
-        try {
-            DialogFragment dialogFragment = new LocationSourceDialog();
-            dialogFragment.show(fragmentManager, "dialogFragment");
-        } catch (Exception e) {
-            /**
-             * Fixing a strange error that is happening sometimes when the
-             * dialog is created. I guess sometimes the activity gets destroyed
-             * before the dialog successfully be shown.
-             *
-             * java.lang.IllegalStateException: Activity has been destroyed
-             */
         }
     }
 

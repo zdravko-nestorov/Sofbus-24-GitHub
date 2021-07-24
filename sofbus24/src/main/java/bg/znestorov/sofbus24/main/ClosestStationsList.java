@@ -30,6 +30,7 @@ import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
@@ -209,11 +210,7 @@ public class ClosestStationsList extends FragmentActivity {
         currentLocation = newCurrentLocation;
 
         // Refresh the fragment
-        ClosestStationsListFragment csListFragment = ((ClosestStationsListFragment) getSupportFragmentManager()
-                .findFragmentByTag(FRAGMENT_TAG_NAME));
-        if (csListFragment != null) {
-            csListFragment.onFragmentRefresh(currentLocation, null);
-        }
+        refreshClosestStationsListFragment();
 
         // Process the layout fields
         actionsOnFragmentStart();
@@ -221,6 +218,15 @@ public class ClosestStationsList extends FragmentActivity {
 
     public void refreshClosestStationsListFragmentFailed() {
         actionsOnFragmentStart();
+        refreshClosestStationsListFragment();
+    }
+
+    private void refreshClosestStationsListFragment() {
+        ClosestStationsListFragment csListFragment = ((ClosestStationsListFragment) getSupportFragmentManager()
+                .findFragmentByTag(FRAGMENT_TAG_NAME));
+        if (csListFragment != null) {
+            csListFragment.onFragmentRefresh(currentLocation, null);
+        }
     }
 
     /**
@@ -261,8 +267,7 @@ public class ClosestStationsList extends FragmentActivity {
         DisplayImageOptions displayImageOptions = ActivityUtils
                 .displayImageOptions();
 
-        String imageUrl = String.format(Constants.FAVOURITES_IMAGE_URL,
-                currentLocation.getLatitude() + "", currentLocation.getLongitude() + "");
+        String imageUrl = getImageUrl();
         imageLoader.displayImage(imageUrl, streetView, displayImageOptions,
                 new SimpleImageLoadingListener() {
                     @Override
@@ -285,5 +290,24 @@ public class ClosestStationsList extends FragmentActivity {
                         streetViewButton.setVisibility(View.VISIBLE);
                     }
                 });
+    }
+
+    /**
+     * Get current location image URL, based on the retrieved latitude and longitude.
+     *
+     * @return current location image URL
+     */
+    private String getImageUrl() {
+        double lat = currentLocation.getLatitude();
+        double lon = currentLocation.getLongitude();
+
+        // Check if the current location is initialized and not Sofia Center
+        if (MapUtils.isNotDefaultMapLocation(lat, lon)) {
+            return String.format(Constants.FAVOURITES_IMAGE_URL, lat, lon);
+        } else {
+            return String.format(Constants.FAVOURITES_IMAGE_HIGH_URL,
+                    Constants.GLOBAL_PARAM_SOFIA_SAN_LATITUDE,
+                    Constants.GLOBAL_PARAM_SOFIA_SAN_LONGITUDE);
+        }
     }
 }

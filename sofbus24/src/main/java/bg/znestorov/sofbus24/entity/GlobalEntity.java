@@ -12,6 +12,7 @@ import org.xms.g.common.ConnectionResult;
 
 import java.util.HashMap;
 
+import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 
@@ -27,6 +28,8 @@ import bg.znestorov.sofbus24.utils.HmsUtils;
  */
 public class GlobalEntity extends Application {
 
+    // HomeScreenSelect main activity
+    private HomeScreenSelect hssContext;
     private boolean isPhoneDevice;
     private boolean isLargeTablet;
     private boolean areServicesAvailable;
@@ -51,6 +54,14 @@ public class GlobalEntity extends Application {
 
         // Initialize Sofbus 24 prerequisites
         initialize();
+    }
+
+    public HomeScreenSelect getHssContext() {
+        return hssContext;
+    }
+
+    public void setHssContext(HomeScreenSelect hssContext) {
+        this.hssContext = hssContext;
     }
 
     public boolean isPhoneDevice() {

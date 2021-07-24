@@ -72,6 +72,7 @@ public class HomeScreenSelect extends FragmentActivity implements
     private int userChoice = -1;
     private View homeScreenBoxView;
     private boolean isHomeScreenBoxViewVisible;
+    private boolean shouldExecuteOnResume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +84,12 @@ public class HomeScreenSelect extends FragmentActivity implements
         // Get the application and the current context
         context = HomeScreenSelect.this;
         globalContext = (GlobalEntity) getApplicationContext();
+        globalContext.setHssContext(this);
         userChoice = savedInstanceState == null ? -1 : savedInstanceState
                 .getInt(BUNDLE_USER_CHOICE);
         isHomeScreenBoxViewVisible = savedInstanceState == null || savedInstanceState
                 .getBoolean(BUNDLE_IS_HOME_SCREEN_BOX_VIEW_VISIBLE);
+        shouldExecuteOnResume = false;
 
         // Init the layout fields
         initLayoutFields(savedInstanceState, true);
@@ -100,9 +103,20 @@ public class HomeScreenSelect extends FragmentActivity implements
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (shouldExecuteOnResume) {
+            processAppStartUp(null, false);
+        } else {
+            shouldExecuteOnResume = true;
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode,
                                     Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
+        shouldExecuteOnResume = false;
 
         if (requestCode == REQUEST_CODE_HOME_SCREEN_SELECT) {
             switch (resultCode) {
