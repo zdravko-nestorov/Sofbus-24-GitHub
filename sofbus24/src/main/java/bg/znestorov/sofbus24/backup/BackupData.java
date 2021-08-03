@@ -316,5 +316,4 @@ class BackupData {
 
         Utils.copyAndReplaceFileOrDirectory(sofbus24SourceDbFilePath, sofbus24TargetDbFilePath);
     }
-
 }

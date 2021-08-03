@@ -6,6 +6,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Looper;
 import android.provider.Settings;
+import android.view.Menu;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
@@ -326,5 +327,22 @@ public class MapUtils {
         }
 
         return distanceTo;
+    }
+
+    /**
+     * Hide the HMS unsupported map modes (satellite and hybrid).
+     *
+     * @param menu        the options menu as last shown
+     * @param menuItemIds menu item identifiers
+     */
+    public static void hideGmsUnsupportedMapTypes(Menu menu, Integer... menuItemIds) {
+        if (HmsUtils.isGms() || menu == null || Utils.isEmpty(menuItemIds)) {
+            return;
+        }
+
+        // Get the menu item with a particular identifier and hide it
+        for (Integer menuItemId : menuItemIds) {
+            menu.findItem(menuItemId).setVisible(false);
+        }
     }
 }

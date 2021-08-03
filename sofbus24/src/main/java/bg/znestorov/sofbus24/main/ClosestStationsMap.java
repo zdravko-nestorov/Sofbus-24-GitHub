@@ -495,6 +495,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
+        // Hide home screen menu items in case of main screen
         MenuItem favoritesItem = menu.findItem(R.id.action_gm_map_favorites);
         MenuItem droidtransItem = menu.findItem(R.id.action_gm_map_droidtrans);
 
@@ -505,6 +506,10 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             favoritesItem.setVisible(false);
             droidtransItem.setVisible(false);
         }
+
+        // Hide the HMS unsupported map modes (satellite and hybrid)
+        MapUtils.hideGmsUnsupportedMapTypes(menu, R.id.action_gm_map_mode_satellite,
+                R.id.action_gm_map_mode_hybrid);
 
         return super.onPrepareOptionsMenu(menu);
     }

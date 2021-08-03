@@ -137,6 +137,16 @@ public class Utils {
     }
 
     /**
+     * Tests if the supplied array is NULL or 0-length.
+     *
+     * @param input the input array
+     * @return boolean TRUE if empty, otherwise FALSE
+     */
+    public static <T> boolean isEmpty(T[] input) {
+        return input == null || input.length == 0;
+    }
+
+    /**
      * Tests if the supplied collection is NULL or 0-length.
      *
      * @param input the input collection
@@ -1575,6 +1585,11 @@ public class Utils {
     private static void copyAndReplaceFile(File sourceLocation, File targetLocation, int copyAttempts) throws IOException {
 
         try {
+            // If the source location is not found, do nothing (skip)
+            if (!sourceLocation.exists()) {
+                return;
+            }
+
             // As this method is copy and replace, we should firstly remove the file
             // and after that write the new one on its place
             if (targetLocation.exists()) {

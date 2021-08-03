@@ -170,6 +170,15 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
     }
 
     @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Hide the HMS unsupported map modes (satellite and hybrid)
+        MapUtils.hideGmsUnsupportedMapTypes(menu, R.id.action_sm_map_mode_satellite,
+                R.id.action_sm_map_mode_hybrid);
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:

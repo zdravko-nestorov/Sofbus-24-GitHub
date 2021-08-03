@@ -10,8 +10,8 @@ import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 
 /**
- * The {@code ProcessLifecycleOwner} will dispatch {@code ON_START}, {@code OON_RESUME} events,
- * as a first activity moves through these events. {@code OON_PAUSE}, {@code OON_STOP}, events
+ * The {@code ProcessLifecycleOwner} will dispatch {@code ON_START}, {@code ON_RESUME} events,
+ * as a first activity moves through these events. {@code ON_PAUSE}, {@code ON_STOP}, events
  * will be dispatched with a delay after a last activity passed through them. This delay is long
  * enough to guarantee that ProcessLifecycleOwner won't send any events if activities are destroyed
  * and recreated due to a configuration change.
