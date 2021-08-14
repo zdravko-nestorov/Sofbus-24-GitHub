@@ -5,4 +5,6 @@
     <string name="google_maps_api_2_map_debug_home" translatable="false" tools:ignore="UnusedResources">AIzaSyCKC3NyhssURiYHsoDRycTPrs1f_w8_xn8</string>
     <string name="google_maps_api_2_map_release_home" translatable="false">AIzaSyA37hK9KZ6S4RvXuksmb2-qjAZDlkFMDs8</string>
 
+    <string name="huawei_maps_api_2_map_release_home" translatable="false">CV7IvnGVCWKb9msDDsVHAhKGtjtVIgD5ApqI4Akih7hpntu1rjarilo+3wJa/RLM1msRBnJwzeH6UVAhQE4GnOe0CYtS</string>
+
 </resources>

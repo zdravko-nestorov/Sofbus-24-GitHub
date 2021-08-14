@@ -15,6 +15,7 @@ import java.util.HashMap;
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.HmsUtils;
+import bg.znestorov.sofbus24.utils.MapUtils;
 
 /**
  * Global class that extends Application and save state across several
@@ -51,6 +52,9 @@ public class GlobalEntity extends Application {
         // Initialize HMS prerequisites (isHms property)
         org.xms.g.utils.GlobalEnvSetting.init(this, null);
         org.xms.adapter.utils.XLoader.init(this);
+
+        // Set the HMS map API key
+        MapUtils.setHmsMapApiKey(this);
 
         // Initialize Sofbus 24 prerequisites
         initialize();

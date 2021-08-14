@@ -4,18 +4,23 @@ import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
 import android.view.Menu;
 
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+
+import com.huawei.hms.maps.MapsInitializer;
 
 import org.xms.g.location.FusedLocationProviderClient;
 import org.xms.g.location.LocationCallback;
 import org.xms.g.location.LocationRequest;
 import org.xms.g.location.LocationResult;
 import org.xms.g.location.LocationServices;
+import org.xms.g.maps.SupportMapFragment;
 import org.xms.g.maps.model.LatLng;
 import org.xms.g.utils.Function;
 
@@ -327,6 +332,41 @@ public class MapUtils {
         }
 
         return distanceTo;
+    }
+
+    /**
+     * Set the HMS map API key.
+     *
+     * @param context the current activity context
+     */
+    public static void setHmsMapApiKey(Context context) {
+        if (HmsUtils.isHms()) {
+            MapsInitializer.setApiKey(context.getString(R.string.huawei_maps_api_2_map_release_home));
+        }
+    }
+
+    /**
+     * Initial map setup.
+     *
+     * @param context the current activity context
+     * @param bundle  activity saved instance state
+     * @return the {@link SupportMapFragment} associated with the current activity
+     */
+    public static SupportMapFragment initializeMap(FragmentActivity context, int mapId, Bundle bundle) {
+        SupportMapFragment mapFragment = SupportMapFragment.dynamicCast(
+                context.getSupportFragmentManager().findFragmentById(mapId));
+
+        // Retrieve the saved instance state
+        Bundle mapFragmentBundle = null;
+        if (bundle != null) {
+            mapFragmentBundle = bundle.getBundle(Constants.BUNDLE_MAP_FRAGMENT);
+        }
+
+        // Set the HMS map API key
+        setHmsMapApiKey(context);
+        mapFragment.onCreate(mapFragmentBundle);
+
+        return mapFragment;
     }
 
     /**

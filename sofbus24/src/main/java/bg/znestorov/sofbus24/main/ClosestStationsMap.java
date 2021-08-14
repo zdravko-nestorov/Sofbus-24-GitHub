@@ -83,7 +83,7 @@ import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
- * Activity visualizing the google maps with all stations
+ * Activity visualizing the map with all stations
  *
  * @author Zdravko Nestorov
  * @version 1.0
@@ -122,7 +122,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     private String markerOptions;
     private boolean positionFocus;
     private BigDecimal stationsRadius;
-    private ExtensionMap googleMap;
+    private SupportMapFragment mapFragment;
+    private ExtensionMap csMap;
     private FusedLocationProviderClient locationProviderClient;
     private LocationCallback locationCallback;
     private Location previousLocation;
@@ -223,7 +224,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
         getSharedPreferencesFields();
         initActionBar();
-        initGoogleMaps();
+
+        mapFragment = MapUtils.initializeMap(this, R.id.closest_stations_map, savedInstanceState);
+        initClosestStationMap();
 
         if (isCSMapHomeScreen) {
             if (savedInstanceState == null) {
@@ -241,8 +244,22 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        mapFragment.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mapFragment.onStop();
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
+        mapFragment.onResume();
+
         MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
 
         if (globalContext.isHasToRestart()) {
@@ -253,12 +270,15 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onPause() {
+        mapFragment.onPause();
         super.onPause();
+
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH, new Intent());
         finish();
     }
@@ -266,8 +286,16 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mapFragment.onDestroy();
+
         PermissionsUtils.removeLifecycleObserver(observer);
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapFragment.onLowMemory();
     }
 
     /**
@@ -276,23 +304,23 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(ExtensionMap map) {
-        googleMap = map;
+        csMap = map;
 
-        // Enabling MyLocation Layer of Google Map and the corresponding
+        // Enabling MyLocation Layer of the map and the corresponding
         // buttons
-        googleMap.setMyLocationEnabled(true);
-        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-        googleMap.getUiSettings().setCompassEnabled(true);
-        googleMap.getUiSettings().setZoomControlsEnabled(true);
+        csMap.setMyLocationEnabled(true);
+        csMap.getUiSettings().setMyLocationButtonEnabled(true);
+        csMap.getUiSettings().setCompassEnabled(true);
+        csMap.getUiSettings().setZoomControlsEnabled(true);
 
-        // Enable the GoogleMap listeners
-        googleMap.setOnMapClickListener(onMapClickListener);
-        googleMap.setOnMapLongClickListener(onMapLongClickListener);
+        // Enable the map listeners
+        csMap.setOnMapClickListener(onMapClickListener);
+        csMap.setOnMapLongClickListener(onMapLongClickListener);
 
         // Activate my location, set a location button that center the map
         // over a point and start a LocationChangeListener
-        googleMap.setMyLocationEnabled(true);
-        googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        csMap.setMyLocationEnabled(true);
+        csMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Register for location updates
         locationProviderClient = MapUtils.getLocationProviderClient(context);
@@ -349,8 +377,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                                 previousLocation = location;
 
                                 // Showing the current location and zoom it
-                                // in
-                                // GoogleMaps
+                                // in the map
                                 animateMapFocus(location, 16);
 
                                 // Visualize the closest stations to the new
@@ -371,13 +398,11 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                                 previousLocation = centerStationLocation;
 
                                 // Showing the Sofia center location and
-                                // zoom it
-                                // in GoogleMaps
+                                // zoom it in the map
                                 animateMapFocus(centerStationLocation, 14);
 
                                 // Visualize the closest stations to the
-                                // Sofia
-                                // center location
+                                // Sofia center location
                                 new LoadStationsFromDb(context,
                                         vehiclesDatasource,
                                         centerStationLocation, null)
@@ -456,9 +481,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     /**
-     * Initialize the GoogleMaps and show the current location to the user
+     * Initialize the Map and show the current location to the user
      */
-    private void initGoogleMaps() {
+    private void initClosestStationMap() {
         // Check if any of the location services is available
         checkForLocationServicesAvailable();
 
@@ -474,7 +499,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     requestCode);
             dialog.show();
         } else {
-            // Register lifecycle observer, request location permissions retrieve the GoogleMap
+            // Register lifecycle observer, request location permissions retrieve the map
             if (observer == null) {
                 observer = PermissionsUtils.addLifecycleObserver(
                         this, AppPermissions.HOME_SCREEN, this::getMapAsync);
@@ -601,18 +626,18 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 return true;
             case R.id.action_gm_map_traffic:
-                if (googleMap == null) {
+                if (csMap == null) {
                     ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                     return true;
                 }
 
-                if (googleMap.isTrafficEnabled()) {
-                    googleMap.setTrafficEnabled(false);
+                if (csMap.isTrafficEnabled()) {
+                    csMap.setTrafficEnabled(false);
                     Toast.makeText(context,
                             getString(R.string.cs_map_traffic_off_info),
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    googleMap.setTrafficEnabled(true);
+                    csMap.setTrafficEnabled(true);
                     Toast.makeText(context,
                             getString(R.string.cs_map_traffic_on_info),
                             Toast.LENGTH_SHORT).show();
@@ -621,48 +646,48 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 return true;
 
             case R.id.action_gm_map_mode_normal:
-                if (googleMap == null) {
+                if (csMap == null) {
                     ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                     return true;
                 }
 
-                googleMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
+                csMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.action_gm_map_mode_terrain:
-                if (googleMap == null) {
+                if (csMap == null) {
                     ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                     return true;
                 }
 
-                googleMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
+                csMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.action_gm_map_mode_satellite:
-                if (googleMap == null) {
+                if (csMap == null) {
                     ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                     return true;
                 }
 
-                googleMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
+                csMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.action_gm_map_mode_hybrid:
-                if (googleMap == null) {
+                if (csMap == null) {
                     ActivityUtils.recreateActivity(context, isCSMapHomeScreen);
                     return true;
                 }
 
-                googleMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
+                csMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
@@ -674,12 +699,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     private void getMapAsync() {
-        // Getting reference to the SupportMapFragment of activity layout
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.closest_stations_map);
-
-        // Getting GoogleMap object from the fragment
         if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
             mapFragment.getMapAsync(this);
         }
     }
@@ -690,7 +711,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      * @param location the new location
      */
     private void onLocationChanged(Location location) {
-        // Showing the current location and zoom it in GoogleMaps
+        // Showing the current location and zoom it in the map
         animateMapFocus(location, false);
 
         // Visualize the closest stations to the new location
@@ -712,7 +733,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         tapLocation.setLatitude(point.getLatitude());
         tapLocation.setLongitude(point.getLongitude());
 
-        // Showing the current location and zoom it in GoogleMaps
+        // Showing the current location and zoom it in the map
         animateMapFocus(tapLocation, true);
 
         // Visualize the closest station to the new location
@@ -750,10 +771,10 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 cameraPosition = new CameraPosition.Builder()
                         .target(new LatLng(location.getLatitude(), location
                                 .getLongitude()))
-                        .zoom(googleMap.getCameraPosition().getZoom()).build();
+                        .zoom(csMap.getCameraPosition().getZoom()).build();
             }
 
-            googleMap.animateCamera(CameraUpdateFactory
+            csMap.animateCamera(CameraUpdateFactory
                     .newCameraPosition(cameraPosition));
         }
     }
@@ -772,7 +793,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 .target(new LatLng(location.getLatitude(), location
                         .getLongitude())).zoom(zoom).build();
 
-        googleMap.animateCamera(CameraUpdateFactory
+        csMap.animateCamera(CameraUpdateFactory
                 .newCameraPosition(cameraPosition));
     }
 
@@ -813,7 +834,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     /**
-     * Visualize the closest station over a map location on the GoogleMaps
+     * Visualize the closest station over a map location on the map
      *
      * @param location        the location of the station over the map (using Location
      *                        object)
@@ -847,7 +868,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                                     .fromResource(getMarkerIcon(station)));
                 }
 
-                Marker marker = googleMap.addMarker(stationMarkerOptions);
+                Marker marker = csMap.addMarker(stationMarkerOptions);
 
                 // Associate the marker and the station
                 markersAndStations.put(marker.getId(), station);
@@ -855,15 +876,15 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         }
 
         // Set a listeners over the markers
-        googleMap.setOnMarkerClickListener(onMarkerClickListener);
-        googleMap.setOnInfoWindowClickListener(onInfoWindowClickListener);
+        csMap.setOnMarkerClickListener(onMarkerClickListener);
+        csMap.setOnInfoWindowClickListener(onInfoWindowClickListener);
 
         // Set the ActionBar subtitle with the number of stations nearby
         setActionBarSubTitle(closestStations.size());
     }
 
     /**
-     * Visualize the closest station over a map location on the GoogleMaps
+     * Visualize the closest station over a map location on the map
      *
      * @param favouritesStations the favourites stations
      */
@@ -898,7 +919,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                                     .fromResource(R.drawable.ic_favorites_map_marker));
                 }
 
-                Marker marker = googleMap.addMarker(stationMarkerOptions);
+                Marker marker = csMap.addMarker(stationMarkerOptions);
 
                 // Associate the marker and the station
                 markersAndStations.put(marker.getId(), station);
@@ -906,8 +927,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         }
 
         // Set a listeners over the markers
-        googleMap.setOnMarkerClickListener(onMarkerClickListener);
-        googleMap.setOnInfoWindowClickListener(onInfoWindowClickListener);
+        csMap.setOnMarkerClickListener(onMarkerClickListener);
+        csMap.setOnInfoWindowClickListener(onInfoWindowClickListener);
     }
 
     /**
@@ -935,7 +956,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 LatLng dest = routePointsList.get(z + 1);
 
                 // Add the point to the map
-                Polyline polyline = googleMap.addPolyline(new PolylineOptions()
+                Polyline polyline = csMap.addPolyline(new PolylineOptions()
                         .add(new LatLng(src.getLatitude(), src.getLongitude()),
                                 new LatLng(dest.getLatitude(), dest.getLongitude()))
                         .width(getResources().getInteger(R.integer.google_map_route_line_width))

@@ -52,6 +52,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
     private VehiclesDataSource vehiclesDatasource;
 
+    private SupportMapFragment mapFragment;
     private ExtensionMap stationMap;
     private FusedLocationProviderClient locationProviderClient;
     private LocationCallback locationCallback;
@@ -76,14 +77,9 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // Register lifecycle observer, request location permissions retrieve the GoogleMap
+        // Register lifecycle observer, request location permissions retrieve the map
+        mapFragment = MapUtils.initializeMap(this, R.id.station_map, savedInstanceState);
         observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
-
-            // Getting reference to the SupportMapFragment of activity layout
-            SupportMapFragment mapFragment = SupportMapFragment.dynamicCast(getSupportFragmentManager()
-                    .findFragmentById(R.id.station_map));
-
-            // Getting GoogleMap object from the fragment
             if (mapFragment != null) {
                 mapFragment.getMapAsync(this);
             }
@@ -91,22 +87,46 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        mapFragment.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mapFragment.onStop();
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
+        mapFragment.onResume();
+
         MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
     }
 
     @Override
     public void onPause() {
+        mapFragment.onPause();
         super.onPause();
+
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mapFragment.onDestroy();
+
         PermissionsUtils.removeLifecycleObserver(observer);
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapFragment.onLowMemory();
     }
 
     /**
@@ -140,8 +160,8 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                 stationBundle.setType(VehicleTypeEnum.NOIMAGE);
             }
 
-            // Initialize GoogleMaps without the current location
-            initGoogleMaps(stationBundle, null);
+            // Initialize the map without the current location
+            initializeMap(stationBundle, null);
 
             // Activate my location, set a location button that center the map
             // over a point and start a LocationChangeListener
@@ -153,7 +173,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
             locationCallback = MapUtils.getLocationCallback((currentLocation) -> {
                 if (currentLocation != null) {
                     stationMap.clear();
-                    initGoogleMaps(stationBundle, currentLocation);
+                    initializeMap(stationBundle, currentLocation);
                 }
                 return null;
             });
@@ -198,24 +218,44 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                 }
                 return true;
             case R.id.action_sm_map_mode_normal:
+                if (stationMap == null) {
+                    ActivityUtils.recreateActivity(context, false);
+                    return true;
+                }
+
                 stationMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_terrain:
+                if (stationMap == null) {
+                    ActivityUtils.recreateActivity(context, false);
+                    return true;
+                }
+
                 stationMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_satellite:
+                if (stationMap == null) {
+                    ActivityUtils.recreateActivity(context, false);
+                    return true;
+                }
+
                 stationMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_sm_map_mode_hybrid:
+                if (stationMap == null) {
+                    ActivityUtils.recreateActivity(context, false);
+                    return true;
+                }
+
                 stationMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
@@ -227,14 +267,13 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
     }
 
     /**
-     * Initialize the GoogleMaps and all of its objects
+     * Initialize the map and all of its objects
      *
      * @param stationBundle   the station received as an extra content from the previous
      *                        activity
      * @param currentLocation the current location
      */
-    private void initGoogleMaps(StationEntity stationBundle,
-                                final Location currentLocation) {
+    private void initializeMap(StationEntity stationBundle, final Location currentLocation) {
         // Check the type of the bundle object
         if (stationBundle instanceof MetroStationEntity) {
             MetroStationEntity metroStation = (MetroStationEntity) stationBundle;
