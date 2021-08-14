@@ -278,7 +278,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH, new Intent());
         finish();
     }

@@ -23,7 +23,6 @@ import bg.znestorov.sofbus24.main.ClosestStationsListDialog;
 import bg.znestorov.sofbus24.main.ClosestStationsMap;
 import bg.znestorov.sofbus24.main.DroidTrans;
 import bg.znestorov.sofbus24.main.DroidTransDialog;
-import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.MapUtils;
@@ -350,8 +349,7 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
                 droidTransIntent.putExtra(Constants.BUNDLE_DROID_TRANS,
                         currentLocation);
 
-                context.startActivityForResult(droidTransIntent,
-                        HomeScreenSelect.REQUEST_CODE_HOME_SCREEN_SELECT);
+                ActivityUtils.getHomeScreenLauncher(context).launch(droidTransIntent);
                 break;
             default:
                 droidTransIntent.putExtra(Constants.BUNDLE_DROID_TRANS,

@@ -127,7 +127,7 @@ public class Constants {
     public static final int FAVOURITES_IMG_BUTTON_ACTION_UP = Color.argb(0,
             155, 155, 155);
     public static final String FAVOURITES_IMAGE_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=1&pitch=1&ll=%s,%s";
-    public static final String FAVOURITES_IMAGE_HIGH_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=1&pitch=-15&ll=%s,%s";
+    public static final String FAVOURITES_IMAGE_HIGH_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=8&pitch=-15&ll=%s,%s";
 
     /**
      * Virtual Boards

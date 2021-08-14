@@ -11,6 +11,11 @@ import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultCaller;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -74,6 +79,31 @@ public class HomeScreenSelect extends FragmentActivity implements
     private boolean isHomeScreenBoxViewVisible;
     private boolean shouldExecuteOnResume;
 
+    /**
+     * Make a launcher for a previously-{@link ActivityResultCaller#registerForActivityResult}
+     * prepared call to start the process of executing an {@link ActivityResultContracts}, before
+     * the activity is created to prevent orientation changes problems.
+     */
+    private final ActivityResultLauncher<Intent> homeScreenLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    shouldExecuteOnResume = false;
+
+                    switch (result.getResultCode()) {
+                        case RESULT_CODE_ACTIVITY_NEW:
+                            ActivityTracker.selectedHomeScreen(context);
+                        case RESULT_CODE_ACTIVITY_RESTART:
+                            processAppStartUp(null, false);
+                            break;
+                        case RESULT_CODE_ACTIVITY_FINISH:
+                            finish();
+                            break;
+                    }
+                }
+            });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,26 +143,6 @@ public class HomeScreenSelect extends FragmentActivity implements
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode,
-                                    Intent intent) {
-        super.onActivityResult(requestCode, resultCode, intent);
-        shouldExecuteOnResume = false;
-
-        if (requestCode == REQUEST_CODE_HOME_SCREEN_SELECT) {
-            switch (resultCode) {
-                case RESULT_CODE_ACTIVITY_NEW:
-                    ActivityTracker.selectedHomeScreen(context);
-                case RESULT_CODE_ACTIVITY_RESTART:
-                    processAppStartUp(null, false);
-                    break;
-                case RESULT_CODE_ACTIVITY_FINISH:
-                    finish();
-                    break;
-            }
-        }
-    }
-
-    @Override
     protected void onSaveInstanceState(Bundle outState) {
 
         isHomeScreenBoxViewVisible = homeScreenBoxView == null || homeScreenBoxView
@@ -148,6 +158,17 @@ public class HomeScreenSelect extends FragmentActivity implements
     @Override
     public void onBackPressed() {
         ActivityUtils.closeApplication(context);
+    }
+
+    /**
+     * Get a launcher for a previously-{@link ActivityResultCaller#registerForActivityResult}
+     * prepared call to start the process of executing an {@link ActivityResultContracts},
+     * associated with the main screen.
+     *
+     * @return {@link ActivityResultLauncher}, associated with the main screen
+     */
+    public ActivityResultLauncher<Intent> getHomeScreenLauncher() {
+        return homeScreenLauncher;
     }
 
     /**
@@ -339,7 +360,7 @@ public class HomeScreenSelect extends FragmentActivity implements
      */
     private void startSofbus24() {
         Intent sofbus24Intent = new Intent(context, Sofbus24.class);
-        startActivityForResult(sofbus24Intent, REQUEST_CODE_HOME_SCREEN_SELECT);
+        getHomeScreenLauncher().launch(sofbus24Intent);
     }
 
     /**
@@ -582,5 +603,4 @@ public class HomeScreenSelect extends FragmentActivity implements
             new LoadStartingData(context).execute();
         }
     }
-
 }

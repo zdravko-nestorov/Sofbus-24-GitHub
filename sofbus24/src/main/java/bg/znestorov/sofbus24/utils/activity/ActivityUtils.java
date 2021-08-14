@@ -40,6 +40,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCaller;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -93,6 +96,19 @@ import bg.znestorov.sofbus24.utils.Utils;
 public class ActivityUtils {
 
     /**
+     * Get a launcher for a previously-{@link ActivityResultCaller#registerForActivityResult}
+     * prepared call to start the process of executing an {@link ActivityResultContracts},
+     * associated with the main screen.
+     *
+     * @return {@link ActivityResultLauncher}, associated with the main screen
+     */
+    public static ActivityResultLauncher<Intent> getHomeScreenLauncher(Activity context) {
+        HomeScreenSelect hssContext = ((GlobalEntity) context.getApplicationContext())
+                .getHssContext();
+        return hssContext.getHomeScreenLauncher();
+    }
+
+    /**
      * Cause this Activity to be recreated with a new instance. This results in essentially
      * the same flow as when the Activity is created due to a configuration change - the
      * current instance will go through its lifecycle.
@@ -104,10 +120,7 @@ public class ActivityUtils {
         context.finish();
         context.overridePendingTransition(0, 0);
         if (isHomeScreen) {
-            HomeScreenSelect hssContext = ((GlobalEntity) context.getApplicationContext())
-                    .getHssContext();
-            hssContext.startActivityForResult(context.getIntent(),
-                    HomeScreenSelect.REQUEST_CODE_HOME_SCREEN_SELECT);
+            getHomeScreenLauncher(context).launch(context.getIntent());
         } else {
             context.startActivity(context.getIntent());
         }
@@ -927,8 +940,7 @@ public class ActivityUtils {
                 Intent closestStationsMapIntent = new Intent(context,
                         ClosestStationsMap.class);
                 closestStationsMapIntent.putExtras(bundle);
-                context.startActivityForResult(closestStationsMapIntent,
-                        HomeScreenSelect.REQUEST_CODE_HOME_SCREEN_SELECT);
+                getHomeScreenLauncher(context).launch(closestStationsMapIntent);
             } else {
                 ProgressDialog progressDialog = new ProgressDialog(context);
                 progressDialog.setMessage(context
