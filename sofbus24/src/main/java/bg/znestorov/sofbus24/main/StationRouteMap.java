@@ -249,6 +249,9 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         MapUtils.hideGmsUnsupportedMapTypes(menu, R.id.action_sm_map_mode_satellite,
                 R.id.action_sm_map_mode_hybrid);
 
+        // Hide the HMS unsupported GoogleStreetView
+        MapUtils.hideGoogleStreetView(menu, R.id.action_sm_google_street_view);
+
         return super.onPrepareOptionsMenu(menu);
     }
 

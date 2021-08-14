@@ -47,6 +47,7 @@ import bg.znestorov.sofbus24.main.StationMap;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
 import bg.znestorov.sofbus24.utils.Utils;
@@ -624,6 +625,9 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
                         android.view.Menu menu = popup.getMenu();
                         popup.getMenuInflater().inflate(
                                 R.menu.activity_favourites_context_menu, menu);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(menu, R.id.menu_favourites_google_street_view);
 
                         // Force the context menu to show icons
                         try {

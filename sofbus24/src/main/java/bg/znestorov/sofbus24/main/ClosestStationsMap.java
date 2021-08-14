@@ -536,6 +536,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         MapUtils.hideGmsUnsupportedMapTypes(menu, R.id.action_gm_map_mode_satellite,
                 R.id.action_gm_map_mode_hybrid);
 
+        // Hide the HMS unsupported GoogleStreetView
+        MapUtils.hideGoogleStreetView(menu, R.id.action_gm_map_gsv);
+
         return super.onPrepareOptionsMenu(menu);
     }
 

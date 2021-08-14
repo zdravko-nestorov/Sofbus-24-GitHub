@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
@@ -384,5 +386,36 @@ public class MapUtils {
         for (Integer menuItemId : menuItemIds) {
             menu.findItem(menuItemId).setVisible(false);
         }
+    }
+
+    /**
+     * Hide the HMS unsupported GoogleStreetView.
+     *
+     * @param menu        the options menu as last shown
+     * @param menuItemIds menu item identifiers
+     */
+    public static void hideGoogleStreetView(Menu menu, Integer... menuItemIds) {
+        if (HmsUtils.isGms() || menu == null || Utils.isEmpty(menuItemIds)) {
+            return;
+        }
+
+        // Get the menu item with a particular identifier and hide it
+        for (Integer menuItemId : menuItemIds) {
+            menu.findItem(menuItemId).setVisible(false);
+        }
+    }
+
+    /**
+     * Hide the HMS unsupported GoogleStreetView.
+     *
+     * @param streetViewButton GoogleStreetView button
+     */
+    public static void hideGoogleStreetView(ImageButton streetViewButton) {
+        if (HmsUtils.isGms() || streetViewButton == null) {
+            return;
+        }
+
+        // Hide the GoogleStreetView button
+        streetViewButton.setVisibility(View.INVISIBLE);
     }
 }

@@ -31,6 +31,7 @@ import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
@@ -212,6 +213,7 @@ public class VirtualBoardsTime extends FragmentActivity {
      * GoogleStreetView button
      */
     private void actionsOverStreetViewFields() {
+        // Add some station meta information
         vbTimeStationCaption.setText(Html.fromHtml(getStationCaption()));
         vbTimeCurrentTime.setText(String.format(
                 getString(R.string.vb_time_current_time),
@@ -366,22 +368,29 @@ public class VirtualBoardsTime extends FragmentActivity {
                         vbTimeStreetViewLoading.setVisibility(View.VISIBLE);
                         vbTimeBar.setVisibility(View.GONE);
                         vbTimeStreetViewButton.setVisibility(View.GONE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(vbTimeStreetViewButton);
                     }
 
                     @Override
-                    public void onLoadingFailed(String imageUri, View view,
-                                                FailReason failReason) {
+                    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
                         vbTimeStreetViewLoading.setVisibility(View.GONE);
                         vbTimeBar.setVisibility(View.VISIBLE);
                         vbTimeStreetViewButton.setVisibility(View.VISIBLE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(vbTimeStreetViewButton);
                     }
 
                     @Override
-                    public void onLoadingComplete(String imageUri, View view,
-                                                  Bitmap loadedImage) {
+                    public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                         vbTimeStreetViewLoading.setVisibility(View.GONE);
                         vbTimeBar.setVisibility(View.VISIBLE);
                         vbTimeStreetViewButton.setVisibility(View.VISIBLE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(vbTimeStreetViewButton);
                     }
                 });
     }

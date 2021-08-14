@@ -169,6 +169,7 @@ public class ClosestStationsList extends FragmentActivity {
      * Set the onClickListener over the GoogleStreetView button
      */
     private void actionsOverStreetViewFields() {
+        // Add a click listener over the google street view image button
         streetViewButton
                 .setOnClickListener(new android.view.View.OnClickListener() {
                     @Override
@@ -274,20 +275,27 @@ public class ClosestStationsList extends FragmentActivity {
                     public void onLoadingStarted(String imageUri, View view) {
                         streetViewLoading.setVisibility(View.VISIBLE);
                         streetViewButton.setVisibility(View.GONE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(streetViewButton);
                     }
 
                     @Override
-                    public void onLoadingFailed(String imageUri, View view,
-                                                FailReason failReason) {
+                    public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
                         streetViewLoading.setVisibility(View.GONE);
                         streetViewButton.setVisibility(View.VISIBLE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(streetViewButton);
                     }
 
                     @Override
-                    public void onLoadingComplete(String imageUri, View view,
-                                                  Bitmap loadedImage) {
+                    public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                         streetViewLoading.setVisibility(View.GONE);
                         streetViewButton.setVisibility(View.VISIBLE);
+
+                        // Hide the HMS unsupported GoogleStreetView
+                        MapUtils.hideGoogleStreetView(streetViewButton);
                     }
                 });
     }
