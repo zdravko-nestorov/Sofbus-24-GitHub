@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -29,6 +30,8 @@ import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.Preferences;
 import bg.znestorov.sofbus24.main.PreferencesDialog;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
@@ -44,6 +47,7 @@ public class NavDrawerHelper {
     private final ArrayList<String> navigationItems;
 
     private final DrawerItemClickListener drawerItemClickListener;
+    private final ActivityResultLauncher<String[]> permissionLauncher;
 
     public NavDrawerHelper(FragmentActivity context, Fragment fragment,
                            DrawerLayout mDrawerLayout, ListView mDrawerList,
@@ -58,6 +62,8 @@ public class NavDrawerHelper {
         this.navigationItems = navigationItems;
 
         this.drawerItemClickListener = new DrawerItemClickListener();
+        this.permissionLauncher = PermissionsUtils.createPermissionLauncher(context,
+                AppPermissions.EXTERNAL_STORAGE, this::startChooseBackupDialog);
     }
 
     /**
@@ -155,8 +161,8 @@ public class NavDrawerHelper {
                 }
                 break;
             case 10:
-                DialogFragment chooseBackupDialog = ChooseBackupDialog.newInstance();
-                chooseBackupDialog.show(fragmentManager, "dialogFragment");
+                PermissionsUtils.launchPermissionLauncher(context, AppPermissions.EXTERNAL_STORAGE,
+                        permissionLauncher);
                 break;
             case 11:
                 context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH);
@@ -224,6 +230,23 @@ public class NavDrawerHelper {
                 retrieveCurrentLocation,
                 RetrieveCurrentLocationTimeout.TIMEOUT_CS_LIST);
         (new Thread(retrieveCurrentLocationTimeout)).start();
+    }
+
+    /**
+     * Start the ChooseBackupDialog dialog
+     */
+    private void startChooseBackupDialog() {
+        // Get the appropriate fragment manager (in case of Activity or a Fragment)
+        FragmentManager fragmentManager;
+        if (fragment == null) {
+            fragmentManager = context.getSupportFragmentManager();
+        } else {
+            fragmentManager = fragment.getChildFragmentManager();
+        }
+
+        // Start the "Choose Backup Dialog"
+        DialogFragment chooseBackupDialog = ChooseBackupDialog.newInstance();
+        chooseBackupDialog.show(fragmentManager, "dialogFragment");
     }
 
     public DrawerItemClickListener getDrawerItemClickListener() {

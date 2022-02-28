@@ -6,7 +6,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
-import android.provider.Settings;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
@@ -47,14 +46,10 @@ public class MapUtils {
      * @param context the current activity context
      * @return if any of the location services is available
      */
-    @SuppressWarnings("deprecation")
     public static boolean areLocationServicesAvailable(Context context) {
-        String locationProviders = Settings.Secure.getString(
-                context.getContentResolver(),
-                Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
-        return locationProviders
-                .contains(LocationManager.NETWORK_PROVIDER)
-                || locationProviders.contains(LocationManager.GPS_PROVIDER);
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
     /**

@@ -72,7 +72,16 @@ public class PermissionsUtils {
         return launcher;
     }
 
-    private static ActivityResultLauncher<String[]> createPermissionLauncher(
+    /**
+     * Create an {@link ActivityResultContract} to {@link Activity#requestPermissions
+     * request permissions}.
+     *
+     * @param activity       current activity
+     * @param appPermissions permissions to grant
+     * @param action         action to execute after the permissions are granted
+     * @return {@link ActivityResultLauncher}
+     */
+    public static ActivityResultLauncher<String[]> createPermissionLauncher(
             ComponentActivity activity, AppPermissions appPermissions, Runnable action) {
 
         // Register multiple permissions request for activity result
@@ -83,12 +92,20 @@ public class PermissionsUtils {
                     if (checkPermissions(appPermissions.getPermissions(), permissions)) {
                         onPermissionGranted(action);
                     } else {
-                        onPermissionDenied(activity);
+                        onPermissionDenied(activity, appPermissions);
                     }
                 });
     }
 
-    private static void launchPermissionLauncher(
+    /**
+     * Launch an {@link ActivityResultContract} to {@link Activity#requestPermissions
+     * request permissions}.
+     *
+     * @param activity       current activity
+     * @param appPermissions permissions to grant
+     * @param launcher       {@link ActivityResultLauncher}
+     */
+    public static void launchPermissionLauncher(
             ComponentActivity activity, AppPermissions appPermissions,
             ActivityResultLauncher<String[]> launcher) {
 
@@ -122,8 +139,13 @@ public class PermissionsUtils {
         }
     }
 
-    private static void onPermissionDenied(ComponentActivity activity) {
-        // Finish this activity as well as all activities immediately below it
-        activity.finishAffinity();
+    private static void onPermissionDenied(ComponentActivity activity,
+                                           AppPermissions appPermissions) {
+
+        // In case of denied "HOME_SCREEN" permissions, finish this activity as well as all
+        // activities immediately below it
+        if (appPermissions == AppPermissions.HOME_SCREEN) {
+            activity.finishAffinity();
+        }
     }
 }
