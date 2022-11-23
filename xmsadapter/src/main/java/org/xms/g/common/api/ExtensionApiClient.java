@@ -1707,7 +1707,7 @@ public abstract class ExtensionApiClient extends org.xms.g.utils.XObject {
             throw new java.lang.RuntimeException("Stub");
         }
 
-        public com.huawei.hms.core.aidl.d getService() {
+        public com.huawei.hms.core.aidl.IAIDLInvoke getService() {
             throw new java.lang.RuntimeException("Stub");
         }
 

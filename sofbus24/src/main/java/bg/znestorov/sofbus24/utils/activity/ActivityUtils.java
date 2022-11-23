@@ -301,10 +301,13 @@ public class ActivityUtils {
                         // restarted after System.exit(0) was called. We use an
                         // AlarmManager to call this intent in 100ms
                         int mPendingIntentId = 223344;
+                        int mPendingIntentFlag =  Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                                ? PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+                                : PendingIntent.FLAG_UPDATE_CURRENT;
                         PendingIntent mPendingIntent = PendingIntent
                                 .getActivity(context, mPendingIntentId,
                                         mStartActivity,
-                                        PendingIntent.FLAG_CANCEL_CURRENT);
+                                        mPendingIntentFlag);
                         AlarmManager mgr = (AlarmManager) context
                                 .getSystemService(Context.ALARM_SERVICE);
                         mgr.set(AlarmManager.RTC,

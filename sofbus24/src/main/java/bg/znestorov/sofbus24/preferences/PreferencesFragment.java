@@ -112,8 +112,12 @@ public class PreferencesFragment extends PreferenceFragment implements
             globalContext.setHasToRestart(true);
         }
 
-        if (HmsUtils.isGms()
-                && key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
+        // Disable Google Analytics for HMS and GMS (not working with Android Target SDK >30)
+        if (HmsUtils.isHms() || HmsUtils.isGms()) {
+            return;
+        }
+
+        if (key.equals(Constants.PREFERENCE_KEY_GOOGLE_ANALYTICS)) {
             GoogleAnalytics
                     .getInstance(globalContext)
                     .setAppOptOut(

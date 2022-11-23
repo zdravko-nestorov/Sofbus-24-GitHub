@@ -147,7 +147,8 @@ public class GlobalEntity extends Application {
      * @return the tracker
      */
     public synchronized Tracker getTracker(TrackerName trackerId) {
-        if (HmsUtils.isHms()) {
+        // Disable Google Analytics for HMS and GMS (not working with Android Target SDK >30)
+        if (HmsUtils.isHms() || HmsUtils.isGms()) {
             return null;
         }
 

@@ -22,10 +22,12 @@ import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.HtmlResultCodesEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
+import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.VirtualBoardsTime;
 import bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog;
+import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -83,10 +85,20 @@ public class RetrieveVirtualBoardsApi {
         // show only the searched string, otherwise - the station caption)
         Spanned progressDialogMsg = getToastMsg(context.getString(R.string.vb_time_retrieve_info));
 
-        // Making HttpRequest and showing a progress dialog if needed
+        // Making HttpRequest and showing a progress dialog if needed (based on station type)
         ProgressDialog progressDialog = createProgressDialog(progressDialogMsg);
-        RetrieveSumcInformation retrieveSumcInformation = new RetrieveSumcInformation(progressDialog);
-        retrieveSumcInformation.execute();
+        if (station != null && station.getType() != null
+                && (station.getType() == VehicleTypeEnum.METRO
+                || station.getType() == VehicleTypeEnum.METRO1
+                || station.getType() == VehicleTypeEnum.METRO2)) {
+            RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(context,
+                    progressDialog, station);
+            retrieveMetroSchedule.execute();
+        } else {
+            RetrieveSumcInformation retrieveSumcInformation = new RetrieveSumcInformation(
+                    progressDialog);
+            retrieveSumcInformation.execute();
+        }
     }
 
     /**

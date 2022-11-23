@@ -3,12 +3,12 @@ apply plugin: 'com.huawei.agconnect'
 apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
     buildToolsVersion '30.0.3'
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 32
     }
 
     buildTypes {

@@ -411,6 +411,10 @@ public class HomeScreenSelect extends FragmentActivity implements
      * Enable or disable the GoogleAnalytics
      */
     private void enableDisableStatistics() {
+        // Disable Google Analytics for HMS and GMS (not working with Android Target SDK >30)
+        if (HmsUtils.isHms() || HmsUtils.isGms()) {
+            return;
+        }
 
         boolean googleAnalytics = PreferenceManager
                 .getDefaultSharedPreferences(context).getBoolean(
@@ -419,10 +423,7 @@ public class HomeScreenSelect extends FragmentActivity implements
 
         // Set the opposite value of the user choice to the AppOptOut (so
         // enable/disable automatic tracking)
-        if (HmsUtils.isGms()) {
-            GoogleAnalytics.getInstance(getApplicationContext()).setAppOptOut(
-                    !googleAnalytics);
-        }
+        GoogleAnalytics.getInstance(getApplicationContext()).setAppOptOut(!googleAnalytics);
     }
 
     @Override

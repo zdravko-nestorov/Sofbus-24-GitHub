@@ -1,10 +1,13 @@
 package org.xms.g.analytics;
 
+import android.annotation.SuppressLint;
+
 /**
  * A JobService used by Analytics.<br/>
  * HMS api does not provide in this Class. More details about the related GMS api can be seenin the reference below.<br/>
  * com.google.android.gms.analytics.AnalyticsJobService: A JobService used by Google Analytics. It will only be used when the service is correctly declared in AndroidManifest.xml.<br/>
  */
+@SuppressLint("NewApi")
 public class AnalyticsJobService extends android.app.job.JobService implements org.xms.g.utils.XGettable {
     public java.lang.Object gInstance;
     public java.lang.Object hInstance;

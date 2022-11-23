@@ -1,5 +1,7 @@
 package org.xms.g.maps;
 
+import android.annotation.SuppressLint;
+
 /**
  * This is the main class of the Maps SDK for Android and is the entry point for all methods related to the map.<br/>
  * Combination of com.huawei.hms.maps.HuaweiMap and com.google.android.gms.maps.GoogleMap.<br/>
@@ -605,6 +607,7 @@ public final class ExtensionMap extends org.xms.g.utils.XObject {
      *
      * @param param0 true to enable; false to disable
      */
+    @SuppressLint("MissingPermission")
     public final void setMyLocationEnabled(boolean param0) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.maps.HuaweiMap) this.getHInstance()).setMyLocationEnabled(param0)");

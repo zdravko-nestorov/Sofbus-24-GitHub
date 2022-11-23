@@ -1,5 +1,7 @@
 package org.xms.g.location;
 
+import android.annotation.SuppressLint;
+
 /**
  * The main entry point for interacting with the fused location provider.<br/>
  * Combination of com.huawei.hms.location.FusedLocationProviderClient and com.google.android.gms.location.FusedLocationProviderClient.<br/>
@@ -105,6 +107,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      *
      * @return The task
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<android.location.Location> getLastLocation() {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).getLastLocation()");
@@ -126,6 +129,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      *
      * @return The task
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<org.xms.g.location.LocationAvailability> getLocationAvailability() {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).getLocationAvailability()");
@@ -195,6 +199,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      * @return A Task for the call, check isSuccessful() to determine if it was successful
      * @throws java.lang.IllegalStateException If looper is null and this method is executed in a thread that has not called Looper.prepare()
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<java.lang.Void> requestLocationUpdates(org.xms.g.location.LocationRequest param0, org.xms.g.location.LocationCallback param1, android.os.Looper param2) throws java.lang.IllegalStateException {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).requestLocationUpdates(((com.huawei.hms.location.LocationRequest) ((param0) == null ? null : (param0.getHInstance()))), ((com.huawei.hms.location.LocationCallback) ((param1) == null ? null : (param1.getHInstance()))), param2)");
@@ -218,6 +223,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      * @param param1 A pending intent to be sent for each location update
      * @return A Task for the call, check isSuccessful() to determine if it was successful
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<java.lang.Void> requestLocationUpdates(org.xms.g.location.LocationRequest param0, android.app.PendingIntent param1) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).requestLocationUpdates(((com.huawei.hms.location.LocationRequest) ((param0) == null ? null : (param0.getHInstance()))), param1)");
@@ -240,6 +246,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      * @param param0 The mock location. Must have a minimum number of fields set to be considered a valild location, as per documentation in the Location class
      * @return A Task for the call, check isSuccessful() to determine if it was successful
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<java.lang.Void> setMockLocation(android.location.Location param0) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).setMockLocation(param0)");
@@ -262,6 +269,7 @@ public class FusedLocationProviderClient extends org.xms.g.common.api.ExtensionA
      * @param param0 If true the location provider will be set to mock mode. If false it will be returned to its normal state
      * @return A Task for the call, check isSuccessful() to determine if it was successful
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<java.lang.Void> setMockMode(boolean param0) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.FusedLocationProviderClient) this.getHInstance()).setMockMode(param0)");

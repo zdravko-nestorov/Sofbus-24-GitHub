@@ -1,5 +1,7 @@
 package org.xms.g.location;
 
+import android.annotation.SuppressLint;
+
 /**
  * The main entry point for interacting with the geofencing APIs.<br/>
  * Combination of com.huawei.hms.location.GeofenceService and com.google.android.gms.location.GeofencingClient.<br/>
@@ -67,6 +69,7 @@ public class GeofencingClient extends org.xms.g.common.api.ExtensionApi<org.xms.
      * @param param1 A pending intent that will be used to generate an intent when matched geofence transition is observed
      * @return The task
      */
+    @SuppressLint("MissingPermission")
     public org.xms.g.tasks.Task<java.lang.Void> addGeofences(org.xms.g.location.GeofencingRequest param0, android.app.PendingIntent param1) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "((com.huawei.hms.location.GeofenceService) this.getHInstance()).createGeofenceList(((com.huawei.hms.location.GeofenceRequest) ((param0) == null ? null : (param0.getHInstance()))), param1)");

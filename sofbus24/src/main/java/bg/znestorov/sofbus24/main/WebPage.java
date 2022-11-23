@@ -285,7 +285,8 @@ public class WebPage extends Activity {
                 }
                 break;
             default:
-                vehicleNumber = "1";
+                // Default metro number in SofiaTraffic
+                vehicleNumber = "M1-M2";
                 break;
         }
 

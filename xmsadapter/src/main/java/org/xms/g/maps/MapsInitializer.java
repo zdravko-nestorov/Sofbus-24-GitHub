@@ -32,7 +32,8 @@ public final class MapsInitializer extends org.xms.g.utils.XObject {
     public static final int initialize(android.content.Context param0) {
         if (org.xms.g.utils.GlobalEnvSetting.isHms()) {
             org.xms.g.utils.XmsLog.d("XMSRouter", "com.huawei.hms.maps.MapsInitializer.initialize(param0)");
-            return com.huawei.hms.maps.MapsInitializer.initialize(param0);
+            com.huawei.hms.maps.MapsInitializer.initialize(param0);
+            return 0;
         } else {
             org.xms.g.utils.XmsLog.d("XMSRouter", "com.google.android.gms.maps.MapsInitializer.initialize(param0)");
             return com.google.android.gms.maps.MapsInitializer.initialize(param0);

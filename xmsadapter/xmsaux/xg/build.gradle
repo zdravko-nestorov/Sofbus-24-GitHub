@@ -1,15 +1,12 @@
 apply plugin: 'com.android.application'
 apply from: '../../scripts/productFlavor.gradle'
 apply from: '../scripts/gen-dex.gradle'
+
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 30
-    }
-    compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        targetSdkVersion 32
     }
 }
 
