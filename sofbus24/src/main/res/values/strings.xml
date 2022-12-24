@@ -6,7 +6,7 @@
     <string name="app_sofbus24">Софбус 24</string>
     <string name="app_navigation_drawer_open" translatable="false">Отвори</string>
     <string name="app_navigation_drawer_close" translatable="false">Затвори</string>
-    <string name="app_img_empty_content_description" translatable="false" />
+    <string name="app_empty_content" translatable="false" />
     <string name="app_button_ok">OK</string>
     <string name="app_button_save">Запази</string>
     <string name="app_button_cancel">Отказ</string>
@@ -48,6 +48,7 @@
     <string name="app_distance_meters">м</string>
     <string name="app_distance_kilometers">км&#160;</string>
     <string name="app_remaining_minutes">м</string>
+    <string name="app_remaining_minutes_blind">мин</string>
     <string name="app_remaining_hours">ч</string>
     <string name="app_toast_add_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
@@ -107,7 +108,8 @@
     <string name="action_cs_list_refresh">Обнови</string>
     <string name="action_cs_list_map">Карта</string>
     <!-- Virtual Boards Time -->
-    <string name="action_vb_time_favourites">Добави в Любими</string>
+    <string name="action_vb_time_add_favourites">Добави в Любими</string>
+    <string name="action_vb_time_remove_favourites">Премахни от Любими</string>
     <string name="action_vb_time_refresh">Обнови</string>
     <string name="action_vb_time_map">Карта</string>
     <!-- Public Transport -->
@@ -130,6 +132,9 @@
 
     <!-- Context Menu -->
     <!-- Favourites -->
+    <string name="menu_fav_toggle_title">Превключване</string>
+    <string name="menu_fav_sort_title">Сортиране</string>
+    <string name="menu_fav_settings_title">Настройки</string>
     <string name="menu_fav_rename">Преименувай</string>
     <string name="menu_fav_remove">Премахни</string>
     <string name="menu_fav_google_maps">Карта</string>
@@ -184,6 +189,8 @@
     <string name="pref_category_visual_fav_summary">Визуализиране на "любими" чрез Google Street View (начален екран)</string>
     <string name="pref_category_visual_hs_tabs_title">Начален екран</string>
     <string name="pref_category_visual_hs_tabs_summary">Визуализиране на табовете на началния екран (изображение и/или текст)</string>
+    <string name="pref_category_visual_blind_view_title">Незрящи хора</string>
+    <string name="pref_category_visual_blind_view_summary">Визуализиране на допълнителна информация за незрящи хора</string>
     <string name="pref_category_stations">ИНФОРМАЦИЯ ЗА СПИРКИ</string>
     <string name="pref_category_stations_timeType_title">Извлечена информация</string>
     <string name="pref_category_stations_timeType_summary">Оставащо време или времена на пристигане</string>

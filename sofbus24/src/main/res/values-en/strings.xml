@@ -44,6 +44,7 @@
     <string name="app_distance_meters">m</string>
     <string name="app_distance_kilometers">km&#160;</string>
     <string name="app_remaining_minutes">m</string>
+    <string name="app_remaining_minutes_blind">min</string>
     <string name="app_remaining_hours">h</string>
     <string name="app_toast_add_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully added to <b>Favorites</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully removed from <b>Favorites</b>.]]></string>
@@ -103,7 +104,8 @@
     <string name="action_cs_list_refresh">Refresh</string>
     <string name="action_cs_list_map">Map</string>
     <!-- Virtual Boards Time -->
-    <string name="action_vb_time_favourites">Add to Favorites</string>
+    <string name="action_vb_time_add_favourites">Add to Favorites</string>
+    <string name="action_vb_time_remove_favourites">Remove from Favorites</string>
     <string name="action_vb_time_refresh">Refresh</string>
     <string name="action_vb_time_map">Map</string>
     <!-- Public Transport -->
@@ -126,6 +128,9 @@
 
     <!-- Context Menu -->
     <!-- Favourites -->
+    <string name="menu_fav_toggle_title">Toggle</string>
+    <string name="menu_fav_sort_title">Sort</string>
+    <string name="menu_fav_settings_title">Settings</string>
     <string name="menu_fav_rename">Rename</string>
     <string name="menu_fav_remove">Remove</string>
     <string name="menu_fav_google_maps">Map</string>
@@ -180,6 +185,8 @@
     <string name="pref_category_visual_fav_summary">Visualize the favorites stations with a Google Street View image shown (home screen)</string>
     <string name="pref_category_visual_hs_tabs_title">Home screen</string>
     <string name="pref_category_visual_hs_tabs_summary">Preview of the home screen tabs (icon and/or title)</string>
+    <string name="pref_category_visual_blind_view_title">Blind people</string>
+    <string name="pref_category_visual_blind_view_summary">Visualize additional information for blind people</string>
     <string name="pref_category_stations">STATION INFORMATION</string>
     <string name="pref_category_stations_timeType_title">Extracted information</string>
     <string name="pref_category_stations_timeType_summary">Remaining time or time of arrival</string>

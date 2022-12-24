@@ -22,7 +22,7 @@
             android:id="@+id/metro_item_station_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/app_img_empty_content_description" />
+            android:contentDescription="@string/app_empty_content" />
     </LinearLayout>
 
     <TextView
@@ -63,7 +63,7 @@
             android:layout_height="20sp"
             android:adjustViewBounds="true"
             android:background="@drawable/selectable_item_background"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:scaleType="fitXY"
             android:src="@drawable/context_menu_metro" />
     </LinearLayout>

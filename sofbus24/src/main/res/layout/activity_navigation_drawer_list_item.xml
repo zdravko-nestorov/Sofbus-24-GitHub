@@ -26,7 +26,7 @@
             android:id="@+id/navigation_drawer_list_img"
             android:layout_width="27dp"
             android:layout_height="27dp"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:scaleType="fitCenter" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:scaleType="centerInside"
             android:visibility="gone" />
 

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/app_img_empty_content_description"
+        android:contentDescription="@string/app_empty_content"
         android:scaleType="centerCrop"
         android:src="@drawable/bkg_home_screen_select" />
 
@@ -107,7 +107,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/btn_home_screen_confirm_selector"
-                    android:contentDescription="@string/app_img_empty_content_description"
+                    android:contentDescription="@string/app_empty_content"
                     android:visibility="gone" />
             </LinearLayout>
         </LinearLayout>

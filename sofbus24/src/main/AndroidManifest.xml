@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="42"
-    android:versionName="4.0.2">
+    android:versionCode="43"
+    android:versionName="4.0.3">
 
     <!-- GOOGLE MAPS, INTERNET AND LOCATION PERMISSIONS -->
     <!-- Maps API needs OpenGL ES 2.0. -->

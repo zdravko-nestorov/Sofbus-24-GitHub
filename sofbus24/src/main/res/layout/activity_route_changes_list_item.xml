@@ -32,7 +32,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginRight="7dp"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_route_changes_valid_from" />
 
@@ -58,7 +58,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginRight="7dp"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_route_changes_valid_to" />
 

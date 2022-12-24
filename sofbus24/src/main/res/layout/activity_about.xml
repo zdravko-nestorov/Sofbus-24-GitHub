@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="15sp"
-        android:contentDescription="@string/app_img_empty_content_description"
+        android:contentDescription="@string/app_empty_content"
         android:minWidth="@dimen/about_image_width"
         android:minHeight="@dimen/about_image_height"
         android:src="@drawable/ic_about" />

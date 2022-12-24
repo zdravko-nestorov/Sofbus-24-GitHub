@@ -436,26 +436,22 @@ public class Utils {
 
             if ("".equals(differenceArr[0]) || "0".equals(differenceArr[0])) {
                 if (differenceArr[1].length() == 0) {
-                    differenceArr[1] = "0"
-                            + context.getString(R.string.app_remaining_minutes);
+                    differenceArr[1] = "0" + getRemainingMinutesAbbr(context);
                 } else {
-                    differenceArr[1] = differenceArr[1]
-                            + context.getString(R.string.app_remaining_minutes);
+                    differenceArr[1] = differenceArr[1] + getRemainingMinutesAbbr(context);
                 }
 
-                diff = "~" + differenceArr[1];
+                diff = getRemainingMinutesSep(context) + differenceArr[1];
             } else {
                 differenceArr[0] = differenceArr[0]
                         + context.getString(R.string.app_remaining_hours);
                 if (differenceArr[1].length() == 0) {
-                    differenceArr[1] = "0"
-                            + context.getString(R.string.app_remaining_minutes);
+                    differenceArr[1] = "0" + getRemainingMinutesAbbr(context);
                 } else {
-                    differenceArr[1] = differenceArr[1]
-                            + context.getString(R.string.app_remaining_minutes);
+                    differenceArr[1] = differenceArr[1] + getRemainingMinutesAbbr(context);
                 }
 
-                diff = "~" + differenceArr[0] + " " + differenceArr[1];
+                diff = getRemainingMinutesSep(context) + differenceArr[0] + " " + differenceArr[1];
             }
         }
 
@@ -500,13 +496,15 @@ public class Utils {
         long hour = (millis / (1000 * 60 * 60)) % 24;
 
         if (hour > 0) {
-            remainingTime = "~" + hour
-                    + context.getString(R.string.app_remaining_minutes) + " "
+            remainingTime = getRemainingMinutesSep(context)
+                    + hour
+                    + getRemainingMinutesAbbr(context) + " "
                     + minutes
-                    + context.getString(R.string.app_remaining_minutes);
+                    + getRemainingMinutesAbbr(context);
         } else {
-            remainingTime = "~" + minutes
-                    + context.getString(R.string.app_remaining_minutes);
+            remainingTime = getRemainingMinutesSep(context)
+                    + minutes
+                    + getRemainingMinutesAbbr(context);
         }
 
         return remainingTime;
@@ -1799,4 +1797,19 @@ public class Utils {
         }
     }
 
+    private static String getRemainingMinutesSep(Activity context) {
+        return isBlindView(context) ? "" : "~";
+    }
+
+    private static String getRemainingMinutesAbbr(Activity context) {
+        return isBlindView(context)
+                ? context.getString(R.string.app_remaining_minutes_blind)
+                : context.getString(R.string.app_remaining_minutes);
+    }
+
+    public static boolean isBlindView(Activity context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
+                        Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+    }
 }

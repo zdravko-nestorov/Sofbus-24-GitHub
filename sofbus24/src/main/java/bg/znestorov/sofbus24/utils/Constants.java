@@ -73,6 +73,8 @@ public class Constants {
     public static final String PREFERENCE_KEY_TABS_TYPE = "tabsType";
     public static final String PREFERENCE_DEFAULT_VALUE_TABS_TYPE = "tabsTypeIcon";
     public static final String PREFERENCE_DEFAULT_VALUE_TABS_TYPE_TITLE = "tabsTypeTitle";
+    public static final String PREFERENCE_KEY_BLIND_VIEW = "blindView";
+    public static final boolean PREFERENCE_DEFAULT_VALUE_BLIND_VIEW = false;
     public static final String PREFERENCE_KEY_TIME_TYPE = "timeType";
     public static final String PREFERENCE_DEFAULT_VALUE_TIME_TYPE = "timeRemaining";
     public static final String PREFERENCE_DEFAULT_VALUE_TIME_TYPE_ARRIVAL = "timeArrival";

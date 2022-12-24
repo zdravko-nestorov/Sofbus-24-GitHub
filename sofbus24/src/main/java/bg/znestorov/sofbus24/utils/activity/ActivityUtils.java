@@ -339,10 +339,10 @@ public class ActivityUtils {
                                                ImageView favouritesImageView) {
         // Check if the station is added to the favorites database
         favouritesDatasource.open();
-        boolean isStationFavoruite = favouritesDatasource.getStation(station) != null;
+        boolean isStationFavourite = favouritesDatasource.getStation(station) != null;
         favouritesDatasource.close();
 
-        if (!isStationFavoruite) {
+        if (!isStationFavourite) {
             addToFavourites(context, favouritesDatasource, station);
 
             if (favouritesImageView != null) {

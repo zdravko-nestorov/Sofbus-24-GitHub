@@ -43,7 +43,7 @@
             android:id="@+id/metro_station_list_empty_image"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:padding="25sp"
             android:src="@drawable/ic_empty_metro_list" />
 

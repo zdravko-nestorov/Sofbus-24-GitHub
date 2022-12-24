@@ -615,6 +615,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                                 + "&cbp=1,90,,0,1.0&mz=20");
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
+                        streetViewIntent.setPackage("com.google.android.apps.maps");
                         startActivity(streetViewIntent);
                     } else {
                         Toast.makeText(context,

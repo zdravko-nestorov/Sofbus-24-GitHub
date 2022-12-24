@@ -9,7 +9,7 @@
         android:layout_width="35dp"
         android:layout_height="27dp"
         android:layout_gravity="center_vertical"
-        android:contentDescription="@string/app_img_empty_content_description"
+        android:contentDescription="@string/app_empty_content"
         android:cropToPadding="true"
         android:paddingLeft="3dp"
         android:paddingTop="1dp"

@@ -35,6 +35,12 @@
             android:key="tabsType"
             android:summary="@string/pref_category_visual_hs_tabs_summary"
             android:title="@string/pref_category_visual_hs_tabs_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="blindView"
+            android:summary="@string/pref_category_visual_blind_view_summary"
+            android:title="@string/pref_category_visual_blind_view_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_category_stations">
         <ListPreference

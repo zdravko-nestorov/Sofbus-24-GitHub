@@ -204,7 +204,7 @@ public class GlobalEntity extends Application {
 
             // Google Street View
             try {
-                getPackageManager().getApplicationInfo("com.google.android.street", 0);
+                getPackageManager().getApplicationInfo("com.google.android.apps.maps", 0);
                 isGoogleStreetViewAvailable = true;
             } catch (PackageManager.NameNotFoundException e) {
                 isGoogleStreetViewAvailable = false;

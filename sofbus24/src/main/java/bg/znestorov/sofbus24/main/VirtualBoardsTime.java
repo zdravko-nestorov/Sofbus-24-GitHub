@@ -83,9 +83,10 @@ public class VirtualBoardsTime extends FragmentActivity {
 
         if (isFavouriteStation) {
             addToFavourites.setIcon(R.drawable.ic_menu_star_full);
+            addToFavourites.setTitle(R.string.action_vb_time_remove_favourites);
         } else {
             addToFavourites.setIcon(R.drawable.ic_menu_star_empty);
-
+            addToFavourites.setTitle(R.string.action_vb_time_add_favourites);
         }
 
         return true;
@@ -243,6 +244,7 @@ public class VirtualBoardsTime extends FragmentActivity {
                             try {
                                 Intent streetViewIntent = new Intent(
                                         Intent.ACTION_VIEW, streetViewUri);
+                                streetViewIntent.setPackage("com.google.android.apps.maps");
                                 startActivity(streetViewIntent);
                             } catch (ActivityNotFoundException anfe) {
                                 ActivityUtils.showNoCoordinatesToast(context);

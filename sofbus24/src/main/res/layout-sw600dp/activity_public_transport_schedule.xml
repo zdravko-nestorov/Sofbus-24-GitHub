@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:contentDescription="@string/app_img_empty_content_description" />
+            android:contentDescription="@string/app_empty_content" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="13sp"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:minWidth="50sp"
             android:minHeight="75sp"
             android:src="@drawable/ic_previous" />
@@ -98,7 +98,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="13sp"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:minWidth="50sp"
             android:minHeight="75sp"
             android:src="@drawable/ic_next" />

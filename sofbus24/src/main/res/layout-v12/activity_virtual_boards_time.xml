@@ -14,7 +14,7 @@
             android:id="@+id/vb_time_street_view_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/vb_time_image_street_view_height"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:cropToPadding="true"
             android:scaleType="centerCrop" />
 
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/vb_time_street_view_image"
             android:layout_alignBottom="@+id/vb_time_street_view_image"
-            android:contentDescription="@string/app_img_empty_content_description"
+            android:contentDescription="@string/app_empty_content"
             android:src="@drawable/ic_google_street_view" />
     </RelativeLayout>
 
