@@ -611,8 +611,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     if (selectedMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
                                 + selectedMarkerLatLng.getLatitude() + ","
-                                + selectedMarkerLatLng.getLongitude()
-                                + "&cbp=1,90,,0,1.0&mz=20");
+                                + selectedMarkerLatLng.getLongitude());
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
                         streetViewIntent.setPackage("com.google.android.apps.maps");

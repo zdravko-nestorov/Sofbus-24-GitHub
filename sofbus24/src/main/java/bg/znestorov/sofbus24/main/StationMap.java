@@ -211,8 +211,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     Uri streetViewUri = Uri.parse("google.streetview:cbll="
                             + centerStationLocation.getLatitude() + ","
-                            + centerStationLocation.getLongitude()
-                            + "&cbp=1,90,,0,1.0&mz=20");
+                            + centerStationLocation.getLongitude());
                     Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                             streetViewUri);
                     streetViewIntent.setPackage("com.google.android.apps.maps");

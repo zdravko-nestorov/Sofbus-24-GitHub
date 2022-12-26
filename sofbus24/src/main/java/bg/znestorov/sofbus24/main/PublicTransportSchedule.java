@@ -645,7 +645,7 @@ public class PublicTransportSchedule extends FragmentActivity {
         int currentScheduleIndex = -1;
 
         for (int i = 0; i < scheduleList.size(); i++) {
-            if (scheduleList.get(i).contains("~")) {
+            if (Utils.isActiveSchedule(scheduleList.get(i))) {
                 currentScheduleIndex = i;
                 break;
             }

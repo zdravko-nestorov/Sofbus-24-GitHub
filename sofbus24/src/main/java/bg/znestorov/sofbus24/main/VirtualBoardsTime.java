@@ -236,8 +236,7 @@ public class VirtualBoardsTime extends FragmentActivity {
                             Uri streetViewUri = Uri
                                     .parse("google.streetview:cbll="
                                             + vbTimeStation.getLat() + ","
-                                            + vbTimeStation.getLon()
-                                            + "&cbp=1,90,,0,1.0&mz=20");
+                                            + vbTimeStation.getLon());
 
                             // Workaround because of a known bug in GPS (fixed in
                             // later version, which we can't use)

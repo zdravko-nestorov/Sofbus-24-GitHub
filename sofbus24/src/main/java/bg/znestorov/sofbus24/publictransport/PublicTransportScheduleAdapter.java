@@ -12,6 +12,7 @@ import android.widget.TextView;
 import bg.znestorov.sofbus24.entity.ScheduleEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.ThemeChange;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Array Adapted used to set each hour of the public transport schedule
@@ -86,7 +87,7 @@ class PublicTransportScheduleAdapter extends ArrayAdapter<String> {
             }
 
             // Make the rows that the vehicle already passed inactive
-            if (ptSchedule.contains("~")) {
+            if (Utils.isActiveSchedule(ptSchedule)) {
                 viewHolder.schedulePTHour.setTextColor(Color
                         .parseColor("#000000"));
             } else {

@@ -765,8 +765,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             if (globalContext.isGoogleStreetViewAvailable()) {
                 if (station.hasCoordinates()) {
                     Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                            + station.getLat() + "," + station.getLon()
-                            + "&cbp=1,90,,0,1.0&mz=20");
+                            + station.getLat() + "," + station.getLon());
                     Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                             streetViewUri);
                     streetViewIntent.setPackage("com.google.android.apps.maps");

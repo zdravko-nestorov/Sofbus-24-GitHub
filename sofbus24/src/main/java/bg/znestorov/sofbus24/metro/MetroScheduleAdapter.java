@@ -154,7 +154,7 @@ class MetroScheduleAdapter extends ArrayAdapter<String> {
 
         // In case the metro schedule hour has already passed, set the text
         // color to grey
-        if (!metroSchedule.contains("~")) {
+        if (!Utils.isActiveSchedule(metroSchedule)) {
             metroScheduleColor = "#8B8B8B";
         }
 

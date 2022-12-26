@@ -186,8 +186,7 @@ public class ClosestStationsList extends FragmentActivity {
                                         .parse("google.streetview:cbll="
                                                 + currentLocation.getLatitude()
                                                 + ","
-                                                + currentLocation.getLongitude()
-                                                + "&cbp=1,90,,0,1.0&mz=20");
+                                                + currentLocation.getLongitude());
                                 Intent streetViewIntent = new Intent(
                                         Intent.ACTION_VIEW, streetViewUri);
                                 streetViewIntent.setPackage("com.google.android.apps.maps");

@@ -266,8 +266,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                     if (currentMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
                                 + currentMarkerLatLng.getLatitude() + ","
-                                + currentMarkerLatLng.getLongitude()
-                                + "&cbp=1,90,,0,1.0&mz=20");
+                                + currentMarkerLatLng.getLongitude());
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
                         streetViewIntent.setPackage("com.google.android.apps.maps");

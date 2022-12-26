@@ -394,8 +394,9 @@ public class Utils {
         currTime = getValueBefore(currTime, "|");
 
         // In cases when it is after midnight
-        if (afterTime.startsWith("00:") && !currTime.startsWith("00:")) {
-            afterTime = afterTime.replaceAll("00:", "24:");
+        if ((afterTime.startsWith("0:") || afterTime.startsWith("00:"))
+                && !currTime.startsWith("00:")) {
+            afterTime = afterTime.replaceAll("0?0:", "24:");
         }
 
         try {
@@ -421,12 +422,12 @@ public class Utils {
     }
 
     /**
-     * Format the remaining time in format ~1h,20m
+     * Format the remaining time in format ~1h 20m (normal) / 1h 20min (blind)
      *
      * @param context    Context of the current activity
      * @param difference the difference between the times (current one and the one
      *                   after)
-     * @return the difference in format ~1h,20m
+     * @return the difference in format ~1h 20m (normal) / 1h 20min (blind)
      */
     private static String formatTime(Activity context, String difference) {
         String diff = "";
@@ -483,11 +484,11 @@ public class Utils {
     }
 
     /**
-     * Convert the millis in remaining time format (~Хч Хм)
+     * Convert the millis in remaining time format (~Хh Хm (normal) / Хh Хmin (blind))
      *
      * @param context Context of the current activity
      * @param millis  remaining time in millis
-     * @return the remaining time in format ~Хч Хм
+     * @return the remaining time in format ~Хh Хmin (normal) / Хh Хmin (blind)
      */
     public static String formatMillisInTime(Activity context, Long millis) {
         String remainingTime;
@@ -1795,6 +1796,16 @@ public class Utils {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * Check if the current schedule is currently active.
+     *
+     * @param currentSchedule current schedule
+     * @return if the current schedule is currently active
+     */
+    public static boolean isActiveSchedule(String currentSchedule) {
+        return currentSchedule != null && currentSchedule.matches(".*? \\(.*?\\).*?");
     }
 
     private static String getRemainingMinutesSep(Activity context) {
