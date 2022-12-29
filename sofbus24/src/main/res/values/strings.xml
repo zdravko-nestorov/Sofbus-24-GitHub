@@ -304,9 +304,9 @@
     <!-- Virtual Boards Time Fragment -->
     <string name="vb_time_title">Виртуални табла</string>
     <string name="vb_time_current_time" formatted="false" tools:ignore="StringFormatInvalid">Информация към %s</string>
-    <string name="vb_time_bus" formatted="false">Автобус №%s</string>
-    <string name="vb_time_trolley" formatted="false">Тролей №%s</string>
-    <string name="vb_time_tram" formatted="false">Трамвай №%s</string>
+    <string name="vb_time_bus" formatted="false">Автобус %s</string>
+    <string name="vb_time_trolley" formatted="false">Тролей %s</string>
+    <string name="vb_time_tram" formatted="false">Трамвай %s</string>
     <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>…]]></string>
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[Проверка на CAPTCHA изображението…]]></string>
     <string name="vb_time_sumc_captcha">Тест за сигурност</string>
@@ -320,21 +320,21 @@
     <string name="sch_search_tab_bus">Автобуси</string>
     <string name="sch_search_tab_trolley">Тролеи</string>
     <string name="sch_search_tab_tram">Трамваи</string>
-    <string name="sch_item_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
-    <string name="sch_item_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
-    <string name="sch_item_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="sch_item_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус %s</string>
+    <string name="sch_item_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей %s</string>
+    <string name="sch_item_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай %s</string>
     <string name="sch_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени резултати за <b>%s</b> в секция <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="sch_item_direction_choice">Изберете направление</string>
 
     <!-- Public Transport -->
     <string name="pt_title">Разписание</string>
     <string name="pt_search_hint">Търсене по име или номер</string>
-    <string name="pt_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
-    <string name="pt_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
-    <string name="pt_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="pt_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус %s</string>
+    <string name="pt_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей %s</string>
+    <string name="pt_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай %s</string>
     <string name="pt_item_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
-    <string name="pt_item_station_number_text_sign" formatted="false">Спирка №%s</string>
+    <string name="pt_item_station_number_text_sign" formatted="false">Спирка %s</string>
     <string name="pt_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
@@ -355,7 +355,7 @@
     <string name="metro_search_tab_direction1">Маршрут 1</string>
     <string name="metro_search_tab_direction2">Маршрут 2</string>
     <string name="metro_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
-    <string name="metro_item_station_number_text_sign" formatted="false">Станция №%s</string>
+    <string name="metro_item_station_number_text_sign" formatted="false">Станция %s</string>
     <string name="metro_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="metro_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>…]]></string>
@@ -387,9 +387,9 @@
     <string name="history_type_bus">Автобус</string>
     <string name="history_type_trolley">Тролей</string>
     <string name="history_type_tram">Трамвай</string>
-    <string name="history_title_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус №%s</string>
-    <string name="history_title_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей №%s</string>
-    <string name="history_title_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай №%s</string>
+    <string name="history_title_bus" formatted="false" tools:ignore="StringFormatInvalid">Автобус %s</string>
+    <string name="history_title_trolley" formatted="false" tools:ignore="StringFormatInvalid">Тролей %s</string>
+    <string name="history_title_tram" formatted="false" tools:ignore="StringFormatInvalid">Трамвай %s</string>
     <string name="history_item_station_number" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
     <string name="history_item_metro_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="history_item_search_date" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<i><font color="#FF4747">[%s] Търсене от %s</font></i>]]></string>

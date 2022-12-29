@@ -252,7 +252,7 @@ public class History extends ListActivity implements
      *
      * @param context the current activity context
      * @param vehicle the vehicle on the current row
-     * @return the vehicle caption in format: <b>Bus №xxx</b>
+     * @return the vehicle caption in format: <b>Bus xxx</b>
      */
     private String getVehicleCaption(Context context, VehicleEntity vehicle) {
         String vehicleCaption;

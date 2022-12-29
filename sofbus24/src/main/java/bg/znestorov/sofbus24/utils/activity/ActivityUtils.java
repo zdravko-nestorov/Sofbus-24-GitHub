@@ -1093,12 +1093,12 @@ public class ActivityUtils {
     }
 
     /**
-     * Create a vehicle title in format - [VehicleType] №[VehicleNumber]
+     * Create a vehicle title in format - [VehicleType] [VehicleNumber]
      *
      * @param context       the current activity context
      * @param vehicleType   the selected vehicle type
      * @param vehicleNumber the selected vehicle number
-     * @return title in format - [VehicleType] №[VehicleNumber]
+     * @return title in format - [VehicleType] [VehicleNumber]
      */
     public static String getVehicleTitle(Activity context,
                                          VehicleTypeEnum vehicleType, String vehicleNumber) {
@@ -1108,11 +1108,11 @@ public class ActivityUtils {
     }
 
     /**
-     * Create a vehicle title in format - [VehicleType] №[VehicleNumber]
+     * Create a vehicle title in format - [VehicleType] [VehicleNumber]
      *
      * @param context the current activity context
      * @param vehicle the selected vehicle
-     * @return title in format - [VehicleType] №[VehicleNumber]
+     * @return title in format - [VehicleType] [VehicleNumber]
      */
     public static String getVehicleTitle(Activity context, VehicleEntity vehicle) {
 

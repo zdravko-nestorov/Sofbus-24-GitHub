@@ -317,7 +317,7 @@ public class PublicTransportSchedule extends FragmentActivity {
     /**
      * Create the ActionBar title using the vehicle type and number
      *
-     * @return the actionBar title in format - [VehicleType] №[VehicleNumber]
+     * @return the actionBar title in format - [VehicleType] [VehicleNumber]
      */
     private String getActionBarTitle() {
 

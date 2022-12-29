@@ -50,7 +50,7 @@ public class ScheduleVehicleInfo {
      * Retrieve an information about the selected vehicle
      *
      * @param vehicle      the selected vehicle
-     * @param vehicleTitle the vehicle title in format: "xxxxx №xxx"
+     * @param vehicleTitle the vehicle title in format: "xxxxx xxx"
      */
     public void onListItemClick(VehicleEntity vehicle, String vehicleTitle) {
 

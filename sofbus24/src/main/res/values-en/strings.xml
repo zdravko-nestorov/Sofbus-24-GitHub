@@ -293,9 +293,9 @@
     <!-- Virtual Boards Time Fragment -->
     <string name="vb_time_title">Virtual boards</string>
     <string name="vb_time_current_time" formatted="false">Information at %s</string>
-    <string name="vb_time_bus" formatted="false">Bus №%s</string>
-    <string name="vb_time_trolley" formatted="false">Trolley №%s</string>
-    <string name="vb_time_tram" formatted="false">Tram №%s</string>
+    <string name="vb_time_bus" formatted="false">Bus %s</string>
+    <string name="vb_time_trolley" formatted="false">Trolley %s</string>
+    <string name="vb_time_tram" formatted="false">Tram %s</string>
     <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Retrieving the times of arrival of <b><i>%s</b></i>…]]></string>
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[CAPTCHA image verification…]]></string>
     <string name="vb_time_sumc_captcha">Security test</string>
@@ -309,21 +309,21 @@
     <string name="sch_search_tab_bus">Buses</string>
     <string name="sch_search_tab_trolley">Trolleys</string>
     <string name="sch_search_tab_tram">Trams</string>
-    <string name="sch_item_bus" formatted="false">Bus №%s</string>
-    <string name="sch_item_trolley" formatted="false">Trolley №%s</string>
-    <string name="sch_item_tram" formatted="false">Tram №%s</string>
+    <string name="sch_item_bus" formatted="false">Bus %s</string>
+    <string name="sch_item_trolley" formatted="false">Trolley %s</string>
+    <string name="sch_item_tram" formatted="false">Tram %s</string>
     <string name="sch_item_empty_list" formatted="false"><![CDATA[No results are found for <b>%s</b> in section <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="sch_item_direction_choice">Choose a direction</string>
 
     <!-- Public Transport -->
     <string name="pt_title">Schedule</string>
     <string name="pt_search_hint">Search by name or number</string>
-    <string name="pt_bus" formatted="false">Bus №%s</string>
-    <string name="pt_trolley" formatted="false">Trolley №%s</string>
-    <string name="pt_tram" formatted="false">Tram №%s</string>
+    <string name="pt_bus" formatted="false">Bus %s</string>
+    <string name="pt_trolley" formatted="false">Trolley %s</string>
+    <string name="pt_tram" formatted="false">Tram %s</string>
     <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Retrieving the schedule for <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false">Station number: %s</string>
-    <string name="pt_item_station_number_text_sign" formatted="false">Station №%s</string>
+    <string name="pt_item_station_number_text_sign" formatted="false">Station %s</string>
     <string name="pt_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Drawing the route…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Are you sure that you want to remove the local schedule for the Public Transport vehicles?]]></string>
@@ -344,7 +344,7 @@
     <string name="metro_search_tab_direction1">Route 1</string>
     <string name="metro_search_tab_direction2">Route 2</string>
     <string name="metro_item_station_number_text" formatted="false">Metro station number: %s</string>
-    <string name="metro_item_station_number_text_sign" formatted="false">Station №%s</string>
+    <string name="metro_item_station_number_text_sign" formatted="false">Station %s</string>
     <string name="metro_item_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Drawing the route…]]></string>
     <string name="metro_loading_schedule" formatted="false"><![CDATA[Retrieving the schedule for station <b><i>%s (%s)</b></i>…]]></string>
@@ -376,9 +376,9 @@
     <string name="history_type_bus">Bus</string>
     <string name="history_type_trolley">Trolley</string>
     <string name="history_type_tram">Tram</string>
-    <string name="history_title_bus" formatted="false">Bus №%s</string>
-    <string name="history_title_trolley" formatted="false">Trolley №%s</string>
-    <string name="history_title_tram" formatted="false">Tram №%s</string>
+    <string name="history_title_bus" formatted="false">Bus %s</string>
+    <string name="history_title_trolley" formatted="false">Trolley %s</string>
+    <string name="history_title_tram" formatted="false">Tram %s</string>
     <string name="history_item_station_number" formatted="false">Station number: %s</string>
     <string name="history_item_metro_station_number_text" formatted="false">Metro station number: %s</string>
     <string name="history_item_search_date" formatted="false"><![CDATA[<i><font color="#FF4747">[%s] Search from %s</font></i>]]></string>

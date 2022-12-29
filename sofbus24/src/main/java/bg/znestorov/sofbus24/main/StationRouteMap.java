@@ -637,11 +637,11 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
     /**
      * Process the vehicle type and format the action bar title (for PT (public
-     * transport) - [line name] №[line number], and for METRO - [line number])
+     * transport) - [line name] [line number], and for METRO - [line number])
      *
      * @param vehicle the chosen vehicle
      * @return the direction name in format<br>
-     * for PT (public transport) - [line name] №[line number], and for
+     * for PT (public transport) - [line name] [line number], and for
      * METRO - [line number]
      */
     private String getLineName(VehicleEntity vehicle) {
