@@ -59,4 +59,10 @@
         <item name="backup_export_choice">Export data</item>
     </string-array>
 
+    <!-- Update Choose Dialog -->
+    <string-array name="updateChooseItems">
+        <item name="update_db">Update the stations DB</item>
+        <item name="update_app">Check for a new version</item>
+    </string-array>
+
 </resources>

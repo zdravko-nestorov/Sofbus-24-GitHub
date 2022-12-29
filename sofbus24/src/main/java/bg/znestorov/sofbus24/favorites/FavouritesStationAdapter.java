@@ -123,7 +123,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
         if (originalStationsSize != filteredStationsSize) {
             return isReorderVisible;
         } else {
-            return filteredStationsSize > 1;
+            return !Utils.isBlindView(context) && filteredStationsSize > 1;
         }
     }
 
@@ -278,6 +278,13 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             rowView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) rowView.getTag();
+        }
+
+        // Configure the blind view (if active)
+        if (Utils.isBlindView(context)) {
+            viewHolder.expandStation.setVisibility(View.GONE);
+            viewHolder.reorderStation.setVisibility(View.GONE);
+            viewHolder.settingsStation.setVisibility(View.GONE);
         }
 
         StationEntity station = filteredStations.get(position);

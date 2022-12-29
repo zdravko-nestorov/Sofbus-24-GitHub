@@ -31,7 +31,7 @@ class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
 
     private final FavouritesDataSource favouritesDatasource;
     private final Activity context;
-    private final LatLng currentLocation;
+    private LatLng currentLocation;
     private final List<StationEntity> stations;
 
     public ClosestStationsListAdapter(Activity context, LatLng currentLocation,
@@ -89,6 +89,15 @@ class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
     @Override
     public int getCount() {
         return stations.size();
+    }
+
+    /**
+     * Change the current location on refresh.
+     *
+     * @param currentLocation current location
+     */
+    public void changeCurrentLocation(LatLng currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
     /**

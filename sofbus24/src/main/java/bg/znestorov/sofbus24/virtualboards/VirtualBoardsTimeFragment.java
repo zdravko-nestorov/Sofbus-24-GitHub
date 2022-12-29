@@ -72,10 +72,10 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
         vbListEmptyTextView = (TextView) myFragmentView
                 .findViewById(R.id.vb_list_empty_text);
 
-        // Get the VirtualBoardsStation object and the empty list text from the
-        // Bundle
+        // Get the VirtualBoardsStation object and the empty list text from the Bundle
         vbTimeStation = (VirtualBoardsStationEntity) getArguments()
                 .getSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME);
+        vbTimeStation.sortVehicles();
 
         if (savedInstanceState == null) {
             vbTimeEmptyText = getArguments().getString(
@@ -134,6 +134,7 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
     public void onFragmentRefresh(Object obj, String vbTimeEmptyText) {
         VirtualBoardsStationEntity newVBTimeStation = (VirtualBoardsStationEntity) obj;
         vbTimeStation.setVirtualBoardsTimeStation(newVBTimeStation);
+        vbTimeStation.sortVehicles();
 
         setListAdapter(vbTimeEmptyText);
 

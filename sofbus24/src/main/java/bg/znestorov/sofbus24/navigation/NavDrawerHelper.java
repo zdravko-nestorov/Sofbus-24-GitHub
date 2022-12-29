@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
-import bg.znestorov.sofbus24.about.RetrieveAppConfiguration;
 import bg.znestorov.sofbus24.backup.ChooseBackupDialog;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocationTimeout;
@@ -33,6 +32,7 @@ import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
+import bg.znestorov.sofbus24.updates.check.ChooseUpdateDialog;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
@@ -149,13 +149,7 @@ public class NavDrawerHelper {
                 break;
             case 9:
                 if (ActivityUtils.haveNetworkConnection(context)) {
-                    progressDialog.setMessage(context
-                            .getString(R.string.about_update_app));
-
-                    RetrieveAppConfiguration retrieveAppConfiguration;
-                    retrieveAppConfiguration = new RetrieveAppConfiguration(
-                            context, fragment, progressDialog, true);
-                    retrieveAppConfiguration.execute();
+                    startChooseUpdateDialog();
                 } else {
                     ActivityUtils.showNoInternetToast(context);
                 }
@@ -230,6 +224,23 @@ public class NavDrawerHelper {
                 retrieveCurrentLocation,
                 RetrieveCurrentLocationTimeout.TIMEOUT_CS_LIST);
         (new Thread(retrieveCurrentLocationTimeout)).start();
+    }
+
+    /**
+     * Start the ChooseUpdateDialog dialog
+     */
+    private void startChooseUpdateDialog() {
+        // Get the appropriate fragment manager (in case of Activity or a Fragment)
+        FragmentManager fragmentManager;
+        if (fragment == null) {
+            fragmentManager = context.getSupportFragmentManager();
+        } else {
+            fragmentManager = fragment.getChildFragmentManager();
+        }
+
+        // Start the "Choose Backup Dialog"
+        DialogFragment chooseUpdateDialog = ChooseUpdateDialog.newInstance();
+        chooseUpdateDialog.show(fragmentManager, "dialogFragment");
     }
 
     /**

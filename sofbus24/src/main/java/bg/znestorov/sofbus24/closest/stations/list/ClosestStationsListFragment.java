@@ -335,6 +335,11 @@ public class ClosestStationsListFragment extends ListFragment implements
                     currentLocation, searchStationList);
             setListAdapter(closestStationsAdapter);
         } else {
+            // Change the current location
+            ((ClosestStationsListAdapter) closestStationsAdapter)
+                    .changeCurrentLocation(currentLocation);
+
+            // Notify the list adapter about the changes
             closestStationsAdapter.notifyDataSetChanged();
 
             // In case of not empty list position the scroll at the beginning

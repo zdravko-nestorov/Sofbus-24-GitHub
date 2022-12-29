@@ -150,8 +150,6 @@ public class MetroLoadStations {
         for (int i = 0; i < metroDirection.size(); i++) {
             StationEntity metroStation = metroDirection.get(i);
             String metroStationName = metroStation.getName();
-            metroStationName = metroStationName.substring(0, 4) + ". "
-                    + Utils.getValueAfter(metroStationName, " ").trim();
 
             metroStation.setName(metroStationName);
             metroDirectionFormatted.add(metroStation);

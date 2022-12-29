@@ -112,5 +112,10 @@
         <item name="backup_export_choice">Запазване на данни</item>
     </string-array>
 
+    <!-- Update Choose Dialog -->
+    <string-array name="updateChooseItems">
+        <item name="update_db">Обновяване на спирките</item>
+        <item name="update_app">Проверка за нова версия</item>
+    </string-array>
 
 </resources>

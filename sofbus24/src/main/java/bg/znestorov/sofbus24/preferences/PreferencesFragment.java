@@ -90,6 +90,10 @@ public class PreferencesFragment extends PreferenceFragment implements
             globalContext.setHomeScreenChanged(true);
         }
 
+        if (key.equals(Constants.PREFERENCE_KEY_BLIND_VIEW)) {
+            actionsOnBlindViewPreferences(sharedPreferences);
+        }
+
         if (key.equals(Constants.PREFERENCE_KEY_APP_THEME)) {
             ActivityTracker.changedApplicationTheme(context,
                     ThemeChange.getAppTheme(context));
@@ -180,6 +184,31 @@ public class PreferencesFragment extends PreferenceFragment implements
     }
 
     /**
+     * Blind view shared preferences.
+     *
+     * @param sharedPreferences the default shared preferences
+     */
+    private void actionsOnBlindViewPreferences(SharedPreferences sharedPreferences) {
+
+        boolean isBlindViewActive = sharedPreferences.getBoolean(
+                Constants.PREFERENCE_KEY_BLIND_VIEW,
+                Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+        String tabsType = isBlindViewActive
+                ? Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE_TITLE
+                : Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE;
+
+        // Try to change the tab types
+        boolean areTabsTypeChanged = sharedPreferences.edit()
+                .putString(Constants.PREFERENCE_KEY_TABS_TYPE, tabsType)
+                .commit();
+
+        // Notify about changing the home screen only in case of a success
+        if (areTabsTypeChanged) {
+            globalContext.setHomeScreenChanged(true);
+        }
+    }
+
+    /**
      * Show or hide the schedule cache shared preferences
      *
      * @param sharedPreferences the default shared preferences
@@ -188,7 +217,7 @@ public class PreferencesFragment extends PreferenceFragment implements
     private void actionsOnScheduleCachePreferences(
             SharedPreferences sharedPreferences, boolean isCalledOnStartup) {
 
-        Boolean isScheduleCacheActive = sharedPreferences.getBoolean(
+        boolean isScheduleCacheActive = sharedPreferences.getBoolean(
                 Constants.PREFERENCE_KEY_CACHE_STATE,
                 Constants.PREFERENCE_DEFAULT_VALUE_CACHE_STATE);
 

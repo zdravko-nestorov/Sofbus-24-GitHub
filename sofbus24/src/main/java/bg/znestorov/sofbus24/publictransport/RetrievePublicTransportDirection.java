@@ -202,8 +202,7 @@ public class RetrievePublicTransportDirection extends AsyncTask<Void, Void, Dire
      */
     private String createDirectionUrlAddress() {
 
-        String vehicleNumber = "21-22".equals(vehicle.getNumber()) ? "22"
-                : vehicle.getNumber();
+        String vehicleNumber = vehicle.getNumber();
         final List<NameValuePair> result = new ArrayList<NameValuePair>();
 
         result.add(new BasicNameValuePair(

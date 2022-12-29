@@ -159,9 +159,6 @@ class ProcessVirtualBoardsApi {
 
         // Get the Vehicle name from the current request in the appropriate language
         String name = getAsJsonString(linesJsonObject, VB_VEHICLE_NAME_API);
-        if (!"bg".equals(language)) {
-            name = TranslatorCyrillicToLatin.translate(context, name);
-        }
 
         // Get the Vehicle direction from the current request in the appropriate language
         String direction = getAsJsonString(linesJsonObject, VB_VEHICLE_DIRECTION_API);
@@ -175,14 +172,12 @@ class ProcessVirtualBoardsApi {
             type = VehicleTypeEnum.valueOf(
                     getAsJsonString(linesJsonObject, VB_VEHICLE_TYPE_API).toUpperCase());
         } catch (Exception e) {
-            // This case should never been reached as the vehicles aways will be BUS, TRAM, TROLLEY
+            // This case should never been reached as the vehicles always will be BUS, TRAM, TROLLEY
             type = VehicleTypeEnum.BUS;
         }
 
         // Retrieve the vehicle object from the DB
-        vehicleDatasource.open();
-        List<VehicleEntity> vehicles = vehicleDatasource.getVehiclesViaSearch(type, name);
-        vehicleDatasource.close();
+        List<VehicleEntity> vehicles = getDbVehicles(name, type);
 
         // In case the vehicle is not in the database (get the first returned vehicle),
         // create a temporary one
@@ -200,6 +195,46 @@ class ProcessVirtualBoardsApi {
         droidTransDatasource.close();
 
         return vehicle;
+    }
+
+    /**
+     * Get the current vehicle from the database.
+     *
+     * @param name station number
+     * @param type station {@link VehicleTypeEnum}
+     * @return current vehicle from the database
+     */
+    private List<VehicleEntity> getDbVehicles(String name, VehicleTypeEnum type) {
+        // Open the vehicles database
+        vehicleDatasource.open();
+
+        // Try to retrieve the current vehicle, based on the API data
+        List<VehicleEntity> vehicles = vehicleDatasource.getVehiclesViaSearch(type, name);
+
+        // Check if a matching vehicle is found or vehicle's name modifications should be done
+        if (vehicles == null || vehicles.size() == 0) {
+            name = formatVehicleName(name);
+            vehicles = vehicleDatasource.getVehiclesViaSearch(type, name);
+        }
+
+        // Close the vehicles database
+        vehicleDatasource.close();
+        return vehicles;
+    }
+
+    /**
+     * Format the vehicle's name (number) to match the database records (latin to cyrillic).
+     *
+     * @param name station number
+     * @return vehicle's name
+     */
+    private String formatVehicleName(String name) {
+        // Change the bus trailing latin "TM" to cyrillic "ТМ"
+        name = name.replaceAll("TM$", "-ТМ");
+        // Change the electrobus leading latin "E" to cyrillic "Е"
+        name = name.replaceAll("^E", "Е");
+
+        return name;
     }
 
     /**

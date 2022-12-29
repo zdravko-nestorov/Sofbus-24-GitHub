@@ -2,6 +2,8 @@ package bg.znestorov.sofbus24.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Objects;
 
 import bg.znestorov.sofbus24.utils.Utils;
 
@@ -12,7 +14,7 @@ import bg.znestorov.sofbus24.utils.Utils;
  * @author Zdravko Nestorov
  * @version 1.0
  */
-public class VehicleEntity implements Serializable {
+public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -82,6 +84,30 @@ public class VehicleEntity implements Serializable {
 
     public String getNumber() {
         return number;
+    }
+
+    public int getNumberLeadingDigits() {
+        try {
+            return Integer.parseInt(number.split("(?=\\D)")[0]);
+        } catch (Exception e) {
+            return Integer.MAX_VALUE;
+        }
+    }
+
+    public int getNumberDigits() {
+        try {
+            return Integer.parseInt(number.replaceAll("[^0-9]", ""));
+        } catch (Exception e) {
+            return Integer.MAX_VALUE;
+        }
+    }
+
+    public String getNumberChars() {
+        try {
+            return number.replaceAll("[0-9]", "");
+        } catch (Exception e) {
+            return "null";
+        }
     }
 
     public void setNumber(String number) {
@@ -182,6 +208,36 @@ public class VehicleEntity implements Serializable {
     }
 
     @Override
+    public int compareTo(VehicleEntity vehicle) {
+        // FIRST compare the vehicle types
+        int result = getType().compareTo(vehicle.getType());
+        if (result != 0) {
+            return result;
+        }
+
+        // SECOND compare by the vehicle name leading digits (leading digits)
+        result = Integer.compare(getNumberLeadingDigits(), vehicle.getNumberLeadingDigits());
+        if (result != 0) {
+            return result;
+        }
+
+        // THIRD compare by the vehicle name chars (non-digits)
+        result = getNumberChars().compareTo(vehicle.getNumberChars());
+        if (result != 0) {
+            return result;
+        }
+
+        // FOURTH compare by the vehicle name digits (all digits)
+        result = Integer.compare(getNumberDigits(), vehicle.getNumberDigits());
+        if (result != 0) {
+            return result;
+        }
+
+        // LAST compare the vehicle hashes
+        return Integer.compare(this.hashCode(), vehicle.hashCode());
+    }
+
+    @Override
     public String toString() {
         return "VehicleEntity{" +
                 "number='" + number + '\'' +
@@ -197,5 +253,4 @@ public class VehicleEntity implements Serializable {
                 ", rid=" + rid +
                 '}';
     }
-
 }

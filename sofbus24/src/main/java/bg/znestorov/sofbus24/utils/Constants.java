@@ -23,7 +23,7 @@ public class Constants {
     public static final Double GLOBAL_PARAM_MLADOST_1_LATITUDE = 42.64971443383678;
     public static final Double GLOBAL_PARAM_MLADOST_1_LONGITUDE = 23.37787427008152;
     public static final BigDecimal GLOBAL_PARAM_CLOSEST_STATION_DISTANCE = new BigDecimal(
-            100000);
+            25 * 1000 * 1000); // 25 000 km  (more than the Earth diameter)
     public static final int GLOBAL_PARAM_HOME_TABS_COUNT = 4;
     public static final String GLOBAL_PARAM_BACKUP_EXTENSION = ".sofbus24";
     public static final String GLOBAL_GRANT_PERMISSION_ACTIVITY = "com.android.packageinstaller.permission.ui.GrantPermissionsActivity";
@@ -220,8 +220,9 @@ public class Constants {
     public static final String SCHEDULE_URL_STATION_SCHEDULE_H_VALUE = "0";
     public static final String SCHEDULE_REGEX_STATION_SCHEDULE = "<td class=\"(schTdBrd|schTdNoBrd)\" align=\"center\">([^^]*?)<\\/td>";
 
-    public static final String SUMC_SITE_SCHEDULE_URL_ADDRESS = "http://schedules.sofiatraffic.bg/%s/%s";
+    public static final String SUMC_SITE_SCHEDULE_URL_ADDRESS = "https://schedules.sofiatraffic.bg/%s/%s";
     public static final String SUMC_SITE_SCHEDULE_AUTOBUS = "autobus";
+    public static final String SUMC_SITE_SCHEDULE_ELECTROBUS = "electrobus";
     public static final String SUMC_SITE_SCHEDULE_TROLLEYBUS = "trolleybus";
     public static final String SUMC_SITE_SCHEDULE_TRAMWAY = "tramway";
     public static final String SUMC_SITE_SCHEDULE_METRO = "metro";

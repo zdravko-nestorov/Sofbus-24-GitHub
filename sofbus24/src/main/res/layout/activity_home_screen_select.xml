@@ -107,7 +107,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/btn_home_screen_confirm_selector"
-                    android:contentDescription="@string/app_empty_content"
+                    android:contentDescription="@string/app_button_submit"
                     android:visibility="gone" />
             </LinearLayout>
         </LinearLayout>

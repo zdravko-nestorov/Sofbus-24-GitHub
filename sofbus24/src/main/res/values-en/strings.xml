@@ -4,6 +4,7 @@
     <!-- Global labels -->
     <string name="app_sofbus24">Sofbus 24</string>
     <string name="app_button_ok">OK</string>
+    <string name="app_button_submit">Submit</string>
     <string name="app_button_save">Save</string>
     <string name="app_button_cancel">Cancel</string>
     <string name="app_button_yes">Yes</string>
@@ -46,6 +47,7 @@
     <string name="app_remaining_minutes">m</string>
     <string name="app_remaining_minutes_blind">min</string>
     <string name="app_remaining_hours">h</string>
+    <string name="app_remaining_hours_blind">h</string>
     <string name="app_toast_add_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully added to <b>Favorites</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully removed from <b>Favorites</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully renamed to <b><i>%s (%s)</b></i>.]]></string>
@@ -451,5 +453,8 @@
     <string name="backup_export_file_size">The file to save is bigger than the space available. Please free up some space and try again.</string>
     <string name="backup_export_duplicate_title">Duplicate file</string>
     <string name="backup_export_duplicate_msg" formatted="false"><![CDATA[The destination already has a file named <b><i>%s</i></b>. Do you want to replace the file with the new one?]]></string>
+
+    <!-- Application or Database Update -->
+    <string name="update_db_app_choice">Check for update</string>
 
 </resources>

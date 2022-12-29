@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import bg.znestorov.sofbus24.utils.Constants;
 
@@ -158,6 +159,13 @@ public class VirtualBoardsStationEntity extends StationEntity implements
                 }
             }
         }
+    }
+
+    /**
+     * Sort the vehicles using the predefined order.
+     */
+    public void sortVehicles() {
+        Collections.sort(vehiclesList);
     }
 
     @Override

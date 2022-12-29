@@ -442,17 +442,16 @@ public class Utils {
                     differenceArr[1] = differenceArr[1] + getRemainingMinutesAbbr(context);
                 }
 
-                diff = getRemainingMinutesSep(context) + differenceArr[1];
+                diff = getRemainingTimeSep(context) + differenceArr[1];
             } else {
-                differenceArr[0] = differenceArr[0]
-                        + context.getString(R.string.app_remaining_hours);
+                differenceArr[0] = differenceArr[0] + getRemainingHoursAbbr(context);
                 if (differenceArr[1].length() == 0) {
                     differenceArr[1] = "0" + getRemainingMinutesAbbr(context);
                 } else {
                     differenceArr[1] = differenceArr[1] + getRemainingMinutesAbbr(context);
                 }
 
-                diff = getRemainingMinutesSep(context) + differenceArr[0] + " " + differenceArr[1];
+                diff = getRemainingTimeSep(context) + differenceArr[0] + " " + differenceArr[1];
             }
         }
 
@@ -497,13 +496,13 @@ public class Utils {
         long hour = (millis / (1000 * 60 * 60)) % 24;
 
         if (hour > 0) {
-            remainingTime = getRemainingMinutesSep(context)
+            remainingTime = getRemainingTimeSep(context)
                     + hour
                     + getRemainingMinutesAbbr(context) + " "
                     + minutes
                     + getRemainingMinutesAbbr(context);
         } else {
-            remainingTime = getRemainingMinutesSep(context)
+            remainingTime = getRemainingTimeSep(context)
                     + minutes
                     + getRemainingMinutesAbbr(context);
         }
@@ -1808,8 +1807,14 @@ public class Utils {
         return currentSchedule != null && currentSchedule.matches(".*? \\(.*?\\).*?");
     }
 
-    private static String getRemainingMinutesSep(Activity context) {
+    private static String getRemainingTimeSep(Activity context) {
         return isBlindView(context) ? "" : "~";
+    }
+
+    private static String getRemainingHoursAbbr(Activity context) {
+        return isBlindView(context)
+                ? context.getString(R.string.app_remaining_hours_blind)
+                : context.getString(R.string.app_remaining_hours);
     }
 
     private static String getRemainingMinutesAbbr(Activity context) {

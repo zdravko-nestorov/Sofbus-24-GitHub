@@ -8,6 +8,7 @@
     <string name="app_navigation_drawer_close" translatable="false">Затвори</string>
     <string name="app_empty_content" translatable="false" />
     <string name="app_button_ok">OK</string>
+    <string name="app_button_submit">Потвърди</string>
     <string name="app_button_save">Запази</string>
     <string name="app_button_cancel">Отказ</string>
     <string name="app_button_yes">Да</string>
@@ -48,8 +49,9 @@
     <string name="app_distance_meters">м</string>
     <string name="app_distance_kilometers">км&#160;</string>
     <string name="app_remaining_minutes">м</string>
-    <string name="app_remaining_minutes_blind">мин</string>
+    <string name="app_remaining_minutes_blind">мин.</string>
     <string name="app_remaining_hours">ч</string>
+    <string name="app_remaining_hours_blind">ч.</string>
     <string name="app_toast_add_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
@@ -466,5 +468,8 @@
     <string name="backup_export_file_size">Файлът, който се опитвате да запишете е по-голям от наличното прострсранство. Моля освободете място и опитайте отново.</string>
     <string name="backup_export_duplicate_title">Дублиращ се файл</string>
     <string name="backup_export_duplicate_msg" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Файлът <b><i>%s</i></b> вече съществува. Бихте ли желали да го презапишете?]]></string>
+
+    <!-- Application or Database Update -->
+    <string name="update_db_app_choice">Актуализация</string>
 
 </resources>

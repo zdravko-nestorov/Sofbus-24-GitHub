@@ -251,10 +251,18 @@ public class WebPage extends Activity {
         String vehicleType;
         switch (vehicle.getType()) {
             case BUS:
-                vehicleType = Constants.SUMC_SITE_SCHEDULE_AUTOBUS;
+                if (isElectrobus()) {
+                    vehicleType = Constants.SUMC_SITE_SCHEDULE_ELECTROBUS;
+                } else {
+                    vehicleType = Constants.SUMC_SITE_SCHEDULE_AUTOBUS;
+                }
                 break;
             case TROLLEY:
-                vehicleType = Constants.SUMC_SITE_SCHEDULE_TROLLEYBUS;
+                if (isElectrobus()) {
+                    vehicleType = Constants.SUMC_SITE_SCHEDULE_ELECTROBUS;
+                } else {
+                    vehicleType = Constants.SUMC_SITE_SCHEDULE_TROLLEYBUS;
+                }
                 break;
             case TRAM:
                 vehicleType = Constants.SUMC_SITE_SCHEDULE_TRAMWAY;
@@ -280,17 +288,26 @@ public class WebPage extends Activity {
             case TROLLEY:
             case TRAM:
                 vehicleNumber = vehicle.getNumber();
-                if ("22".equals(vehicleNumber)) {
-                    vehicleNumber = "21-22";
-                }
                 break;
             default:
-                // Default metro number in SofiaTraffic
+                // Default metro number in SofiaTraffic (easily choose between M1-M2 and M3)
                 vehicleNumber = "M1-M2";
                 break;
         }
 
         return vehicleNumber;
+    }
+
+    /**
+     * Check if the vehicle is electrobus or not, based on the number:
+     * - Starting with the bulgarian letter "Е"
+     * - Special numbers
+     *
+     * @return if the vehicle is electrobus or not
+     */
+    private boolean isElectrobus() {
+        String vehicleNumber = getVehicleNumber();
+        return vehicleNumber.startsWith("Е") || vehicleNumber.matches("^9|309$");
     }
 
     /**
