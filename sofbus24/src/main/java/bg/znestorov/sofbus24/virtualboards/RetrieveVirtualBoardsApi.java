@@ -215,17 +215,18 @@ public class RetrieveVirtualBoardsApi {
      */
     private Spanned getToastMsg(String msg) {
 
+        String name = station != null ? station.getName() : Constants.GLOBAL_PARAM_XXX;
+        String number = station != null ? station.getNumber() : Constants.GLOBAL_PARAM_XXX;
+
         Spanned progressDialogMsg;
         switch (htmlRequestCode) {
             case MULTIPLE_RESULTS:
-                progressDialogMsg = Html.fromHtml(String.format(msg,
-                        station.getNumber()));
+                progressDialogMsg = Html.fromHtml(
+                        String.format(msg, number));
                 break;
             default:
-                progressDialogMsg = Html.fromHtml(String.format(
-                        msg,
-                        String.format(station.getName() + " (%s)",
-                                station.getNumber())));
+                progressDialogMsg = Html.fromHtml(
+                        String.format(msg, String.format(name + " (%s)", number)));
                 break;
         }
 

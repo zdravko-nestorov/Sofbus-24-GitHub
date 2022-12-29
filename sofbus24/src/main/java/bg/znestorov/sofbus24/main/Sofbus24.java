@@ -43,7 +43,7 @@ public class Sofbus24 extends FragmentActivity {
 
         // Get the application and current context;
         context = Sofbus24.this;
-        ActivityUtils.showHomeActivtyChangedToast(context,
+        ActivityUtils.showHomeActivityChangedToast(context,
                 getString(R.string.navigation_drawer_home_standard));
 
         // Create the Sofbus24 fragment (should be created before the NavigationDrawer,

@@ -215,7 +215,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         vehiclesDatasource = new VehiclesDataSource(context);
         favouritesDatasource = new FavouritesDataSource(context);
 
-        ActivityUtils.showHomeActivtyChangedToast(context,
+        ActivityUtils.showHomeActivityChangedToast(context,
                 getString(R.string.navigation_drawer_home_map));
 
         getSharedPreferencesFields();

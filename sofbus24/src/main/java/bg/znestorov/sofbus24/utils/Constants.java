@@ -16,6 +16,7 @@ public class Constants {
      * Global parameters
      */
     public static final String GLOBAL_PARAM_EMPTY = "EMPTY";
+    public static final String GLOBAL_PARAM_XXX = "xxx";
     public static final Double GLOBAL_PARAM_SOFIA_CENTER_LATITUDE = 42.696492;
     public static final Double GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE = 23.326011;
     public static final Double GLOBAL_PARAM_SOFIA_SAN_LATITUDE = 42.6950719;

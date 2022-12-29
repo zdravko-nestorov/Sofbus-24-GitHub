@@ -290,7 +290,7 @@ public class DroidTrans extends FragmentActivity {
                 BUNDLE_IS_DROID_TRANS_HOME_SCREEN, false);
 
         // Show a notification that the home screen is changed (if needed)
-        ActivityUtils.showHomeActivtyChangedToast(context,
+        ActivityUtils.showHomeActivityChangedToast(context,
                 getString(R.string.navigation_drawer_home_cars));
 
         // Get the wheels state

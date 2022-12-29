@@ -684,12 +684,8 @@ public class FavouritesDataSource {
         }
 
         // Get the station type
-        StationsDataSource stationDatasource = new StationsDataSource(context);
-        stationDatasource.open();
-        StationEntity dbStation = stationDatasource.getStation(stationNumber);
-        VehicleTypeEnum stationType = dbStation != null ? dbStation.getType()
-                : VehicleTypeEnum.BTT;
-        stationDatasource.close();
+        StationEntity dbStation = getDbStation(stationNumber);
+        VehicleTypeEnum stationType = dbStation != null ? dbStation.getType() : VehicleTypeEnum.BTT;
 
         // Getting all columns of the row and setting them to a Station object
         station.setNumber(stationNumber);
@@ -711,5 +707,31 @@ public class FavouritesDataSource {
         }
 
         return station;
+    }
+
+    /**
+     * Get a station from the database, based on the provided parameters.
+     *
+     * @param stationNumber station number
+     * @return the database station
+     */
+    private StationEntity getDbStation(String stationNumber) {
+
+        // Open the stations datasource
+        StationsDataSource stationDatasource = new StationsDataSource(context);
+        stationDatasource.open();
+
+        StationEntity dbStation;
+        try {
+            dbStation = stationDatasource.getStation(stationNumber);
+        } catch (Exception e) {
+            dbStation = null;
+            // Database disk image is malformed (code 11 SQLITE_CORRUPT)
+            // https://stackoverflow.com/a/51471801/7794942
+        }
+
+        // Close the stations datasource
+        stationDatasource.close();
+        return dbStation;
     }
 }

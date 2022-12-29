@@ -120,7 +120,12 @@ public class ActivityUtils {
         context.finish();
         context.overridePendingTransition(0, 0);
         if (isHomeScreen) {
-            getHomeScreenLauncher(context).launch(context.getIntent());
+            try {
+                getHomeScreenLauncher(context).launch(context.getIntent());
+            } catch (Exception e) {
+                // Do nothing, the HomeScreenSelect is NULL in the global context
+                // It should not happen, as the context MUST be initialized during "HSS#onResume"
+            }
         } else {
             context.startActivity(context.getIntent());
         }
@@ -1026,8 +1031,8 @@ public class ActivityUtils {
      * @param context        the activity context
      * @param homeScreenName the home screen name
      */
-    public static void showHomeActivtyChangedToast(Activity context,
-                                                   String homeScreenName) {
+    public static void showHomeActivityChangedToast(Activity context,
+                                                    String homeScreenName) {
 
         GlobalEntity globalContext = (GlobalEntity) context
                 .getApplicationContext();

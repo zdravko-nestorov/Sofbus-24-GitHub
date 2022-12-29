@@ -81,6 +81,9 @@ public class PreferencesFragment extends PreferenceFragment implements
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
+        if (key == null) {
+            return;
+        }
 
         if (key.equals(Constants.PREFERENCE_KEY_FAVOURITES_EXPANDED)) {
             globalContext.setFavouritesChanged(true);

@@ -111,14 +111,13 @@ public class HomeScreenSelect extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initApplicationHssContext();
 
         LanguageChange.selectLocale(this);
         setContentView(R.layout.activity_home_screen_select);
 
         // Get the application and the current context
         context = HomeScreenSelect.this;
-        globalContext = (GlobalEntity) getApplicationContext();
-        globalContext.setHssContext(this);
         userChoice = savedInstanceState == null ? -1 : savedInstanceState
                 .getInt(BUNDLE_USER_CHOICE);
         isHomeScreenBoxViewVisible = savedInstanceState == null || savedInstanceState
@@ -143,6 +142,8 @@ public class HomeScreenSelect extends FragmentActivity implements
     @Override
     protected void onResume() {
         super.onResume();
+        initApplicationHssContext();
+
         if (shouldExecuteOnResume) {
             processAppStartUp(null, false);
         } else {
@@ -619,5 +620,12 @@ public class HomeScreenSelect extends FragmentActivity implements
             super.onCancelled();
             new LoadStartingData(context).execute();
         }
+    }
+
+    private void initApplicationHssContext() {
+        if (globalContext == null) {
+            globalContext = (GlobalEntity) getApplicationContext();
+        }
+        globalContext.setHssContext(this);
     }
 }
