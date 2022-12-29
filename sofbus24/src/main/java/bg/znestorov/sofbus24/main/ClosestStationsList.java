@@ -26,14 +26,11 @@ import bg.znestorov.sofbus24.closest.stations.list.ClosestStationsListFragment;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.RetrieveCurrentLocationTypeEnum;
-import bg.znestorov.sofbus24.permissions.AppPermissions;
-import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 
 public class ClosestStationsList extends FragmentActivity {
@@ -41,7 +38,6 @@ public class ClosestStationsList extends FragmentActivity {
     private static final String FRAGMENT_TAG_NAME = "Closest Stations List Fragment";
     private FragmentActivity context;
     private GlobalEntity globalContext;
-    private AppLifecycleListener observer;
     private Bundle savedInstanceState;
     private View csListFragment;
     private ProgressBar csListLoading;
@@ -66,15 +62,6 @@ public class ClosestStationsList extends FragmentActivity {
         initBundleInfo();
         initLayoutFields();
         startClosestStationsListFragment();
-
-        // Register minimize/maximize observer
-        observer = PermissionsUtils.addLifecycleObserver(context, AppPermissions.HOME_SCREEN, null);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        PermissionsUtils.removeLifecycleObserver(observer);
     }
 
     @Override

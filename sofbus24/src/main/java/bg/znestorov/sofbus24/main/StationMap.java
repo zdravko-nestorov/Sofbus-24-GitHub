@@ -34,21 +34,17 @@ import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
-import bg.znestorov.sofbus24.permissions.AppPermissions;
-import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 
 public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
     private Activity context;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
-    private AppLifecycleListener observer;
 
     private VehiclesDataSource vehiclesDatasource;
 
@@ -79,11 +75,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
         // Register lifecycle observer, request location permissions retrieve the map
         mapFragment = MapUtils.initializeMap(this, R.id.station_map, savedInstanceState);
-        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
-            if (mapFragment != null) {
-                mapFragment.getMapAsync(this);
-            }
-        });
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -119,7 +111,6 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         super.onDestroy();
         mapFragment.onDestroy();
 
-        PermissionsUtils.removeLifecycleObserver(observer);
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 

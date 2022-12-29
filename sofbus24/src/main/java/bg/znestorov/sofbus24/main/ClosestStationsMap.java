@@ -69,8 +69,6 @@ import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
-import bg.znestorov.sofbus24.permissions.AppPermissions;
-import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
@@ -79,7 +77,6 @@ import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
@@ -112,7 +109,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         }
     };
     private GlobalEntity globalContext;
-    private AppLifecycleListener observer;
     private boolean isCSMapHomeScreen;
     private StationsDataSource stationsDatasource;
     private VehiclesDataSource vehiclesDatasource;
@@ -287,7 +283,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         super.onDestroy();
         mapFragment.onDestroy();
 
-        PermissionsUtils.removeLifecycleObserver(observer);
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
@@ -498,13 +493,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     requestCode);
             dialog.show();
         } else {
-            // Register lifecycle observer, request location permissions retrieve the map
-            if (observer == null) {
-                observer = PermissionsUtils.addLifecycleObserver(
-                        this, AppPermissions.HOME_SCREEN, this::getMapAsync);
-            } else {
-                getMapAsync();
-            }
+            getMapAsync();
         }
     }
 

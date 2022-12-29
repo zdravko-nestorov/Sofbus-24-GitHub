@@ -2,6 +2,7 @@ package bg.znestorov.sofbus24.main;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -34,6 +35,8 @@ import bg.znestorov.sofbus24.home.screen.Sofbus24DatabaseErrorDialog;
 import bg.znestorov.sofbus24.home.screen.Sofbus24DatabaseErrorDialog.OnRecreateDatabaseListener;
 import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.navigation.NavDrawerHomeScreenPreferences;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.schedule.ScheduleLoadVehicles;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.HmsUtils;
@@ -78,6 +81,7 @@ public class HomeScreenSelect extends FragmentActivity implements
     private View homeScreenBoxView;
     private boolean isHomeScreenBoxViewVisible;
     private boolean shouldExecuteOnResume;
+    private ActivityResultLauncher<String[]> permissionLauncher;
 
     /**
      * Make a launcher for a previously-{@link ActivityResultCaller#registerForActivityResult}
@@ -130,6 +134,10 @@ public class HomeScreenSelect extends FragmentActivity implements
             registerGCM();
             enableDisableStatistics();
         }
+
+        // Create a permission launcher to request permissions
+        this.permissionLauncher = PermissionsUtils.createPermissionLauncher(context,
+                AppPermissions.HOME_SCREEN, this::startHomeScreen);
     }
 
     @Override
@@ -391,6 +399,10 @@ public class HomeScreenSelect extends FragmentActivity implements
                         true);
                 break;
         }
+
+        // Check for updates (only when everything is visualized)
+        Utils.checkForUpdate(context, UpdateTypeEnum.APP);
+        Utils.checkForUpdate(context, UpdateTypeEnum.DB);
     }
 
     /**
@@ -590,12 +602,16 @@ public class HomeScreenSelect extends FragmentActivity implements
         @Override
         protected void onPostExecute(Void result) {
 
-            startHomeScreen();
+            // Check if request permissions dialog will be shown (disable "onResume" actions)
+            // The "onResume" actions will be triggered as the permissions dialog is shown on top
+            // of the current activity. This will open multiple (two) startup screens
+            if (!PermissionsUtils.checkPermissions(context, AppPermissions.HOME_SCREEN)) {
+                shouldExecuteOnResume = false;
+            }
 
-            // Check for updates (only when the application is started for the
-            // first time and everything is visualized)
-            Utils.checkForUpdate(context, UpdateTypeEnum.APP);
-            Utils.checkForUpdate(context, UpdateTypeEnum.DB);
+            // Launch the already registered permission launcher
+            PermissionsUtils.launchPermissionLauncher(context, AppPermissions.HOME_SCREEN,
+                    permissionLauncher);
         }
 
         @Override

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.pm.PackageManager;
 
 import androidx.activity.ComponentActivity;
 import androidx.activity.result.ActivityResultLauncher;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ProcessLifecycleOwner;
 import java.util.Map;
 
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 
 /**
@@ -118,6 +120,32 @@ public class PermissionsUtils {
 
         // Launch the permission launcher
         launcher.launch(appPermissions.getPermissions());
+    }
+
+    /**
+     * Check if all permissions are granted.
+     *
+     * @param activity       current activity
+     * @param appPermissions permissions to grant
+     * @return if all permissions are granted
+     */
+    public static boolean checkPermissions(
+            ComponentActivity activity, AppPermissions appPermissions) {
+
+        // Check for any requested permissions
+        if (appPermissions == null || Utils.isEmpty(appPermissions.getPermissions())) {
+            return true;
+        }
+
+        // Check all of the requested permissions are granted
+        for (String permission : appPermissions.getPermissions()) {
+            if (activity.checkCallingOrSelfPermission(permission)
+                    != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private static boolean checkPermissions(

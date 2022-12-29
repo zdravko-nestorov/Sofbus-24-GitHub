@@ -48,15 +48,12 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
-import bg.znestorov.sofbus24.permissions.AppPermissions;
-import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
-import bg.znestorov.sofbus24.utils.activity.AppLifecycleListener;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 public class StationRouteMap extends FragmentActivity implements OnMapReadyCallback {
@@ -68,7 +65,6 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
     private Activity context;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
-    private AppLifecycleListener observer;
 
     private DirectionsEntity directionsEntity;
     private SupportMapFragment mapFragment;
@@ -129,11 +125,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Register lifecycle observer, request location permissions and retrieve the map
         mapFragment = MapUtils.initializeMap(this, R.id.station_route_map, savedInstanceState);
-        observer = PermissionsUtils.addLifecycleObserver(this, AppPermissions.HOME_SCREEN, () -> {
-            if (mapFragment != null) {
-                mapFragment.getMapAsync(this);
-            }
-        });
+        mapFragment.getMapAsync(this);
     }
 
     @Override
@@ -169,7 +161,6 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         super.onDestroy();
         mapFragment.onDestroy();
 
-        PermissionsUtils.removeLifecycleObserver(observer);
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
