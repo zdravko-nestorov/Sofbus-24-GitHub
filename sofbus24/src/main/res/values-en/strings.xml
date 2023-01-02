@@ -194,6 +194,8 @@
     <string name="pref_category_stations_timeType_summary">Remaining time or time of arrival</string>
     <string name="pref_category_stations_timeSource_title">Public transport</string>
     <string name="pref_category_stations_timeSource_summary">Determine what time to be used for display/calculate the extracted information</string>
+    <string name="pref_category_stations_vehicleExtras_title">Additional extras</string>
+    <string name="pref_category_stations_vehicleExtras_summary">Show the vehicle\'s additional extras</string>
     <string name="pref_category_schedule_cache">LOCAL SCHEDULE</string>
     <string name="pref_category_schedule_cache_cacheState_title">Local schedule</string>
     <string name="pref_category_schedule_cache_cacheState_summary">Use a local schedule for the public transport vehicles (in case of a problem with the information retrieval)</string>

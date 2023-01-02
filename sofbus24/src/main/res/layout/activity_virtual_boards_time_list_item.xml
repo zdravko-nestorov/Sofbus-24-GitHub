@@ -47,7 +47,7 @@
         android:textColor="?android:attr/textColorSecondary"
         android:textSize="12sp" />
 
-    <TextView
+    <bg.znestorov.sofbus24.utils.activity.TextViewWithImages
         android:id="@+id/cs_list_item_vehicle_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

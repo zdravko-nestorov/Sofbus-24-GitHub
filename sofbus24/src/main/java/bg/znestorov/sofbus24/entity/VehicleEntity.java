@@ -22,8 +22,9 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
     private VehicleTypeEnum type;
     private String direction;
     private ArrayList<String> arrivalTimes;
-    private ArrayList<Boolean> hasAirConditioning;
     private ArrayList<Boolean> isWheelchairAccessible;
+    private ArrayList<Boolean> hasAirConditioning;
+    private ArrayList<Boolean> hasBicycleMount;
     private ArrayList<Boolean> hasWifi;
 
     private int stop = -1;
@@ -170,6 +171,14 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
         this.rid = rid;
     }
 
+    public ArrayList<Boolean> getIsWheelchairAccessible() {
+        return isWheelchairAccessible;
+    }
+
+    public void setIsWheelchairAccessible(ArrayList<Boolean> isWheelchairAccessible) {
+        this.isWheelchairAccessible = isWheelchairAccessible;
+    }
+
     public ArrayList<Boolean> getHasAirConditioning() {
         return hasAirConditioning;
     }
@@ -178,12 +187,12 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
         this.hasAirConditioning = hasAirConditioning;
     }
 
-    public ArrayList<Boolean> getIsWheelchairAccessible() {
-        return isWheelchairAccessible;
+    public ArrayList<Boolean> getHasBicycleMount() {
+        return hasBicycleMount;
     }
 
-    public void setIsWheelchairAccessible(ArrayList<Boolean> isWheelchairAccessible) {
-        this.isWheelchairAccessible = isWheelchairAccessible;
+    public void setHasBicycleMount(ArrayList<Boolean> hasBicycleMount) {
+        this.hasBicycleMount = hasBicycleMount;
     }
 
     public ArrayList<Boolean> getHasWifi() {

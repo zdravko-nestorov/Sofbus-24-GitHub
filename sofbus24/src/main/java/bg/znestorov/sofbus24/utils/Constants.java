@@ -16,6 +16,7 @@ public class Constants {
      * Global parameters
      */
     public static final String GLOBAL_PARAM_EMPTY = "EMPTY";
+    public static final String GLOBAL_PARAM_EMPTY_STRING = "";
     public static final String GLOBAL_PARAM_XXX = "xxx";
     public static final Double GLOBAL_PARAM_SOFIA_CENTER_LATITUDE = 42.696492;
     public static final Double GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE = 23.326011;
@@ -81,6 +82,8 @@ public class Constants {
     public static final String PREFERENCE_DEFAULT_VALUE_TIME_TYPE_ARRIVAL = "timeArrival";
     public static final String PREFERENCE_KEY_TIME_SOURCE = "timeSource";
     public static final String PREFERENCE_DEFAULT_VALUE_TIME_SOURCE = "timeSkgt";
+    public static final String PREFERENCE_KEY_VEHICLE_EXTRAS = "vehicleExtras";
+    public static final boolean PREFERENCE_DEFAULT_VALUE_VEHICLE_EXTRAS = true;
     public static final String PREFERENCE_KEY_CACHE_STATE = "cacheState";
     public static final boolean PREFERENCE_DEFAULT_VALUE_CACHE_STATE = true;
     public static final String PREFERENCE_KEY_NUMBER_OF_DAYS = "numberOfDays";
@@ -192,8 +195,9 @@ public class Constants {
     public static final String VB_VEHICLE_TYPE_API = "vehicle_type";
     public static final String VB_VEHICLE_DIRECTION_API = "direction";
     public static final String VB_VEHICLE_ARRIVALS_API = "arrivals";
-    public static final String VB_VEHICLE_AIR_CONDITIONING_API = "has_air_conditioning";
     public static final String VB_VEHICLE_WHEELCHAIR_API = "is_wheelchair_accessible";
+    public static final String VB_VEHICLE_AIR_CONDITIONING_API = "has_air_conditioning";
+    public static final String VB_VEHICLE_BICYCLE_MOUNT_API = "has_bicycle_mount";
     public static final String VB_VEHICLE_TIME_API = "time";
     public static final String VB_VEHICLE_WIFI_API = "has_wifi";
 

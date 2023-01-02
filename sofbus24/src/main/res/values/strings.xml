@@ -198,6 +198,8 @@
     <string name="pref_category_stations_timeType_summary">Оставащо време или времена на пристигане</string>
     <string name="pref_category_stations_timeSource_title">Времена на градския транспорт</string>
     <string name="pref_category_stations_timeSource_summary">Определяне на кое време да се използва за показване/пресмятане на извлечената информация</string>
+    <string name="pref_category_stations_vehicleExtras_title">Допълнителни екстри</string>
+    <string name="pref_category_stations_vehicleExtras_summary">Показване на допълнителните екстри на превозното средство</string>
     <string name="pref_category_schedule_cache">ЛОКАЛНО РАЗПИСАНИЕ</string>
     <string name="pref_category_schedule_cache_cacheState_title">Локално разписание</string>
     <string name="pref_category_schedule_cache_cacheState_summary">Използване на локално разписание на колите на градския транспорт (в случаи на проблем при извличането на информацията)</string>

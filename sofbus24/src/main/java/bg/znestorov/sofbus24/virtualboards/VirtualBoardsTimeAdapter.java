@@ -15,12 +15,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
 
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.Utils;
+import bg.znestorov.sofbus24.utils.activity.TextViewWithImages;
 
 /**
  * Array Adapted user to set each row a vehicle with its arrival times from the
@@ -157,10 +160,13 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      */
     private String getArrivalTimes(VehicleEntity stationVehicle) {
         ArrayList<String> arrivalTimesList = stationVehicle.getArrivalTimes();
-        StringBuilder arrivalTimes = new StringBuilder("");
+        StringBuilder arrivalTimes = new StringBuilder();
 
         for (int i = 0; i < arrivalTimesList.size(); i++) {
-            arrivalTimes.append(arrivalTimesList.get(i)).append(", ");
+            arrivalTimes
+                    .append(arrivalTimesList.get(i))
+                    .append(getAllExtrasImg(stationVehicle, i))
+                    .append(", ");
         }
 
         // In very rare cases there are no results and the arrivalTimes array is
@@ -186,12 +192,14 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         ArrayList<String> arrivalTimesList = stationVehicle.getArrivalTimes();
         String currentTime = Utils.getValueAfterLast(
                 vbTimeStation.getTime(context), ",").trim();
-        StringBuilder arrivalTimes = new StringBuilder("");
+        StringBuilder arrivalTimes = new StringBuilder();
 
         for (int i = 0; i < arrivalTimesList.size(); i++) {
             String timeToUse = Utils.getTimeDifference(context,
                     arrivalTimesList.get(i), currentTime);
-            arrivalTimes.append(timeToUse).append(", ");
+            arrivalTimes.append(timeToUse)
+                    .append(getAllExtrasImg(stationVehicle, i))
+                    .append(", ");
         }
 
         if (arrivalTimes.length() > 1) {
@@ -217,7 +225,7 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         ArrayList<String> arrivalTimesList = stationVehicle.getArrivalTimes();
         String currentTime = Utils.getValueAfterLast(
                 vbTimeStation.getTime(context), ",").trim();
-        StringBuilder bothTimes = new StringBuilder("");
+        StringBuilder bothTimes = new StringBuilder();
 
         for (int i = 0; i < arrivalTimesList.size(); i++) {
 
@@ -225,8 +233,12 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
             String remainingTime = Utils.getTimeDifference(context,
                     arrivalTimesList.get(i), currentTime);
 
-            bothTimes.append(timesOfArrival).append(" (").append(remainingTime)
-                    .append("), ");
+            bothTimes.append(timesOfArrival)
+                    .append(" (")
+                    .append(remainingTime)
+                    .append(")")
+                    .append(getAllExtrasImg(stationVehicle, i))
+                    .append(", ");
         }
 
         if (bothTimes.length() > 1) {
@@ -270,6 +282,111 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         }
 
         return rowTimeCaption;
+    }
+
+    /**
+     * Get all vehicle's extras image resources.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return all vehicle's extras image resources
+     */
+    private String getAllExtrasImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getWheelchairAccessibleImg(stationVehicle, arrivalTimeIndex) +
+                getAirConditioningImg(stationVehicle, arrivalTimeIndex) +
+                getBicycleMountImg(stationVehicle, arrivalTimeIndex) +
+                getWiFiImg(stationVehicle, arrivalTimeIndex);
+    }
+
+    /**
+     * Get the wheelchair accessible vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return the wheelchair accessible vehicle's extra image resource
+     */
+    private String getWheelchairAccessibleImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
+                stationVehicle::getIsWheelchairAccessible, "ic_vb_wheelchair");
+    }
+
+    /**
+     * Get the air conditioning vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return the air conditioning vehicle's extra image resource
+     */
+    private String getAirConditioningImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
+                stationVehicle::getHasAirConditioning, "ic_vb_air_conditioning");
+    }
+
+    /**
+     * Get the bicycle mount vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return the bicycle mount vehicle's extra image resource
+     */
+    private String getBicycleMountImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
+                stationVehicle::getHasBicycleMount, "ic_vb_bicycle");
+    }
+
+    /**
+     * Get the WiFi vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return the WiFi vehicle's extra image resource
+     */
+    private String getWiFiImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
+                stationVehicle::getHasWifi, "ic_vb_wifi");
+    }
+
+    /**
+     * Get the specific vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @param extrasFunc       retrieve the specific vehicle's extra function
+     * @param image            vehicle's extra image resource
+     * @return the specific vehicle extra image resource
+     */
+    private String getVehicleExtraImg(VehicleEntity stationVehicle, int arrivalTimeIndex,
+                                      Callable<List<Boolean>> extrasFunc, String image) {
+        // Check if the specific extra is available, based on the user preferences
+        if (Utils.isBlindView(context) || !Utils.areAdditionalExtrasAvailable(context)) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
+        }
+
+        // Check if the station vehicle is found
+        if (stationVehicle == null) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
+        }
+
+        // Retrieve the specific vehicle's extras
+        List<Boolean> extras;
+        try {
+            extras = extrasFunc.call();
+        } catch (Exception e) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
+        }
+
+        // Check if the specific vehicle's extras contain an element on the requested index
+        if (Utils.isEmpty(extras) || arrivalTimeIndex >= extras.size()) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
+        }
+
+        // Check if the specific vehicle's extra is available for this vehicle
+        if (!extras.get(arrivalTimeIndex)) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
+        }
+
+        // Return the specific vehicle's extra image
+        return String.format(TextViewWithImages.IMAGE_SOURCE_TEMPLATE, image);
     }
 
     // Used for optimize performance of the ListView

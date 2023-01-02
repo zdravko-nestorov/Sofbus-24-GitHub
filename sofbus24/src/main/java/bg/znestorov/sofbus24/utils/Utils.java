@@ -1807,6 +1807,30 @@ public class Utils {
         return currentSchedule != null && currentSchedule.matches(".*? \\(.*?\\).*?");
     }
 
+    /**
+     * Check if the blind view (whole app) is activated via the preferences screen.
+     *
+     * @param context Context of the current activity
+     * @return if the blind view activated via the preferences screen
+     */
+    public static boolean isBlindView(Activity context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
+                        Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+    }
+
+    /**
+     * Check if the vehicle's extras (virtual boards) are activated via the preferences screen.
+     *
+     * @param context Context of the current activity
+     * @return if the vehicle's extras are activated via the preferences screen
+     */
+    public static boolean areAdditionalExtrasAvailable(Activity context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
+                        Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+    }
+
     private static String getRemainingTimeSep(Activity context) {
         return isBlindView(context) ? "" : "~";
     }
@@ -1821,11 +1845,5 @@ public class Utils {
         return isBlindView(context)
                 ? context.getString(R.string.app_remaining_minutes_blind)
                 : context.getString(R.string.app_remaining_minutes);
-    }
-
-    public static boolean isBlindView(Activity context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
-                        Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
     }
 }

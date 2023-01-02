@@ -29,6 +29,7 @@ import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_NAME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_SKGT_TIME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_AIR_CONDITIONING_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ARRIVALS_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_BICYCLE_MOUNT_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DIRECTION_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_NAME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TIME_API;
@@ -250,8 +251,9 @@ class ProcessVirtualBoardsApi {
 
         // Form the vehicle arrival parameters
         ArrayList<String> arrivalTimes = new ArrayList<>();
-        ArrayList<Boolean> hasAirConditioning = new ArrayList<>();
         ArrayList<Boolean> isWheelchairAccessible = new ArrayList<>();
+        ArrayList<Boolean> hasAirConditioning = new ArrayList<>();
+        ArrayList<Boolean> hasBicycleMount = new ArrayList<>();
         ArrayList<Boolean> hasWifi = new ArrayList<>();
 
         // Get the times of arrival
@@ -264,8 +266,9 @@ class ProcessVirtualBoardsApi {
             String arrivalTime = formatArrivalTime(getAsJsonString(arrivalJsonObject, VB_VEHICLE_TIME_API));
             if (!Utils.isEmpty(arrivalTime)) {
                 arrivalTimes.add(arrivalTime);
-                hasAirConditioning.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_AIR_CONDITIONING_API));
                 isWheelchairAccessible.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_WHEELCHAIR_API));
+                hasAirConditioning.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_AIR_CONDITIONING_API));
+                hasBicycleMount.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_BICYCLE_MOUNT_API));
                 hasWifi.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_WIFI_API));
             }
         }
@@ -275,8 +278,9 @@ class ProcessVirtualBoardsApi {
 
         // Add al fields to the Vehicle object
         vehicle.setArrivalTimes(arrivalTimes);
-        vehicle.setHasAirConditioning(hasAirConditioning);
         vehicle.setIsWheelchairAccessible(isWheelchairAccessible);
+        vehicle.setHasAirConditioning(hasAirConditioning);
+        vehicle.setHasBicycleMount(hasBicycleMount);
         vehicle.setHasWifi(hasWifi);
     }
 

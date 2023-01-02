@@ -57,6 +57,11 @@
             android:key="timeSource"
             android:summary="@string/pref_category_stations_timeSource_summary"
             android:title="@string/pref_category_stations_timeSource_title" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="vehicleExtras"
+            android:summary="@string/pref_category_stations_vehicleExtras_summary"
+            android:title="@string/pref_category_stations_vehicleExtras_title" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_category_schedule_cache">
         <CheckBoxPreference
