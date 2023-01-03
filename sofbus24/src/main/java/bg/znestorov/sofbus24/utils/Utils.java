@@ -1827,8 +1827,8 @@ public class Utils {
      */
     public static boolean areAdditionalExtrasAvailable(Activity context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
-                        Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+                .getBoolean(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS,
+                        Constants.PREFERENCE_DEFAULT_VALUE_VEHICLE_EXTRAS);
     }
 
     private static String getRemainingTimeSep(Activity context) {
