@@ -196,11 +196,18 @@ public class PreferencesFragment extends PreferenceFragment implements
         boolean isBlindViewActive = sharedPreferences.getBoolean(
                 Constants.PREFERENCE_KEY_BLIND_VIEW,
                 Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+
+        // Try to change the additional vehicles extras availability
+        boolean areAdditionalExtrasAvailable = !isBlindViewActive
+                && Constants.PREFERENCE_DEFAULT_VALUE_VEHICLE_EXTRAS;
+        sharedPreferences.edit()
+                .putBoolean(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS, areAdditionalExtrasAvailable)
+                .commit();
+
+        // Try to change the tab types
         String tabsType = isBlindViewActive
                 ? Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE_TITLE
                 : Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE;
-
-        // Try to change the tab types
         boolean areTabsTypeChanged = sharedPreferences.edit()
                 .putString(Constants.PREFERENCE_KEY_TABS_TYPE, tabsType)
                 .commit();

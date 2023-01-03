@@ -358,7 +358,7 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
     private String getVehicleExtraImg(VehicleEntity stationVehicle, int arrivalTimeIndex,
                                       Callable<List<Boolean>> extrasFunc, String image) {
         // Check if the specific extra is available, based on the user preferences
-        if (Utils.isBlindView(context) || !Utils.areAdditionalExtrasAvailable(context)) {
+        if (!Utils.areAdditionalExtrasAvailable(context)) {
             return Constants.GLOBAL_PARAM_EMPTY_STRING;
         }
 
