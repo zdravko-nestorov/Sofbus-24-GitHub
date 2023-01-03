@@ -33,8 +33,10 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.ThemeChange;
+import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
+import bg.znestorov.sofbus24.utils.activity.TextViewWithImages;
 import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 import bg.znestorov.sofbus24.virtualboards.VirtualBoardsTimeFragment;
 
@@ -52,6 +54,7 @@ public class VirtualBoardsTime extends FragmentActivity {
     private TextView vbTimeStationCaption;
     private TextView vbTimeCurrentTime;
     private ImageButton vbTimeStreetViewButton;
+    private TextViewWithImages vbTimeLegend;
     private VirtualBoardsStationEntity vbTimeStation;
     private FavouritesDataSource favouritesDatasource;
     private boolean isFavouriteStation;
@@ -205,6 +208,7 @@ public class VirtualBoardsTime extends FragmentActivity {
         vbTimeStationCaption = (TextView) findViewById(R.id.vb_time_station_caption);
         vbTimeCurrentTime = (TextView) findViewById(R.id.vb_time_current_time);
         vbTimeStreetViewButton = (ImageButton) findViewById(R.id.vb_time_street_view_button);
+        vbTimeLegend = (TextViewWithImages) findViewById(R.id.vb_time_legend);
         actionsOverStreetViewFields();
     }
 
@@ -258,6 +262,12 @@ public class VirtualBoardsTime extends FragmentActivity {
                 }
             }
         });
+
+        // Add the vehicle's extras information legend
+        if (Utils.areAdditionalExtrasAvailable(context)) {
+            vbTimeLegend.setVisibility(View.VISIBLE);
+            vbTimeLegend.setText(getString(R.string.vb_time_legend));
+        }
     }
 
     /**

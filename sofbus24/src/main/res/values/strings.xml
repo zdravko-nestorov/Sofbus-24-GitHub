@@ -316,6 +316,7 @@
     <string name="vb_time_item_remaining_time" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
     <string name="vb_time_item_time_of_arrival" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
     <string name="vb_time_item_both" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
+    <string name="vb_time_legend" formatted="false">[img src=ic_vb_wheelchair/] - Инвалидна Количка, [img src=ic_vb_air_conditioning/] - Климатик, [img src=ic_vb_bicycle/] - Колело, [img src=ic_vb_wifi/] - Wi-Fi</string>
 
     <!-- Schedule Fragment -->
     <string name="sch_search_hint">Търсене по име или номер</string>

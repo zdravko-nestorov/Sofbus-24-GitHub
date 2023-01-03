@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
@@ -85,6 +86,7 @@
             android:id="@+id/vb_time_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/vb_time_legend"
             android:visibility="invisible" />
 
         <ProgressBar
@@ -94,6 +96,21 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:visibility="visible" />
+
+        <bg.znestorov.sofbus24.utils.activity.TextViewWithImages
+            android:id="@+id/vb_time_legend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3sp"
+            android:background="@drawable/vb_time_border"
+            android:gravity="center"
+            android:paddingTop="3sp"
+            android:paddingBottom="3sp"
+            android:textSize="@dimen/vb_time_legend_size"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="SmallSp" />
     </RelativeLayout>
 
 </RelativeLayout>
