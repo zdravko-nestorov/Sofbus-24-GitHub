@@ -192,7 +192,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="3sp"
             android:background="@drawable/metro_schedule_border"
             android:gravity="center"
             android:paddingTop="3sp"

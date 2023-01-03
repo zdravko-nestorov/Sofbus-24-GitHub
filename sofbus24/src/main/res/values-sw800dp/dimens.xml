@@ -1,9 +1,9 @@
 <resources>
 
     <!-- Virtual Boards Time -->
-    <dimen name="vb_time_legend_size">12sp</dimen>
+    <dimen name="vb_time_legend_size">11sp</dimen>
 
     <!-- Metro Schedule -->
-    <dimen name="metro_schedule_legend_size">12sp</dimen>
+    <dimen name="metro_schedule_legend_size">11sp</dimen>
 
 </resources>

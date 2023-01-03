@@ -9,7 +9,7 @@
 
     <!-- Virtual Boards Time -->
     <dimen name="vb_time_image_street_view_height">135sp</dimen>
-    <dimen name="vb_time_legend_size">11sp</dimen>
+    <dimen name="vb_time_legend_size">10sp</dimen>
 
     <!-- Home Screen -->
     <dimen name="home_screen_layout_width">360sp</dimen>
@@ -18,6 +18,6 @@
     <dimen name="home_screen_subtitle_txt_size">16sp</dimen>
 
     <!-- Metro Schedule -->
-    <dimen name="metro_schedule_legend_size">11sp</dimen>
+    <dimen name="metro_schedule_legend_size">10sp</dimen>
 
 </resources>
