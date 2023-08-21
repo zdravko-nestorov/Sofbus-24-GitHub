@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -16,6 +17,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.lang.reflect.Method;
 
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -171,12 +174,36 @@ public class WebPage extends Activity {
         webPage.getSettings().setSupportZoom(true);
         webPage.getSettings().setRenderPriority(RenderPriority.HIGH);
 
-        webPage.getSettings().setAppCacheMaxSize(1024 * 1024 * 8);
-        String appCachePath = getApplicationContext().getCacheDir()
-                .getAbsolutePath();
-        webPage.getSettings().setAppCachePath(appCachePath);
+        // Android 13 (SDK >= 33) removes some WebView caching methods
+        if (Build.VERSION.SDK_INT < 33) {
+            try {
+                Class<?> webSettingsClazz = Class.forName("android.webkit.WebSettings");
+
+                // "webPage.setAppCacheMaxSize(...)" method
+                Method setAppCacheMaxSize = webSettingsClazz.getDeclaredMethod("setAppCacheMaxSize", long.class);
+                setAppCacheMaxSize.setAccessible(true);
+                long appCacheMaxSize = 1024 * 1024 * 8;
+                setAppCacheMaxSize.invoke(webPage.getSettings(), appCacheMaxSize);
+
+                // "webPage.setAppCachePath(...)" method
+                Method setAppCachePathMethod = webSettingsClazz.getDeclaredMethod("setAppCachePath", String.class);
+                setAppCachePathMethod.setAccessible(true);
+                String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();
+                setAppCachePathMethod.invoke(webPage.getSettings(), appCachePath);
+
+                // "webPage.setAppCacheEnabled(...)" method
+                Method setAppCacheEnabled = webSettingsClazz.getDeclaredMethod("setAppCacheEnabled", boolean.class);
+                setAppCacheEnabled.setAccessible(true);
+                boolean appCacheEnabled = true;
+                setAppCacheEnabled.invoke(webPage.getSettings(), appCacheEnabled);
+
+            } catch (Throwable e) {
+                // Ignore - nothing can be done
+            }
+        }
+
+        // Cache properties valid for all Android versions
         webPage.getSettings().setAllowFileAccess(true);
-        webPage.getSettings().setAppCacheEnabled(true);
         webPage.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
         // If the device is in landscape mode and the size of the screen is 4

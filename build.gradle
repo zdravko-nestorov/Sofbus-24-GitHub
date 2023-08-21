@@ -7,8 +7,8 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath 'com.huawei.agconnect:agconnect-apms-plugin:1.5.2.300'
-        classpath 'com.huawei.agconnect:agcp:1.4.2.301'
+        classpath 'com.huawei.agconnect:agconnect-apms-plugin:1.6.1.300'
+        classpath 'com.huawei.agconnect:agcp:1.8.0.300'
     }
 }
 

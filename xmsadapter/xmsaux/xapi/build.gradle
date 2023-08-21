@@ -2,10 +2,10 @@ apply plugin: 'com.android.library'
 apply from: '../../scripts/productFlavor.gradle'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 32
+        targetSdkVersion 33
     }
 }
 

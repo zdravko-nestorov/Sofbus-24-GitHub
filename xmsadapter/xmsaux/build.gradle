@@ -3,10 +3,10 @@ apply from: '../scripts/productFlavor.gradle'
 apply from: 'scripts/copy-dex.gradle'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 32
+        targetSdkVersion 33
 
         consumerProguardFiles 'proguard.txt'
     }
