@@ -2,6 +2,7 @@ package bg.znestorov.sofbus24.utils.activity;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Spannable;
 import android.text.style.ImageSpan;
 import android.util.AttributeSet;
@@ -13,11 +14,12 @@ import java.util.regex.Pattern;
 public class TextViewWithImages extends TextView {
 
     // Image source template
-    public static final String IMAGE_SOURCE_TEMPLATE = " [img src=%s/]";
+    public static final String IMAGE_SOURCE_TEMPLATE = " [img src=%s alt=%s/]";
 
     // Regex pattern that looks for embedded images of the format: [img src=imageName/]
-    public static final String PATTERN = "\\Q[img src=\\E([a-zA-Z0-9_]+?)\\Q/]\\E";
+    public static final String PATTERN = "\\Q[img src=\\E([a-zA-Z0-9_]+?)\\Q alt=\\E([a-zA-Z0-9_]+?)\\Q/]\\E";
     private static final String DRAWABLE = "drawable";
+    private static final String STRING = "string";
 
     public TextViewWithImages(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -74,10 +76,16 @@ public class TextViewWithImages extends TextView {
                 }
             }
             final String resName = spannable.subSequence(matcher.start(1), matcher.end(1)).toString().trim();
+            final String resDescription = spannable.subSequence(matcher.start(2), matcher.end(2)).toString().trim();
             final int id = context.getResources().getIdentifier(resName, DRAWABLE, context.getPackageName());
+            final int descriptionId = context.getResources().getIdentifier(resDescription, STRING, context.getPackageName());
             if (set) {
                 hasChanges = true;
-                spannable.setSpan(makeImageSpan(context, id, height, colour),
+                ImageSpan imageSpan = makeImageSpan(context, id, height, colour);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    imageSpan.setContentDescription(context.getResources().getString(descriptionId));
+                }
+                spannable.setSpan(imageSpan,
                         matcher.start(),
                         matcher.end(),
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE

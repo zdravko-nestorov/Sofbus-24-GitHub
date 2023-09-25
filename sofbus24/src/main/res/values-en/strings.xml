@@ -4,6 +4,10 @@
     <!-- Global labels -->
     <string name="app_sofbus24">Sofbus 24</string>
     <string name="app_button_ok">OK</string>
+    <string name="app_navigation_drawer_open">Open navigation drawer</string>
+    <string name="app_navigation_drawer_opened">Navigation drawer opened</string>
+    <string name="app_navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_navigation_drawer_closed">Navigation drawer closed</string>
     <string name="app_button_submit">Submit</string>
     <string name="app_button_save">Save</string>
     <string name="app_button_cancel">Cancel</string>
@@ -48,12 +52,15 @@
     <string name="app_remaining_minutes_blind">min</string>
     <string name="app_remaining_hours">h</string>
     <string name="app_remaining_hours_blind">h</string>
+    <string name="app_add_favourites">Add to Favorites</string>
+    <string name="app_remove_favourites">Remove from Favorites</string>
     <string name="app_toast_add_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully added to <b>Favorites</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully removed from <b>Favorites</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false"><![CDATA[The station <b><i>%s (%s)</b></i> was successfully renamed to <b><i>%s (%s)</b></i>.]]></string>
     <string name="app_google_play_title">Google Play services</string>
     <string name="app_google_play_msg">Services, which Sofbus 24 uses to show the map, are not supported by your device. Please install them to move on.</string>
     <string name="app_google_street_view_title">Google Street View</string>
+    <string name="app_google_street_view_button">Google Street View</string>
     <string name="app_google_street_view_msg">Google Play services, which Sofbus 24 uses to show the Google Street View, are not supported by your device. Please install them to move on.</string>
     <string name="app_send_email_subject">Sofbus 24 startup problem</string>
     <string name="app_send_email_body" formatted="false"><![CDATA[Sofbus 24 experienced an unexpected error on startup…]]></string>
@@ -253,6 +260,7 @@
 
     <!-- Favourites Fragment -->
     <string name="fav_search_hint">Search by name or number</string>
+    <string name="fav_item_station_name_number_street_view" formatted="false">%s (%s) - Google Street View image</string>
     <string name="fav_item_station_number_text" formatted="false">Station number: %s</string>
     <string name="fav_item_metro_station_number_text" formatted="false">Metro station number: %s</string>
     <string name="fav_item_rename_title">Rename</string>
@@ -305,7 +313,12 @@
     <string name="vb_time_item_remaining_time" formatted="false"><![CDATA[<b><font color="#FF2727">Remaining time: %s</font></b>]]></string>
     <string name="vb_time_item_time_of_arrival" formatted="false"><![CDATA[<b><font color="#FF2727">Times of arrival: %s</font></b>]]></string>
     <string name="vb_time_item_both" formatted="false"><![CDATA[<b><font color="#FF2727">Times: %s</font></b>]]></string>
-    <string name="vb_time_legend" formatted="false">[img src=ic_vb_wheelchair/] - Wheelchair, [img src=ic_vb_air_conditioning/] - Air Conditioning, [img src=ic_vb_bicycle/] - Bicycle, [img src=ic_vb_wifi/] - Wi-Fi</string>
+    <string name="vb_time_legend_icon">Icon</string>
+    <string name="vb_time_legend" formatted="false"><![CDATA[[img src=ic_vb_wheelchair alt=vb_time_legend_icon/]<font color="#4099DD"> - Low-floor</font>, [img src=ic_vb_air_conditioning alt=vb_time_legend_icon/]<font color="#50B9F9"> - Air Conditioning</font>, [img src=ic_vb_bicycle alt=vb_time_legend_icon/]<font color="#EE6F2D"> - Bicycle-friendly</font>, [img src=ic_vb_wifi alt=vb_time_legend_icon/]<font color="#5F80CB"> - Wi-Fi</font>]]></string>
+    <string name="vb_time_vehicle_extras_wheelchair">Low-floor</string>
+    <string name="vb_time_vehicle_extras_air_conditioning">Air conditioning</string>
+    <string name="vb_time_vehicle_extras_bicycle">Bicycle-friendly</string>
+    <string name="vb_time_vehicle_extras_wifi">Wi-Fi</string>
 
     <!-- Schedule Fragment -->
     <string name="sch_search_hint">Search by name or number</string>
@@ -327,6 +340,7 @@
     <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Retrieving the schedule for <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false">Station number: %s</string>
     <string name="pt_item_station_number_text_sign" formatted="false">Station %s</string>
+    <string name="pt_item_virtual_boards">Virtual boards</string>
     <string name="pt_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Drawing the route…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Are you sure that you want to remove the local schedule for the Public Transport vehicles?]]></string>
@@ -346,6 +360,7 @@
     <string name="metro_search_hint">Search by name or number</string>
     <string name="metro_search_tab_direction1">Route 1</string>
     <string name="metro_search_tab_direction2">Route 2</string>
+    <string name="metro_item_settings_title">Settings</string>
     <string name="metro_item_station_number_text" formatted="false">Metro station number: %s</string>
     <string name="metro_item_station_number_text_sign" formatted="false">Station %s</string>
     <string name="metro_item_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
@@ -355,6 +370,8 @@
     <!-- Metro Schedule -->
     <string name="metro_schedule_first">First train</string>
     <string name="metro_schedule_last">Last train</string>
+    <string name="metro_schedule_previous">Previous hour</string>
+    <string name="metro_schedule_next">Next hour</string>
     <string name="metro_schedule_sofia_airport" formatted="false"><![CDATA[<sup><small><small><b><small> </small>SA</b></small></small></sup>]]></string>
     <string name="metro_schedule_business_park" formatted="false"><![CDATA[<sup><small><small><b><small> </small>BP</b></small></small></sup>]]></string>
     <string name="metro_schedule_legend" formatted="false"><![CDATA[<font color="#FF0017"><sup>*</sup> Red - Incomplete Courses</font>, <font color="#003366">SA - Sofia Airport</font>, <font color="#003366">BP - Business Park</font>]]></string>

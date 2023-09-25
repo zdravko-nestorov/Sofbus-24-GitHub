@@ -1176,12 +1176,18 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             @Override
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
+
+                // Show informational toast for blind people
+                Utils.navDrawerBlindToast(context, R.string.app_navigation_drawer_closed);
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 mMenuAdapter.notifyDataSetChanged();
+
+                // Show informational toast for blind people
+                Utils.navDrawerBlindToast(context, R.string.app_navigation_drawer_opened);
             }
         };
 

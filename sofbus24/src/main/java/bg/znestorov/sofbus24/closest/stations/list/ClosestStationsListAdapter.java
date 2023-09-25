@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.closest.stations.list;
 
+import static bg.znestorov.sofbus24.utils.activity.ActivityUtils.setFavouritesStation;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.Html;
@@ -73,7 +75,11 @@ class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
 
         // Fill the data
         StationEntity station = stations.get(position);
-        viewHolder.addToFavourites.setImageResource(getFavouriteImage(station));
+
+        // Favorites button
+        setFavouritesStation(context, favouritesDatasource, station, viewHolder.addToFavourites);
+
+        // Station caption & distance
         viewHolder.stationCaption.setText(Html.fromHtml(String.format(
                 station.getName() + " (%s)", station.getNumber())));
         viewHolder.stationDistance.setText(String.format(
@@ -98,27 +104,6 @@ class ClosestStationsListAdapter extends ArrayAdapter<StationEntity> {
      */
     public void changeCurrentLocation(LatLng currentLocation) {
         this.currentLocation = currentLocation;
-    }
-
-    /**
-     * Get the favorites image according to this if exists in the Favorites
-     * Database
-     *
-     * @param station the station on the current row
-     * @return the station image id
-     */
-    private Integer getFavouriteImage(StationEntity station) {
-        Integer favouriteImage;
-
-        favouritesDatasource.open();
-        if (favouritesDatasource.getStation(station) == null) {
-            favouriteImage = R.drawable.ic_fav_empty;
-        } else {
-            favouriteImage = R.drawable.ic_fav_full;
-        }
-        favouritesDatasource.close();
-
-        return favouriteImage;
     }
 
     /**

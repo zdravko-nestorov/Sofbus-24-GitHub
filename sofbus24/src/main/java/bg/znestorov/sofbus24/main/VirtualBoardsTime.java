@@ -266,7 +266,7 @@ public class VirtualBoardsTime extends FragmentActivity {
         // Add the vehicle's extras information legend
         if (Utils.areAdditionalExtrasAvailable(context)) {
             vbTimeLegend.setVisibility(View.VISIBLE);
-            vbTimeLegend.setText(getString(R.string.vb_time_legend));
+            vbTimeLegend.setText(Html.fromHtml(getString(R.string.vb_time_legend)));
         }
     }
 

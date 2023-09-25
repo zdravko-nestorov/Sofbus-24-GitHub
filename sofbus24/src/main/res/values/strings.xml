@@ -4,9 +4,12 @@
     <!-- Global labels -->
     <string name="app_name" translatable="false">Софбус 24</string>
     <string name="app_sofbus24">Софбус 24</string>
-    <string name="app_navigation_drawer_open" translatable="false">Отвори</string>
-    <string name="app_navigation_drawer_close" translatable="false">Затвори</string>
+    <string name="app_navigation_drawer_open">Отвори навигационен панел</string>
+    <string name="app_navigation_drawer_opened">Навигационният панел е отворен</string>
+    <string name="app_navigation_drawer_close">Затвори навигационен панел</string>
+    <string name="app_navigation_drawer_closed">Навигационният панел е затворен</string>
     <string name="app_empty_content" translatable="false" />
+    <string name="app_null_content" translatable="false">@null</string>
     <string name="app_button_ok">OK</string>
     <string name="app_button_submit">Потвърди</string>
     <string name="app_button_save">Запази</string>
@@ -52,12 +55,15 @@
     <string name="app_remaining_minutes_blind">мин.</string>
     <string name="app_remaining_hours">ч</string>
     <string name="app_remaining_hours_blind">ч.</string>
+    <string name="app_add_favourites">Добави в Любими</string>
+    <string name="app_remove_favourites">Премахни от Любими</string>
     <string name="app_toast_add_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно добавена в <b>Любими</b>.]]></string>
     <string name="app_toast_remove_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше успешно премахната от <b>Любими</b>.]]></string>
     <string name="app_toast_rename_favourites" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Спирката <b><i>%s (%s)</b></i> беше преименувана на <b><i>%s (%s)</b></i>.]]></string>
     <string name="app_google_play_title">Услуги за Google Play</string>
     <string name="app_google_play_msg">Услугите, на които разчита Софбус 24 за показване на картата, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_google_street_view_title">Google Street View</string>
+    <string name="app_google_street_view_button">Google Street View</string>
     <string name="app_google_street_view_msg">Услугите за Google Play, на които разчита Софбус 24 за показване на Google Street View, не се поддържат от устройството Ви. Моля, инсталирайте ги, за да продължите.</string>
     <string name="app_send_email_subject">Проблем при стартирането на Софбус 24</string>
     <string name="app_send_email_body" formatted="false"><![CDATA[Възникна неочакван проблем при стартирането на Софбус 24…]]></string>
@@ -264,6 +270,7 @@
 
     <!-- Favourites Fragment -->
     <string name="fav_search_hint">Търсене по име или номер</string>
+    <string name="fav_item_station_name_number_street_view" formatted="false" tools:ignore="StringFormatInvalid">%s (%s) - Google Street View изображение</string>
     <string name="fav_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
     <string name="fav_item_metro_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="fav_item_rename_title">Преименувай</string>
@@ -316,7 +323,12 @@
     <string name="vb_time_item_remaining_time" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Оставащо време: %s</font></b>]]></string>
     <string name="vb_time_item_time_of_arrival" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Часове на пристигане: %s</font></b>]]></string>
     <string name="vb_time_item_both" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[<b><font color="#FF2727">Времена: %s</font></b>]]></string>
-    <string name="vb_time_legend" formatted="false">[img src=ic_vb_wheelchair/] - Инвалидна Количка, [img src=ic_vb_air_conditioning/] - Климатик, [img src=ic_vb_bicycle/] - Колело, [img src=ic_vb_wifi/] - Wi-Fi</string>
+    <string name="vb_time_legend_icon">Изображение</string>
+    <string name="vb_time_legend" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[[img src=ic_vb_wheelchair alt=vb_time_legend_icon/]<font color="#4099DD"> - Нископодов</font>, [img src=ic_vb_air_conditioning alt=vb_time_legend_icon/]<font color="#50B9F9"> - Климатик</font>, [img src=ic_vb_bicycle alt=vb_time_legend_icon/]<font color="#EE6F2D"> - Велосипед</font>, [img src=ic_vb_wifi alt=vb_time_legend_icon/]<font color="#5F80CB"> - Wi-Fi</font>]]></string>
+    <string name="vb_time_vehicle_extras_wheelchair">Нископодов</string>
+    <string name="vb_time_vehicle_extras_air_conditioning">Климатик</string>
+    <string name="vb_time_vehicle_extras_bicycle">Велосипед</string>
+    <string name="vb_time_vehicle_extras_wifi">Wi-Fi</string>
 
     <!-- Schedule Fragment -->
     <string name="sch_search_hint">Търсене по име или номер</string>
@@ -338,6 +350,7 @@
     <string name="pt_item_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
     <string name="pt_item_station_number_text_sign" formatted="false">Спирка %s</string>
+    <string name="pt_item_virtual_boards">Виртуални табла</string>
     <string name="pt_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени спирки за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="pt_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="pt_menu_clear_all_schedule_cache" formatted="false"><![CDATA[Сигурни ли сте, че искате да изтриете локалното разписание на колите на Градския Транспорт?]]></string>
@@ -357,6 +370,7 @@
     <string name="metro_search_hint">Търсене по име или номер</string>
     <string name="metro_search_tab_direction1">Маршрут 1</string>
     <string name="metro_search_tab_direction2">Маршрут 2</string>
+    <string name="metro_item_settings_title">Настройки</string>
     <string name="metro_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="metro_item_station_number_text_sign" formatted="false">Станция %s</string>
     <string name="metro_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
@@ -366,6 +380,8 @@
     <!-- Metro Schedule -->
     <string name="metro_schedule_first">Първи влак</string>
     <string name="metro_schedule_last">Последен влак</string>
+    <string name="metro_schedule_previous">Предишен час</string>
+    <string name="metro_schedule_next">Следващ час</string>
     <string name="metro_schedule_sofia_airport" formatted="false"><![CDATA[<sup><small><small><b><small> </small>ЛС</b></small></small></sup>]]></string>
     <string name="metro_schedule_business_park" formatted="false"><![CDATA[<sup><small><small><b><small> </small>БП</b></small></small></sup>]]></string>
     <string name="metro_schedule_legend" formatted="false"><![CDATA[<font color="#FF0017"><sup>*</sup> Червено - Непълни Курсове</font>, <font color="#003366">ЛС - Летище София</font>, <font color="#003366">БП - Бизнес Парк</font>]]></string>

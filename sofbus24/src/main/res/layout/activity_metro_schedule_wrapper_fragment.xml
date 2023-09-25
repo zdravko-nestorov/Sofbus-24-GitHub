@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="13sp"
-            android:contentDescription="@string/app_empty_content"
+            android:contentDescription="@string/metro_schedule_previous"
             android:minWidth="50sp"
             android:minHeight="75sp"
             android:src="@drawable/ic_previous" />
@@ -99,7 +99,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="13sp"
-            android:contentDescription="@string/app_empty_content"
+            android:contentDescription="@string/metro_schedule_next"
             android:minWidth="50sp"
             android:minHeight="75sp"
             android:src="@drawable/ic_next" />

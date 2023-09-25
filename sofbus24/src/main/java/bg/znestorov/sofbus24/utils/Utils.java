@@ -1813,10 +1813,22 @@ public class Utils {
      * @param context Context of the current activity
      * @return if the blind view activated via the preferences screen
      */
-    public static boolean isBlindView(Activity context) {
+    public static boolean isBlindMode(Activity context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(Constants.PREFERENCE_KEY_BLIND_VIEW,
                         Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+    }
+
+    /**
+     * Show NavDrawer toggle toast for blind people.
+     *
+     * @param context   Context of the current activity
+     * @param messageId message to be shown
+     */
+    public static void navDrawerBlindToast(Activity context, int messageId) {
+        // if (Utils.isBlindMode(context)) {
+        //     Toast.makeText(context, context.getString(messageId), Toast.LENGTH_SHORT).show();
+        // }
     }
 
     /**
@@ -1826,23 +1838,38 @@ public class Utils {
      * @return if the vehicle's extras are activated via the preferences screen
      */
     public static boolean areAdditionalExtrasAvailable(Activity context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
+        return areVehicleExtrasEligible(context)
+                && PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS,
                         Constants.PREFERENCE_DEFAULT_VALUE_VEHICLE_EXTRAS);
     }
 
+    /**
+     * Additional vehicle extras can't be read by TalkBack before Android 11 ('contentDescription'
+     * property is not available). The preference MUST be eligible only when Android version is
+     * higher or blind view is deactivated
+     *
+     * @param context Context of the current activity
+     * @return if the additional vehicle extras are eligible
+     */
+    public static boolean areVehicleExtrasEligible(Activity context) {
+        // It seems to have a problem with the TalkBack extensions and SDK version is not important
+        // return Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || !Utils.isBlindMode(context);
+        return !Utils.isBlindMode(context);
+    }
+
     private static String getRemainingTimeSep(Activity context) {
-        return isBlindView(context) ? "" : "~";
+        return isBlindMode(context) ? "" : "~";
     }
 
     private static String getRemainingHoursAbbr(Activity context) {
-        return isBlindView(context)
+        return isBlindMode(context)
                 ? context.getString(R.string.app_remaining_hours_blind)
                 : context.getString(R.string.app_remaining_hours);
     }
 
     private static String getRemainingMinutesAbbr(Activity context) {
-        return isBlindView(context)
+        return isBlindMode(context)
                 ? context.getString(R.string.app_remaining_minutes_blind)
                 : context.getString(R.string.app_remaining_minutes);
     }

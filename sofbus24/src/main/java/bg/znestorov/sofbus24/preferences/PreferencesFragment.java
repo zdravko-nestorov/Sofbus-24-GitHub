@@ -22,6 +22,7 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
+import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
@@ -57,6 +58,7 @@ public class PreferencesFragment extends PreferenceFragment implements
 
         initTabletVersionPreferences();
         initScheduleCachePreferences();
+        actionsOnBlindViewPreferences(true);
 
         // Registers a callback to be invoked when a change happens to a
         // preference
@@ -94,7 +96,7 @@ public class PreferencesFragment extends PreferenceFragment implements
         }
 
         if (key.equals(Constants.PREFERENCE_KEY_BLIND_VIEW)) {
-            actionsOnBlindViewPreferences(sharedPreferences);
+            actionsOnBlindViewPreferences(false);
         }
 
         if (key.equals(Constants.PREFERENCE_KEY_APP_THEME)) {
@@ -189,26 +191,48 @@ public class PreferencesFragment extends PreferenceFragment implements
     /**
      * Blind view shared preferences.
      *
-     * @param sharedPreferences the default shared preferences
+     * @param init if the init is called
      */
-    private void actionsOnBlindViewPreferences(SharedPreferences sharedPreferences) {
+    private void actionsOnBlindViewPreferences(boolean init) {
+        // Check vehicles blind mode and extras eligibility
+        boolean isBlindModeActive = Utils.isBlindMode(context);
+        boolean areVehicleExtrasEligible = Utils.areVehicleExtrasEligible(context);
 
-        boolean isBlindViewActive = sharedPreferences.getBoolean(
-                Constants.PREFERENCE_KEY_BLIND_VIEW,
-                Constants.PREFERENCE_DEFAULT_VALUE_BLIND_VIEW);
+        // Reformat vehicle extras preferences, based on the blind view preference choice
+        Preference vehicleExtrasPreference = preferencesScreen
+                .findPreference(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS);
+        vehicleExtrasPreference.setEnabled(areVehicleExtrasEligible);
+        vehicleExtrasPreference.setSelectable(areVehicleExtrasEligible);
 
-        // Try to change the additional vehicles extras availability
-        boolean areAdditionalExtrasAvailable = !isBlindViewActive
-                && Constants.PREFERENCE_DEFAULT_VALUE_VEHICLE_EXTRAS;
-        sharedPreferences.edit()
-                .putBoolean(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS, areAdditionalExtrasAvailable)
-                .commit();
+        // Try to enable/disable the vehicles extras (only if eligible and blind mode is active)
+        SharedPreferences.Editor sharedPreferenceEditor = preferencesScreen.getEditor();
+        if (isBlindModeActive && !areVehicleExtrasEligible) {
+            ((CheckBoxPreference) findPreference(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS))
+                    .setChecked(false);
+            sharedPreferenceEditor
+                    .putBoolean(Constants.PREFERENCE_KEY_VEHICLE_EXTRAS, false)
+                    .commit();
+        }
 
-        // Try to change the tab types
-        String tabsType = isBlindViewActive
+        // In case of init don't execute the next actions
+        if (init) {
+            return;
+        }
+
+        // Try to disable the favourites images (only when blind mode is active)
+        if (isBlindModeActive) {
+            ((CheckBoxPreference) findPreference(Constants.PREFERENCE_KEY_FAVOURITES_EXPANDED))
+                    .setChecked(false);
+            sharedPreferenceEditor
+                    .putBoolean(Constants.PREFERENCE_KEY_FAVOURITES_EXPANDED, false)
+                    .commit();
+        }
+
+        // Try to change the tab types (always, no matter the blind mode)
+        String tabsType = isBlindModeActive
                 ? Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE_TITLE
                 : Constants.PREFERENCE_DEFAULT_VALUE_TABS_TYPE;
-        boolean areTabsTypeChanged = sharedPreferences.edit()
+        boolean areTabsTypeChanged = sharedPreferenceEditor
                 .putString(Constants.PREFERENCE_KEY_TABS_TYPE, tabsType)
                 .commit();
 

@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.main;
 
+import static bg.znestorov.sofbus24.utils.activity.ActivityUtils.setFavouritesStation;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,7 +27,6 @@ import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.ScheduleEntity;
-import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.publictransport.PublicTransportScheduleFragment;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -233,8 +234,10 @@ public class PublicTransportSchedule extends FragmentActivity {
      * Set onClickListeners over the ImageButtons
      */
     private void actionsOverImageButtons() {
+        // Favorites button
+        setFavouritesStation(context, favouritesDatasource, ptStation, addToFavourites);
+
         // Set onClickListener over the Favorites ImageView
-        addToFavourites.setImageResource(getFavouriteImage(ptStation));
         addToFavourites.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 ActivityUtils.toggleFavouritesStation(context,
@@ -275,27 +278,6 @@ public class PublicTransportSchedule extends FragmentActivity {
                 }
             }
         });
-    }
-
-    /**
-     * Get the favorites image according to this if exists in the Favorites
-     * Database
-     *
-     * @param station the station on the current row
-     * @return the station image id
-     */
-    private Integer getFavouriteImage(StationEntity station) {
-        Integer favouriteImage;
-
-        favouritesDatasource.open();
-        if (favouritesDatasource.getStation(station) == null) {
-            favouriteImage = R.drawable.ic_fav_empty;
-        } else {
-            favouriteImage = R.drawable.ic_fav_full;
-        }
-        favouritesDatasource.close();
-
-        return favouriteImage;
     }
 
     /**

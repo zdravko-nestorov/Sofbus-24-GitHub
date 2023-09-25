@@ -63,7 +63,7 @@
             android:layout_height="20sp"
             android:adjustViewBounds="true"
             android:background="@drawable/selectable_item_background"
-            android:contentDescription="@string/app_empty_content"
+            android:contentDescription="@string/metro_item_settings_title"
             android:scaleType="fitXY"
             android:src="@drawable/context_menu_metro" />
     </LinearLayout>

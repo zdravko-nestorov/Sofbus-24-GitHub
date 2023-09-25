@@ -307,7 +307,8 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      */
     private String getWheelchairAccessibleImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
         return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
-                stationVehicle::getIsWheelchairAccessible, "ic_vb_wheelchair");
+                stationVehicle::getIsWheelchairAccessible, "ic_vb_wheelchair",
+                "vb_time_vehicle_extras_wheelchair");
     }
 
     /**
@@ -319,7 +320,8 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      */
     private String getAirConditioningImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
         return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
-                stationVehicle::getHasAirConditioning, "ic_vb_air_conditioning");
+                stationVehicle::getHasAirConditioning, "ic_vb_air_conditioning",
+                "vb_time_vehicle_extras_air_conditioning");
     }
 
     /**
@@ -331,7 +333,8 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      */
     private String getBicycleMountImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
         return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
-                stationVehicle::getHasBicycleMount, "ic_vb_bicycle");
+                stationVehicle::getHasBicycleMount, "ic_vb_bicycle",
+                "vb_time_vehicle_extras_bicycle");
     }
 
     /**
@@ -343,7 +346,8 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      */
     private String getWiFiImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
         return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
-                stationVehicle::getHasWifi, "ic_vb_wifi");
+                stationVehicle::getHasWifi, "ic_vb_wifi",
+                "vb_time_vehicle_extras_wifi");
     }
 
     /**
@@ -353,10 +357,12 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
      * @param arrivalTimeIndex current arrival time index
      * @param extrasFunc       retrieve the specific vehicle's extra function
      * @param image            vehicle's extra image resource
+     * @param imageContent     vehicle's extra image content resource
      * @return the specific vehicle extra image resource
      */
     private String getVehicleExtraImg(VehicleEntity stationVehicle, int arrivalTimeIndex,
-                                      Callable<List<Boolean>> extrasFunc, String image) {
+                                      Callable<List<Boolean>> extrasFunc, String image,
+                                      String imageContent) {
         // Check if the specific extra is available, based on the user preferences
         if (!Utils.areAdditionalExtrasAvailable(context)) {
             return Constants.GLOBAL_PARAM_EMPTY_STRING;
@@ -386,7 +392,7 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         }
 
         // Return the specific vehicle's extra image
-        return String.format(TextViewWithImages.IMAGE_SOURCE_TEMPLATE, image);
+        return String.format(TextViewWithImages.IMAGE_SOURCE_TEMPLATE, image, imageContent);
     }
 
     // Used for optimize performance of the ListView

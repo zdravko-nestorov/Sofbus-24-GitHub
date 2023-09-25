@@ -1,5 +1,8 @@
 package bg.znestorov.sofbus24.utils.activity;
 
+import static bg.znestorov.sofbus24.utils.ImageContent.IMAGE_CONTENT_DESCRIPTION;
+import static bg.znestorov.sofbus24.utils.ImageContent.IMAGE_SRC;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
@@ -82,6 +85,7 @@ import bg.znestorov.sofbus24.main.PreferencesHidden;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.WebPage;
 import bg.znestorov.sofbus24.utils.HmsUtils;
+import bg.znestorov.sofbus24.utils.ImageContent;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.Utils;
@@ -329,6 +333,57 @@ public class ActivityUtils {
     }
 
     /**
+     * Check if the stations already exists in the favorites database and set its content.
+     *
+     * @param context              the current Activity context
+     * @param favouritesDatasource the FavouritesDatasource
+     * @param station              the current station
+     * @param favouritesImageView  the imageView indicating the station status (if null - no
+     *                             action is taken for it)
+     */
+    public static void setFavouritesStation(Activity context,
+                                            FavouritesDataSource favouritesDatasource,
+                                            StationEntity station,
+                                            ImageView favouritesImageView) {
+        favouritesImageView.setImageResource(
+                getFavouritesStationContent(IMAGE_SRC, favouritesDatasource, station));
+        favouritesImageView.setContentDescription(
+                context.getString(getFavouritesStationContent(IMAGE_CONTENT_DESCRIPTION, favouritesDatasource, station)));
+    }
+
+    /**
+     * Get the favorites image content according to this if exists in the Favorites
+     * Database
+     *
+     * @param imageContent the desired image content to be set
+     * @param favouritesDatasource the FavouritesDatasource
+     * @param station the station on the current row
+     * @return the station image content id
+     */
+    private static int getFavouritesStationContent(ImageContent imageContent,
+                                                   FavouritesDataSource favouritesDatasource,
+                                                   StationEntity station) {
+        try {
+            favouritesDatasource.open();
+            switch (imageContent) {
+                case IMAGE_SRC:
+                    return favouritesDatasource.getStation(station) == null
+                            ? R.drawable.ic_fav_empty
+                            : R.drawable.ic_fav_full;
+                case IMAGE_CONTENT_DESCRIPTION:
+                    return favouritesDatasource.getStation(station) == null
+                            ? R.string.app_add_favourites
+                            : R.string.app_remove_favourites;
+                default:
+                    return -1;
+            }
+
+        } finally {
+            favouritesDatasource.close();
+        }
+    }
+
+    /**
      * Check if the stations already exists in the favorites database and
      * add/remove it to/from there. If a favorites imageView is given as a
      * parameter, change it icon accordingly.
@@ -352,12 +407,16 @@ public class ActivityUtils {
 
             if (favouritesImageView != null) {
                 favouritesImageView.setImageResource(R.drawable.ic_fav_full);
+                favouritesImageView.setContentDescription(
+                        context.getString(R.string.app_remove_favourites));
             }
         } else {
             removeFromFavourites(context, favouritesDatasource, station);
 
             if (favouritesImageView != null) {
                 favouritesImageView.setImageResource(R.drawable.ic_fav_empty);
+                favouritesImageView.setContentDescription(
+                        context.getString(R.string.app_add_favourites));
             }
         }
     }

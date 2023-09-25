@@ -123,7 +123,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
         if (originalStationsSize != filteredStationsSize) {
             return isReorderVisible;
         } else {
-            return !Utils.isBlindView(context) && filteredStationsSize > 1;
+            return !Utils.isBlindMode(context) && filteredStationsSize > 1;
         }
     }
 
@@ -281,7 +281,8 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
         }
 
         // Configure the blind view (if active)
-        if (Utils.isBlindView(context)) {
+        if (Utils.isBlindMode(context)) {
+            viewHolder.stationStreetView.setVisibility(View.GONE);
             viewHolder.expandStation.setVisibility(View.GONE);
             viewHolder.reorderStation.setVisibility(View.GONE);
             viewHolder.settingsStation.setVisibility(View.GONE);
@@ -302,6 +303,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         // Show the order button only if the custom ordering is chosen
         isReorderVisible = isReorderVisible();
+        viewHolder.reorderStation.setContentDescription(context.getString(R.string.menu_fav_sort_title));
         if (FavouritesPreferences.getFavouritesSortType(context) == SortTypeEnum.CUSTOM
                 && isReorderVisible) {
             viewHolder.reorderStation.setVisibility(View.VISIBLE);
@@ -324,6 +326,18 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
     }
 
     /**
+     * Get the station name and number that will be displayed on the Favorites screen
+     * for GoogleStreetView
+     *
+     * @param station the station on the current row
+     * @return the station name
+     */
+    private String getStationInGoogleStreetView(StationEntity station) {
+        return String.format(context.getString(R.string.fav_item_station_name_number_street_view),
+                getStationName(station), getStationNumber(station));
+    }
+
+    /**s
      * Get the station name that will be displayed on the Favorites screen
      *
      * @param station the station on the current row
@@ -404,7 +418,8 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
      * @param expandStation the expand station image button
      */
     private void changeExpandStationIcon(ImageButton expandStation) {
-        expandStation.setImageResource(R.drawable.ic_menu_star);
+        expandStation.setImageResource(R.drawable.ic_menu_info_details);
+        expandStation.setContentDescription(context.getString(R.string.menu_fav_information));
         expandStation.setEnabled(false);
     }
 
@@ -421,10 +436,12 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         // Change the expand image
         viewHolder.expandStation.setImageResource(R.drawable.ic_collapse);
+        viewHolder.expandStation.setContentDescription(context.getString(R.string.menu_fav_toggle_title));
 
         // Add the image of the station from the street view asynchronously
         LayoutParams params = viewHolder.stationStreetView.getLayoutParams();
         params.height = getExpandedStationImageHeight();
+        viewHolder.stationStreetView.setVisibility(View.VISIBLE);
         viewHolder.stationStreetView.setLayoutParams(params);
         loadStationImage(viewHolder, station);
     }
@@ -459,10 +476,12 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         // Change the expand image
         viewHolder.expandStation.setImageResource(R.drawable.ic_expand);
+        viewHolder.expandStation.setContentDescription(context.getString(R.string.menu_fav_toggle_title));
 
         // Remove the image
         LayoutParams params = viewHolder.stationStreetView.getLayoutParams();
         params.height = LayoutParams.MATCH_PARENT;
+        viewHolder.stationStreetView.setVisibility(View.GONE);
         viewHolder.stationStreetView.setLayoutParams(params);
         viewHolder.stationStreetView
                 .setImageResource(android.R.color.transparent);
@@ -488,6 +507,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             imageUrl = "drawable://" + R.drawable.ic_no_image_available;
         }
 
+        // Set display image
         imageLoader.displayImage(imageUrl, viewHolder.stationStreetView,
                 displayImageOptions, new SimpleImageLoadingListener() {
                     @Override
@@ -507,6 +527,9 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
                         viewHolder.progressBar.setVisibility(View.GONE);
                     }
                 });
+
+        // Set content description
+        viewHolder.stationStreetView.setContentDescription(getStationInGoogleStreetView(station));
     }
 
     private void reorderStation(ImageButton reorderStation,
@@ -623,6 +646,7 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
     @SuppressLint("NewApi")
     private void actionsOverSettingsButton(ImageButton stationSettings,
                                            final StationEntity station) {
+        stationSettings.setContentDescription(context.getString(R.string.menu_fav_settings_title));
         stationSettings.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

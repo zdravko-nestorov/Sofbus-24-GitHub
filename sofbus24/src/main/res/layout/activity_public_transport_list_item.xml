@@ -64,7 +64,7 @@
             android:id="@+id/pt_item_virtual_boards"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/app_empty_content"
+            android:contentDescription="@string/pt_item_virtual_boards"
             android:src="@drawable/ic_virtual_boards" />
     </LinearLayout>
 

@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.publictransport;
 
+import static bg.znestorov.sofbus24.utils.activity.ActivityUtils.setFavouritesStation;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.text.Html;
@@ -98,7 +100,11 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
 
         // Fill the data
         StationEntity station = filteredStations.get(position);
-        viewHolder.addToFavourites.setImageResource(getFavouriteImage(station));
+
+        // Favorites button
+        setFavouritesStation(context, favouritesDatasource, station, viewHolder.addToFavourites);
+
+        // Station name & number
         viewHolder.stationName.setText(Html.fromHtml(station.getName()));
         viewHolder.stationNumber.setText(String.format(
                 context.getString(R.string.pt_item_station_number_text),
@@ -205,27 +211,6 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
                 }
             }
         };
-    }
-
-    /**
-     * Get the favorites image according to this if exists in the Favorites
-     * Database
-     *
-     * @param station the station on the current row
-     * @return the station image id
-     */
-    private Integer getFavouriteImage(StationEntity station) {
-        Integer favouriteImage;
-
-        favouritesDatasource.open();
-        if (favouritesDatasource.getStation(station) == null) {
-            favouriteImage = R.drawable.ic_fav_empty;
-        } else {
-            favouriteImage = R.drawable.ic_fav_full;
-        }
-        favouritesDatasource.close();
-
-        return favouriteImage;
     }
 
     /**
