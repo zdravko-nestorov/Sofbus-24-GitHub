@@ -43,6 +43,7 @@ public class StationsDataSource {
     // Columns of the STATIONS Table
     private final String[] allColumns = {
             Sofbus24SQLite.COLUMN_PK_STAT_ID,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER,
             Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
@@ -76,6 +77,7 @@ public class StationsDataSource {
         if (getStation(station) == null) {
             // Creating ContentValues object and insert the station data in it
             ContentValues values = new ContentValues();
+            values.put(Sofbus24SQLite.COLUMN_STAT_SKGT_ID, station.getSkgtId());
             values.put(Sofbus24SQLite.COLUMN_STAT_NUMBER, station.getNumber());
             values.put(Sofbus24SQLite.COLUMN_STAT_NAME, station.getName());
             values.put(Sofbus24SQLite.COLUMN_STAT_LATITUDE,
@@ -731,17 +733,18 @@ public class StationsDataSource {
         StationEntity station = new StationEntity();
 
         // Check if have to translate the station name
-        String stationName = cursor.getString(2);
+        String stationName = cursor.getString(3);
         if (!"bg".equals(language)) {
             stationName = TranslatorCyrillicToLatin.translate(context,
                     stationName);
         }
 
         // Getting all columns of the row and setting them to a Station object
-        station.setNumber(cursor.getString(1));
+        station.setSkgtId(cursor.getString(1));
+        station.setNumber(cursor.getString(2));
         station.setName(stationName);
-        station.setLat(cursor.getString(3));
-        station.setLon(cursor.getString(4));
+        station.setLat(cursor.getString(4));
+        station.setLon(cursor.getString(5));
 
         // GooglePlay reported a strange error where the type of vehicle is null.
         // Handle this case by setting the vehicle type a default value of BUS

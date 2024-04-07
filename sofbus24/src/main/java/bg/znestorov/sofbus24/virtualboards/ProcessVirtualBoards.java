@@ -124,7 +124,7 @@ class ProcessVirtualBoards {
             stationsDatasource.close();
 
             // Set the station all fields
-            station = new StationEntity(stationNumber, stationName, stationLat,
+            station = new StationEntity("-1", stationNumber, stationName, stationLat,
                     stationLon, VehicleTypeEnum.BTT, "1");
         }
 
@@ -380,7 +380,7 @@ class ProcessVirtualBoards {
             stationCustomField = Utils.getOnlyDigits(stationCustomField);
 
             // Create the station and add it to the list
-            StationEntity station = new StationEntity(stationNumber,
+            StationEntity station = new StationEntity("-1", stationNumber,
                     stationName, stationLat, stationLon, VehicleTypeEnum.BTT,
                     stationCustomField);
             stationsMap.put(Utils.formatNumberOfDigits(stationNumber, 4),

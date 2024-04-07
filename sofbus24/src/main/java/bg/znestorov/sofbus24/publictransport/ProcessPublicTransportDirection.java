@@ -188,7 +188,7 @@ class ProcessPublicTransportDirection {
 
                     // Create the PublicTransport station and add it to the list
                     PublicTransportStationEntity ptStation = new PublicTransportStationEntity(
-                            new StationEntity(stationNumber, stationName,
+                            new StationEntity("-1", stationNumber, stationName,
                                     stationLat, stationLon, stationType, null),
                             stationId);
                     ptStationsList.add(ptStation);

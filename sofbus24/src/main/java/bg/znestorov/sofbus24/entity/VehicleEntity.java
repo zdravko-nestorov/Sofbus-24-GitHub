@@ -25,6 +25,7 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
     private ArrayList<Boolean> isWheelchairAccessible;
     private ArrayList<Boolean> hasAirConditioning;
     private ArrayList<Boolean> hasBicycleMount;
+    private ArrayList<Boolean> isDoubledecker;
     private ArrayList<Boolean> hasWifi;
 
     private int stop = -1;
@@ -193,6 +194,14 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
 
     public void setHasBicycleMount(ArrayList<Boolean> hasBicycleMount) {
         this.hasBicycleMount = hasBicycleMount;
+    }
+
+    public ArrayList<Boolean> getIsDoubledecker() {
+        return isDoubledecker;
+    }
+
+    public void setIsDoubledecker(ArrayList<Boolean> isDoubledecker) {
+        this.isDoubledecker = isDoubledecker;
     }
 
     public ArrayList<Boolean> getHasWifi() {

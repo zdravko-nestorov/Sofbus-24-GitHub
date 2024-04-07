@@ -27,6 +27,7 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     // 'Stations' table and its columns
     public static final String TABLE_SOF_STAT = "SOF_STAT";
     public static final String COLUMN_PK_STAT_ID = "PK_STAT_ID";
+    public static final String COLUMN_STAT_SKGT_ID = "STAT_SKGT_ID";
     public static final String COLUMN_STAT_NUMBER = "STAT_NUMBER";
     public static final String COLUMN_STAT_NAME = "STAT_NAME";
     public static final String COLUMN_STAT_LATITUDE = "STAT_LATITUDE";

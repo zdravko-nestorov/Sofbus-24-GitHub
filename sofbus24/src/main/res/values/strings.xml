@@ -328,6 +328,7 @@
     <string name="vb_time_vehicle_extras_wheelchair">Нископодов</string>
     <string name="vb_time_vehicle_extras_air_conditioning">Климатик</string>
     <string name="vb_time_vehicle_extras_bicycle">Велосипед</string>
+    <string name="vb_time_vehicle_extras_doubledecker">Двуетажен</string>
     <string name="vb_time_vehicle_extras_wifi">Wi-Fi</string>
 
     <!-- Schedule Fragment -->

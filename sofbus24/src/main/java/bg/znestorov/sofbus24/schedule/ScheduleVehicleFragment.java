@@ -119,6 +119,11 @@ public class ScheduleVehicleFragment extends ListFragment implements
 
         // Get the information about the current direction
         ScheduleLoadVehicles slv = ScheduleLoadVehicles.getInstance(context);
+        // Retry initiating the vehicles source
+        if (slv == null) {
+            slv = ScheduleLoadVehicles.getInstance(context);
+        }
+
         stationsList = slv.getVehiclesList(currentVehicle);
     }
 

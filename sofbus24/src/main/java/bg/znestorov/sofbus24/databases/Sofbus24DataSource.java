@@ -18,6 +18,7 @@ class Sofbus24DataSource {
     // Columns of the STATIONS Table
     private final String[] stationsColumns = {
             Sofbus24SQLite.COLUMN_PK_STAT_ID,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER,
             Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,

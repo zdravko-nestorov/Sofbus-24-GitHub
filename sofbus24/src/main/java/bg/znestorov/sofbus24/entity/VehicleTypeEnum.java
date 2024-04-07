@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.entity;
 
+import java.util.Arrays;
+
 /**
  * Enumeration representing the types of vehicles and stations
  *
@@ -11,7 +13,7 @@ public enum VehicleTypeEnum {
     /**
      * The main vehicles' types
      */
-    BUS, TROLLEY, TRAM,
+    BUS("A"), TROLLEY("ТБ"), TRAM("ТМ"),
 
     /**
      * This vehicles' types are used in the GoogleMap to indicate the type of
@@ -36,5 +38,23 @@ public enum VehicleTypeEnum {
      * coordinates are available for the current station, and we can't show its
      * image
      */
-    NOIMAGE
+    NOIMAGE;
+
+    private String transportCode;
+
+    VehicleTypeEnum() {
+    }
+
+    VehicleTypeEnum(String transportCode) {
+        this.transportCode = transportCode;
+    }
+
+    public static VehicleTypeEnum fromTransportCode(String transportCode) {
+        for (VehicleTypeEnum vehicleTypeEnum : VehicleTypeEnum.values()) {
+            if (transportCode != null && transportCode.equals(vehicleTypeEnum.transportCode)) {
+                return vehicleTypeEnum;
+            }
+        }
+        throw new RuntimeException("Vehicle type not found for transportCode: " + transportCode);
+    }
 }

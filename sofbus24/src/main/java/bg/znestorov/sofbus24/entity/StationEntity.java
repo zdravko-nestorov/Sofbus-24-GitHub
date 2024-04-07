@@ -16,6 +16,7 @@ public class StationEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private String skgtId;
     private String number;
     private String name;
     private String lat;
@@ -46,6 +47,7 @@ public class StationEntity implements Serializable {
     }
 
     public StationEntity(StationEntity station) {
+        this.skgtId = station.getSkgtId();
         this.number = Utils.formatNumberOfDigits(station.getNumber(), 4);
         this.name = station.getName();
         this.lat = station.getLat();
@@ -54,14 +56,23 @@ public class StationEntity implements Serializable {
         this.customField = station.getCustomField();
     }
 
-    public StationEntity(String number, String name, String lat, String lon,
+    public StationEntity(String skgtId, String number, String name, String lat, String lon,
                          VehicleTypeEnum type, String customField) {
+        this.skgtId = skgtId;
         this.number = Utils.formatNumberOfDigits(number, 4);
         this.name = name;
         this.lat = lat;
         this.lon = lon;
         this.type = type;
         this.customField = customField;
+    }
+
+    public String getSkgtId() {
+        return skgtId;
+    }
+
+    public void setSkgtId(String skgtId) {
+        this.skgtId = skgtId;
     }
 
     public String getNumber() {
@@ -178,6 +189,7 @@ public class StationEntity implements Serializable {
      * @param station the new station values
      */
     public void assignStationValues(StationEntity station) {
+        this.skgtId = station.getSkgtId();
         this.number = Utils.formatNumberOfDigits(station.getNumber(), 4);
         this.name = station.getName();
         this.lat = station.getLat();
@@ -188,12 +200,18 @@ public class StationEntity implements Serializable {
 
     @Override
     public String toString() {
-        return getClass().getName() + " {\n\tnumber: " + number + "\n\tname: "
-                + name + "\n\tlat: " + lat + "\n\tlon: " + lon + "\n\ttype: "
-                + type + "\n\tcustomField: " + customField + "\n\tdateAdded: "
-                + dateAdded + "\n\tdateLastAccess: " + dateLastAccess
-                + "\n\tusageCount: " + usageCount + "\n\tposition: " + position
-                + "\n}";
+        return "StationEntity{" +
+                "skgtId='" + skgtId + '\'' +
+                ", number='" + number + '\'' +
+                ", name='" + name + '\'' +
+                ", lat='" + lat + '\'' +
+                ", lon='" + lon + '\'' +
+                ", type=" + type +
+                ", customField='" + customField + '\'' +
+                ", dateAdded='" + dateAdded + '\'' +
+                ", dateLastAccess='" + dateLastAccess + '\'' +
+                ", usageCount=" + usageCount +
+                ", position=" + position +
+                '}';
     }
-
 }

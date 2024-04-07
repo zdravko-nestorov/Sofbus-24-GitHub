@@ -184,22 +184,24 @@ public class Constants {
     /**
      * Virtual Boards API
      */
-    public static final String VB_URL_STATION_API = "https://api-arrivals.sofiatraffic.bg/api/v1/arrivals/%s/";
-    public static final String VB_URL_VEHICLE_API = "https://api-arrivals.sofiatraffic.bg/api/v1/arrivals/%s/?line=%s&type=%s";
+    public static final String VB_URL_INTERACTIVE_MAP_API = "https://www.sofiatraffic.bg/interactivecard/virtual_panel?stop_id=%s";
 
-    public static final String VB_STATION_SKGT_TIME_API = "timestamp_calculated";
-    public static final String VB_STATION_CODE_API = "code";
-    public static final String VB_STATION_NAME_API = "name";
-    public static final String VB_STATION_LINES_API = "lines";
-    public static final String VB_VEHICLE_NAME_API = "name";
-    public static final String VB_VEHICLE_TYPE_API = "vehicle_type";
-    public static final String VB_VEHICLE_DIRECTION_API = "direction";
-    public static final String VB_VEHICLE_ARRIVALS_API = "arrivals";
-    public static final String VB_VEHICLE_WHEELCHAIR_API = "is_wheelchair_accessible";
-    public static final String VB_VEHICLE_AIR_CONDITIONING_API = "has_air_conditioning";
-    public static final String VB_VEHICLE_BICYCLE_MOUNT_API = "has_bicycle_mount";
-    public static final String VB_VEHICLE_TIME_API = "time";
-    public static final String VB_VEHICLE_WIFI_API = "has_wifi";
+    public static final String VB_IM_VIRTUAL_PANEL_DATA = "virtual_panel_data";
+    public static final String VB_IM_STATION_CODE = "id";
+    public static final String VB_IM_STATION_LINES_API = "lines";
+    public static final String VB_IM_VEHICLE_NAME_API = "name";
+    public static final String VB_IM_VEHICLE_DIRECTION_API = "unknown_property";
+    public static final String VB_IM_VEHICLE_TYPE_API = "transport";
+    public static final String VB_IM_VEHICLE_ARRIVALS_API = "cars";
+    public static final String VB_IM_VEHICLE_CALC_TIME_API = "calc_time";
+    public static final String VB_IM_VEHICLE_TIME_API = "departure_time";
+    public static final String VB_IM_VEHICLE_FLAGS_API = "flags";
+    public static final String VB_IM_VEHICLE_WHEELCHAIR_API = "disabled";
+    public static final String VB_IM_VEHICLE_AIR_CONDITIONING_API = "klimatik";
+    public static final String VB_IM_VEHICLE_BICYCLE_MOUNT_API = "bicycle_rack";
+    public static final String VB_IM_VEHICLE_DOUBLEDECKER_API = "doubledecker";
+    public static final String VB_IM_VEHICLE_WIFI_API = "by_timetable";
+
 
     /**
      * Schedule direction

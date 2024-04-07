@@ -28,8 +28,8 @@ public class PublicTransportStationEntity extends StationEntity implements
     }
 
     public PublicTransportStationEntity(StationEntity station) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.schedule = new LinkedHashMap<Integer, ArrayList<String>>();
 
@@ -39,8 +39,8 @@ public class PublicTransportStationEntity extends StationEntity implements
     }
 
     public PublicTransportStationEntity(StationEntity station, String id) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.id = id;
         this.schedule = new LinkedHashMap<Integer, ArrayList<String>>();
@@ -60,8 +60,8 @@ public class PublicTransportStationEntity extends StationEntity implements
      */
     public PublicTransportStationEntity(StationEntity station,
                                         VehicleEntity vehicle) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.id = String.valueOf(vehicle.getStop());
         this.direction = vehicle.getDirection();

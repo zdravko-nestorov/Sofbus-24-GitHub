@@ -318,6 +318,7 @@
     <string name="vb_time_vehicle_extras_wheelchair">Low-floor</string>
     <string name="vb_time_vehicle_extras_air_conditioning">Air conditioning</string>
     <string name="vb_time_vehicle_extras_bicycle">Bicycle-friendly</string>
+    <string name="vb_time_vehicle_extras_doubledecker">Doubledecker</string>
     <string name="vb_time_vehicle_extras_wifi">Wi-Fi</string>
 
     <!-- Schedule Fragment -->

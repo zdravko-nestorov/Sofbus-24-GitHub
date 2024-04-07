@@ -43,6 +43,7 @@ import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TimeZone;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
@@ -1704,6 +1705,20 @@ public class Utils {
     }
 
     /**
+     * Convenience method to get this element as a JsonObject value by checking for NULL
+     *
+     * @param jsonObject {@link JsonObject} element used to search in it
+     * @param jsonKey    the Json key used for searching
+     * @return the Json object value
+     */
+    public static JsonObject getAsJsonObject(JsonObject jsonObject, String jsonKey) {
+        if (jsonObject == null || jsonObject.get(jsonKey) == null) {
+            return null;
+        }
+        return jsonObject.get(jsonKey).getAsJsonObject();
+    }
+
+    /**
      * Convenience method to get this element as a string value by checking for NULL
      *
      * @param jsonObject {@link JsonObject} element used to search in it
@@ -1711,6 +1726,9 @@ public class Utils {
      * @return the Json String value
      */
     public static String getAsJsonString(JsonObject jsonObject, String jsonKey) {
+        if (jsonObject == null || jsonObject.get(jsonKey) == null) {
+            return "";
+        }
         return jsonObject.get(jsonKey).isJsonNull() ? "" : jsonObject.get(jsonKey).getAsString();
     }
 
@@ -1722,6 +1740,9 @@ public class Utils {
      * @return the Json boolean value
      */
     public static boolean getAsJsonBoolean(JsonObject jsonObject, String jsonKey) {
+        if (jsonObject == null || jsonObject.get(jsonKey) == null) {
+            return false;
+        }
         return !jsonObject.get(jsonKey).isJsonNull() && jsonObject.get(jsonKey).getAsBoolean();
     }
 
@@ -1733,11 +1754,14 @@ public class Utils {
      */
     public static String transformSkgtStringDateToDate(String skgtTime) {
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+        format.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date skgtDate;
         try {
             skgtDate = format.parse(skgtTime);
-        } catch (ParseException e) {
+            format.setTimeZone(TimeZone.getDefault());
+            skgtDate = format.parse(format.format(skgtDate));
+        } catch (NullPointerException | ParseException e) {
             skgtDate = new Date();
         }
 

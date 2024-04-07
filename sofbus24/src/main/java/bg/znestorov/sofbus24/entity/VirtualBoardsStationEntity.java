@@ -34,8 +34,8 @@ public class VirtualBoardsStationEntity extends StationEntity implements
     }
 
     public VirtualBoardsStationEntity(StationEntity station) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.systemTime = android.text.format.DateFormat.format(
                 "dd.MM.yyy, kk:mm", new java.util.Date()).toString();
@@ -44,8 +44,8 @@ public class VirtualBoardsStationEntity extends StationEntity implements
 
     public VirtualBoardsStationEntity(StationEntity station, String skgtTime,
                                       ArrayList<VehicleEntity> vehiclesList) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.skgtTime = skgtTime;
         this.systemTime = android.text.format.DateFormat.format(

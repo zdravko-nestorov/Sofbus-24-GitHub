@@ -49,8 +49,8 @@ public class MetroStationEntity extends StationEntity implements Serializable {
     }
 
     public MetroStationEntity(StationEntity station) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.holidaySchedule = new LinkedHashMap<Integer, ArrayList<String>>();
         this.weekdaySchedule = new LinkedHashMap<Integer, ArrayList<String>>();
@@ -62,8 +62,8 @@ public class MetroStationEntity extends StationEntity implements Serializable {
     }
 
     public MetroStationEntity(StationEntity station, String direction) {
-        super(station.getNumber(), station.getName(), station.getLat(), station
-                .getLon(), station.getType(), station.getCustomField());
+        super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
+                station.getLon(), station.getType(), station.getCustomField());
 
         this.direction = direction;
         this.holidaySchedule = new LinkedHashMap<Integer, ArrayList<String>>();

@@ -295,6 +295,7 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         return getWheelchairAccessibleImg(stationVehicle, arrivalTimeIndex) +
                 getAirConditioningImg(stationVehicle, arrivalTimeIndex) +
                 getBicycleMountImg(stationVehicle, arrivalTimeIndex) +
+                getDoubledeckerImg(stationVehicle, arrivalTimeIndex) +
                 getWiFiImg(stationVehicle, arrivalTimeIndex);
     }
 
@@ -335,6 +336,19 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
                 stationVehicle::getHasBicycleMount, "ic_vb_bicycle",
                 "vb_time_vehicle_extras_bicycle");
+    }
+
+    /**
+     * Get the Doubledecker vehicle's extra image resource for the provided station vehicle.
+     *
+     * @param stationVehicle   the station vehicle
+     * @param arrivalTimeIndex current arrival time index
+     * @return the Doubledecker vehicle's extra image resource
+     */
+    private String getDoubledeckerImg(VehicleEntity stationVehicle, int arrivalTimeIndex) {
+        return getVehicleExtraImg(stationVehicle, arrivalTimeIndex,
+                stationVehicle::getIsDoubledecker, "ic_vb_doubledecker",
+                "vb_time_vehicle_extras_doubledecker");
     }
 
     /**

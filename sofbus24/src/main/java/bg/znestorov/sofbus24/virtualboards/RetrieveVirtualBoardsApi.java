@@ -85,6 +85,13 @@ public class RetrieveVirtualBoardsApi {
         // show only the searched string, otherwise - the station caption)
         Spanned progressDialogMsg = getToastMsg(context.getString(R.string.vb_time_retrieve_info));
 
+        // Retrieve the full station information (station taken from Favourites or other place)
+        if (station != null) {
+            stationsDatasource.open();
+            station = stationsDatasource.getStation(station);
+            stationsDatasource.close();
+        }
+
         // Making HttpRequest and showing a progress dialog if needed (based on station type)
         ProgressDialog progressDialog = createProgressDialog(progressDialogMsg);
         if (station != null && station.getType() != null
@@ -338,33 +345,23 @@ public class RetrieveVirtualBoardsApi {
                 // the database for the stations
                 if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS) {
 
-                    String jsonResult;
-
-                    // Check if we want to retrieve the information in real time for all
-                    // vehicles or just for a selected one (the previous section "Schedule"
-                    // now will be used to retrieve information about the times of arrival
-                    // for a selected vehicle)
-                    if (vehicle != null) {
-                        jsonResult = Utils.readUrl(Constants.VB_URL_VEHICLE_API,
-                                station.getFormattedNumber(), vehicle.getNumber(),
-                                vehicle.getType().toString().toLowerCase(Locale.getDefault()));
-                    } else {
-                        jsonResult = Utils.readUrl(Constants.VB_URL_STATION_API,
-                                station.getFormattedNumber());
-                    }
+                    String jsonResult = Utils.readUrl(
+                            Constants.VB_URL_INTERACTIVE_MAP_API,
+                            station.getSkgtId()
+                    );
 
                     // Check what is the status of the JSON result
                     if (Utils.isEmpty(jsonResult)) {
                         throw new Exception();
                     } else if (jsonResult.contains("{}")
                             || !jsonResult.contains("lines")
-                            || !jsonResult.contains("arrivals")
-                            || !jsonResult.contains("time")) {
+                            || !jsonResult.contains("departure_time")
+                            || !jsonResult.contains("calc_time")) {
                         htmlResultCode = HtmlResultCodesEnum.NO_INFORMATION;
                     } else {
                         ProcessVirtualBoardsApi processVirtualBoardsApi =
                                 new ProcessVirtualBoardsApi(context, jsonResult);
-                        stations.add(processVirtualBoardsApi.getStationVehiclesFromJson());
+                        stations.add(processVirtualBoardsApi.getStationVehiclesFromJson(vehicle));
 
                         htmlResultCode = HtmlResultCodesEnum.SINGLE_RESULT;
                     }
