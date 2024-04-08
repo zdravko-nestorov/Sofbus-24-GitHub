@@ -2,6 +2,7 @@ package bg.znestorov.sofbus24.navigation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -63,7 +64,7 @@ public class NavDrawerHelper {
 
         this.drawerItemClickListener = new DrawerItemClickListener();
         this.permissionLauncher = PermissionsUtils.createPermissionLauncher(context,
-                AppPermissions.EXTERNAL_STORAGE, this::startChooseBackupDialog);
+                AppPermissions.getStoragePermissions(), this::startChooseBackupDialog);
     }
 
     /**
@@ -155,8 +156,12 @@ public class NavDrawerHelper {
                 }
                 break;
             case 10:
-                PermissionsUtils.launchPermissionLauncher(context, AppPermissions.EXTERNAL_STORAGE,
-                        permissionLauncher);
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+                    PermissionsUtils.launchPermissionLauncher(context, AppPermissions.getStoragePermissions(),
+                            permissionLauncher);
+                } else {
+                    startChooseBackupDialog();
+                }
                 break;
             case 11:
                 context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH);

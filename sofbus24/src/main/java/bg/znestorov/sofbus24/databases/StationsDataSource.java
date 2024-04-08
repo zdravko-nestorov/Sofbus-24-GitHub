@@ -750,7 +750,7 @@ public class StationsDataSource {
         // Handle this case by setting the vehicle type a default value of BUS
         VehicleTypeEnum vehicleType;
         try {
-            vehicleType = VehicleTypeEnum.valueOf(cursor.getString(5));
+            vehicleType = VehicleTypeEnum.valueOf(cursor.getString(6));
         } catch (Exception e) {
             vehicleType = VehicleTypeEnum.BUS;
         }

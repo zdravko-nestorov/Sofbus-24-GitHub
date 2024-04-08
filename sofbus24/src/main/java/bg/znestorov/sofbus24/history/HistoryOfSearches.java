@@ -18,6 +18,7 @@ import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.TranslatorLatinToCyrillic;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Singleton used to make modifications to the history of searches, which are
@@ -111,11 +112,23 @@ public class HistoryOfSearches {
             preferenceNumber = preferenceNumber % Constants.TOTAL_HISTORY_COUNT;
         }
 
+        // Translate only the name, but not the number in case of Nx buses
+        if (preferenceValue.contains("(") && preferenceValue.contains(")")) {
+            String preferenceValueBase = Utils.getValueBeforeLast(preferenceValue, "(").trim();
+            preferenceValueBase = hasToTranslate
+                    ? TranslatorLatinToCyrillic.translate(context, preferenceValueBase)
+                    : preferenceValueBase;
+            String preferenceValueNumber = Utils.getValueBetweenLast(preferenceValue, "(", ")");
+            preferenceValueNumber = hasToTranslate && !preferenceValueNumber.contains("N")
+                    ? TranslatorLatinToCyrillic.translate(context, preferenceValueNumber)
+                    : preferenceValueNumber;
+            preferenceValue = String.format(preferenceValueBase + " (%s)", preferenceValueNumber);
+        }
+
         Editor editor = historyPreferences.edit();
         editor.putString(
                 preferenceKey + preferenceNumber,
-                hasToTranslate ? TranslatorLatinToCyrillic.translate(context,
-                        preferenceValue) : preferenceValue);
+                preferenceValue);
         editor.apply();
 
         // Check if the value is not already set (it will be set if a field for

@@ -86,7 +86,7 @@ public class RetrieveVirtualBoardsApi {
         Spanned progressDialogMsg = getToastMsg(context.getString(R.string.vb_time_retrieve_info));
 
         // Retrieve the full station information (station taken from Favourites or other place)
-        if (station != null) {
+        if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS && station != null) {
             stationsDatasource.open();
             station = stationsDatasource.getStation(station);
             stationsDatasource.close();

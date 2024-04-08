@@ -20,9 +20,11 @@
     <!-- Before API level 19, this permission is not enforced and all apps still have access to write/read from external storage -->
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
 
     <!-- Current device location -->
