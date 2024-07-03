@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.main.R;
@@ -27,8 +28,8 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final ArrayList<String> navigationItems;
-    private final ArrayList<Integer> navigationItemsImgs;
+    private final List<String> navigationItems;
+    private final List<Integer> navigationItemsImgs;
 
     private final boolean isPhoneDevice;
 
@@ -42,51 +43,20 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
         this.isPhoneDevice = ((GlobalEntity) context.getApplicationContext())
                 .isPhoneDevice();
         this.navigationItems = navigationItems;
-        this.navigationItemsImgs = new ArrayList<Integer>();
-
-        for (int i = 0; i < navigationItems.size(); i++) {
-            switch (i) {
-                case 0:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_home);
-                    break;
-                case 1:
-                    this.navigationItemsImgs
-                            .add(R.drawable.ic_slide_menu_home_standard);
-                    break;
-                case 2:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_home_map);
-                    break;
-                case 3:
-                    this.navigationItemsImgs
-                            .add(R.drawable.ic_slide_menu_home_cars);
-                    break;
-                case 4:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_cs_list);
-                    break;
-                case 5:
-                    this.navigationItemsImgs
-                            .add(R.drawable.ic_slide_menu_route_changes);
-                    break;
-                case 6:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_history);
-                    break;
-                case 7:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_options);
-                    break;
-                case 8:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_info);
-                    break;
-                case 9:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_update);
-                    break;
-                case 10:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_backup);
-                    break;
-                default:
-                    this.navigationItemsImgs.add(R.drawable.ic_slide_menu_exit);
-                    break;
-            }
-        }
+        this.navigationItemsImgs = List.of(
+                R.drawable.ic_slide_menu_home,
+                R.drawable.ic_slide_menu_home_standard,
+                R.drawable.ic_slide_menu_home_map,
+                R.drawable.ic_slide_menu_home_cars,
+                R.drawable.ic_slide_menu_cs_list,
+                // R.drawable.ic_slide_menu_route_changes,
+                R.drawable.ic_slide_menu_history,
+                R.drawable.ic_slide_menu_options,
+                R.drawable.ic_slide_menu_info,
+                R.drawable.ic_slide_menu_update,
+                R.drawable.ic_slide_menu_backup,
+                R.drawable.ic_slide_menu_exit
+        );
     }
 
     @Override

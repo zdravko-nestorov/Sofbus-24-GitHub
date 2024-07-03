@@ -345,23 +345,33 @@ public class RetrieveVirtualBoardsApi {
                 // the database for the stations
                 if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS) {
 
-                    String jsonResult = Utils.readUrl(
-                            Constants.VB_URL_INTERACTIVE_MAP_API,
-                            station.getSkgtId()
-                    );
+                    String jsonResult;
+
+                    // Check if we want to retrieve the information in real time for all
+                    // vehicles or just for a selected one (the previous section "Schedule"
+                    // now will be used to retrieve information about the times of arrival
+                    // for a selected vehicle)
+                    if (vehicle != null) {
+                        jsonResult = Utils.readUrl(Constants.VB_URL_VEHICLE_API,
+                                station.getFormattedNumber(), vehicle.getNumber(),
+                                vehicle.getType().toString().toLowerCase(Locale.getDefault()));
+                    } else {
+                        jsonResult = Utils.readUrl(Constants.VB_URL_STATION_API,
+                                station.getFormattedNumber());
+                    }
 
                     // Check what is the status of the JSON result
                     if (Utils.isEmpty(jsonResult)) {
                         throw new Exception();
                     } else if (jsonResult.contains("{}")
                             || !jsonResult.contains("lines")
-                            || !jsonResult.contains("departure_time")
-                            || !jsonResult.contains("calc_time")) {
+                            || !jsonResult.contains("arrivals")
+                            || !jsonResult.contains("time")) {
                         htmlResultCode = HtmlResultCodesEnum.NO_INFORMATION;
                     } else {
                         ProcessVirtualBoardsApi processVirtualBoardsApi =
                                 new ProcessVirtualBoardsApi(context, jsonResult);
-                        stations.add(processVirtualBoardsApi.getStationVehiclesFromJson(vehicle));
+                        stations.add(processVirtualBoardsApi.getStationVehiclesFromJson());
 
                         htmlResultCode = HtmlResultCodesEnum.SINGLE_RESULT;
                     }

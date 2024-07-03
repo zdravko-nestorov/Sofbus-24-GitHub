@@ -248,19 +248,25 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     protected void onStart() {
         super.onStart();
-        mapFragment.onStart();
+        if (mapFragment != null) {
+            mapFragment.onStart();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mapFragment.onStop();
+        if (mapFragment != null) {
+            mapFragment.onStop();
+        }
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mapFragment.onResume();
+        if (mapFragment != null) {
+            mapFragment.onResume();
+        }
 
         MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
 
@@ -272,7 +278,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onPause() {
-        mapFragment.onPause();
+        if (mapFragment != null) {
+            mapFragment.onPause();
+        }
         super.onPause();
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
@@ -287,7 +295,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mapFragment.onDestroy();
+        if (mapFragment != null) {
+            mapFragment.onDestroy();
+        }
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
@@ -295,7 +305,9 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        mapFragment.onLowMemory();
+        if (mapFragment != null) {
+            mapFragment.onLowMemory();
+        }
     }
 
     /**

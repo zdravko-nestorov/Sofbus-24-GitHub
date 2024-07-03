@@ -108,7 +108,7 @@ public class NavDrawerHelper {
             case 4:
                 startClosestStationsList(fragmentManager, progressDialog);
                 break;
-            case 5:
+            /* case 5:
                 if (ActivityUtils.haveNetworkConnection(context)) {
                     progressDialog.setMessage(context
                             .getString(R.string.route_changes_loading));
@@ -120,8 +120,8 @@ public class NavDrawerHelper {
                 } else {
                     ActivityUtils.showNoInternetToast(context);
                 }
-                break;
-            case 6:
+                break; */
+            case 5:
                 Intent historyIntent;
                 if (globalContext.isPhoneDevice()) {
                     historyIntent = new Intent(context, History.class);
@@ -130,7 +130,7 @@ public class NavDrawerHelper {
                 }
                 context.startActivity(historyIntent);
                 break;
-            case 7:
+            case 6:
                 Intent preferencesIntent;
                 if (globalContext.isPhoneDevice()) {
                     preferencesIntent = new Intent(context, Preferences.class);
@@ -139,7 +139,7 @@ public class NavDrawerHelper {
                 }
                 context.startActivity(preferencesIntent);
                 break;
-            case 8:
+            case 7:
                 Intent aboutIntent;
                 if (globalContext.isPhoneDevice()) {
                     aboutIntent = new Intent(context, About.class);
@@ -148,14 +148,14 @@ public class NavDrawerHelper {
                 }
                 context.startActivity(aboutIntent);
                 break;
-            case 9:
+            case 8:
                 if (ActivityUtils.haveNetworkConnection(context)) {
                     startChooseUpdateDialog();
                 } else {
                     ActivityUtils.showNoInternetToast(context);
                 }
                 break;
-            case 10:
+            case 9:
                 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
                     PermissionsUtils.launchPermissionLauncher(context, AppPermissions.getStoragePermissions(),
                             permissionLauncher);
@@ -163,7 +163,7 @@ public class NavDrawerHelper {
                     startChooseBackupDialog();
                 }
                 break;
-            case 11:
+            case 10:
                 context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH);
                 context.finish();
                 break;

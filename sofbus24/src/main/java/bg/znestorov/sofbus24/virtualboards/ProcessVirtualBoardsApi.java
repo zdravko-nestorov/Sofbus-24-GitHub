@@ -11,7 +11,6 @@ import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import bg.znestorov.sofbus24.databases.DroidTransDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
@@ -20,28 +19,25 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
-import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
 
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_STATION_CODE;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_STATION_LINES_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_AIR_CONDITIONING_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_ARRIVALS_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_BICYCLE_MOUNT_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_CALC_TIME_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_DIRECTION_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_DOUBLEDECKER_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_FLAGS_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_NAME_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_TIME_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_TYPE_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_WHEELCHAIR_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VEHICLE_WIFI_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_IM_VIRTUAL_PANEL_DATA;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_CODE_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_LINES_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_NAME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_SKGT_TIME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_AIR_CONDITIONING_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ARRIVALS_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_BICYCLE_MOUNT_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DIRECTION_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DOUBLEDECKER_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_NAME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TIME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TYPE_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_WHEELCHAIR_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_WIFI_API;
 import static bg.znestorov.sofbus24.utils.Utils.getAsJsonBoolean;
-import static bg.znestorov.sofbus24.utils.Utils.getAsJsonObject;
 import static bg.znestorov.sofbus24.utils.Utils.getAsJsonString;
 import static bg.znestorov.sofbus24.utils.Utils.transformSkgtStringDateToDate;
 
@@ -61,7 +57,6 @@ class ProcessVirtualBoardsApi {
     private VehiclesDataSource vehicleDatasource;
     private DroidTransDataSource droidTransDatasource;
     private String jsonResult;
-    private String skgtTime;
 
     ProcessVirtualBoardsApi(Activity context, String jsonResult) {
         this.context = context;
@@ -72,21 +67,22 @@ class ProcessVirtualBoardsApi {
         this.language = LanguageChange.getUserLocale(context);
     }
 
-    StationEntity getStationVehiclesFromJson(VehicleEntity vehicle) {
+    StationEntity getStationVehiclesFromJson() {
 
         JsonObject stationJsonObject;
         try {
             stationJsonObject = new JsonParser().parse(jsonResult).getAsJsonObject();
-            stationJsonObject = getAsJsonObject(stationJsonObject, VB_IM_VIRTUAL_PANEL_DATA);
         } catch (Exception e) {
             return null;
         }
 
-        // Get the Station for this SKGT request
+        // Get the Station for this SKGT request and the SKGT time (information retrieval time)
         StationEntity station = getStation(stationJsonObject);
+        String skgtTime = transformSkgtStringDateToDate(
+                getAsJsonString(stationJsonObject, VB_STATION_SKGT_TIME_API));
 
         // Init the list of vehicles for this station
-        ArrayList<VehicleEntity> stationVehicles = getStationVehicles(stationJsonObject, station, vehicle);
+        ArrayList<VehicleEntity> stationVehicles = getStationVehicles(stationJsonObject, station);
 
         // Form the VirtualBoardsStationEntity using all data from the SKGT site
         return new VirtualBoardsStationEntity(station, skgtTime, stationVehicles);
@@ -99,8 +95,8 @@ class ProcessVirtualBoardsApi {
      */
     private StationEntity getStation(JsonObject stationJsonObject) {
 
-        // Get the station code from the virtual panel data
-        String code = getAsJsonString(stationJsonObject, VB_IM_STATION_CODE);
+        // Get the station code from the JSON object
+        String code = getAsJsonString(stationJsonObject, VB_STATION_CODE_API);
 
         // Get the station from the DB
         stationsDatasource.open();
@@ -110,8 +106,8 @@ class ProcessVirtualBoardsApi {
         // In case the vehicle is not in the database, create a temporary one
         if (station == null) {
 
-            // Тhe Station name is not available in the API
-            String name = Constants.GLOBAL_PARAM_XXX;
+            // Get the Station name from the current request in the appropriate language
+            String name = getAsJsonString(stationJsonObject, VB_STATION_NAME_API);
             if (!"bg".equals(language)) {
                 name = TranslatorCyrillicToLatin.translate(context, name);
             }
@@ -130,39 +126,22 @@ class ProcessVirtualBoardsApi {
      * @return a list of the passing vehicles through this station
      */
     private ArrayList<VehicleEntity> getStationVehicles(JsonObject stationJsonObject,
-                                                        StationEntity station,
-                                                        VehicleEntity vehicle) {
+                                                        StationEntity station) {
 
         ArrayList<VehicleEntity> stationVehicles = new ArrayList<>();
 
         // Get the station vehicles
-        JsonArray linesJsonArray = stationJsonObject.getAsJsonArray(VB_IM_STATION_LINES_API);
+        JsonArray linesJsonArray = stationJsonObject.getAsJsonArray(VB_STATION_LINES_API);
         for (JsonElement lineJsonElement : linesJsonArray) {
 
             JsonObject linesJsonObject = lineJsonElement.getAsJsonObject();
 
             // Get the vehicle from the DB/SKGT and assign it all arrival information
-            VehicleEntity vehicleFromJson = getVehicle(linesJsonObject, station);
-            setVehicleInfo(vehicleFromJson, linesJsonObject);
+            VehicleEntity vehicle = getVehicle(linesJsonObject, station);
+            setVehicleInfo(vehicle, linesJsonObject);
 
             // Add the vehicle to the list of station vehicles
-            if (vehicle == null) {
-                stationVehicles.add(vehicleFromJson);
-            } else {
-                String vehicleFromJsonNumber = vehicleFromJson.getNumber().toLowerCase(Locale.getDefault());
-                VehicleTypeEnum vehicleFromJsonType = vehicleFromJson.getType();
-
-                String vehicleNumber = vehicle.getNumber().toLowerCase(Locale.getDefault());
-                VehicleTypeEnum vehicleType = vehicle.getType();
-
-                // Check if we want to retrieve the information in real time for all
-                // vehicles or just for a selected one (the previous section "Schedule"
-                // now will be used to retrieve information about the times of arrival
-                // for a selected vehicle)
-                if (vehicleFromJsonNumber.equals(vehicleNumber) && vehicleFromJsonType == vehicleType) {
-                    stationVehicles.add(vehicleFromJson);
-                }
-            }
+            stationVehicles.add(vehicle);
         }
 
         return stationVehicles;
@@ -181,10 +160,10 @@ class ProcessVirtualBoardsApi {
     private VehicleEntity getVehicle(JsonObject linesJsonObject, StationEntity station) {
 
         // Get the Vehicle name from the current request in the appropriate language
-        String name = getAsJsonString(linesJsonObject, VB_IM_VEHICLE_NAME_API);
+        String name = getAsJsonString(linesJsonObject, VB_VEHICLE_NAME_API);
 
         // Get the Vehicle direction from the current request in the appropriate language
-        String direction = getAsJsonString(linesJsonObject, VB_IM_VEHICLE_DIRECTION_API);
+        String direction = getAsJsonString(linesJsonObject, VB_VEHICLE_DIRECTION_API);
         if (!"bg".equals(language)) {
             direction = TranslatorCyrillicToLatin.translate(context, direction);
         }
@@ -192,8 +171,8 @@ class ProcessVirtualBoardsApi {
         // Form the vehicle type
         VehicleTypeEnum type;
         try {
-            type = VehicleTypeEnum.fromTransportCode(
-                    getAsJsonString(linesJsonObject, VB_IM_VEHICLE_TYPE_API).toUpperCase());
+            type = VehicleTypeEnum.valueOf(
+                    getAsJsonString(linesJsonObject, VB_VEHICLE_TYPE_API).toUpperCase());
         } catch (Exception e) {
             // This case should never been reached as the vehicles always will be BUS, TRAM, TROLLEY
             type = VehicleTypeEnum.BUS;
@@ -205,7 +184,7 @@ class ProcessVirtualBoardsApi {
         // In case the vehicle is not in the database (get the first returned vehicle),
         // create a temporary one
         VehicleEntity vehicle;
-        if (vehicles != null && !vehicles.isEmpty()) {
+        if (vehicles != null && vehicles.size() > 0) {
             vehicle = vehicles.get(0);
         } else {
             vehicle = new VehicleEntity(name, type, direction);
@@ -280,28 +259,20 @@ class ProcessVirtualBoardsApi {
         ArrayList<Boolean> hasWifi = new ArrayList<>();
 
         // Get the times of arrival
-        JsonArray arrivalsJsonArray = linesJsonObject.getAsJsonArray(VB_IM_VEHICLE_ARRIVALS_API);
+        JsonArray arrivalsJsonArray = linesJsonObject.getAsJsonArray(VB_VEHICLE_ARRIVALS_API);
         for (JsonElement arrivalJsonElement : arrivalsJsonArray) {
 
             JsonObject arrivalJsonObject = arrivalJsonElement.getAsJsonObject();
 
-            // Get the SKGT time (information retrieval time) only once
-            if (skgtTime == null) {
-                skgtTime = transformSkgtStringDateToDate(
-                        getAsJsonString(arrivalJsonObject, VB_IM_VEHICLE_CALC_TIME_API));
-            }
-
             // Fill the vehicle information only if the arrival time is after the current hour
-            String arrivalTime = formatArrivalTime(getAsJsonString(arrivalJsonObject, VB_IM_VEHICLE_TIME_API));
+            String arrivalTime = formatArrivalTime(getAsJsonString(arrivalJsonObject, VB_VEHICLE_TIME_API));
             if (!Utils.isEmpty(arrivalTime)) {
                 arrivalTimes.add(arrivalTime);
-
-                JsonObject flagsJsonObject = getAsJsonObject(arrivalJsonObject, VB_IM_VEHICLE_FLAGS_API);
-                isWheelchairAccessible.add(getAsJsonBoolean(flagsJsonObject, VB_IM_VEHICLE_WHEELCHAIR_API));
-                hasAirConditioning.add(getAsJsonBoolean(flagsJsonObject, VB_IM_VEHICLE_AIR_CONDITIONING_API));
-                hasBicycleMount.add(getAsJsonBoolean(flagsJsonObject, VB_IM_VEHICLE_BICYCLE_MOUNT_API));
-                isDoubledecker.add(getAsJsonBoolean(flagsJsonObject, VB_IM_VEHICLE_DOUBLEDECKER_API));
-                hasWifi.add(getAsJsonBoolean(flagsJsonObject, VB_IM_VEHICLE_WIFI_API));
+                isWheelchairAccessible.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_WHEELCHAIR_API));
+                hasAirConditioning.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_AIR_CONDITIONING_API));
+                hasBicycleMount.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_BICYCLE_MOUNT_API));
+                isDoubledecker.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_DOUBLEDECKER_API));
+                hasWifi.add(getAsJsonBoolean(arrivalJsonObject, VB_VEHICLE_WIFI_API));
             }
         }
 
@@ -327,6 +298,8 @@ class ProcessVirtualBoardsApi {
     private String formatArrivalTime(String arrivalTime) {
 
         String currentTime = DateFormat.format("kk:mm", new java.util.Date()).toString();
+        arrivalTime = Utils.getValueBeforeLast(arrivalTime, ":");
+
         String differenceTime = Utils.getTimeDifference(context, arrivalTime, currentTime);
         if (!"".equals(differenceTime) && !"---".equals(differenceTime)) {
             return arrivalTime;
