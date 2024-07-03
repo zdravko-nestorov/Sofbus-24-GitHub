@@ -154,24 +154,12 @@ class Sofbus24DataSource {
      */
     private boolean existsColumnInTable(SQLiteDatabase database, String table,
                                         String columnToCheck) {
+        // Check if the column exists in the database
+        try (Cursor cursor = database.rawQuery("SELECT * FROM " + table + " LIMIT 0", null)) {
+            return cursor.getColumnIndex(columnToCheck) != -1;
 
-        Cursor cursor = null;
-        boolean existsColumnInTable;
-
-        try {
-            cursor = database.rawQuery("SELECT * FROM " + table + " LIMIT 0",
-                    null);
-
-            // Check if the column exists in the database
-            existsColumnInTable = cursor.getColumnIndex(columnToCheck) != -1;
         } catch (Exception e) {
-            existsColumnInTable = false;
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
+            return false;
         }
-
-        return existsColumnInTable;
     }
 }

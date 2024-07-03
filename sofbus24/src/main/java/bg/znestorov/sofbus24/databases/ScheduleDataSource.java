@@ -224,18 +224,19 @@ class ScheduleDataSource {
                 dataNumber, EMPTY_COLUMN};
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(ScheduleSQLite.TABLE_SOF_SCHE,
-                dataColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(ScheduleSQLite.TABLE_SOF_SCHE,
+                dataColumns, selection, selectionArgs, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            scheduleCache = new ScheduleCacheEntity(cursor.getString(0),
-                    cursor.getString(1));
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                scheduleCache = new ScheduleCacheEntity(cursor.getString(0),
+                        cursor.getString(1));
+            }
+            return scheduleCache;
+
+        } catch (Exception e) {
+            return scheduleCache;
         }
-
-        cursor.close();
-
-        return scheduleCache;
     }
 
     /**
@@ -262,18 +263,19 @@ class ScheduleDataSource {
                 vehicleNumber, stationNumber};
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(ScheduleSQLite.TABLE_SOF_SCHE,
-                dataColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(ScheduleSQLite.TABLE_SOF_SCHE,
+                dataColumns, selection, selectionArgs, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            scheduleCache = new ScheduleCacheEntity(cursor.getString(0),
-                    cursor.getString(1));
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                scheduleCache = new ScheduleCacheEntity(cursor.getString(0),
+                        cursor.getString(1));
+            }
+            return scheduleCache;
+
+        } catch (Exception e) {
+            return scheduleCache;
         }
-
-        cursor.close();
-
-        return scheduleCache;
     }
 
     /**
@@ -316,18 +318,20 @@ class ScheduleDataSource {
         query.append(" " + ScheduleSQLite.COLUMN_SCHE_VEHICLE_NUMBER
                 + " = '%s'														\n");
 
-        Cursor cursor = database.rawQuery(
+        // Check if the schedule cache is available for the selected type and number
+        try (Cursor cursor = database.rawQuery(
                 String.format(query.toString(), vehicleType, vehicleNumber),
-                null);
+                null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            isScheduleAvailable = cursor.getInt(0) > 0;
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                isScheduleAvailable = cursor.getInt(0) > 0;
+            }
+            return isScheduleAvailable;
+
+        } catch (Exception e) {
+            return isScheduleAvailable;
         }
-
-        cursor.close();
-
-        return isScheduleAvailable;
     }
 
     /**
@@ -361,16 +365,18 @@ class ScheduleDataSource {
         query.append(" SELECT COUNT(*)										\n");
         query.append(" FROM " + ScheduleSQLite.TABLE_SOF_SCHE + "			\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Check if any schedule cache is available
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            isScheduleAvailable = cursor.getInt(0) > 0;
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                isScheduleAvailable = cursor.getInt(0) > 0;
+            }
+            return isScheduleAvailable;
+
+        } catch (Exception e) {
+            return isScheduleAvailable;
         }
-
-        cursor.close();
-
-        return isScheduleAvailable;
     }
 
     /**

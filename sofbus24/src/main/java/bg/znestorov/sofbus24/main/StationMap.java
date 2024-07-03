@@ -34,6 +34,8 @@ import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
@@ -43,6 +45,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
     private Activity context;
+    private Bundle bundle;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
 
@@ -66,6 +69,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
         // Get the current activity context
         context = StationMap.this;
+        bundle = savedInstanceState;
         globalContext = (GlobalEntity) getApplicationContext();
         vehiclesDatasource = new VehiclesDataSource(context);
 
@@ -73,9 +77,10 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // Register lifecycle observer, request location permissions retrieve the map
-        mapFragment = MapUtils.initializeMap(this, R.id.station_map, savedInstanceState);
-        mapFragment.getMapAsync(this);
+        // Create and launch a permission launcher to request permissions
+        // N.B. Prevent strange errors where the permissions are not granted on startup
+        PermissionsUtils.createAndLaunchPermissionLauncher(this,
+                AppPermissions.MAP, this::initializeMap);
     }
 
     @Override
@@ -258,6 +263,15 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Initialize the map UI.
+     */
+    private void initializeMap() {
+        // Register lifecycle observer, request location permissions retrieve the map
+        mapFragment = MapUtils.initializeMap(this, R.id.station_map, bundle);
+        mapFragment.getMapAsync(this);
     }
 
     /**

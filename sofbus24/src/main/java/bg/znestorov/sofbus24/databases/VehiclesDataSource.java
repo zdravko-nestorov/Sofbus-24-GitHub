@@ -13,6 +13,7 @@ import java.util.Locale;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
+import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
@@ -74,20 +75,22 @@ public class VehiclesDataSource {
             database.insert(Sofbus24SQLite.TABLE_SOF_VEHI, null, values);
 
             // Selecting the row that contains the vehicle data
-            Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+            try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
                     allColumns, Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = "
-                            + vehicle.getNumber(), null, null, null, null);
+                            + vehicle.getNumber(), null, null, null, null)) {
 
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating new Vehicle and closing the cursor
-            VehicleEntity insertedVehicle = cursorToVehicle(cursor);
-            insertedVehicle.setType(vehicle.getType());
+                // Creating new Vehicle
+                VehicleEntity insertedVehicle = cursorToVehicle(cursor);
+                insertedVehicle.setType(vehicle.getType());
+                return insertedVehicle;
 
-            cursor.close();
+            } catch (Exception e) {
+                return null;
+            }
 
-            return insertedVehicle;
         } else {
             return null;
         }
@@ -124,22 +127,22 @@ public class VehiclesDataSource {
                 String.valueOf(vehicle.getType())};
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                allColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+                allColumns, selection, selectionArgs, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating vehicle object and closing the cursor
-            VehicleEntity foundVehicle = cursorToVehicle(cursor);
-            foundVehicle.setType(vehicle.getType());
-            cursor.close();
+                // Creating vehicle object
+                VehicleEntity foundVehicle = cursorToVehicle(cursor);
+                foundVehicle.setType(vehicle.getType());
+                return foundVehicle;
+            } else {
+                return null;
+            }
 
-            return foundVehicle;
-        } else {
-            cursor.close();
-
+        } catch (Exception e) {
             return null;
         }
     }
@@ -157,23 +160,22 @@ public class VehiclesDataSource {
         String[] selectionArgs = new String[]{String.valueOf(vehicleType)};
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                allColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+                allColumns, selection, selectionArgs, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating vehicle object and closing the cursor
-            VehicleEntity foundVehicle = cursorToVehicle(cursor);
-            String vehicleDirection = foundVehicle.getDirection();
-            cursor.close();
+                // Creating vehicle object
+                VehicleEntity foundVehicle = cursorToVehicle(cursor);
+                return foundVehicle.getDirection();
+            } else {
+                return Constants.GLOBAL_PARAM_EMPTY_STRING;
+            }
 
-            return vehicleDirection;
-        } else {
-            cursor.close();
-
-            return "";
+        } catch (Exception e) {
+            return Constants.GLOBAL_PARAM_EMPTY_STRING;
         }
     }
 
@@ -204,20 +206,21 @@ public class VehiclesDataSource {
         query.append(" 		" + Sofbus24SQLite.COLUMN_VEHI_TYPE + " LIKE '%"
                 + type.toString() + "%'											\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the vehicles which NUMBER or DIRECTION contains the searched text
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            VehicleEntity vehicle = cursorToVehicle(cursor);
-            vehicles.add(vehicle);
-            cursor.moveToNext();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                VehicleEntity vehicle = cursorToVehicle(cursor);
+                vehicles.add(vehicle);
+                cursor.moveToNext();
+            }
+            return vehicles;
+
+        } catch (Exception e) {
+            return vehicles;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehicles;
     }
 
     /**
@@ -274,22 +277,22 @@ public class VehiclesDataSource {
         query.append(" 			AND SOF_STAT.STAT_NUMBER = %s										\n");
 
         // Selecting the row that contains the stations data
-        Cursor cursor = database.rawQuery(
-                String.format(query.toString(), stationNumber), null);
+        try (Cursor cursor = database.rawQuery(
+                String.format(query.toString(), stationNumber), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        if (cursor.getCount() > 0) {
+            // Iterating the cursor and fill the empty List<Station>
+            if (cursor.getCount() > 0) {
 
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            vehicle = cursorToVehicleStation(cursor);
+                vehicle = cursorToVehicleStation(cursor);
+            }
+            return vehicle;
+
+        } catch (Exception e) {
+            return vehicle;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehicle;
     }
 
     /**
@@ -335,32 +338,31 @@ public class VehiclesDataSource {
         query.append(" ORDER BY VEHI_TYPE											\n");
 
         // Selecting the row that contains the stations data
-        Cursor cursor = database.rawQuery(
-                String.format(query.toString(), stationNumber), null);
+        try (Cursor cursor = database.rawQuery(
+                String.format(query.toString(), stationNumber), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
 
-        while (!cursor.isAfterLast()) {
-            vehicleType.append(cursor.getString(0)).append("_");
-            cursor.moveToNext();
-        }
-
-        // Closing the cursor
-        cursor.close();
-
-        // Get the vehicles' type passing through the station
-        if (vehicleType.length() > 0) {
-            vehicleType.deleteCharAt(vehicleType.length() - 1);
-
-            try {
-                vehicleTypeEnum = VehicleTypeEnum.valueOf(vehicleType
-                        .toString());
-            } catch (Exception e) {
-                vehicleTypeEnum = VehicleTypeEnum.BUS;
+            while (!cursor.isAfterLast()) {
+                vehicleType.append(cursor.getString(0)).append("_");
+                cursor.moveToNext();
             }
-        }
 
-        return vehicleTypeEnum;
+            // Get the vehicles' type passing through the station
+            if (vehicleType.length() > 0) {
+                vehicleType.deleteCharAt(vehicleType.length() - 1);
+
+                try {
+                    return VehicleTypeEnum.valueOf(vehicleType.toString());
+                } catch (Exception e) {
+                    return vehicleTypeEnum;
+                }
+            }
+            return vehicleTypeEnum;
+
+        } catch (Exception e) {
+            return vehicleTypeEnum;
+        }
     }
 }

@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
+import java.util.List;
 import java.util.Map;
 
 import bg.znestorov.sofbus24.utils.Constants;
@@ -113,7 +114,12 @@ public class PermissionsUtils {
 
         // Check if the permission launcher is already running
         ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
-        ComponentName cn = am.getRunningTasks(1).get(0).topActivity;
+        List<ActivityManager.RunningTaskInfo> runningTasks = am.getRunningTasks(1);
+        if (Utils.isEmpty(runningTasks)) {
+            return;
+        }
+
+        ComponentName cn = runningTasks.get(0).topActivity;
         if (Constants.GLOBAL_GRANT_PERMISSION_ACTIVITY.equals(cn.getClassName())) {
             return;
         }

@@ -48,6 +48,8 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
@@ -63,6 +65,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
 
     private Activity context;
+    private Bundle bundle;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
 
@@ -117,15 +120,17 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Get the current context
         context = StationRouteMap.this;
+        bundle = savedInstanceState;
         globalContext = (GlobalEntity) getApplicationContext();
 
         // Set up the action bar
         actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // Register lifecycle observer, request location permissions and retrieve the map
-        mapFragment = MapUtils.initializeMap(this, R.id.station_route_map, savedInstanceState);
-        mapFragment.getMapAsync(this);
+        // Create and launch a permission launcher to request permissions
+        // N.B. Prevent strange errors where the permissions are not granted on startup
+        PermissionsUtils.createAndLaunchPermissionLauncher(this,
+                AppPermissions.MAP, this::initializeMap);
     }
 
     @Override
@@ -319,6 +324,15 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Initialize the map UI.
+     */
+    private void initializeMap() {
+        // Register lifecycle observer, request location permissions and retrieve the map
+        mapFragment = MapUtils.initializeMap(this, R.id.station_route_map, bundle);
+        mapFragment.getMapAsync(this);
     }
 
     /**

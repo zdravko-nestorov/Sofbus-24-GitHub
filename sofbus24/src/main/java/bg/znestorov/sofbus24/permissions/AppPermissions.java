@@ -13,6 +13,12 @@ public enum AppPermissions {
             android.Manifest.permission.ACCESS_COARSE_LOCATION
     ),
 
+    MAP(
+            // Current device location
+            android.Manifest.permission.ACCESS_FINE_LOCATION,
+            android.Manifest.permission.ACCESS_COARSE_LOCATION
+    ),
+
     EXTERNAL_STORAGE_32_AND_BELOW(
             // Read/write from external storage
             android.Manifest.permission.READ_EXTERNAL_STORAGE,

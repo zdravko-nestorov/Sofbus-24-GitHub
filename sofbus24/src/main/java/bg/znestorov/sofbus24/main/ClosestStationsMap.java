@@ -69,6 +69,8 @@ import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
+import bg.znestorov.sofbus24.permissions.AppPermissions;
+import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
@@ -97,6 +99,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      */
     private final HashMap<String, StationEntity> markersAndStations = new HashMap<String, StationEntity>();
     private FragmentActivity context;
+    private Bundle bundle;
     /**
      * Listener used to check which marker snippet is pressed
      */
@@ -208,6 +211,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         // Get the current activity context and get an instance of the
         // StationsDatasource
         context = ClosestStationsMap.this;
+        bundle = savedInstanceState;
         globalContext = (GlobalEntity) getApplicationContext();
         isCSMapHomeScreen = getIntent().getExtras() != null && getIntent()
                 .getExtras().getBoolean(BUNDLE_IS_CS_MAP_HOME_SCREEN, false);
@@ -220,9 +224,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
         getSharedPreferencesFields();
         initActionBar();
-
-        mapFragment = MapUtils.initializeMap(this, R.id.closest_stations_map, savedInstanceState);
-        initClosestStationMap();
 
         if (isCSMapHomeScreen) {
             if (savedInstanceState == null) {
@@ -237,6 +238,11 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
             initNavigationDrawer();
         }
+
+        // Create and launch a permission launcher to request permissions
+        // N.B. Prevent strange errors where the permissions are not granted on startup
+        PermissionsUtils.createAndLaunchPermissionLauncher(this,
+                AppPermissions.MAP, this::initializeMap);
     }
 
     @Override
@@ -472,6 +478,14 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     private void setActionBarSubTitle(int closestStationsCount) {
         actionBar.setSubtitle(getString(R.string.cs_map_subtitle,
                 stationsRadius, closestStationsCount + ""));
+    }
+
+    /**
+     * Initialize the map UI.
+     */
+    private void initializeMap() {
+        mapFragment = MapUtils.initializeMap(this, R.id.closest_stations_map, bundle);
+        initClosestStationMap();
     }
 
     /**

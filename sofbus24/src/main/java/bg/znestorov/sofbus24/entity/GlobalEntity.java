@@ -49,12 +49,17 @@ public class GlobalEntity extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Initialize HMS prerequisites (isHms property)
-        org.xms.g.utils.GlobalEnvSetting.init(this, null);
-        org.xms.adapter.utils.XLoader.init(this);
+        try {
+            // Initialize HMS prerequisites (isHms property)
+            org.xms.g.utils.GlobalEnvSetting.init(this, null);
+            org.xms.adapter.utils.XLoader.init(this);
 
-        // Set the HMS map API key
-        MapUtils.setHmsMapApiKey(this);
+            // Set the HMS map API key
+            MapUtils.setHmsMapApiKey(this);
+
+        } catch (Exception e) {
+            // Do nothing as it can happen only on old Huawei devices
+        }
 
         // Initialize Sofbus 24 prerequisites
         initialize();

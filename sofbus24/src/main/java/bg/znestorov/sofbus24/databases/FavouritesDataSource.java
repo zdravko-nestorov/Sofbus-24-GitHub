@@ -120,18 +120,20 @@ public class FavouritesDataSource {
             database.insert(FavouritesSQLite.TABLE_FAVOURITES, null, values);
 
             // Selecting the row that contains the station data
-            Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+            try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
                     allColumns, FavouritesSQLite.COLUMN_NUMBER + " = "
-                            + station.getNumber(), null, null, null, null);
+                            + station.getNumber(), null, null, null, null)) {
 
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating newStation and closing the cursor
-            StationEntity insertedStation = cursorToStation(cursor);
-            cursor.close();
+                // Creating new station
+                return cursorToStation(cursor);
 
-            return insertedStation;
+            } catch (Exception e) {
+                return null;
+            }
+
         } else {
             return null;
         }
@@ -143,7 +145,7 @@ public class FavouritesDataSource {
      * @param stationsList the lists of stations
      */
     public void createStations(List<StationEntity> stationsList) {
-        if (stationsList != null && stationsList.size() > 0) {
+        if (stationsList != null && !stationsList.isEmpty()) {
             for (int i = 0; i < stationsList.size(); i++) {
                 createStation(stationsList.get(i));
             }
@@ -166,7 +168,7 @@ public class FavouritesDataSource {
         StationsDataSource stationsDS = new StationsDataSource(context);
         stationsDS.open();
 
-        if (stationCoordinate != null && !"".equals(stationCoordinate)) {
+        if (stationCoordinate != null && !stationCoordinate.isEmpty()) {
             coordinate = stationCoordinate;
         } else if (stationsDS.getStation(stationNumber) != null) {
             coordinate = stationsDS.getStation(stationNumber).getLat();
@@ -206,21 +208,26 @@ public class FavouritesDataSource {
      */
     private int getLastPosition() {
         int nextPosition = 1;
-        @SuppressLint("Recycle") Cursor cursor = database
+
+        // Get the position of the last added favorite in the table
+        try (@SuppressLint("Recycle") Cursor cursor = database
                 .query(FavouritesSQLite.TABLE_FAVOURITES, new String[]{"MAX("
                                 + FavouritesSQLite.COLUMN_POSITION + ")"}, null, null,
-                        null, null, null);
+                        null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first result
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first result
+                cursor.moveToFirst();
 
-            // Getting the last position of the records and adding 1 to get the
-            // next free position
-            nextPosition = cursor.getInt(0);
+                // Getting the last position of the records and adding 1 to get the
+                // next free position
+                nextPosition = cursor.getInt(0);
+            }
+            return nextPosition;
+
+        } catch (Exception e) {
+            return nextPosition;
         }
-
-        return nextPosition;
     }
 
     /**
@@ -331,23 +338,23 @@ public class FavouritesDataSource {
      */
     public StationEntity getStation(StationEntity station) {
         // Selecting the row that contains the station data
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
                 allColumns,
                 FavouritesSQLite.COLUMN_NUMBER + " = " + station.getNumber(),
-                null, null, null, null);
+                null, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating station object and closing the cursor
-            StationEntity foundStation = cursorToStation(cursor);
-            cursor.close();
+                // Creating station object
+                return cursorToStation(cursor);
 
-            return foundStation;
-        } else {
-            cursor.close();
+            } else {
+                return null;
+            }
 
+        } catch (Exception e) {
             return null;
         }
     }
@@ -360,22 +367,21 @@ public class FavouritesDataSource {
      */
     public StationEntity getStation(String stationNumber) {
         // Selecting the row that contains the station data
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
                 allColumns, FavouritesSQLite.COLUMN_NUMBER + " = "
-                        + stationNumber, null, null, null, null);
+                        + stationNumber, null, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating station object and closing the cursor
-            StationEntity foundStation = cursorToStation(cursor);
-            cursor.close();
+                // Creating station object
+                return cursorToStation(cursor);
+            } else {
+                return null;
+            }
 
-            return foundStation;
-        } else {
-            cursor.close();
-
+        } catch (Exception e) {
             return null;
         }
     }
@@ -388,23 +394,22 @@ public class FavouritesDataSource {
      */
     private StationEntity getStation(int position) {
         // Selecting the row that contains the station data
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
                 allColumns,
                 FavouritesSQLite.COLUMN_POSITION + " = " + position, null,
-                null, null, null);
+                null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating station object and closing the cursor
-            StationEntity foundStation = cursorToStation(cursor);
-            cursor.close();
+                // Creating station object
+                return cursorToStation(cursor);
+            } else {
+                return null;
+            }
 
-            return foundStation;
-        } else {
-            cursor.close();
-
+        } catch (Exception e) {
             return null;
         }
     }
@@ -431,20 +436,21 @@ public class FavouritesDataSource {
         query.append(" 	lower(" + FavouritesSQLite.COLUMN_NAME + ") LIKE '%"
                 + searchText + "%'		 									\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the stations which NUMBER or NAME contains the searched text
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity station = cursorToStation(cursor);
-            stations.add(station);
-            cursor.moveToNext();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity station = cursorToStation(cursor);
+                stations.add(station);
+                cursor.moveToNext();
+            }
+            return stations;
+
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -460,21 +466,23 @@ public class FavouritesDataSource {
                 FavouritesSQLite.COLUMN_NAME, FavouritesSQLite.COLUMN_LAT,
                 FavouritesSQLite.COLUMN_LON,
                 FavouritesSQLite.COLUMN_CUSTOM_FIELD};
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
-                allColumns, null, null, null, null, null);
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity station = cursorToStation(cursor);
-            stations.add(station);
-            cursor.moveToNext();
+        // Get all stations from the database
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+                allColumns, null, null, null, null, null)) {
+
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity station = cursorToStation(cursor);
+                stations.add(station);
+                cursor.moveToNext();
+            }
+            return stations;
+
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -488,21 +496,23 @@ public class FavouritesDataSource {
 
         // Selecting all fields of the TABLE_FAVOURITES
         String orderBy = getOrderBy(sortType);
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
-                allColumns, null, null, null, null, orderBy);
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity station = cursorToStation(cursor);
-            stations.add(station);
-            cursor.moveToNext();
+        // Get all stations from the database in some order
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+                allColumns, null, null, null, null, orderBy)) {
+
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity station = cursorToStation(cursor);
+                stations.add(station);
+                cursor.moveToNext();
+            }
+            return stations;
+
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -518,24 +528,26 @@ public class FavouritesDataSource {
 
         // Selecting all fields of the TABLE_FAVOURITES
         String orderBy = getOrderBy(sortType);
-        Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
-                allColumns, null, null, null, null, orderBy);
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity station = cursorToStation(cursor);
-            if (!station.getNumber().equals(stationToExclude.getNumber())) {
-                stations.add(station);
+        // Get all stations from the database in some order
+        try (Cursor cursor = database.query(FavouritesSQLite.TABLE_FAVOURITES,
+                allColumns, null, null, null, null, orderBy)) {
+
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity station = cursorToStation(cursor);
+                if (!station.getNumber().equals(stationToExclude.getNumber())) {
+                    stations.add(station);
+                }
+
+                cursor.moveToNext();
             }
+            return stations;
 
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**

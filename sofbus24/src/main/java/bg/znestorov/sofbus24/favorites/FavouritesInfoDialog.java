@@ -56,14 +56,12 @@ public class FavouritesInfoDialog extends DialogFragment {
      * @return the real station name
      */
     private String getRealStationName(StationEntity station) {
-        String realStationName;
-
         StationsDataSource stationsDatasource = new StationsDataSource(context);
         stationsDatasource.open();
-        realStationName = stationsDatasource.getStation(station).getName();
+        StationEntity stationDb = stationsDatasource.getStation(station);
         stationsDatasource.close();
 
-        return realStationName;
+        return stationDb != null ? stationDb.getName() : null;
     }
 
     /**

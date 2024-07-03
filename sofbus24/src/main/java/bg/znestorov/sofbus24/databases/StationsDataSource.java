@@ -91,18 +91,18 @@ public class StationsDataSource {
             database.insert(Sofbus24SQLite.TABLE_SOF_STAT, null, values);
 
             // Selecting the row that contains the station data
-            Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
+            try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
                     allColumns, Sofbus24SQLite.COLUMN_STAT_NUMBER + " = "
-                            + station.getNumber(), null, null, null, null);
+                            + station.getNumber(), null, null, null, null)) {
 
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
+                return cursorToStation(cursor);
 
-            // Creating newStation and closing the cursor
-            StationEntity insertedStation = cursorToStation(cursor);
-            cursor.close();
+            } catch (Exception e) {
+                return null;
+            }
 
-            return insertedStation;
         } else {
             return null;
         }
@@ -150,30 +150,30 @@ public class StationsDataSource {
      */
     public StationEntity getStation(StationEntity station) {
         // Selecting the row that contains the station data
-        Cursor cursor = database
+        try (Cursor cursor = database
                 .query(Sofbus24SQLite.TABLE_SOF_STAT,
                         allColumns,
                         Sofbus24SQLite.COLUMN_STAT_NUMBER + " = "
-                                + station.getNumber(), null, null, null, null);
+                                + station.getNumber(), null, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating station object and closing the cursor
-            StationEntity foundStation = cursorToStation(cursor);
-            if (station.getType() == VehicleTypeEnum.METRO1
-                    || station.getType() == VehicleTypeEnum.METRO2) {
-                foundStation.setCustomField(String.format(
-                        Constants.METRO_STATION_URL, foundStation.getNumber()));
+                // Creating station object
+                StationEntity foundStation = cursorToStation(cursor);
+                if (station.getType() == VehicleTypeEnum.METRO1
+                        || station.getType() == VehicleTypeEnum.METRO2) {
+                    foundStation.setCustomField(String.format(
+                            Constants.METRO_STATION_URL, foundStation.getNumber()));
+                }
+
+                return foundStation;
+            } else {
+                return null;
             }
 
-            cursor.close();
-
-            return foundStation;
-        } else {
-            cursor.close();
-
+        } catch (Exception e) {
             return null;
         }
     }
@@ -186,28 +186,28 @@ public class StationsDataSource {
      */
     public StationEntity getStation(String stationNumber) {
         // Selecting the row that contains the station data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
                 allColumns, Sofbus24SQLite.COLUMN_STAT_NUMBER + " = "
-                        + stationNumber, null, null, null, null);
+                        + stationNumber, null, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            // Moving the cursor to the first column of the selected row
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
 
-            // Creating station object and closing the cursor
-            StationEntity foundStation = cursorToStation(cursor);
-            if (foundStation.getType() == VehicleTypeEnum.METRO1
-                    || foundStation.getType() == VehicleTypeEnum.METRO2) {
-                foundStation.setCustomField(String.format(
-                        Constants.METRO_STATION_URL, foundStation.getNumber()));
+                // Creating station object
+                StationEntity foundStation = cursorToStation(cursor);
+                if (foundStation.getType() == VehicleTypeEnum.METRO1
+                        || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                    foundStation.setCustomField(String.format(
+                            Constants.METRO_STATION_URL, foundStation.getNumber()));
+                }
+
+                return foundStation;
+            } else {
+                return null;
             }
 
-            cursor.close();
-
-            return foundStation;
-        } else {
-            cursor.close();
-
+        } catch (Exception e) {
             return null;
         }
     }
@@ -251,36 +251,38 @@ public class StationsDataSource {
         query.append(" WHERE %s %% 2 = %s			%n");
         query.append(" AND %s LIKE '%%%s%%'			%n");
 
+        // Get all stations via type from the database
         String queryString = String.format(query.toString(),
                 Sofbus24SQLite.TABLE_SOF_STAT,
                 Sofbus24SQLite.COLUMN_STAT_NUMBER, vehicleTypeIntValue,
                 Sofbus24SQLite.COLUMN_STAT_TYPE, VehicleTypeEnum.METRO);
-        Cursor cursor = database.rawQuery(queryString, null);
+        try (Cursor cursor = database.rawQuery(queryString, null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity foundStation = cursorToStation(cursor);
-            if (vehicleType == VehicleTypeEnum.METRO1
-                    || vehicleType == VehicleTypeEnum.METRO2) {
-                foundStation.setCustomField(String.format(
-                        Constants.METRO_STATION_URL, foundStation.getNumber()));
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity foundStation = cursorToStation(cursor);
+                if (vehicleType == VehicleTypeEnum.METRO1
+                        || vehicleType == VehicleTypeEnum.METRO2) {
+                    foundStation.setCustomField(String.format(
+                            Constants.METRO_STATION_URL, foundStation.getNumber()));
+                }
+
+                if (!"XXXX".equals(foundStation.getNumber())) {
+                    stations.add(foundStation);
+                }
+
+                cursor.moveToNext();
             }
 
-            if (!"XXXX".equals(foundStation.getNumber())) {
-                stations.add(foundStation);
-            }
+            // Sorting the stations in correct order (both directions should be sorted in ASC way,
+            // as the MetroLoadStations class is reversing the second direction)
+            Utils.sortStationList(stations, true);
+            return stations;
 
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor and sorting the stations in correct order (both directions
-        // should be sorted in ASC way, as the MetroLoadStations class is reversing the
-        // second direction)
-        cursor.close();
-        Utils.sortStationList(stations, true);
-
-        return stations;
     }
 
     /**
@@ -326,26 +328,27 @@ public class StationsDataSource {
         query.append(" 		" + Sofbus24SQLite.COLUMN_STAT_TYPE + " LIKE '%"
                 + searchType + "%'											\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the stations which NUMBER or NAME contains the searched text
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity foundStation = cursorToStation(cursor);
-            if (vehicleType == VehicleTypeEnum.METRO1
-                    || vehicleType == VehicleTypeEnum.METRO2) {
-                foundStation.setCustomField(String.format(
-                        Constants.METRO_STATION_URL, foundStation.getNumber()));
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity foundStation = cursorToStation(cursor);
+                if (vehicleType == VehicleTypeEnum.METRO1
+                        || vehicleType == VehicleTypeEnum.METRO2) {
+                    foundStation.setCustomField(String.format(
+                            Constants.METRO_STATION_URL, foundStation.getNumber()));
+                }
+
+                stations.add(new VirtualBoardsStationEntity(foundStation));
+                cursor.moveToNext();
             }
+            return stations;
 
-            stations.add(new VirtualBoardsStationEntity(foundStation));
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -357,27 +360,27 @@ public class StationsDataSource {
         List<StationEntity> stations = new ArrayList<StationEntity>();
 
         // Selecting all fields of the TABLE_STATIONS
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
-                allColumns, null, null, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
+                allColumns, null, null, null, null, null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity foundStation = cursorToStation(cursor);
-            if (foundStation.getType() == VehicleTypeEnum.METRO1
-                    || foundStation.getType() == VehicleTypeEnum.METRO2) {
-                foundStation.setCustomField(String.format(
-                        Constants.METRO_STATION_URL, foundStation.getNumber()));
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity foundStation = cursorToStation(cursor);
+                if (foundStation.getType() == VehicleTypeEnum.METRO1
+                        || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                    foundStation.setCustomField(String.format(
+                            Constants.METRO_STATION_URL, foundStation.getNumber()));
+                }
+
+                stations.add(foundStation);
+                cursor.moveToNext();
             }
+            return stations;
 
-            stations.add(foundStation);
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -424,62 +427,63 @@ public class StationsDataSource {
                 + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the nearest stations from the DB to a location according to a radius
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
 
-        // Open the Favourites DB to check if the station is already there
-        favouritesDatasource.open();
+            // Open the Favourites DB to check if the station is already there
+            favouritesDatasource.open();
 
-        while (!cursor.isAfterLast()) {
-            StationEntity foundStation = cursorToStation(cursor);
+            while (!cursor.isAfterLast()) {
+                StationEntity foundStation = cursorToStation(cursor);
 
-            // Check if the station has coordinates in the database. Also we should check
-            // if the map distance between the locations is not "∞" (which means that a
-            // strange case occurred (reported in GooglePlay)
-            if (foundStation.hasCoordinates() &&
-                    !"∞".equals(MapUtils.getMapDistance(currentPosition, foundStation))) {
+                // Check if the station has coordinates in the database. Also we should check
+                // if the map distance between the locations is not "∞" (which means that a
+                // strange case occurred (reported in GooglePlay)
+                if (foundStation.hasCoordinates() &&
+                        !"∞".equals(MapUtils.getMapDistance(currentPosition, foundStation))) {
 
-                // Get the distance to the current station
-                BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
-                        currentPosition, foundStation));
+                    // Get the distance to the current station
+                    BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
+                            currentPosition, foundStation));
 
-                // Check if the station is in the given radius
-                if (distance.compareTo(stationsRadius) != 1) {
+                    // Check if the station is in the given radius
+                    if (distance.compareTo(stationsRadius) != 1) {
 
-                    // Check the type of the station and if it is METRO add the
-                    // schedule URL to the custom field
-                    if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
-                            .getType() == VehicleTypeEnum.METRO2)) {
-                        foundStation.setCustomField(String.format(
-                                Constants.METRO_STATION_URL,
-                                foundStation.getNumber()));
-                    }
+                        // Check the type of the station and if it is METRO add the
+                        // schedule URL to the custom field
+                        if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
+                                .getType() == VehicleTypeEnum.METRO2)) {
+                            foundStation.setCustomField(String.format(
+                                    Constants.METRO_STATION_URL,
+                                    foundStation.getNumber()));
+                        }
 
-                    // Check if the station is not in Favorites
-                    if (favouritesDatasource.getStation(foundStation) == null) {
-                        stations.add(foundStation);
+                        // Check if the station is not in Favorites
+                        if (favouritesDatasource.getStation(foundStation) == null) {
+                            stations.add(foundStation);
+                        } else {
+                            stations.add(null);
+                        }
+
+                        cursor.moveToNext();
                     } else {
-                        stations.add(null);
+                        break;
                     }
-
-                    cursor.moveToNext();
                 } else {
-                    break;
+                    cursor.moveToNext();
                 }
-            } else {
-                cursor.moveToNext();
             }
+
+            // Closing the Favourites DB
+            favouritesDatasource.close();
+            return stations;
+
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the Favourites DB
-        favouritesDatasource.close();
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -516,28 +520,29 @@ public class StationsDataSource {
                 + currentLocation.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the nearest station from the DB to a location
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
 
-        while (!cursor.isAfterLast()) {
-            StationEntity foundStation = cursorToStation(cursor);
+            while (!cursor.isAfterLast()) {
+                StationEntity foundStation = cursorToStation(cursor);
 
-            // Check if the station has coordinates in the database
-            if (foundStation.hasCoordinates()) {
-                station = foundStation;
+                // Check if the station has coordinates in the database
+                if (foundStation.hasCoordinates()) {
+                    station = foundStation;
 
-                break;
-            } else {
-                cursor.moveToNext();
+                    break;
+                } else {
+                    cursor.moveToNext();
+                }
             }
+            return station;
+
+        } catch (Exception e) {
+            return station;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return station;
     }
 
     /**
@@ -586,48 +591,49 @@ public class StationsDataSource {
                 + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the nearest stations from the DB to a location according to the needed page
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
 
-        int stationsCount = 1;
-        while (!cursor.isAfterLast() && stationsCount <= stationsToLoad) {
-            StationEntity foundStation = cursorToStation(cursor);
-            boolean isStationInRange = true;
-            try {
-                BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
-                        currentPosition, foundStation));
-                if (distance
-                        .compareTo(Constants.GLOBAL_PARAM_CLOSEST_STATION_DISTANCE) == 1) {
+            int stationsCount = 1;
+            while (!cursor.isAfterLast() && stationsCount <= stationsToLoad) {
+                StationEntity foundStation = cursorToStation(cursor);
+                boolean isStationInRange = true;
+                try {
+                    BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
+                            currentPosition, foundStation));
+                    if (distance
+                            .compareTo(Constants.GLOBAL_PARAM_CLOSEST_STATION_DISTANCE) == 1) {
+                        isStationInRange = false;
+                    }
+                } catch (Exception e) {
                     isStationInRange = false;
                 }
-            } catch (Exception e) {
-                isStationInRange = false;
-            }
 
-            // Check if the station is in range
-            if (isStationInRange) {
-                if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
-                        .getType() == VehicleTypeEnum.METRO2)) {
-                    foundStation.setCustomField(String.format(
-                            Constants.METRO_STATION_URL,
-                            foundStation.getNumber()));
+                // Check if the station is in range
+                if (isStationInRange) {
+                    if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
+                            .getType() == VehicleTypeEnum.METRO2)) {
+                        foundStation.setCustomField(String.format(
+                                Constants.METRO_STATION_URL,
+                                foundStation.getNumber()));
+                    }
+
+                    stations.add(foundStation);
+
+                    stationsCount++;
+                    cursor.moveToNext();
+                } else {
+                    break;
                 }
-
-                stations.add(foundStation);
-
-                stationsCount++;
-                cursor.moveToNext();
-            } else {
-                break;
             }
+            return stations;
+
+        } catch (Exception e) {
+            return stations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**
@@ -676,50 +682,51 @@ public class StationsDataSource {
                 + currentPosition.getLongitude());
         query.append(" 		) * " + fudge + " ) ASC							\n");
 
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        // Get the nearest stations from the DB to a location according to the needed page
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
 
-        int stationsCount = 1;
-        while (!cursor.isAfterLast() && stationsCount <= stationPage * 10) {
-            StationEntity foundStation = cursorToStation(cursor);
-            boolean isStationInRange = true;
-            try {
-                BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
-                        currentPosition, foundStation));
-                if (distance
-                        .compareTo(Constants.GLOBAL_PARAM_CLOSEST_STATION_DISTANCE) == 1) {
+            int stationsCount = 1;
+            while (!cursor.isAfterLast() && stationsCount <= stationPage * 10) {
+                StationEntity foundStation = cursorToStation(cursor);
+                boolean isStationInRange = true;
+                try {
+                    BigDecimal distance = new BigDecimal(MapUtils.getMapDistance(
+                            currentPosition, foundStation));
+                    if (distance
+                            .compareTo(Constants.GLOBAL_PARAM_CLOSEST_STATION_DISTANCE) == 1) {
+                        isStationInRange = false;
+                    }
+                } catch (Exception e) {
                     isStationInRange = false;
                 }
-            } catch (Exception e) {
-                isStationInRange = false;
-            }
 
-            // Check if the station is in range
-            if (isStationInRange) {
-                if (stationsCount > ((stationPage - 1) * 10)) {
-                    if (foundStation.getType() == VehicleTypeEnum.METRO1
-                            || foundStation.getType() == VehicleTypeEnum.METRO2) {
-                        foundStation.setCustomField(String.format(
-                                Constants.METRO_STATION_URL,
-                                foundStation.getNumber()));
+                // Check if the station is in range
+                if (isStationInRange) {
+                    if (stationsCount > ((stationPage - 1) * 10)) {
+                        if (foundStation.getType() == VehicleTypeEnum.METRO1
+                                || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                            foundStation.setCustomField(String.format(
+                                    Constants.METRO_STATION_URL,
+                                    foundStation.getNumber()));
+                        }
+
+                        stations.add(foundStation);
                     }
 
-                    stations.add(foundStation);
+                    stationsCount++;
+                    cursor.moveToNext();
+                } else {
+                    break;
                 }
-
-                stationsCount++;
-                cursor.moveToNext();
-            } else {
-                break;
             }
+            return stations;
+
+        } catch (Exception e) {
+            return null;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stations;
     }
 
     /**

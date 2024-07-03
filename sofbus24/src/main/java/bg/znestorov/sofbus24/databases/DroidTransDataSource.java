@@ -61,35 +61,35 @@ public class DroidTransDataSource {
         String[] vehicleColumns = new String[]{vehiColumns[2]};
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(isDistinct,
+        try (Cursor cursor = database.query(isDistinct,
                 Sofbus24SQLite.TABLE_SOF_VEHI, vehicleColumns, null, null,
-                null, null, null, null);
+                null, null, null, null)) {
 
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            try {
-                VehicleTypeEnum vehicleType = cursorToVehicleType(cursor);
-                vehicleTypes.add(vehicleType);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                try {
+                    VehicleTypeEnum vehicleType = cursorToVehicleType(cursor);
+                    vehicleTypes.add(vehicleType);
 
-                cursor.moveToNext();
-            } catch (Exception e) {
-                break;
+                    cursor.moveToNext();
+                } catch (Exception e) {
+                    break;
+                }
             }
+
+            // Reorder the vehicle types in the list
+            if (vehicleTypes.size() >= 4) {
+                vehicleTypes.clear();
+                vehicleTypes.add(VehicleTypeEnum.BUS);
+                vehicleTypes.add(VehicleTypeEnum.TROLLEY);
+                vehicleTypes.add(VehicleTypeEnum.TRAM);
+                vehicleTypes.add(VehicleTypeEnum.METRO);
+            }
+            return vehicleTypes;
+
+        } catch (Exception e) {
+            return vehicleTypes;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        // Reorder the vehicle types in the list
-        if (vehicleTypes.size() >= 4) {
-            vehicleTypes.clear();
-            vehicleTypes.add(VehicleTypeEnum.BUS);
-            vehicleTypes.add(VehicleTypeEnum.TROLLEY);
-            vehicleTypes.add(VehicleTypeEnum.TRAM);
-            vehicleTypes.add(VehicleTypeEnum.METRO);
-        }
-
-        return vehicleTypes;
     }
 
     /**
@@ -139,21 +139,21 @@ public class DroidTransDataSource {
         }
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                vehicleColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+                vehicleColumns, selection, selectionArgs, null, null, null)) {
 
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            String vehicleNumber = cursor.getString(0);
-            vehiclesNumbers.add(vehicleNumber);
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String vehicleNumber = cursor.getString(0);
+                vehiclesNumbers.add(vehicleNumber);
 
-            cursor.moveToNext();
+                cursor.moveToNext();
+            }
+            return vehiclesNumbers;
+
+        } catch (Exception e) {
+            return vehiclesNumbers;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehiclesNumbers;
     }
 
     /**
@@ -188,25 +188,25 @@ public class DroidTransDataSource {
         }
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                vehicleColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+                vehicleColumns, selection, selectionArgs, null, null, null)) {
 
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
 
-            String dbVehicleNumber = cursor.getString(0);
-            if (dbVehicleNumber.equals(searchedVehicleNumber)) {
-                break;
+                String dbVehicleNumber = cursor.getString(0);
+                if (dbVehicleNumber.equals(searchedVehicleNumber)) {
+                    break;
+                }
+
+                vehiclePosition++;
+                cursor.moveToNext();
             }
+            return vehiclePosition;
 
-            vehiclePosition++;
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return vehiclePosition;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehiclePosition;
     }
 
     /**
@@ -243,33 +243,33 @@ public class DroidTransDataSource {
         }
 
         // Selecting the row that contains the vehicle data
-        Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                vehicleColumns, selection, selectionArgs, null, null, null);
+        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
+                vehicleColumns, selection, selectionArgs, null, null, null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
 
-            String vehicleDirection = cursor.getString(0).toUpperCase(
-                    new Locale(LanguageChange.getUserLocale(context)));
+                String vehicleDirection = cursor.getString(0).toUpperCase(
+                        new Locale(LanguageChange.getUserLocale(context)));
 
-            if (vehicleType == VehicleTypeEnum.METRO) {
-                vehicleDirection = vehicleDirection.replaceAll(" - .* - ", " - ");
+                if (vehicleType == VehicleTypeEnum.METRO) {
+                    vehicleDirection = vehicleDirection.replaceAll(" - .* - ", " - ");
+                }
+
+                // Translate to Latin if the language is different from BG
+                if (!"bg".equals(language)) {
+                    vehicleDirection = TranslatorCyrillicToLatin.translate(context,
+                            vehicleDirection);
+                }
+
+                vehiclesDirections.add(vehicleDirection.replaceAll(" +", " "));
+                vehiclesDirections.add(getOppositeDirection(vehicleDirection).replaceAll(" +", " "));
             }
+            return vehiclesDirections;
 
-            // Translate to Latin if the language is different from BG
-            if (!"bg".equals(language)) {
-                vehicleDirection = TranslatorCyrillicToLatin.translate(context,
-                        vehicleDirection);
-            }
-
-            vehiclesDirections.add(vehicleDirection.replaceAll(" +", " "));
-            vehiclesDirections.add(getOppositeDirection(vehicleDirection).replaceAll(" +", " "));
+        } catch (Exception e) {
+            return vehiclesDirections;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehiclesDirections;
     }
 
     /**
@@ -334,29 +334,29 @@ public class DroidTransDataSource {
                 + "																		\n");
 
         // Selecting the row that contains the vehicles direction
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
 
-            // Get the vehicle direction number from the database and base on this decide
-            // which direction to show (if 1 - current one, 2 - the opposite)
-            Integer vehicleDirectionNumber = cursor.getInt(0);
-            if (vehicleDirectionNumber != 1) {
-                vehicleDirection = getOppositeDirection(vehicleDirection);
+                // Get the vehicle direction number from the database and base on this decide
+                // which direction to show (if 1 - current one, 2 - the opposite)
+                Integer vehicleDirectionNumber = cursor.getInt(0);
+                if (vehicleDirectionNumber != 1) {
+                    vehicleDirection = getOppositeDirection(vehicleDirection);
+                }
+
+                // Translate to Latin if the language is different from BG
+                if (!"bg".equals(language)) {
+                    vehicleDirection = TranslatorCyrillicToLatin.translate(context,
+                            vehicleDirection);
+                }
             }
+            return vehicleDirection;
 
-            // Translate to Latin if the language is different from BG
-            if (!"bg".equals(language)) {
-                vehicleDirection = TranslatorCyrillicToLatin.translate(context,
-                        vehicleDirection);
-            }
+        } catch (Exception e) {
+            return vehicleDirection;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehicleDirection;
     }
 
     /**
@@ -394,21 +394,21 @@ public class DroidTransDataSource {
                 + String.valueOf(vehicleType) + "%'																			\n");
 
         // Selecting the row that contains the stations data
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            StationEntity station = cursorToStation(cursor);
-            station.setType(vehicleType);
-            vehicleStations.add(station);
-            cursor.moveToNext();
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                StationEntity station = cursorToStation(cursor);
+                station.setType(vehicleType);
+                vehicleStations.add(station);
+                cursor.moveToNext();
+            }
+            return vehicleStations;
+
+        } catch (Exception e) {
+            return vehicleStations;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return vehicleStations;
     }
 
     /**
@@ -442,25 +442,25 @@ public class DroidTransDataSource {
                 + String.valueOf(vehicleType) + "%'																			\n");
 
         // Selecting the row that contains the stations data
-        Cursor cursor = database.rawQuery(query.toString(), null);
+        try (Cursor cursor = database.rawQuery(query.toString(), null)) {
 
-        // Iterating the cursor and fill the empty List<Station>
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
+            // Iterating the cursor and fill the empty List<Station>
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
 
-            StationEntity station = cursorToStation(cursor);
-            if (station.getNumber().equals(searchedStationNumber)) {
-                break;
+                StationEntity station = cursorToStation(cursor);
+                if (station.getNumber().equals(searchedStationNumber)) {
+                    break;
+                }
+
+                stationPosition++;
+                cursor.moveToNext();
             }
+            return stationPosition;
 
-            stationPosition++;
-            cursor.moveToNext();
+        } catch (Exception e) {
+            return stationPosition;
         }
-
-        // Closing the cursor
-        cursor.close();
-
-        return stationPosition;
     }
 
     /**
