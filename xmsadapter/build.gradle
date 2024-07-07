@@ -3,10 +3,10 @@ apply plugin: 'com.huawei.agconnect'
 apply from: 'scripts/productFlavor.gradle'
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 33
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 34
+        targetSdkVersion 33
     }
 }
 
