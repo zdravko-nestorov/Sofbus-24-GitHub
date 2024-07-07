@@ -65,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/pt_item_virtual_boards"
-            android:src="@drawable/ic_virtual_boards" />
+            android:src="@drawable/ic_virtual_boards"
+            android:visibility="gone" />
     </LinearLayout>
 
 </RelativeLayout>
