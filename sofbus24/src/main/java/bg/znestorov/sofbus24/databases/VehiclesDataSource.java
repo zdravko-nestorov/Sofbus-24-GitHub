@@ -1,7 +1,6 @@
 package bg.znestorov.sofbus24.databases;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,7 +34,11 @@ public class VehiclesDataSource {
             Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER,
             Sofbus24SQLite.COLUMN_VEHI_TYPE,
-            Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
+            Sofbus24SQLite.COLUMN_VEHI_DIRECTION,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_LINE_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_EXT_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_TYPE};
     // Database fields
     private SQLiteDatabase database;
 
@@ -51,100 +54,6 @@ public class VehiclesDataSource {
 
     public void close() {
         Sofbus24DatabaseUtils.closeDb(dbHelper, database);
-    }
-
-    /**
-     * Adding a vehicle to the database
-     *
-     * @param vehicle the input vehicle
-     * @return the vehicle if it is added successfully and null if already
-     * exists
-     */
-    public VehicleEntity createVehicle(VehicleEntity vehicle) {
-
-        if (getVehicle(vehicle) == null) {
-            // Creating ContentValues object and insert the vehicle data in it
-            ContentValues values = new ContentValues();
-            values.put(Sofbus24SQLite.COLUMN_VEHI_NUMBER, vehicle.getNumber());
-            values.put(Sofbus24SQLite.COLUMN_VEHI_TYPE, vehicle.getType()
-                    .toString());
-            values.put(Sofbus24SQLite.COLUMN_VEHI_DIRECTION,
-                    vehicle.getDirection());
-
-            // Insert the ContentValues data into the database
-            database.insert(Sofbus24SQLite.TABLE_SOF_VEHI, null, values);
-
-            // Selecting the row that contains the vehicle data
-            try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                    allColumns, Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = "
-                            + vehicle.getNumber(), null, null, null, null)) {
-
-                // Moving the cursor to the first column of the selected row
-                cursor.moveToFirst();
-
-                // Creating new Vehicle
-                VehicleEntity insertedVehicle = cursorToVehicle(cursor);
-                insertedVehicle.setType(vehicle.getType());
-                return insertedVehicle;
-
-            } catch (Exception e) {
-                return null;
-            }
-
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Delete vehicle from the database
-     *
-     * @param vehicle the vehicle that will be deleted
-     */
-    public void deleteVehicle(VehicleEntity vehicle) {
-
-        String where = Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = ? AND "
-                + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
-        String[] whereArgs = new String[]{
-                String.valueOf(vehicle.getNumber()),
-                String.valueOf(vehicle.getType())};
-
-        database.delete(Sofbus24SQLite.TABLE_SOF_VEHI, where, whereArgs);
-    }
-
-    /**
-     * Check if a vehicle exists in the DB
-     *
-     * @param vehicle the current vehicle
-     * @return the vehicle if it is found in the DB and null otherwise
-     */
-    private VehicleEntity getVehicle(VehicleEntity vehicle) {
-
-        String selection = Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = ? AND "
-                + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
-        String[] selectionArgs = new String[]{
-                String.valueOf(vehicle.getNumber()),
-                String.valueOf(vehicle.getType())};
-
-        // Selecting the row that contains the vehicle data
-        try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_VEHI,
-                allColumns, selection, selectionArgs, null, null, null)) {
-
-            if (cursor.getCount() > 0) {
-                // Moving the cursor to the first column of the selected row
-                cursor.moveToFirst();
-
-                // Creating vehicle object
-                VehicleEntity foundVehicle = cursorToVehicle(cursor);
-                foundVehicle.setType(vehicle.getType());
-                return foundVehicle;
-            } else {
-                return null;
-            }
-
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     /**
@@ -224,13 +133,6 @@ public class VehiclesDataSource {
     }
 
     /**
-     * Delete all vehicles from the database;
-     */
-    public void deleteAllVehicles() {
-        database.delete(Sofbus24SQLite.TABLE_SOF_VEHI, null, null);
-    }
-
-    /**
      * Creating new Vehicle object with the data of the current row of the
      * database
      *
@@ -252,6 +154,10 @@ public class VehiclesDataSource {
         vehicle.setNumber(cursor.getString(1));
         vehicle.setType(VehicleTypeEnum.valueOf(cursor.getString(2)));
         vehicle.setDirection(vehicleDirection);
+        vehicle.setSkgtLineId(cursor.getString(4));
+        vehicle.setSkgtName(cursor.getString(5));
+        vehicle.setSkgtExtId(cursor.getString(6));
+        vehicle.setSkgtType(cursor.getString(7));
 
         return vehicle;
     }

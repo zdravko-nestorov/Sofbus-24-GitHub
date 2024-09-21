@@ -30,7 +30,11 @@ public class DroidTransDataSource {
             Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER,
             Sofbus24SQLite.COLUMN_VEHI_TYPE,
-            Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
+            Sofbus24SQLite.COLUMN_VEHI_DIRECTION,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_LINE_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_EXT_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_TYPE};
     // Database fields
     private SQLiteDatabase database;
 

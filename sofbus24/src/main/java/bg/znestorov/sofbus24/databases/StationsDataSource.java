@@ -1,7 +1,6 @@
 package bg.znestorov.sofbus24.databases;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -35,7 +34,6 @@ import bg.znestorov.sofbus24.utils.Utils;
 public class StationsDataSource {
 
     // Number of nearest stations
-    public static int nearestStationsCount = 8;
     private final Context context;
     private final String language;
     private final Sofbus24SQLite dbHelper;
@@ -43,12 +41,18 @@ public class StationsDataSource {
     // Columns of the STATIONS Table
     private final String[] allColumns = {
             Sofbus24SQLite.COLUMN_PK_STAT_ID,
-            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER,
             Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
-            Sofbus24SQLite.COLUMN_STAT_TYPE};
+            Sofbus24SQLite.COLUMN_STAT_TYPE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_TITLE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_CODE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_POSITION,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_TYPE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_EXT_ID};
     // Database fields
     private SQLiteDatabase database;
 
@@ -64,82 +68,6 @@ public class StationsDataSource {
 
     public void close() {
         Sofbus24DatabaseUtils.closeDb(dbHelper, database);
-    }
-
-    /**
-     * Adding a station to the database
-     *
-     * @param station the input station
-     * @return the station if it is added successfully and null if already
-     * exists
-     */
-    public StationEntity createStation(StationEntity station) {
-        if (getStation(station) == null) {
-            // Creating ContentValues object and insert the station data in it
-            ContentValues values = new ContentValues();
-            values.put(Sofbus24SQLite.COLUMN_STAT_SKGT_ID, station.getSkgtId());
-            values.put(Sofbus24SQLite.COLUMN_STAT_NUMBER, station.getNumber());
-            values.put(Sofbus24SQLite.COLUMN_STAT_NAME, station.getName());
-            values.put(Sofbus24SQLite.COLUMN_STAT_LATITUDE,
-                    getCoordinates(station.getNumber(), station.getLat()));
-            values.put(Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
-                    getCoordinates(station.getNumber(), station.getLon()));
-            values.put(Sofbus24SQLite.COLUMN_STAT_TYPE, station.getType()
-                    .toString());
-
-            // Insert the ContentValues data into the database
-            database.insert(Sofbus24SQLite.TABLE_SOF_STAT, null, values);
-
-            // Selecting the row that contains the station data
-            try (Cursor cursor = database.query(Sofbus24SQLite.TABLE_SOF_STAT,
-                    allColumns, Sofbus24SQLite.COLUMN_STAT_NUMBER + " = "
-                            + station.getNumber(), null, null, null, null)) {
-
-                // Moving the cursor to the first column of the selected row
-                cursor.moveToFirst();
-                return cursorToStation(cursor);
-
-            } catch (Exception e) {
-                return null;
-            }
-
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Figure out which coordinate to be taken, so add the station in the
-     * database (latitude and longitude)
-     *
-     * @param stationNumber     the number of the station (used to search the DB for the
-     *                          station)
-     * @param stationCoordinate the coordinate of the station (latitude or longitude)
-     * @return the coordinate (latitude or longitude), which will be inserted in
-     * the database
-     */
-    private String getCoordinates(String stationNumber, String stationCoordinate) {
-        String coordinate = Constants.GLOBAL_PARAM_EMPTY;
-
-        if (stationCoordinate != null && !"".equals(stationCoordinate)) {
-            coordinate = stationCoordinate;
-        } else if (getStation(stationNumber) != null) {
-            coordinate = getStation(stationNumber).getLat();
-        }
-
-        return coordinate;
-    }
-
-    /**
-     * Delete station from the database
-     *
-     * @param station the input station
-     */
-    public void deleteStation(StationEntity station) {
-        String where = Sofbus24SQLite.COLUMN_STAT_NUMBER + " = ?";
-        String[] whereArgs = new String[]{String.valueOf(station.getNumber())};
-
-        database.delete(Sofbus24SQLite.TABLE_SOF_STAT, where, whereArgs);
     }
 
     /**
@@ -740,18 +668,11 @@ public class StationsDataSource {
         StationEntity station = new StationEntity();
 
         // Check if have to translate the station name
-        String stationName = cursor.getString(3);
+        String stationName = cursor.getString(2);
         if (!"bg".equals(language)) {
             stationName = TranslatorCyrillicToLatin.translate(context,
                     stationName);
         }
-
-        // Getting all columns of the row and setting them to a Station object
-        station.setSkgtId(cursor.getString(1));
-        station.setNumber(cursor.getString(2));
-        station.setName(stationName);
-        station.setLat(cursor.getString(4));
-        station.setLon(cursor.getString(5));
 
         // GooglePlay reported a strange error where the type of vehicle is null.
         // Handle this case by setting the vehicle type a default value of BUS
@@ -761,7 +682,20 @@ public class StationsDataSource {
         } catch (Exception e) {
             vehicleType = VehicleTypeEnum.BUS;
         }
+
+        // Getting all columns of the row and setting them to a Station object
+        station.setNumber(cursor.getString(1));
+        station.setName(stationName);
+        station.setLat(cursor.getString(3));
+        station.setLon(cursor.getString(4));
         station.setType(vehicleType);
+        station.setSkgtId(cursor.getString(6));
+        station.setSkgtTitle(cursor.getString(7));
+        station.setSkgtName(cursor.getString(8));
+        station.setSkgtCode(cursor.getString(9));
+        station.setSkgtPosition(cursor.getString(10).split(","));
+        station.setSkgtType(cursor.getString(11));
+        station.setSkgtExtId(cursor.getString(12));
         station.setCustomField(getCustomField(station));
 
         return station;
@@ -777,6 +711,7 @@ public class StationsDataSource {
         String stationCustomField;
 
         switch (station.getType()) {
+            case METRO:
             case METRO1:
             case METRO2:
                 stationCustomField = String.format(Constants.METRO_STATION_URL,

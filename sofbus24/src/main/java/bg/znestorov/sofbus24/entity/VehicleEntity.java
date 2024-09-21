@@ -2,8 +2,6 @@ package bg.znestorov.sofbus24.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
 
 import bg.znestorov.sofbus24.utils.Utils;
 
@@ -21,6 +19,10 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
     private String number;
     private VehicleTypeEnum type;
     private String direction;
+    private String skgtLineId;
+    private String skgtName;
+    private String skgtExtId;
+    private String skgtType;
     private ArrayList<String> arrivalTimes;
     private ArrayList<Boolean> isWheelchairAccessible;
     private ArrayList<Boolean> hasAirConditioning;
@@ -132,6 +134,38 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
         this.direction = direction;
     }
 
+    public String getSkgtLineId() {
+        return skgtLineId;
+    }
+
+    public void setSkgtLineId(String skgtLineId) {
+        this.skgtLineId = skgtLineId;
+    }
+
+    public String getSkgtName() {
+        return skgtName;
+    }
+
+    public void setSkgtName(String skgtName) {
+        this.skgtName = skgtName;
+    }
+
+    public String getSkgtExtId() {
+        return skgtExtId;
+    }
+
+    public void setSkgtExtId(String skgtExtId) {
+        this.skgtExtId = skgtExtId;
+    }
+
+    public String getSkgtType() {
+        return skgtType;
+    }
+
+    public void setSkgtType(String skgtType) {
+        this.skgtType = skgtType;
+    }
+
     public ArrayList<String> getArrivalTimes() {
         return arrivalTimes;
     }
@@ -212,19 +246,6 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
         this.hasWifi = hasWifi;
     }
 
-    /**
-     * Indicates if the vehicle entity has a schedule URL
-     *
-     * @return if the vehicle has schedule url
-     */
-    public boolean hasVehicleScheduleUrl() {
-
-        boolean hasVehicleScheduleUrl = this.stop > 0 && this.lid > 0
-                && this.vt > 0 && this.rid > 0;
-
-        return hasVehicleScheduleUrl;
-    }
-
     @Override
     public int compareTo(VehicleEntity vehicle) {
         // FIRST compare the vehicle types
@@ -261,9 +282,15 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
                 "number='" + number + '\'' +
                 ", type=" + type +
                 ", direction='" + direction + '\'' +
+                ", skgtLineId=" + skgtLineId +
+                ", skgtName='" + skgtName + '\'' +
+                ", skgtExtId='" + skgtExtId + '\'' +
+                ", skgtType=" + skgtType +
                 ", arrivalTimes=" + arrivalTimes +
-                ", hasAirConditioning=" + hasAirConditioning +
                 ", isWheelchairAccessible=" + isWheelchairAccessible +
+                ", hasAirConditioning=" + hasAirConditioning +
+                ", hasBicycleMount=" + hasBicycleMount +
+                ", isDoubledecker=" + isDoubledecker +
                 ", hasWifi=" + hasWifi +
                 ", stop=" + stop +
                 ", lid=" + lid +

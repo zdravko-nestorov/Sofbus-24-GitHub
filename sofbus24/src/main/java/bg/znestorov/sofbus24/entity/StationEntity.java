@@ -16,12 +16,18 @@ public class StationEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String skgtId;
     private String number;
     private String name;
     private String lat;
     private String lon;
     private VehicleTypeEnum type;
+    private String skgtId;
+    private String skgtTitle;
+    private String skgtName;
+    private String skgtCode;
+    private String[] skgtPosition;
+    private String skgtType;
+    private String skgtExtId;
 
     /**
      * It is used in two cases with different meanings:
@@ -47,31 +53,29 @@ public class StationEntity implements Serializable {
     }
 
     public StationEntity(StationEntity station) {
-        this.skgtId = station.getSkgtId();
         this.number = Utils.formatNumberOfDigits(station.getNumber(), 4);
         this.name = station.getName();
         this.lat = station.getLat();
         this.lon = station.getLon();
         this.type = station.getType();
         this.customField = station.getCustomField();
+        this.skgtId = station.getSkgtId();
+        this.skgtTitle = station.getSkgtTitle();
+        this.skgtName = station.getSkgtName();
+        this.skgtCode = station.getSkgtCode();
+        this.skgtPosition = station.getSkgtPosition();
+        this.skgtType = station.getSkgtType();
+        this.skgtExtId = station.getSkgtExtId();
     }
 
     public StationEntity(String skgtId, String number, String name, String lat, String lon,
                          VehicleTypeEnum type, String customField) {
-        this.skgtId = skgtId;
         this.number = Utils.formatNumberOfDigits(number, 4);
         this.name = name;
         this.lat = lat;
         this.lon = lon;
         this.type = type;
         this.customField = customField;
-    }
-
-    public String getSkgtId() {
-        return skgtId;
-    }
-
-    public void setSkgtId(String skgtId) {
         this.skgtId = skgtId;
     }
 
@@ -121,6 +125,62 @@ public class StationEntity implements Serializable {
 
     public void setType(VehicleTypeEnum type) {
         this.type = type;
+    }
+
+    public String getSkgtId() {
+        return skgtId;
+    }
+
+    public void setSkgtId(String skgtId) {
+        this.skgtId = skgtId;
+    }
+
+    public String getSkgtTitle() {
+        return skgtTitle;
+    }
+
+    public void setSkgtTitle(String skgtTitle) {
+        this.skgtTitle = skgtTitle;
+    }
+
+    public String getSkgtName() {
+        return skgtName;
+    }
+
+    public void setSkgtName(String skgtName) {
+        this.skgtName = skgtName;
+    }
+
+    public String getSkgtCode() {
+        return skgtCode;
+    }
+
+    public void setSkgtCode(String skgtCode) {
+        this.skgtCode = skgtCode;
+    }
+
+    public String[] getSkgtPosition() {
+        return skgtPosition;
+    }
+
+    public void setSkgtPosition(String[] skgtPosition) {
+        this.skgtPosition = skgtPosition;
+    }
+
+    public String getSkgtType() {
+        return skgtType;
+    }
+
+    public void setSkgtType(String skgtType) {
+        this.skgtType = skgtType;
+    }
+
+    public String getSkgtExtId() {
+        return skgtExtId;
+    }
+
+    public void setSkgtExtId(String skgtExtId) {
+        this.skgtExtId = skgtExtId;
     }
 
     public String getCustomField() {
@@ -189,24 +249,36 @@ public class StationEntity implements Serializable {
      * @param station the new station values
      */
     public void assignStationValues(StationEntity station) {
-        this.skgtId = station.getSkgtId();
         this.number = Utils.formatNumberOfDigits(station.getNumber(), 4);
         this.name = station.getName();
         this.lat = station.getLat();
         this.lon = station.getLon();
         this.type = station.getType();
         this.customField = station.getCustomField();
+        this.skgtId = station.getSkgtId();
+        this.skgtTitle = station.getSkgtTitle();
+        this.skgtName = station.getSkgtName();
+        this.skgtCode = station.getSkgtCode();
+        this.skgtPosition = station.getSkgtPosition();
+        this.skgtType = station.getSkgtType();
+        this.skgtExtId = station.getSkgtExtId();
     }
 
     @Override
     public String toString() {
         return "StationEntity{" +
-                "skgtId='" + skgtId + '\'' +
-                ", number='" + number + '\'' +
+                "number='" + number + '\'' +
                 ", name='" + name + '\'' +
                 ", lat='" + lat + '\'' +
                 ", lon='" + lon + '\'' +
                 ", type=" + type +
+                ", skgtId='" + skgtId + '\'' +
+                ", skgtTitle='" + skgtTitle + '\'' +
+                ", skgtName='" + skgtName + '\'' +
+                ", skgtCode='" + skgtCode + '\'' +
+                ", skgtPosition='" + skgtPosition + '\'' +
+                ", skgtType='" + skgtType + '\'' +
+                ", skgtExtId='" + skgtExtId + '\'' +
                 ", customField='" + customField + '\'' +
                 ", dateAdded='" + dateAdded + '\'' +
                 ", dateLastAccess='" + dateLastAccess + '\'' +

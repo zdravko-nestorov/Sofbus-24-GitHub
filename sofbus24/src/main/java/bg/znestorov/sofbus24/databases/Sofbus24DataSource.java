@@ -18,24 +18,38 @@ class Sofbus24DataSource {
     // Columns of the STATIONS Table
     private final String[] stationsColumns = {
             Sofbus24SQLite.COLUMN_PK_STAT_ID,
-            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
             Sofbus24SQLite.COLUMN_STAT_NUMBER,
             Sofbus24SQLite.COLUMN_STAT_NAME,
             Sofbus24SQLite.COLUMN_STAT_LATITUDE,
             Sofbus24SQLite.COLUMN_STAT_LONGITUDE,
-            Sofbus24SQLite.COLUMN_STAT_TYPE};
+            Sofbus24SQLite.COLUMN_STAT_TYPE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_ID,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_TITLE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_CODE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_POSITION,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_TYPE,
+            Sofbus24SQLite.COLUMN_STAT_SKGT_EXT_ID};
     // Columns of the VEHICLES Table
     private final String[] vehiclesColumns = {
             Sofbus24SQLite.COLUMN_PK_VEHI_ID,
             Sofbus24SQLite.COLUMN_VEHI_NUMBER,
             Sofbus24SQLite.COLUMN_VEHI_TYPE,
-            Sofbus24SQLite.COLUMN_VEHI_DIRECTION};
+            Sofbus24SQLite.COLUMN_VEHI_DIRECTION,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_LINE_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_EXT_ID,
+            Sofbus24SQLite.COLUMN_VEHI_SKGT_TYPE};
     // Columns of the DROID TRANS Table
     private final String[] droidTransColumns = {
             Sofbus24SQLite.COLUMN_PK_VEST_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_VEHI_ID,
             Sofbus24SQLite.COLUMN_FK_VEST_STAT_ID,
-            Sofbus24SQLite.COLUMN_VEST_DIRECTION};
+            Sofbus24SQLite.COLUMN_VEST_DIRECTION,
+            Sofbus24SQLite.COLUMN_VEST_SKGT_ROUTE_ID,
+            Sofbus24SQLite.COLUMN_VEST_SKGT_LINE_ID,
+            Sofbus24SQLite.COLUMN_VEST_SKGT_NAME,
+            Sofbus24SQLite.COLUMN_VEST_SKGT_ROUTE_REF};
     // Database fields
     private SQLiteDatabase database;
 

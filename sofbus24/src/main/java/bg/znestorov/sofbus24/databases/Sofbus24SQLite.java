@@ -27,12 +27,18 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     // 'Stations' table and its columns
     public static final String TABLE_SOF_STAT = "SOF_STAT";
     public static final String COLUMN_PK_STAT_ID = "PK_STAT_ID";
-    public static final String COLUMN_STAT_SKGT_ID = "STAT_SKGT_ID";
     public static final String COLUMN_STAT_NUMBER = "STAT_NUMBER";
     public static final String COLUMN_STAT_NAME = "STAT_NAME";
     public static final String COLUMN_STAT_LATITUDE = "STAT_LATITUDE";
     public static final String COLUMN_STAT_LONGITUDE = "STAT_LONGITUDE";
     public static final String COLUMN_STAT_TYPE = "STAT_TYPE";
+    public static final String COLUMN_STAT_SKGT_ID = "STAT_SKGT_ID";
+    public static final String COLUMN_STAT_SKGT_TITLE = "STAT_SKGT_TITLE";
+    public static final String COLUMN_STAT_SKGT_NAME = "STAT_SKGT_NAME";
+    public static final String COLUMN_STAT_SKGT_CODE = "STAT_SKGT_CODE";
+    public static final String COLUMN_STAT_SKGT_POSITION = "STAT_SKGT_POSITION";
+    public static final String COLUMN_STAT_SKGT_TYPE = "STAT_SKGT_TYPE";
+    public static final String COLUMN_STAT_SKGT_EXT_ID = "STAT_SKGT_EXT_ID";
 
     // 'Vehicle' table and its columns
     public static final String TABLE_SOF_VEHI = "SOF_VEHI";
@@ -40,6 +46,10 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     public static final String COLUMN_VEHI_NUMBER = "VEHI_NUMBER";
     public static final String COLUMN_VEHI_TYPE = "VEHI_TYPE";
     public static final String COLUMN_VEHI_DIRECTION = "VEHI_DIRECTION";
+    public static final String COLUMN_VEHI_SKGT_LINE_ID = "VEHI_SKGT_LINE_ID";
+    public static final String COLUMN_VEHI_SKGT_NAME = "VEHI_SKGT_NAME";
+    public static final String COLUMN_VEHI_SKGT_EXT_ID = "VEHI_SKGT_EXT_ID";
+    public static final String COLUMN_VEHI_SKGT_TYPE = "VEHI_SKGT_TYPE";
 
     // 'VehiclesStations' table and its columns
     public static final String TABLE_SOF_VEST = "SOF_VEST";
@@ -47,6 +57,10 @@ public class Sofbus24SQLite extends SQLiteOpenHelper {
     public static final String COLUMN_FK_VEST_VEHI_ID = "FK_VEST_VEHI_ID";
     public static final String COLUMN_FK_VEST_STAT_ID = "FK_VEST_STAT_ID";
     public static final String COLUMN_VEST_DIRECTION = "VEST_DIRECTION";
+    public static final String COLUMN_VEST_SKGT_ROUTE_ID = "VEST_SKGT_ROUTE_ID";
+    public static final String COLUMN_VEST_SKGT_LINE_ID = "VEST_SKGT_LINE_ID";
+    public static final String COLUMN_VEST_SKGT_NAME = "VEST_SKGT_NAME";
+    public static final String COLUMN_VEST_SKGT_ROUTE_REF = "VEST_SKGT_ROUTE_REF";
 
     // The Android's default system path of the database
     public static final String DB_NAME = "sofbus24.db";
