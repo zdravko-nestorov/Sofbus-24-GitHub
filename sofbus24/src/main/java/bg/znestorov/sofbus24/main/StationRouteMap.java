@@ -639,7 +639,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             case METRO2:
             case METRO3:
             case METRO4:
-                lineName = getString(R.string.pt_metro);
+                lineName = String.format(getString(R.string.pt_metro),
+                        vehicle.getNumber());
                 break;
             default:
                 lineName = String.format(getString(R.string.pt_bus),
