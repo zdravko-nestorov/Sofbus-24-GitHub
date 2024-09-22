@@ -1,7 +1,5 @@
 package bg.znestorov.sofbus24.utils;
 
-import android.graphics.Color;
-
 import java.math.BigDecimal;
 
 /**
@@ -39,7 +37,8 @@ public class Constants {
     public static final String BUNDLE_EDIT_TABS = "EDIT TABS";
     public static final String BUNDLE_EDIT_TABS_RESET = "EDIT TABS RESET";
     // VirtualBoardsFragment --> VirtualBoardsTime
-    public static final String BUNDLE_VIRTUAL_BOARDS_TIME = "VIRTUAL BOARDS TIME";
+    public static final String BUNDLE_VIRTUAL_BOARDS_TIME_STATION = "VIRTUAL BOARDS TIME STATION";
+    public static final String BUNDLE_VIRTUAL_BOARDS_TIME_VEHICLE = "VIRTUAL BOARDS TIME VEHICLE";
     public static final String BUNDLE_VIRTUAL_BOARDS_TIME_EMPTY_LIST = "VIRTUAL BOARDS TIME EMPTY LIST";
     // ScheduleFragment --> PublicTransport --> PublicTransportFragment --> ...
     public static final String BUNDLE_PUBLIC_TRANSPORT_SCHEDULE = "PUBLIC TRANSPORT SCHEDULE";
@@ -50,10 +49,6 @@ public class Constants {
     public static final String BUNDLE_STATION_MAP = "STATION MAP";
     // MetroFragment/PublicTransport --> StationRouteMap
     public static final String BUNDLE_STATION_ROUTE_MAP = "STATION ROUTE MAP";
-    // VirtualBoardsTime --> GoogleStreetView
-    public static final String BUNDLE_GOOGLE_STREET_VIEW = "GOOGLE_STREET_VIEW";
-    // History --> HistoryFragment
-    public static final String BUNDLE_HISTORY_LIST = "HISTORY LIST";
     // Sofbus24/DroidTrans/ClosestStationsMap --> FavouritesFragment
     public static final String BUNDLE_IS_HOME_SCREEN_FRAGMENT = "IS HOME SCREEN FRAGMENT";
     // Sofbus24 --> DroidTrans
@@ -128,79 +123,25 @@ public class Constants {
     /**
      * Favorites
      */
-    public static final int FAVOURITES_IMG_BUTTON_ACTION_DOWN = Color.argb(150,
-            51, 181, 229);
-    public static final int FAVOURITES_IMG_BUTTON_ACTION_UP = Color.argb(0,
-            155, 155, 155);
     public static final String FAVOURITES_IMAGE_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=1&pitch=1&ll=%s,%s";
     public static final String FAVOURITES_IMAGE_HIGH_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=8&pitch=-15&ll=%s,%s";
 
     /**
-     * Virtual Boards
-     */
-    public static final String VB_PREFERENCES_NAME_SUMC_COOKIES = "sumc_cookies";
-    public static final String VB_PREFERENCES_COOKIE_NAME = "name";
-    public static final String VB_PREFERENCES_COOKIE_DOMAIN = "domain";
-    public static final String VB_PREFERENCES_COOKIE_PATH = "path";
-    public static final String VB_PREFERENCES_COOKIE_VALUE = "value";
-
-    public static final String VB_PREFERENCES_NAME_SUMC_HIDDEN_VARIABLES = "sumc_hidden_variables";
-    public static final String VB_PREFERENCES_SUMC_HIDDEN_KEY = "hidden_key";
-    public static final String VB_PREFERENCES_SUMC_HIDDEN_VALUE = "hidden_value";
-
-    public static final String VB_URL_USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1017.2 Safari/535.19";
-    public static final String VB_URL_REFERER = "http://m.sofiatraffic.bg/vt/";
-    public static final String VB_URL = "http://m.sofiatraffic.bg/vt";
-    public static final String VB_URL_STOP_CODE = "stopCode";
-    public static final String VB_URL_O = "o";
-    public static final String VB_URL_SEC = "sec";
-    public static final String VB_URL_VEHICLE_TYPE_ID = "vehicleTypeId";
-    public static final String VB_URL_CAPTCHA_TEXT = "sc";
-    public static final String VB_URL_CAPTCHA_ID = "poleicngi";
-    public static final String VB_URL_GO = "go";
-    public static final String VB_URL_SUBMIT = "submit";
-    public static final String VB_URL_I = "i";
-    public static final String VB_REGEX_HIDDEN_VARIABLE = "<input type=\"hidden\" name=\"sec\"[^^]*?<input type=\"hidden\" name=\"([a-zA-Z0-9]+)\" value=\"([a-zA-Z0-9]+)\"";
-
-    public static final String VB_CAPTCHA_URL = "http://m.sofiatraffic.bg/captcha/%s";
-    public static final String VB_CAPTCHA_REQUIRED = "Въведете символите от изображението";
-    public static final String VB_CAPTCHA_REGEX = "<input name=\"poleicngi\" type=\"hidden\" value=\"(.*?)\"\\/>";
-
-    public static final String VB_REGEX_SCHEDULE_START = "<div class=\"arrivals\">";
-    public static final String VB_REGEX_SCHEDULE_BODY = "<div class=\"arrivals\">([^~]*?)\n<\\/div>";
-
-    public static final String VB_REGEX_SKGT_TIME = "<b>Информация към (.*?)<\\/b>";
-    public static final String VB_REGEX_STATION_INFO = "(.*?)&nbsp;\\(([0-9]{4})\\)&nbsp;";
-    public static final String VB_REGEX_MULTIPLE_STATION_INFO = "<input type=\"hidden\" name=\"stopCode\" value=\"([0-9]*)\">\\s+<input type=\"hidden\" name=\"o\" value=\"([0-9]*)\">[^^]*?&nbsp;спирка&nbsp;([^^]*?)&nbsp;";
-    public static final String VB_REGEX_VEHICLE_PARTS = "<div class=\"arr_title_[0-9]{1,}\">";
-    public static final String VB_REGEX_VEHICLE_TYPE = "<b>\\n(.*?)<\\/b>";
-    public static final String VB_REGEX_VEHICLE_INFO = "<div class=\"arr_info_.*?\">[^^]*?<a href=\".*?stop=(\\d+)&lid=(\\d+)&vt=(\\d+)&rid=(\\d+)\"><b>(.*?)<\\/b><\\/a>&nbsp;-&nbsp;([^^]*?)<br \\/>([^^]*?)<\\/div>";
-
-    public static final String VB_REGEX_VEHICLE_TYPES = "<a\\s*?href=\"#\"\\s*?onClick=\"closethisasap\\('submit[0-9]*?'\\)\">([^~]*?&nbsp;[^~]*?&nbsp;){2}([^~]*?)</a>";
-    public static final String VB_VEHICLE_TYPE_BUS = "АВТОБУС";
-    public static final String VB_VEHICLE_TYPE_TROLLEY = "ТРОЛЕ";
-    public static final String VB_VEHICLE_TYPE_TRAM = "ТРАМ";
-
-    /**
      * Virtual Boards API
      */
-    public static final String VB_URL_STATION_API = "https://api-arrivals.sofiatraffic.bg/api/v1/arrivals/%s/";
-    public static final String VB_URL_VEHICLE_API = "https://api-arrivals.sofiatraffic.bg/api/v1/arrivals/%s/?line=%s&type=%s";
+    public static final String VB_URL_VIRTUAL_TABLE_API = "https://www.sofiatraffic.bg/bg/trip/getVirtualTable";
 
-    public static final String VB_STATION_SKGT_TIME_API = "timestamp_calculated";
-    public static final String VB_STATION_CODE_API = "code";
-    public static final String VB_STATION_NAME_API = "name";
-    public static final String VB_STATION_LINES_API = "lines";
     public static final String VB_VEHICLE_NAME_API = "name";
-    public static final String VB_VEHICLE_TYPE_API = "vehicle_type";
-    public static final String VB_VEHICLE_DIRECTION_API = "direction";
-    public static final String VB_VEHICLE_ARRIVALS_API = "arrivals";
-    public static final String VB_VEHICLE_WHEELCHAIR_API = "is_wheelchair_accessible";
-    public static final String VB_VEHICLE_AIR_CONDITIONING_API = "has_air_conditioning";
-    public static final String VB_VEHICLE_DOUBLEDECKER_API = "is_doubledecker";
-    public static final String VB_VEHICLE_BICYCLE_MOUNT_API = "has_bicycle_mount";
-    public static final String VB_VEHICLE_TIME_API = "time";
-    public static final String VB_VEHICLE_WIFI_API = "has_wifi";
+    public static final String VB_VEHICLE_ROUTE_NAME_API = "route_name";
+    public static final String VB_VEHICLE_TYPE_API = "type";
+    public static final String VB_STATION_DETAILS_API = "details";
+
+    public static final String VB_VEHICLE_TIME_API = "t";
+    public static final String VB_VEHICLE_AIR_CONDITIONING_API = "ac";
+    public static final String VB_VEHICLE_WHEELCHAIR_API = "wheelchairs";
+    public static final String VB_VEHICLE_BICYCLE_MOUNT_API = "bikes";
+    public static final String VB_VEHICLE_DOUBLEDECKER_API = "dd";
+    public static final String VB_VEHICLE_WIFI_API = "wifi";
 
     /**
      * Schedule direction
@@ -260,15 +201,6 @@ public class Constants {
     public static final String CHECK_FOR_UPDATES_PREFERENCES_NAME = "application_update";
     public static final String CHECK_FOR_UPDATES_PREFERENCES_APP_LAST_CHECK = "app_last_check";
     public static final String CHECK_FOR_UPDATES_PREFERENCES_DB_LAST_CHECK = "db_last_check";
-
-    /**
-     * DroidTrans
-     */
-    public static final String DROIDTRANS_URL_SCHEDULE = "http://m.sofiatraffic.bg/schedules/vehicle-vt";
-    public static final String DROIDTRANS_URL_SCHEDULE_STOP = "stop";
-    public static final String DROIDTRANS_URL_SCHEDULE_VT = "vt";
-    public static final String DROIDTRANS_URL_SCHEDULE_LID = "lid";
-    public static final String DROIDTRANS_URL_SCHEDULE_RID = "rid";
 
     /**
      * Route Changes

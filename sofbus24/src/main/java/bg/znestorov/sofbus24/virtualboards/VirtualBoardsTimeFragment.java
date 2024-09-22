@@ -14,9 +14,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.RefreshableListFragment;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.Constants;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Virtual Boards Time Fragment containing information about the vehicles in
@@ -32,16 +34,20 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
     private Activity context;
     private SwipeRefreshLayout vbListSwipeRefresh;
     private VirtualBoardsStationEntity vbTimeStation;
+    private VehicleEntity vbTimeVehicle;
     private String vbTimeEmptyText;
     private TextView vbListEmptyTextView;
 
     public static VirtualBoardsTimeFragment newInstance(
-            VirtualBoardsStationEntity vbTimeStation, String vbTimeEmptyText) {
+            VirtualBoardsStationEntity vbTimeStation, VehicleEntity vbTimeVehicle,
+            String vbTimeEmptyText) {
         VirtualBoardsTimeFragment vbTimeFragment = new VirtualBoardsTimeFragment();
 
         Bundle bundle = new Bundle();
-        bundle.putSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME,
+        bundle.putSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_STATION,
                 vbTimeStation);
+        bundle.putSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_VEHICLE,
+                vbTimeVehicle);
         bundle.putString(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_EMPTY_LIST,
                 vbTimeEmptyText);
         vbTimeFragment.setArguments(bundle);
@@ -64,7 +70,7 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
         vbListSwipeRefresh.setOnRefreshListener(() -> {
             // Retrieve the refreshed information from SKGT site
             RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                    context, context, vbTimeStation, null, HtmlRequestCodesEnum.REFRESH);
+                    context, context, vbTimeStation, vbTimeVehicle, HtmlRequestCodesEnum.REFRESH);
             retrieveVirtualBoards.getSumcInformation();
         });
 
@@ -74,8 +80,12 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
 
         // Get the VirtualBoardsStation object and the empty list text from the Bundle
         vbTimeStation = (VirtualBoardsStationEntity) getArguments()
-                .getSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME);
+                .getSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_STATION);
         vbTimeStation.sortVehicles();
+
+        // Get the VehicleEntity object
+        vbTimeVehicle = (VehicleEntity) getArguments()
+                .getSerializable(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_VEHICLE);
 
         if (savedInstanceState == null) {
             vbTimeEmptyText = getArguments().getString(
@@ -173,6 +183,9 @@ public class VirtualBoardsTimeFragment extends ListFragment implements
         // Check if the list adapter is empty, so show a text message with the
         // problem
         if (vbTimeAdapter.isEmpty()) {
+            vbTimeEmptyText = Utils.isEmpty(vbTimeEmptyText)
+                    ? context.getString(R.string.app_internet_or_info_error)
+                    : vbTimeEmptyText;
             vbListEmptyTextView.setText(Html.fromHtml(vbTimeEmptyText));
         }
 

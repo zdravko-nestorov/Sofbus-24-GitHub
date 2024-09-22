@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.utils;
 
+import static bg.znestorov.sofbus24.utils.Constants.VB_URL_VIRTUAL_TABLE_API;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -29,7 +31,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -1702,6 +1707,55 @@ public class Utils {
         } catch (FileNotFoundException fnfe) {
             return "{}";
         }
+    }
+
+    /**
+     * Read the virtual boards URL and get the information in TEXT format
+     *
+     * @param context     the current context
+     * @param stationCode the station code
+     * @return the content of the URL address
+     */
+    public static String readVirtualBoardsUrl(Context context, String stationCode) throws Exception {
+
+        // Create a new scanner to download the URL content
+        try {
+            String requestBody = String.format("{\"stop\":\"%s\"}", stationCode);
+            Scanner scanner = new Scanner(
+                    openUrlConnection(context, VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
+                    "UTF-8");
+
+            // The regular expression "\\A" matches the beginning of input. This tells Scanner
+            // to tokenize the entire stream, from beginning to (illogical) next beginning
+            return scanner.useDelimiter("\\A").next();
+        } catch (FileNotFoundException fnfe) {
+            return "{}";
+        }
+    }
+
+    public static HttpURLConnection openUrlConnection(Context context, String url, String requestBody) throws Exception {
+        GlobalEntity globalEntity = (GlobalEntity) context.getApplicationContext();
+
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("content-type", "application/json");
+
+        String cookie = String.format("XSRF-TOKEN=%s; sofia_traffic_session=%s",
+                globalEntity.getXsrfToken(), globalEntity.getSofiaTrafficSession());
+        connection.setRequestProperty("cookie", cookie);
+
+        String xsrfToken = String.format("%s",
+                URLDecoder.decode(globalEntity.getXsrfToken(), StandardCharsets.UTF_8.name()));
+        connection.setRequestProperty("x-xsrf-token", xsrfToken);
+
+        // Writing the data to the output stream
+        connection.setDoOutput(true);
+        try (OutputStream os = connection.getOutputStream()) {
+            byte[] input = requestBody.getBytes(StandardCharsets.UTF_8);
+            os.write(input, 0, input.length);
+        }
+
+        return connection;
     }
 
     /**

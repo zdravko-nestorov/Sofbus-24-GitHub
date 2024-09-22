@@ -150,7 +150,7 @@ public class PublicTransportFragment extends ListFragment {
 
         // Code changes because of the SKGT API (the schedule is now deprecated)
         RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                context, this, ptStation, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+                context, this, ptStation, ptDirectionsEntity.getVehicle(), HtmlRequestCodesEnum.SINGLE_RESULT);
         retrieveVirtualBoards.getSumcInformation();
     }
 

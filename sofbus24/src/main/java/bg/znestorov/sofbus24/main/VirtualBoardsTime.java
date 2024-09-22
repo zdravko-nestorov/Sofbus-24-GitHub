@@ -28,6 +28,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
+import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
@@ -56,6 +57,7 @@ public class VirtualBoardsTime extends FragmentActivity {
     private ImageButton vbTimeStreetViewButton;
     private TextViewWithImages vbTimeLegend;
     private VirtualBoardsStationEntity vbTimeStation;
+    private VehicleEntity vbTimeVehicle;
     private FavouritesDataSource favouritesDatasource;
     private boolean isFavouriteStation;
 
@@ -174,7 +176,7 @@ public class VirtualBoardsTime extends FragmentActivity {
 
         // Retrieve the refreshed information from SKGT site
         RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                context, this, vbTimeStation, null, HtmlRequestCodesEnum.REFRESH);
+                context, this, vbTimeStation, vbTimeVehicle, HtmlRequestCodesEnum.REFRESH);
         retrieveVirtualBoards.getSumcInformation();
     }
 
@@ -184,7 +186,9 @@ public class VirtualBoardsTime extends FragmentActivity {
     private void initBundleInfo() {
         Bundle extras = getIntent().getExtras();
         vbTimeStation = (VirtualBoardsStationEntity) extras
-                .get(Constants.BUNDLE_VIRTUAL_BOARDS_TIME);
+                .get(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_STATION);
+        vbTimeVehicle = (VehicleEntity) extras
+                .get(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_VEHICLE);
     }
 
     /**
@@ -318,7 +322,7 @@ public class VirtualBoardsTime extends FragmentActivity {
 
         // Check if a new fragment should be created
         if (savedInstanceState == null) {
-            fragment = VirtualBoardsTimeFragment.newInstance(vbTimeStation,
+            fragment = VirtualBoardsTimeFragment.newInstance(vbTimeStation, vbTimeVehicle,
                     vbTimeEmptyText);
 
             getSupportFragmentManager()

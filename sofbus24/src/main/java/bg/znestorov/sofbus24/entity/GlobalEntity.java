@@ -45,6 +45,9 @@ public class GlobalEntity extends Application {
     // Google Analytics
     private HashMap<TrackerName, Tracker> mTrackers;
 
+    private String xsrfToken;
+    private String sofiaTrafficSession;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -143,6 +146,22 @@ public class GlobalEntity extends Application {
 
     public void setHomeActivityChanged(boolean isHomeActivityChanged) {
         this.isHomeActivityChanged = isHomeActivityChanged;
+    }
+
+    public String getXsrfToken() {
+        return "eyJpdiI6Inp1YjV3RUxxL0dvV2JYeENJaEtLckE9PSIsInZhbHVlIjoiUTFXVTMyK3JHVEx1Tkk3ZVFWL2pJM2ZxZFBOYXJ4WTlkeGgvVEVWckxLY3pkNEE0ZEhHeTAxblpJNlNScC9rSjJBYWY3c2dXUVVicjdobHFjSXlXTnBxQk1EVExCL3gxQXRlWGF4MXgwM2pVcmlGQTVWZi8vVjBlMzFsejk1bkIiLCJtYWMiOiI2ZjQxYzAzNTg3ZWI3YmExMzRjMGQ0ZDVkODE3NmMyZWQyOWVmNGJiZTA0ZGMwMGU2MDA5NTUwM2IwNjJkNzdkIiwidGFnIjoiIn0%3D";
+    }
+
+    public void setXsrfToken(String xsrfToken) {
+        this.xsrfToken = xsrfToken;
+    }
+
+    public String getSofiaTrafficSession() {
+        return "eyJpdiI6IkJNMXR2b1F2OXg0KzZHekxyanlUN3c9PSIsInZhbHVlIjoib3cyYnpDU3ZTUE5rUWNUbGY2cHZoZm5oODdhTE5yOHFaazhzOHZjNER4S3hEaFZFeWRSa2txKzVLcUVBdVIrWnVjdTNZOUdzNy9uRGpHc01xVWJCdC9yQTBQNUZmcGlJN3dySFY1WFhjZGZnY0l6cjVHcFgxWUFlb2pBQjJsZkYiLCJtYWMiOiJiNzIyYjY4MjcxODU3ZmJkNjQ0YWI4M2ViODRjNTlmMWE0ZDQwM2U4NDcwNDZiMTdiNmVkOWVkYjcxMzdmZjY4IiwidGFnIjoiIn0%3D";
+    }
+
+    public void setSofiaTrafficSession(String sofiaTrafficSession) {
+        this.sofiaTrafficSession = sofiaTrafficSession;
     }
 
     /**

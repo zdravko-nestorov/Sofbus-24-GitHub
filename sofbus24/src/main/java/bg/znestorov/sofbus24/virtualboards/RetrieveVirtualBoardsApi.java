@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 
 import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.databases.StationsDataSource;
@@ -171,8 +170,10 @@ public class RetrieveVirtualBoardsApi {
                             vbTimeIntent = new Intent(context,
                                     VirtualBoardsTimeDialog.class);
                         }
-                        vbTimeIntent.putExtra(Constants.BUNDLE_VIRTUAL_BOARDS_TIME,
+                        vbTimeIntent.putExtra(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_STATION,
                                 vbTimeStation);
+                        vbTimeIntent.putExtra(Constants.BUNDLE_VIRTUAL_BOARDS_TIME_VEHICLE,
+                                vehicle);
                         context.startActivity(vbTimeIntent);
 
                         break;
@@ -345,32 +346,14 @@ public class RetrieveVirtualBoardsApi {
                 // the database for the stations
                 if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS) {
 
-                    String jsonResult;
-
-                    // Check if we want to retrieve the information in real time for all
-                    // vehicles or just for a selected one (the previous section "Schedule"
-                    // now will be used to retrieve information about the times of arrival
-                    // for a selected vehicle)
-                    if (vehicle != null) {
-                        jsonResult = Utils.readUrl(Constants.VB_URL_VEHICLE_API,
-                                station.getFormattedNumber(), vehicle.getNumber(),
-                                vehicle.getType().toString().toLowerCase(Locale.getDefault()));
-                    } else {
-                        jsonResult = Utils.readUrl(Constants.VB_URL_STATION_API,
-                                station.getFormattedNumber());
-                    }
+                    String jsonResult = Utils.readVirtualBoardsUrl(context, station.getFormattedNumber());
 
                     // Check what is the status of the JSON result
                     if (Utils.isEmpty(jsonResult)) {
                         throw new Exception();
-                    } else if (jsonResult.contains("{}")
-                            || !jsonResult.contains("lines")
-                            || !jsonResult.contains("arrivals")
-                            || !jsonResult.contains("time")) {
-                        htmlResultCode = HtmlResultCodesEnum.NO_INFORMATION;
                     } else {
                         ProcessVirtualBoardsApi processVirtualBoardsApi =
-                                new ProcessVirtualBoardsApi(context, jsonResult);
+                                new ProcessVirtualBoardsApi(context, station, vehicle, jsonResult);
                         stations.add(processVirtualBoardsApi.getStationVehiclesFromJson());
 
                         htmlResultCode = HtmlResultCodesEnum.SINGLE_RESULT;
@@ -383,7 +366,7 @@ public class RetrieveVirtualBoardsApi {
                     stationsDatasource.close();
 
                     // Check what should be the return code, depending on the stations list size
-                    if (stations.size() == 0) {
+                    if (stations.isEmpty()) {
                         htmlResultCode = HtmlResultCodesEnum.NO_INFORMATION;
                     } else if (stations.size() == 1) {
                         htmlResultCode = HtmlResultCodesEnum.SINGLE_RESULT;

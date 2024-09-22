@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 
 import bg.znestorov.sofbus24.utils.Constants;
 
@@ -42,14 +43,15 @@ public class VirtualBoardsStationEntity extends StationEntity implements
         this.vehiclesList = new ArrayList<VehicleEntity>();
     }
 
-    public VirtualBoardsStationEntity(StationEntity station, String skgtTime,
+    public VirtualBoardsStationEntity(StationEntity station, Date systemTime, Date skgtTime,
                                       ArrayList<VehicleEntity> vehiclesList) {
         super(station.getSkgtId(), station.getNumber(), station.getName(), station.getLat(),
                 station.getLon(), station.getType(), station.getCustomField());
 
-        this.skgtTime = skgtTime;
         this.systemTime = android.text.format.DateFormat.format(
-                "dd.MM.yyy, kk:mm", new java.util.Date()).toString();
+                "dd.MM.yyy, kk:mm", systemTime).toString();
+        this.skgtTime = android.text.format.DateFormat.format(
+                "dd.MM.yyy, kk:mm", skgtTime).toString();
         this.vehiclesList = vehiclesList;
     }
 
