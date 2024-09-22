@@ -3,10 +3,10 @@ apply from: '../../scripts/productFlavor.gradle'
 apply from: '../scripts/gen-dex.gradle'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 33
+        targetSdkVersion 34
     }
 }
 

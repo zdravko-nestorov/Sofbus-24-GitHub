@@ -3,14 +3,14 @@ apply plugin: 'com.huawei.agconnect'
 apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion '30.0.3'
     compileOptions.encoding = 'UTF-8'
 
     defaultConfig {
         applicationId "bg.znestorov.sofbus24.main"
         minSdkVersion 19
-        targetSdkVersion 33
+        targetSdkVersion 34
         multiDexEnabled true
         resConfigs "bg", "en", "en-rGB"
     }
