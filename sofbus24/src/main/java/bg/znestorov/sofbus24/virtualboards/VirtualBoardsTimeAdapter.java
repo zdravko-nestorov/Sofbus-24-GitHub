@@ -92,8 +92,7 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
         viewHolder.vehicleImage
                 .setImageResource(getVehicleImage(stationVehicle));
         viewHolder.stationCaption.setText(getVehicleCaption(stationVehicle));
-        viewHolder.stationDirection.setText(Html.fromHtml(stationVehicle
-                .getDirection()));
+        viewHolder.stationDirection.setText(getDirection(stationVehicle));
         viewHolder.stationTime.setText(getRowTimeCaption(stationVehicle));
 
         return rowView;
@@ -168,6 +167,18 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
                 stationVehicle.getNumber());
 
         return vehicleCaption;
+    }
+
+    /**
+     * Format vehicles direction.
+     *
+     * @param stationVehicle the station vehicle
+     * @return vehicles direction
+     */
+    private static Spanned getDirection(VehicleEntity stationVehicle) {
+        String direction = stationVehicle.getDirection();
+        direction = direction.replaceAll(".* -", "⮕");
+        return Html.fromHtml(direction);
     }
 
     /**

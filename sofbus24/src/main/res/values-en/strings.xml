@@ -384,10 +384,10 @@
     <string name="metro_schedule_legend" formatted="false"><![CDATA[<font color="#FF0017"><sup>*</sup> Red - Incomplete Courses</font>, <font color="#003366">SA - Sofia Airport</font>, <font color="#003366">BP - Business Park</font>]]></string>
 
     <!-- Station Route Map Fragment -->
-    <string name="metro_search_tab_line1">Line 1</string>
-    <string name="metro_search_tab_line2">Line 2</string>
-    <string name="metro_search_tab_line3">Line 3</string>
-    <string name="metro_search_tab_line4">Line 4</string>
+    <string name="metro_search_tab_line1">Subway 1</string>
+    <string name="metro_search_tab_line2">Subway 2</string>
+    <string name="metro_search_tab_line3">Subway 3</string>
+    <string name="metro_search_tab_line4">Subway 4</string>
     <string name="pt_time_retrieval_choice" formatted="false"><![CDATA[Information for \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Schedule</string>
     <string name="pt_time_retrieval_virtual_boards">Virtual Boards</string>

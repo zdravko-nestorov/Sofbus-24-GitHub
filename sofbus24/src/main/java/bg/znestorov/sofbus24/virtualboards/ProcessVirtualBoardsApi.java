@@ -26,6 +26,7 @@ import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -80,6 +81,7 @@ class ProcessVirtualBoardsApi {
 
         // Init the list of vehicles for this station
         ArrayList<VehicleEntity> stationVehicles = getStationVehicles(stationVehiclesJsonObject);
+        Collections.sort(stationVehicles);
 
         // Form the VirtualBoardsStationEntity using all data from the SKGT site
         return new VirtualBoardsStationEntity(station, currentDate, currentDate, stationVehicles);

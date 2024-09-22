@@ -272,6 +272,12 @@ public class VehicleEntity implements Comparable<VehicleEntity>, Serializable {
             return result;
         }
 
+        // FIFTH compare by the vehicle direction
+        result = getDirection().compareTo(vehicle.getDirection());
+        if (result != 0) {
+            return result;
+        }
+
         // LAST compare the vehicle hashes
         return Integer.compare(this.hashCode(), vehicle.hashCode());
     }

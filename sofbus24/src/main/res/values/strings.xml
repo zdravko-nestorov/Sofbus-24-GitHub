@@ -394,10 +394,10 @@
     <string name="metro_schedule_legend" formatted="false"><![CDATA[<font color="#FF0017"><sup>*</sup> Червено - Непълни Курсове</font>, <font color="#003366">ЛС - Летище София</font>, <font color="#003366">БП - Бизнес Парк</font>]]></string>
 
     <!-- Station Route Map Fragment -->
-    <string name="metro_search_tab_line1">Линия 1</string>
-    <string name="metro_search_tab_line2">Линия 2</string>
-    <string name="metro_search_tab_line3">Линия 3</string>
-    <string name="metro_search_tab_line4">Линия 4</string>
+    <string name="metro_search_tab_line1">Метролиния 1</string>
+    <string name="metro_search_tab_line2">Метролиния 2</string>
+    <string name="metro_search_tab_line3">Метролиния 3</string>
+    <string name="metro_search_tab_line4">Метролиния 4</string>
     <string name="pt_time_retrieval_choice" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Информация за \"%s\"]]></string>
     <string name="pt_time_retrieval_schedule">Разписание</string>
     <string name="pt_time_retrieval_virtual_boards">Времена на пристигане</string>
@@ -422,9 +422,9 @@
 
     <!-- DroidTrans -->
     <string name="droid_trans_title">Коли на СКГТ</string>
-    <string name="droid_trans_type_bus">Автобусен</string>
-    <string name="droid_trans_type_trolley">Тролейбусен</string>
-    <string name="droid_trans_type_tram">Трамваен</string>
+    <string name="droid_trans_type_bus">Автобус</string>
+    <string name="droid_trans_type_trolley">Тролейбус</string>
+    <string name="droid_trans_type_tram">Трамвай</string>
     <string name="droid_trans_type_metro">Метро</string>
     <string name="droid_trans_type_metro_line_1">Линия 1</string>
     <string name="droid_trans_schedule">Разписание</string>

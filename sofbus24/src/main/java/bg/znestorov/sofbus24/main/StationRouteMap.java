@@ -411,21 +411,18 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         int metroRouteColor3 = ContextCompat.getColor(context, R.color.metro_line_3);
         int metroRouteColor4 = ContextCompat.getColor(context, R.color.metro_line_4);
 
-        PolylineOptions metroRouteOptionsM11 = new PolylineOptions()
-                .width(lineWidth * 2)
-                .color(metroRouteColor1); // Slivnitsa - Business Park (THICK 1.1 RED)
-        PolylineOptions metroRouteOptionsM12 = new PolylineOptions()
+        PolylineOptions metroRouteOptionsM1 = new PolylineOptions()
                 .width(lineWidth)
-                .color(metroRouteColor1); // Slivnitsa - Mladost 1 (THIN 1.2 RED)
+                .color(metroRouteColor1);
         PolylineOptions metroRouteOptionsM2 = new PolylineOptions()
                 .width(lineWidth)
-                .color(metroRouteColor2); // Vitosha - Obelya (THIN 2 BLUE)
+                .color(metroRouteColor2);
         PolylineOptions metroRouteOptionsM3 = new PolylineOptions()
                 .width(lineWidth)
-                .color(metroRouteColor3); // Hadzhi Dimitar - Gorna Banya (THIN 3 GREEN)
+                .color(metroRouteColor3);
         PolylineOptions metroRouteOptionsM4 = new PolylineOptions()
                 .width(lineWidth)
-                .color(metroRouteColor4); // Obelya - Sofia Airport (THIN 4 YELLOW)
+                .color(metroRouteColor4);
 
         // Process all stations of the metro route
         for (int i = 0; i < metroDirectionStations.size(); i++) {
@@ -439,61 +436,19 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                         Double.parseDouble(ms.getLon()));
 
                 // Add the msLocation to the appropriate route options object
-                int stationNumber = Integer.parseInt(station.getNumber());
-
-                if (stationNumber < 2999) {
-                    // Vitosha - Obelya (THIN 2 BLUE)
-                    metroRouteOptionsM2.add(msLocation);
-
-                } else if (stationNumber == 2999 || stationNumber == 3000) {
-                    // Obelya (THIN 2 BLUE/THIN 4 YELLOW)
-                    metroRouteOptionsM2.add(msLocation);
-                    metroRouteOptionsM4.add(msLocation);
-
-                } else if (stationNumber == 3001 || stationNumber == 3002) {
-                    // Slivnitsa (THIN 11/THICK 12 RED/THIN 4 YELLOW)
-                    metroRouteOptionsM11.add(msLocation);
-                    metroRouteOptionsM12.add(msLocation);
-                    metroRouteOptionsM4.add(msLocation);
-
-                } else if (stationNumber > 3002) {
-
-                    // Slivnitsa - Sofia Airport/Business Park
-                    if (stationNumber < 3025) {
-                        // Slivnitsa - Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
-                        metroRouteOptionsM11.add(msLocation);
-                        metroRouteOptionsM12.add(msLocation);
-                        metroRouteOptionsM4.add(msLocation);
-
-                    } else if (stationNumber == 3025) {
-                        // Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
-                        metroRouteOptionsM11.add(msLocation);
-                        metroRouteOptionsM12.add(msLocation);
-                        metroRouteOptionsM12.add(mladostStationLocation);
-
-                        metroRouteOptionsM4.add(msLocation);
-
-                    } else if (stationNumber == 3026) { // reverse station order
-                        // Mladost 1 (THICK 1 RED/THIN 1 RED/THIN 4 YELLOW)
-                        metroRouteOptionsM11.add(msLocation);
-                        metroRouteOptionsM12.add(mladostStationLocation);
-                        metroRouteOptionsM12.add(msLocation);
-
-                        metroRouteOptionsM4.add(msLocation);
-
-                    } else if (stationNumber > 3026 && stationNumber < 3039) {
-
-                        // Mladost 1 - Sofia Airport (THIN 4 YELLOW)
-                        metroRouteOptionsM4.add(msLocation);
-                    } else if (stationNumber >= 3039 && stationNumber < 3100) {
-
-                        // Alexandar Malinov - Business Park (THIN 1 RED)
-                        metroRouteOptionsM12.add(msLocation);
-                    } else if (stationNumber >= 3100) {
-
-                        // Hadzhi Dimitar - Gorna Banya (THIN 3 GREEN)
+                switch (station.getType()) {
+                    case METRO1:
+                        metroRouteOptionsM1.add(msLocation);
+                        break;
+                    case METRO2:
+                        metroRouteOptionsM2.add(msLocation);
+                        break;
+                    case METRO3:
                         metroRouteOptionsM3.add(msLocation);
-                    }
+                        break;
+                    case METRO4:
+                        metroRouteOptionsM4.add(msLocation);
+                        break;
                 }
 
                 // Create a marker on the msLocation and set some options
@@ -543,8 +498,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Draw a line between all the markers (RED route MUST be last, because it should
         // appear above the THICK BLUE)
-        stationMap.addPolyline(metroRouteOptionsM11);
-        stationMap.addPolyline(metroRouteOptionsM12);
+        stationMap.addPolyline(metroRouteOptionsM1);
         stationMap.addPolyline(metroRouteOptionsM2);
         stationMap.addPolyline(metroRouteOptionsM3);
         stationMap.addPolyline(metroRouteOptionsM4);
@@ -680,11 +634,12 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 lineName = String.format(getString(R.string.pt_tram),
                         vehicle.getNumber());
                 break;
+            case METRO:
             case METRO1:
-                lineName = getString(R.string.metro_search_tab_direction1);
-                break;
             case METRO2:
-                lineName = getString(R.string.metro_search_tab_direction2);
+            case METRO3:
+            case METRO4:
+                lineName = getString(R.string.pt_metro);
                 break;
             default:
                 lineName = String.format(getString(R.string.pt_bus),

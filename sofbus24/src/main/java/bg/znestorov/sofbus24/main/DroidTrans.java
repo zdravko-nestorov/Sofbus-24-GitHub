@@ -40,7 +40,6 @@ import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.WheelStateEntity;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
-import bg.znestorov.sofbus24.metro.MetroLoadStations;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -629,22 +628,9 @@ public class DroidTrans extends FragmentActivity {
      * @return the number
      */
     private String[] getVehicleNumberArray(VehicleTypeEnum vehicleType) {
-
         String[] vehicleNumbersArray;
-        switch (vehicleType) {
-            case METRO:
-            case METRO1:
-            case METRO2:
-            case METRO3:
-            case METRO4:
-                vehicleNumbersArray = new String[]{getString(R.string.droid_trans_type_metro_line_1)};
-                break;
-            default:
-                vehicleNumbersArray = new String[vehicleNumbers.size()];
-                vehicleNumbersArray = vehicleNumbers.toArray(vehicleNumbersArray);
-                break;
-        }
-
+        vehicleNumbersArray = new String[vehicleNumbers.size()];
+        vehicleNumbersArray = vehicleNumbers.toArray(vehicleNumbersArray);
         return vehicleNumbersArray;
     }
 
@@ -730,20 +716,10 @@ public class DroidTrans extends FragmentActivity {
      */
     private void getStationsList(VehicleTypeEnum vehicleType,
                                  String vehicleNumber, Integer vehicleDirection) {
-
-        switch (vehicleType) {
-            case METRO:
-                vehicleStations = MetroLoadStations.getInstance(context)
-                        .getMetroDirectionsListFormatted()
-                        .get(vehicleDirection - 1);
-                break;
-            default:
-                droidtransDatasource.open();
-                vehicleStations = droidtransDatasource.getVehicleStations(
-                        vehicleType, vehicleNumber, vehicleDirection);
-                droidtransDatasource.close();
-                break;
-        }
+        droidtransDatasource.open();
+        vehicleStations = droidtransDatasource.getVehicleStations(
+                vehicleType, vehicleNumber, vehicleDirection);
+        droidtransDatasource.close();
     }
 
     /**
