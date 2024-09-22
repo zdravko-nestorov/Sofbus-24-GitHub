@@ -47,7 +47,6 @@ import bg.znestorov.sofbus24.entity.PublicTransportStationEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.permissions.AppPermissions;
 import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -535,9 +534,10 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                         progressDialog.setMessage(Html.fromHtml(String.format(
                                 getString(R.string.metro_loading_schedule),
                                 station.getName(), station.getNumber())));
-                        RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                                context, progressDialog, station);
-                        retrieveMetroSchedule.execute();
+
+                        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                                context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+                        retrieveVirtualBoards.getSumcInformation();
                     }
                 });
 

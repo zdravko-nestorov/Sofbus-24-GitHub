@@ -66,7 +66,6 @@ import bg.znestorov.sofbus24.entity.SortTypeEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
 import bg.znestorov.sofbus24.permissions.AppPermissions;
@@ -1158,9 +1157,10 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             progressDialog.setMessage(Html.fromHtml(String.format(
                     context.getString(R.string.metro_loading_schedule),
                     station.getName(), station.getNumber())));
-            RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                    context, progressDialog, station);
-            retrieveMetroSchedule.execute();
+
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+            retrieveVirtualBoards.getSumcInformation();
         }
     }
 

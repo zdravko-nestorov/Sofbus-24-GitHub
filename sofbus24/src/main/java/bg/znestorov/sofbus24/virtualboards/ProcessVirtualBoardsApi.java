@@ -4,7 +4,9 @@ import static bg.znestorov.sofbus24.utils.Constants.VB_STATION_DETAILS_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_AIR_CONDITIONING_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_BICYCLE_MOUNT_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DOUBLEDECKER_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_EXT_ID_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_NAME_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ROUTE_ID_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ROUTE_NAME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TIME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TYPE_API;
@@ -103,9 +105,9 @@ class ProcessVirtualBoardsApi {
             // information about the times of arrival for a selected vehicle)
             // NOT NEEDED as it gives misleading information
             // if (this.vehicle == null || this.vehicle.getNumber().equals(vehicle.getNumber())) {
-                // Add the vehicle details
-                setVehicleInfo(vehicle, vehicleJsonObject);
-                stationVehicles.add(vehicle);
+            // Add the vehicle details
+            setVehicleInfo(vehicle, vehicleJsonObject);
+            stationVehicles.add(vehicle);
             // }
         }
 
@@ -128,6 +130,14 @@ class ProcessVirtualBoardsApi {
 
         // Get the Vehicle direction from the current request in the appropriate language
         String direction = getAsJsonString(vehicleJsonObject, VB_VEHICLE_ROUTE_NAME_API);
+        String route = getAsJsonString(vehicleJsonObject, VB_VEHICLE_ROUTE_ID_API);
+
+        // Retrieve the correct direction name
+        droidTransDatasource.open();
+        String dbDirection = droidTransDatasource.getVehicleDirectionViaVehicleRoute(route);
+        direction = dbDirection != null ? dbDirection : direction;
+        droidTransDatasource.close();
+
         if (!"bg".equals(language)) {
             direction = TranslatorCyrillicToLatin.translate(context, direction);
         }
@@ -135,7 +145,9 @@ class ProcessVirtualBoardsApi {
         // Form the vehicle type
         VehicleTypeEnum type;
         try {
-            type = VehicleTypeEnum.fromTransportType(getAsJsonString(vehicleJsonObject, VB_VEHICLE_TYPE_API).toUpperCase());
+            type = VehicleTypeEnum.getVehicleType(
+                    getAsJsonString(vehicleJsonObject, VB_VEHICLE_TYPE_API),
+                    getAsJsonString(vehicleJsonObject, VB_VEHICLE_EXT_ID_API));
         } catch (Exception e) {
             // This case should never been reached as the vehicles always will be BUS, TRAM, TROLLEY
             type = VehicleTypeEnum.BUS;
@@ -153,11 +165,7 @@ class ProcessVirtualBoardsApi {
             vehicle = new VehicleEntity(name, type, direction);
         }
 
-        // Correct the vehicle direction (if needed) - depends on the station number
-        droidTransDatasource.open();
-        vehicle.setDirection(droidTransDatasource.getVehicleDirectionViaStationNumber(vehicle.getDirection(), vehicle.getNumber(), station.getNumber()));
-        droidTransDatasource.close();
-
+        vehicle.setDirection(direction);
         return vehicle;
     }
 

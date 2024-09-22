@@ -29,7 +29,6 @@ import bg.znestorov.sofbus24.history.HistoryDeleteAllDialog;
 import bg.znestorov.sofbus24.history.HistoryDeleteAllDialog.OnDeleteAllHistoryListener;
 import bg.znestorov.sofbus24.history.HistoryEntity;
 import bg.znestorov.sofbus24.history.HistoryOfSearches;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.schedule.ScheduleVehicleInfo;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
@@ -175,9 +174,10 @@ public class History extends ListActivity implements
                     progressDialog.setMessage(Html.fromHtml(String.format(
                             getString(R.string.metro_loading_schedule),
                             station.getName(), station.getNumber())));
-                    RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                            context, progressDialog, station);
-                    retrieveMetroSchedule.execute();
+
+                    RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                            context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+                    retrieveVirtualBoards.getSumcInformation();
                 }
 
                 break;

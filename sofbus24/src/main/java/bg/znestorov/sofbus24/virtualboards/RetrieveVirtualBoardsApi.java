@@ -21,12 +21,10 @@ import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.HtmlResultCodesEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
-import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.VirtualBoardsStationEntity;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.VirtualBoardsTime;
 import bg.znestorov.sofbus24.main.VirtualBoardsTimeDialog;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityTracker;
@@ -93,20 +91,9 @@ public class RetrieveVirtualBoardsApi {
 
         // Making HttpRequest and showing a progress dialog if needed (based on station type)
         ProgressDialog progressDialog = createProgressDialog(progressDialogMsg);
-        if (station != null && station.getType() != null
-                && (station.getType() == VehicleTypeEnum.METRO
-                || station.getType() == VehicleTypeEnum.METRO1
-                || station.getType() == VehicleTypeEnum.METRO2
-                || station.getType() == VehicleTypeEnum.METRO3
-                || station.getType() == VehicleTypeEnum.METRO4)) {
-            RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(context,
-                    progressDialog, station);
-            retrieveMetroSchedule.execute();
-        } else {
-            RetrieveSumcInformation retrieveSumcInformation = new RetrieveSumcInformation(
-                    progressDialog);
-            retrieveSumcInformation.execute();
-        }
+        RetrieveSumcInformation retrieveSumcInformation = new RetrieveSumcInformation(
+                progressDialog);
+        retrieveSumcInformation.execute();
     }
 
     /**
@@ -348,7 +335,7 @@ public class RetrieveVirtualBoardsApi {
                 // the database for the stations
                 if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS) {
 
-                    String jsonResult = Utils.readVirtualBoardsUrl(context, station.getFormattedNumber());
+                    String jsonResult = Utils.readVirtualBoardsUrl(context, station);
 
                     // Check what is the status of the JSON result
                     if (Utils.isEmpty(jsonResult)) {

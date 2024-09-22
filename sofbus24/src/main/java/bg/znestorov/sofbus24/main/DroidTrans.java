@@ -6,7 +6,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,7 +41,6 @@ import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.entity.WheelStateEntity;
 import bg.znestorov.sofbus24.gcm.GcmUtils;
 import bg.znestorov.sofbus24.metro.MetroLoadStations;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.navigation.NavDrawerArrayAdapter;
 import bg.znestorov.sofbus24.navigation.NavDrawerHelper;
 import bg.znestorov.sofbus24.utils.Constants;
@@ -775,22 +773,9 @@ public class DroidTrans extends FragmentActivity {
                     VehicleTypeEnum vehicleType = getCurrentVehicleType();
                     StationEntity station = getCurrentStation();
 
-                    switch (vehicleType) {
-                        case METRO:
-                            progressDialog.setMessage(Html.fromHtml(String.format(
-                                    getString(R.string.metro_loading_schedule),
-                                    station.getName(), station.getNumber())));
-                            RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                                    context, progressDialog, station);
-                            retrieveMetroSchedule.execute();
-                            break;
-                        default:
-                            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
-                                    context, this, station, null,
-                                    HtmlRequestCodesEnum.SINGLE_RESULT);
-                            retrieveVirtualBoards.getSumcInformation();
-                            break;
-                    }
+                    RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                            context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+                    retrieveVirtualBoards.getSumcInformation();
                 } catch (Exception e) {
                     Toast.makeText(context,
                             getString(R.string.droid_trans_no_info),

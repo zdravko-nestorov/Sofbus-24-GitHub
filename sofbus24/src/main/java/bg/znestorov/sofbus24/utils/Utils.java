@@ -1717,15 +1717,17 @@ public class Utils {
     /**
      * Read the virtual boards URL and get the information in TEXT format
      *
-     * @param context     the current context
-     * @param stationCode the station code
+     * @param context the current context
+     * @param station the chosen station
      * @return the content of the URL address
      */
-    public static String readVirtualBoardsUrl(Context context, String stationCode) throws Exception {
+    public static String readVirtualBoardsUrl(Context context, StationEntity station) throws Exception {
 
         // Create a new scanner to download the URL content
         try {
-            String requestBody = String.format("{\"stop\":\"%s\"}", stationCode);
+            String requestBody = station.isMetroStationByType()
+                    ? String.format("{\"stop\":\"%s\", \"type\":\"3\"}", Integer.parseInt(station.getNumber()) - 100000)
+                    : String.format("{\"stop\":\"%s\"}", station.getFormattedNumber());
             Scanner scanner = new Scanner(
                     openUrlConnection(context, VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
                     "UTF-8");

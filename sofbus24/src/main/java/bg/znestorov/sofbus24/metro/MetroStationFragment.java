@@ -29,6 +29,7 @@ import java.util.ArrayList;
 
 import bg.znestorov.sofbus24.entity.DirectionsEntity;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
+import bg.znestorov.sofbus24.entity.HtmlRequestCodesEnum;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
@@ -39,6 +40,7 @@ import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.DrawableClickListener;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
 import bg.znestorov.sofbus24.utils.activity.SearchEditText;
+import bg.znestorov.sofbus24.virtualboards.RetrieveVirtualBoardsApi;
 
 /**
  * Metro Station Fragment containing information about the metro stations
@@ -123,9 +125,10 @@ public class MetroStationFragment extends ListFragment implements
         progressDialog.setMessage(Html.fromHtml(String.format(
                 getString(R.string.metro_loading_schedule), station.getName(),
                 station.getNumber())));
-        RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                context, progressDialog, station);
-        retrieveMetroSchedule.execute();
+
+        RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+        retrieveVirtualBoards.getSumcInformation();
     }
 
     @Override

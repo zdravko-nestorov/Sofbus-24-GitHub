@@ -44,7 +44,6 @@ import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.main.StationMap;
-import bg.znestorov.sofbus24.metro.RetrieveMetroSchedule;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.MapUtils;
@@ -635,9 +634,10 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             progressDialog.setMessage(Html.fromHtml(String.format(
                     context.getString(R.string.metro_loading_schedule),
                     station.getName(), station.getNumber())));
-            RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(
-                    context, progressDialog, station);
-            retrieveMetroSchedule.execute();
+
+            RetrieveVirtualBoardsApi retrieveVirtualBoards = new RetrieveVirtualBoardsApi(
+                    context, null, station, null, HtmlRequestCodesEnum.SINGLE_RESULT);
+            retrieveVirtualBoards.getSumcInformation();
         }
     }
 

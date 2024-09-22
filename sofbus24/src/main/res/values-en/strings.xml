@@ -307,6 +307,7 @@
     <string name="vb_time_bus" formatted="false">Bus %s</string>
     <string name="vb_time_trolley" formatted="false">Trolleybus %s</string>
     <string name="vb_time_tram" formatted="false">Tram %s</string>
+    <string name="vb_time_metro" formatted="false">Subway %s</string>
     <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Retrieving the times of arrival of <b><i>%s</b></i>…]]></string>
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[CAPTCHA image verification…]]></string>
     <string name="vb_time_sumc_captcha">Security test</string>

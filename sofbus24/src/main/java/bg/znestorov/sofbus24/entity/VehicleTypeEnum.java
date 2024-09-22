@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import bg.znestorov.sofbus24.utils.Utils;
+
 /**
  * Enumeration representing the types of vehicles and stations
  *
@@ -27,7 +29,7 @@ public enum VehicleTypeEnum {
      * This vehicles type's indicate all different type of vehicles in the main
      * database (Sofbus24.db)
      */
-    BTT, METRO, METRO1, METRO2, METRO3, METRO4,
+    BTT, METRO("M", "3"), METRO1("M", "3"), METRO2("M", "3"), METRO3("M", "3"), METRO4("M", "3"),
 
     /**
      * This vehicles' type is used in the schedule cache to determine if we
@@ -43,32 +45,32 @@ public enum VehicleTypeEnum {
     NOIMAGE;
 
     private String transportCode;
-    private Set<String> transportType;
+    private Set<String> transportTypes = new HashSet<>();
 
     VehicleTypeEnum() {
     }
 
-    VehicleTypeEnum(String transportCode, String... transportType) {
+    VehicleTypeEnum(String transportCode, String... transportTypes) {
         this.transportCode = transportCode;
-        this.transportType = new HashSet<>(Arrays.asList(transportType));
+        this.transportTypes = new HashSet<>(Arrays.asList(transportTypes));
     }
 
-    public static VehicleTypeEnum fromTransportCode(String transportCode) {
-        for (VehicleTypeEnum vehicleTypeEnum : VehicleTypeEnum.values()) {
-            if (transportCode != null && transportCode.equals(vehicleTypeEnum.transportCode)) {
-                return vehicleTypeEnum;
+    public static VehicleTypeEnum getVehicleType(String skgtTransportType, String skgtTransportCode) {
+        for (VehicleTypeEnum vehicleType : VehicleTypeEnum.values()) {
+            if ("3".equals(skgtTransportType)) {
+                // Metro vehicle types
+                if (vehicleType.transportTypes.contains(skgtTransportType) &&
+                        vehicleType.name().contains(Utils.getOnlyDigits(skgtTransportCode))) {
+                    return vehicleType;
+                }
+            } else {
+                // Standard vehicle types
+                if (vehicleType.transportTypes.contains(skgtTransportType)) {
+                    return vehicleType;
+                }
             }
         }
-        throw new RuntimeException("Vehicle type not found for transportCode: " + transportCode);
-    }
-
-    public static VehicleTypeEnum fromTransportType(String transportType) {
-        for (VehicleTypeEnum vehicleTypeEnum : VehicleTypeEnum.values()) {
-            if (vehicleTypeEnum.transportType != null && vehicleTypeEnum.transportType.contains(transportType)) {
-                return vehicleTypeEnum;
-            }
-        }
-        throw new RuntimeException("Vehicle type not found for transportType: " + transportType);
+        return null;
     }
 
     public static VehicleTypeEnum getStationTypeByVehicleType(VehicleTypeEnum vehicleType) {

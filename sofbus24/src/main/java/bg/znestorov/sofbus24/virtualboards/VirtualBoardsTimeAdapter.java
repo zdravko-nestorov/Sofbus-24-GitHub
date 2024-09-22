@@ -116,8 +116,23 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
             case TROLLEY:
                 vehicleImage = R.drawable.ic_trolley;
                 break;
-            default:
+            case TRAM:
                 vehicleImage = R.drawable.ic_tram;
+                break;
+            case METRO1:
+                vehicleImage = R.drawable.ic_metro_1;
+                break;
+            case METRO2:
+                vehicleImage = R.drawable.ic_metro_2;
+                break;
+            case METRO3:
+                vehicleImage = R.drawable.ic_metro_3;
+                break;
+            case METRO4:
+                vehicleImage = R.drawable.ic_metro_4;
+                break;
+            default:
+                vehicleImage = R.drawable.ic_metro_1;
                 break;
         }
 
@@ -141,8 +156,11 @@ class VirtualBoardsTimeAdapter extends ArrayAdapter<VehicleEntity>
             case TROLLEY:
                 vehicleTypeText = context.getString(R.string.vb_time_trolley);
                 break;
-            default:
+            case TRAM:
                 vehicleTypeText = context.getString(R.string.vb_time_tram);
+                break;
+            default:
+                vehicleTypeText = context.getString(R.string.vb_time_metro);
                 break;
         }
 

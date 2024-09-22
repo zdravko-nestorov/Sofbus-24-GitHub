@@ -317,6 +317,7 @@
     <string name="vb_time_bus" formatted="false">Автобус %s</string>
     <string name="vb_time_trolley" formatted="false">Тролей %s</string>
     <string name="vb_time_tram" formatted="false">Трамвай %s</string>
+    <string name="vb_time_metro" formatted="false">Метролиния %s</string>
     <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Извличане времената на пристигане за <b><i>%s</b></i>…]]></string>
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[Проверка на CAPTCHA изображението…]]></string>
     <string name="vb_time_sumc_captcha">Тест за сигурност</string>
