@@ -355,8 +355,11 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
      */
     private void initializeMap(VehicleTypeEnum stationType, final Location currentLocation) {
         // Check the type of the bundle object
-        if (VehicleTypeEnum.METRO1.equals(stationType)
-                || VehicleTypeEnum.METRO2.equals(stationType)) {
+        if (VehicleTypeEnum.METRO.equals(stationType)
+                || VehicleTypeEnum.METRO1.equals(stationType)
+                || VehicleTypeEnum.METRO2.equals(stationType)
+                || VehicleTypeEnum.METRO3.equals(stationType)
+                || VehicleTypeEnum.METRO4.equals(stationType)) {
             processListOfMetroStationObjects(currentLocation);
         } else {
             processListOfPTStationObjects(currentLocation);
@@ -771,8 +774,11 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             case TRAM:
                 markerIcon = R.drawable.ic_tram_map_marker;
                 break;
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 markerIcon = R.drawable.ic_metro_map_marker;
                 break;
             default:

@@ -138,6 +138,8 @@ public class History extends ListActivity implements
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
             case BTT:
 
                 // Get the corresponding station to the station number via the

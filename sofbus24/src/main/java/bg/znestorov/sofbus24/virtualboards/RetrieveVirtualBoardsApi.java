@@ -363,8 +363,7 @@ public class RetrieveVirtualBoardsApi {
 
                 } else {
                     stationsDatasource.open();
-                    stations.addAll(stationsDatasource.getStationsViaSearch(
-                            null, station.getNumber()));
+                    stations.addAll(stationsDatasource.getStationsViaSearch(station.getNumber()));
                     stationsDatasource.close();
 
                     // Check what should be the return code, depending on the stations list size

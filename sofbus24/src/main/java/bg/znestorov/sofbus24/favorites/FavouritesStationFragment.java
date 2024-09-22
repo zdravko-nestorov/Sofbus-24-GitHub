@@ -266,8 +266,11 @@ public class FavouritesStationFragment extends ListFragment implements
                     .getType() : VehicleTypeEnum.BTT;
             stationsDataSource.open();
 
-            if (stationType != VehicleTypeEnum.METRO1
-                    && stationType != VehicleTypeEnum.METRO2) {
+            if (stationType != VehicleTypeEnum.METRO
+                    && stationType != VehicleTypeEnum.METRO1
+                    && stationType != VehicleTypeEnum.METRO2
+                    && stationType != VehicleTypeEnum.METRO3
+                    && stationType != VehicleTypeEnum.METRO4) {
                 globalContext.setVbChanged(true);
             }
 

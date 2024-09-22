@@ -307,6 +307,7 @@
     <!-- Virtual Boards Fragment -->
     <string name="vb_search_hint">Търсене по име или номер</string>
     <string name="vb_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Спирка номер: %s</string>
+    <string name="vb_item_metro_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
     <string name="vb_item_search_list" formatted="false"><![CDATA[Моля въведете вашите критерии за търсене (<b>номер - четирицифрен код (пр. 0013)</b> или <b>име (цифра/и или букви на кирилица или латиница)</b> на спирката). Ако търсите по име е нужно да въведете <b>поне 3 символа</b>.]]></string>
     <string name="vb_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени спирки за <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
 

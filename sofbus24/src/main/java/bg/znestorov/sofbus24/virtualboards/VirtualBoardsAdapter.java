@@ -88,8 +88,12 @@ class VirtualBoardsAdapter extends ArrayAdapter<StationEntity> {
 
         // Station name & number
         viewHolder.stationName.setText(Html.fromHtml(station.getName()));
+
+        String stationTitle = station.isMetroStationByType()
+                ? context.getString(R.string.vb_item_metro_station_number_text)
+                : context.getString(R.string.vb_item_station_number_text);
         viewHolder.stationNumber.setText(String.format(
-                context.getString(R.string.vb_item_station_number_text),
+                stationTitle,
                 station.getNumber()));
 
         // Set the actions over the ImageView

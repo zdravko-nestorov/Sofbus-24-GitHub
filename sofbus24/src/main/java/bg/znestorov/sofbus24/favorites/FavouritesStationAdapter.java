@@ -349,7 +349,9 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
 
         if (stationType == VehicleTypeEnum.METRO
                 || stationType == VehicleTypeEnum.METRO1
-                || stationType == VehicleTypeEnum.METRO2) {
+                || stationType == VehicleTypeEnum.METRO2
+                || stationType == VehicleTypeEnum.METRO3
+                || stationType == VehicleTypeEnum.METRO4) {
 
             if (stationName.startsWith("METR. ")
                     || stationName.startsWith("METROSTANCIYA ")
@@ -376,6 +378,8 @@ class FavouritesStationAdapter extends ArrayAdapter<StationEntity> {
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 stationNumber = String.format(context
                                 .getString(R.string.fav_item_metro_station_number_text),
                         station.getNumber());

@@ -472,8 +472,11 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
         String stationText;
 
         switch (station.getType()) {
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 stationText = getString(R.string.metro_item_station_number_text_sign);
                 break;
             default:
@@ -520,8 +523,11 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
             case TRAM_TROLLEY:
                 markerIcon = R.drawable.ic_trolley_tram_map_marker;
                 break;
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 markerIcon = R.drawable.ic_metro_map_marker;
                 break;
             default:

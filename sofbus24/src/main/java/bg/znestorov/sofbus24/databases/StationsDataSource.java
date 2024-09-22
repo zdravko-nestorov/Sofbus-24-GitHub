@@ -82,7 +82,7 @@ public class StationsDataSource {
                 .query(Sofbus24SQLite.TABLE_SOF_STAT,
                         allColumns,
                         Sofbus24SQLite.COLUMN_STAT_NUMBER + " = ? AND " + Sofbus24SQLite.COLUMN_STAT_TYPE + " = ?",
-                        new String[]{station.getNumber(), VehicleTypeEnum.getStationType(station.getType()).name()},
+                        new String[]{station.getNumber(), VehicleTypeEnum.getStationTypeByVehicleType(station.getType()).name()},
                         null, null, null)) {
 
             if (cursor.getCount() > 0) {
@@ -91,8 +91,11 @@ public class StationsDataSource {
 
                 // Creating station object
                 StationEntity foundStation = cursorToStation(cursor);
-                if (station.getType() == VehicleTypeEnum.METRO1
-                        || station.getType() == VehicleTypeEnum.METRO2) {
+                if (station.getType() == VehicleTypeEnum.METRO
+                        || station.getType() == VehicleTypeEnum.METRO1
+                        || station.getType() == VehicleTypeEnum.METRO2
+                        || station.getType() == VehicleTypeEnum.METRO3
+                        || station.getType() == VehicleTypeEnum.METRO4) {
                     foundStation.setCustomField(String.format(
                             Constants.METRO_STATION_URL, foundStation.getNumber()));
                 }
@@ -125,8 +128,11 @@ public class StationsDataSource {
 
                 // Creating station object
                 StationEntity foundStation = cursorToStation(cursor);
-                if (foundStation.getType() == VehicleTypeEnum.METRO1
-                        || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                if (foundStation.getType() == VehicleTypeEnum.METRO
+                        || foundStation.getType() == VehicleTypeEnum.METRO1
+                        || foundStation.getType() == VehicleTypeEnum.METRO2
+                        || foundStation.getType() == VehicleTypeEnum.METRO3
+                        || foundStation.getType() == VehicleTypeEnum.METRO4) {
                     foundStation.setCustomField(String.format(
                             Constants.METRO_STATION_URL, foundStation.getNumber()));
                 }
@@ -191,8 +197,11 @@ public class StationsDataSource {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 StationEntity foundStation = cursorToStation(cursor);
-                if (vehicleType == VehicleTypeEnum.METRO1
-                        || vehicleType == VehicleTypeEnum.METRO2) {
+                if (vehicleType == VehicleTypeEnum.METRO
+                        || vehicleType == VehicleTypeEnum.METRO1
+                        || vehicleType == VehicleTypeEnum.METRO2
+                        || vehicleType == VehicleTypeEnum.METRO3
+                        || vehicleType == VehicleTypeEnum.METRO4) {
                     foundStation.setCustomField(String.format(
                             Constants.METRO_STATION_URL, foundStation.getNumber()));
                 }
@@ -217,19 +226,10 @@ public class StationsDataSource {
     /**
      * Get the stations which NUMBER or NAME contains the searched text
      *
-     * @param vehicleType the type of the Station
      * @param searchText  the user search text
      * @return a list with all stations matching the input conditions
      */
-    public List<StationEntity> getStationsViaSearch(
-            VehicleTypeEnum vehicleType, String searchText) {
-        String searchType;
-        if (vehicleType == null) {
-            searchType = "";
-        } else {
-            searchType = vehicleType.toString();
-        }
-
+    public List<StationEntity> getStationsViaSearch(String searchText) {
         List<StationEntity> stations = new ArrayList<StationEntity>();
         Locale currentLocale = new Locale(language);
         searchText = searchText.toLowerCase(currentLocale);
@@ -252,10 +252,7 @@ public class StationsDataSource {
                 + " AS TEXT)) LIKE " + searchNumber + "   					\n");
         query.append(" OR 													\n");
         query.append(" 		lower(" + Sofbus24SQLite.COLUMN_STAT_NAME
-                + ") LIKE '%" + searchText + "%'		 					\n");
-        query.append(" ) AND												\n");
-        query.append(" 		" + Sofbus24SQLite.COLUMN_STAT_TYPE + " LIKE '%"
-                + searchType + "%'											\n");
+                + ") LIKE '%" + searchText + "%')		 					\n");
 
         // Get the stations which NUMBER or NAME contains the searched text
         try (Cursor cursor = database.rawQuery(query.toString(), null)) {
@@ -264,12 +261,6 @@ public class StationsDataSource {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 StationEntity foundStation = cursorToStation(cursor);
-                if (vehicleType == VehicleTypeEnum.METRO1
-                        || vehicleType == VehicleTypeEnum.METRO2) {
-                    foundStation.setCustomField(String.format(
-                            Constants.METRO_STATION_URL, foundStation.getNumber()));
-                }
-
                 stations.add(new VirtualBoardsStationEntity(foundStation));
                 cursor.moveToNext();
             }
@@ -296,8 +287,11 @@ public class StationsDataSource {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
                 StationEntity foundStation = cursorToStation(cursor);
-                if (foundStation.getType() == VehicleTypeEnum.METRO1
-                        || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                if (foundStation.getType() == VehicleTypeEnum.METRO
+                        || foundStation.getType() == VehicleTypeEnum.METRO1
+                        || foundStation.getType() == VehicleTypeEnum.METRO2
+                        || foundStation.getType() == VehicleTypeEnum.METRO3
+                        || foundStation.getType() == VehicleTypeEnum.METRO4) {
                     foundStation.setCustomField(String.format(
                             Constants.METRO_STATION_URL, foundStation.getNumber()));
                 }
@@ -546,8 +540,11 @@ public class StationsDataSource {
 
                 // Check if the station is in range
                 if (isStationInRange) {
-                    if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
-                            .getType() == VehicleTypeEnum.METRO2)) {
+                    if ((foundStation.getType() == VehicleTypeEnum.METRO
+                            || foundStation.getType() == VehicleTypeEnum.METRO1
+                            || foundStation.getType() == VehicleTypeEnum.METRO2
+                            || foundStation.getType() == VehicleTypeEnum.METRO3
+                            || foundStation.getType() == VehicleTypeEnum.METRO4)) {
                         foundStation.setCustomField(String.format(
                                 Constants.METRO_STATION_URL,
                                 foundStation.getNumber()));
@@ -638,8 +635,11 @@ public class StationsDataSource {
                 // Check if the station is in range
                 if (isStationInRange) {
                     if (stationsCount > ((stationPage - 1) * 10)) {
-                        if (foundStation.getType() == VehicleTypeEnum.METRO1
-                                || foundStation.getType() == VehicleTypeEnum.METRO2) {
+                        if (foundStation.getType() == VehicleTypeEnum.METRO
+                                || foundStation.getType() == VehicleTypeEnum.METRO1
+                                || foundStation.getType() == VehicleTypeEnum.METRO2
+                                || foundStation.getType() == VehicleTypeEnum.METRO3
+                                || foundStation.getType() == VehicleTypeEnum.METRO4) {
                             foundStation.setCustomField(String.format(
                                     Constants.METRO_STATION_URL,
                                     foundStation.getNumber()));
@@ -718,6 +718,8 @@ public class StationsDataSource {
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 stationCustomField = String.format(Constants.METRO_STATION_URL,
                         station.getNumber());
                 break;

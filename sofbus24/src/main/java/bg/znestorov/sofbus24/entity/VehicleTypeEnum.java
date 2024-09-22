@@ -71,16 +71,16 @@ public enum VehicleTypeEnum {
         throw new RuntimeException("Vehicle type not found for transportType: " + transportType);
     }
 
-    public static VehicleTypeEnum getStationType(VehicleTypeEnum vehicleType) {
-       switch (vehicleType) {
-           case METRO:
-           case METRO1:
-           case METRO2:
-           case METRO3:
-           case METRO4:
-               return METRO;
-           default:
-               return BTT;
-       }
+    public static VehicleTypeEnum getStationTypeByVehicleType(VehicleTypeEnum vehicleType) {
+        switch (vehicleType) {
+            case METRO:
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
+                return METRO;
+            default:
+                return BTT;
+        }
     }
 }

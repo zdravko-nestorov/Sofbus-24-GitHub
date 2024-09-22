@@ -1,6 +1,6 @@
 package bg.znestorov.sofbus24.databases;
 
-import static bg.znestorov.sofbus24.entity.VehicleTypeEnum.getStationType;
+import static bg.znestorov.sofbus24.entity.VehicleTypeEnum.getStationTypeByVehicleType;
 
 import android.app.Activity;
 import android.database.Cursor;
@@ -427,7 +427,7 @@ public class DroidTransDataSource {
         query.append(" 			AND SOF_VEHI.VEHI_NUMBER LIKE '" + vehicleNumber
                 + "'																										\n");
         query.append(" 			AND SOF_VEHI.VEHI_TYPE LIKE '%" + vehicleType + "%'		    								\n");
-        query.append(" AND SOF_STAT.STAT_TYPE LIKE '%" + getStationType(vehicleType)  + "%'	                				\n");
+        query.append(" AND SOF_STAT.STAT_TYPE LIKE '%" + getStationTypeByVehicleType(vehicleType)  + "%'	                				\n");
 
         // Selecting the row that contains the stations data
         try (Cursor cursor = database.rawQuery(query.toString(), null)) {

@@ -552,8 +552,11 @@ public class DroidTrans extends FragmentActivity {
      */
     private VehicleTypeEnum getVehicleType(VehicleTypeEnum vehicleType) {
 
-        if (vehicleType == VehicleTypeEnum.METRO1
-                || vehicleType == VehicleTypeEnum.METRO2) {
+        if (vehicleType == VehicleTypeEnum.METRO
+                || vehicleType == VehicleTypeEnum.METRO1
+                || vehicleType == VehicleTypeEnum.METRO2
+                || vehicleType == VehicleTypeEnum.METRO3
+                || vehicleType == VehicleTypeEnum.METRO4) {
             vehicleType = VehicleTypeEnum.METRO;
         }
 
@@ -569,8 +572,11 @@ public class DroidTrans extends FragmentActivity {
     private int getVehicleTypePosition(VehicleTypeEnum vehicleType) {
 
         int vehicleTypePosition;
-        if (vehicleType == VehicleTypeEnum.METRO1
-                || vehicleType == VehicleTypeEnum.METRO2) {
+        if (vehicleType == VehicleTypeEnum.METRO
+                || vehicleType == VehicleTypeEnum.METRO1
+                || vehicleType == VehicleTypeEnum.METRO2
+                || vehicleType == VehicleTypeEnum.METRO3
+                || vehicleType == VehicleTypeEnum.METRO4) {
             vehicleType = VehicleTypeEnum.METRO;
         }
 
@@ -631,6 +637,8 @@ public class DroidTrans extends FragmentActivity {
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 vehicleNumbersArray = new String[]{getString(R.string.droid_trans_type_metro_line_1)};
                 break;
             default:

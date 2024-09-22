@@ -150,6 +150,8 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 historySubtitle = String
                         .format(context
                                         .getString(R.string.history_item_metro_station_number_text),
@@ -217,6 +219,8 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 historyImage = R.drawable.ic_history_metro;
                 break;
             default:

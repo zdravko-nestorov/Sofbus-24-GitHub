@@ -1076,8 +1076,11 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 historyType = context
                         .getString(R.string.cs_map_type_bus_trolley_tram);
                 break;
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 historyType = context.getString(R.string.cs_map_type_metro);
                 break;
             default:
@@ -1119,8 +1122,11 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             case TRAM_TROLLEY:
                 markerIcon = R.drawable.ic_trolley_tram_map_marker;
                 break;
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 markerIcon = R.drawable.ic_metro_map_marker;
                 break;
             default:
