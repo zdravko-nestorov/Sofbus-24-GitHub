@@ -1,5 +1,8 @@
 package bg.znestorov.sofbus24.entity;
 
+import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_EXPIRATION_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_URL_COOKIES_API;
+
 import android.app.Application;
 import android.content.pm.PackageManager;
 
@@ -10,12 +13,15 @@ import com.huawei.hms.api.HuaweiApiAvailability;
 
 import org.xms.g.common.ConnectionResult;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.MapUtils;
+import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Global class that extends Application and save state across several
@@ -45,8 +51,9 @@ public class GlobalEntity extends Application {
     // Google Analytics
     private HashMap<TrackerName, Tracker> mTrackers;
 
-    private String xsrfToken;
-    private String sofiaTrafficSession;
+    private Date cookieExpiresAt;
+    private String cookieXsrfToken;
+    private String cookieSofiaTrafficSession;
 
     @Override
     public void onCreate() {
@@ -148,20 +155,41 @@ public class GlobalEntity extends Application {
         this.isHomeActivityChanged = isHomeActivityChanged;
     }
 
-    public String getXsrfToken() {
-        return "eyJpdiI6Inp1YjV3RUxxL0dvV2JYeENJaEtLckE9PSIsInZhbHVlIjoiUTFXVTMyK3JHVEx1Tkk3ZVFWL2pJM2ZxZFBOYXJ4WTlkeGgvVEVWckxLY3pkNEE0ZEhHeTAxblpJNlNScC9rSjJBYWY3c2dXUVVicjdobHFjSXlXTnBxQk1EVExCL3gxQXRlWGF4MXgwM2pVcmlGQTVWZi8vVjBlMzFsejk1bkIiLCJtYWMiOiI2ZjQxYzAzNTg3ZWI3YmExMzRjMGQ0ZDVkODE3NmMyZWQyOWVmNGJiZTA0ZGMwMGU2MDA5NTUwM2IwNjJkNzdkIiwidGFnIjoiIn0%3D";
+    public String getCookieXsrfToken() {
+        if (cookieXsrfToken != null && cookieExpiresAt != null && new Date().before(cookieExpiresAt)) {
+            return cookieXsrfToken;
+        }
+
+        resetCookies();
+        return cookieXsrfToken;
     }
 
-    public void setXsrfToken(String xsrfToken) {
-        this.xsrfToken = xsrfToken;
+    public void setCookieXsrfToken(String cookieXsrfToken) {
+        this.cookieXsrfToken = cookieXsrfToken;
     }
 
-    public String getSofiaTrafficSession() {
-        return "eyJpdiI6IkJNMXR2b1F2OXg0KzZHekxyanlUN3c9PSIsInZhbHVlIjoib3cyYnpDU3ZTUE5rUWNUbGY2cHZoZm5oODdhTE5yOHFaazhzOHZjNER4S3hEaFZFeWRSa2txKzVLcUVBdVIrWnVjdTNZOUdzNy9uRGpHc01xVWJCdC9yQTBQNUZmcGlJN3dySFY1WFhjZGZnY0l6cjVHcFgxWUFlb2pBQjJsZkYiLCJtYWMiOiJiNzIyYjY4MjcxODU3ZmJkNjQ0YWI4M2ViODRjNTlmMWE0ZDQwM2U4NDcwNDZiMTdiNmVkOWVkYjcxMzdmZjY4IiwidGFnIjoiIn0%3D";
+    public String getCookieSofiaTrafficSession() {
+        if (cookieSofiaTrafficSession != null && cookieExpiresAt != null && new Date().before(cookieExpiresAt)) {
+            return cookieSofiaTrafficSession;
+        }
+
+        resetCookies();
+        return cookieSofiaTrafficSession;
     }
 
-    public void setSofiaTrafficSession(String sofiaTrafficSession) {
-        this.sofiaTrafficSession = sofiaTrafficSession;
+    public void setCookieSofiaTrafficSession(String cookieSofiaTrafficSession) {
+        this.cookieSofiaTrafficSession = cookieSofiaTrafficSession;
+    }
+
+    public synchronized void resetCookies() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MINUTE, VB_COOKIES_EXPIRATION_API);
+        cookieExpiresAt = cal.getTime();
+        try {
+            Utils.readUrlCookies(this, VB_URL_COOKIES_API);
+        } catch (Exception ignored) {
+            // Do nothing
+        }
     }
 
     /**

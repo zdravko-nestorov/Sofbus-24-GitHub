@@ -127,6 +127,15 @@ public class Constants {
     public static final String FAVOURITES_IMAGE_HIGH_URL = "https://geo0.ggpht.com/cbk?cb_client=maps_sv.tactile&output=thumbnail&thumb=2&w=500&h=165&yaw=8&pitch=-15&ll=%s,%s";
 
     /**
+     * SKGT Cookies
+     */
+    public static final String VB_URL_COOKIES_API = "https://www.sofiatraffic.bg/bg/get-envs";
+
+    public static final int VB_COOKIES_EXPIRATION_API = 15;
+    public static final String VB_COOKIES_XSRF_TOKEN_API = "XSRF-TOKEN";
+    public static final String VB_COOKIES_SOFIA_TRAFFIC_SESSION_API = "sofia_traffic_session";
+
+    /**
      * Virtual Boards API
      */
     public static final String VB_URL_VIRTUAL_TABLE_API = "https://www.sofiatraffic.bg/bg/trip/getVirtualTable";

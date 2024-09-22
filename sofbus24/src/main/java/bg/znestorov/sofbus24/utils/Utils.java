@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.utils;
 
+import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_SOFIA_TRAFFIC_SESSION_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_XSRF_TOKEN_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_URL_VIRTUAL_TABLE_API;
 
 import android.annotation.SuppressLint;
@@ -1708,6 +1710,61 @@ public class Utils {
     }
 
     /**
+     * Read a given URL and get the information in TEXT format
+     *
+     * @param urlString the URL that will be read
+     * @return the content of the URL address
+     */
+    public static void readUrlCookies(Context context, String urlString, Object... params) throws Exception {
+        GlobalEntity globalEntity = (GlobalEntity) context.getApplicationContext();
+
+        // Create a new scanner to download the URL content
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(String.format(urlString, params)).openConnection();
+            List<String> cookies = connection.getHeaderFields().get("Set-Cookie");
+            initSkgtCookies(cookies, globalEntity);
+        } catch (FileNotFoundException ignored) {
+            // Do nothing
+        }
+    }
+
+    private static void initSkgtCookies(List<String> cookies, GlobalEntity globalEntity) {
+        if (cookies == null) {
+            return;
+        }
+
+        for (String cookie : cookies) {
+            if (Utils.isEmpty(cookie)) {
+                continue;
+            }
+
+            // Null-safe split operation
+            String[] cookieSegments = cookie.split(";");
+            if (cookieSegments.length == 0 || Utils.isEmpty(cookieSegments[0])) {
+                continue;
+            }
+
+            String[] cookieParts = cookieSegments[0].split("=");
+            if (cookieParts.length != 2 || Utils.isEmpty(cookieParts[0])) {
+                continue;
+            }
+
+            String cookieName = cookieParts[0];
+            String cookieValue = cookieParts[1];
+
+            switch (cookieName) {
+                case VB_COOKIES_XSRF_TOKEN_API:
+                    globalEntity.setCookieXsrfToken(cookieValue);
+                    break;
+                case VB_COOKIES_SOFIA_TRAFFIC_SESSION_API:
+                    globalEntity.setCookieSofiaTrafficSession(cookieValue);
+                    break;
+            }
+        }
+    }
+
+
+    /**
      * Read the virtual boards URL and get the information in TEXT format
      *
      * @param context the current context
@@ -1722,7 +1779,7 @@ public class Utils {
                     ? String.format("{\"stop\":\"%s\", \"type\":\"3\"}", Integer.parseInt(station.getNumber()) - 100000)
                     : String.format("{\"stop\":\"%s\"}", station.getFormattedNumber());
             Scanner scanner = new Scanner(
-                    openUrlConnection(context, VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
+                    openUrlPostConnection(context, VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
                     "UTF-8");
 
             // The regular expression "\\A" matches the beginning of input. This tells Scanner
@@ -1733,7 +1790,7 @@ public class Utils {
         }
     }
 
-    public static HttpURLConnection openUrlConnection(Context context, String url, String requestBody) throws Exception {
+    public static HttpURLConnection openUrlPostConnection(Context context, String url, String requestBody) throws Exception {
         GlobalEntity globalEntity = (GlobalEntity) context.getApplicationContext();
 
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
@@ -1741,11 +1798,11 @@ public class Utils {
         connection.setRequestProperty("content-type", "application/json");
 
         String cookie = String.format("XSRF-TOKEN=%s; sofia_traffic_session=%s",
-                globalEntity.getXsrfToken(), globalEntity.getSofiaTrafficSession());
+                globalEntity.getCookieXsrfToken(), globalEntity.getCookieSofiaTrafficSession());
         connection.setRequestProperty("cookie", cookie);
 
         String xsrfToken = String.format("%s",
-                URLDecoder.decode(globalEntity.getXsrfToken(), StandardCharsets.UTF_8.name()));
+                URLDecoder.decode(globalEntity.getCookieXsrfToken(), StandardCharsets.UTF_8.name()));
         connection.setRequestProperty("x-xsrf-token", xsrfToken);
 
         // Writing the data to the output stream
