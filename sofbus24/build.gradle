@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.huawei.agconnect'
-apply from: '../xmsadapter/scripts/productFlavor.gradle'
 
 android {
     compileSdkVersion 34
@@ -9,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "bg.znestorov.sofbus24.main"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 34
         multiDexEnabled true
         resConfigs "bg", "en", "en-rGB"
@@ -37,11 +35,6 @@ dependencies {
     implementation project(':pagerSlidingTabStrip')
     implementation project(':rollWheelPicker')
 
-    // Local HMS projects
-    implementation project(':xmsadapter')
-    implementation project(':xmsadapter:xmsaux')
-    compileOnly project(':xmsadapter:xmsaux:xapi')
-
     // Backup/restore libraries
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'net.lingala.zip4j:zip4j:2.9.0'
@@ -57,10 +50,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.google.android.gms:play-services-maps:18.2.0'
     implementation 'com.google.android.material:material:1.4.0'
-
-    // HMS libraries
-    implementation 'com.huawei.hms:location:6.7.0.300'
-    implementation 'com.huawei.hms:maps:6.6.1.301'
 
     // AndroidX libraries
     implementation 'androidx.appcompat:appcompat:1.3.0'

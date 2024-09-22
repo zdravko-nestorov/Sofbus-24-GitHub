@@ -14,18 +14,18 @@ import android.widget.Toast;
 
 import androidx.fragment.app.FragmentActivity;
 
-import org.xms.g.location.FusedLocationProviderClient;
-import org.xms.g.location.LocationCallback;
-import org.xms.g.maps.CameraUpdateFactory;
-import org.xms.g.maps.ExtensionMap;
-import org.xms.g.maps.ExtensionMap.OnMyLocationButtonClickListener;
-import org.xms.g.maps.OnMapReadyCallback;
-import org.xms.g.maps.SupportMapFragment;
-import org.xms.g.maps.model.BitmapDescriptorFactory;
-import org.xms.g.maps.model.CameraPosition;
-import org.xms.g.maps.model.LatLng;
-import org.xms.g.maps.model.Marker;
-import org.xms.g.maps.model.MarkerOptions;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -52,7 +52,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
     private VehiclesDataSource vehiclesDatasource;
 
     private SupportMapFragment mapFragment;
-    private ExtensionMap stationMap;
+    private GoogleMap stationMap;
     private FusedLocationProviderClient locationProviderClient;
     private LocationCallback locationCallback;
     private LatLng centerStationLocation;
@@ -142,7 +142,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
      */
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(ExtensionMap map) {
+    public void onMapReady(GoogleMap map) {
         stationMap = map;
 
         // Check if the station map is found
@@ -218,8 +218,8 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
             case R.id.action_sm_google_street_view:
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                            + centerStationLocation.getLatitude() + ","
-                            + centerStationLocation.getLongitude());
+                            + centerStationLocation.latitude + ","
+                            + centerStationLocation.longitude);
                     Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                             streetViewUri);
                     streetViewIntent.setPackage("com.google.android.apps.maps");
@@ -234,7 +234,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
@@ -245,7 +245,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
@@ -256,7 +256,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
@@ -267,7 +267,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();

@@ -18,22 +18,22 @@ import android.widget.Toast;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import org.xms.g.location.FusedLocationProviderClient;
-import org.xms.g.location.LocationCallback;
-import org.xms.g.maps.CameraUpdateFactory;
-import org.xms.g.maps.ExtensionMap;
-import org.xms.g.maps.ExtensionMap.OnInfoWindowClickListener;
-import org.xms.g.maps.ExtensionMap.OnMapClickListener;
-import org.xms.g.maps.ExtensionMap.OnMarkerClickListener;
-import org.xms.g.maps.ExtensionMap.OnMyLocationButtonClickListener;
-import org.xms.g.maps.OnMapReadyCallback;
-import org.xms.g.maps.SupportMapFragment;
-import org.xms.g.maps.model.BitmapDescriptorFactory;
-import org.xms.g.maps.model.CameraPosition;
-import org.xms.g.maps.model.LatLng;
-import org.xms.g.maps.model.Marker;
-import org.xms.g.maps.model.MarkerOptions;
-import org.xms.g.maps.model.PolylineOptions;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,7 +70,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
     private DirectionsEntity directionsEntity;
     private SupportMapFragment mapFragment;
-    private ExtensionMap stationMap;
+    private GoogleMap stationMap;
     private FusedLocationProviderClient locationProviderClient;
     private LocationCallback locationCallback;
     private View stationRouteLines;
@@ -191,7 +191,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
      */
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(ExtensionMap map) {
+    public void onMapReady(GoogleMap map) {
         stationMap = map;
         stationRouteLines = findViewById(R.id.station_route_lines);
 
@@ -272,8 +272,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     if (currentMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                                + currentMarkerLatLng.getLatitude() + ","
-                                + currentMarkerLatLng.getLongitude());
+                                + currentMarkerLatLng.latitude + ","
+                                + currentMarkerLatLng.longitude);
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
                         streetViewIntent.setPackage("com.google.android.apps.maps");
@@ -294,7 +294,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
@@ -305,7 +305,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
@@ -316,7 +316,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
@@ -327,7 +327,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                     return true;
                 }
 
-                stationMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
+                stationMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
@@ -527,8 +527,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Create an object consisted of a set of all points of the route
         PolylineOptions ptRouteOptions = new PolylineOptions().width(
-                getResources()
-                        .getInteger(R.integer.google_map_route_line_width))
+                        getResources()
+                                .getInteger(R.integer.google_map_route_line_width))
                 .color(Color.parseColor("#2B8FD9"));
 
         // Process all stations of the public transport route

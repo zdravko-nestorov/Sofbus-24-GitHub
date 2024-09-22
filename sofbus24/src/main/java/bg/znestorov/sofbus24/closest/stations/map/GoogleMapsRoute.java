@@ -10,11 +10,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.xms.g.maps.model.LatLng;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -118,9 +119,9 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
                 "," +
                 currentLocation.getLongitude() +
                 "&destination=" + // to
-                latLng.getLatitude() +
+                latLng.latitude +
                 "," +
-                latLng.getLongitude() +
+                latLng.longitude +
                 "&sensor=false&mode=walking&alternatives=true&key=" +
                 context.getString(R.string.google_maps_api_2_map_release_home);
     }
@@ -139,18 +140,18 @@ public class GoogleMapsRoute extends AsyncTask<Void, Void, String> {
             // https://developers.google.com/maps/documentation/urls/get-started#directions-action
             return "https://www.google.com/maps/dir/?api=1" +
                     "&destination=" + // to
-                    latLng.getLatitude() +
+                    latLng.latitude +
                     "," +
-                    latLng.getLongitude() +
+                    latLng.longitude +
                     "&travelmode=walking";
         } else {
             // MapKit Navigation:
             // https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/petal-maps-application-navigation-0000001060038018
             return "mapapp://navigation" +
                     "?daddr=" + // to
-                    latLng.getLatitude() +
+                    latLng.latitude +
                     "," +
-                    latLng.getLongitude() +
+                    latLng.longitude +
                     "&type=walk";
         }
     }

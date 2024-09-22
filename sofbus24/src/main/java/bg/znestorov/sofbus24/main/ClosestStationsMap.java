@@ -28,28 +28,29 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xms.g.common.ConnectionResult;
-import org.xms.g.common.ExtensionPlayServicesUtil;
-import org.xms.g.location.FusedLocationProviderClient;
-import org.xms.g.location.LocationCallback;
-import org.xms.g.maps.CameraUpdateFactory;
-import org.xms.g.maps.ExtensionMap;
-import org.xms.g.maps.ExtensionMap.OnInfoWindowClickListener;
-import org.xms.g.maps.ExtensionMap.OnMapClickListener;
-import org.xms.g.maps.ExtensionMap.OnMapLongClickListener;
-import org.xms.g.maps.ExtensionMap.OnMarkerClickListener;
-import org.xms.g.maps.OnMapReadyCallback;
-import org.xms.g.maps.SupportMapFragment;
-import org.xms.g.maps.model.BitmapDescriptorFactory;
-import org.xms.g.maps.model.CameraPosition;
-import org.xms.g.maps.model.LatLng;
-import org.xms.g.maps.model.Marker;
-import org.xms.g.maps.model.MarkerOptions;
-import org.xms.g.maps.model.Polyline;
-import org.xms.g.maps.model.PolylineOptions;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -121,7 +122,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     private boolean positionFocus;
     private BigDecimal stationsRadius;
     private SupportMapFragment mapFragment;
-    private ExtensionMap csMap;
+    private GoogleMap csMap;
     private FusedLocationProviderClient locationProviderClient;
     private LocationCallback locationCallback;
     private Location previousLocation;
@@ -314,7 +315,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      */
     @SuppressLint("MissingPermission")
     @Override
-    public void onMapReady(ExtensionMap map) {
+    public void onMapReady(GoogleMap map) {
         csMap = map;
 
         // Enabling MyLocation Layer of the map and the corresponding
@@ -508,13 +509,13 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
         // Verify that the Google Play services APK is available and up-to-date
         // on this device
-        int status = ExtensionPlayServicesUtil
+        int status = GooglePlayServicesUtil
                 .isGooglePlayServicesAvailable(context);
 
         // Check if Google Play Services are available or not
-        if (status != ConnectionResult.getSUCCESS()) {
+        if (status != ConnectionResult.SUCCESS) {
             int requestCode = 10;
-            Dialog dialog = ExtensionPlayServicesUtil.getErrorDialog(status, this,
+            Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this,
                     requestCode);
             dialog.show();
         } else {
@@ -624,8 +625,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 if (globalContext.isGoogleStreetViewAvailable()) {
                     if (selectedMarkerLatLng != null) {
                         Uri streetViewUri = Uri.parse("google.streetview:cbll="
-                                + selectedMarkerLatLng.getLatitude() + ","
-                                + selectedMarkerLatLng.getLongitude());
+                                + selectedMarkerLatLng.latitude + ","
+                                + selectedMarkerLatLng.longitude);
                         Intent streetViewIntent = new Intent(Intent.ACTION_VIEW,
                                 streetViewUri);
                         streetViewIntent.setPackage("com.google.android.apps.maps");
@@ -667,7 +668,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     return true;
                 }
 
-                csMap.setMapType(ExtensionMap.getMAP_TYPE_NORMAL());
+                csMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_normal)),
                         Toast.LENGTH_SHORT).show();
@@ -679,7 +680,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     return true;
                 }
 
-                csMap.setMapType(ExtensionMap.getMAP_TYPE_TERRAIN());
+                csMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_terrain)),
                         Toast.LENGTH_SHORT).show();
@@ -691,7 +692,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     return true;
                 }
 
-                csMap.setMapType(ExtensionMap.getMAP_TYPE_SATELLITE());
+                csMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_satellite)),
                         Toast.LENGTH_SHORT).show();
@@ -703,7 +704,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                     return true;
                 }
 
-                csMap.setMapType(ExtensionMap.getMAP_TYPE_HYBRID());
+                csMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
                 Toast.makeText(context,
                         Html.fromHtml(getString(R.string.cs_map_hybrid)),
                         Toast.LENGTH_SHORT).show();
@@ -746,8 +747,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
         // Create a location object according to the tapped position
         Location tapLocation = new Location("");
-        tapLocation.setLatitude(point.getLatitude());
-        tapLocation.setLongitude(point.getLongitude());
+        tapLocation.setLatitude(point.latitude);
+        tapLocation.setLongitude(point.longitude);
 
         // Showing the current location and zoom it in the map
         animateMapFocus(tapLocation, true);
@@ -787,7 +788,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                 cameraPosition = new CameraPosition.Builder()
                         .target(new LatLng(location.getLatitude(), location
                                 .getLongitude()))
-                        .zoom(csMap.getCameraPosition().getZoom()).build();
+                        .zoom(csMap.getCameraPosition().zoom).build();
             }
 
             csMap.animateCamera(CameraUpdateFactory
@@ -973,8 +974,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
                 // Add the point to the map
                 Polyline polyline = csMap.addPolyline(new PolylineOptions()
-                        .add(new LatLng(src.getLatitude(), src.getLongitude()),
-                                new LatLng(dest.getLatitude(), dest.getLongitude()))
+                        .add(new LatLng(src.latitude, src.longitude),
+                                new LatLng(dest.latitude, dest.longitude))
                         .width(getResources().getInteger(R.integer.google_map_route_line_width))
                         .color(Color.BLUE).geodesic(true));
 

@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.xms.g.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;
 

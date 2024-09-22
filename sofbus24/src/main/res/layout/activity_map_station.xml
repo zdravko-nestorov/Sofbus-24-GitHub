@@ -4,7 +4,7 @@
 
     <fragment
         android:id="@+id/station_map"
-        class="org.xms.g.maps.SupportMapFragment"
+        class="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

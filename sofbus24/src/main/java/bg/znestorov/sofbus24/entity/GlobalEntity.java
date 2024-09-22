@@ -8,10 +8,8 @@ import android.content.pm.PackageManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
-import com.huawei.hms.api.HuaweiApiAvailability;
-
-import org.xms.g.common.ConnectionResult;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -20,7 +18,6 @@ import java.util.HashMap;
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.HmsUtils;
-import bg.znestorov.sofbus24.utils.MapUtils;
 import bg.znestorov.sofbus24.utils.Utils;
 
 /**
@@ -58,18 +55,6 @@ public class GlobalEntity extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        try {
-            // Initialize HMS prerequisites (isHms property)
-            org.xms.g.utils.GlobalEnvSetting.init(this, null);
-            org.xms.adapter.utils.XLoader.init(this);
-
-            // Set the HMS map API key
-            MapUtils.setHmsMapApiKey(this);
-
-        } catch (Exception e) {
-            // Do nothing as it can happen only on old Huawei devices
-        }
 
         // Initialize Sofbus 24 prerequisites
         initialize();
@@ -252,7 +237,7 @@ public class GlobalEntity extends Application {
         if (HmsUtils.isGms()) {
             // Google Mobile Services
             areServicesAvailable = GoogleApiAvailability.getInstance()
-                    .isGooglePlayServicesAvailable(this) == ConnectionResult.getSUCCESS();
+                    .isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS;
 
             // Google Street View
             try {
@@ -263,10 +248,6 @@ public class GlobalEntity extends Application {
             }
 
         } else {
-            // Huawei Mobile Services
-            areServicesAvailable = HuaweiApiAvailability.getInstance()
-                    .isHuaweiMobileServicesAvailable(this) == ConnectionResult.getSUCCESS();
-
             // Google Street View
             isGoogleStreetViewAvailable = false;
         }

@@ -9,10 +9,10 @@ package bg.znestorov.sofbus24.utils;
 public class HmsUtils {
 
     public static boolean isGms() {
-        return !HmsUtils.isHms();
+        return !isHms();
     }
 
     public static boolean isHms() {
-        return org.xms.g.utils.GlobalEnvSetting.isHms();
+        return false;
     }
 }

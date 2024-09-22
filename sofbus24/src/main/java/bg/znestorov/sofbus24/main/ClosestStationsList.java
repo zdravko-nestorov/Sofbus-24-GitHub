@@ -15,12 +15,11 @@ import android.widget.ProgressBar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-
-import org.xms.g.maps.model.LatLng;
 
 import bg.znestorov.sofbus24.closest.stations.list.ClosestStationsListFragment;
 import bg.znestorov.sofbus24.closest.stations.map.RetrieveCurrentLocation;
@@ -127,8 +126,7 @@ public class ClosestStationsList extends FragmentActivity {
      */
     private void initBundleInfo() {
         Bundle extras = getIntent().getExtras();
-        currentLocation = LatLng.dynamicCast(extras
-                .get(Constants.BUNDLE_CLOSEST_STATIONS_LIST));
+        currentLocation = (LatLng) extras.get(Constants.BUNDLE_CLOSEST_STATIONS_LIST);
     }
 
     /**
@@ -171,9 +169,9 @@ public class ClosestStationsList extends FragmentActivity {
                             if (globalContext.isGoogleStreetViewAvailable()) {
                                 Uri streetViewUri = Uri
                                         .parse("google.streetview:cbll="
-                                                + currentLocation.getLatitude()
+                                                + currentLocation.latitude
                                                 + ","
-                                                + currentLocation.getLongitude());
+                                                + currentLocation.longitude);
                                 Intent streetViewIntent = new Intent(
                                         Intent.ACTION_VIEW, streetViewUri);
                                 streetViewIntent.setPackage("com.google.android.apps.maps");
@@ -293,8 +291,8 @@ public class ClosestStationsList extends FragmentActivity {
      * @return current location image URL
      */
     private String getImageUrl() {
-        double lat = currentLocation.getLatitude();
-        double lon = currentLocation.getLongitude();
+        double lat = currentLocation.latitude;
+        double lon = currentLocation.longitude;
 
         // Check if the current location is initialized and not Sofia Center
         if (MapUtils.isNotDefaultMapLocation(lat, lon)) {

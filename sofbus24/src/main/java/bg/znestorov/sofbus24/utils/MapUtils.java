@@ -1,5 +1,6 @@
 package bg.znestorov.sofbus24.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
@@ -14,18 +15,16 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.huawei.hms.maps.MapsInitializer;
-
-import org.xms.g.location.FusedLocationProviderClient;
-import org.xms.g.location.LocationCallback;
-import org.xms.g.location.LocationRequest;
-import org.xms.g.location.LocationResult;
-import org.xms.g.location.LocationServices;
-import org.xms.g.maps.SupportMapFragment;
-import org.xms.g.maps.model.LatLng;
-import org.xms.g.utils.Function;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.math.BigDecimal;
+import java.util.function.Function;
 
 import bg.znestorov.sofbus24.closest.stations.map.LocationSourceDialog;
 import bg.znestorov.sofbus24.entity.StationEntity;
@@ -89,7 +88,7 @@ public class MapUtils {
         return LocationRequest.create()
                 .setInterval(10_000)
                 .setFastestInterval(5_000)
-                .setPriority(LocationRequest.getPRIORITY_BALANCED_POWER_ACCURACY());
+                .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
     }
 
     /**
@@ -119,6 +118,7 @@ public class MapUtils {
      * @param providerClient   current location provider client
      * @param locationCallback callback for the location updates
      */
+    @SuppressLint("MissingPermission")
     public static void requestLocationUpdates(FusedLocationProviderClient providerClient,
                                               LocationCallback locationCallback) {
         if (providerClient == null || locationCallback == null) {
@@ -271,8 +271,8 @@ public class MapUtils {
      */
     private static Location getLocation(LatLng latLng) {
         Location location = new Location("");
-        location.setLatitude(latLng.getLatitude());
-        location.setLongitude(latLng.getLongitude());
+        location.setLatitude(latLng.latitude);
+        location.setLongitude(latLng.longitude);
 
         return location;
     }
@@ -332,17 +332,6 @@ public class MapUtils {
     }
 
     /**
-     * Set the HMS map API key.
-     *
-     * @param context the current activity context
-     */
-    public static void setHmsMapApiKey(Context context) {
-        if (HmsUtils.isHms()) {
-            MapsInitializer.setApiKey(context.getString(R.string.huawei_maps_api_2_map_release_home));
-        }
-    }
-
-    /**
      * Initial map setup.
      *
      * @param context the current activity context
@@ -350,8 +339,7 @@ public class MapUtils {
      * @return the {@link SupportMapFragment} associated with the current activity
      */
     public static SupportMapFragment initializeMap(FragmentActivity context, int mapId, Bundle bundle) {
-        SupportMapFragment mapFragment = SupportMapFragment.dynamicCast(
-                context.getSupportFragmentManager().findFragmentById(mapId));
+        SupportMapFragment mapFragment = (SupportMapFragment) context.getSupportFragmentManager().findFragmentById(mapId);
 
         // Retrieve the saved instance state
         Bundle mapFragmentBundle = null;
@@ -359,8 +347,7 @@ public class MapUtils {
             mapFragmentBundle = bundle.getBundle(Constants.BUNDLE_MAP_FRAGMENT);
         }
 
-        // Set the HMS map API key
-        setHmsMapApiKey(context);
+        // Set the map API key
         mapFragment.onCreate(mapFragmentBundle);
 
         return mapFragment;
