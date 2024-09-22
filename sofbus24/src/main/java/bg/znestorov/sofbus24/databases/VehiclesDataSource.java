@@ -260,7 +260,7 @@ public class VehiclesDataSource {
                 vehicleType.deleteCharAt(vehicleType.length() - 1);
 
                 try {
-                    return VehicleTypeEnum.valueOf(vehicleType.toString());
+                    return VehicleTypeEnum.valueOf(formatVehicleType(vehicleType));
                 } catch (Exception e) {
                     return vehicleTypeEnum;
                 }
@@ -270,5 +270,12 @@ public class VehiclesDataSource {
         } catch (Exception e) {
             return vehicleTypeEnum;
         }
+    }
+
+    private static String formatVehicleType(StringBuilder vehicleType) {
+        if (vehicleType.toString().contains(VehicleTypeEnum.METRO.name())) {
+            return VehicleTypeEnum.METRO.name();
+        }
+        return vehicleType.toString();
     }
 }
