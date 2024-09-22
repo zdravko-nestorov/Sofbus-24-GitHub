@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcel;
 import android.os.StatFs;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
@@ -1932,6 +1934,23 @@ public class Utils {
         // It seems to have a problem with the TalkBack extensions and SDK version is not important
         // return Build.VERSION.SDK_INT >= Build.VERSION_CODES.R || !Utils.isBlindMode(context);
         return !Utils.isBlindMode(context);
+    }
+
+    /**
+     * Get the bundle size in bytes
+     *
+     * @param bundle the bundle
+     * @return the bundle size
+     */
+    public static int getBundleSizeInBytes(Bundle bundle) {
+        Parcel parcel = Parcel.obtain();
+        int size;
+
+        parcel.writeBundle(bundle);
+        size = parcel.dataSize();
+        parcel.recycle();
+
+        return size;
     }
 
     private static String getRemainingTimeSep(Activity context) {

@@ -282,6 +282,7 @@ public class StationsDataSource {
         query.append(" OR 													\n");
         query.append(" 		lower(" + Sofbus24SQLite.COLUMN_STAT_NAME
                 + ") LIKE '%" + searchText + "%')		 					\n");
+        query.append(" LIMIT 300											\n");
 
         // Get the stations which NUMBER or NAME contains the searched text
         try (Cursor cursor = database.rawQuery(query.toString(), null)) {
