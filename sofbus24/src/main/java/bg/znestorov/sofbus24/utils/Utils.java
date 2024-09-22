@@ -1727,7 +1727,7 @@ public class Utils {
             // to tokenize the entire stream, from beginning to (illogical) next beginning
             return scanner.useDelimiter("\\A").next();
         } catch (FileNotFoundException fnfe) {
-            return "{}";
+            return null;
         }
     }
 

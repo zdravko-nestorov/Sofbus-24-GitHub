@@ -15,6 +15,7 @@ import java.util.List;
 
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
 
 /**
@@ -73,6 +74,7 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
         String historyValue = history.getHistoryValue();
         String searchName = Utils.getValueBefore(historyValue, "(");
         String searchNumber = Utils.getValueBetweenLast(historyValue, "(", ")");
+        searchNumber = TranslatorCyrillicToLatin.translate(context, searchNumber);
 
         viewHolder.searchImage.setImageResource(getHistoryImage(history));
         viewHolder.searchText.setText(Html.fromHtml(getHistoryTitle(
