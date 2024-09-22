@@ -158,6 +158,35 @@ public class StationsDataSource {
     }
 
     /**
+     * Check if a station exists in the DB
+     *
+     * @param skgtExtId the SGKT ext_id
+     * @return the station if it is found in the DB and null otherwise
+     */
+    public StationEntity getStationViaExtId(String skgtExtId) {
+        // Selecting the row that contains the station data
+        try (Cursor cursor = database
+                .query(Sofbus24SQLite.TABLE_SOF_STAT,
+                        allColumns,
+                        Sofbus24SQLite.COLUMN_STAT_SKGT_EXT_ID + " = ?",
+                        new String[]{skgtExtId}, null, null, null)) {
+
+            if (cursor.getCount() > 0) {
+                // Moving the cursor to the first column of the selected row
+                cursor.moveToFirst();
+
+                // Creating station object
+                return cursorToStation(cursor);
+            } else {
+                return null;
+            }
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
      * Get all stations via type from the database
      *
      * @param vehicleType type of the station

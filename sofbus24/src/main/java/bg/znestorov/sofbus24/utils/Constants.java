@@ -132,7 +132,7 @@ public class Constants {
     public static final String VB_URL_VIRTUAL_TABLE_API = "https://www.sofiatraffic.bg/bg/trip/getVirtualTable";
 
     public static final String VB_VEHICLE_NAME_API = "name";
-    public static final String VB_VEHICLE_ROUTE_ID_API = "route_id";
+    public static final String VB_VEHICLE_ROUTE_LAST_STOP_API = "last_stop";
     public static final String VB_VEHICLE_ROUTE_NAME_API = "route_name";
     public static final String VB_VEHICLE_TYPE_API = "type";
     public static final String VB_VEHICLE_EXT_ID_API = "ext_id";

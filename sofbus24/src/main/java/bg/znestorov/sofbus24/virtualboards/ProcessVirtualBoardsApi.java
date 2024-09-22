@@ -6,7 +6,7 @@ import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_BICYCLE_MOUNT_API
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_DOUBLEDECKER_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_EXT_ID_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_NAME_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ROUTE_ID_API;
+import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ROUTE_LAST_STOP_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_ROUTE_NAME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TIME_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_VEHICLE_TYPE_API;
@@ -30,7 +30,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import bg.znestorov.sofbus24.databases.DroidTransDataSource;
+import bg.znestorov.sofbus24.databases.StationsDataSource;
 import bg.znestorov.sofbus24.databases.VehiclesDataSource;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.entity.VehicleEntity;
@@ -53,8 +53,8 @@ class ProcessVirtualBoardsApi {
     private Activity context;
     private StationEntity station;
     private VehicleEntity vehicle;
+    private StationsDataSource stationsDataSource;
     private VehiclesDataSource vehicleDatasource;
-    private DroidTransDataSource droidTransDatasource;
     private String jsonResult;
     private final Date currentDate;
     private final String language;
@@ -63,8 +63,8 @@ class ProcessVirtualBoardsApi {
         this.context = context;
         this.station = station;
         this.vehicle = vehicle;
+        this.stationsDataSource = new StationsDataSource(context);
         this.vehicleDatasource = new VehiclesDataSource(context);
-        this.droidTransDatasource = new DroidTransDataSource(context);
         this.jsonResult = jsonResult;
         this.currentDate = new Date();
         this.language = LanguageChange.getUserLocale(context);
@@ -132,13 +132,13 @@ class ProcessVirtualBoardsApi {
 
         // Get the Vehicle direction from the current request in the appropriate language
         String direction = getAsJsonString(vehicleJsonObject, VB_VEHICLE_ROUTE_NAME_API);
-        String route = getAsJsonString(vehicleJsonObject, VB_VEHICLE_ROUTE_ID_API);
+        String lastStopExtId = getAsJsonString(vehicleJsonObject, VB_VEHICLE_ROUTE_LAST_STOP_API);
 
         // Retrieve the correct direction name
-        droidTransDatasource.open();
-        String dbDirection = droidTransDatasource.getVehicleDirectionViaVehicleRoute(route);
-        direction = dbDirection != null ? dbDirection : direction;
-        droidTransDatasource.close();
+        stationsDataSource.open();
+        StationEntity dbStation = stationsDataSource.getStationViaExtId(lastStopExtId);
+        direction = dbStation != null ? "⮕ " + dbStation.getName() : direction;
+        stationsDataSource.close();
 
         if (!"bg".equals(language)) {
             direction = TranslatorCyrillicToLatin.translate(context, direction);
