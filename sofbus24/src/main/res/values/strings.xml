@@ -379,7 +379,7 @@
     <string name="metro_search_tab_direction2">Маршрут 2</string>
     <string name="metro_item_settings_title">Настройки</string>
     <string name="metro_item_station_number_text" formatted="false" tools:ignore="StringFormatInvalid">Метростанция номер: %s</string>
-    <string name="metro_item_station_number_text_sign" formatted="false">Станция %s</string>
+    <string name="metro_item_station_number_text_sign" formatted="false">Метростанция %s</string>
     <string name="metro_item_empty_list" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Няма намерени метростанции за <b>%s</b> в посока <b>%s</b>. Моля опитайте с други критерии за търсене.]]></string>
     <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Изчертаване на маршрута…]]></string>
     <string name="metro_loading_schedule" formatted="false" tools:ignore="StringFormatInvalid"><![CDATA[Извличане на разписанието за спирка <b><i>%s (%s)</b></i>…]]></string>
