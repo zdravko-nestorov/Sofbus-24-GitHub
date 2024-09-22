@@ -925,15 +925,6 @@ public class Utils {
             }
         }
 
-        // Get the search type
-        if (historyType == VehicleTypeEnum.METRO
-                || historyType == VehicleTypeEnum.METRO1
-                || historyType == VehicleTypeEnum.METRO2
-                || historyType == VehicleTypeEnum.METRO3
-                || historyType == VehicleTypeEnum.METRO4) {
-            historyType = VehicleTypeEnum.METRO;
-        }
-
         // Create the current/last HistoryEntity and searchNumber
         int lastSearchNumber = history.getLastSearchNumber();
         HistoryEntity lastHistoryEntity = history.getLastHistoryEntity(context);

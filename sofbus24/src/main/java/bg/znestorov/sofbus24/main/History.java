@@ -33,6 +33,7 @@ import bg.znestorov.sofbus24.schedule.ScheduleVehicleInfo;
 import bg.znestorov.sofbus24.utils.Constants;
 import bg.znestorov.sofbus24.utils.LanguageChange;
 import bg.znestorov.sofbus24.utils.ThemeChange;
+import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.ListActivity;
@@ -128,6 +129,7 @@ public class History extends ListActivity implements
         // Get the station number and station name of the search
         String searchNumber = Utils.getValueBetweenLast(
                 history.getHistoryValue(), "(", ")").trim();
+        searchNumber = TranslatorCyrillicToLatin.translate(context, searchNumber);
         String searchName = Utils
                 .getValueBefore(history.getHistoryValue(), "(");
         VehicleTypeEnum historyType = history.getHistoryType();
@@ -135,10 +137,6 @@ public class History extends ListActivity implements
         // Check the type of station and retrieve the information accordingly
         switch (historyType) {
             case METRO:
-            case METRO1:
-            case METRO2:
-            case METRO3:
-            case METRO4:
             case BTT:
 
                 // Get the corresponding station to the station number via the

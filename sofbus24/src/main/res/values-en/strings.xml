@@ -406,6 +406,7 @@
     <string name="history_title_bus" formatted="false">Bus %s</string>
     <string name="history_title_trolley" formatted="false">Trolleybus %s</string>
     <string name="history_title_tram" formatted="false">Tram %s</string>
+    <string name="history_title_metro" formatted="false">Subway %s</string>
     <string name="history_item_station_number" formatted="false">Station number: %s</string>
     <string name="history_item_metro_station_number_text" formatted="false">Subway station number: %s</string>
     <string name="history_item_search_date" formatted="false"><![CDATA[<i><font color="#FF4747">[%s] Search from %s</font></i>]]></string>

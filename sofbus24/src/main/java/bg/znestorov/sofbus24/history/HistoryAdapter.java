@@ -112,6 +112,13 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
                 historyTitle = context.getString(R.string.history_title_tram,
                         searchNumber);
                 break;
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
+                historyTitle = context.getString(R.string.history_title_metro,
+                        searchNumber);
+                break;
             default:
                 historyTitle = searchName;
                 if (historyTitle.startsWith("METR. ")
@@ -145,13 +152,13 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
             case BUS:
             case TROLLEY:
             case TRAM:
-                historySubtitle = searchName;
-                break;
-            case METRO:
             case METRO1:
             case METRO2:
             case METRO3:
             case METRO4:
+                historySubtitle = searchName;
+                break;
+            case METRO:
                 historySubtitle = String
                         .format(context
                                         .getString(R.string.history_item_metro_station_number_text),
