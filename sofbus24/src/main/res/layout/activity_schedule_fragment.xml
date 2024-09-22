@@ -49,11 +49,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="-1sp"
+            android:layout_marginRight="-1sp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_middle_unselected"
+            android:gravity="center"
+            android:padding="9sp"
+            android:text="@string/sch_search_tab_tram"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/inner_tab_grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/schedule_metro_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@drawable/tab_right_unselected"
             android:gravity="center"
             android:padding="9sp"
-            android:text="@string/sch_search_tab_tram"
+            android:text="@string/sch_search_tab_metro"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/inner_tab_grey"
             android:textSize="14sp" />

@@ -249,8 +249,11 @@ public class ScheduleVehicleFragment extends ListFragment implements
             case 1:
                 activeTabName = getString(R.string.sch_search_tab_trolley);
                 break;
-            default:
+            case 2:
                 activeTabName = getString(R.string.sch_search_tab_tram);
+                break;
+            default:
+                activeTabName = getString(R.string.sch_search_tab_metro);
                 break;
         }
 

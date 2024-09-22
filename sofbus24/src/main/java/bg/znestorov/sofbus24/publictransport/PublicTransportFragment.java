@@ -127,7 +127,7 @@ public class PublicTransportFragment extends ListFragment {
         PublicTransportStationEntity ptStation;
         Object itemObject = getListAdapter().getItem(position);
 
-        // Check the type of the station (in case of local cache, the station si
+        // Check the type of the station (in case of local cache, the station is
         // standard StationEntity)
         if (itemObject instanceof PublicTransportStationEntity) {
             ptStation = (PublicTransportStationEntity) getListAdapter()

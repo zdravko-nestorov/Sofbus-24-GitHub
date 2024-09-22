@@ -160,13 +160,13 @@
     <string name="cs_map_subtitle" formatted="false">Stations within %s meters radius: %s</string>
     <string name="cs_map_type_btt">Public Transport</string>
     <string name="cs_map_type_bus">Buses</string>
-    <string name="cs_map_type_trolley">Trolleys</string>
+    <string name="cs_map_type_trolley">Trolleybuses</string>
     <string name="cs_map_type_tram">Trams</string>
-    <string name="cs_map_type_bus_trolley">Buses and Trolleys</string>
+    <string name="cs_map_type_bus_trolley">Buses and Trolleybuses</string>
     <string name="cs_map_type_bus_tram">Buses and Trams</string>
-    <string name="cs_map_type_trolley_tram">Trolleys and Trams</string>
-    <string name="cs_map_type_bus_trolley_tram">Buses, Trolleys and Trams</string>
-    <string name="cs_map_type_metro">Metro</string>
+    <string name="cs_map_type_trolley_tram">Trolleybuses and Trams</string>
+    <string name="cs_map_type_bus_trolley_tram">Buses, Trolleybuses and Trams</string>
+    <string name="cs_map_type_metro">Subway</string>
     <string name="cs_map_closest_stations" formatted="false"><![CDATA[Visualization of the nearest stations…]]></string>
     <string name="cs_map_fetch_route" formatted="false"><![CDATA[Drawing the route…]]></string>
     <string name="cs_map_location_error">Please wait to be located.</string>
@@ -229,14 +229,14 @@
     <string name="sofbus24_favourites_title">Favorites</string>
     <string name="sofbus24_search_title">Search</string>
     <string name="sofbus24_schedule_title">Schedule</string>
-    <string name="sofbus24_metro_title">Metro</string>
+    <string name="sofbus24_metro_title">Subway</string>
 
     <!-- Edit Tabs Fragment -->
     <string name="edit_tabs_title">Home screen</string>
     <string name="edit_tabs_favourites">Favorites</string>
     <string name="edit_tabs_search">Search</string>
     <string name="edit_tabs_schedule">Schedule</string>
-    <string name="edit_tabs_metro">Metro</string>
+    <string name="edit_tabs_metro">Subway</string>
     <string name="edit_tabs_toast">The home screen has been modified.</string>
     <string name="edit_tabs_not_saved_title">Confirmation</string>
     <string name="edit_tabs_not_saved_msg">You have made a change over the home screen. Are you sure you want to continue without saving the changes.</string>
@@ -262,7 +262,7 @@
     <string name="fav_search_hint">Search by name or number</string>
     <string name="fav_item_station_name_number_street_view" formatted="false">%s (%s) - Google Street View image</string>
     <string name="fav_item_station_number_text" formatted="false">Station number: %s</string>
-    <string name="fav_item_metro_station_number_text" formatted="false">Metro station number: %s</string>
+    <string name="fav_item_metro_station_number_text" formatted="false">Subway station number: %s</string>
     <string name="fav_item_rename_title">Rename</string>
     <string name="fav_item_rename_msg" formatted="false"><![CDATA[Change the station\'s name <b><i>%s (%s)</i></b> to:]]></string>
     <string name="fav_item_rename_hint">Enter a new name</string>
@@ -304,7 +304,7 @@
     <string name="vb_time_title">Virtual boards</string>
     <string name="vb_time_current_time" formatted="false">Information at %s</string>
     <string name="vb_time_bus" formatted="false">Bus %s</string>
-    <string name="vb_time_trolley" formatted="false">Trolley %s</string>
+    <string name="vb_time_trolley" formatted="false">Trolleybus %s</string>
     <string name="vb_time_tram" formatted="false">Tram %s</string>
     <string name="vb_time_retrieve_info" formatted="false"><![CDATA[Retrieving the times of arrival of <b><i>%s</b></i>…]]></string>
     <string name="vb_time_captcha_check" formatted="false"><![CDATA[CAPTCHA image verification…]]></string>
@@ -323,12 +323,14 @@
 
     <!-- Schedule Fragment -->
     <string name="sch_search_hint">Search by name or number</string>
-    <string name="sch_search_tab_bus">Buses</string>
-    <string name="sch_search_tab_trolley">Trolleys</string>
-    <string name="sch_search_tab_tram">Trams</string>
+    <string name="sch_search_tab_bus">Bus</string>
+    <string name="sch_search_tab_trolley">Trolleybus</string>
+    <string name="sch_search_tab_tram">Tram</string>
+    <string name="sch_search_tab_metro">Subway</string>
     <string name="sch_item_bus" formatted="false">Bus %s</string>
-    <string name="sch_item_trolley" formatted="false">Trolley %s</string>
+    <string name="sch_item_trolley" formatted="false">Trolleybus %s</string>
     <string name="sch_item_tram" formatted="false">Tram %s</string>
+    <string name="sch_item_metro" formatted="false">Subway %s</string>
     <string name="sch_item_empty_list" formatted="false"><![CDATA[No results are found for <b>%s</b> in section <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="sch_item_direction_choice">Choose a direction</string>
 
@@ -336,10 +338,12 @@
     <string name="pt_title">Schedule</string>
     <string name="pt_search_hint">Search by name or number</string>
     <string name="pt_bus" formatted="false">Bus %s</string>
-    <string name="pt_trolley" formatted="false">Trolley %s</string>
+    <string name="pt_trolley" formatted="false">Trolleybus %s</string>
     <string name="pt_tram" formatted="false">Tram %s</string>
+    <string name="pt_metro" formatted="false">Subway %s</string>
     <string name="pt_item_loading_schedule" formatted="false"><![CDATA[Retrieving the schedule for <b><i>%s</b></i>…]]></string>
     <string name="pt_item_station_number_text" formatted="false">Station number: %s</string>
+    <string name="pt_item_metro_number_text" formatted="false">Subway number: %s</string>
     <string name="pt_item_station_number_text_sign" formatted="false">Station %s</string>
     <string name="pt_item_virtual_boards">Virtual boards</string>
     <string name="pt_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
@@ -362,7 +366,7 @@
     <string name="metro_search_tab_direction1">Route 1</string>
     <string name="metro_search_tab_direction2">Route 2</string>
     <string name="metro_item_settings_title">Settings</string>
-    <string name="metro_item_station_number_text" formatted="false">Metro station number: %s</string>
+    <string name="metro_item_station_number_text" formatted="false">Subway station number: %s</string>
     <string name="metro_item_station_number_text_sign" formatted="false">Station %s</string>
     <string name="metro_item_empty_list" formatted="false"><![CDATA[No stations are found for <b>%s</b> in direction <b>%s</b>. Please try again with another search criteria.]]></string>
     <string name="metro_menu_map_route_loading" formatted="false"><![CDATA[Drawing the route…]]></string>
@@ -393,21 +397,21 @@
     <string name="history_menu_remove_all_empty_toast" formatted="false"><![CDATA[There are no searches registered in the <b>History</b> section.]]></string>
     <string name="history_list_empty_text">There are no searches registered by now or they were already deleted from the <b>History</b> section. The new ones are added automatically when looking for some information.</string>
     <string name="history_type_station">Station</string>
-    <string name="history_type_metro">Metro</string>
+    <string name="history_type_metro">Subway</string>
     <string name="history_type_bus">Bus</string>
-    <string name="history_type_trolley">Trolley</string>
+    <string name="history_type_trolley">Trolleybus</string>
     <string name="history_type_tram">Tram</string>
     <string name="history_title_bus" formatted="false">Bus %s</string>
-    <string name="history_title_trolley" formatted="false">Trolley %s</string>
+    <string name="history_title_trolley" formatted="false">Trolleybus %s</string>
     <string name="history_title_tram" formatted="false">Tram %s</string>
     <string name="history_item_station_number" formatted="false">Station number: %s</string>
-    <string name="history_item_metro_station_number_text" formatted="false">Metro station number: %s</string>
+    <string name="history_item_metro_station_number_text" formatted="false">Subway station number: %s</string>
     <string name="history_item_search_date" formatted="false"><![CDATA[<i><font color="#FF4747">[%s] Search from %s</font></i>]]></string>
 
     <!-- DroidTrans -->
     <string name="droid_trans_title">SKGT cars</string>
     <string name="droid_trans_type_bus">Bus</string>
-    <string name="droid_trans_type_trolley">Trolley</string>
+    <string name="droid_trans_type_trolley">Trolleybus</string>
     <string name="droid_trans_type_tram">Tram</string>
     <string name="droid_trans_type_metro">Subway</string>
     <string name="droid_trans_type_metro_line_1">Line 1</string>

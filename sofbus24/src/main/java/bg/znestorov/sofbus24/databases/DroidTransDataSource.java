@@ -1,5 +1,7 @@
 package bg.znestorov.sofbus24.databases;
 
+import static bg.znestorov.sofbus24.entity.VehicleTypeEnum.getStationType;
+
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -106,8 +108,11 @@ public class DroidTransDataSource {
 
         VehicleTypeEnum vehicleType = VehicleTypeEnum.valueOf(cursor
                 .getString(0));
-        if (vehicleType == VehicleTypeEnum.METRO1
-                || vehicleType == VehicleTypeEnum.METRO2) {
+        if (vehicleType == VehicleTypeEnum.METRO
+                || vehicleType == VehicleTypeEnum.METRO1
+                || vehicleType == VehicleTypeEnum.METRO2
+                || vehicleType == VehicleTypeEnum.METRO3
+                || vehicleType == VehicleTypeEnum.METRO4) {
             vehicleType = VehicleTypeEnum.METRO;
         }
 
@@ -130,11 +135,21 @@ public class DroidTransDataSource {
         String[] selectionArgs;
         switch (vehicleType) {
             case METRO:
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
                 selection = Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
                         + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
                 selectionArgs = new String[]{
+                        String.valueOf(VehicleTypeEnum.METRO),
                         String.valueOf(VehicleTypeEnum.METRO1),
-                        String.valueOf(VehicleTypeEnum.METRO2)};
+                        String.valueOf(VehicleTypeEnum.METRO2),
+                        String.valueOf(VehicleTypeEnum.METRO3),
+                        String.valueOf(VehicleTypeEnum.METRO4)};
                 break;
             default:
                 selection = Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
@@ -179,11 +194,21 @@ public class DroidTransDataSource {
         String[] selectionArgs;
         switch (vehicleType) {
             case METRO:
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
                 selection = Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
                         + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
                 selectionArgs = new String[]{
+                        String.valueOf(VehicleTypeEnum.METRO),
                         String.valueOf(VehicleTypeEnum.METRO1),
-                        String.valueOf(VehicleTypeEnum.METRO2)};
+                        String.valueOf(VehicleTypeEnum.METRO2),
+                        String.valueOf(VehicleTypeEnum.METRO3),
+                        String.valueOf(VehicleTypeEnum.METRO4)};
                 break;
             default:
                 selection = Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?";
@@ -231,12 +256,23 @@ public class DroidTransDataSource {
         String[] selectionArgs;
         switch (vehicleType) {
             case METRO:
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
                 selection = "(" + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
+                        + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? OR "
                         + Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ?) AND "
                         + Sofbus24SQLite.COLUMN_VEHI_NUMBER + " = ?";
                 selectionArgs = new String[]{
+                        String.valueOf(VehicleTypeEnum.METRO),
                         String.valueOf(VehicleTypeEnum.METRO1),
-                        String.valueOf(VehicleTypeEnum.METRO2), vehicleNumber};
+                        String.valueOf(VehicleTypeEnum.METRO2),
+                        String.valueOf(VehicleTypeEnum.METRO3),
+                        String.valueOf(VehicleTypeEnum.METRO4),
+                        vehicleNumber};
                 break;
             default:
                 selection = Sofbus24SQLite.COLUMN_VEHI_TYPE + " = ? AND "
@@ -255,10 +291,6 @@ public class DroidTransDataSource {
 
                 String vehicleDirection = cursor.getString(0).toUpperCase(
                         new Locale(LanguageChange.getUserLocale(context)));
-
-                if (vehicleType == VehicleTypeEnum.METRO) {
-                    vehicleDirection = vehicleDirection.replaceAll(" - .* - ", " - ");
-                }
 
                 // Translate to Latin if the language is different from BG
                 if (!"bg".equals(language)) {
@@ -394,8 +426,8 @@ public class DroidTransDataSource {
         query.append(" 			ON SOF_VEHI.PK_VEHI_ID = SOF_VEST.FK_VEST_VEHI_ID											\n");
         query.append(" 			AND SOF_VEHI.VEHI_NUMBER LIKE '" + vehicleNumber
                 + "'																										\n");
-        query.append(" 			AND SOF_VEHI.VEHI_TYPE LIKE '%"
-                + String.valueOf(vehicleType) + "%'																			\n");
+        query.append(" 			AND SOF_VEHI.VEHI_TYPE LIKE '%" + vehicleType + "%'		    								\n");
+        query.append(" AND SOF_STAT.STAT_TYPE LIKE '%" + getStationType(vehicleType)  + "%'	                				\n");
 
         // Selecting the row that contains the stations data
         try (Cursor cursor = database.rawQuery(query.toString(), null)) {

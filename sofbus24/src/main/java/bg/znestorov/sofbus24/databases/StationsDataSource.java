@@ -81,8 +81,9 @@ public class StationsDataSource {
         try (Cursor cursor = database
                 .query(Sofbus24SQLite.TABLE_SOF_STAT,
                         allColumns,
-                        Sofbus24SQLite.COLUMN_STAT_NUMBER + " = "
-                                + station.getNumber(), null, null, null, null)) {
+                        Sofbus24SQLite.COLUMN_STAT_NUMBER + " = ? AND " + Sofbus24SQLite.COLUMN_STAT_TYPE + " = ?",
+                        new String[]{station.getNumber(), VehicleTypeEnum.getStationType(station.getType()).name()},
+                        null, null, null)) {
 
             if (cursor.getCount() > 0) {
                 // Moving the cursor to the first column of the selected row
@@ -382,8 +383,11 @@ public class StationsDataSource {
 
                         // Check the type of the station and if it is METRO add the
                         // schedule URL to the custom field
-                        if ((foundStation.getType() == VehicleTypeEnum.METRO1 || foundStation
-                                .getType() == VehicleTypeEnum.METRO2)) {
+                        if ((foundStation.getType() == VehicleTypeEnum.METRO
+                                || foundStation.getType() == VehicleTypeEnum.METRO1
+                                || foundStation.getType() == VehicleTypeEnum.METRO2
+                                || foundStation.getType() == VehicleTypeEnum.METRO3
+                                || foundStation.getType() == VehicleTypeEnum.METRO4)) {
                             foundStation.setCustomField(String.format(
                                     Constants.METRO_STATION_URL,
                                     foundStation.getNumber()));
@@ -678,7 +682,7 @@ public class StationsDataSource {
         // Handle this case by setting the vehicle type a default value of BUS
         VehicleTypeEnum vehicleType;
         try {
-            vehicleType = VehicleTypeEnum.valueOf(cursor.getString(6));
+            vehicleType = VehicleTypeEnum.valueOf(cursor.getString(5));
         } catch (Exception e) {
             vehicleType = VehicleTypeEnum.BUS;
         }

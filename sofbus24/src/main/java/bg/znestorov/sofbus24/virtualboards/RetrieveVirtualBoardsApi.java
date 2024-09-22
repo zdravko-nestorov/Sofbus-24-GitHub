@@ -96,7 +96,9 @@ public class RetrieveVirtualBoardsApi {
         if (station != null && station.getType() != null
                 && (station.getType() == VehicleTypeEnum.METRO
                 || station.getType() == VehicleTypeEnum.METRO1
-                || station.getType() == VehicleTypeEnum.METRO2)) {
+                || station.getType() == VehicleTypeEnum.METRO2
+                || station.getType() == VehicleTypeEnum.METRO3
+                || station.getType() == VehicleTypeEnum.METRO4)) {
             RetrieveMetroSchedule retrieveMetroSchedule = new RetrieveMetroSchedule(context,
                     progressDialog, station);
             retrieveMetroSchedule.execute();

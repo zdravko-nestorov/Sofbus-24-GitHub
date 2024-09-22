@@ -222,6 +222,21 @@ class ScheduleVehicleAdapter extends ArrayAdapter<VehicleEntity> {
             case TRAM:
                 vehicleImage = R.drawable.ic_tram;
                 break;
+            case METRO:
+                vehicleImage = R.drawable.ic_metro_2;
+                break;
+            case METRO1:
+                vehicleImage = R.drawable.ic_metro_1;
+                break;
+            case METRO2:
+                vehicleImage = R.drawable.ic_metro_2;
+                break;
+            case METRO3:
+                vehicleImage = R.drawable.ic_metro_3;
+                break;
+            case METRO4:
+                vehicleImage = R.drawable.ic_metro_4;
+                break;
             default:
                 vehicleImage = R.drawable.ic_bus;
                 break;
@@ -254,6 +269,15 @@ class ScheduleVehicleAdapter extends ArrayAdapter<VehicleEntity> {
             case TRAM:
                 vehicleCaption = String.format(
                         context.getString(R.string.sch_item_tram),
+                        vehicle.getNumber());
+                break;
+            case METRO:
+            case METRO1:
+            case METRO2:
+            case METRO3:
+            case METRO4:
+                vehicleCaption = String.format(
+                        context.getString(R.string.sch_item_metro),
                         vehicle.getNumber());
                 break;
             default:

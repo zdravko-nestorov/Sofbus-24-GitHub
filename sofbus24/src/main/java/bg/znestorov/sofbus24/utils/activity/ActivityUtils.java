@@ -513,8 +513,11 @@ public class ActivityUtils {
 
         if (station != null && station.getType() != null) {
             switch (station.getType()) {
+                case METRO:
                 case METRO1:
                 case METRO2:
+                case METRO3:
+                case METRO4:
                     isVBStationChanged = false;
                     break;
                 default:
@@ -1197,7 +1200,7 @@ public class ActivityUtils {
                         vehicle.getNumber());
                 break;
             default:
-                vehicleTitle = String.format(context.getString(R.string.pt_bus),
+                vehicleTitle = String.format(context.getString(R.string.pt_metro),
                         vehicle.getNumber());
                 break;
         }

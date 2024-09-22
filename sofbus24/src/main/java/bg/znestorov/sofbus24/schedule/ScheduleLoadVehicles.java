@@ -23,6 +23,7 @@ public class ScheduleLoadVehicles {
     private List<VehicleEntity> buses;
     private List<VehicleEntity> trolleys;
     private List<VehicleEntity> trams;
+    private List<VehicleEntity> metros;
 
     private ScheduleLoadVehicles(Activity context) {
         VehiclesDataSource vehiclesDatasource = new VehiclesDataSource(context);
@@ -33,6 +34,8 @@ public class ScheduleLoadVehicles {
         trolleys = vehiclesDatasource.getVehiclesViaSearch(
                 VehicleTypeEnum.TROLLEY, "");
         trams = vehiclesDatasource.getVehiclesViaSearch(VehicleTypeEnum.TRAM,
+                "");
+        metros = vehiclesDatasource.getVehiclesViaSearch(VehicleTypeEnum.METRO,
                 "");
 
         vehiclesDatasource.close();
@@ -123,8 +126,11 @@ public class ScheduleLoadVehicles {
             case 1:
                 vehiclesList.addAll(trolleys);
                 break;
-            default:
+            case 2:
                 vehiclesList.addAll(trams);
+                break;
+            default:
+                vehiclesList.addAll(metros);
                 break;
         }
 
@@ -146,8 +152,11 @@ public class ScheduleLoadVehicles {
             case TROLLEY:
                 currentDirection = 1;
                 break;
-            default:
+            case TRAM:
                 currentDirection = 2;
+                break;
+            default:
+                currentDirection = 3;
                 break;
         }
 
@@ -157,7 +166,8 @@ public class ScheduleLoadVehicles {
     @Override
     public String toString() {
         return getClass().getName() + " {\n\tbuses: " + buses
-                + "\n\ttrolleys: " + trolleys + "\n\ttrams: " + trams + "\n}";
+                + "\n\ttrolleys: " + trolleys + "\n\ttrams: " + trams
+                + "\n\tsubways: " + metros + "\n}";
     }
 
 }

@@ -106,8 +106,11 @@ class PublicTransportAdapter extends ArrayAdapter<StationEntity>
 
         // Station name & number
         viewHolder.stationName.setText(Html.fromHtml(station.getName()));
+        int stationNumberStringResource = station.isMetroStationByType()
+                ? R.string.pt_item_metro_number_text
+                : R.string.pt_item_station_number_text;
         viewHolder.stationNumber.setText(String.format(
-                context.getString(R.string.pt_item_station_number_text),
+                context.getString(stationNumberStringResource),
                 station.getNumber()));
 
         // Set the actions over the ImageView and ImageButton

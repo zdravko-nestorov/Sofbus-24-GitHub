@@ -926,8 +926,11 @@ public class Utils {
         }
 
         // Get the search type
-        if (historyType == VehicleTypeEnum.METRO1
-                || historyType == VehicleTypeEnum.METRO2) {
+        if (historyType == VehicleTypeEnum.METRO
+                || historyType == VehicleTypeEnum.METRO1
+                || historyType == VehicleTypeEnum.METRO2
+                || historyType == VehicleTypeEnum.METRO3
+                || historyType == VehicleTypeEnum.METRO4) {
             historyType = VehicleTypeEnum.METRO;
         }
 
@@ -965,6 +968,8 @@ public class Utils {
             case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 stationType = VehicleTypeEnum.METRO;
                 break;
             default:

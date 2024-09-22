@@ -194,15 +194,11 @@ public class EditTabsFragment extends ListFragment {
                 config.isScheduleVisible(),
                 getString(R.string.edit_tabs_schedule),
                 config.getSchedulePosition());
-        HomeTabEntity homeTabMetro = new HomeTabEntity(
-                config.isMetroVisible(), getString(R.string.edit_tabs_metro),
-                config.getMetroPosition());
 
         // Build the List with the home tabs in the correct ordering
         homeTabs.set(config.getFavouritesPosition(), homeTabFavourites);
         homeTabs.set(config.getSearchPosition(), homeTabSearch);
         homeTabs.set(config.getSchedulePosition(), homeTabSchedule);
-        homeTabs.set(config.getMetroPosition(), homeTabMetro);
 
         return homeTabs;
     }
@@ -220,15 +216,12 @@ public class EditTabsFragment extends ListFragment {
                 getString(R.string.edit_tabs_search), 1);
         HomeTabEntity homeTabSchedule = new HomeTabEntity(true,
                 getString(R.string.edit_tabs_schedule), 2);
-        HomeTabEntity homeTabMetro = new HomeTabEntity(true,
-                getString(R.string.edit_tabs_metro), 3);
 
         // Build the List with the home tabs in the default ordering
         ArrayList<HomeTabEntity> homeTabs = new ArrayList<HomeTabEntity>();
         homeTabs.add(homeTabFavourites);
         homeTabs.add(homeTabSearch);
         homeTabs.add(homeTabSchedule);
-        homeTabs.add(homeTabMetro);
 
         return homeTabs;
     }
@@ -275,14 +268,9 @@ public class EditTabsFragment extends ListFragment {
                     .equals(getString(R.string.edit_tabs_search_orientation))) {
                 currentConfig.setSearchPosition(tabPosition);
                 currentConfig.setSearchVisible(isTabVisible);
-            } else if (tabName.equals(getString(R.string.edit_tabs_schedule))
-                    || tabName
-                    .equals(getString(R.string.edit_tabs_schedule_orientation))) {
+            } else {
                 currentConfig.setSchedulePosition(tabPosition);
                 currentConfig.setScheduleVisible(isTabVisible);
-            } else {
-                currentConfig.setMetroPosition(tabPosition);
-                currentConfig.setMetroVisible(isTabVisible);
             }
         }
 

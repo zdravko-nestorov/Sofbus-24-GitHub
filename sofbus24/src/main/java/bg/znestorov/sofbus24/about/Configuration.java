@@ -87,10 +87,6 @@ public class Configuration {
                 newConfig.isScheduleVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SCHEDULE_POSITION_KEY,
                 newConfig.getSchedulePosition());
-        edit.putBoolean(Constants.CONFIGURATION_PREF_METRO_VISIBILITY_KEY,
-                newConfig.isMetroVisible());
-        edit.putInt(Constants.CONFIGURATION_PREF_METRO_POSITION_KEY,
-                newConfig.getMetroPosition());
         edit.putInt(Constants.CONFIGURATION_PREF_SOFBUS24_KEY,
                 newConfig.getSofbus24DbVersion());
         edit.apply();
@@ -152,10 +148,6 @@ public class Configuration {
                 newConfig.isScheduleVisible());
         edit.putInt(Constants.CONFIGURATION_PREF_SCHEDULE_POSITION_KEY,
                 newConfig.getSchedulePosition());
-        edit.putBoolean(Constants.CONFIGURATION_PREF_METRO_VISIBILITY_KEY,
-                newConfig.isMetroVisible());
-        edit.putInt(Constants.CONFIGURATION_PREF_METRO_POSITION_KEY,
-                newConfig.getMetroPosition());
         edit.apply();
     }
 

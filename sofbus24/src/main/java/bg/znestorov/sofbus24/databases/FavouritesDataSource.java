@@ -188,8 +188,11 @@ public class FavouritesDataSource {
         String stationCustomField;
 
         switch (station.getType()) {
+            case METRO:
             case METRO1:
             case METRO2:
+            case METRO3:
+            case METRO4:
                 stationCustomField = String.format(Constants.METRO_STATION_URL,
                         station.getNumber());
                 break;

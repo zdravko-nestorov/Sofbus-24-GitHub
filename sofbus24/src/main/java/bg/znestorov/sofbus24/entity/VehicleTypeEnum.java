@@ -27,7 +27,7 @@ public enum VehicleTypeEnum {
      * This vehicles type's indicate all different type of vehicles in the main
      * database (Sofbus24.db)
      */
-    BTT, METRO, METRO1, METRO2,
+    BTT, METRO, METRO1, METRO2, METRO3, METRO4,
 
     /**
      * This vehicles' type is used in the schedule cache to determine if we
@@ -69,5 +69,18 @@ public enum VehicleTypeEnum {
             }
         }
         throw new RuntimeException("Vehicle type not found for transportType: " + transportType);
+    }
+
+    public static VehicleTypeEnum getStationType(VehicleTypeEnum vehicleType) {
+       switch (vehicleType) {
+           case METRO:
+           case METRO1:
+           case METRO2:
+           case METRO3:
+           case METRO4:
+               return METRO;
+           default:
+               return BTT;
+       }
     }
 }

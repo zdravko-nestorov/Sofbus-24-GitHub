@@ -36,8 +36,6 @@ public class ConfigEntity implements Serializable {
     private int searchPosition = 1;
     private boolean scheduleVisible = true;
     private int schedulePosition = 2;
-    private boolean metroVisible = true;
-    private int metroPosition = 3;
 
     private int sofbus24DbVersion = 1;
 
@@ -49,8 +47,6 @@ public class ConfigEntity implements Serializable {
         this.searchPosition = 1;
         this.scheduleVisible = true;
         this.schedulePosition = 2;
-        this.metroVisible = true;
-        this.metroPosition = 3;
 
         this.sofbus24DbVersion = 1;
     }
@@ -104,16 +100,6 @@ public class ConfigEntity implements Serializable {
         } catch (Exception e) {
             this.scheduleVisible = true;
             this.schedulePosition = 2;
-        }
-
-        try {
-            this.metroVisible = sharedPreferences.getBoolean(
-                    Constants.CONFIGURATION_PREF_METRO_VISIBILITY_KEY, true);
-            this.metroPosition = sharedPreferences.getInt(
-                    Constants.CONFIGURATION_PREF_METRO_POSITION_KEY, 3);
-        } catch (Exception e) {
-            this.metroVisible = true;
-            this.metroPosition = 3;
         }
 
         try {
@@ -175,8 +161,6 @@ public class ConfigEntity implements Serializable {
         this.searchPosition = searchPosition;
         this.scheduleVisible = scheduleVisible;
         this.schedulePosition = schedulePosition;
-        this.metroVisible = metroVisible;
-        this.metroPosition = metroPosition;
 
         this.sofbus24DbVersion = stationsDbVersion;
     }
@@ -245,22 +229,6 @@ public class ConfigEntity implements Serializable {
         this.schedulePosition = schedulePosition;
     }
 
-    public boolean isMetroVisible() {
-        return metroVisible;
-    }
-
-    public void setMetroVisible(boolean metroVisible) {
-        this.metroVisible = metroVisible;
-    }
-
-    public int getMetroPosition() {
-        return metroPosition;
-    }
-
-    public void setMetroPosition(int metroPosition) {
-        this.metroPosition = metroPosition;
-    }
-
     public int getSofbus24DbVersion() {
         return sofbus24DbVersion;
     }
@@ -289,12 +257,9 @@ public class ConfigEntity implements Serializable {
             } else if (searchPosition == position) {
                 tabVisible = searchVisible;
                 tabName = context.getString(R.string.edit_tabs_search);
-            } else if (schedulePosition == position) {
+            } else {
                 tabVisible = scheduleVisible;
                 tabName = context.getString(R.string.edit_tabs_schedule);
-            } else {
-                tabVisible = metroVisible;
-                tabName = context.getString(R.string.edit_tabs_metro);
             }
 
             return new HomeTabEntity(tabVisible, tabName, position);
@@ -329,7 +294,7 @@ public class ConfigEntity implements Serializable {
 
         boolean isDefaultConfig = favouritesVisible && favouritesPosition == 0
                 && searchVisible && searchPosition == 1 && scheduleVisible
-                && schedulePosition == 2 && metroVisible && metroPosition == 3;
+                && schedulePosition == 2;
 
         return isDefaultConfig;
     }
@@ -349,9 +314,7 @@ public class ConfigEntity implements Serializable {
                 && this.isSearchVisible() == config.isSearchVisible()
                 && this.getSearchPosition() == config.getSearchPosition()
                 && this.isScheduleVisible() == config.isScheduleVisible()
-                && this.getSchedulePosition() == config.getSchedulePosition()
-                && this.isMetroVisible() == config.isMetroVisible()
-                && this.getMetroPosition() == config.getMetroPosition();
+                && this.getSchedulePosition() == config.getSchedulePosition();
 
         return isSameConfig;
     }
@@ -366,8 +329,7 @@ public class ConfigEntity implements Serializable {
                 + "\n\tsearchPosition: " + searchPosition
                 + "\n\tscheduleVisible: " + scheduleVisible
                 + "\n\tschedulePosition: " + schedulePosition
-                + "\n\tmetroVisible: " + metroVisible + "\n\tmetroPosition: "
-                + metroPosition + "\n\tstationsDbVersion: " + sofbus24DbVersion
+                + "\n\tstationsDbVersion: " + sofbus24DbVersion
                 + "\n}";
     }
 

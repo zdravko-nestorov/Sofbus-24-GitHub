@@ -244,6 +244,19 @@ public class StationEntity implements Serializable {
     }
 
     /**
+     * Check if the station is metro one
+     *
+     * @return true if the station is metro one, false otherwise
+     */
+    public boolean isMetroStationByType() {
+        return type == VehicleTypeEnum.METRO
+                || type == VehicleTypeEnum.METRO1
+                || type == VehicleTypeEnum.METRO2
+                || type == VehicleTypeEnum.METRO3
+                || type == VehicleTypeEnum.METRO4;
+    }
+
+    /**
      * Assign the station new values
      *
      * @param station the new station values

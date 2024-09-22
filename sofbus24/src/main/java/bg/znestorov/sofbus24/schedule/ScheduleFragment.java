@@ -99,12 +99,14 @@ public class ScheduleFragment extends Fragment {
                 R.id.schedule_trolley_tab);
         TextView textViewTram = (TextView) getView().findViewById(
                 R.id.schedule_tram_tab);
+        TextView textViewMetro = (TextView) getView().findViewById(
+                R.id.schedule_metro_tab);
         actionsOverDirectionsTextViews(textViewBus, textViewTrolley,
-                textViewTram);
+                textViewTram, textViewMetro);
 
         // Set the active tab
         setActiveFragment(currentVehicle, textViewBus, textViewTrolley,
-                textViewTram);
+                textViewTram, textViewMetro);
     }
 
     /**
@@ -115,6 +117,7 @@ public class ScheduleFragment extends Fragment {
         fragmentsList.add(ScheduleVehicleFragment.newInstance(0));
         fragmentsList.add(ScheduleVehicleFragment.newInstance(1));
         fragmentsList.add(ScheduleVehicleFragment.newInstance(2));
+        fragmentsList.add(ScheduleVehicleFragment.newInstance(3));
     }
 
     /**
@@ -125,12 +128,14 @@ public class ScheduleFragment extends Fragment {
      * @param textViewTram    tram tab (TextView)
      */
     private void actionsOverDirectionsTextViews(final TextView textViewBus,
-                                                final TextView textViewTrolley, final TextView textViewTram) {
+                                                final TextView textViewTrolley,
+                                                final TextView textViewTram,
+                                                final TextView textViewMetro) {
         // Assign the bus TextView a click listener
         textViewBus.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setActiveFragment(0, textViewBus, textViewTrolley, textViewTram);
+                setActiveFragment(0, textViewBus, textViewTrolley, textViewTram, textViewMetro);
             }
         });
 
@@ -138,7 +143,7 @@ public class ScheduleFragment extends Fragment {
         textViewTrolley.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setActiveFragment(1, textViewBus, textViewTrolley, textViewTram);
+                setActiveFragment(1, textViewBus, textViewTrolley, textViewTram, textViewMetro);
             }
         });
 
@@ -146,7 +151,15 @@ public class ScheduleFragment extends Fragment {
         textViewTram.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                setActiveFragment(2, textViewBus, textViewTrolley, textViewTram);
+                setActiveFragment(2, textViewBus, textViewTrolley, textViewTram, textViewMetro);
+            }
+        });
+
+        // Assign the metro TextView a click listener
+        textViewMetro.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setActiveFragment(3, textViewBus, textViewTrolley, textViewTram, textViewMetro);
             }
         });
     }
@@ -207,26 +220,37 @@ public class ScheduleFragment extends Fragment {
      * @param textViewTrolley trolley tab (TextView)
      * @param textViewTram    tram tab (TextView)
      */
-    private void setActiveFragment(int tabNumber, TextView textViewBus,
-                                   TextView textViewTrolley, TextView textViewTram) {
+    private void setActiveFragment(int tabNumber,
+                                   TextView textViewBus, TextView textViewTrolley,
+                                   TextView textViewTram, TextView textViewMetro) {
         switch (tabNumber) {
             case 0:
                 currentVehicle = 0;
                 setTabActive(TabTypeEnum.LEFT, textViewBus);
                 setTabInactive(TabTypeEnum.MIDDLE, textViewTrolley);
-                setTabInactive(TabTypeEnum.RIGHT, textViewTram);
+                setTabInactive(TabTypeEnum.MIDDLE, textViewTram);
+                setTabInactive(TabTypeEnum.RIGHT, textViewMetro);
                 break;
             case 1:
                 currentVehicle = 1;
                 setTabActive(TabTypeEnum.MIDDLE, textViewTrolley);
                 setTabInactive(TabTypeEnum.LEFT, textViewBus);
-                setTabInactive(TabTypeEnum.RIGHT, textViewTram);
+                setTabInactive(TabTypeEnum.MIDDLE, textViewTram);
+                setTabInactive(TabTypeEnum.RIGHT, textViewMetro);
                 break;
-            default:
+            case 2:
                 currentVehicle = 2;
-                setTabActive(TabTypeEnum.RIGHT, textViewTram);
+                setTabActive(TabTypeEnum.MIDDLE, textViewTram);
                 setTabInactive(TabTypeEnum.LEFT, textViewBus);
                 setTabInactive(TabTypeEnum.MIDDLE, textViewTrolley);
+                setTabInactive(TabTypeEnum.RIGHT, textViewMetro);
+                break;
+            default:
+                currentVehicle = 3;
+                setTabActive(TabTypeEnum.RIGHT, textViewMetro);
+                setTabInactive(TabTypeEnum.LEFT, textViewBus);
+                setTabInactive(TabTypeEnum.MIDDLE, textViewTrolley);
+                setTabInactive(TabTypeEnum.MIDDLE, textViewTram);
                 break;
         }
 
