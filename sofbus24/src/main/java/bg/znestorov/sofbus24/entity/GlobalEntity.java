@@ -1,8 +1,5 @@
 package bg.znestorov.sofbus24.entity;
 
-import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_EXPIRATION_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_URL_COOKIES_API;
-
 import android.app.Application;
 import android.content.pm.PackageManager;
 
@@ -11,14 +8,11 @@ import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 
 import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.HmsUtils;
-import bg.znestorov.sofbus24.utils.Utils;
 
 /**
  * Global class that extends Application and save state across several
@@ -47,10 +41,6 @@ public class GlobalEntity extends Application {
     private boolean isHomeActivityChanged = false;
     // Google Analytics
     private HashMap<TrackerName, Tracker> mTrackers;
-
-    private Date cookieExpiresAt;
-    private String cookieXsrfToken;
-    private String cookieSofiaTrafficSession;
 
     @Override
     public void onCreate() {
@@ -138,43 +128,6 @@ public class GlobalEntity extends Application {
 
     public void setHomeActivityChanged(boolean isHomeActivityChanged) {
         this.isHomeActivityChanged = isHomeActivityChanged;
-    }
-
-    public String getCookieXsrfToken() {
-        if (cookieXsrfToken != null && cookieExpiresAt != null && new Date().before(cookieExpiresAt)) {
-            return cookieXsrfToken;
-        }
-
-        resetCookies();
-        return cookieXsrfToken;
-    }
-
-    public void setCookieXsrfToken(String cookieXsrfToken) {
-        this.cookieXsrfToken = cookieXsrfToken;
-    }
-
-    public String getCookieSofiaTrafficSession() {
-        if (cookieSofiaTrafficSession != null && cookieExpiresAt != null && new Date().before(cookieExpiresAt)) {
-            return cookieSofiaTrafficSession;
-        }
-
-        resetCookies();
-        return cookieSofiaTrafficSession;
-    }
-
-    public void setCookieSofiaTrafficSession(String cookieSofiaTrafficSession) {
-        this.cookieSofiaTrafficSession = cookieSofiaTrafficSession;
-    }
-
-    public synchronized void resetCookies() {
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MINUTE, VB_COOKIES_EXPIRATION_API);
-        cookieExpiresAt = cal.getTime();
-        try {
-            Utils.readUrlCookies(this, VB_URL_COOKIES_API);
-        } catch (Exception ignored) {
-            // Do nothing
-        }
     }
 
     /**

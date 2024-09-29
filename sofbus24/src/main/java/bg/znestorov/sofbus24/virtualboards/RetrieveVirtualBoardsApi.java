@@ -335,7 +335,7 @@ public class RetrieveVirtualBoardsApi {
                 // the database for the stations
                 if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS) {
 
-                    String jsonResult = Utils.readVirtualBoardsUrl(context, station);
+                    String jsonResult = Utils.readVirtualBoardsUrl(station);
 
                     // Check what is the status of the JSON result
                     if (Utils.isEmpty(jsonResult)) {

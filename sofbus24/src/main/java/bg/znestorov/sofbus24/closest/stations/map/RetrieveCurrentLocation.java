@@ -402,11 +402,15 @@ public class RetrieveCurrentLocation extends AsyncTask<Void, Void, Void> {
 
         Location lastKnownLocation = null;
         if (locationManager != null) {
-            lastKnownLocation = locationManager
-                    .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
-                    .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
-                    : locationManager.getLastKnownLocation(NETWORK_PROVIDER)
-                    : locationManager.getLastKnownLocation(GPS_PROVIDER);
+            try {
+                lastKnownLocation = locationManager
+                        .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
+                        .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
+                        : locationManager.getLastKnownLocation(NETWORK_PROVIDER)
+                        : locationManager.getLastKnownLocation(GPS_PROVIDER);
+            } catch (Exception e) {
+                // Do nothing - unknown problem with location permissions (happens only on cancelled)
+            }
         }
 
         // Check if there is any last known location

@@ -102,6 +102,9 @@ public class ConfigEntity implements Serializable {
             this.schedulePosition = 2;
         }
 
+        // Reorder the tabs (if needed) because of the metro tab removal
+        this.reorderTabs();
+
         try {
             this.sofbus24DbVersion = Integer.parseInt(sharedPreferences
                     .getString(Constants.CONFIGURATION_PREF_SOFBUS24_KEY, "1"));
@@ -235,6 +238,34 @@ public class ConfigEntity implements Serializable {
 
     public void setSofbus24DbVersion(int stationsDbVersion) {
         this.sofbus24DbVersion = stationsDbVersion;
+    }
+
+    /**
+     * We need to reorder the tabs because the metro one is removed and there is a possibility
+     * for the user to change its position to a one between 0 and 2.
+     */
+    private void reorderTabs() {
+        // Create a boolean array to track which numbers are present
+        boolean[] present = new boolean[4]; // 0, 1, 2, 3
+
+        // Mark the present values
+        present[favouritesPosition] = true;
+        present[searchPosition] = true;
+        present[schedulePosition] = true;
+
+        // Find the missing value
+        int missingValue = -1;
+        for (int i = 0; i <= 2; i++) { // Check only for 0, 1, 2
+            if (!present[i]) {
+                missingValue = i;
+                break;
+            }
+        }
+
+        // Replace 3 with the missing value
+        if (favouritesPosition == 3) favouritesPosition = missingValue;
+        if (searchPosition == 3) searchPosition = missingValue;
+        if (schedulePosition == 3) schedulePosition = missingValue;
     }
 
     /**

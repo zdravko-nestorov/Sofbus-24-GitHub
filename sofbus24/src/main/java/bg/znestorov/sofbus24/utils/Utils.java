@@ -1,7 +1,5 @@
 package bg.znestorov.sofbus24.utils;
 
-import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_SOFIA_TRAFFIC_SESSION_API;
-import static bg.znestorov.sofbus24.utils.Constants.VB_COOKIES_XSRF_TOKEN_API;
 import static bg.znestorov.sofbus24.utils.Constants.VB_URL_VIRTUAL_TABLE_API;
 
 import android.annotation.SuppressLint;
@@ -958,20 +956,31 @@ public class Utils {
     public static void addStationInHistory(Activity context,
                                            StationEntity station) {
 
-        VehicleTypeEnum stationType = station.getType();
-        switch (stationType) {
-            case METRO:
-            case METRO1:
-            case METRO2:
-            case METRO3:
-            case METRO4:
-                stationType = VehicleTypeEnum.METRO;
-                break;
-            default:
-                stationType = VehicleTypeEnum.BTT;
-                break;
+        // In case of missing station, do nothing
+        if (station == null) {
+            return;
         }
 
+        // Retrieve the station type that will be used in the History section
+        VehicleTypeEnum stationType = station.getType();
+        if (stationType == null) {
+            stationType = VehicleTypeEnum.BTT;
+        } else {
+            switch (stationType) {
+                case METRO:
+                case METRO1:
+                case METRO2:
+                case METRO3:
+                case METRO4:
+                    stationType = VehicleTypeEnum.METRO;
+                    break;
+                default:
+                    stationType = VehicleTypeEnum.BTT;
+                    break;
+            }
+        }
+
+        // Add the search in the history
         addSearchInHistory(context, stationType, station.getName(),
                 station.getNumber());
     }
@@ -1710,68 +1719,12 @@ public class Utils {
     }
 
     /**
-     * Read a given URL and get the information in TEXT format
-     *
-     * @param urlString the URL that will be read
-     * @return the content of the URL address
-     */
-    public static void readUrlCookies(Context context, String urlString, Object... params) throws Exception {
-        GlobalEntity globalEntity = (GlobalEntity) context.getApplicationContext();
-
-        // Create a new scanner to download the URL content
-        try {
-            HttpURLConnection connection = (HttpURLConnection) new URL(String.format(urlString, params)).openConnection();
-            List<String> cookies = connection.getHeaderFields().get("Set-Cookie");
-            initSkgtCookies(cookies, globalEntity);
-        } catch (FileNotFoundException ignored) {
-            // Do nothing
-        }
-    }
-
-    private static void initSkgtCookies(List<String> cookies, GlobalEntity globalEntity) {
-        if (cookies == null) {
-            return;
-        }
-
-        for (String cookie : cookies) {
-            if (Utils.isEmpty(cookie)) {
-                continue;
-            }
-
-            // Null-safe split operation
-            String[] cookieSegments = cookie.split(";");
-            if (cookieSegments.length == 0 || Utils.isEmpty(cookieSegments[0])) {
-                continue;
-            }
-
-            String[] cookieParts = cookieSegments[0].split("=");
-            if (cookieParts.length != 2 || Utils.isEmpty(cookieParts[0])) {
-                continue;
-            }
-
-            String cookieName = cookieParts[0];
-            String cookieValue = cookieParts[1];
-
-            switch (cookieName) {
-                case VB_COOKIES_XSRF_TOKEN_API:
-                    globalEntity.setCookieXsrfToken(cookieValue);
-                    break;
-                case VB_COOKIES_SOFIA_TRAFFIC_SESSION_API:
-                    globalEntity.setCookieSofiaTrafficSession(cookieValue);
-                    break;
-            }
-        }
-    }
-
-
-    /**
      * Read the virtual boards URL and get the information in TEXT format
      *
-     * @param context the current context
      * @param station the chosen station
      * @return the content of the URL address
      */
-    public static String readVirtualBoardsUrl(Context context, StationEntity station) throws Exception {
+    public static String readVirtualBoardsUrl(StationEntity station) throws Exception {
 
         // Create a new scanner to download the URL content
         try {
@@ -1779,7 +1732,7 @@ public class Utils {
                     ? String.format("{\"stop\":\"%s\", \"type\":\"3\"}", Integer.parseInt(station.getNumber()) - 100000)
                     : String.format("{\"stop\":\"%s\"}", station.getFormattedNumber());
             Scanner scanner = new Scanner(
-                    openUrlPostConnection(context, VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
+                    openUrlPostConnection(VB_URL_VIRTUAL_TABLE_API, requestBody).getInputStream(),
                     "UTF-8");
 
             // The regular expression "\\A" matches the beginning of input. This tells Scanner
@@ -1790,19 +1743,20 @@ public class Utils {
         }
     }
 
-    public static HttpURLConnection openUrlPostConnection(Context context, String url, String requestBody) throws Exception {
-        GlobalEntity globalEntity = (GlobalEntity) context.getApplicationContext();
+    public static HttpURLConnection openUrlPostConnection(String url, String requestBody) throws Exception {
+        String xsrfTokenCookie = SkgtCookiesCacheUtils.getXsrfToken();
+        String sofiaTrafficSessionCookie = SkgtCookiesCacheUtils.getSofiaTrafficSession();
 
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("content-type", "application/json");
 
         String cookie = String.format("XSRF-TOKEN=%s; sofia_traffic_session=%s",
-                globalEntity.getCookieXsrfToken(), globalEntity.getCookieSofiaTrafficSession());
+                xsrfTokenCookie, sofiaTrafficSessionCookie);
         connection.setRequestProperty("cookie", cookie);
 
         String xsrfToken = String.format("%s",
-                URLDecoder.decode(globalEntity.getCookieXsrfToken(), StandardCharsets.UTF_8.name()));
+                URLDecoder.decode(xsrfTokenCookie, StandardCharsets.UTF_8.name()));
         connection.setRequestProperty("x-xsrf-token", xsrfToken);
 
         // Writing the data to the output stream
