@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="bg.znestorov.sofbus24.main"
     android:installLocation="auto"
-    android:versionCode="53"
+    android:versionCode="54"
     android:versionName="4.3.1">
 
     <!-- GOOGLE MAPS, INTERNET AND LOCATION PERMISSIONS -->
@@ -15,7 +15,6 @@
     <!-- Network connectivity permissions -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA" />
 
     <!-- Before API level 19, this permission is not enforced and all apps still have access to write/read from external storage -->
     <uses-permission
