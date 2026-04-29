@@ -74,3 +74,6 @@ testem.log
 ### System files ###
 .DS_Store
 Thumbs.db
+
+# Android build outputs
+/sofbus24/build/

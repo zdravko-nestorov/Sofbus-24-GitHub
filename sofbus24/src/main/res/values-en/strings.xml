@@ -243,8 +243,8 @@
     <string name="about_subtitle" formatted="false"><![CDATA[Version %s]]></string>
     <string name="about_information" formatted="false">
 <![CDATA[<b>%s version %s<br>© 2012 by Zdravko Nestorov. All rights reserved</b><br><br>An Android application, giving an information about the public
-		transport in Sofia, as the time of arrival in real time, the schedule of the vehicles, the position of the stations, as well as locating the 
-		closest stations, depending on the current location.<br><br>
+                transport in Sofia, as the time of arrival in real time, the schedule of the vehicles, the position of the stations, as well as locating the 
+                closest stations, depending on the current location.<br><br>
         <font color="#FF0000"><i><b>Important: Sofbus 24 does not collect, store, or process any personal data from users. The app is not officially
         affiliated with the Sofia Urban Mobility Center (CUM), Sofia Municipality, or any other government institution. All public transport data
         is automatically retrieved from publicly available information published on the official CUM website:
@@ -472,6 +472,7 @@
     <string name="backup_import_loading" formatted="false"><![CDATA[Restoring your settings and data…]]></string>
     <string name="backup_import_success">Your settings were successfully restored. The application will automatically restart in order for the changes to take effect.</string>
     <string name="backup_import_failed">A problem occurred while restoring your settings. Please try again.</string>
+    <string name="backup_import_invalid_extension">Invalid file. Please select a backup file with a .sofbus24 extension.</string>
     <string name="backup_import_confirm_title">Confirmation</string>
     <string name="backup_import_confirm_msg" formatted="false"><![CDATA[Do you want to replace all of your settings with these from the file named <b><i>%s</i></b>?]]></string>
     <string name="backup_export_loading" formatted="false"><![CDATA[Saving your settings and data…]]></string>
