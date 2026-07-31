@@ -619,6 +619,9 @@ public class FavouritesDataSource {
      */
     public void reorderStations(StationEntity station, OrderTypeEnum orderType) {
         StationEntity oldStation = getStation(station);
+        if (station == null || orderType == null || oldStation == null) {
+            return;
+        }
 
         int oldPosition = oldStation.getPosition();
         int maxPosition = getLastPosition();

@@ -232,7 +232,7 @@ public class HomeScreenSelect extends FragmentActivity implements
 
         // Check if the device is a tablet and show only two possible home
         // screens
-        if (!globalContext.isPhoneDevice()) {
+        if (globalContext != null && !globalContext.isPhoneDevice()) {
             findViewById(R.id.sofbus24_home_screen_droidtrans).setVisibility(
                     View.GONE);
         }
@@ -261,7 +261,7 @@ public class HomeScreenSelect extends FragmentActivity implements
 
                 // Check if the user selected GoogleMaps as a home screen and if
                 // there are GooglePlayServices installed on its device
-                if (userChoice == 1 && !globalContext.areServicesAvailable()) {
+                if (userChoice == 1 && globalContext != null && !globalContext.areServicesAvailable()) {
                     GooglePlayServicesErrorDialog googlePlayServicesErrorDialog = GooglePlayServicesErrorDialog
                             .newInstance(getString(
                                     R.string.navigation_drawer_home_screen_error,
@@ -600,9 +600,13 @@ public class HomeScreenSelect extends FragmentActivity implements
     }
 
     private void initApplicationHssContext() {
-        if (globalContext == null) {
-            globalContext = (GlobalEntity) getApplicationContext();
+        try {
+            if (globalContext == null) {
+                globalContext = (GlobalEntity) getApplicationContext();
+            }
+            globalContext.setHssContext(this);
+        } catch (Exception e) {
+            // nothing to be done here
         }
-        globalContext.setHssContext(this);
     }
 }

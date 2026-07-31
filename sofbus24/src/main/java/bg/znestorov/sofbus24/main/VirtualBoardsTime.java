@@ -128,7 +128,7 @@ public class VirtualBoardsTime extends FragmentActivity {
                     googlePlayServicesErrorDialog.show(getSupportFragmentManager(),
                             "GooglePlayServicesErrorDialog");
                 } else {
-                    if (vbTimeStation.hasCoordinates()) {
+                    if (vbTimeStation != null && vbTimeStation.hasCoordinates()) {
                         Intent metroMapIntent = new Intent(context,
                                 StationMap.class);
                         metroMapIntent.putExtra(Constants.BUNDLE_STATION_MAP,
@@ -244,7 +244,7 @@ public class VirtualBoardsTime extends FragmentActivity {
                             "GooglePlayServicesErrorDialog");
                 } else {
                     if (globalContext.isGoogleStreetViewAvailable()) {
-                        if (vbTimeStation.hasCoordinates()) {
+                        if (vbTimeStation != null && vbTimeStation.hasCoordinates()) {
                             Uri streetViewUri = Uri
                                     .parse("google.streetview:cbll="
                                             + vbTimeStation.getLat() + ","
@@ -318,7 +318,7 @@ public class VirtualBoardsTime extends FragmentActivity {
         // Refresh the time of info retrieval
         vbTimeCurrentTime.setText(String.format(
                 getString(R.string.vb_time_current_time),
-                vbTimeStation.getTime(context)));
+                vbTimeStation != null ? vbTimeStation.getTime(context) : "---"));
 
         // Refresh the fragment
         VirtualBoardsTimeFragment vbTimeFragment = ((VirtualBoardsTimeFragment) getSupportFragmentManager()
@@ -377,9 +377,9 @@ public class VirtualBoardsTime extends FragmentActivity {
 
         // Get the coordinates of the station (if exist in the database), or the
         // default one (if no coordinates exists in the database)
-        String stationLat = vbTimeStation.getLat() != null ? vbTimeStation
+        String stationLat = vbTimeStation != null && vbTimeStation.getLat() != null ? vbTimeStation
                 .getLat() : Constants.GLOBAL_PARAM_SOFIA_CENTER_LATITUDE + "";
-        String stationLon = vbTimeStation.getLon() != null ? vbTimeStation
+        String stationLon = vbTimeStation != null && vbTimeStation.getLon() != null ? vbTimeStation
                 .getLon() : Constants.GLOBAL_PARAM_SOFIA_CENTER_LONGITUDE + "";
 
         // Create the station street view URL address

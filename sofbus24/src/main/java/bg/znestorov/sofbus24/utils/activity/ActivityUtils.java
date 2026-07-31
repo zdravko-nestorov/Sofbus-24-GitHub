@@ -1100,11 +1100,14 @@ public class ActivityUtils {
      */
     public static void showHomeActivityChangedToast(Activity context,
                                                     String homeScreenName) {
+        GlobalEntity globalContext;
+        try {
+            globalContext = (GlobalEntity) context.getApplicationContext();
+        } catch (Exception e) {
+            return;
+        }
 
-        GlobalEntity globalContext = (GlobalEntity) context
-                .getApplicationContext();
-
-        if (globalContext.isHomeActivityChanged()) {
+        if (globalContext != null && globalContext.isHomeActivityChanged()) {
             globalContext.setHomeActivityChanged(false);
             ActivityUtils.showLongToast(context, String.format(context
                             .getString(R.string.navigation_drawer_home_screen_changed),
