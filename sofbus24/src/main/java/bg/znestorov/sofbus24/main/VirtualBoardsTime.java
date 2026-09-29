@@ -105,6 +105,7 @@ public class VirtualBoardsTime extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.activity_virtual_boards_time_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

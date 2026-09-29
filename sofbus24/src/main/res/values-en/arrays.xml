@@ -4,6 +4,7 @@
     <string-array name="sofbusTheme">
         <item name="sofbusThemeLight">Light</item>
         <item name="sofbusThemeDark">Dark (grey)</item>
+        <item name="sofbusThemeAmoled">AMOLED (black)</item>
     </string-array>
 
     <!-- Home Screen Tabs -->

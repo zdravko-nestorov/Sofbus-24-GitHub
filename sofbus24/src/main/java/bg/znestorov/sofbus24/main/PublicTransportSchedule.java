@@ -108,6 +108,7 @@ public class PublicTransportSchedule extends FragmentActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.activity_public_transport_schedule_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -430,13 +431,8 @@ public class PublicTransportSchedule extends FragmentActivity {
     private void actionsOnFragmentChange() {
 
         // Change the color of the station square
-        if (ThemeChange.isLightTheme(context)) {
-            ptStationView
-                    .setBackgroundResource(R.color.app_light_theme_schedule_station);
-        } else {
-            ptStationView
-                    .setBackgroundResource(R.color.app_dark_theme_schedule_station);
-        }
+        ptStationView.setBackgroundColor(ThemeChange.getColor(context,
+                R.attr.appThemeScheduleStation));
 
         // Set the PublicTransportScheduleTime label
         String hourRange = getHour(scheduleHourList.get(

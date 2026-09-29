@@ -2,11 +2,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="#FFFFFF" />
+    <solid android:color="?attr/appThemeTabUnselected" />
 
     <stroke
         android:width="1sp"
-        android:color="@color/inner_tab_grey" />
+        android:color="?attr/appThemeTabBorder" />
 
     <corners
         android:bottomLeftRadius="0sp"

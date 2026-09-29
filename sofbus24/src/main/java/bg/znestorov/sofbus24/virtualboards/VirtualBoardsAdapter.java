@@ -19,6 +19,7 @@ import bg.znestorov.sofbus24.databases.FavouritesDataSource;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
 import bg.znestorov.sofbus24.entity.StationEntity;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 
 /**
@@ -75,7 +76,8 @@ class VirtualBoardsAdapter extends ArrayAdapter<StationEntity> {
 
         // In case of a tablet - put border between GridView items
         if (!isPhoneDevice) {
-            rowView.setBackgroundResource(R.drawable.grid_border);
+            rowView.setBackgroundResource(ThemeChange.getResourceId(context,
+                    R.attr.appThemeGridBorder));
             int pixels = ActivityUtils.dpToPx(context, 8);
             rowView.setPadding(pixels, pixels, pixels, pixels);
         }

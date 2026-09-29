@@ -2,6 +2,7 @@ package bg.znestorov.sofbus24.history;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.R;
+import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.TranslatorCyrillicToLatin;
 import bg.znestorov.sofbus24.utils.Utils;
 
@@ -29,12 +31,14 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
 
     private final Activity context;
     private final List<HistoryEntity> historyList;
+    private final ColorStateList iconTint;
 
     public HistoryAdapter(Activity context, List<HistoryEntity> historyList) {
         super(context, R.layout.activity_history_list_item, historyList);
 
         this.context = context;
         this.historyList = historyList;
+        this.iconTint = ThemeChange.getIconTint(context);
     }
 
     /**
@@ -77,6 +81,7 @@ public class HistoryAdapter extends ArrayAdapter<HistoryEntity> implements
         searchNumber = TranslatorCyrillicToLatin.translate(context, searchNumber);
 
         viewHolder.searchImage.setImageResource(getHistoryImage(history));
+        viewHolder.searchImage.setImageTintList(iconTint);
         viewHolder.searchText.setText(Html.fromHtml(getHistoryTitle(
                 historyType, searchName, searchNumber)));
         viewHolder.searchType.setText(Html.fromHtml(getHistorySubtitle(

@@ -60,6 +60,7 @@ public class RouteChangesNews extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_route_changes_news_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

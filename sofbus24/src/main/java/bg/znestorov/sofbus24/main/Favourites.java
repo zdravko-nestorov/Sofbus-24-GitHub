@@ -50,6 +50,7 @@ public class Favourites extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_favourites_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

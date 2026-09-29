@@ -62,25 +62,13 @@ class MetroScheduleAdapter extends ArrayAdapter<String> {
         // Check if this is the current Fragment, so mark the closest vehicle
         if (metroScheduleEntity.isActive()
                 && position == metroScheduleEntity.getCurrentScheduleIndex()) {
-            rowView.setBackgroundColor(Color.parseColor("#80CEEA"));
+            rowView.setBackgroundColor(ThemeChange.getColor(context,
+                    R.attr.appThemeScheduleCurrent));
         } else {
-
-            boolean isLightTheme = ThemeChange.isLightTheme(context);
-
             // Set the background to each row (even or odd)
-            if (position % 2 == 1) {
-                rowView.setBackgroundColor(isLightTheme ? context
-                        .getResources().getColor(
-                                R.color.app_light_theme_schedule_odd) : context
-                        .getResources().getColor(
-                                R.color.app_dark_theme_schedule_odd));
-            } else {
-                rowView.setBackgroundColor(isLightTheme ? context
-                        .getResources().getColor(
-                                R.color.app_light_theme_schedule_even)
-                        : context.getResources().getColor(
-                        R.color.app_dark_theme_schedule_even));
-            }
+            rowView.setBackgroundColor(ThemeChange.getColor(context,
+                    position % 2 == 1 ? R.attr.appThemeScheduleOdd
+                            : R.attr.appThemeScheduleEven));
         }
 
         // Fill the data
@@ -122,44 +110,43 @@ class MetroScheduleAdapter extends ArrayAdapter<String> {
         metroSchedule = metroSchedule.trim();
 
         // Define the color and the text of the current row
-        String metroScheduleColor;
+        int metroScheduleColor;
         switch (metroScheduleType) {
             case IC:
-                metroScheduleColor = "#FF0017";
+                metroScheduleColor = Color.parseColor("#FF0017");
                 break;
             case SA:
                 metroSchedule = metroSchedule
                         + context.getString(R.string.metro_schedule_sofia_airport);
-                metroScheduleColor = "#000000";
+                metroScheduleColor = ThemeChange.getColor(context, R.attr.appThemeText);
                 break;
             case BP:
                 metroSchedule = metroSchedule
                         + context.getString(R.string.metro_schedule_business_park);
-                metroScheduleColor = "#000000";
+                metroScheduleColor = ThemeChange.getColor(context, R.attr.appThemeText);
                 break;
             case IC_SA:
                 metroSchedule = metroSchedule
                         + context.getString(R.string.metro_schedule_sofia_airport);
-                metroScheduleColor = "#FF0017";
+                metroScheduleColor = Color.parseColor("#FF0017");
                 break;
             case IC_BP:
                 metroSchedule = metroSchedule
                         + context.getString(R.string.metro_schedule_business_park);
-                metroScheduleColor = "#FF0017";
+                metroScheduleColor = Color.parseColor("#FF0017");
                 break;
             default:
-                metroScheduleColor = "#000000";
+                metroScheduleColor = ThemeChange.getColor(context, R.attr.appThemeText);
                 break;
         }
 
         // In case the metro schedule hour has already passed, set the text
         // color to grey
         if (!Utils.isActiveSchedule(metroSchedule)) {
-            metroScheduleColor = "#8B8B8B";
+            metroScheduleColor = ThemeChange.getColor(context, R.attr.appThemeMutedText);
         }
 
-        viewHolder.scheduleMetroHour.setTextColor(Color
-                .parseColor(metroScheduleColor));
+        viewHolder.scheduleMetroHour.setTextColor(metroScheduleColor);
         viewHolder.scheduleMetroHour.setText(Html.fromHtml(metroSchedule));
     }
 

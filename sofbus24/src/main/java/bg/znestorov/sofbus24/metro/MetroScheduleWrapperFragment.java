@@ -417,13 +417,8 @@ public class MetroScheduleWrapperFragment extends Fragment {
     private void actionsOnFragmentChange() {
 
         // Change the color of the station square
-        if (ThemeChange.isLightTheme(context)) {
-            metroStationView
-                    .setBackgroundResource(R.color.app_light_theme_schedule_station);
-        } else {
-            metroStationView
-                    .setBackgroundResource(R.color.app_dark_theme_schedule_station);
-        }
+        metroStationView.setBackgroundColor(ThemeChange.getColor(context,
+                R.attr.appThemeScheduleStation));
 
         // Set the MetroScheduleTime label
         String hourRange = getHour(scheduleHourList.get(

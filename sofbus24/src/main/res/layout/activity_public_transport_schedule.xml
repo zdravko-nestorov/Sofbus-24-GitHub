@@ -38,7 +38,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D0D0D0"
+        android:background="?attr/appThemeScheduleHeader"
         android:paddingLeft="15sp"
         android:paddingTop="5sp"
         android:paddingRight="20sp"

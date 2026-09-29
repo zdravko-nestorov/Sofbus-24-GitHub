@@ -75,6 +75,7 @@ public class PreferencesPreHoneycomb extends PreferenceActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.activity_preferences_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }

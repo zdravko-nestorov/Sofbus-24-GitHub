@@ -11,6 +11,29 @@
 
     <style name="AppThemeLight" parent="AppBaseThemeLight">
         <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+        <item name="appThemeBackground">#ECECEC</item>
+        <item name="appThemeText">#080808</item>
+        <item name="appThemeMutedText">#8B8B8B</item>
+        <item name="appThemeButtonBarBackground">#E2E2E2</item>
+        <item name="appThemeScheduleStation">@color/app_light_theme_schedule_station</item>
+        <item name="appThemeScheduleHeader">#D0D0D0</item>
+        <item name="appThemeScheduleEven">@color/app_light_theme_schedule_even</item>
+        <item name="appThemeScheduleOdd">@color/app_light_theme_schedule_odd</item>
+        <item name="appThemeScheduleCurrent">#80CEEA</item>
+        <item name="appThemeSchedulePanel">#88CACACA</item>
+        <item name="appThemeScheduleBorder">#BABABA</item>
+        <item name="appThemeScheduleDirectionText">#003366</item>
+        <item name="appThemeDrawerSubtag">#30BBBBBB</item>
+        <item name="appThemeTabSelected">@color/inner_tab_grey</item>
+        <item name="appThemeTabUnselected">#FFFFFF</item>
+        <item name="appThemeTabBorder">@color/inner_tab_grey</item>
+        <item name="appThemeTabUnselectedText">@color/inner_tab_grey</item>
+        <item name="appThemeTabStripBackground">@drawable/sofbus24_tabs_background</item>
+        <item name="appThemeMainTabBackground">@drawable/background_tab</item>
+        <item name="appThemeMainTabText">#666666</item>
+        <item name="appThemeMainTabUnderline">#1A000000</item>
+        <item name="appThemeGridBorder">@drawable/grid_border</item>
+        <item name="appThemeDroidTransButton">@drawable/btn_droidtrans_light</item>
     </style>
 
     <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
@@ -23,16 +46,72 @@
     </style>
 
     <!-- ANDROID DARK THEME -->
-    <style name="AppBaseThemeDark" parent="android:Theme.Holo.Light" />
-
-    <style name="AppThemeDark" parent="AppBaseThemeDark">
+    <style name="AppThemeDark" parent="AppThemeLight">
         <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyleDark</item>
         <item name="android:windowBackground">@color/app_dark_theme_background</item>
+        <item name="appThemeBackground">@color/app_dark_theme_background</item>
+        <item name="appThemeScheduleStation">@color/app_dark_theme_schedule_station</item>
+        <item name="appThemeScheduleEven">@color/app_dark_theme_schedule_even</item>
+        <item name="appThemeScheduleOdd">@color/app_dark_theme_schedule_odd</item>
+        <item name="appThemeDrawerSubtag">#70BBBBBB</item>
+        <item name="appThemeMainTabBackground">@color/app_dark_theme_tab_background</item>
+        <item name="appThemeDroidTransButton">@drawable/btn_droidtrans_dark</item>
     </style>
 
     <style name="MyTheme.ActionBarStyleDark" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/app_dark_theme_action_bar</item>
         <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <!-- ANDROID AMOLED THEME -->
+    <style name="AppThemeAmoled" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyleAmoled</item>
+        <item name="android:windowBackground">@color/app_amoled_theme_background</item>
+        <item name="android:colorBackground">@color/app_amoled_theme_background</item>
+        <item name="android:statusBarColor">@color/app_amoled_theme_background</item>
+        <item name="android:navigationBarColor">@color/app_amoled_theme_background</item>
+        <item name="appThemeBackground">@color/app_amoled_theme_background</item>
+        <item name="appThemeText">@color/app_amoled_theme_text</item>
+        <item name="appThemeMutedText">@color/app_amoled_theme_muted_text</item>
+        <item name="appThemeButtonBarBackground">@color/app_amoled_theme_background</item>
+        <item name="appThemeScheduleStation">@color/app_amoled_theme_surface</item>
+        <item name="appThemeScheduleHeader">@color/app_amoled_theme_surface_alternate</item>
+        <item name="appThemeScheduleEven">@color/app_amoled_theme_background</item>
+        <item name="appThemeScheduleOdd">@color/app_amoled_theme_surface</item>
+        <item name="appThemeScheduleCurrent">#24566A</item>
+        <item name="appThemeSchedulePanel">@color/app_amoled_theme_surface</item>
+        <item name="appThemeScheduleBorder">#444444</item>
+        <item name="appThemeScheduleDirectionText">#80CEEA</item>
+        <item name="appThemeDrawerSubtag">@color/app_amoled_theme_surface</item>
+        <item name="appThemeTabSelected">#444444</item>
+        <item name="appThemeTabUnselected">@color/app_amoled_theme_background</item>
+        <item name="appThemeTabBorder">#666666</item>
+        <item name="appThemeTabUnselectedText">@color/app_amoled_theme_muted_text</item>
+        <item name="appThemeTabStripBackground">@color/app_amoled_theme_background</item>
+        <item name="appThemeMainTabBackground">@drawable/background_tab</item>
+        <item name="appThemeMainTabText">@color/app_amoled_theme_muted_text</item>
+        <item name="appThemeMainTabUnderline">@android:color/transparent</item>
+        <item name="appThemeGridBorder">@drawable/grid_border_amoled</item>
+        <item name="appThemeDroidTransButton">@drawable/btn_droidtrans_amoled</item>
+    </style>
+
+    <style name="MyTheme.ActionBarStyleAmoled" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/app_amoled_theme_background</item>
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <!-- HOME SCREEN SELECT THEMES -->
+    <style name="AppThemeLauncherLight" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="appThemeText">@android:color/black</item>
+        <item name="appThemeLauncherBackground">@drawable/bkg_home_screen_select</item>
+        <item name="appThemeLauncherPanel">#D2FFFFFF</item>
+    </style>
+
+    <style name="AppThemeLauncherAmoled" parent="AppThemeAmoled">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="appThemeLauncherBackground">@color/app_amoled_theme_background</item>
+        <item name="appThemeLauncherPanel">@color/app_amoled_theme_surface</item>
     </style>
 
     <!-- ANDROID DIALOG THEME -->

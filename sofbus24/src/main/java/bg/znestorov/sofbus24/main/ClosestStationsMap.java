@@ -514,6 +514,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.activity_closest_stations_maps_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -1180,12 +1181,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, null,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
-
-        // Check if the theme is DARK
-        if (!ThemeChange.isLightTheme(context)) {
-            mDrawerList
-                    .setBackgroundResource(R.color.app_dark_theme_background);
-        }
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon

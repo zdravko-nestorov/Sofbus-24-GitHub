@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="6dp"
-        android:textColor="#F000"
+        android:textColor="?attr/appThemeText"
         android:textSize="15sp"
         android:textStyle="bold" />
 

@@ -37,6 +37,7 @@ import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.schedule.ScheduleLoadVehicles;
 import bg.znestorov.sofbus24.utils.HmsUtils;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.Utils;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
 import bg.znestorov.sofbus24.utils.activity.GooglePlayServicesErrorDialog;
@@ -104,6 +105,7 @@ public class HomeScreenSelect extends FragmentActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ThemeChange.selectLauncherTheme(this);
         super.onCreate(savedInstanceState);
         initApplicationHssContext();
 

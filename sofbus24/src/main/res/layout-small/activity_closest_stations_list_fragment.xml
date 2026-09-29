@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/cs_list_item_empty_list"
-                android:textColor="#080808"
+                android:textColor="?attr/appThemeText"
                 android:textSize="15sp" />
         </ScrollView>
     </RelativeLayout>

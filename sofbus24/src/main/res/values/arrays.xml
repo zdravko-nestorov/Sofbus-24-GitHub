@@ -4,10 +4,12 @@
     <string-array name="sofbusTheme">
         <item name="sofbusThemeLight">Светла</item>
         <item name="sofbusThemeDark">Тъмна (сива)</item>
+        <item name="sofbusThemeAmoled">AMOLED (черна)</item>
     </string-array>
     <string-array name="sofbusThemeValues" translatable="false">
         <item name="sofbusThemeLight">sofbusThemeLight</item>
         <item name="sofbusThemeDark">sofbusThemeDark</item>
+        <item name="sofbusThemeAmoled">sofbusThemeAmoled</item>
     </string-array>
 
     <!-- Language -->

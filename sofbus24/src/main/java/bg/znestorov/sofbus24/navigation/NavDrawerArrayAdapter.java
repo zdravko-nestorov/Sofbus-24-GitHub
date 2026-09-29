@@ -3,6 +3,7 @@ package bg.znestorov.sofbus24.navigation;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
     private final List<Integer> navigationItemsImgs;
 
     private final boolean isPhoneDevice;
+    private final ColorStateList iconTint;
 
     public NavDrawerArrayAdapter(Activity context,
                                  ArrayList<String> navigationItems) {
@@ -42,6 +44,7 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
         this.context = context;
         this.isPhoneDevice = ((GlobalEntity) context.getApplicationContext())
                 .isPhoneDevice();
+        this.iconTint = ThemeChange.getIconTint(context);
         this.navigationItems = navigationItems;
         this.navigationItemsImgs = List.of(
                 R.drawable.ic_slide_menu_home,
@@ -111,6 +114,11 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
                         .get(position));
                 viewHolder.navDrawerText.setText(navigationItems.get(position));
                 initCheckedImage(position, viewHolder);
+
+                // Keep the backup icon colors, as a tint hides its white details
+                viewHolder.navDrawerImg.setImageTintList(navigationItemsImgs.get(position)
+                        == R.drawable.ic_slide_menu_backup ? null : iconTint);
+                viewHolder.navDrawerCheckedImg.setImageTintList(iconTint);
             } catch (Exception e) {
                 /**
                  * There is an error with the method initSubTagsBackground(...),
@@ -146,8 +154,6 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
      */
     private void initSubTagsBackground(int position, ViewHolder viewHolder) {
 
-        boolean isLightTheme = ThemeChange.isLightTheme(context);
-
         switch (position) {
             case 1:
                 // This is made because of a bug with the dividers between disabled items
@@ -158,7 +164,7 @@ public class NavDrawerArrayAdapter extends ArrayAdapter<String> {
             case 2:
             case 3:
                 viewHolder.navDrawerLayout
-                        .setBackgroundColor(isLightTheme ? 0x30BBBBBB : 0x70BBBBBB);
+                        .setBackgroundColor(ThemeChange.getColor(context, R.attr.appThemeDrawerSubtag));
                 viewHolder.navDrawerLayout.setPadding(
                         ActivityUtils.dpToPx(context, 25),
                         ActivityUtils.dpToPx(context, 8),
