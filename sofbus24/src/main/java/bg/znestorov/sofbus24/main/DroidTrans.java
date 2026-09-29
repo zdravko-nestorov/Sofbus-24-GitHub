@@ -813,7 +813,7 @@ public class DroidTrans extends FragmentActivity {
      */
     private String[] getStationsNameArray() {
         if (Utils.isEmpty(vehicleStations)) {
-            return null;
+            return new String[0];
         }
 
         String[] stationName = new String[vehicleStations.size()];

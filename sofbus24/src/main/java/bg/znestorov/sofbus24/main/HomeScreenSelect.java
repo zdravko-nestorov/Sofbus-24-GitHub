@@ -602,13 +602,9 @@ public class HomeScreenSelect extends FragmentActivity implements
     }
 
     private void initApplicationHssContext() {
-        try {
-            if (globalContext == null) {
-                globalContext = (GlobalEntity) getApplicationContext();
-            }
-            globalContext.setHssContext(this);
-        } catch (Exception e) {
-            // nothing to be done here
+        if (globalContext == null) {
+            globalContext = (GlobalEntity) getApplicationContext();
         }
+        globalContext.setHssContext(this);
     }
 }
