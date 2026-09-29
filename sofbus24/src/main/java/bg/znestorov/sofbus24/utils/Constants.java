@@ -53,8 +53,6 @@ public class Constants {
     public static final String BUNDLE_IS_HOME_SCREEN_FRAGMENT = "IS HOME SCREEN FRAGMENT";
     // Sofbus24 --> DroidTrans
     public static final String BUNDLE_DROID_TRANS = "DROID TRANS";
-    // MapsFragmentActivity -> MapsFragmentActivity
-    public static final String BUNDLE_MAP_FRAGMENT = "MapBundleKey";
 
     /**
      * Preferences
@@ -62,6 +60,7 @@ public class Constants {
     public static final String PREFERENCE_KEY_APP_COMMON_CATEGORY = "sofbusCommonCategory";
     public static final String PREFERENCE_KEY_APP_THEME = "sofbusTheme";
     public static final String PREFERENCE_DEFAULT_VALUE_APP_THEME = "sofbusThemeLight";
+    public static final String PREFERENCE_AMOLED_VALUE_APP_THEME = "sofbusThemeAmoled";
     public static final String PREFERENCE_KEY_APP_LANGUAGE = "appLanguage";
     public static final String PREFERENCE_DEFAULT_VALUE_APP_LANGUAGE = "bg";
     public static final String PREFERENCE_KEY_APP_VISUAL_CATEGORY = "sofbusVisualCategory";

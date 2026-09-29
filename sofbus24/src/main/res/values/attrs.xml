@@ -1,0 +1,27 @@
+<resources>
+    <attr name="appThemeBackground" format="color" />
+    <attr name="appThemeText" format="color" />
+    <attr name="appThemeMutedText" format="color" />
+    <attr name="appThemeButtonBarBackground" format="color" />
+    <attr name="appThemeScheduleStation" format="color" />
+    <attr name="appThemeScheduleHeader" format="color" />
+    <attr name="appThemeScheduleEven" format="color" />
+    <attr name="appThemeScheduleOdd" format="color" />
+    <attr name="appThemeScheduleCurrent" format="color" />
+    <attr name="appThemeSchedulePanel" format="color" />
+    <attr name="appThemeScheduleBorder" format="color" />
+    <attr name="appThemeScheduleDirectionText" format="color" />
+    <attr name="appThemeDrawerSubtag" format="color" />
+    <attr name="appThemeTabSelected" format="color" />
+    <attr name="appThemeTabUnselected" format="color" />
+    <attr name="appThemeTabBorder" format="color" />
+    <attr name="appThemeTabUnselectedText" format="color" />
+    <attr name="appThemeTabStripBackground" format="reference" />
+    <attr name="appThemeMainTabBackground" format="reference" />
+    <attr name="appThemeMainTabText" format="color" />
+    <attr name="appThemeMainTabUnderline" format="color" />
+    <attr name="appThemeGridBorder" format="reference" />
+    <attr name="appThemeDroidTransButton" format="reference" />
+    <attr name="appThemeLauncherBackground" format="reference" />
+    <attr name="appThemeLauncherPanel" format="color" />
+</resources>

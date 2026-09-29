@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bg.znestorov.sofbus24.databases.ScheduleDatabaseUtils;
-import bg.znestorov.sofbus24.entity.AppThemeEnum;
 import bg.znestorov.sofbus24.entity.ConfigEntity;
 import bg.znestorov.sofbus24.entity.DeviceTypeEnum;
 import bg.znestorov.sofbus24.entity.GlobalEntity;
@@ -164,6 +163,7 @@ public class Sofbus24Fragment extends Fragment implements
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // Inflate the menu; this adds items to the action bar if it is present
         inflater.inflate(R.menu.activity_sofbus24_actions, menu);
+        ThemeChange.tintMenuIcons(context, menu);
     }
 
     @Override
@@ -300,10 +300,6 @@ public class Sofbus24Fragment extends Fragment implements
         // once
         mPagerSlidingTabs = (PagerSlidingTabStrip) fragmentView
                 .findViewById(R.id.sofbus24_tabs);
-        if (ThemeChange.getAppTheme(context) == AppThemeEnum.DARK) {
-            mPagerSlidingTabs
-                    .setTabBackground(R.color.app_dark_theme_tab_background);
-        }
 
         mViewPager = (ViewPager) fragmentView.findViewById(R.id.sofbus24_pager);
         mViewPager

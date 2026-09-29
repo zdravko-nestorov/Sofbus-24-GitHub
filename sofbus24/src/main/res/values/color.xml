@@ -5,6 +5,11 @@
     <color name="app_dark_theme_tab_background">#2A000000</color>
     <color name="app_dark_theme_background">#CACACA</color>
     <color name="app_dark_theme_action_bar">#00000000</color>
+    <color name="app_amoled_theme_background">#000000</color>
+    <color name="app_amoled_theme_surface">#161616</color>
+    <color name="app_amoled_theme_surface_alternate">#202020</color>
+    <color name="app_amoled_theme_text">#FFFFFF</color>
+    <color name="app_amoled_theme_muted_text">#B0B0B0</color>
 
     <!-- SCHEDULE -->
     <color name="app_light_theme_schedule_station">#EEEEEE</color>

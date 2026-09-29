@@ -100,7 +100,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      */
     private final HashMap<String, StationEntity> markersAndStations = new HashMap<String, StationEntity>();
     private FragmentActivity context;
-    private Bundle bundle;
     /**
      * Listener used to check which marker snippet is pressed
      */
@@ -212,7 +211,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         // Get the current activity context and get an instance of the
         // StationsDatasource
         context = ClosestStationsMap.this;
-        bundle = savedInstanceState;
         globalContext = (GlobalEntity) getApplicationContext();
         isCSMapHomeScreen = getIntent().getExtras() != null && getIntent()
                 .getExtras().getBoolean(BUNDLE_IS_CS_MAP_HOME_SCREEN, false);
@@ -255,33 +253,18 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         // Create and launch a permission launcher to request permissions
         // N.B. Prevent strange errors where the permissions are not granted on startup
         PermissionsUtils.createAndLaunchPermissionLauncher(this,
-                AppPermissions.MAP, this::initializeMap);
-    }
+                AppPermissions.MAP, this::enableLocation);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mapFragment != null) {
-            mapFragment.onStart();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mapFragment != null) {
-            mapFragment.onStop();
-        }
+        // Load the map without waiting for the permissions
+        initializeMap();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (mapFragment != null) {
-            mapFragment.onResume();
-        }
 
-        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+        // Also covers the approximate location, which the permission launcher treats as denied
+        enableLocation();
 
         if (globalContext.isHasToRestart()) {
             context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_RESTART);
@@ -291,9 +274,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
     @Override
     public void onPause() {
-        if (mapFragment != null) {
-            mapFragment.onPause();
-        }
         super.onPause();
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
@@ -302,19 +282,8 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mapFragment != null) {
-            mapFragment.onDestroy();
-        }
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        if (mapFragment != null) {
-            mapFragment.onLowMemory();
-        }
     }
 
     /**
@@ -324,22 +293,15 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onMapReady(GoogleMap map) {
         csMap = map;
+        MapUtils.applyTheme(this, csMap);
 
-        // Enabling MyLocation Layer of the map and the corresponding
-        // buttons
-        csMap.setMyLocationEnabled(true);
-        csMap.getUiSettings().setMyLocationButtonEnabled(true);
+        // Enabling the map buttons
         csMap.getUiSettings().setCompassEnabled(true);
         csMap.getUiSettings().setZoomControlsEnabled(true);
 
         // Enable the map listeners
         csMap.setOnMapClickListener(onMapClickListener);
         csMap.setOnMapLongClickListener(onMapLongClickListener);
-
-        // Activate my location, set a location button that center the map
-        // over a point and start a LocationChangeListener
-        csMap.setMyLocationEnabled(true);
-        csMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Register for location updates
         locationProviderClient = MapUtils.getLocationProviderClient(context);
@@ -365,7 +327,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
             }
             return null;
         });
-        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+        enableLocation();
 
         // Start a new thread - just to wait 3 sec and if no location is
         // found to display the last known location
@@ -380,14 +342,17 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
                             // Service LOCATION_SERVICE
                             LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-                            // Getting Current Location
-                            Location location = locationManager
-                                    .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
-                                    .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
-                                    : locationManager
-                                    .getLastKnownLocation(NETWORK_PROVIDER)
-                                    : locationManager
-                                    .getLastKnownLocation(GPS_PROVIDER);
+                            // Getting Current Location (if allowed)
+                            Location location = null;
+                            if (MapUtils.hasLocationPermission(context)) {
+                                location = locationManager
+                                        .getLastKnownLocation(GPS_PROVIDER) == null ? locationManager
+                                        .getLastKnownLocation(NETWORK_PROVIDER) == null ? null
+                                        : locationManager
+                                        .getLastKnownLocation(NETWORK_PROVIDER)
+                                        : locationManager
+                                        .getLastKnownLocation(GPS_PROVIDER);
+                            }
 
                             // Check if any location is found. If no - just
                             // center the map over the center of Sofia
@@ -451,6 +416,22 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     }
 
     /**
+     * Show the current location on the map, in case the location permission is granted.
+     */
+    @SuppressLint("MissingPermission")
+    private void enableLocation() {
+        if (csMap == null || !MapUtils.hasLocationPermission(context)) {
+            return;
+        }
+
+        // Activate my location, set a location button that center the map
+        // over a point and start a LocationChangeListener
+        csMap.setMyLocationEnabled(true);
+        csMap.getUiSettings().setMyLocationButtonEnabled(true);
+        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+    }
+
+    /**
      * Get the values from the SharedPreferences file (positionFocus and
      * stationsRadius)
      */
@@ -503,7 +484,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
      * Initialize the map UI.
      */
     private void initializeMap() {
-        mapFragment = MapUtils.initializeMap(this, R.id.closest_stations_map, bundle);
+        mapFragment = MapUtils.initializeMap(this, R.id.closest_stations_map);
         initClosestStationMap();
     }
 
@@ -534,6 +515,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.activity_closest_stations_maps_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -724,7 +706,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
 
     private void getMapAsync() {
         if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
             mapFragment.getMapAsync(this);
         }
     }
@@ -1201,12 +1182,6 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
         mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, null,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
-
-        // Check if the theme is DARK
-        if (!ThemeChange.isLightTheme(context)) {
-            mDrawerList
-                    .setBackgroundResource(R.color.app_dark_theme_background);
-        }
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon

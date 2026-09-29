@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#E2E2E2">
+        android:background="?attr/appThemeButtonBarBackground">
 
         <Button
             android:id="@+id/sofbus_24_edit_tabs_cancel"

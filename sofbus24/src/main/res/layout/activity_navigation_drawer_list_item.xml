@@ -40,7 +40,7 @@
             android:layout_toRightOf="@id/navigation_drawer_list_img"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/appThemeText"
             android:textSize="16sp" />
 
         <ImageView

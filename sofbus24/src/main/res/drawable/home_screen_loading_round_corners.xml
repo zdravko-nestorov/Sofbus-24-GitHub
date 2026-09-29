@@ -2,11 +2,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="#D2FFFFFF" />
+    <solid android:color="?attr/appThemeLauncherPanel" />
 
     <stroke
         android:width="1sp"
-        android:color="#D2FFFFFF" />
+        android:color="?attr/appThemeLauncherPanel" />
 
     <corners android:radius="@dimen/home_screen_loading_border_radius" />
 

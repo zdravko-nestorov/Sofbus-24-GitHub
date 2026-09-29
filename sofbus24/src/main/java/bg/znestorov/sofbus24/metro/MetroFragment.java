@@ -23,6 +23,7 @@ import bg.znestorov.sofbus24.entity.TabTypeEnum;
 import bg.znestorov.sofbus24.entity.VehicleTypeEnum;
 import bg.znestorov.sofbus24.main.R;
 import bg.znestorov.sofbus24.utils.LanguageChange;
+import bg.znestorov.sofbus24.utils.ThemeChange;
 import bg.znestorov.sofbus24.utils.activity.NonSwipeableViewPager;
 
 /**
@@ -244,7 +245,7 @@ public class MetroFragment extends Fragment {
         }
 
         textView.setBackgroundResource(backgroundResource);
-        textView.setTextColor(getResources().getColor(R.color.inner_tab_grey));
+        textView.setTextColor(ThemeChange.getColor(getActivity(), R.attr.appThemeTabUnselectedText));
     }
 
     /**

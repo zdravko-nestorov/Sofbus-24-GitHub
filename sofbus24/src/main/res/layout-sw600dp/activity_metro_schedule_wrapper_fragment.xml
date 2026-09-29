@@ -38,7 +38,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D0D0D0"
+        android:background="?attr/appThemeScheduleHeader"
         android:paddingLeft="15sp"
         android:paddingTop="5sp"
         android:paddingRight="20sp"
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/metro_schedule_first"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     android:textSize="11sp"
                     tools:ignore="SmallSp" />
 
@@ -136,7 +136,7 @@
                     android:paddingLeft="4sp"
                     android:paddingRight="4sp"
                     android:text=":"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     android:textSize="11sp"
                     tools:ignore="HardcodedText,SmallSp" />
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/metro_schedule_last"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     android:textSize="11sp"
                     tools:ignore="SmallSp" />
 
@@ -171,7 +171,7 @@
                     android:paddingLeft="4sp"
                     android:paddingRight="4sp"
                     android:text=":"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     android:textSize="11sp"
                     tools:ignore="HardcodedText,SmallSp" />
 

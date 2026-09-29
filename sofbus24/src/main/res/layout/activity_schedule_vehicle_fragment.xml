@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="#080808"
+                android:textColor="?attr/appThemeText"
                 android:textSize="15sp" />
         </ScrollView>
     </RelativeLayout>

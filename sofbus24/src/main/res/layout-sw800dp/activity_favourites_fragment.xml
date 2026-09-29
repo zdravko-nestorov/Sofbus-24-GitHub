@@ -60,7 +60,7 @@
             android:layout_marginRight="15sp"
             android:layout_toRightOf="@+id/favourites_list_empty_image"
             android:gravity="center"
-            android:textColor="#080808"
+            android:textColor="?attr/appThemeText"
             android:textSize="15sp" />
     </RelativeLayout>
 

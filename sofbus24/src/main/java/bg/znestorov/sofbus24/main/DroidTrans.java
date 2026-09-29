@@ -168,6 +168,7 @@ public class DroidTrans extends FragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_droidtrans_actions, menu);
+        ThemeChange.tintMenuIcons(this, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -613,6 +614,7 @@ public class DroidTrans extends FragmentActivity {
         ArrayWheelAdapter<String> adapter = new ArrayWheelAdapter<String>(this,
                 vehicleNumbersArray);
         adapter.setTextSize(15);
+        adapter.setTextColor(ThemeChange.getColor(this, R.attr.appThemeText));
         vehicleNumbersWheel.setViewAdapter(adapter);
 
         switch (vehicleType) {
@@ -665,6 +667,7 @@ public class DroidTrans extends FragmentActivity {
         ArrayWheelAdapter<String> adapter = new ArrayWheelAdapter<String>(this,
                 vehicleDirectionsArray);
         adapter.setTextSize(12);
+        adapter.setTextColor(ThemeChange.getColor(this, R.attr.appThemeText));
         vehicleDirectionsWheel.setViewAdapter(adapter);
         vehicleDirectionsWheel.setCurrentItem(0);
     }
@@ -683,6 +686,7 @@ public class DroidTrans extends FragmentActivity {
         ArrayWheelAdapter<String> adapter = new ArrayWheelAdapter<String>(this,
                 vehicleStationsArray);
         adapter.setTextSize(13);
+        adapter.setTextColor(ThemeChange.getColor(this, R.attr.appThemeText));
         vehicleStationsWheel.setViewAdapter(adapter);
         vehicleStationsWheel.setCurrentItem(0);
     }
@@ -737,16 +741,8 @@ public class DroidTrans extends FragmentActivity {
      */
     private void retrieveVehicleSchedule() {
 
-        switch (ThemeChange.getAppTheme(context)) {
-            case LIGHT:
-                vehicleSchedule
-                        .setBackgroundResource(R.drawable.btn_droidtrans_light);
-                break;
-            default:
-                vehicleSchedule
-                        .setBackgroundResource(R.drawable.btn_droidtrans_dark);
-                break;
-        }
+        vehicleSchedule.setBackgroundResource(ThemeChange.getResourceId(context,
+                R.attr.appThemeDroidTransButton));
 
         vehicleSchedule.setOnClickListener(new OnClickListener() {
 
@@ -817,7 +813,7 @@ public class DroidTrans extends FragmentActivity {
      */
     private String[] getStationsNameArray() {
         if (Utils.isEmpty(vehicleStations)) {
-            return null;
+            return new String[0];
         }
 
         String[] stationName = new String[vehicleStations.size()];
@@ -860,12 +856,6 @@ public class DroidTrans extends FragmentActivity {
         mDrawerList.setOnItemClickListener(new NavDrawerHelper(context, null,
                 mDrawerLayout, mDrawerList, navigationItems)
                 .getDrawerItemClickListener());
-
-        // Check if the theme is DARK
-        if (!ThemeChange.isLightTheme(context)) {
-            mDrawerList
-                    .setBackgroundResource(R.color.app_dark_theme_background);
-        }
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon

@@ -1,11 +1,12 @@
 package bg.znestorov.sofbus24.utils;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
-import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
 import android.view.View;
@@ -20,8 +21,11 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapColorScheme;
+import com.google.android.gms.maps.model.MapStyleOptions;
 
 import java.math.BigDecimal;
 import java.util.function.Function;
@@ -49,6 +53,17 @@ public class MapUtils {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+    }
+
+    /**
+     * Check if the location permission is granted (the approximate location is enough).
+     *
+     * @param context the current activity context
+     * @return if the current location can be retrieved
+     */
+    public static boolean hasLocationPermission(Context context) {
+        return context.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED;
     }
 
     /**
@@ -332,25 +347,26 @@ public class MapUtils {
     }
 
     /**
-     * Initial map setup.
+     * Initial map setup. The fragment follows the activity lifecycle on its own.
      *
      * @param context the current activity context
-     * @param bundle  activity saved instance state
      * @return the {@link SupportMapFragment} associated with the current activity
      */
-    public static SupportMapFragment initializeMap(FragmentActivity context, int mapId, Bundle bundle) {
-        SupportMapFragment mapFragment = (SupportMapFragment) context.getSupportFragmentManager().findFragmentById(mapId);
+    public static SupportMapFragment initializeMap(FragmentActivity context, int mapId) {
+        return (SupportMapFragment) context.getSupportFragmentManager().findFragmentById(mapId);
+    }
 
-        // Retrieve the saved instance state
-        Bundle mapFragmentBundle = null;
-        if (bundle != null) {
-            mapFragmentBundle = bundle.getBundle(Constants.BUNDLE_MAP_FRAGMENT);
+    /**
+     * Show a black map in the dark themes (the satellite images are not affected).
+     *
+     * @param context the current activity context
+     * @param map     the map to style
+     */
+    public static void applyTheme(Activity context, GoogleMap map) {
+        if (!ThemeChange.isLightTheme(context)) {
+            map.setMapColorScheme(MapColorScheme.DARK);
+            map.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_black));
         }
-
-        // Set the map API key
-        mapFragment.onCreate(mapFragmentBundle);
-
-        return mapFragment;
     }
 
     /**

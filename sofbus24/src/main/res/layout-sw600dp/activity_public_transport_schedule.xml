@@ -38,7 +38,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#D0D0D0"
+        android:background="?attr/appThemeScheduleHeader"
         android:paddingLeft="15sp"
         android:paddingTop="5sp"
         android:paddingRight="20sp"
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/pt_schedule_first"
-                    android:textColor="#003366" />
+                    android:textColor="?attr/appThemeScheduleDirectionText" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
                     android:paddingLeft="4sp"
                     android:paddingRight="4sp"
                     android:text=":"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     tools:ignore="HardcodedText" />
 
                 <TextView
@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/pt_schedule_last"
-                    android:textColor="#003366" />
+                    android:textColor="?attr/appThemeScheduleDirectionText" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
                     android:paddingLeft="4sp"
                     android:paddingRight="4sp"
                     android:text=":"
-                    android:textColor="#003366"
+                    android:textColor="?attr/appThemeScheduleDirectionText"
                     tools:ignore="HardcodedText" />
 
                 <TextView

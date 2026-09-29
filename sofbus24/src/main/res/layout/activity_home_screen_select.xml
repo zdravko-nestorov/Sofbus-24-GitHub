@@ -11,7 +11,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_empty_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/bkg_home_screen_select" />
+        android:src="?attr/appThemeLauncherBackground" />
 
     <!-- View responsible for the dim effect -->
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/app_sofbus24"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/appThemeText"
             android:textSize="26sp"
             android:textStyle="bold" />
 
