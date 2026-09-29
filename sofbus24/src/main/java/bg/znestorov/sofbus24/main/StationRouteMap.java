@@ -65,7 +65,6 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             Constants.GLOBAL_PARAM_MLADOST_1_LONGITUDE);
 
     private Activity context;
-    private Bundle bundle;
     private ActionBar actionBar;
     private GlobalEntity globalContext;
 
@@ -124,7 +123,6 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Get the current context
         context = StationRouteMap.this;
-        bundle = savedInstanceState;
         globalContext = (GlobalEntity) getApplicationContext();
 
         // Set up the action bar
@@ -137,40 +135,22 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
         // Create and launch a permission launcher to request permissions
         // N.B. Prevent strange errors where the permissions are not granted on startup
         PermissionsUtils.createAndLaunchPermissionLauncher(this,
-                AppPermissions.MAP, this::initializeMap);
-    }
+                AppPermissions.MAP, this::enableLocation);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (mapFragment != null) {
-            mapFragment.onStart();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mapFragment != null) {
-            mapFragment.onStop();
-        }
+        // Load the map without waiting for the permissions
+        initializeMap();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (mapFragment != null) {
-            mapFragment.onResume();
-        }
 
-        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+        // Also covers the approximate location, which the permission launcher treats as denied
+        enableLocation();
     }
 
     @Override
     public void onPause() {
-        if (mapFragment != null) {
-            mapFragment.onPause();
-        }
         super.onPause();
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
@@ -179,25 +159,10 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mapFragment != null) {
-            mapFragment.onDestroy();
-        }
 
         MapUtils.removeLocationUpdates(locationProviderClient, locationCallback);
     }
 
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        if (mapFragment != null) {
-            mapFragment.onLowMemory();
-        }
-    }
-
-    /**
-     * Permission is handled via <code>ActivityResultLauncher</code>.
-     */
-    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap map) {
         stationMap = map;
@@ -232,11 +197,6 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
             // Initialize the map without the current location
             initializeMap(stationType, null);
 
-            // Activate my location, set a location button that center the map
-            // over a point and start a LocationChangeListener
-            stationMap.setMyLocationEnabled(true);
-            stationMap.getUiSettings().setMyLocationButtonEnabled(true);
-
             // Register for location updates
             locationProviderClient = MapUtils.getLocationProviderClient(context);
             locationCallback = MapUtils.getLocationCallback((currentLocation) -> {
@@ -246,8 +206,24 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
                 }
                 return null;
             });
-            MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
+            enableLocation();
         }
+    }
+
+    /**
+     * Show the current location on the map, in case the location permission is granted.
+     */
+    @SuppressLint("MissingPermission")
+    private void enableLocation() {
+        if (stationMap == null || !MapUtils.hasLocationPermission(context)) {
+            return;
+        }
+
+        // Activate my location, set a location button that center the map
+        // over a point and start a LocationChangeListener
+        stationMap.setMyLocationEnabled(true);
+        stationMap.getUiSettings().setMyLocationButtonEnabled(true);
+        MapUtils.requestLocationUpdates(locationProviderClient, locationCallback);
     }
 
     @Override
@@ -349,8 +325,8 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
      * Initialize the map UI.
      */
     private void initializeMap() {
-        // Register lifecycle observer, request location permissions and retrieve the map
-        mapFragment = MapUtils.initializeMap(this, R.id.station_route_map, bundle);
+        // Retrieve the map fragment and wait for the map
+        mapFragment = MapUtils.initializeMap(this, R.id.station_route_map);
         mapFragment.getMapAsync(this);
     }
 
