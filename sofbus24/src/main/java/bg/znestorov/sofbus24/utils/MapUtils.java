@@ -21,8 +21,11 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapColorScheme;
+import com.google.android.gms.maps.model.MapStyleOptions;
 
 import java.math.BigDecimal;
 import java.util.function.Function;
@@ -351,6 +354,19 @@ public class MapUtils {
      */
     public static SupportMapFragment initializeMap(FragmentActivity context, int mapId) {
         return (SupportMapFragment) context.getSupportFragmentManager().findFragmentById(mapId);
+    }
+
+    /**
+     * Show a black map in the dark themes (the satellite images are not affected).
+     *
+     * @param context the current activity context
+     * @param map     the map to style
+     */
+    public static void applyTheme(Activity context, GoogleMap map) {
+        if (!ThemeChange.isLightTheme(context)) {
+            map.setMapColorScheme(MapColorScheme.DARK);
+            map.setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_black));
+        }
     }
 
     /**

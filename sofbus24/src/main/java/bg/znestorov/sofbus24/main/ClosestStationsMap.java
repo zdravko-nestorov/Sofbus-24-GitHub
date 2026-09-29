@@ -293,6 +293,7 @@ public class ClosestStationsMap extends FragmentActivity implements OnMapReadyCa
     @Override
     public void onMapReady(GoogleMap map) {
         csMap = map;
+        MapUtils.applyTheme(this, csMap);
 
         // Enabling the map buttons
         csMap.getUiSettings().setCompassEnabled(true);

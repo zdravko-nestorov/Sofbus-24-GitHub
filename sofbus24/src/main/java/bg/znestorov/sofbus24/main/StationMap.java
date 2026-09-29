@@ -116,6 +116,7 @@ public class StationMap extends FragmentActivity implements OnMapReadyCallback {
 
         // Check if the station map is found
         if (stationMap != null) {
+            MapUtils.applyTheme(this, stationMap);
             // Get the MetroStation object from the Bundle
             Bundle extras = getIntent().getExtras();
             final StationEntity stationBundle = (StationEntity) extras

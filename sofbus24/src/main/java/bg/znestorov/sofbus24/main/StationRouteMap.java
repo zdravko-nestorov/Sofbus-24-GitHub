@@ -170,6 +170,7 @@ public class StationRouteMap extends FragmentActivity implements OnMapReadyCallb
 
         // Check if the station map is found
         if (stationMap != null) {
+            MapUtils.applyTheme(this, stationMap);
             // Get the list of MetroStation objects from the Bundle
             Bundle extras = getIntent().getExtras();
             directionsEntity = (DirectionsEntity) extras
