@@ -2,12 +2,10 @@ package bg.znestorov.sofbus24.navigation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -30,8 +28,6 @@ import bg.znestorov.sofbus24.main.HomeScreenSelect;
 import bg.znestorov.sofbus24.main.Preferences;
 import bg.znestorov.sofbus24.main.PreferencesDialog;
 import bg.znestorov.sofbus24.main.R;
-import bg.znestorov.sofbus24.permissions.AppPermissions;
-import bg.znestorov.sofbus24.permissions.PermissionsUtils;
 import bg.znestorov.sofbus24.route.changes.RetrieveRouteChangesApi;
 import bg.znestorov.sofbus24.updates.check.ChooseUpdateDialog;
 import bg.znestorov.sofbus24.utils.activity.ActivityUtils;
@@ -48,7 +44,6 @@ public class NavDrawerHelper {
     private final ArrayList<String> navigationItems;
 
     private final DrawerItemClickListener drawerItemClickListener;
-    private final ActivityResultLauncher<String[]> permissionLauncher;
 
     public NavDrawerHelper(FragmentActivity context, Fragment fragment,
                            DrawerLayout mDrawerLayout, ListView mDrawerList,
@@ -63,8 +58,7 @@ public class NavDrawerHelper {
         this.navigationItems = navigationItems;
 
         this.drawerItemClickListener = new DrawerItemClickListener();
-        this.permissionLauncher = PermissionsUtils.createPermissionLauncher(context,
-                AppPermissions.getStoragePermissions(), this::startChooseBackupDialog);
+        ChooseBackupDialog.registerPickers(context);
     }
 
     /**
@@ -156,12 +150,7 @@ public class NavDrawerHelper {
                 }
                 break;
             case 9:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-                    PermissionsUtils.launchPermissionLauncher(context, AppPermissions.getStoragePermissions(),
-                            permissionLauncher);
-                } else {
-                    startChooseBackupDialog();
-                }
+                startChooseBackupDialog();
                 break;
             case 10:
                 context.setResult(HomeScreenSelect.RESULT_CODE_ACTIVITY_FINISH);
@@ -252,17 +241,9 @@ public class NavDrawerHelper {
      * Start the ChooseBackupDialog dialog
      */
     private void startChooseBackupDialog() {
-        // Get the appropriate fragment manager (in case of Activity or a Fragment)
-        FragmentManager fragmentManager;
-        if (fragment == null) {
-            fragmentManager = context.getSupportFragmentManager();
-        } else {
-            fragmentManager = fragment.getChildFragmentManager();
-        }
-
-        // Start the "Choose Backup Dialog"
+        // Use the activity fragment manager, as the dialog result is delivered to the activity
         DialogFragment chooseBackupDialog = ChooseBackupDialog.newInstance();
-        chooseBackupDialog.show(fragmentManager, "dialogFragment");
+        chooseBackupDialog.show(context.getSupportFragmentManager(), "dialogFragment");
     }
 
     public DrawerItemClickListener getDrawerItemClickListener() {

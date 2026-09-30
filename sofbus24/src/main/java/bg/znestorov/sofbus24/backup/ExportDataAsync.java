@@ -26,12 +26,14 @@ public class ExportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
     private final FragmentActivity context;
     private final Uri targetUri;
+    private final String targetName;
     private final ProgressDialog progressDialog;
 
-    public ExportDataAsync(FragmentActivity context, Uri targetUri) {
+    public ExportDataAsync(FragmentActivity context, Uri targetUri, String targetName) {
 
         this.context = context;
         this.targetUri = targetUri;
+        this.targetName = targetName;
         this.progressDialog = new ProgressDialog(context);
     }
 
@@ -53,10 +55,9 @@ public class ExportDataAsync extends AsyncTask<Void, Void, Boolean> {
 
         // Check what is the status of importing the data and show the appropriate message
         if (isExportSuccessful) {
-            // Show a toast - use the URI display value as the resolved path may not exist
-            String displayLocation = targetUri != null ? targetUri.toString() : "";
+            // Show a toast
             ActivityUtils.showMiddleToast(context,
-                    String.format(context.getString(R.string.backup_export_success), displayLocation));
+                    String.format(context.getString(R.string.backup_export_success), targetName));
         } else {
             // Show a toast
             ActivityUtils.showMiddleToast(context, context.getString(R.string.backup_export_failed));

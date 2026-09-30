@@ -3,6 +3,7 @@ package bg.znestorov.sofbus24.backup;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
+import android.provider.DocumentsContract;
 import android.util.Base64;
 import android.util.Base64InputStream;
 import android.util.Base64OutputStream;
@@ -68,13 +69,7 @@ class BackupData {
             "U09GQlVTXzI0X0JBQ0tVUF9QQVNTV09SRF9aRFJBVktPX05FU1RPUk9W".toCharArray();
 
     /**
-     * Buffer size used while streaming bytes between {@link InputStream} /
-     * {@link OutputStream} pairs. 32 KB is the sweet spot for this kind of
-     * pipeline: it cuts the syscall count by ~4× compared to the typical
-     * 8 KB buffer on big backups, while still keeping per-task heap use
-     * negligible. Going higher (64 KB+) shows no measurable improvement
-     * because the inner Base64 wrappers and the SAF stream do their own
-     * buffering downstream.
+     * Buffer size used while streaming bytes between the backup streams
      */
     private static final int IO_BUFFER_SIZE = 32 * 1024;
 
@@ -86,12 +81,10 @@ class BackupData {
 
     private final Context context;
     private final String sofbus24Path;
-    private final String sofbus24PackageFolderName;
 
     public BackupData(Context context) {
         this.context = context.getApplicationContext();
         this.sofbus24Path = context.getFilesDir().getParent() + File.separator;
-        this.sofbus24PackageFolderName = context.getPackageName();
     }
 
     // ---------------------------------------------------------------------
@@ -165,13 +158,8 @@ class BackupData {
             // Decrypt and unzip the staged ZIP into the staging directory
             unzipPasswordProtectedZipFile(stagingZipFile, extractDirectory.getAbsolutePath() + File.separator);
 
-            // The ZIP contains a top-level folder named after the application
-            // package. The original implementation used this folder as the source
-            // of the copy step, so we keep the same convention here.
-            File copySource = new File(extractDirectory, sofbus24PackageFolderName);
-            String copySourcePath = (copySource.exists() && copySource.isDirectory())
-                    ? copySource.getAbsolutePath() + File.separator
-                    : extractDirectory.getAbsolutePath() + File.separator;
+            // The ZIP contains the application data folders (databases, shared_prefs, etc.)
+            String copySourcePath = extractDirectory.getAbsolutePath() + File.separator;
 
             // Copy the live database files into the staged directory so they are
             // preserved when we later replace the application's data folder.
@@ -318,9 +306,11 @@ class BackupData {
         // Iterate over all children of the source location and get only the existing ones, which are not empty.
         // It is possible that the array contains files that do not exists - they are system files.
         // For example: "/data/data/bg.znestorov.sofbus24.main/lib"
+        // The cache folder is skipped, as the backup ZIP file itself is staged there
+        File cacheDir = context.getCacheDir();
         for (File child : sourceFileChildrenArray) {
             File[] grandChildren = child.listFiles();
-            if (child.exists() && child.canRead() && child.isDirectory()
+            if (child.exists() && child.canRead() && child.isDirectory() && !child.equals(cacheDir)
                     && grandChildren != null && grandChildren.length > 0) {
                 sofbus24DataFolders.add(child);
             }
@@ -503,17 +493,12 @@ class BackupData {
     }
 
     /**
-     * Best-effort attempt to truncate the user-selected SAF target. Used after
+     * Best-effort attempt to delete the user-selected SAF target. Used after
      * a failed export so that no half-written file is left behind.
      */
     private void safeDeleteContent(Uri targetUri) {
-        if (targetUri == null) {
-            return;
-        }
-        try (OutputStream out = context.getContentResolver().openOutputStream(targetUri, "wt")) {
-            if (out != null) {
-                out.flush();
-            }
+        try {
+            DocumentsContract.deleteDocument(context.getContentResolver(), targetUri);
         } catch (Exception ignored) {
             // Ignored on purpose - cleanup must never throw
         }
