@@ -462,16 +462,13 @@
     <string name="gcm_dialog_message_rate">If you enjoy using this app, would you mind taking a moment to rate it (sorry if you already did it)? It won\'t take more than a minute. Thank you for your support!</string>
 
     <!-- File Explorer -->
-    <string name="file_explorer_large_file" formatted="false"><![CDATA[Backup file size exceeds the allowable limit - %s MB.]]></string>
-    <string name="file_explorer_file">1 object</string>
-    <string name="file_explorer_files" formatted="false"><![CDATA[%s objects]]></string>
-    <string name="file_explorer_hint" formatted="false"><![CDATA[Backup filename]]></string>
 
     <!-- Backup -->
     <string name="backup_import_export_choice">Backup choice</string>
     <string name="backup_import_loading" formatted="false"><![CDATA[Restoring your settings and data…]]></string>
     <string name="backup_import_success">Your settings were successfully restored. The application will automatically restart in order for the changes to take effect.</string>
     <string name="backup_import_failed">A problem occurred while restoring your settings. Please try again.</string>
+    <string name="backup_import_invalid_extension">Invalid file. Please select a backup file with a .sofbus24 extension.</string>
     <string name="backup_import_confirm_title">Confirmation</string>
     <string name="backup_import_confirm_msg" formatted="false"><![CDATA[Do you want to replace all of your settings with these from the file named <b><i>%s</i></b>?]]></string>
     <string name="backup_export_loading" formatted="false"><![CDATA[Saving your settings and data…]]></string>
