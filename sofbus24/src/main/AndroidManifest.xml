@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto"
-    android:versionCode="59"
+    android:versionCode="60"
     android:versionName="4.4.4">
 
     <!-- GOOGLE MAPS, INTERNET AND LOCATION PERMISSIONS -->

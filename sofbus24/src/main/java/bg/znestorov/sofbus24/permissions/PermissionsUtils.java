@@ -125,7 +125,11 @@ public class PermissionsUtils {
         }
 
         // Launch the permission launcher
-        launcher.launch(appPermissions.getPermissions());
+        try {
+            launcher.launch(appPermissions.getPermissions());
+        } catch (Exception e) {
+            // Swallow the exception, nothing can be done
+        }
     }
 
     /**

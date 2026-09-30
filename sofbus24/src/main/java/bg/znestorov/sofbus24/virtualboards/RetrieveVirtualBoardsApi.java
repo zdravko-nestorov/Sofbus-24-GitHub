@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.SQLException;
 import android.os.AsyncTask;
 import android.text.Html;
 import android.text.Spanned;
@@ -80,9 +81,13 @@ public class RetrieveVirtualBoardsApi {
 
         // Retrieve the full station information (station taken from Favourites or other place)
         if (htmlRequestCode != HtmlRequestCodesEnum.MULTIPLE_RESULTS && station != null) {
-            stationsDatasource.open();
-            station = stationsDatasource.getStation(station);
-            stationsDatasource.close();
+            try {
+                stationsDatasource.open();
+                station = stationsDatasource.getStation(station);
+                stationsDatasource.close();
+            } catch (SQLException e) {
+                station = null;
+            }
         }
 
         // Making HttpRequest and showing a progress dialog if needed (based on station type)

@@ -789,7 +789,7 @@ public class DroidTrans extends FragmentActivity {
      * @return the current vehicle number
      */
     private String getCurrentVehicleNumber() {
-        return vehicleNumbers.get(vehicleNumbersWheel.getCurrentItem());
+        return Utils.isEmpty(vehicleNumbers) ? null : vehicleNumbers.get(vehicleNumbersWheel.getCurrentItem());
     }
 
     /**
@@ -807,7 +807,7 @@ public class DroidTrans extends FragmentActivity {
      * @return the current stations number
      */
     private StationEntity getCurrentStation() {
-        return vehicleStations.get(vehicleStationsWheel.getCurrentItem());
+        return Utils.isEmpty(vehicleStations) ? null : vehicleStations.get(vehicleStationsWheel.getCurrentItem());
     }
 
     /**
@@ -816,6 +816,9 @@ public class DroidTrans extends FragmentActivity {
      * @return the name (title) of the station
      */
     private String[] getStationsNameArray() {
+        if (Utils.isEmpty(vehicleStations)) {
+            return null;
+        }
 
         String[] stationName = new String[vehicleStations.size()];
 
